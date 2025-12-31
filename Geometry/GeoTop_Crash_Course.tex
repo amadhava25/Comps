@@ -1,0 +1,1262 @@
+\documentclass{article}
+\usepackage{../header}
+\title{Geometry Crash Course}
+\author{\me}
+\date{December 21, 2025}
+
+\begin{document}
+	\maketitle
+	\fullline 
+	\tableofcontents
+	\halfline 
+	\newpage 
+
+\section{Smooth Manifolds}
+\subsection{Topological Manifolds}
+\begin{itemize}
+	\item \textbf{Def. (Topological Manifold)} A topological space $M$ with the following properties: 
+	\begin{enumerate}[itemsep =-2pt]
+		\item $M$ is Hausdorff;
+		\item $M$ is second countable (i.e., has a countable basis for its topology); 
+		\item $M$ is locally Euclidean of dimension $n$ (i.e., for each $p \in M$, there exists a neighborhood $U \subset M$, an open set $\Tilde{U} \subset \mathbb{R}^{n}$, and a homeomorphism $\varphi: U \to \Tilde{U}$). 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{1.1}
+	Show that equivalent definitions of locally Euclidean spaces are obtained if instead of requiring $U$ to be homeomorphic to an open subset of $\mathbb{R}^{n}$, we require it to be homeomorphic to an open ball in $\mathbb{R}^{n}$, or to $\mathbb{R}^{n}$ itself. 
+\end{exc}
+{\color{blue}
+	Let $M$ be a topological space that satisfies conditions (1) and (2). ($\Leftarrow$) Suppose that for each $p \in M$, there exists a neighborhood $U$ of $p$ that is homeomorphic to an open ball in $\mathbb{R}^{n}$, or to $\mathbb{R}^{n}$ itself. Since each of these are open subsets of $\mathbb{R}^{n}$, it follows that $M$ satisfies condition (3). ($\Rightarrow$) Suppose that $M$ satisfies conditions (1) - (3). Suppose that for some $p \in U \subset M$, $U \cong_{\varphi} \widetilde{U} \subseteq \mathbb{R}^{n}$. Since every open subset of $\mathbb{R}^{n}$ is the countable union of open balls in $\mathbb{R}^{n}$, suppose that $\widetilde{U} = \bigcup_{1}^{\infty}B_{j}$. Pick some ball $B_{j_{0}}$ containing $\varphi(p)$. Then $V = \varphi^{-1}(B_{j_{0}})$ is an open neighborhood of $p$ in $M$ that is homeomorphic, under the map $\varphi|V: V \to B_{j_{0}}$, to the open ball $B_{j_{0}}$. 
+}
+\begin{itemize}
+	\item \textbf{Def. (Coordinate Chart)} A pair $(U, \varphi)$, where $U$ is an open subset of $M$ and $\varphi: U \to \widetilde{U}$ is a homeomorphism from $U$ to an open subset $\widetilde{U} = \varphi(U) \subseteq \mathbb{R}^{n}$. 
+	\item \textbf{Def. (Precompact Subset)} Let $X$ be a topological space. A subset $K \subset X$ is said to be \textit{precompact} (or \textit{relatively compact}) in $X$ if its closure in $X$ is compact. E.g., the subsets $(-1,1), (2, 3], (4, 5) \cup \{6\}$ are all precompact in $\mathbb{R}$, but the subset $(-1, \infty)$ is not. 
+	\item \textbf{Lem 1.6. (Topological Manifolds have Precompact Basis)} Every topological manifold has a countable basis of precompact coordinate balls. 
+	
+	{\color{orange}
+		Let $M$ be a topological $n$-manifold. Suppose $\varphi: M \to \widetilde{U} \subset \mathbb{R}^{n}$ is a global coordinate map. Let $\mathscr{B}$ be the collection of all open balls $B_{r}(x) \subset \mathbb{R}^{n}$ such that (1) $r$ is rational, (2) $x$ has rational coordinates, and (3) $\overline{B}_{r}(x) \subset \widetilde{U}$. By definition, each such ball is precompact in $\widetilde{U}$ and $\mathscr{B}$ is a countable basis for the topology of $\widetilde{U}$. Since $\varphi$ is a homeomorphism, the collection $\mathscr{B}^{-1} = \{\varphi^{-1}(B): B \in \mathscr{B}\}$ is a countable basis for the topology of $M$. Moreover, each of the sets in this collection is precompact in $M$: for each $B \in \mathscr{B}$, $\overline{\varphi^{-1}(B)} = \varphi^{-1}(\overline{B}) \subset M$; since $\varphi^{-1}$ is continuous, $\varphi^{-1}(\overline{B})$ is compact in $M$. The restrictions of $\varphi$ are the coordinate maps. In this case, we assumed that $M$ had a global coordinate map, which might not necessarily be true in general. 
+		
+		So, let $M$ be an arbitrary topological $n$-manifold. By definition, every point of $M$ is contained in the domain of a chart. Since every open cover of a second countable space has a countable subcover, $M$ is covered by countably many charts $\{(U_{i}, \varphi_{i})\}$. By the preceding argument, for each $i$, $U_{i}$ has a countable basis of precompact coordinate balls, and the union of all these balls is a countable basis for the topology on $M$. Suppose $V \subset U_{i}$ is one of these precompact balls. Since the closure of $V$ in $U_{i}$ is compact, the closure must be closed in $M$. Hence, the closure of $V$ in $M$ is the same as the closure of $V$ in $U_{i}$, so that $V$ is precompact in $M$. 
+	}
+\end{itemize}
+
+\subsection{Smooth Manifolds}
+\begin{itemize}
+	\item \textbf{Def. (Transition Map between Charts)} Let $M$ be a topological $n$-manifold. Let $(U, \varphi), (V, \varphi)$ be two charts such that $U \cap V \neq \varnothing$. The composite map $\psi \circ \varphi^{-1}: \varphi(U \cap V) \to \psi(U \cap V)$ is called the \textit{transition map} from $\varphi$ to $\psi$. 
+	\item \textbf{Def. (Smoothly Compatible Charts)} Two charts $(U, \varphi)$ and $(V, \psi)$ are said to be \textit{smoothly compatible} if either $U \cap V = \varnothing$ or the transition map $\psi \circ \varphi^{-1}$ is a diffeomorphism. 
+	\item \textbf{Def. ((Smooth) Atlases)} Let $M$ be a topological $n$-manifold. (1) An \textit{atlas} $\mathscr{A}$ for $M$ is a collection of charts whose domains cover $M$; (2) $\mathscr{A}$ is said to be a \textit{smooth atlas} if any two charts in $\mathscr{A}$ are smoothly compatible. 
+	\item \textbf{Def. (Maximal Atlas):} A smooth atlas $\mathscr{A}$ on $M$ is said to be \textit{maximal} iff it is not contained in any strictly larger smooth atlas. I.e., any chart that is smoothly compatible with every chart in $\mathscr{A}$ is already contained in $\mathscr{A}$. A \textit{smooth structure} on $M$ is a maximal atlas. 
+	\item \textbf{Lem 1.10. (Smooth Atlases)} Let $M$ be a topological manifold. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Every smooth atlas for $M$ is contained in a unique maximal smooth atlas. 
+		\item Two smooth atlases for $M$ determine the same maximal smooth atlas if and only if their union is a smooth atlas. 
+	\end{enumerate}
+	{\color{orange}
+		The proof of (b) was left as an exercise (see below). The proof of (a) is given. Let $\mathscr{A}$ be a smooth atlas for $M$, and let $\overline{\mathscr{A}}$ denote the set of all charts that are smoothly compatible with every chart in $\mathscr{A}$. To show that $\overline{\mathscr{A}}$ is a smooth atlas, we need to show that any two charts of $\overline{\mathscr{A}}$ are smoothly compatible with each other, which to say that for any $(U, \varphi), (V, \psi) \in \overline{\mathscr{A}}$, $\psi \circ \varphi^{-1}: \varphi(U \cap V) \to \psi(U \cap V)$ is smooth. 
+		
+		Let $x = \varphi(p) = \varphi(U \cap V)$ be arbitrary. Because the domains of the charts in $\mathscr{A}$ cover $M$, there is some chart $(W, \theta)$ in $\mathscr{A}$ such that $p \in W$. Since every chart in $\overline{\mathscr{A}}$ is smoothly compatible with $(W, \theta)$, both of the maps $\theta \circ \varphi^{-1}$ and $\psi \circ \theta^{-1}$ are smooth where they are defined. Since $p \in U \cap V \cap W$, it follows that 
+		\begin{equation}
+			\psi \circ \varphi^{-1} = (\psi \circ \theta^{-1}) \circ (\theta \circ \phi^{-1})
+		\end{equation}
+		is smooth on a neighborhood of $x$. Hence, $\psi \circ \varphi^{-1}$ is smooth in a neighborhood of each point in $\varphi(U \cap V)$. This concludes that $\overline{\mathscr{A}}$ is a smooth atlas. Now, we need to show that $\overline{\mathscr{A}}$ is maximal. But this is straightforward to see: any chart that is smoothly compatible with every chart contained in $\overline{\mathscr{A}}$ must be smoothly compatible with every chart contained in $\mathscr{A}$, and hence, must be contained in $\overline{\mathscr{A}}$. Therefore, $\overline{\mathscr{A}}$ is maximal. Uniqueness also follows in a straightforward way: suppose $\mathscr{B}$ is another maximal atlas containing $\mathscr{A}$. Then since every chart in $\mathscr{B}$ is smoothly compatible with every chart in $\mathscr{A}$, it follows that $\mathscr{B} \subset \overline{\mathscr{A}}$. Hence by maximality of $\mathscr{B}$, $\mathscr{B} = \overline{\mathscr{A}}$. 
+	}
+\end{itemize}
+\begin{exc}{1.4}
+	Prove Lemma 1.10(b). 
+\end{exc}
+{\color{blue}
+	Let $M$ be a topological $n$-manifold, $\mathscr{A}_{1}, \mathscr{A}_{2}$ be two smooth atlas on $M$, and $\overline{\mathscr{A}}_{1}$, $\overline{\mathscr{A}}_{2}$ the maximal smooth atlases determined by the two smooth atlases, respectively. This means that among all the smooth atlases that contain $\mathscr{A}_{1,2}$, $\overline{\mathscr{A}}_{1,2}$ are maximal, respectively. ($\Rightarrow$) Suppose that $\overline{\mathscr{A}}_{1} = \overline{\mathscr{A}}_{2}$. This means that every chart contained in $\overline{\mathscr{A}}_{2}$ is smoothly compatible with every chart in $\mathscr{A}_{1}$; since $\mathscr{A}_{2} \subset \overline{\mathscr{A}}_{2}$, this implies that every chart of $\mathscr{A}_{2}$ is smoothly compatible with every chart of $\mathscr{A}_{1}$. Likewise, since every chart in $\overline{\mathscr{A}}_{1}$ is smoothy compatible with every chart in $\mathscr{A}_{2}$, and $\mathscr{A}_{1} \subset \overline{\mathscr{A}}_{1}$, it follows that every chart in $\mathscr{A}_{1}$ is smoothly compatible with every chart in $\mathscr{A}_{2}$. Hence, it follows that every pair of charts in $\mathscr{A}_{1} \cup \mathscr{A}_{2}$ is smoothly compatible, showing that the union is a smooth atlas. ($\Leftarrow$) Suppose that $\mathscr{A}_{1} \cup \mathscr{A}_{2}$ is a smooth atlas. This implies that every chart in $\mathscr{A}_{2}$ is smoothly compatible with every chart in $\mathscr{A}_{1}$, and thus, $\mathscr{A}_{2} \subset \overline{\mathscr{A}}_{1}$; by maximality of $\overline{\mathscr{A}}_{2}$, $\overline{\mathscr{A}}_{1} \subseteq \overline{\mathscr{A}}_{2}$. Likewise, we can show that $\mathscr{A}_{1} \subset \overline{\mathscr{A}}_{2}$; by maximality of $\overline{\mathscr{A}}_{2}$, $\overline{\mathscr{A}}_{2} \subseteq \overline{\mathscr{A}}_{1}$. Therefore, $\overline{\mathscr{A}}_{1} = \overline{\mathscr{A}}_{2}$. 
+}
+
+
+\newpage 
+\section{Smooth Maps}
+\subsection{Smooth Functions and Smooth Maps}
+\begin{itemize}
+	\item \textbf{Def. (Smooth Function)} Let $M$ be a smooth $n$-manifold. A function $f: M \to \mathbb{R}^{k}$ is \textit{smooth} if for every $p \in M$, there exists a smooth chart $(U, \varphi)$ for $M$ whose domain contains $p$ and such that the composite function $f \circ \varphi^{-1}$ is smooth on the open subset $\widetilde{U} = \varphi(U) \subset \mathbb{R}^{n}$. 
+\end{itemize}
+\begin{exc}{2.3}
+	Suppose $M$ is a smooth manifold and $f: M \to \mathbb{R}^{k}$ is a smooth function. Show that $f \circ \varphi^{-1}: \varphi(U) \to \mathbb{R}^{k}$ is smooth for \textit{every} smooth chart $(U, \varphi)$ for $M$.  
+\end{exc}
+{\color{blue}
+	Suppose $M$ is a smooth manifold and $f: M \to \mathbb{R}^{k}$ is a smooth function. Let $(U, \varphi)$ be a smooth chart for $M$. By definition of a smooth function, for every $p \in U$, there exists a smooth chart $(V_{p}, \psi_{p})$ for $M$ containing $p$ in its domain such that $f \circ \psi_{p}^{-1}: \psi_{p}(V_{p}) \to \mathbb{R}^{k}$ is smooth. Since 
+	\begin{equation}
+		U = \bigcup_{p \in U} (U \cap V_{p}) \implies \varphi(U) = \varphi\left(\bigcup_{p \in U}(U \cap V_{p})\right) = \bigcup_{p \in U}\varphi(U \cap V_{p}), 
+	\end{equation}
+	it suffices to show that $f \circ \varphi^{-1}$ is smooth on $\varphi(U \cap V_{p})$ for each $p$. Indeed, since $(V_{p}, \psi_{p})$ and $(U, \varphi)$ are smoothly compatible for all $p$, $\psi_{p} \circ \varphi^{-1}: \varphi(U \cap V_{p}) \to \psi_{p}(U \cap V_{p})$ is smooth. Since $f \circ \psi_{p}^{-1}$ is smooth on $\psi_{p}(V_{p})$, it must be smooth on the subset $\psi_{p}(U \cap V_{p})$. Therefore, 
+	\begin{equation}
+		f \circ \varphi^{-1} = (f \circ \psi^{-1}) \circ (\psi \circ \varphi^{-1}): \varphi(U \cap V_{p}) \to \mathbb{R}^{k}
+	\end{equation}
+	is smooth for all $p$. Thus, we conclude that $f \circ \varphi^{-1}: \varphi(U) \to \mathbb{R}^{k}$ is smooth. 
+}
+\begin{itemize}
+	\item \textbf{Def. (Coordinate Representation)} Given a function $f: M \to \mathbb{R}^{k}$ and a chart $(U, \varphi)$ for $M$, the function $\hat{f}: \varphi(U) \to \mathbb{R}^{k}$ defined by $\hat{f}(x)= f \circ \varphi^{-1}(x)$ is called the \textit{coordinate representation} of $f$. By definition, $f$ is smooth iff its coordinate representation is \textit{smooth} in some smooth chart of $M$; but by the preceding exercise, the coordinate representation of $f$ is smooth in \textit{every} smooth chart of $M$. 
+	\item \textbf{Def. (Smooth Map between Manifolds)} Let $M, N$ be smooth manifolds, and let $F: M \to N$ be any map. $F$ is a \textit{smooth map} if for every $p \in M$, there exist smooth charts $(U, \varphi)$ containing $p$ and $(V, \psi)$ containing $F(p)$ such that $F(U) \subset V$ and the composite map $\psi \circ F \circ \varphi^{-1}$ is smooth from $\varphi(U)$ to $\psi(V)$. 
+\end{itemize}
+\begin{exc}{2.4}
+	Let $M$ and $N$ be smooth manifolds, and let $F: M \to N$ be a map. If every point $p \in M$ has a neighborhood $U$ such that the restriction $F|_{U}$ is smooth, show that $F$ is smooth. Conversely, if $F$ is smooth, show that its restriction to any open subset is smooth. 
+\end{exc}
+{\color{blue}
+	Let $M$ and $N$ be smooth manifolds, and let $F: M \to N$ be a map. 
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $p \in M$, and let $W$ be a neighborhood of $p$ such that $F|_{W}$ is smooth. This means that there exist smooth charts $(U, \varphi)$, where $p \in U \subset W$, and $(V, \psi)$ containing $F(p)$ such that $F(U) \subset V$ and the composite function $\psi \circ (F|_{W}) \circ \varphi^{-1}: \varphi(U) \to \psi(V)$ is smooth. Since $U \subset W$, it follows that $(F|_{W})|_{U} = F|_{U}$. This means that $\psi \circ F|_{U} \circ \varphi^{-1}: \varphi(U) \to \psi(V)$ is smooth. Hence, since $p$ was arbitrary, we conclude that $F$ is smooth. 
+		\item Now assume that $F$ is smooth, and let $W$ be an arbitrary open subset of $M$. By definition of smoothness, for each $p \in W$, there exist smooth charts $(U, \varphi)$ for $M$ containing $p$ and $(V, \psi)$ for $N$ containing $F(p)$ such that $F(U) \subset V$ and the composite function $\psi \circ F \circ \varphi^{-1}: \varphi(U) \to \psi(V)$ is smooth. Since $\varphi(U \cap W)$ is an open subset of $\varphi(U)$, it follows that $\psi \circ F \circ \varphi^{-1}$ is smooth on $\varphi(U \cap W)$; that is, $F|_{(U \cap W)}$ is smooth. Hence, we have shown that for every $p \in W$, there exists a neighborhood of $p$ such that the restriction of $F$ to this neighborhood is smooth. Therefore, we conclude that $F|_{W}$ is smooth. 
+	\end{enumerate}
+}
+\begin{itemize}
+	\item \textbf{Lem 2.1. (Constructing Smooth Maps)} Let $M$ and $N$ be smooth manifolds, and let $\{U_{\alpha}\}_{\alpha \in A}$ be an open cover of $M$. Suppose that for each $a \in A$, we are given a smooth map $F_{\alpha}: U_{\alpha} \to N$ such that the maps agree on overlaps $F_{\alpha}|_{U_{\alpha} \cap U_{\beta}} = F_{\beta}|_{U_{\alpha} \cap U_{\beta}}$ for all $\alpha$ and $\beta$. Then there exists a unique smooth map $F: M \to N$ such that $F|_{U_{\alpha}} = F_{\alpha}$ for each $\alpha \in A$. 
+\end{itemize}
+
+\begin{itemize}
+	\item \textbf{Lem. 2.2 (Smoothness Implies Continuity)} Every smooth map between smooth manifolds is continuous.
+	
+	{\color{orange}
+		Suppose $F: M \to N$ is smooth. By definition of smoothness, for each $p \in M$, we can choose smooth charts $(U, \varphi)$ containing $p$ and $(V, \psi)$ containing $F(p)$ such that $F(U) \subset V$ and $\psi \circ F \circ \varphi^{-1}: \varphi(U) \to \varphi(V)$ is a smooth map, and hence continuous. Since $\varphi: U \to \varphi(U)$ and $\psi: V \to \psi(V)$ are homeomorphisms, this implies in turn that 
+		\begin{equation}
+			F|_{U} = \psi^{-1} \circ (\psi \circ F \circ \varphi^{-1}) \circ \varphi: U \to V,
+		\end{equation}
+		which is a composition of continuous maps, is continuous. Hence, since $F$ is continuous in a neighborhood of each point, it is continuous on $M$. 
+	}
+	\item \textbf{Def. (Coordinate Representation)} Let $F: M \to N$ be a smooth map, and $(U, \varphi)$, $(V, \psi)$ be any smooth charts for $M$ and $N$, respectively. Then we call $\widehat{F} = \psi \circ F \circ \varphi^{-1}$ the coordinate representation of $F$ with respect to the given coordinates.
+\end{itemize}
+\begin{exc}{2.6}
+	Suppose $F: M \to N$ is a smooth map between smooth manifolds. Show that the coordinate representation of $F$ with respect to any pair of smooth charts for $M$ and $N$ is smooth. 
+\end{exc}
+{\color{blue}
+	Let $F: M \to N$ be a smooth map between smooth manifolds, and let $(U, \varphi), (V, \psi)$ be any pair of smooth charts for $M$ and $N$. Without loss of generality, assume that $F(U) \subset V$. Our task is to show that $\psi \circ F \circ \varphi^{-1}$ is smooth. Let $p \in U$. Since $F$ is smooth, there exist smooth charts $(W, \theta)$ and $(R, \vartheta)$ containing $p$ and $F(p)$, respectively, such that $F(W) \subset V \cap R$ and the composite function $\vartheta \circ F \circ \theta^{-1}: \theta(W) \to \vartheta(R)$ is smooth. Since $U \cap W$ is nonempty and the corresponding charts are smoothly compatible, the transition map $\theta \circ \varphi^{-1}: \varphi(U \cap W) \to \theta(U \cap W)$ is smooth. Likewise, the transition map $\psi \circ \vartheta^{-1}$ is smooth. Hence, the composite function: 
+	\begin{equation}
+		\psi \circ F \circ \varphi^{-1} = (\psi \circ \vartheta^{-1}) \circ (\vartheta \circ F \circ \theta^{-1}) \circ (\theta \circ \varphi^{-1})
+	\end{equation}
+	is smooth on $\varphi(U \cap W)$. By locality of smoothness, since for each $p \in U$, there exists a neighborhood on which $\psi \circ F \circ \varphi^{-1}$ is smooth, we conclude that the coordinate representation of $F$ with respect to the given coordinates is smooth. 
+}
+\subsection{Smooth Covering Maps}
+\begin{itemize}
+	\item \textbf{Def. (Covering Map)} A surjective continuous map $\pi: \widetilde{M} \to M$ between connected, locally path connected spaces with the property that for every $p \in M$, there exists a neighborhood $U$ that is \textit{evenly covered} (i.e., $U$ is connected, and each component of $\pi^{-1}(U)$ is mapped hormeomorphically onto $U$ by $\pi$). 
+	\item \textbf{Def. (Smooth Covering Map)} Let $\widetilde{M}$ and $M$ be connected smooth manifolds. A smooth covering map $\pi: \widetilde{M} \to M$ is a smooth surjective map with the property that every $p \in M$ has a connected neighborhood $U$ such that each component of $\pi^{-1}(U)$ is mapped \textit{diffeomorphically} onto $U$ by $\pi$. In this instance also, we say that $U$ is evenly covered. 
+	\item \textbf{Prop 2.9. (Properties of Smooth Coverings)} \vspace{-0.2cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Any smooth covering map is a local diffeomorphism and an open map. 
+		\item An injective smooth covering map is a diffeomorphism. 
+		\item A topological covering map is a smooth covering map if and only if it is a local diffeomorphism. 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{2.12}
+	If $\pi_{1}: \widetilde{M}_{1} \to M_{1}$ and $\pi_{2}: \widetilde{M}_{2} \to M_{2}$ are smooth covering maps, show that $\pi_{1} \times \pi_{2}: \widetilde{M}_{1} \times \widetilde{M}_{2} \to M_{1} \times M_{2}$ is a smooth covering map. 
+\end{exc}
+{\color{blue}
+	Since $\widetilde{M}_{1,2}$ and $M_{1,2}$ are all connected smooth manifolds, $\widetilde{M}_{1} \times \widetilde{M}_{2}$ and $M_{1} \times M_{2}$ are all connected smooth manifolds. Now let $(p, q) \in M_{1} \times M_{2}$. Since $\pi_{1}$ is surjective, there exists $\tilde{p} \in \widetilde{M}_{1}$ such that $\pi_{1}(\tilde{p}) = p$; likewise, there exists $\tilde{q} \in \widetilde{M}_{2}$ such that $\pi_{2}(\tilde{q}) = q$. Hence, $\pi_{1} \times \pi_{2}: (\tilde{p}, \tilde{q}) \mapsto (p, q)$, which shows that $\pi_{1} \times \pi_{2}$ is surjective. Likewise, since $\pi_{1}, \pi_{2}$ are smooth, $\pi_{1} \times \pi_{2}$ is smooth. Now we need to verify the evenly covered property for $\pi_{1} \times \pi_{2}$. 
+	
+	Let $(p, q) \in M_{1} \times M_{2}$. By the definition of smooth covering maps, there exist connected neighborhoods $p \in U \subset M_{1}$ and $q \in V \subset M_{2}$ such that each component of $\pi_{1}^{-1}(U)$ and $\pi^{-1}_{2}(V)$ is mapped diffeomorphically onto $U$ and $V$ by $\pi_{1}$ and $\pi_{2}$, respectively. Since the product of connected open sets is connected, $U \times V$ is a connected neighborhood of $(p, q)$. Then since $(\pi_{1} \times \pi_{2})^{-1}(U \times V) = \pi_{1}^{-1}(U) \times \pi_{2}^{-1}(V)$, the components of $(\pi_{1} \times \pi_{2})^{-1}(U \times V)$ are just the products of the components of $\pi_{1}^{-1}(U)$ with the components of $\pi_{2}^{-1}(V)$. Hence, since $\pi_{1}$ ($\pi_{2}$) maps each component of $\pi_{1}^{-1}(U)$ ($\pi_{2}^{-1}(V)$) diffeomorphically onto $U$ ($V$), it follows that $\pi_{1} \times \pi_{2}$ maps each component of $\pi_{1}^{-1}(U) \times \pi_{2}^{-1}(V)$ diffeomorphically onto $U \times V$. Therefore, $\pi_{1} \times \pi_{2}$ is a smooth covering map. 
+}
+\begin{itemize}
+	\item \textbf{Def. (Section of a Continuous Map)} If $\pi: \widetilde{M} \to M$ is any continuous map, a \textit{section} of $\pi$ is a continuous map $\sigma: M \to \widetilde{M}$ such that $\pi \circ \sigma = \operatorname{Id}_{M}$: 
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzcd}[sep = huge]
+			\widetilde{M} \arrow[d, "\pi"] \\ M \arrow[u, bend right = 50, "\sigma"]
+		\end{tikzcd}
+		\caption{Section of $\pi$.}
+		\label{fig:placeholder}
+	\end{figure}
+	\item \textbf{Def. (Local Section of a Continuous Map)} A continuous map $\sigma: U \subset M \to \widetilde{M}$ such that $\pi \circ \sigma = \operatorname{Id}_{U}$. 
+\end{itemize}
+\subsection{Proper Maps}
+\begin{itemize}
+	\item \textbf{Def. (Proper Maps)} Let $M, N$ be topological spaces. $F: M \to N$ is \textit{proper} if for every compact set $K \subset N$, $F^{-1}(K)$ is compact. 
+	\item \textbf{Lem. 2.14 (Sufficient Condition for Proper Map I)} Suppose $M$ is a compact space and $N$ is Hausdorff space. Then every continuous map $F: M \to N$ is proper. 
+	
+	{\color{orange}
+		Let $K \subset N$ be compact; since $N$ is Hausdorff, $K$ is closed. Then by continuity of $F$, $F^{-1}(K)$ is closed in $M$. Since $M$ is compact, $F^{-1}(K)$ must be compact in $K$. 
+	}
+	
+	\item \textbf{Def. (Saturated Subset)} A subset $A \subset M$ is said to be saturated with respect to a map $F: M \to N$ if $A = F^{-1}(F(A))$. 
+	\item \textbf{Lem. 2.15. (Sufficient Condition for Proper Map II)} Suppose $F: M \to N$ is a proper map between topological spaces, and $A \subset M$ is any subset that is saturated with respect to $F$. hen $F|_{A}: A \to F(A)$ is proper. 
+	
+	{\color{orange}
+		Let $K \subset F(A)$ be compact. Since $A$ is saturated, $(F|_{A})^{-1}(K) = F^{-1}(K)$, which is compact since $F$ is proper. 
+	}
+\end{itemize}
+
+
+
+\newpage
+\section{Tangent Vectors}
+\begin{itemize}
+	\item \textbf{Def. (Derivation at a Point)} Let $a \in \mathbb{R}^{n}$. A linear map $X: C^{\infty}(\mathbb{R}^{n}) \to \mathbb{R}$ is called a \textit{derivation at $a$} iff it satisfies the following product rule: 
+	\begin{equation}
+		X(fg) = f(a)Xg + g(a)Xf. 
+	\end{equation}
+	\item \textbf{Lem 3.1. (Properties of Derivations)} Suppose $a \in \mathbb{R}^{n}$ and $X \in T_{a}(\mathbb{R}^{n})$. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item If $f$ is a constant function, then $Xf = 0$. 
+		\item If $f(a) = g(a) = 0$, then $X(fg) = 0$. 
+	\end{enumerate}
+	{\color{orange}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item It suffices to show that if $f \equiv 1$, then $Xf = 0$. Indeed, 
+			\begin{equation}
+				Xf = X(ff) = f(a)Xf + f(a)Xf = 2f(a)Xf = 2Xf, 
+			\end{equation}
+			whence $Xf = 0$. 
+			\item From the product rule, $X(fg) = f(a)Xg + g(a)Xf = 0 + 0 = 0$. 
+		\end{enumerate}
+	}
+\end{itemize}
+\subsection{Tangent Vectors on a Manifold}
+\begin{itemize}
+	\item \textbf{Def. (Derivations on Manifolds)} Let $M$ be a smooth manifold and $p \in M$. A linear map $X: C^{\infty}(M) \to \mathbb{R}$ is called a \textit{derivation at $p$} if it satisfies 
+	\begin{equation}
+		X(fg) = f(p)Xg + g(p)Xf
+	\end{equation}
+	for all $f, g \in C^{\infty}(M)$. The set of all derivations at $p$ is called the \textit{tangent space} to $M$ at $p$, and is denoted by $T_{p}M$. 
+	\item \textbf{Lem 3.4. (Properties of Tangent Vectors on Manifolds)} Let $M$ be a smooth manifold, and suppose $p \in M$ and $X \in T_{p}M$. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item If $f$ is a constant function, then $Xf = 0$. 
+		\item If $f(p) = g(p) = 0$, then $X(fg) = 0$. 
+	\end{enumerate}
+\end{itemize}
+\subsection{Pushforwards}
+\begin{itemize}
+	\item \textbf{Def. (Pushforward associated with a Map)} Let $M, N$ be smooth manifolds and $F: M \to N$ a smooth map. For each $p \in M$, we define a map $F_{\ast}: T_{p}M \to T_{F(p)}(N)$, called the pushforward associated with $F$ as follows: 
+	\begin{equation}
+		(F_{\ast}X)(f) = X(f \circ F). 
+	\end{equation}
+	It is straightforward to see that the pushforward is linear. It is also a derivation at $p$: 
+	\begin{align}
+		\begin{split}
+			(F_{\ast}X)(fg) &= X(fg \circ F) = X((f \circ F)(g \circ F)) \\
+			&= (f \circ F)(p)X(g \circ F) + (g \circ f)(p)X(f \circ F) \\
+			&= (f \circ F)(p)(F_{\ast}X)(g) + (g \circ F)(p)(F_{\ast}X)(f).
+		\end{split}
+	\end{align}
+	\item \textbf{Lem 3.5. (Properties of Pushforwards)} Let $F: M \to N$ and $G: N \to P$ be smooth maps, and let $p \in M$. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item $F_{\ast}: T_{p}M \to T_{F(p)}N$ is linear. 
+		\item $(G \circ F)_{\ast} = G_{\ast} \circ F_{\ast}: T_{p}M \to T_{(G \circ F)(p)}P$. 
+		\item $(\operatorname{Id}_{M})_{\ast} = \operatorname{Id}_{T_{p}M}: T_{p}M \to T_{p}M$. 
+		\item If $F$ is a diffeomorphism, then $F_{\ast}: T_{p}M \to T_{F(p)}N$ is an isomorphism. 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{3.2}
+	Prove Lemma 3.5.
+\end{exc}
+{\color{blue}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f \in C^{\infty}(N)$, $X, Y \in T_{p}(M)$, $c_{1,2} \in \mathbb{R}^{n}$. Then 
+		\begin{align}
+			\begin{split}
+				(F_{\ast}(c_{1}X + c_{2}Y))(f) &= (c_{1}X + c_{2}Y)(f \circ F) \\
+				&= c_{1}X(f \circ F) + c_{2}Y(f \circ F) = c_{1}F_{\ast}(X)(f) + c_{2}F_{\ast}(Y)(f). 
+			\end{split}
+		\end{align}
+		\item Let $f \in C^{\infty}(N)$, and $X \in T_{p}(M)$. Then 
+		\begin{align}
+			\begin{split}
+				((G \circ F)_{\ast}X)(f) &= X(f \circ (G \circ F)) = X((f \circ G) \circ F) \\
+				&= (F_{\ast}X)(f \circ G) \\
+				&= (G_{\ast}(F_{\ast}X))(f) = ((G_{\ast} \circ F_{\ast})X)(f). 
+			\end{split}
+		\end{align}
+		\item Let $f \in C^{\infty}(N)$, and $X \in T_{p}M$. Then 
+		\begin{align}
+			\begin{split}
+				({\operatorname{Id}_{M}}_{\ast}X)(f) &= X(f \circ \operatorname{Id}_{M}) = X(f). 
+			\end{split}
+		\end{align}
+	\end{enumerate}
+}
+\begin{itemize}
+	\item \textbf{Prop. 3.6. (Tangent Space is Local)} Suppose $M$ is a smooth manifold, $p \in M$, and $X \in T_{p}M$. If $f$ and $g$ are smooth functions in $M$ that agree on some neighborhood of $p$, then $Xf = Xg$. 
+	
+	{\color{orange}
+		Let $h = f - g$. It suffices to show that $Xh = 0$ by linearity of $X$ whenever $H$ vanishes is a neighborhood of $p$. Let $\psi \in C^{\infty}(M)$ be a smooth function that is identically 1 on the support of $h$ and supported in $M\setminus \{p\}$. Because $\psi \equiv 1$ where $h$ is nonzero, the product $\psi h$ is identically equal to $h$. Since $h(p) = \psi(p) =0$, Lemma 3.4(b) implies that $Xh = X(\psi h) = 0$. 
+	}
+\end{itemize}
+\subsection{Computation in Coordinates}
+\begin{itemize}
+	\item \textbf{Def. (Basis for $T_{p}M$ in Coordinates)} Let $(U, \varphi)$ be a smooth coordinate chart on $M$; in particular, $\varphi: U \to \widetilde{U} \subset \mathbb{R}^{n}$ is a diffeomorphism. This implies that $\varphi_{\ast}: T_{p}M \to T_{\varphi(p)}\mathbb{R}^{n}$ is an isomorphism. We've seen that $T_{\varphi(p)}\mathbb{R}^{n}$ has as a basis consisting of all the derivations $\partial_{x^{i}}|_{\varphi(p)}$, $i = 1, \ldots, n$. Therefore, the pushforward of these vectors under $(\varphi^{-1})_{\ast}$ form a basis for $T_{p}M$. We use the following notation: 
+	\begin{equation}
+		\frac{\partial}{\partial x^{i}}\bigg|_{p} = (\varphi^{-1})_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)}. 
+	\end{equation}
+	Indeed, if $f: U \to \mathbb{R}$ is smooth, then 
+	\begin{equation}
+		\frac{\partial}{\partial x^{i}}\bigg|_{p}f = \frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)}(f \circ \varphi^{-1}) = \frac{\partial \hat{f}}{\partial x^{i}}(\hat{p}), 
+	\end{equation}
+	where $\hat{f}$ is the coordinate representation of $f$, and $\hat{p} = (p^{1}, \ldots, p^{n}) = \varphi(p)$ is the coordinate representation of $p$. 
+	
+	\item \textbf{Def. (Pushforward in Coordinates I)} Consider a smooth map $F: U \to V$, where $U\subset \mathbb{R}^{n}$ and $V \subset \mathbb{R}^{m}$ are open subsets of Euclidean spaces. Let $p \in U$. We will use $(x^{1}, \ldots, x^{n})$ to denote the coordinates in the domain and $(y^{1}, \ldots, y^{m})$ to denote the coordinates in the range. Then using the chain rule, 
+	\begin{align}
+		\begin{split}
+			\left(F_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{p}\right)f &= \frac{\partial}{\partial x^{i}}\bigg|_{p}(f \circ F) \\
+			&= \frac{\partial f}{\partial y^{j}}(F(p))\frac{\partial F^{j}}{\partial x^{i}}(p) \\
+			&= \left(\frac{\partial F^{j}}{\partial x^{i}}\frac{\partial}{\partial y^{j}}\bigg|_{F(p)}\right)f. 
+		\end{split}
+	\end{align}
+	Since $f$ was arbitrary, we conclude that 
+	\begin{equation}
+		F_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{p} = \frac{\partial F^{j}}{\partial x^{i}}(p)\frac{\partial}{\partial y^{j}}\bigg|_{F(p)}. 
+	\end{equation}
+	In other words, the matrix of $F_{\ast}$ in terms of the standard coordinate basis is given by 
+	\begin{equation}
+		\begin{pmatrix}
+			\displaystyle \frac{\partial F^{1}}{\partial x^{1}}(p) & \dotsm & \displaystyle \frac{\partial F^{1}}{\partial x^{n}}(p) \\
+			\vdots & \ddots & \vdots \\
+			\displaystyle\frac{\partial F^{m}}{\partial x^{1}}(p) & \dotsm & \displaystyle \frac{\partial F^{m}}{\partial x^{n}}(p)
+		\end{pmatrix}.
+	\end{equation}
+	This is precisely the Jacobian matrix of $F$. 
+	\item \textbf{Def. (Pushforward in Coordinates II)} Let $F: M \to N$ be an arbitrary smooth map. Choosing smooth coordinate charts $(U, \varphi)$ for $M$ near $p$ and $(V, \psi)$ for $N$ near $F(p)$, we obtain the coordinate representation $\widehat{F} = \psi \circ F \circ \varphi^{-1}: \varphi(U \cap F^{-1}(V)) \to \psi(V)$. Now we apply the chain rule: 
+	\begin{align}
+		\begin{split}
+			F_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{p} &= F_{\ast}\left((\varphi^{-1})_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)}\right) = (F \circ \varphi^{-1})_{\ast}\left(\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)}\right) \\
+			&= (\psi^{-1})_{\ast}\left(\widehat{F}_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)}\right) = (\psi^{-1})_{\ast}\left(\frac{\partial \widehat{F}^{j}}{\partial x^{i}}(\hat{p})\frac{\partial}{\partial y^{j}}\bigg|_{\widehat{F}(\varphi(p))}\right) = \frac{\partial \widehat{F}^{j}}{\partial x^{i}}(\widehat{p})\frac{\partial}{\partial y^{j}}\bigg|_{F(p)}. 
+		\end{split}
+	\end{align}
+	In other words, the pushforward of $F$ is precisely the Jacobian matrix of its coordinate representation. 
+	
+	\item \textbf{Obs. (Transformation of Vectors)} Suppose $(U, \varphi)$ and $(V, \psi)$ are two smooth charts on $M$, and let $p \in U \cap V$. We have two bases for the tangent space at $p$, namely $\{\partial/\partial x^{i}|_{p}\}$, where the coordinate functions of $\varphi$ are $(x^{i})$, and $\{\partial/\partial \tilde{x}^{i}|_{p}\}$, where the coordinate functions of $\psi$ are $(\tilde{x}^{i})$. By \textbf{Def. (Pushforward in Coordinates I)}, we have 
+	\begin{equation}
+		(\psi \circ \varphi^{-1})_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)} = \frac{\partial\tilde{x}^{j}(x)}{\partial x^{i}}(\varphi(p))\frac{\partial}{\partial \tilde{x}^{j}}\bigg|_{\psi(p)}. 
+	\end{equation}
+	Therefore, 
+	\begin{align}
+		\begin{split}
+			\frac{\partial}{\partial x^{i}}\bigg|_{p} &= (\varphi^{-1})_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)} = (\psi^{-1} \circ \psi \circ \varphi^{-1})_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)} \\
+			&= (\psi^{-1})_{\ast}\left((\psi \circ \varphi^{-1})_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{\varphi(p)}\right) \\
+			&= (\psi^{-1})_{\ast}\left(\frac{\partial \widetilde{x}^{j}}{\partial x^{i}}(\varphi(p))\frac{\partial}{\partial \widetilde{x}^{j}}\bigg|_{\psi(p)}\right) = \frac{\partial \widetilde{x}^{j}}{\partial x^{i}}(\varphi(p))\frac{\partial}{\partial \tilde{x}^{j}}\bigg|_{p}. 
+		\end{split}`
+	\end{align}
+	In particular, for any $X \in T_{p}M$, if 
+	\begin{equation}
+		X = X^{i}\frac{\partial}{\partial x^{i}}\bigg|_{p} = \widetilde{X}^{i}\frac{\partial}{\partial \widetilde{x}^{i}}\bigg|_{p}, 
+	\end{equation}
+	then by the above result, 
+	\begin{equation}
+		\widetilde{X}^{i} = X^{i}\frac{\partial \widetilde{x}^{j}}{\partial x^{i}}(\varphi(p)) = X^{i}\frac{\partial \widetilde{x}^{j}}{\partial x^{i}}(\widehat{p}), 
+	\end{equation}
+	where $\widehat{p} = \varphi(p)$ is the representation of $p$ in $x^{i}$-coordinates. 
+\end{itemize}
+
+
+\newpage 
+\section{Vector Fields}
+\begin{itemize}
+	\item \textbf{Def. (Tangent Bundle)} Let $M$ be a smooth manifold. Then the \textit{tangent bundle} of $M$ is the disjoint union of the tangent spaces at all points of $M$: 
+	\begin{equation}
+		TM \coloneqq \coprod_{p \in M}T_{p}M. 
+	\end{equation}
+	A typical element of the tangent bundle is of the form $(p, X)$, where $p \in M$ and $X \in T_{p}M$. 
+	\item \textbf{Lem. 4.1: (Tangent Bundle is a Manifold)} For any smooth $n$-manifold $M$, the tangent bundle $TM$ has a natural topology and smooth structure that make it into a $2n$-dimensional smooth manifold. With this structure, the canonical projection map $\pi: TM \to M$, defined as the map $\pi: (p, X) \mapsto p$, is a smooth map. 
+	
+	{\color{orange}
+		We start by defining the smooth charts that will give $TM$ its smooth structure. For some given smooth chart $(U, \varphi)$ for $M$, let $(x^{1}, \ldots, x^{n})$ denote the coordinate functions of $\varphi$, and define the map $\widetilde{\varphi}: \pi^{-1}(U) \to \mathbb{R}^{2n}$ by 
+		\begin{equation}
+			\widetilde{\varphi}\left(v^{i}\frac{\partial}{\partial x^{i}}\bigg|_{p}\right) = \left(x^{1}(p), \ldots, x^{n}(p), v^{1}, \ldots, v^{n}\right). 
+		\end{equation}
+		More precisely, the image set of $\widetilde{\varphi}$ is the set $\varphi(U) \times \mathbb{R}^{n}$, which is an open subset of $\mathbb{R}^{2n}$. \textcolor{green}{[!! Complete Later !!]}
+	}
+\end{itemize}
+
+\begin{exc}{4.2}
+	Suppose $F: M \to N$ is a smooth map. By examining the local expression (3.6) for $F_{\ast}$ in coordinates, show that $F_{\ast}: TM \to TN$ is a smooth map. 
+\end{exc}
+{\color{blue}
+	Let $F: M \to N$ be a smooth map, and consider its pushforward $F_{\ast}: TM \to TN$. Our goal is to show that $F_{\ast}$ is a smooth map. Let $p \in M$; by smoothness there exist smooth charts $(U, \varphi)$ containing $p$ in its domain, and $(V, \psi)$ containing $F(p)$ in its domain such that $F(U) \subset V$ and the composite function $\psi \circ F\circ \varphi^{-1}$ is smooth. Let $(x^{i})$ denote the coordinate functions of $\varphi$ and $(y^{j})$ denote the coordinate functions of $\psi$. Let $(\pi^{-1}(U), \widetilde{\varphi})$ and $(\pi^{-1}(V), \widetilde{\psi})$ be the corresponding smooth charts for $TM$ and $TN$, respectively, where $\pi$ is the canonical projection map from the tangent bundle of a manifold onto the manifold. These charts are equipped with the standard coordinates $(x^{i}, v^{i})$ and $(y^{j}, w^{j})$, respectively. Then in coordinates, the local expression for $F_{\ast}$ is given by, 
+	\begin{equation}
+		F_{\ast}\frac{\partial}{\partial x^{i}}\bigg|_{p} = \frac{\partial F^{j}}{\partial x^{i}}(p)\frac{\partial}{\partial y^{j}}\bigg|_{F(p)}.   
+	\end{equation}
+	This implies that 
+	\begin{equation}
+		F_{\ast}: (p, v) \longmapsto \left(F^{j}(p), v^{i}\frac{\partial F^{j}}{\partial x^{i}}(p)\right). 
+	\end{equation}
+	Since $F$ is smooth, each coordinate function $F^{j}$ must be smooth. Likewise, each $\partial F^{j}/\partial x^{i}(p)$. Since the map $(x^{i}, v^{i}) \mapsto v^{i}\frac{\partial F^{j}}{\partial x^{i}}(x)$ is the finite sum of smooth functions, it must be smooth as well. Hence, we conclude that $F_{\ast}$ is smooth.  
+}
+\begin{itemize}
+	\item \textbf{Def. (Vector Field)} A section of the map $\pi: TM \to M$; i.e., a vector field is a continuous map $Y: M \to TM$, usually written $p \mapsto Y_{p}$, with the property that 
+	\begin{equation}
+		\pi \circ Y = \operatorname{Id}_{M}. 
+	\end{equation}
+	\item \textbf{Def. (Smooth Vector Field)} A smooth vector field. 
+	\item \textbf{Lem. 4.2 (Smoothness Criterion for Vector Fields)} Let $M$ be a smooth manifold, and let $Y: M \to TM$ be a rough vector field. If $(U, (x^{i}))$ is \textit{any} smooth coordinate chart on $M$, then $Y$ is smooth on $U$ if and only if its component functions with respect to this chart are smooth. 
+	
+	{\color{orange}
+		Let $(x^{i}, v^{i})$ be the standard coordinates on $\pi^{-1}(U) \subset TM$ associated with the chart $(U, (x^{i}))$. By definition of the standard coordinate representation of $Y$, 
+		\begin{equation}
+			\wh{Y}(x) = \left(x^{1}, \ldots, x^{n}, Y^{1}(x), \ldots, Y^{n}(x)\right), 
+		\end{equation}
+		where $Y^{i}$ is the $i$th component function of $Y$ in $x^{i}$-coordinates. Hence, smoothness of $Y$ is equivalent to smoothness of the component functions. 
+	}
+	\item \textbf{Lem 4.5. (Extending a Tangent Vector)} Let $M$ be a smooth manifold. If $p \in M$ and $X \in T_{p}M$, there is a smooth vector field $\ti{X}$ on $M$ such that $\ti{X}_{p} = X$.  
+	
+	{\color{orange}
+		Let $(x^{i})$ be smooth coordinates on a neighborhood $U$ of $p$, and let $X^{i}\partial/\partial x^{i}|_{p}$ be the coordinate expression for $X$. Let $\psi$ be a smooth bump function supported in $U$ and with $\psi(p) = 1$. Then the vector field $\ti{X}$ defined by 
+		\begin{equation}
+			\ti{X}_{q} = 
+			\begin{cases}
+				\psi(q)X^{i}\frac{\partial}{\partial x^{i}}\bigg|_{q}, & q \in U, \\
+				0, & q \notin \operatorname{supp}{\psi}
+			\end{cases}
+		\end{equation}  
+		is a smooth vector field whose value at $p$ is equal to $X$. 
+	}
+	\item \textbf{Def. (Set of all Smooth Vector Fields)} Let $\mathscr{T}(M)$ denote the set of all smooth vector fields on $M$; $\mathscr{T}(M)$ is a vector space under pointwise addition and scalar multiplication: 
+	\begin{equation}
+		(aY + bZ)_{p} = aY_{p} + bZ_{p}. 
+	\end{equation}
+	If $f \in C^{\infty}(M)$ and $Y \in \mathscr{T}(M)$, we define $fY: M \to TM$ by 
+	\begin{equation}
+		(fY)_{p} = f(p)Y_{p}. 
+	\end{equation}
+\end{itemize}
+\begin{exc}{4.3}
+	If $Y$ and $Z$ are smooth vector fields on $M$ and $f, g \in C^{\infty}(M)$, show that $fY + gZ$ is a smooth vector field. 
+\end{exc}
+{\color{blue}
+	Let $(U, (x^{i}))$ be a smooth coordinate chart on $M$. Then in these coordinates, 
+	\begin{equation}
+		Y = Y^{i}\frac{\partial}{\partial x^{i}}, \qquad Z = Z^{i}\frac{\partial}{\partial x^{i}}. 
+	\end{equation}
+	Then 
+	\begin{equation}
+		fY + gZ = (fY^{i} + gZ^{i})\frac{\partial}{\partial x^{i}}. 
+	\end{equation}
+	Since $f, g, Y^{i}, Z^{i}$ are all smooth, and the product/sum of smooth functions is smooth, $fY^{i} + gZ^{i}$ is smooth for all $i$. Hence, since the component functions of $fY + gZ$ are smooth on any smooth coordinate chart on $M$, it follows that $fY + gZ$ is a smooth vector field on $M$. 
+}
+\begin{itemize}
+	\item \textbf{Def. (Action of Vector Field on Functions)} If $Y \in \mathscr{T}(M)$ and $f$ is a smooth real-valued function defined on an open set $U \subset M$, we obtain a new function $Yf: U \to \mathbb{R}$ defined by 
+	\begin{equation}
+		Yf(p) = Y_{p}f. 
+	\end{equation}
+\end{itemize}
+\newpage 
+\section{Cotangent Bundle}
+\subsection{Covectors}
+\begin{itemize}
+	\item \textbf{Def. (Covector)} Let $V$ be a finite-dimensional vector space. A \textit{covector} on $V$ is a real-valued linear functional on $V$; i.e., a linear map $\omega: V \to \mathbb{R}$. The vector space of all covectors on $V$ is denoted by $V^{\ast}$ and called the \textit{dual} space to $V$. 
+	\item \textbf{Prop. 6.1. (Dual Basis)} Let $V$ be a finite-dimensional vector space. If $(E_{1}, \ldots, E_{n})$ is any basis for $V$, then the covectors $\left(\epsilon^{1}, \ldots, \epsilon^{n}\right)$, defined by 
+	\begin{equation}
+		\epsilon^{i}(E_{j}) = \delta^{i}_{j} = 
+		\begin{cases}
+			1, & \text{ if } i = j, \\
+			0, & \text{ if } i \neq j, 
+		\end{cases}
+	\end{equation}
+	form a basis for $V^{\ast}$, called the dual basis to $(E_{i})$. Therefore, $\dim{V^{\ast}} = \operatorname{dim}{V}$. 
+\end{itemize}
+\begin{exc}{6.1}
+	Prove Proposition 6.1.
+\end{exc}
+{\color{blue}
+	Assume the given hypotheses of Proposition 6.1. We must show that $\left(\epsilon^{i}\right)$ is a linearly independent collection of covectors that spans $V^{\ast}$; we start by showing linear independence. Suppose $a_{1}, \ldots, a_{n} \in \mathbb{R}$ are scalars such that 
+	\begin{equation}
+		a_{1}\epsilon^{1} + \dotsm + a_{n}\epsilon^{n} = 0. 
+	\end{equation}
+	Then allowing the left side to act on the $V$-basis vector $E_{j}$, for some $j \in \{1, \ldots, n\}$, 
+	\begin{equation}
+		0 = (a_{1}\epsilon^{1} + \dotsm + a_{n}\epsilon^{n})(E_{j}) = \sum_{1}^{n}a_{i}\epsilon^{i}(E_{j}) = a_{j}. 
+	\end{equation}
+	Since this is true for all $j \in \{1, \ldots, n\}$, we conclude that each $a_{j} = 0$. Therefore, $\left(\epsilon^{i}\right)$ is linearly independent. Now let $\omega \in V^{\ast}$. For each $i = 1, \ldots, n$, let $\omega(E_{i}) = a_{i} \in \mathbb{R}$. Then we claim that $\omega = a_{i}\epsilon^{i}$ (where, we follow Einstein Summation Convention as usual). Indeed, 
+	\begin{align}
+		\begin{split}
+			\omega(v) &= \omega(v^{i}E_{i}) = a_{i}v^{i}. \\
+			a_{i}\epsilon^{i}(v) &= a_{i}\epsilon^{i}(v^{j}E_{j}) = a_{i}v^{j}\epsilon^{i}(E_{j}) = a_{i}v^{j}\delta^{i}_{j} = a_{i}v^{i}. 
+		\end{split}
+	\end{align}
+	Hence, it follows that $\left(\epsilon^{i}\right)$ spans $V^{\ast}$. Altogether, we have shown that this collection forms a basis for the dual space. 
+}
+\begin{itemize}
+	\item \textbf{Def. (Dual Map)} Suppose $V$ and $W$ are vector spaces, and $A: V \to W$ is a linear map. Define a linear map $A^{\ast}: W^{\ast} \to V^{\ast}$, called the \textit{dual map} of $A$ by, 
+	\begin{equation}
+		(A^{\ast}\omega)(X) = \omega(AX) \quad \text{ for } \omega \in W^{\ast}, X \in V. 
+	\end{equation}
+\end{itemize}
+\begin{exc}{6.2}
+	Show that $A^{\ast}\omega$ is actually a linear functional on $V$, and that $A^{\ast}$ is a linear map. 
+\end{exc}
+{\color{blue}
+	Let $V, W$ be vector spaces, $A: V \to W$ a linear map, and $A^{\ast}: W^{\ast} \to V^{\ast}$ the dual map of $A$. \vspace{-0.2cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $\omega \in W^{\ast}$ be a fixed covector, and let $X, Y \in V$, $a_{1}, a_{2} \in \mathbb{R}$. Then 
+		\begin{align}
+			\begin{split}
+				(A^{\ast}\omega)(a_{1}X + a_{2}Y) &= \omega(A(a_{1}X + a_{2}Y)) \\
+				&= \omega(a_{1}AX + a_{2}AY) \\
+				&= \omega(a_{1}AX) + \omega(a_{2}AY) \\
+				&= a_{1}\omega(AX) + a_{2}\omega(AY) \\
+				&= a_{1}(A^{\ast}\omega)(X) + a_{2}(A^{\ast}\omega)(Y), 
+			\end{split}
+		\end{align}
+		where the second inequality follows from linearity of $A$, and the third and fourth inequalities follow from linearity of $\omega$. Hence, $A^{\ast}\omega$ is a linear functional for each $\omega \in W^{\ast}$. 
+		\item Now let $X \in V$ be fixed, and let $\omega_{1}, \omega_{2} \in V^{\ast}$, $a_{1}, a_{2} \in \mathbb{R}$. Then 
+		\begin{align}
+			\begin{split}
+				(A^{\ast}(a_{1}\omega_{1} + a_{2}\omega_{2}))(X) &= (a_{1}\omega_{1} + a_{2}\omega_{2})(AX) \\
+				&= a_{1}\omega_{1}(AX) + a_{2}\omega_{2}(AX) \\
+				&= (a_{1}(A^{\ast}\omega_{1}) + a_{2}(A^{\ast}\omega_{2}))(X). 
+			\end{split}
+		\end{align}
+		Since $X$ was arbitrary, it follows that $A^{\ast}$ is a linear map. 
+	\end{enumerate}
+}
+\begin{itemize}
+	\item \textbf{Prop. 6.2. (Properties of Dual Maps)} The dual map satisfies the following properties:\vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item $(A \circ B)^{\ast} = B^{\ast}\circ A^{\ast}$. 
+		\item $(\operatorname{Id}_{V})^{\ast}: V^{\ast} \to V^{\ast}$ is the identity map of $V^{\ast}$. 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{6.3}
+	Prove the preceding proposition. 
+\end{exc}
+{\color{blue}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $B: V \to W$ and $A: W \to Y$ be linear maps, and $A^{\ast}, B^{\ast}$ their corresponding dual maps. Let $\omega \in Y^{\ast}$ and $X \in V$. Then 
+		\begin{align}
+			\begin{split}
+				\left((B^{\ast} \circ A^{\ast})\omega\right)(X) &= B^{\ast}(A^{\ast}\omega)X) \\
+				&= A^{\ast}\omega(BX) = \omega(ABX) = \omega((A \circ B)X) \\
+				&= ((A \circ B)^{\ast}\omega)(X). 
+			\end{split}
+		\end{align}
+		Since $X$, $\omega$ were arbitrary, $(A \circ B)^{\ast} = B^{\ast} \circ A^{\ast}$. 
+		\item Let $\omega \in V^{\ast}$, and $X \in V$. Then 
+		\begin{align}
+			\begin{split}
+				(\left(\operatorname{Id}_{V}\right)^{\ast}\omega)(X) &= \omega\left(\operatorname{Id}_{V}X\right) = \omega(X). 
+			\end{split}
+		\end{align}
+		Since $X$ was arbitrary, we conclude that $\left(\operatorname{Id}_{V}\right)^{\ast}\omega = \omega$ for all $\omega \in V^{\ast}$. 
+	\end{enumerate}
+}
+\begin{itemize}
+	\item \textbf{Def. (Natural Basis-Independent Map)} For each vector space $V$, there is a natural, basis-independent map $\xi: V \to V^{\ast\ast}$, defined as follows: for each vector $X \in V$, define a linear functional $\xi(X): V^{\ast} \to \mathbb{R}$ by 
+	\begin{equation}
+		\xi(X)(\omega)= \omega(X), \quad \text{ for $\omega \in V^{\ast}$}.
+	\end{equation}
+\end{itemize}
+\begin{exc}{6.4}
+	Let $V$ be a vector space. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep=-2pt,label = (\alph{*})]
+		\item For any $X \in V$, show that $\xi(X)(\omega)$ depends linearly on $\omega$, so that $\xi(X) \in V^{\ast\ast}$. 
+		\item Show that the map $\xi: V \to V^{\ast\ast}$ is linear. 
+	\end{enumerate}
+\end{exc}
+{\color{blue}
+	Let $V$ be a vector space. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Fix $X \in V$, and let $\omega_{1}, \omega_{2} \in V^{\ast}$, $a_{1},a_{2} \in \mathbb{R}$. Then 
+		\begin{align}
+			\begin{split}
+				\xi(X)(a_{1}\omega_{1} + a_{2}\omega_{2}) &= (a_{1}\omega_{1} + a_{2}\omega_{2})(X) = a_{1}\omega_{1}(X) + a_{2}\omega_{2}(X) \\
+				&= a_{1}\xi(X)(\omega_{1}) + a_{2}\xi(X)(\omega_{2}). 
+			\end{split}
+		\end{align}
+		Hence, $\xi(X) \in V^{\ast\ast}$. 
+		\item Fix $\omega \in V^{\ast}$, and let $X_{1}, X_{2} \in V$, $a_{1}, a_{2} \in \mathbb{R}$. Then 
+		\begin{align}
+			\begin{split}
+				\xi(a_{1}X_{1} + a_{2}X_{2})(\omega) &= \omega(a_{1}x_{1} + a_{2}x_{2}) = a_{1}\omega(X_{1}) + a_{2}\omega(X_{2}) \\
+				&= a_{1}\xi(X_{1})(\omega) + a_{2}\xi(X_{2})(\omega). 
+			\end{split}
+		\end{align}
+		Hence, since $\omega \in V^{\ast}$ was arbitrary, we conclude that $\xi: V \to V^{\ast\ast}$ is linear. 
+\end{enumerate}}
+\begin{itemize}
+	\item \textbf{Prop. 6.4 (Dual Dual Space is Isomorphic)} Let $V$ be a finite-dimensional vector space. The map $\xi: V \to V^{\ast\ast}$ is an isomorphism. 
+	
+	{\color{orange}
+		Since $V$ and $V^{\ast\ast}$ have the same dimension, it suffices to check that $\xi$ is injective. Suppose $X \in V\setminus \{0\}$. Extend $X$ to a basis ($X = E_{1}, \ldots, E_{n}$), and let $\left(\epsilon^{1}, \ldots, \epsilon^{n}\right)$ be the corresponding dual basis. Then 
+		\begin{equation}
+			\xi(X)(\epsilon^{1}) = \epsilon^{1}(X) = \epsilon^{1}(E_{1}) = 1 \neq 0, 
+		\end{equation}
+		so that $\xi(X) \neq 0$. Hence, the kernel is trivial, which proves injectivity. 
+	}
+\end{itemize}
+\subsection{Tangent Covectors on Manifolds}
+\begin{itemize}
+	\item \textbf{Def. (Cotangent Space)} Let $M$ be a smooth manifold. For each $p \in M$, define the \textit{cotangent space} at $p$, denoted by $T_{p}^{\ast}M$, to be the dual space to $T_{p}M$: $T_{p}^{\ast}M = (T_{p}M)^{\ast}$.
+	\item \textbf{Obs. (Transformation Law for Covectors)} Suppose $(U, \varphi)$ and $(V,\psi)$ are two smooth charts on $M$, and let $p \in U \cap V$. As we saw before, we have two bases for the tangent space at $p$, namely $\{\partial/\partial x^{i}|_{p}\}$, where the coordinate functions of $\varphi$ are $(x^{i})$, and $\{\partial/\partial \ti{x}^{i}|_{p}\}$, whre the coordinate functions of $\psi$ are $(\ti{x}^{i})$. Let $(dx^{i})$ and $(d\ti{x}^{i})$ be the corresponding dual bases for the cotangent space at $p$. In particular, we have 
+	\begin{equation}
+		\omega = \omega_{i}dx^{i} = \ti{\omega}_{j}d\ti{x}^{j} \iff \omega\left(\frac{\partial}{\partial x^{i}}\bigg|_{p}\right)dx^{i} = \ti{\omega}_{j}d\ti{x}^{j}. 
+	\end{equation}
+	Using the transformation law for vectors, 
+	\begin{align}
+		\begin{split}
+			\omega\left(\frac{\partial}{\partial x^{i}}\bigg|_{p}\right)dx^{i} &= \omega\left(\frac{\partial\tilde{x}^{j}}{\partial x^{i}}(p)\frac{\partial}{\partial \ti{x}^{j}}\bigg|_{p}\right)dx^{i} = \ti{\omega}_{j}\frac{\partial \ti{x}^{j}}{\partial x^{i}}(p)dx^{i} = \ti{\omega}_{j}d\ti{x}^{j}. 
+		\end{split}
+	\end{align}
+	Therefore, we conclude that 
+	\begin{equation}
+		d\ti{x}^{j} = \frac{\partial \ti{x}^{j}}{\partial x^{i}}dx^{i}. 
+	\end{equation}
+	Contrast this with the transformation law for vectors. 
+\end{itemize}
+\subsection{The Cotangent Bundle}
+\begin{itemize}
+	\item \textbf{Def. (Cotangent Bundle)} The disjoint union 
+	\begin{equation}
+		T^{\ast}M = \coprod_{p \in M}T_{p}^{\ast}M. 
+	\end{equation}
+	\item \textbf{Lem. 6.6. (Smoothness Criteria for Covector Fields)} Let $M$ be a smooth manifold, and let $\omega: M \to T^{\ast}M$ be a rough section. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item If $\omega = \omega_{i}\lambda^{i}$ is the coordinate representation for $\omega$ in any smooth chart $(U, (x^{i}))$ for $M$, then $\omega$ is smooth on $U$ if and only if its component functions $\omega_{i}$ are smooth 
+		\item $\omega$ is smooth if and only if for every smooth vector field $X$ on an open subset $U \subset M$, the function $\braket{\omega, X}: U \to \mathbb{R}$ defined by 
+		\begin{equation}
+			\braket{\omega, X}(p) = \braket{\omega_{p}, X_{p}} = \omega_{p}(X_{p})
+		\end{equation}
+		is smooth. 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{6.5}
+	Prove Lemma 6.6. 
+\end{exc}
+
+\subsection{The Differential of a Function}
+\begin{exc}{6.6}
+	Let $f(x, y) = x^{2}$ on $\mathbb{R}^{2}$, and let $X$ be the vector field 
+	\begin{equation}
+		X = \operatorname{grad}(f) = 2x\frac{\partial}{\partial x}. 
+	\end{equation}
+	Compute the coordinate expression of $X$ in polar coordinates (on some open set on which they are defined) using (6.4) and show that it is \textit{not} equal to 
+	\begin{equation}
+		\frac{\partial f}{\partial r}\frac{\partial}{\partial r} + \frac{\partial f}{\partial \theta}\frac{\partial}{\partial \theta}. 
+	\end{equation}
+\end{exc}
+{\color{blue}
+	Recall that (6.4) stated the following: 
+	\begin{equation}
+		\frac{\partial}{\partial x^{i}}\bigg|_{p} = \frac{\partial \ti{x}^{j}}{\partial x^{i}}(p)\frac{\partial}{\partial \ti{x}^{j}}\bigg|_{p}. 
+	\end{equation}
+	Remember that polar coordinates are given by $(x, y) = (r\cos(\theta), r\sin(\theta))$. In particular, by (6.4), 
+	\begin{equation}
+		\frac{\partial}{\partial x} = \frac{\partial r}{\partial x}\frac{\partial}{\partial r} + \frac{\partial \theta}{\partial x}\frac{\partial}{\partial \theta}. 
+	\end{equation}
+	Using the polar coordinates, 
+	\begin{align}
+		\begin{split}
+			\frac{\partial r}{\partial x} &= \frac{\partial}{\partial x}(\sqrt{x^{2} + y^{2}}) \\
+			&= \frac{1}{2}(x^{2} + y^{2})^{-1/2} \cdot 2x = \frac{x}{r} = \cos(\theta). \\
+			\frac{\partial \theta}{\partial x} &=\frac{\partial}{\partial x}(\arctan(x^{-1}y)) \\
+			&= -\frac{y}{x^{2} + y^{2}} = -\frac{r\sin(\theta)}{r^{2}} = -\frac{\sin(\theta)}{r}. 
+		\end{split}
+	\end{align}
+	Hence, this implies that 
+	\begin{equation}
+		X = 2r\cos^{2}(\theta)\frac{\partial}{\partial r} - 2\sin(\theta)\cos(\theta)\frac{\partial}{\partial \theta}. 
+	\end{equation}
+	On the other hand, 
+	\begin{align}
+		\begin{split}
+			\frac{\partial f}{\partial r}\frac{\partial}{\partial r} + \frac{\partial f}{\partial \theta}\frac{\partial}{\partial \theta} &= 2r\cos^{2}(\theta)\frac{\partial}{\partial r} -2r^{2}\sin(\theta)\cos(\theta)\frac{\partial}{\partial \theta} \neq X. 
+		\end{split}
+	\end{align}
+}
+\begin{itemize}
+	\item \textbf{Def. (Differential of a Function)} Let $f$ be a smooth real-valued function on a smooth manifold $M$. Define the covector field $df$, called the \textit{differential} of $f$, by 
+	\begin{equation}
+		df_{p}(X_{p}) = X_{p}f \quad \text{ for } X_{p} \in T_{p}M. 
+	\end{equation}
+	\item \textbf{Lem. 6.7. (Differential is Smooth Covector Field)} The differential of a smooth function is a smooth covector field. 
+	\item \textbf{Obs. (Differential in Coordinates)} Let $(x^{i})$ be smooth coordinates on an open subset $U \subset M$, and let $(\lambda_{i})$ be the corresponding coframe on $U$. Suppose that in coordinates, $df_{p} = A_{i}(p)\lambda^{i}|_{p}$ for some functions $A_{i}: U \to \mathbb{R}$. This implies the following: 
+	\begin{align}
+		\begin{split}
+			A_{i}(p) = A_{i}(p)\lambda^{i}|_{p}\left(\frac{\partial}{\partial x^{i}}\bigg|_{p}\right) &= df_{p}\left(\frac{\partial}{\partial x^{i}}\bigg|_{p}\right) \\
+			&= \frac{\partial f}{\partial x^{i}}(p). 
+		\end{split}
+	\end{align}
+	This implies that 
+	\begin{equation}
+		df_{p} = \frac{\partial f}{\partial x^{i}}(p)\lambda^{i}|_{p}. 
+	\end{equation}
+	Taking $f$ to be $x^{j}: U \to \mathbb{R}$, we obtain 
+	\begin{equation}
+		dx^{j}|_{p} = \frac{\partial x^{j}}{\partial x^{i}}(p)\lambda^{i}|_{p} = \lambda^{j}|_{p}. 
+	\end{equation}
+	Therefore, this proves that 
+	\begin{equation}
+		df|_{p} = \frac{\partial f}{\partial x^{i}}(p)dx^{i}|_{p} \iff df = \frac{\partial f}{\partial x^{i}}dx^{i}. 
+	\end{equation}
+	\item \textbf{Prop. 6.9 (Properties of Differentials)} Let $M$ be a smooth manifold, and let $f, g \in C^{\infty}(M)$. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item For any constants $a, b$, $d(af + bg) = a\;df + b\;dg$. 
+		\item $d(fg) = f\;dg + g\;df$. 
+		\item $d(f/g) = (g\;df - f\;dg)/g^{2}$ on the set where $g \neq 0$. 
+		\item If $J \subset \mathbb{R}$ is an interval containing the image of $f$, and $h: J \to \mathbb{R}$ is a smooth function, then $d(h \circ f) = (h' \circ f)\;df$. 
+		\item If $f$ is constant, then $df = 0$. 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{6.7}
+	Prove Proposition 6.9.  
+\end{exc}
+{\color{blue}
+	Let $a, b \in \mathbb{R}$, and $f, g \in C^{\infty}(M)$. \vspace{-0.3cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $U \subseteq M$ be open, $(x^{i})$ smooth coordinates on $U$, and $(dx^{i})$ the corresponding coordinate coframe. Then 
+		\begin{align}
+			\begin{split}
+				d(af + bg) &= \frac{\partial (af + bg)}{\partial x^{i}}dx^{i} = \left[\frac{\partial (af)}{\partial x^{i}} + \frac{\partial (bg)}{\partial x^{i}}\right]dx^{i} \\
+				&= \left[a\frac{\partial f}{\partial x^{i}} + b\frac{\partial g}{\partial x^{i}}\right]dx^{i} = a\;df + b\;dg. 
+			\end{split}
+		\end{align}
+		\item We will work in coordinates as in (a). Then we observe that 
+		\begin{align}
+			\begin{split}
+				d(fg) &= \frac{\partial (fg)}{\partial x^{i}}dx^{i} = \left[g\frac{\partial f}{\partial x^{i}} + f\frac{\partial g}{\partial x^{i}}\right]dx^{i} \\
+				&= g\;df + f\;dg. 
+			\end{split}
+		\end{align}
+		\item Let $E = \{x\in M: g(x) \neq 0\}$. Then let $U \subseteq E$ be an open subset, $(x^{i})$ be smooth coordiates, and $(dx^{i})$ the corresponding coframe. Then 
+		\begin{align}
+			\begin{split}
+				d(f/g) &= \frac{\partial(f/g)}{\partial x^{i}}dx^{i} = \frac{g\frac{\partial f}{\partial x^{i}} - f\frac{\partial g}{\partial x^{i}}}{g^{2}}dx^{i} \\
+				&= \frac{g\;df - f\;dg}{g^{2}}. 
+			\end{split}
+		\end{align}
+		\item Let $J \subset \mathbb{R}$ be an interval containing the image of $f$, and $h: J \to \mathbb{R}$ be smooth. Let $U \subseteq M$ be open, $(x^{i})$ smooth coordinates on $U$, and $(dx^{i})$ the corresponding coordinate coframe. Then 
+		\begin{align}
+			\begin{split}
+				d(h \circ f) = \frac{\partial (h \circ f)}{\partial x^{i}}dx^{i} = (h' \circ f)\cdot \frac{\partial f}{\partial x^{i}}dx^{i} = (h' \circ f)\;df, 
+			\end{split}
+		\end{align}
+		where the second equality follows from the chain rule. 
+		\item It suffices to show that if $f = 1$, then $df = 0$. Indeed, 
+		\begin{equation}
+			df = d(ff) = f\;df + f\;df = 2f\;df = 2\;df. 
+		\end{equation}
+		Hence, this proves that $df = 0$. 
+	\end{enumerate}
+}
+\begin{itemize}
+	\item \textbf{Prop. 6.10. (Functions with Vanishing Differentials)} If $f$ is a smooth real-valued function on a smooth manifold $M$, then $df = 0$ if and only if $f$ is constant on each component of $M$. 
+	
+	{\color{orange}
+		It suffices to assume that $M$ is connected and to show that $df = 0$ if and only if $f$ is constant. Indeed, assume $f$ is constant. Then by Prop. 6.9(e), $df = 0$. Now suppose $df = 0$, $p \in M$, and let $\mathscr{C} = \brac*{q \in M: f(p) = f(q)}$. If $q$ is any point in $\mathscr{C}$, then let $U$ be a smooth coordinate ball centered at $q$. By virtue of the differential being zero, we must have $\partial f/\partial x^{i} = 0$ in $U$ for each $i$. This implies that $f$ is constant on $U$. Hence, $\mathscr{C}$ is open. On the other hand, by continuity of $f$, $\mathscr{C}$ is closed. Since the only open and closed sets in a connected set are the empty set and $M$, it follows that $\mathscr{C} = M$; i.e., $f$ is constant on $M$. 
+	}
+\end{itemize}
+\subsection{Pullbacks}
+\begin{itemize}
+	\item \textbf{Def. (Pullback of a Smooth Map)} Let $F: M \to N$ be a smooth map, and $F_{\ast}: T_{p}M \to T_{F(p)}N$ its pushforward. Then the pushforward induces a dual linear map $F_{\ast}: T_{F(p)}^{\ast}N \to T_{p}^{\ast}M$ defined by 
+	\begin{equation}
+		(F^{\ast}\omega)(X_{p}) = \omega(F_{\ast}X), \quad \text{ for } \omega \in T^{\ast}_{F(p)}N, X \in T_{p}M. 
+	\end{equation}
+	\item \textbf{Obs. (Pullback in Coordinates)} Let $p \in M$ be arbitrary, and choose smooth coordinates $(x^{i})$ for $M$ near $p$ and $(y^{j})$ for $N$ near $G(p)$. Then 
+	\begin{equation}
+		G^{\ast}\omega = G^{\ast}(\omega_{j}dy^{j}) = (\omega_{j} \circ G)dG^{j}. 
+	\end{equation}
+	\item \textbf{Ex. 6.14. (Example of Pullback)} Let $G: \mathbb{R}^{3} \to \mathbb{R}^{2}$ be the map defined by 
+	\begin{equation}
+		(u, v) = G(x, y, z) = (x^{2}y, y\sin(z)),
+	\end{equation}
+	and let $\omega \in \mathscr{T}^{\ast}(\mathbb{R}^{2})$ be the covector field 
+	\begin{equation}
+		\omega = u\;dv + v\;du. 
+	\end{equation}
+	First, we shall compute the differentials. 
+	\begin{align}
+		\begin{split}
+			du &= \frac{\partial u}{\partial x^{i}}dx^{i} = 2xy\;dx + x^{2}\;dy. \\
+			dv &= \frac{\partial v}{\partial x^{i}}dx^{i} = \sin(z)\;dy +y\cos(z)\;dz.
+		\end{split}
+	\end{align}
+	Therefore, 
+	\begin{align}
+		\begin{split}
+			G^{\ast}\omega &= x^{2}y\left[\sin(z)\;dy + y\cos(z)\;dz\right] + y\sin(z)\left[2xy\;dx + x^{2}\;dy\right] \\
+			&= 2xy^{2}\sin(z)\;dx + 2xy^{2}\sin(z)\;dy + x^{2}y^{2}\cos(z)\;dz.  
+		\end{split}
+	\end{align}
+\end{itemize}
+\subsection{Line Integrals}
+\begin{itemize}
+	\item \textbf{Prop. 6.16 (Diffeomorphism Invariance of the Integral)} Let $\omega$ be a smooth covector field on the compact interval $[a, b] \subset \mathbb{R}$. If $\varphi: [c, d] \to[a, b]$ is an increasing diffeomorphism (meaning that $t_{1} < t_{2}$ implies $\varphi(t_{1}) < \varphi(t_{2})$), then 
+	\begin{equation}
+		\int_{[c,d]}\varphi^{\ast}\omega = \int_{[a,b]}\omega. 
+	\end{equation}
+	
+	{\color{orange}
+		Let $s$ be the standard coordinates on $[c,d]$ and $t$ be the standard coordinates on $[a, b]$. We may write $\omega_{t} = f(t)\;dt$ for some smooth function $f: [a, b] \to \mathbb{R}$. Then using the pullback expression in local coordinates, 
+		\begin{equation}
+			(\varphi^{\ast}\omega)_{s} = f(\varphi(s))\varphi'(s)\;ds. 
+		\end{equation}
+		Therefore, 
+		\begin{equation}
+			\int_{[c,d]}\varphi^{\ast}\omega = \int_{c}^{d}f(\varphi(s))\varphi'(s)\;ds \underbrace{=}_{t\coloneqq \varphi(s)} \int_{a}^{b}f(t)\;dt = \int_{[a,b]}\omega. 
+		\end{equation}
+	}
+\end{itemize}
+\begin{exc}{6.8}
+	If $\varphi:[c, d] \to [a,b]$ is a decreasing diffeomorphism, show that $\int_{[c,d]}\varphi^{\ast}\omega = -\int_{[a,b]}\omega$. 
+\end{exc}
+{\color{blue}
+	The proof follows almost nearly identically to the proof from above. Suppose that $s$ is the standard coordinate on $[c,d]$, and let $t$ be the standard coordinate on $[a,b]$. We may assume that $\omega_{t} = f(t)\;dt$ for some smooth function $f: [a,b] \to \mathbb{R}$. Note that because of the decreasing property, $\varphi(c) = b$ and $\varphi(d) = a$. Hence, 
+	\begin{equation}
+		\int_{[c,d]}\varphi^{\ast}\omega = \int_{c}^{d}f(\varphi(s))\varphi'(s)\;ds = \int_{b}^{a}f(t)\;dt = -\int_{[a,b]}f(t)\;dt = -\int_{[a,b]}\omega. 
+	\end{equation}
+}
+\begin{itemize}
+	\item \textbf{Def. (Curve Segment)} Let $M$ be a smooth manifold. A \textit{curve segment} is a continuous curve $\gamma: [a, b] \to M$ whose domain is a compact interval. It is a \textit{smooth curve segment} if it has a smooth extension to an open interval containing $[a, b]$. A \textit{piecewise smooth curve segment} is a piecewise smooth curve segment. 
+	\item \textbf{Def. (Line Integral)} Let $\gamma: [a, b] \to M$ be a smooth curve segment and $\omega$ a smooth covector field on $M$. The \textit{line integral} of $\omega$ over $\gamma$ is defined to be the real number 
+	\begin{equation}
+		\int_{\gamma}\omega = \int_{[a,b]}\gamma^{\ast}\omega. 
+	\end{equation}
+	If $\gamma$ is \textit{piecewise smooth}, then  
+	\begin{equation}
+		\int_{\gamma}\omega = \sum_{i = 1}^{n}\int_{[a_{i - 1}, a_{i}]}\gamma^{\ast}\omega, 
+	\end{equation}
+	where $\{a_{i}\}_{0}^{n}$ is a partition of $[a, b]$. 
+	\item \textbf{Prop. 6.18. (Properties of Line Integrals)} Let $M$ be a smooth manifold. Suppose $\gamma:[a,b] \to M$ is a piecewise smooth curve segment and $\omega, \omega_{1}, \omega_{2} \in\mathscr{T}^{\ast}(M)$. \vspace{-0.2cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item For any $c_{1}, c_{2} \in \mathbb{R}$, 
+		\begin{equation}
+			\int_{\gamma}(c_{1}\omega_{1} + c_{2}\omega_{2}) = c_{1}\int_{\gamma}\omega_{1} + c_{2}\int_{\gamma}\omega_{2}. 
+		\end{equation}
+		\item If $\gamma$ is a constant map, then $\int_{\gamma}\omega = 0$. 
+		\item If $a < c < b$, then 
+		\begin{equation}
+			\int_{\gamma}\omega = \int_{\gamma_{1}}\omega + \int_{\gamma_{2}}\omega, 
+		\end{equation}
+		where $\gamma_{1} = \gamma|_{[a,c]}$ and $\gamma_{2} = \gamma_{[c,b]}$. 
+	\end{enumerate}
+\end{itemize}
+\begin{exc}{6.9}
+	Prove Proposition 6.18
+\end{exc}
+{\color{blue}
+	Assume all of the hypotheses given in the statement of the proposition. Let $a = a_{0} < a_{1} < \dotsm < a_{n} = b$ be a partition of $[a, b]$ such that $\gamma$ is smooth on each subinterval.  \vspace{-0.25cm} 
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item By linearity of pullbacks,    
+		\begin{align}
+			\begin{split}
+				\int_{\gamma}(c_{1}\omega_{1} + c_{2}\omega_{2}) &= \sum_{i = 1}^{n}\int_{[a_{i - 1}, a_{i}]}\gamma^{\ast}(c_{1}\omega_{1} + c_{2}\omega_{2}) = \sum_{i= 1}^{n}\int_{[a,b]} \left[\gamma^{\ast}(c_{1}\omega_{1}) + \gamma^{\ast}(c_{2}\omega_{2})\right] \\
+				&= \sum_{i= 1}^{n}\left[\int_{[a_{i- 1},a_{i}]}\gamma^{\ast}(c_{1}\omega_{1}) + \int_{[a_{i - 1},a_{i}]}\gamma^{\ast}(c_{2}\omega_{2})\right] \\
+				&= c_{1}\int_{\gamma}\omega_{1} + c_{2}\int_{\gamma}\omega_{2}. 
+			\end{split}
+		\end{align}
+		\item[(c)] Let $a < c < b$; let $a =a_{0}' < a'_{1} < \dotsm < a'_{n} = c$ and $c = a'_{n + 1}  < \dotsm < a'_{m} = b$ be partitions of $[a, c]$ and $[c, b]$, respectively. Clearly $\{a'_{i}\}_{i = 0}^{m}$ is also a partition of $[a, b]$. Then 
+		\begin{equation}
+			\int_{\gamma}\omega = \sum_{i = 1}^{m}\int_{[a'_{i - 1},a'_{i}]}\gamma^{\ast}\omega = \sum_{i = 1}^{n}\int_{[a'_{i - 1},a'_{i}]}\gamma^{\ast}\omega + \sum_{i = n + 1}^{m}\int_{[a'_{i - 1}, a'_{i}]}\gamma^{\ast}\omega = \int_{\gamma_{1}}\omega + \int_{\gamma_{2}}\omega. 
+		\end{equation}
+		\item[(b)] It suffices to assume that $\gamma$ is a smooth curve segment. Let $s$ be the standard coordinates on $[a,b]$. Then in local coordinates, $\gamma^{\ast}\omega = \omega(\gamma(s))\gamma'(s)\;ds = 0$ since $\gamma'(s) =0$ for all $s$. Hence, 
+		\begin{equation}
+			\int_{\gamma}\omega = \int_{[a,b]}\gamma^{\ast}\omega = \int_{[a,b]}0\;ds = 0. 
+		\end{equation}
+	\end{enumerate}
+}
+\subsection{Conservative Vector Fields}
+\begin{itemize}
+	\item \textbf{Def. (Exact Smooth Covector Field)} Let $\omega$ be a smooth covector field on a smooth manifold $M$. $\omega$ is \textit{exact} if it is the differential of some $f \in C^{\infty}(M)$. The function $f$ is called a \textit{potential} for $\omega$. 
+	\item \textbf{Def. (Conservative Covector Field)} A smooth covector field $\omega$ is \textit{conservative} if the line integral of $\omega$ over \textit{any} closed piecewise smooth curve segment is zero. 
+	\item \textbf{Lem. 6.23. (Conservative Covector Field Criterion I)} A smooth covector field $\omega$ is conservative if and only if the line integral of $\omega$ depends only on the endpoints of the curve, i.e., $\int_{\gamma}\omega = \int_{\ti{\gamma}}\omega$ whenever $\gamma$ and $\ti{\gamma}$ are piecewise smooth curves are piecewise smooth curve segments with the same starting and ending points. 
+\end{itemize}
+\begin{exc}{6.10}
+	Prove Lemma 6.23. [Observe that this would be much harder to prove if we defined conservative fields in terms of smooth curves instead of piecewise smooth ones.]
+\end{exc}
+
+\newpage 
+\section{Submersions, Immersions, and Embeddings}
+\subsection{Maps of Constant Rank}
+\begin{itemize}
+	\item \textbf{Def. (Rank of a Smooth Map)} Let $M$ and $N$ be smooth manifolds, and $F: M \to N$ a smooth map. The \textit{rank} of $F$ at $p \in M$ is the rank of the linear map $F_{\ast}: T_{p}M \to T_{F(p)}N$; this is equivalent to the rank of the matrix of partial derivatives of $F$ in any smooth chart, or to the dimension of $\operatorname{Im}{F_{\ast}}\subset T_{F(p)}N$. I.e., the rank is equivalent to the maximum number of linearly independent rows/columns of the corresponding matrix. 
+	\item \textbf{Def. (Submersion)} A smooth map $F: M \to N$ such that $F_{\ast}$ is surjective at each point, which is to say that $\operatorname{rank}{F} = \dim{N}$. 
+	\item \textbf{Def. (Immersion)} A smooth map $F: M\to N$ such that $F_{\ast}$ is injective at each point; equivalently $\operatorname{rank}{F} = \dim{M}$. 
+	\item \textbf{Def. (Smooth Embedding)} An immersion $F: M \to N$ such that $F: M \to F(M) \subset N$ is a homeomorphism. 
+\end{itemize}
+\begin{exc}{7.2}
+	Show that a composition of submersions is a submersion, a composition of immersions is an immersion, and a composition of smooth embeddings is a smooth embedding. 
+\end{exc}
+{\color{blue}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $F: M \to N$ and $G: N \to P$ be submersions, where $M$ is a smooth $m$-manifold, $N$ is a smooth $n$-manifold, and $P$ is a smooth $p$-manifold. Let $U, V, T$ be smooth coordinate charts for $M$, $N$, and $P$, respectively, such that (wlog) $F(U) \subset V$ and $G(V) \subset T$. Then since $(G \circ F)_{\ast} = G_{\ast} \circ F_{\ast}$, in local coordinates, $(G \circ F)_{\ast}$ corresponds to the matrix product of an $p \times n$ matrix with an $n \times m$ matrix (the $p \times n$ matrix representing $G_{\ast}$, and the $n \times m$ matrix representing $F_{\ast}$); the rank of the $p \times n$ matrix is $p$, while the rank of the $n \times m$ matrix is $n$. Hence, by the properties of the rank of a matrix product, the matrix representation of $G_{\ast} \circ F_{\ast}$ has rank $p$, which proves that $(G \circ F)$ is a submersion. 
+		\item Let $F: M \to N$ and $G: N \to P$ be immersions. Since $F_{\ast}$ is injective and $G_{\ast}$ is injective, and the composition of injective functions is injective, 
+		\begin{equation}
+			(G \circ F)_{\ast} = G_{\ast} \circ F_{\ast}
+		\end{equation}
+		is injective. Hence, $G \circ F$ is an immersion. 
+		\item Let $F: M \to N$ and $G: N \to P$ be smooth embeddings. From (ii), $G \circ F$ is an immersion. Finally, since the composition of homeomorphisms is always another homeomorphism, we conclude that $G \circ F$ is a smooth embedding. 
+	\end{enumerate}
+}
+\begin{itemize}
+	\item \textbf{Prop. 7.4. (Smooth Embedding Criteria)} Suppose $F: M \to N$ is an injective immersion. If either of the following condition holds, then $F$ is a smooth embedding with closed image: \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item $M$ is compact. 
+		\item $F$ is a proper map. 
+	\end{enumerate}
+\end{itemize}
+
+
+\newpage
+\section{Tensors}
+\subsection{The Algebra of Tensors}
+\begin{itemize}
+	\item \textbf{Def. (Multilinear Function)} Suppose $V_{1}, \ldots, V_{n}$ and $W$ are vector spaces. A map $F: V_{1} \times \dotsm \times V_{k} \to W$ is said to be \textit{multlinear} if it is linear as a function of each variable separately: 
+	\begin{align}
+		\begin{split}
+			F(v_{1}, \ldots, av_{i} + a'v'_{i}, \ldots, v_{k}) &= aF(v_{1}, \ldots, v_{i}, \ldots, v_{k}) + a'F(v_{1}, \ldots, v'_{i}, \ldots, v_{k}). 
+		\end{split}
+	\end{align}
+	\item \textbf{Def. (Covariant $k$-Tensor)} Let $V$ be a finite-dimensional real vector space, and let $k$ be a natural number. A \textit{covariant $k$-tensor} on $V$ is a real-valued multilinear function of $k$ elements of $V$: 
+	\begin{equation}
+		T: \underbrace{V \times \dotsm V}_{k \text{ copies}} \to \mathbb{R}. 
+	\end{equation}
+	The number $k$ is called the \textit{rank} of $T$. 
+	\item \textbf{Def. (Tensor Product)} We can build up covariant tensors of larger ranks as follows: let $V$ be a finite-dimensional real vector space and let $S \in T^{k}(V)$, $T \in T^{l}(V)$. Define a map $S \otimes T: \underbrace{V \times \dotsm \times V}_{k + l \text{ copies}} \to \mathbb{R}$ by 
+	\begin{equation}
+		S \otimes T(X_{1}, \ldots, X_{k + l}) = S(X_{1}, \ldots,X_{k}) T(X_{k + 1}, \ldots, X_{k + l}). 
+	\end{equation}
+	We will check multilinearity. WLOG, assume $i \leq k$. Then 
+	\begin{align}
+		\begin{split}
+			\scriptstyle
+			S \otimes T(X_{1}, \ldots,aX_{i} + a'X'_{i}, \ldots, X_{k}, \dotsm, X_{k + 1}) &= S(X_{1}, \ldots, aX_{i} + a'X'_{i}, \ldots, X_{k})T(X_{k + 1}, \ldots, X_{k + l}) \\
+			&= \left[aS(X_{1}, \ldots,X_{i}, \ldots, X_{k}) + a'S(X_{1}, \ldots, X'_{i}, \ldots, X_{k})\right]T(X_{k + 1}, \ldots, X_{k + l}) \\
+			&= a(S\otimes T)(X_{1}, \ldots, X_{i}, \ldots, X_{k + 1}) + a'(S\otimes T)(X_{1}, \ldots, X'_{i}, \ldots, X_{k + l}). 
+		\end{split}
+	\end{align}
+	Hence, $S \otimes T$ is a covariant $(k + l)$-tensor. 
+\end{itemize}
+\begin{exc}{11.1}
+	Show that the tensor product operation is bilinear and associative. More precisely, show that $S \otimes T$ depends linearly on each of the tensors $S$ and $T$, and that $(R \otimes S) \otimes T = R \otimes (S \otimes T)$. 
+\end{exc}
+{\color{blue}
+	Let $P, R, S, T$ be $k, k, l, l$-tensors, respectively. Then 
+	\begin{align}
+		\begin{split}
+			(a_{1}P + a_{2}R)\otimes (a_{3}S + a_{4}T)(X_{1}, \ldots, X_{k + l}) &= (a_{1}P + a_{2}R)(X_{1}, \ldots, X_{k})\cdot (a_{3}S + a_{4}T)(X_{k + 1}, \ldots, X_{k + l})  \\
+			&= a_{1}P(X_{1}, \ldots,X_{k})\cdot (a_{3}S + a_{4}T)(X_{k + 1}, \ldots, X_{k + l}) \\
+			&\qquad + a_{2}R(X_{1}, \ldots, X_{k})(a_{3}S + a_{4}T)(X_{k + 1}, \ldots, X_{k + l}) \\
+			&= a_{1}a_{3}P(X_{1}, \ldots, X_{k})S(X_{k + 1}, \ldots, X_{k + l}) \\
+			&\qquad + a_{1}a_{4}P(X_{1}, \ldots, X_{k})T(X_{k + 1}, \ldots, X_{k + l}) \\
+			&\qquad + a_{2}a_{3}P(X_{1}, \ldots, X_{k})S(X_{k + 1}, \ldots, X_{k + l}) \\
+			&\qquad + a_{2}a_{4}P(X_{1}, \ldots, X_{k})T(X_{k + 1}, \ldots,X_{k + l}). 
+		\end{split}
+	\end{align}
+	Using the definition of the tensor products, we can simply the final expressions to see that the tensor product is, indeed, linear in each of the tensor terms. 
+}
+\begin{itemize}
+	\item \textbf{Prop. 11.2. (Basis for $T^{k}V$)} Let $V$ be a real vector space of dimension $n$, let $(E_{i})$ be any basis for $V$, and let $(\epsilon^{i})$ be the dual basis. The set of all $k$-tensors of the form $\epsilon^{i_{1}} \otimes \dotsm \otimes \epsilon^{i_{k}}$ for $1 \leq i_{1} \leq \dotsm \leq i_{k} \leq n$ is a basis for $T^{k}V$, which therefore has dimension $n^{k}$. 
+	
+	{\color{orange}
+		Let $\mathscr{B}$ denote the set $\{\epsilon^{i_{1}} \otimes \dotsm \otimes \epsilon^{i_{k}}: 1 \leq i_{1} \leq \dotsm \leq i_{k} \leq n\}$. It suffices to show that $\mathscr{B}$ is linearly independent and spans $T^{k}V$. Let $T \in T^{k}(V)$. For any $k$-tuple of integers $(i_{1}, \ldots, i_{k})$, where $1 \leq i_{j} \leq n$ for all $j = 1, \ldots, k$, define the number $T_{i_{1}\dotsm i_{k}}$ as follows: 
+			\begin{equation}
+				T_{i_{1}\dotsm i_{k}} = T(E_{i_{1}}, \ldots, E_{i_{k}}). 
+			\end{equation}
+		We will show that $T = T_{i_{1}\dotsm i_{k}}\epsilon^{i_{1}}\otimes \epsilon^{i_{k}}$. Indeed, 
+			\begin{align}
+				\begin{split}
+					T_{i_{1}\dotsm i_{k}}\epsilon^{i_{1}}\otimes \dotsm\otimes \epsilon^{i_{k}}(E_{j_{1}},\ldots, E_{j_{k}}) &= T_{i_{1}\dotsm i_{k}}\epsilon^{i_{1}}(E_{j_{1}})\dotsm \epsilon^{i_{k}}(E_{j_{k}}) \\
+					&= T_{j_{1}\dotsm j_{k}} \\
+					&= T(E_{j_{1}},\ldots, E_{j_{k}}). 	
+				\end{split}
+			\end{align}
+		By multilinearity, since a tensor is completely determined by its action on sequences of basis vectors, this proves the claim that $\mathscr{B}$ spans $T^{k}V$. Now, we must prove linear independence. But this is straightforward to show by letting $T_{i_{1}\dotsm i_{k}}\epsilon^{i_{1}}\otimes \dotsm \otimes\epsilon^{i_{k}} = 0$ act on a sequence of basis vectors.  
+		}
+	\item \textbf{Def. (Free Vector Space)} Let $S$ be a set. The \textit{free vector space on $S$}, denoted by $\mathbb{R}\braket{S}$, is the set of all finite formal linear combinations of $S$ with real coefficients. More precisely, a finite formal linear combination is a function $\mathscr{F}: S \to \mathbb{R}$ such that $\mathscr{F}(s) = 0$ for all but finitely many $s \in S$. 
+\end{itemize}
+\begin{exc}{11.2 (Characteristic Property of Free Vector Spaces)}
+	Let $S$ be a set and $W$ a vector space. Show that any map $F: S \to W$ has a unique extension to a linear map $\overline{F}:\mathbb{R}\braket{S} \to W$. 
+\end{exc}
+\begin{solutions}
+Let $S$ be a set, $W$ a vector space, and $F: S \to W$ an arbitrary map. Define the map $\overline{F}: \mathbb{R}\braket{S} \to W$ as follows: given a formal sum $\sum_{s \in S}\alpha_{s}s$, where $\alpha_{s} = 0$ for all but finitely many elements $s \in S$, let 
+\begin{equation}
+	\overline{F}\left(\sum_{s \in S}\alpha_{s}s\right) = \sum_{s \in S}\alpha_{s}F(s).
+\end{equation}	
+Since each $\alpha_{s} \in \mathbb{R}$ and $F(s) \in W$, it follows that $\sum_{s\in S}\alpha_{s}F(s) \in W$. First, we must show that $\overline{F}$ is a linear map. Let $\sum_{s \in S}\alpha_{s}s, \sum_{s \in S}\beta_{s}s \in \mathbb{R}\braket{S}$, where $\alpha_{s}, \beta_{s}$ are zero for all but finitely elements (not necessarily the same) of $S$. Then 
+\begin{align}
+	\begin{split}
+		\overline{F}\left(\sum_{s \in S}\alpha_{s}s + \sum_{s \in S}\beta_{s}s\right) &= \overline{F}\left(\sum_{s \in S}(\alpha_{s}+\beta_{s})s\right) \\
+		&= \sum_{s \in S}(\alpha_{s} + \beta_{s})F(s) \\
+		&= \sum_{s \in S}\alpha_{s}F(s) + \sum_{s \in S}\eta_{s}F(s) \\
+		&= \overline{F}\left(\sum_{s \in S}\alpha_{s}s\right) + \overline{F}\left(\sum_{s \in S}\beta_{s}s\right). 
+	\end{split}
+\end{align}
+Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if $F$ extends to two linear maps $\overline{F}_{1}$ and $\overline{F}_{2}$, let these linear maps act on each element of $S$. By construction of these maps, it follows that $\overline{F}_{1}(s) = \overline{F}_{2}(s)$ for all $s \in S$. Since $S$ is a basis for $\mathbb{R}\braket{S}$ and $\overline{F}_{1,2}$ are completely determined by their actions on the basis elements, we conclude that $\overline{F}_{1} = \overline{F}_{2}$, and so this extension is unique. 
+\end{solutions}
+\begin{itemize}
+	\item \textbf{Def. (Tensor Product of Vector Spaces)} Let $V$ and $W$ be finite-dimensional real vector spaces, and let $\mathscr{R}$ be the subspace of the free vector space $\mathbb{R}\braket{V \times W}$ spanned by all elements of the following forms: 
+		\begin{align}
+			\begin{split}
+			\alpha(v, w) - (\alpha v, w), \\
+			\alpha(v, w) - (v, \alpha w), \\
+			(v, w) + (v', w) - (v + v', w) \\
+			(v, w) + (v, w') - (v, w + w;),  
+			\end{split}	
+		\end{align}
+	for $\alpha \in \mathbb{R}$, $v, v' \in V$, and $w, w' \in W$. Define the \textit{tensor product of} $V$ and $W$, denoted $V \otimes W$ to be the quotient space $\mathbb{R}\braket{V \times W}/\mathscr{R}$. The equivalence class of an element $(v, w) \in V \otimes W$ is denoted by $v \otimes w$, and is called the \textit{tensor product} of $v$ and $w$. 
+	\item \textbf{Prop. 11.3. (Characteristic Property of Tensor Products)} Let $V$ and $W$ be finite dimensional real vector spaces. IF $A: V \times W \to X$ is a bilinear map into any vector space $X$, there is a unique linear map $\ti{A}: V \otimes W \to X$ such that the following diagram commutes: 
+		\begin{center}
+			\begin{tikzcd}[sep = large]
+				V \times W \arrow[r, "A"] \arrow[d, "\pi"] & X \\
+				V \otimes W, \arrow[ur,"\ti{A}"]
+			\end{tikzcd}
+		\end{center}
+	where $\pi(v, w) = v \otimes w$. 
+	\item \textbf{Prop. 11.4. (Other Properties of Tensor Products)} Let $V, W$, and $X$ be finite-dimensional real vector spaces. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item The tensor product $V^{\ast} \otimes W^{\ast}$ is canonically isomorphic to the space $B(V, W)$ of bilinear maps from $V \times W$ into $\mathbb{R}$. 
+			\item If $(E_{i})$ is a basis for $V$ and $(F_{j})$ is a basis for $W$, then the set of all elements of the form $E_{i} \otimes F_{j}$ is a basis for $V \otimes W$, which therefore has dimension $(\dim{V})(\dim{W})$. 
+			\item There is a unique isomorphism $V \otimes (W\otimes X) \to (V \otimes W) \otimes X$ sending $v \otimes (w \otimes x)$ to $(v \otimes w) \otimes x$. 
+		\end{enumerate}
+	\item \textbf{Cor. 11.5. (Space of Covariant $k$-Tensors and Tensor Products)} If $V$ is a finite-dimensional real vector space, the space $T^{k}(V)$ of covariant $k$-tensors on $V$ is canonically isomorphic to the $k$-fold tensor product $V^{\ast} \otimes \dotsm \otimes V^{\ast}$. 
+	\item \textbf{Def. (Space of Contravariant $k$-Tensors)} Let $V$ be a finite-dimensional real vector space, and define the space of all \textit{contravariant} $k$-tensors on $V$ to be the space 
+		\begin{equation}
+			T_{k}(V) = \underbrace{V \otimes \dotsm \otimes V}_{k \text{ copies}}. 
+		\end{equation}
+	Because of the canonical identification $V = V^{\ast\ast}$, one may think of an element of $T_{k}V$ as a multilinear function from $V^{\ast} \times \dotsm V^{\ast}$ into $\mathbb{R}$. 
+\end{itemize}
+\subsection{Tensors and Tensor Fields on Manifolds}
+\begin{itemize}
+	\item \textbf{Def. (Various Tensor Bundles)} Let $M$ be a smooth manifold. Define the following: \vspace{-0.25cm}
+		\begin{enumerate}[itemsep=-2pt,label = (\alph{*})]
+			\item \textit{Bundle of covariant $k$-tensors on $M$:}
+				\begin{equation}
+					T^{k}M = \coprod_{p \in M}T^{k}(T_{p}M). 
+				\end{equation}
+			\item \textit{Bundle of contravariant $l$-tensors on $M$:}
+				\begin{equation}
+					T_{l}M = \coprod_{p \in M}T_{l}(T_{p}M). 
+				\end{equation}
+			\item \textit{Bundle of mixed tensors of type $\binom{k}{l}$ on $M$:}
+				\begin{equation}
+					T^{k}_{l}M = \coprod_{p \in M}T^{k}_{l}(T_{p}M). 
+				\end{equation}
+		\end{enumerate}
+	\item \textbf{Def. (Smooth Tensor Fields)} A \textit{smooth tensor field} is a smooth section of the above tensor bundles. 
+	\item \textbf{Obs. (Smooth Tensor Fields in Coordinates)} Given any smooth local coordinates $(x^{i})$ on $M$, sections of the above bundles can be written as: 
+	\begin{equation}
+		\sigma = 
+		\begin{cases}
+			\displaystyle
+			\sigma_{i_{1}\dotsm i_{k}}dx^{i_{1}}\otimes \dotsm \otimes dx^{i_{k}}, & \sigma \in \mathscr{T}^{k}(M); \\
+			\displaystyle 
+			\sigma^{j_{1}\dotsm j_{l}}\frac{\partial}{\partial x^{j_{1}}}\otimes \dotsm \otimes \frac{\partial}{\partial x^{j_{l}}}, & \sigma \in \mathscr{T}_{l}(M). \\
+			\displaystyle 
+			\sigma^{j_{1}\dotsm j_{l}}_{i_{1}\dotsm i_{k}}dx^{i_{1}}\otimes \dotsm \otimes dx^{i_{k}} \otimes \frac{\partial}{\partial x^{j_{1}}}\otimes \dotsm \otimes \frac{\partial}{\partial x^{j_{l}}}, & \sigma \in \mathscr{T}^{k}_{l}(M). 
+		\end{cases}
+	\end{equation}
+	\item \textbf{Lem. 11.6. (Equivalent Conditions for Smooth Tensor Fields)} Let $M$ be a smooth manifold, and let $\sigma: M \to T^{k}M$ be a rough section. The following are equivalent: \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item $\sigma$ is smooth.
+			\item In any smooth coordinate chart, the composition functions of $\sigma$ are smooth. 
+			\item If $X_{1}, \ldots, X_{k}$ are smooth vector fields defined on an open subset $U \subset M$, then the function $\sigma(X_{1}, \ldots, X_{k}): U \to \mathbb{R}$, defined by 
+				\begin{equation}
+					\sigma(X_{1}, \ldots, X_{k})(p) = \sigma_{p}(X_{1}|_{p}, \ldots, X_{k}|_{p})
+				\end{equation}
+			is smooth. 
+		\end{enumerate}
+\end{itemize}
+\subsection{Pullbacks of Smooth Tensor Fields}
+\begin{itemize}
+	\item \textbf{Def. (Pullback of a Smooth Map in Relation to Tensor Fields)} If $F: M \to N$ is a smooth map, for each integer $k \geq 0$ and each $p \in M$, we obtain a map $F_{\ast}: T^{k}(T_{F(p)}N) \to T^{k}(T_{p}M)$ called the pullback by 
+		\begin{equation}
+			(F^{\ast}S)(X_{1}, \ldots, X_{k}) = S(F_{\ast}X_{1}, \ldots, F_{\ast}X_{k}). 
+		\end{equation}
+	\item \textbf{Prop. 11.8. (Properties of Tensor Pullbacks)} Suppose $F: M \to N$ and $G: N \to P$ are smooth maps, $p \in M$, $S \in T^{k}(T_{F(p)}N)$, and $T \in T^{l}(T_{F(p)}N)$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item 
+	\end{enumerate}
+\end{itemize}
+
+
+\newpage 
+\section{Homotopy and the Fundamental Group}
+\subsection{Homotopy}
+\begin{itemize}
+	\item \textbf{Def. (Homotopy of Maps)} Let $X$ and $Y$ be \textit{topological} spaces, and $f, g \in C(X, Y)$. Then a \textit{homotopy} from $f$ to $g$ is a continuous map $H: X \times I \to Y$ such that $H(x, 0) = f(x)$ and $H(x, 1) = g(x)$ for all $x \in X$. 
+	\item \textbf{Def. (Homotopy Relative to a Subset)} Let $X$ and $Y$ be topological spaces, and $A \subset X$ an arbitrary subspace. A homotopy $H$ between maps $f, g: X \to Y$ is called a \textit{homotopy relative to $A$} if 
+		\begin{equation}
+			H(x, t) = f(x), \qquad \text{ for all $x \in A$, $t \in I$}. 
+		\end{equation}
+	\item \textbf{Def. (Path Homotopy)} Given two paths $f, g$ on $X$, a \textit{path homotopy} from $f$ to $g$ is a homotopy between the paths relative to the subset $\{0,1\} \subset I$. 
+	\item \textbf{Def. (Fundamental Group)} The \textit{fundamental group of $X$} based at $q \in X$, denoted by $\pi_{1}(X, q)$ is the set of all path classes of loops based at $q$, with operation defined by concatenation. 
+	\item \textbf{Def. (Simply Connected Topological Space)} Let $X$ be a topological space. If $X$ is path connected and $\pi_{1}(X)$ is trivial, then $X$ is said to be \textit{simply connected}.
+\end{itemize}
+\begin{exc}{7.2}
+	Let $X$ be a topological space. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f, g: I \to X$ be two paths from $p$ to $q$. Show that $f \sim g$ if and only if $f \cdot g^{-1} \sim c_{p}$. 
+		\item Show that $X$ is simply connected if and only if any two paths in $X$ with the same initial and terminal points are path homotopic. 
+	\end{enumerate}
+\end{exc}
+\begin{solutions}
+	Let $X$ be a topological space. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f, g: I \to X$ be two paths from $p$ to $q$. Suppose $f \sim g$. Then since $[f] = [g]$, 
+			\begin{equation}
+				[g] \cdot [g^{-1}] = [c_{p}] \implies [f] \cdot [g^{-1}] = [c_{p}] \implies f \cdot g^{-1} \sim c_{p}. 
+			\end{equation}
+		On the other hand, if $f \cdot g^{-1} \sim c_{q}$, then 
+			\begin{equation}
+				[f] \cdot [g^{-1}] = [c_{p}] = [g] \cdot [g^{-1}] \implies [f] = [g] \implies f \sim g. 
+			\end{equation}
+		\item Suppose that $X$ is a simply connected space, and let $f, g: I  \to X$ be two paths from $p$ to $q$. Then the product $f \cdot g^{-1}$ is well-defined and is a loop based at $p$. By simple connectedness, $f \cdot g^{-1} \sim c_{p}$. Hence, by part (a), we conclude that $f \sim g$. Now suppose that $X$ is path connected and that any two paths in $X$ that have the same initial and terminal points are path homotopic. Let $\gamma$ be an arbitrary loop based at $p \in X$. Then by hypothesis, $\gamma \sim c_{p}$. Hence, $\pi_{1}(X, p)$ is trivial. By path connectedness, $\pi_{1}(X)$ is trivial, and so $X$ is simply connected. 
+	\end{enumerate}
+\end{solutions}
+\subsection{Homomorphisms Induced by Continuous Maps}
+\begin{itemize}
+	\item \textbf{Lem. 7.14. (Path Homotopy is Preserved by Composition with Continuous Maps)} The path homotopy relation is preserved by composition with continuous maps. That is, if $f_{0}, f_{1}: I \to X$ are path homotopic and $\varphi: X \to Y$ is continuous, then $\varphi \circ f_{0}$ and $\varphi \circ f_{1}$ are path homotopic. 
+\end{itemize}
+\begin{exc}{7.5}
+	Prove Lemma 7.14.
+\end{exc}
+\begin{solutions}
+	Suppose that $f_{0}, f_{1}: I \to X$ are path homotopic, and that $\varphi: X \to Y$ is continuous. Let $H: I \times I \to X$ be the path homotopy from $f_{0}$ to $f_{1}$, and consider the map $\varphi \circ H: I \times I \to Y$. Since $H$ and $\varphi$ are continuous on their respective domains, it follows that $\varphi \circ H$ is continuous. Moreover, for any $s \in I$, 
+		\begin{equation}
+			(\varphi \circ H)(s, 0) = (\varphi \circ f_{0})(s), \qquad \text{ and } \qquad (\varphi \circ H)(s,1) = (\varphi \circ f_{1})(s). 
+		\end{equation}
+	Hence, $\varphi \circ H$ is a path homotopy from $\varphi \circ f_{0}$ to $\varphi \circ f_{1}$. 
+\end{solutions}
+\begin{itemize}
+	\item \textbf{Def. (Homomorphism Induced by a Continuous Map)} Let $X$ and $Y$ be topological spaces, and $\varphi: X \to Y$ a continuous map. The map $\varphi_{\ast}: \pi_{1}(X, q) \to \pi_{1}(X, \varphi(q))$ defined by $\varphi_{\ast}([f]) = [\varphi \circ f]$ is a group homomorphism, and is called the \textit{homomorphism induced by $\varphi$}. 
+	\item \textbf{Prop. 7.16 (Properties of the Induced Homomorphsm)} \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Let $\varphi: X \to Y$ and $\psi: Y \to Z$ be continuous maps. Then $(\psi \circ \varphi)_{\ast} = \psi_{\ast} \circ \varphi_{\ast}$.
+			\item If $\operatorname{Id}_{X}: X \to X$ denotes the identity map of $X$, then for any $q \in X$, $(\operatorname{Id}_{X})_{\ast}$ is the identity map of $\pi_{1}(X, q)$. 
+		\end{enumerate}
+		
+		{\color{orange}
+			\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+				\item Let $\varphi: X \to Y$ and $\psi: Y \to Z$ be continuous maps, $p \in X$, and $[f] \in \pi_{1}(X, p)$. Then 
+					\begin{equation}
+						(\psi_{\ast}\circ \varphi_{\ast})([f]) = \psi_{\ast}([\varphi \circ f]) = [(\psi \circ \varphi) \circ f] = (\psi \circ \varphi)_{\ast}([f]). 
+					\end{equation}
+				Since this is true for all $[f] \in \pi_{1}(X,p)$, $(\psi \circ \varphi)_{\ast} = \psi_{\ast} \circ \varphi_{\ast}$. 
+				\item Let $[f] \in \pi_{1}(X,q)$. Then 
+					\begin{equation}
+						\left(\operatorname{Id}_{X}\right)_{\ast}([f]) = [\operatorname{Id}_{X} \circ f] = [f]. 
+					\end{equation}
+				Since this is true for all $[f] \in \pi_{1}(X, q)$, we conclude that $\left(\operatorname{Id}_{X}\right)_{\ast}$ is the identity map of $\pi_{1}(X, q)$. 
+			\end{enumerate}
+		}
+		\item \textbf{Cor. 7.17 (Induced Isomorphism)} Homeomorphic spaces have isomorphic fundamental groups; namely, if $\varphi: X \to Y$ is a homeomorphism, then $\varphi_{\ast}: \pi_{1}(X, q) \to \pi_{1}(X, q)$ is an isomorphism. 
+		\item \textbf{Def. (Retraction of a Space)} Let $X$ be a topological space, and $A$ a subspace of $X$. A continuous map $r: X \to A$ is called a \textit{retraction} if $r|_{A} = \operatorname{Id}_{A}$.  Equivalently, $r$ is a retraction if $r \circ \iota_{A} = \operatorname{Id}_{A}$, where $\iota_{A}: A \hookrightarrow X$ is the inclusion map. If there exists a retraction from $X$ to $A$, then we say that $A$ is a \textit{retract} of $X$. 
+		\item \textbf{Prop. 7.18. (Injective Induced Homomorphism)} Suppose $A$ is a retract of $X$. If $r: X \to A$ is any retraction, then for any $q \in A$, $(\iota_{A})_{\ast}: \pi_{1}(A, q) \to \pi_{1}(X, q)$ is injective and $r_{\ast}: \pi_{1}(X, q) \to \pi_{1}(A, q)$ is surjective. 
+		
+		{\color{orange}
+			Since $r \circ \iota_{A} = \operatorname{Id}_{A}$, $r_{\ast} \circ (\iota_{A})_{\ast}$ is the identity on $\pi_{1}(A, q))$, from which it follows that $(\iota_{A})_{\ast}$ is injective and $r_{\ast}$ is surjective. 
+		}
+\end{itemize}
+\subsection{Homotopy Equivalence}
+\begin{itemize}
+	\item \textbf{Def. (Homotopy Equivalences)} Let $\varphi: X \to Y$ and $\psi: Y \to X$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item $\psi$ is a \textit{homotopy inverse} for $\varphi$ if $\psi \circ \varphi \simeq \operatorname{Id}_{X}$ and $\varphi \circ \psi \simeq \operatorname{Id}_{Y}$.
+			\item If $\varphi$ has a homotopy inverse $\psi$, then $\varphi$ is called a \textit{homotopy equivalence}, and we say that $X$ is \textit{homotopically equivalent to $Y$}, or that $X$ has the same \textit{homotopy type} as $Y$. We denote $X \simeq Y$. 
+		\end{enumerate}
+	\item \textbf{Def. (Deformation Retract)} A subspace $A \subset X$ is said to be a \textit{deformation retract} if there exists a retraction $r: X \to A$ such that the identity of $X$ is homotopic to $\iota_{A} \circ r$; the homotopy $H: \operatorname{Id}_{X} \simeq \iota_{A} \circ r$ is called a \textit{deformation retraction}. Intuitively, this means that points in $A$ \textit{end up} at the same position they started at. A deformation retraction is \textit{strong} iff $\operatorname{Id}_{X} \simeq_{A} (r \circ \iota_{A})$, which is to say that the points of $A$ remain \textit{fixed} throughout the retraction.\footnote{See \href{https://encycla.com/Deformation\_retraction}{https://encycla.com/Deformation\_retraction} for a \texttt{gif} of a (strong) deformation retraction.}
+\end{itemize}
+
+
+
+
+
+\newpage
+\section{Problems}
+\subsection{Smooth Maps}
+\begin{prb}{2-5}
+	Let $M$ be a nonempty smooth manifold of dimension $n\geq 1$. Show that $C^{\infty}(M)$ is infinite dimensional. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a nonempty smooth manifold of dimension $n \geq 1$. Let $(U, \varphi)$ be a smooth chart for $M$, and let $x_{1}, \ldots, x_{k}$ be $k$ distinct points contained in $U$. For each $j = 1, \ldots, k$, define the smooth function real-valued function $f_{j}$ with compact support inside $\varphi(U)$ as follows: $f_{j}(x_{m}) = \delta_{mj}$. Then for each $j$, define the function $g_{j}: M \to \mathbb{R}$ as follows: 
+	\begin{equation}
+		g_{j}(x) = 
+		\begin{cases}
+			f_{j}(\varphi(x)), & x \in U. \\
+			0, & x \in M\setminus U. 
+		\end{cases}
+	\end{equation}
+	Then since $U$ is open, it follows that $g_{j}$ is smooth for each $j$. Hence, we have obtained a linearly independent subset of $C^{\infty}(M)$ consisting of $k$ vectors. Since $k$ was arbitrary, we conclude that $C^{\infty}(M)$ is infinite dimensional. 
+\end{solutions}
+
+\begin{prb}{2-6}
+	For any topological space $M$, let $C(M)$ denote the algebra of continuous functions $f: M \to \mathbb{R}$. If $F: M \to N$ is a continuous map, define $F^{\ast}: C(N) \to C(M)$ by $F^{\ast} = f \circ F$, \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Show that $F^{\ast}$ is a linear map. 
+		\item If $M$ and $N$ are smooth manifolds, show that $F$ is smooth if and only if $F^{\ast}(C^{\infty}(N)) \subset C^{\infty}(M)$. 
+		\item If $F: M \to N$ is a homeomorphism between smooth manifolds, show that it is a diffeomorphism if and only if $F^{\ast}$ restricts to an isomorphism from $C^{\infty}(N)$ to $C^{\infty}(M)$.
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $a, b \in \mathbb{R}$ and $f, g \in C(N)$. Then 
+		\begin{equation}
+			F^{\ast}(af + bg) = (af + bg) \circ F = a(f \circ F) + b(g \circ F) = aF^{\ast}(f) + bF^{\ast}(g). 
+		\end{equation}
+		\item Let $M$ and $N$ be smooth manifolds. Assume that $F$ is smooth, and let $f \in C^{\infty}(N)$. Then 
+		\begin{equation}
+			F^{\ast}(f) = (f \circ F): M \to \mathbb{R}
+		\end{equation}
+		is smooth since it is the composition of smooth functions. Hence, $F^{\ast}(C^{\infty}(N)) \subset C^{\infty}(M)$. Now we need to show the converse. Suppose $F^{\ast}(C^{\infty}(N)) \subset C^{\infty}(M)$. Let $(U, \varphi)$ and $(V, \psi)$ be smooth charts for $M$ and $N$, respectively such that $F(U) \subset V$. Let $\psi = (\psi^{i})$, where each coordinate function $\psi^{i}: V \to \mathbb{R}$ is smooth. Note we can extend $\psi^{i}$ to a smooth function on $N$ by means of a smooth bump function. By our hypothesis, $F^{\ast}(\psi^{i}) = \psi^{i} \circ F$ is smooth. Then since $\varphi^{-1}: \varphi(U) \to M$ is smooth,     
+		\begin{equation}
+			\psi^{i} \circ F \circ \varphi^{-1}
+		\end{equation}
+		is smooth for each $i$, which means that $\psi \circ F \circ \varphi^{-1}$ is smooth. Hence, we conclude that $F$ is smooth on $M$. 
+		\item Let $F: M \to N$ be a homeomorphism between smooth manifolds. Suppose $F^{\ast}$ restricts to an isomorphism from $C^{\infty}(N)$ to $C^{\infty}(M)$. Then since $F^{\ast}(C^{\infty}(N)) \subset C^{\infty}(M)$, $F$ is a smooth map. Let $G$ be the inverse function of $F$. Then $G^{\ast}$ is the inverse function of $F^{\ast}$, and so $G^{\ast}$ restricts to an isomorphism from $C^{\infty}(M)$ to $C^{\infty}(N)$. In particular, this implies that $G$ is a smooth map. Hence, $F$ is a diffeomorphism. Now assume that $F$ is a diffeomorphism. Let $G$ be its inverse map. Since $G: N \to M$ is smooth, $G^{\ast}(C^{\infty}(M)) \subset C^{\infty}(N)$. Let $g \in C^{\infty}(M)$ and let $C^{\infty}(N) \ni f = G^{\ast}(g)$. Then 
+		\begin{equation}
+			F^{\ast}(f) = f \circ F = g \circ G \circ F = g, 
+		\end{equation}
+		so that $F^{\ast}$ is surjective. Now we show injectivity of $F^{\ast}$. Suppose $F^{\ast}(f) = F^{\ast}(g) \iff f \circ F = g \circ F$. Then $(f \circ F) \circ G = (g \circ F) \circ G \iff f = g$. Hence, $F^{\ast}$ is injective. Using (a), we conclude that $F^{\ast}$ restricts to an isomorphism from $C^{\infty}(N)$ to $C^{\infty}(M)$. 
+	\end{enumerate}
+\end{solutions}
+\subsection{Tangent Vectors}
+\begin{prb}{3-1}
+	Suppose $M$ and $N$ are smooth manifolds with $M$ connected, and $F: M \to N$ is a smooth map such that $F_{\ast}: T_{p}M \to T_{F(p)}N$ is the zero map for each $p \in M$. Show that $F$ is a constant map. 
+\end{prb}
+\begin{solutions}
+	Let $M$ and $N$ be smooth manifolds with $M$ connected, and $F: M \to N$ be a smooth map such that $F_{\ast}$ is the zero map for each $p \in M$. Let $p \in M$, and define the subset 
+	\begin{equation}
+		\mathscr{C} = \brac*{q \in M: F(q) = F(p)}.
+	\end{equation}
+	Clearly this subset is nonempty since it at least contains $p \in M$. If $q \in \mathscr{M}$, let $U$ be a smooth coordinate chart containing $q$. By hypothesis, for all $r \in U$, $F_{\ast}$ is the zero map; in local coordinates, this is possible iff all of the partial derivatives of the coordinate representation of $F$ is zero at each $r \in U$. But this means that $F$ is constant on $U$. Hence, $U \subset \mathscr{C}$, which means that $\mathscr{C}$ is an open subset of $M$. By continuity of $F$, $\mathscr{C}$ is also a closed subset of $M$. Since $M$ is connected and $\mathscr{C}$ is nonempty, it then follows that $\mathscr{C}= M$. Hence, $F$ is a constant map. 
+\end{solutions}
+
+\begin{prb}{3-3}
+	If a nonempty smooth $n$-manifold is diffeomorphic to an $m$-manifold, show that $n = m$. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a nonempty $m$-manifold and $N$ a nonempty $n$-manifold; let $F: M \to N$ be a diffeomorphism. Then since $F$ is a local diffeomorphism, for each $p \in M$, $F_{\ast}: T_{p}M \to T_{F(p)}N$ is an isomorphism. Since $\dim{T_{p}M} = m$ and $\dim{T_{F(p)}N} = n$ for every $p \in M$, it then follows that $m = n$. 
+\end{solutions}
+
+\begin{prb}{3-4}
+	Let $C \subset \mathbb{R}^{2}$ be the unit circle, and let $S \subset \mathbb{R}^{2}$ be the boundary of the square of side 2 centered at the origin: 
+	\begin{equation*}
+		S = \brac*{(x, y): \max(\abs{x}, \abs{y}) = 1}.
+	\end{equation*}
+	Show that there is a homeomorphism $F: \mathbb{R}^{2} \to \mathbb{R}^{2}$ such that $F(C) = S$, but there is no \textit{diffeomorphism} with the same property. [Hint: Consider what $F$ does to the tangent vector to a suitable curve in $C$.]
+\end{prb}
+\begin{solutions}
+	Let $C \subset \mathbb{R}^{2}$ be the unit circle and $S \subset \mathbb{R}^{2}$ the boundary of the square of side 2 centered at the origin. Consider the map $G: S \to C$ defined as follows 
+	\begin{equation}
+		G(x,y) = \frac{(x, y)}{\sqrt{x^{2} + y^{2}}} \in S. 
+	\end{equation}
+	First, we show that $G$ is injective. Suppose $G(x_{1}, y_{1}) = G(x_{2}, y_{2})$. Since $\sqrt{x_{1}^{2} + y_{1}^{2}}, \sqrt{x_{2}^{2} + y_{2}^{2}}$ are nonzero, multiplying both sides by $\sqrt{(x_{1}^{2} + y_{1}^{2})(x_{2}^{2} + y_{2}^{2})}$, we get $(x_{1}, y_{1}) = (x_{2}, y_{2})$. Hence, $G$ is injective. Now we show that $G$ is surjective. Let $(\tilde{x}, \tilde{y}) \in C$. We give a rough sketch for surjectivity, but the idea is clear. Consider the ray connecting the origin $(0,0)$ to the point $(\tilde{x}, \tilde{y})$. Extend this ray indefinitely. Then this ray must intersect $S$ at some point $(x_{0}, y_{0})$. Since $G$ radially projects all of the points in $S$ inwards onto $C$, it follows that $G(x_{0}, y_{0}) = (\tilde{x}, \tilde{y})$. Hence, $G$ is bijective. By calculus, $G$ is continuous. Since continuous bijections from compact spaces onto Hausdorff spaces is a homeomorphism, $G$ is a homeomorphism. Notably, its inverse $F$ must also be a homeomorphism, proving the claim. However, there can be no diffeomorphism between $C$ and $S$. Suppose $F$ was such a diffeomorphism, and let $a$ be one of the corners of the square, and $p = F^{-1}(a)$. Since $F$ is a diffeomorphism, $T_{p}C \cong T_{a}S$ under the isomorphism $F_{\ast}$. As we showed before $T_{p}C$ is 1-dimensional. On the other hand, $T_{c}S$ is not well-defined. But this is a contradiction. Therefore, $C$ and $S$ are not diffeomorphic. 
+\end{solutions}
+\subsection{The Cotangent Bundle}
+\begin{prb}{6-1}
+	$ $\newline \vspace{-0.5cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item If $V$ and $W$ are finite-dimensional vector spaces and $A: V \to W$ is any linear map, show that the following diagram commutes: 
+		\begin{center}
+			\begin{tikzcd}[sep = large]
+				V \arrow[r,"A"] \arrow[d, "\xi_{V}"] & W \arrow[d,"\xi_{W}"] \\
+				V^{\ast\ast} \arrow[r,"(A^{\ast})^{\ast}"] & W^{\ast\ast},
+			\end{tikzcd}
+		\end{center}
+		where $\xi_{V}$ and $\xi_{W}$ denote the isomorphisms defined by (6.3) for $V$ and $W$, respectively. 
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\begin{enumerate}[itemsep=-2pt,label = (\alph{*})]
+		\item Assume all of the given hypotheses. Let $X \in V$ and let $\omega \in W^{\ast}$. Then 
+		\begin{equation}
+			\xi_{W}(AX)(\omega) = \omega(AX). 
+		\end{equation}
+		On the other hand, since $A^{\ast}\omega \in V^{\ast}$, $\xi_{V}(X)(A^{\ast}\omega) = A^{\ast}\omega(X)$. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{6-2}
+	$ $\newline \vspace{-0.6cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item If $F: M \to N$ is a smooth map, show that $F^{\ast}: T^{\ast}N \to T^{\ast}M$ is a smooth bundle map. 
+		\item Show that the assignment $M \mapsto T^{\ast}M$, $F \mapsto F^{\ast}$ defines a contravariant functor from the category of smooth manifolds to the category of smooth vector bundles. 
+	\end{enumerate}
+\end{prb}	
+\end{document}
