@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  30 DEC 2025 23:53
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  31 DEC 2025 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1376,31 +1376,31 @@ Package mdframed Info: mdframed detected package amsthm
 [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1154.
+(mdframed)              on input line 1155.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1169.
+(mdframed)              on input line 1170.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1200.
+(mdframed)              on input line 1201.
 
 
 [28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1211.
+(mdframed)              on input line 1212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1218.
+(mdframed)              on input line 1219.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1233.
+(mdframed)              on input line 1234.
 
 
 [29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1255.
+(mdframed)              on input line 1256.
 
 
 [30] (./GeoTop_Crash_Course.aux)
@@ -1414,7 +1414,7 @@ Package rerunfilecheck Info: File `GeoTop_Crash_Course.out' has not changed.
 Here is how much of TeX's memory you used:
  29568 strings out of 474240
  566143 string characters out of 5745919
- 1951560 words of memory out of 5000000
+ 1950560 words of memory out of 5000000
  51689 multiletter control sequences out of 15000+600000
  566681 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
