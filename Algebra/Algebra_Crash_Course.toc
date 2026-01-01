@@ -4,6 +4,9 @@
 \contentsline {subsection}{\numberline {1.2}Composition Series and the H\"older Program}{4}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Exercises}{5}{subsubsection.1.2.1}%
 \contentsline {section}{\numberline {2}Group Actions}{6}{section.2}%
-\contentsline {subsubsection}{\numberline {2.0.1}Exercises}{6}{subsubsection.2.0.1}%
-\contentsline {subsection}{\numberline {2.1}Groups Acting on Themselves by Left Multiplication}{7}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Direct and Semidirect Products and Abelian Groups}{8}{section.3}%
+\contentsline {subsection}{\numberline {2.1}Group Actions and Permutation Representations}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Exercises}{6}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Groups Acting on Themselves by Left Multiplication}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Exercises}{8}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Groups Acting on Themselves by Conjugation}{9}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Direct and Semidirect Products and Abelian Groups}{10}{section.3}%

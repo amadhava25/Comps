@@ -191,6 +191,7 @@
 \end{solutions}
 \newpage 
 \section{Group Actions}
+\subsection{Group Actions and Permutation Representations}
 \subsubsection{Exercises}
 \begin{exc}{1}
 	Let $G$ act on the set $A$. Prove that if $a, b \in A$ and $b = g \cdot a$ for some $g \in G$, then $G_{b} = gG_{a}g^{-1}$ ($G_{a}$ is the stabilizer of $a$). Deduce that if $G$ acts transitively on $A$, then the kernel of the action is $\bigcap_{g \in G}gG_{a}g^{-1}$. 
@@ -254,6 +255,106 @@
 	\end{enumerate}
 \end{solutions}
 \subsection{Groups Acting on Themselves by Left Multiplication}
+\begin{itemize}
+	\item \textbf{Thm. 3. (Action on Set of Left Cosets)} Let $G$ be a group, $H$ a subgoup of $G$, and let $G$ act by left multiplication on the set $A$ of left cosets of $H$ in $G$. Let $\pi_{H}$ be the associated permutation representation afforded by this action. Then \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\textbf{\arabic{*}})]
+			\item $G$ acts transitively on $A$
+			\item the stabilizer in $G$ of the point $1H \in A$ is the subgroup $H$. 
+			\item the kernel of the action (i.e., the kernel of $\pi_{H}$) is $\bigcap_{x \in G}xHx^{-1}$, and $\ker{\pi_{H}}$ is the largest normal subgroup of $G$ contained in $H$. 
+		\end{enumerate}
+		
+	{\color{orange}
+		Assume the given hypotheses. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\textbf{\arabic{*}})]
+			\item Let $aH, bH \in A$, where $a,b\in G$. Then $ba^{-1} \in G$. Hence, $(ba^{-1})aH = bH$. Therefore, the arbitrary cosets $aH$ and $bH$ lie in the same orbit, which proves that $G$ acts transitively on $A$.
+			\item $g \in G_{1H} \iff g \cdot 1H = 1H \iff gH = 1H \iff g \in H$. Hence, $G_{1H} = H$. 
+			\item By definition of $\pi_{H}$, we must have 
+				\begin{align}
+					\begin{split}
+						\ker{\pi_{H}} &= \brac*{g \in G: gxH = xH \forall x \in G} \\
+						&= \brac*{g \in G: (x^{-1}gx)H = H \forall x \in G} \\
+						&= \brac*{g \in G: x^{-1}gx \in H \forall x \in G} \\
+						&= \brac*{g \in G: g \in xHx^{-1} \forall x \in G} = \bigcap_{x \in G}xHx^{-1}. 
+					\end{split}
+				\end{align}
+			Now, we need to prove that $\ker{\pi_{H}}$ is the largest normal subgroup of $G$ contained in $H$. First observe that $\ker{\pi_{H}} \trianglelefteq G$ and $\ker{\pi_{H}} \leq H$. Let $N$ be a normal subgroup of $G$ contained in $H$, which means that $N = xNx^{-1} \leq xHx^{-1}$ for all $x \in G$. Hence, 
+				\begin{equation}
+					N \leq \bigcap_{x \in G}xHx^{-1} = \ker{\pi_{H}}. 
+				\end{equation}
+		\end{enumerate}
+	}
+	
+	\item \textbf{Cor. 4. (Cayley's Theorem)} Every group is isomorphic to a subgroup of some symmetric group. If $G$ is a group of order $n$, then $G$ is isomorphic to a subgroup of $S_{n}$. 
+	
+	{\color{orange}
+		Let $H = 1$ and apply the preceding theorem to obtain a homomorphism of $G$ into $S_{G}$ (here, we identify the cosets of the identity subgoup with the elements of $G$). Since the kernel of this homomorphism is contained in $H = 1$, $G$ is isomorphic to its image in $S_{G}$. 
+	}
+	
+	\item \textbf{Cor. 5. (Subgroups of Smallest Prime Index)} If $G$ is a finite group of order $n$ and $p$ is the smallest prime dividing $|G|$, then any subgroup of index $p$ is normal. 
+	
+	{\color{orange}
+		Suppose $H \leq G$ and $|G:H| = p$. Let $\pi_{H}$ be the permutation representation afforded by multiplication on the set of left cosets of $H$ in $G$, let $K = \ker{\pi_{H}}$, and  let $|H:K| = k$. Then $|G:K| = |G:H||H:K| = pk$. Since $H$ has $p$ left cosets, $G/K$ is isomorphic to a subgroup of $S_{p}$ by the First Isomorphism Theorem. By Lagrange's Theorem, $pk = |G/K|$ divides $p!$. Therefore, $k \mid (p - 1)!$. But all of the prime divisors of $(p - 1)!$ are less than $p$, and by the minimality of $p$, every prime divisor of $k$ is greater than or equal to $p$. This forces $k = 1$ so that $H = K \trianglelefteq G$, completing the proof. 
+	}
+\end{itemize}
+\subsubsection{Exercises}
+\begin{exc}{8}
+	Prove that if $H$ has finite index $n$ then there is a normal subgroup $K$ of $G$ with $K \leq H$ and $|G: K| \leq n!$. 
+\end{exc}
+\begin{solutions}
+	Let $G$ be an arbitrary group, and $H$ a subgroup of $G$ of finite index $n$. Let $G$ act on the set $A$ of left cosets of $H$ by left multiplication, and denote the afforded permutation representation as $\pi_{H}$. Define $K = \ker{\pi_{H}} \trianglelefteq G$ such that $K \leq H$. By the First Isomorphism Theorem, $G/K$ is isomorphic to the subgroup $\pi_{H}(G) \leq S_{A}$. Since $H$ has $n$ left cosets, $|S_{A}| = n!$ so that $|\pi_{H}(G)| \mid n!$. In particular, this implies that $|\pi_{H}(G)| \leq n!$, which then implies that $|G/K| \leq n!$. 
+\end{solutions}
+\begin{exc}{9}
+	Prove that if $p$ is a prime and $G$ is a group of order $p^{\alpha}$ for some $\alpha \in \mathbb{Z}^{+}$, then every subgroup of index $p$ is normal in $G$. Deduce that every group of order $p^{2}$ has a normal subgroup of order $p$. 
+\end{exc}
+\begin{solutions}
+	Let $p$ be a prime and $G$ a group of order $p^{\alpha}$ for some $\alpha \in \mathbb{Z}^{+}$. Since $p$ is the smallest prime dividing the order of $G$, we conclude by Corollary 5 that any subgroup of index $p$ must be normal in $G$. Now let $G$ be a group of order $p^{2}$. \textit{If} $G$ has a subgroup of order $p$, then since $p^{2}/p = p$, the index of the subgroup is $p$; by the previous observation, this subgroup must be normal in $G$. Therefore, it suffices to show that such subgroups necessarily exist. But existence is straightforward: since $p$ divides $|G|$, then by Cauchy's Theorem, $G$ has to contain an element of order $p$. Then the subgroup generated by this element has to have order $p$, which then concludes the claim. 
+\end{solutions}
+\begin{exc}{10}
+	Prove that every non-abelian group of order 6 has a nonnormal subgroup of order $2$. Use this to classify groups of order 6. [Produce an injective homomorphism into $S_{3}$.]
+\end{exc}
+\begin{solutions}
+	 We argue by contradiction; let $G$ be a non-abelian group of order 6. By Cauchy's Theorem, $G$ must contain \textit{at least one} element of order 2. Considering the subgroup generated by this element, $G$ must contain a subgroup of order $2$. Assume to the contrary that every subgroup of order 2 is normal in $G$, and let $P = \{1, a\}$ be such a subgroup. By definition of normality, $gag^{-1} = a$ for all $g \in G$, which implies $ga = ag$ for all $g \in G$, which then implies that $a \in Z(G)$. I.e., $|Z(G)| \geq 2$. \vspace{-0.25cm}
+	 	\begin{enumerate}[itemsep =-2pt,label = (\textbf{\roman{*}})]
+	 		\item Suppose $|Z(G)| = 2$. Then $|G/Z| = 3$, which means $G/Z$ is cyclic, and so $G$ is abelian - contradicting our assumption that $|Z(G)| = 2$. 
+	 		\item Suppose $|Z(G)| = 3$. Then $|G/Z| = 2$, which means $G/Z$ is cyclic, and so $G$ is abelian - contradicting our assumption that $|Z(G)| = 3$. 
+	 		\item Suppose $|Z(G)| = 6$. Then $G$ is abelian, which contradicts our hypothesis that $G$ is non-abelian. 
+	 	\end{enumerate}
+	 Hence, we must have $|Z| = 1$, but this contradicts our hypothesis that every subgroup of order $2$ is normal. Hence, $G$ must contain a nonnormal subgroup of order 2. 
+\end{solutions}
+\begin{exc}{14}
+	Let $G$ be a finite group of composite order $n$ with the property that $G$ has a subgroup of order $k$ for each positive integer $k$ dividing $n$. Prove that $G$ is not simple. 
+\end{exc}
+\begin{solutions}
+	Let $G$ be a finite group of composite order $n$ with the property that $G$ has a subgroup of order $k$ for each positive integer $k$ dividing $n$. Let $n = p_{1}^{\alpha_{1}}p_{2}^{\alpha_{2}}\dotsm p_{m}^{\alpha_{m}}$ be the prime factorization of $n$, and $p_{1}$ be the smallest prime in the factorization (possibly after rearranging and renumbering). Then since $j = p_{1}^{\alpha_{1} - 1}p_{2}^{\alpha_{2}}\dotsm p_{m}^{\alpha_{m}} \mid n$, $G$ contains a subgroup $J$ of order $j$. By Lagrange's Theorem, $[G: J] = p_{1}$. Hence, by Corollary 5, this subgroup must be a proper normal, nontrivial, subgroup of $G$ which means that $G$ cannot be simple. 
+\end{solutions}
+\subsection{Groups Acting on Themselves by Conjugation}
+\begin{itemize}
+	\item \textbf{Prop. 6. (Number of Conjugates of a Subset)} Let $G$ be a group and $S$ a subset of $G$. Then the number of conjugates of $S$ is equal to $|G: N_{G}(S)| = |G: G_{S}|$. In particular, the number of conjugates of an element $s$ is the index of the centralizer of $s$, $|G: C_{G}(S)|$. 
+	
+	\item \textbf{Thm. 7. (Class Equation)} Let $G$ be a finite group and let $g_{1}, g_{2}, \ldots, g_{r}$ representatives of the distinct conjugacy classes of $G$ not contained in the center $Z(G)$ of $G$. Then 
+		\begin{equation}
+			|G| = |Z(G)| + \sum_{i = 1}^{r}|G: C_{G}(g_{i})|. 
+		\end{equation}
+		
+	\item \textbf{Thm. 8. (Groups of Order $p^{2}$)} If $p$ is a prime and $P$ is a group of prime power $p^{\alpha}$ for some $\alpha \geq 1$, then $P$ has a nontrivial center: $Z(P) \neq 1$. 
+	
+	{\color{orange}
+		Consider the class equation: 
+			\begin{equation}
+				|P| = |Z(P)| + \sum_{i = 1}^{r}|P: C_{P}(g_{i})|, 
+			\end{equation}
+		where $g_{1}, \ldots, g_{r}$ are representatives of the distinct non-central conjugacy classes. By definition, $C_{P}(g_{i}) \neq P$ for $i = 1, 2, \ldots, r$ so that $p \mid |P: C_{p}(g_{i})|$. Since $p \mid |P|$, it follows that $p \mid |Z(P)|$. Hence, $|Z(P)|$ cannot be trivial. 
+	}
+	
+	\item \textbf{Thm. 9. (Groups of Order $p^{2}$)} If $|P| = p^{2}$ for some prime $p$, then $P$ is abelian. More precisely, $P$ is isomorphic to either $\mathbb{Z}_{p^{2}}$ or $\mathbb{Z}_{p} \times \mathbb{Z}_{p}$. 
+	
+	{\color{orange}
+		By the previous theorem, $Z(P)$ is nontrivial so that $P/Z(P)$ is cyclic. Hence, $P$ is abelian. If $P$ contains an element of order $p^{2}$, then $P$ is cyclic so that $P \cong \mathbb{Z}_{p^{2}}$. So suppose that \textit{every} nontrivial element of $P$ has order $p$. Let $x, y$ be distinct nonidentity elements of $P$. Since $|\braket{x, y}| > |\braket{x}| = p$, we must have that $P = \braket{x, y}$. Since $x$ and $y$ have order $p$, $\braket{x} \times \braket{y} \cong \mathbb{Z}_{p} \times \mathbb{Z}_{p}$. Hence, the map $\varphi: (x^{a}, y^{b}) \mapsto x^{a}y^{b}$ is an isomorphism from $\braket{x} \times \braket{y} \to P$, which completes the proof. 
+	}
+\end{itemize}
+
+
+
 \newpage 
 \section{Direct and Semidirect Products and Abelian Groups}
 
