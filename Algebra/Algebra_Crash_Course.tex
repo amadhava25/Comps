@@ -1,0 +1,200 @@
+%om
+\documentclass{article}
+\usepackage{../header}
+\usepackage{amssymb}
+\title{Om Algebra Crash Course}
+\author{\me}
+\date{December 31, 2025}
+
+\begin{document}
+	\maketitle
+	\fullline 
+	\tableofcontents
+	\halfline
+	\newpage 
+	
+\section{Quotient Groups and Homomorphisms}
+\subsection{The Isomorphism Theorems}
+\begin{itemize}
+	\item \textbf{Thm. 16. (First Isomorphism Theorem)} If $\varphi: G \to H$ is a group homomorphism, then $\ker{\varphi} \trianglelefteq G$ and $G/\ker{\varphi} \cong \varphi(G)$. 
+	
+	{\color{orange}
+		Let $\varphi: G \to H$ be a group homomorphism with kernel $K$. First, we will prove that the kernel is a normal subgroup. Let $g \in G$ and $k \in \ker{\varphi}$. Then 
+			\begin{equation}
+				\varphi(gkg^{-1}) = \varphi(g)\varphi(k)\varphi(g)^{-1} = \varphi(g)\varphi(g)^{-1} = 1 \implies gkg^{-1} \in K. 
+			\end{equation}
+		This implies that $gKg^{-1} \subseteq K$ for all $g \in G$, and so $K$ is a normal subgroup of $G$. Now let $\ti{\varphi}: G/\ker{\varphi} \to\varphi(G)$ as follows: $\ti{\varphi}(gK) = \varphi(g)$. First, we start by showing that $\ti{\varphi}$ is well-defined. Suppose $g_{1}K = g_{2}K$, which means that $g_{1}g_{2}^{-1} \in K$. Therefore, 
+			\begin{equation}
+				\varphi(g_{1}g_{2}^{-1}) = 1 \implies \varphi(g_{1}) = \varphi(g_{2}) \implies \ti{\varphi}(g_{1}K) = \ti{\varphi}(g_{2}K). 
+			\end{equation}
+		
+		We need to show that $\ti{\varphi}$ is an isomorphism. Suppose $\ti{\varphi}(g) = \ti{\varphi}(h)$. Then $\varphi(g) = \varphi(h) \iff gh^{-1} \in K \iff gK = hK$. This proves injectivity. Now let $\varphi(g) \in \varphi(G)$. Hence clearly $gK \mapsto g$ so that $\ti{\varphi}$ is surjective. Finally, if $g_{1}K, g_{2}K \in G/K$, then 
+			\begin{equation}
+				\ti{\varphi}(g_{1}K \cdot g_{2}K) = \ti{\varphi}(g_{1}g_{2}K) = \varphi(g_{1}g_{2}) = \varphi(g_{1})\varphi(g_{2}) = \ti{\varphi}(g_{1}K)\ti{\varphi}(g_{2}K). 
+			\end{equation}
+		Hence, $\ti{\varphi}$ is indeed an isomorphism of groups. 
+	}
+	
+	\item \textbf{Thm. 18. (Diamond Isomorphism Theorem)} Let $G$ be a group, $A$ and $B$ be subgroups of $G$, and assume that $A \leq N_{G}(B)$. Then (1) $AB$ is a subgroup of $G$, (2) $B \trianglelefteq AB$, (3) $A \cap B \trianglelefteq A$, and (4) $AB/B \cong A/A \cap B$. 
+	
+	{\color{blue}
+		(1) Since $A \leq N_{G}(B)$, it automatically follows that $AB$ is a subgroup of $G$. (2) Since $A \leq N_{G}(B)$ and $B \leq N_{G}(B)$, then $AB \leq N_{G}(B)$, which is to say that $B$ is a normal subgroup of $AB$. (3 - 4) Consider the map $\varphi: A \to AB/B$ defined by $\varphi(a) = aB$. It is straightforward to see that $\varphi$ is a surjective group homomorphism, which means that $\varphi(A) = AB/B$. Now we will determine the kernel: 
+			\begin{equation}
+				A \ni a \in \ker{\varphi} \iff aB = 1B \iff a \in B. 
+			\end{equation}
+		Hence, $\ker{\varphi} = A \cap B$. By the first Isomorphism Theorem, $A \cap B \trianglelefteq A$ and $A/A \cap B \cong AB/B$. 
+	}
+	
+	\item \textbf{Thm. 19. (Third Isomorphism Theorem)} Let $G$ be a group and let $H$ and $K$ be normal subgroups of $G$ with $H \leq K$. Then $K/H \trianglelefteq G/H$ and 
+		\begin{equation}
+			(G/H)/(K/H) \cong G/K. 
+		\end{equation}
+	
+	{\color{orange}
+		First, we will show that $K/H \trianglelefteq G/H$. Define the map $\varphi: G/H \to G/K$ by $\varphi(gH) = gK$. First, we need to show that this map is well-defined. Suppose $g_{1}H = g_{2}H$. Then $g_{1} = g_{2}h$ for some $h \in H$. Since $H \leq K$, $h \in K$, which shows that $g_{1}K = g_{2}K$. Hence, $\varphi$ is well-defined. It is straightforward to see that $\varphi$ is a surjective homomorphism. Finally, we can easily show that $\ker{\varphi} = K/H$. This means that (1) $K/H$ is a normal subgroup of $G/H$, and (2) by the First Isomorphism Theorem, $(G/H)/(K/H) \cong G/K$. 
+	}
+	
+	\item \textbf{Thm. 20. (Lattice Isomorphism Theorem)} Let $G$ be a group and $N$ a normal subgroup of $G$. Every subgroup of $G/N$ is of the form $A/N$, where $A$ is a subgroup of $G$ containing $N$. Moreover, for all $A, B \leq G$, with $N\leq A$ and $N \leq B$, \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\textbf{\arabic{*}})]
+			\item $A \leq B$ if and only if $A/N \leq B/N$. 
+			\item If $A \leq B$, then $\abs{B: A} = \abs{B/N: A/N}$. 
+			\item $\braket{A,B}/N = \braket{A/N, B/N}$. 
+			\item $(A \cap B)/N = (A/N) \cap (B/N)$. 
+			\item $A \trianglelefteq G$ if and only if $A/N \trianglelefteq G/N$. 
+		\end{enumerate}
+		
+	\item \textbf{Def. (Factoring Through)} In some of the above proofs of the isomorphism theorems, we have had to define a map $\varphi$ on quotient groups $G/N$ defined by giving the value of $\varphi$ on the coset $gN$ in terms of the representative $g$ alone. In essence, this defines a homomorphism  $\Phi$ on $G$, itself, by specifying the value of $\varphi$ at $g$. Hence, a map on a quotient group $G/N$ is well-defined if and only if $N \leq \ker{\Phi}$. In this case, we say that the homomorphism $\Phi$ \textit{factors through} $N$ and $\varphi$ is the induced homomorphism on $G/N$. Pictorially, 
+		\begin{center}
+			\begin{tikzcd}
+				G \arrow[r, "\pi"] \arrow[dr,"\Phi"] & G/N \arrow[d, "\varphi"] \\
+				& H
+			\end{tikzcd}
+		\end{center}
+\end{itemize}
+\subsection{Exercises}
+\begin{exc}{3}
+	Prove that if $H$ is a normal subgroup of $G$ of prime index $p$ then for all $K \leq G$ either \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = \textbf{(\roman{*})}]
+		\item $K \leq H$ or 
+		\item $G = HK$ and $|K: K \cap H| = p$. 
+	\end{enumerate}
+\end{exc}
+\begin{solutions}
+	Let $H$ be a normal subgroup of $G$ of prime index $p$, and let $K$ be an arbitrary fixed \textit{nontrivial} subgroup of $G$. If $K \leq H$, we are done; so assume that $K$ is not a subgroup of $H$. Since $K \leq G = N_{G}(H)$, we conclude by the Second Isomorphism Theorem that $HK$ is a subgroup of $G$ and that $K \cap H$ is a normal subgroup of $K$. Hence, we have the chain $H \leq HK \leq G$. Therefore, 
+		\begin{equation}
+			p = |G:H| = |G:HK| \cdot |HK:H|. 
+		\end{equation}
+	Since $p$ is a prime, either $|G:HK| = 1$ (in which case $G = HK$), or $|HK:H| = 1 \implies HK = H \implies K \leq H$. By our hypothesis, the latter is not possible. Therefore, $G = HK$. From this, we observe that 
+		\begin{equation}
+			1 = \frac{|HK|}{|G|} = \frac{|H||K|}{|G||K \cap H|} = \frac{p^{-1}|K|}{|K \cap H|} \implies p = \frac{|K|}{|K \cap H|} = |K: K \cap H|. 
+		\end{equation}
+\end{solutions}
+\begin{exc}4
+	Let $C$ be a normal subgroup of the group $A$ and let $D$ be a normal subgroup of the group $B$. Prove that $(C \times D) \trianglelefteq (A \times B)$ and $(A \times B)/(C \times D) \cong (A/C) \times (B/D)$. 
+\end{exc}
+\begin{solutions}
+	Let $C$ be a normal subgroup of the group $A$ and $D$ be a normal subgroup of the group $B$. Define the map, 
+		\begin{align*}
+			\begin{split}
+				\varphi: &A \times B \longrightarrow C \times D \\
+				&(a, b) \longmapsto (aC, bD). 
+			\end{split}
+		\end{align*}	
+	First, we will show that $\varphi$ is a group homomorphism. Let $a_{1},a_{2} \in A$ and $b_{1}, b_{2} \in B$. Then 
+		\begin{align}
+			\begin{split}
+				\varphi(a_{1}a_{2},b_{1}b_{2}) &= (a_{1}a_{2}C, b_{1}b_{2}D) \\
+				&= (a_{1}C, b_{1}D) \cdot (a_{2}C, b_{2}D) \\
+				&= \varphi(a_{1}, b_{1}) \cdot \varphi(a_{2}, b_{2}). 
+			\end{split}
+		\end{align}
+	This confirms that $\varphi$ is a group homomorphism; $\varphi$ is clearly surjective since for any $(aC, bD) \in (A/C) \times (B/D)$, $\varphi: (a, b) \mapsto (aC, bD)$. Now we identify the kernel of this map: 
+		\begin{align}
+			\begin{split}
+				\ker{\varphi} &= \brac*{(a, b) \in A \times B: aC = 1C \text{ and } bD = 1D} \\
+				&= \brac*{(a, b) \in A \times B: a \in C \text{ and } b \in D} \\
+				&= C \times D. 
+			\end{split}
+		\end{align}
+	Hence, the conclusion proceeds from the First Isomorphism Theorem. 
+\end{solutions}
+\begin{exc}{9}
+	Let $p$ be a prime and let $G$ be a group of order $p^{a}m$, where $p$ does not divide $m$. Assume $P$ is a subgroup of $G$ of order $p^{a}$ and $N$ is a normal subgroup of $G$ of order $p^{b}n$, where $p$ does not divide $n$. Prove that $|P \cap N| = p^{b}$ and $|PN/N| = p^{a - b}$. (The subgroup $P$ of $G$ is called a Sylow $p$-subgroup of $G$. This exercise shows that the intersection of any Sylow $p$-subgroup of $G$ with a normal subgroup $N$ is a Sylow $p$-subgroup of $N$.)
+\end{exc}
+\begin{solutions}
+	Assume all of the given hypotheses. We have the following results: \vspace{-0.25cm} 
+	\begin{enumerate}[itemsep =-2pt,label = \textbf{(\roman{*})}]
+		\item since $P \leq G = N_{G}(N)$, $PN \leq G$ by the Diamond Isomorphism Theorem;
+		\item $P \cap N \leq P$, which means that $|P \cap N| = p^{j}$ for some nonnegative integer $j \leq a$;
+		\item $PN \leq G$ implies, by Lagrange's Theorem, that there exists a positive integer $k$ such that 
+			\begin{equation}
+				|G| = p^{a}m = k \cdot |PN| = k \cdot \frac{|P||N|}{|P \cap N|} = k \cdot \frac{p^{a + b}n}{p^{j}} \implies m = k \cdot p^{b - j}n. 
+			\end{equation}
+		This shows that $p^{b - j} \mid m$. Since $p \nmid m$, we must necessarily have $p^{b - j} = 1 \implies b - j = 0\implies j = b$. Therefore, $|P \cap N| = p^{b}$. Next, by the Diamond Isomorphism Theorem, since $P/(P \cap N) \cong PN/N$, $|PN/N| = |P|/|P \cap N| = p^{a - b}$. 
+	\end{enumerate}
+\end{solutions}
+\subsection{Composition Series and the H\"older Program}
+\begin{itemize}
+	\item \textbf{Prop. 21. (Element of Prime Order)} If $G$ is a finite abelian group and $p$ is a prime dividing $\abs{G}$, then $G$ contains an element of order $p$. 
+	\item \textbf{Def. (Simple Group)} A (finite or infinite) group $G$ is called \textit{simple} if $|G| > 1$ and the only normal subgroups of $G$ are $1$ and $G$. 
+	
+	\item \textbf{Def. (Composition Series)} In a group $G$ a sequence of subgroups 
+		\begin{equation}
+			1 = N_{0} \leq N_{1} \leq N_{2} \leq \dotsm \leq N_{k-1} \leq N_{k} = G
+		\end{equation}
+	is called a \textit{composition series} if $N_{i} \trianglelefteq N_{i + 1}$ and $N_{i + 1}/N_{i}$ is a simple group for all $0 \leq i \leq k - 1$. The quotient groups $N_{i + 1}/N_{i}$ are called \textit{composition factors} of $G$. 
+	\item \textbf{Thm. 22. (Jordan-H\"older)} Let $G$ be a finite group with $G \neq 1$. Then \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\textbf{\arabic{*}})]
+			\item $G$ has a composition series and 
+			\item the composition factors in a composition series are unique, namely, if $1 = N_{0} \leq N_{1} \leq \dotsm \leq N_{r} = G$ and $1 = M_{0} \leq M_{1} \leq \dotsm \leq M_{s} = G$ are two composition series for $G$, then $r = s$ and there is some permutation, $\pi$, of $\{1, 2, \ldots, r\}$ such that 
+				\begin{equation}
+					M_{\pi(i)}/M_{\pi(i) - 1} \cong N_{i}/N_{i - 1}, \quad 1 \leq i \leq r. 
+				\end{equation}
+		\end{enumerate}
+	\item \textbf{Thm. (Feit-Thompson)} If $G$ is a simple group of odd order, then $G \cong Z_{p}$ for some prime $p$. 
+	\item \textbf{Def. (Solvable Group)} A group $G$ is \textit{solvable} if there is a chain of subgroups 
+		\begin{equation}
+			1 = G_{0} \trianglelefteq G_{1} \trianglelefteq G_{2} \trianglelefteq \dotsm \trianglelefteq G_{s} = G
+		\end{equation}
+	such that $G_{i + 1}/G_{i}$ is abelian for $i = 0, 1, \ldots, s - 1$. 
+	\item \textbf{Obs. (Solvability of Groups in Terms of Subgroups)} Let $G$ be a group and $N$ a normal subgroup of $G$. If $N$ and $G/N$ are solvable, then $G$ is solvable. 
+	
+	{\color{orange}
+		Let $\overline{G} = G/N$, $1 = N_{0} \trianglelefteq N_{1} \trianglelefteq \dotsm \trianglelefteq N_{n} = N$ be a chain of subgroups of $N$ such that $N_{i + 1}/N_{i}$ is abelian for all $0 \leq i \leq n - 1$ and let $\overline{1} = \overline{G}_{0} \trianglelefteq \overline{G}_{1} \trianglelefteq \dotsm \trianglelefteq \overline{G}_{m} = \overline{G}$ be a chain of subgroups such that $\overline{G}_{i + 1}/\overline{G}_{i}$ is abelian for $0 \leq i \leq m - 1$. By the Lattice Isomorphism Theorem, there are subgroups $G_{i}$ of $G$ with $N\leq G_{i}$ such that $G_{i}/N = \overline{G}_{i}$ and $G_{i} \trianglelefteq G_{i + 1}$, $0 \leq i \leq m - 1$. By the Third Isomorphism Theorem, 
+			\begin{equation}
+				\overline{G}_{i + 1}/\overline{G}_{i} = (G_{i + 1}/N)/(G_{i}/N) \cong G_{i + 1}/G_{i}. 
+			\end{equation}
+		Hence, the chain 
+			\begin{equation}
+				1 = N_{0} \trianglelefteq N_{1} \trianglelefteq \dotsm \trianglelefteq N_{n} = N = G_{0} \trianglelefteq \dotsm \trianglelefteq G_{m} = G
+			\end{equation}
+		is a composition series for $G$, which proves that $G$ is solvable. 
+	}
+\end{itemize}
+\subsection{Exercises}
+\begin{exc}{1}
+	Prove that if $G$ is an abelian simple group then $G \cong Z_{p}$ for some prime $p$ (do not assume $G$ is a finite group). 
+\end{exc}
+\begin{solutions}
+	Let $G$ be a nontrivial, abelian, simple group. Since $G$ is nontrivial, it must contain some nonidentity element $x \in G$. Consider the subgroup $\braket{x}$ generated by this element. Since $G$ is abelian, $\braket{x}$ is a normal subgroup of $G$. And since $G$ is simple, $\braket{x} = G$. Therefore, $G$ is a cyclic group. 
+	
+	Suppose $G$ is an infinite group. Then $G \cong \mathbb{Z}$ via the isomorphism $\varphi: \mathbb{Z} \to G$ that maps $n \mapsto x^{n}$. However, $\mathbb{Z}$ is not a simple group, since for example, the subgroup $4 \mathbb{Z}$ is a proper normal subgroup of $\mathbb{Z}$. Hence, by contradiction, $G$ must be a finite group. 
+	
+	Assume $|G| = pm$ for some prime $p$. By Cauchy's Theorem, $G$ contains an element $y$ of order $p$; since $G$ is abelian, the subgroup $\braket{y}$ of index $m$ generated by this element is proper unless $m = 1$. But if $m = 1$, $G$ is a cyclic group of prime order $p$. Then it is easily shown that the map $\varphi: \mathbb{Z}/p\mathbb{Z} \to G$ defined by $\varphi(n) = x^{n}$ is an isomorphism. Therefore, $G$ is isomorphic to $\mathbb{Z}_{p}$ for some prime $p$. 
+\end{solutions}
+
+\begin{exc}{4}
+	Use Cauchy's Theorem and induction to show that a finite abelian group has a subgroup of order $n$ for each positive divisor $n$ of its order. 
+\end{exc}
+\begin{solutions}
+	Let $G$ be a finite abelian group. We will proceed by complete induction; assume that the result holds true for all groups of order less than $|G|$. 
+\end{solutions}
+\newpage 
+\section{Group Actions}
+
+
+
+\newpage 
+\section{Direct and Semidirect Products and Abelian Groups}
+
+\end{document}

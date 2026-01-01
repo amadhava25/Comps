@@ -37,5 +37,5 @@
 \contentsline {subsubsection}{Problem 3-3}{29}{section*.6}%
 \contentsline {subsubsection}{Problem 3-4}{29}{section*.7}%
 \contentsline {subsection}{\numberline {9.3}The Cotangent Bundle}{29}{subsection.9.3}%
-\contentsline {subsubsection}{Problem 6-1}{29}{section*.8}%
+\contentsline {subsubsection}{Problem 6-1}{30}{section*.8}%
 \contentsline {subsubsection}{Problem 6-2}{30}{section*.9}%
