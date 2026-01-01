@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  1 JAN 2026 14:46
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  1 JAN 2026 15:58
  restricted system commands enabled.
 **Algebra_Crash_Course.tex
 (./Algebra_Crash_Course.tex
@@ -1754,27 +1754,36 @@ Package mdframed Info: mdframed detected package amsthm
 [8]
 
 [9]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 398.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 404.
 
-[10] (./Algebra_Crash_Course.aux)
+
+[10]
+
+[11] (./Algebra_Crash_Course.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `Algebra_Crash_Course.out' has not changed.
-(rerunfilecheck)             Checksum: C98458801D81086C08CED12DBF1172C6;2449.
+(rerunfilecheck)             Checksum: D0742145F00657ACB937403F2060D9FC;2930.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32953 strings out of 475915
+ 32977 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 3709 words of node memory still in use:
-   86 hlist, 10 vlist, 7 rule, 20 math, 90 glue, 33 kern, 120 glyph, 95 attribut
-e, 111 glue_spec, 95 attribute_list, 2 write nodes
-   avail lists: 1:5,2:1491,3:540,4:169,5:513,6:63,7:9586,8:77,9:969,10:17,11:552
+ 3848 words of node memory still in use:
+   89 hlist, 10 vlist, 7 rule, 20 math, 98 glue, 33 kern, 120 glyph, 105 attribu
+te, 111 glue_spec, 105 attribute_list, 2 write, 4 pdf_colorstack nodes
+   avail lists: 1:4,2:1471,3:540,4:201,5:520,6:75,7:9578,8:77,9:966,10:17,11:552
 
- 54603 multiletter control sequences out of 65536+600000
+ 54606 multiletter control sequences out of 65536+600000
  87 fonts using 19230279 bytes
- 99i,19n,134p,859b,1210s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,19n,134p,1017b,1210s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Italic.ttf><c:/
 texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Bold.ttf><c:/texliv
 e/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Regular.ttf><c:/texlive/2
@@ -1789,10 +1798,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fon
 ts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on Algebra_Crash_Course.pdf (10 pages, 198257 bytes).
+Output written on Algebra_Crash_Course.pdf (11 pages, 211571 bytes).
 
-PDF statistics: 250 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 85 named destinations out of 1000 (max. 131072)
- 112 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 289 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 106 named destinations out of 1000 (max. 131072)
+ 136 words of extra memory for PDF output out of 10000 (max. 100000000)
 
