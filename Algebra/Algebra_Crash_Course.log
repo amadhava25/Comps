@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  31 DEC 2025 20:37
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  31 DEC 2025 23:54
  restricted system commands enabled.
 **Algebra_Crash_Course.tex
 (./Algebra_Crash_Course.tex
@@ -1702,6 +1702,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 121.
+Package mdframed Info: Not enough space on this page on input line 123.
 
 
 [3]
@@ -1719,27 +1720,55 @@ Package mdframed Info: mdframed detected package amsthm
 
 [5]
 
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 194.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 195.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 211.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 231.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 232
+.
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
+
 [6]
 
-[7] (./Algebra_Crash_Course.aux)
+[7]
+
+[8] (./Algebra_Crash_Course.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-Package rerunfilecheck Info: File `Algebra_Crash_Course.out' has not changed.
-(rerunfilecheck)             Checksum: 4421545474FF7572018FB1744EB5EAAE;1301.
+
+
+Package rerunfilecheck Warning: File `Algebra_Crash_Course.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Algebra_Crash_Course.out':
+(rerunfilecheck)             Before: F92EAA528DDEDC7879E69F366E9B7C5D;1428
+(rerunfilecheck)             After:  BF9A3951715A19D6C82B00B0213F0FBD;1753.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32896 strings out of 475915
+ 32927 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 2697 words of node memory still in use:
-   56 hlist, 7 vlist, 6 rule, 16 math, 69 glue, 21 kern, 63 glyph, 73 attribute,
- 111 glue_spec, 73 attribute_list, 2 write, 4 pdf_colorstack nodes
-   avail lists: 1:4,2:1537,3:536,4:99,5:518,6:54,7:7201,8:76,9:990,10:8,11:308
- 54588 multiletter control sequences out of 65536+600000
- 84 fonts using 19085831 bytes
- 99i,18n,134p,740b,1210s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 3617 words of node memory still in use:
+   86 hlist, 8 vlist, 7 rule, 2 disc, 24 math, 85 glue, 20 kern, 112 glyph, 103 
+attribute, 111 glue_spec, 103 attribute_list, 2 write nodes
+   avail lists: 1:4,2:1475,3:539,4:119,5:521,6:54,7:7128,8:77,9:965,10:12,11:306
+
+ 54599 multiletter control sequences out of 65536+600000
+ 87 fonts using 19230279 bytes
+ 99i,19n,134p,859b,1210s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Italic.ttf><c:/
 texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Bold.ttf><c:/texliv
 e/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Regular.ttf><c:/texlive/2
@@ -1749,12 +1778,13 @@ dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts
 ic/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texl
-ive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Algebra_Crash_Course.pdf (7 pages, 146333 bytes).
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/202
+4/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Algebra_Crash_Course.pdf (8 pages, 161954 bytes).
 
-PDF statistics: 170 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 131072)
- 72 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 196 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 131072)
+ 80 words of extra memory for PDF output out of 10000 (max. 100000000)
 

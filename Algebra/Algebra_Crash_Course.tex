@@ -71,7 +71,7 @@
 			\end{tikzcd}
 		\end{center}
 \end{itemize}
-\subsection{Exercises}
+\subsubsection{Exercises}
 \begin{exc}{3}
 	Prove that if $H$ is a normal subgroup of $G$ of prime index $p$ then for all $K \leq G$ either \vspace{-0.25cm}
 	\begin{enumerate}[itemsep =-2pt,label = \textbf{(\roman{*})}]
@@ -171,7 +171,7 @@
 		is a composition series for $G$, which proves that $G$ is solvable. 
 	}
 \end{itemize}
-\subsection{Exercises}
+\subsubsection{Exercises}
 \begin{exc}{1}
 	Prove that if $G$ is an abelian simple group then $G \cong Z_{p}$ for some prime $p$ (do not assume $G$ is a finite group). 
 \end{exc}
@@ -187,13 +187,73 @@
 	Use Cauchy's Theorem and induction to show that a finite abelian group has a subgroup of order $n$ for each positive divisor $n$ of its order. 
 \end{exc}
 \begin{solutions}
-	Let $G$ be a finite abelian group. We will proceed by complete induction; assume that the result holds true for all groups of order less than $|G|$. 
+	Let $G$ be a finite abelian group of order $n$. Assume that the result holds for all groups of order less than $n$. Let $d$ be a divisor of $n$. Decompose $d$ into the product $kp$, where $p$ is some prime; by Cauchy's Theorem, $G$ contains a subgroup of order $p$. Since $G$ is finite abelian, this subgroup, $P$, is normal so that we can examine the quotient group $G/P$. Since $|G/P| < n$, the inductive hypothesis holds for this quotient group. Since $k \mid |G/P|$, by the hypothesis and the Lattice Isomorphism Theorem, there exists a subgroup $P \leq K \leq G$ such that $K/P$ has order $k$. Hence, $|K| = k|P| = kp = d$. Hence, this concludes the proof.  
 \end{solutions}
 \newpage 
 \section{Group Actions}
-
-
-
+\subsubsection{Exercises}
+\begin{exc}{1}
+	Let $G$ act on the set $A$. Prove that if $a, b \in A$ and $b = g \cdot a$ for some $g \in G$, then $G_{b} = gG_{a}g^{-1}$ ($G_{a}$ is the stabilizer of $a$). Deduce that if $G$ acts transitively on $A$, then the kernel of the action is $\bigcap_{g \in G}gG_{a}g^{-1}$. 
+\end{exc}
+\begin{solutions}
+	Let $G$ be a group acting on the set $A$, and assume that $b = g \cdot a$ for some $g \in G$. Then 
+		\begin{align}
+			\begin{split}
+				h \in G_{b} &\iff h \cdot b = b \iff h \cdot (g \cdot a) = (g \cdot a) \iff (g^{-1}hg) \cdot a = a \iff g^{-1}hg \in G_{a} \\
+				&\iff h \in gG_{a}g^{-1}.  
+			\end{split}
+		\end{align}
+	Now suppose that $G$ acts transitively on $A$. Fix $a \in A$; by transitivity, for each $b \in A$, there exists some $g \in G$ such that $b  = g\cdot a$. This means that for each $b \in A$, there exists some $g \in G$ such that $G_{b} = gG_{a}g^{-1}$. Now, we observe that a group element is contained in the kernel of the group action if and only if the element stabilizes every $b \in A$. Therefore, if $\alpha: G \times A \to A$ denotes the group action,
+		\begin{equation}
+			h \in \ker{\alpha} \iff h \in \bigcap_{b \in A}G_{b} \iff h \in \bigcap_{g \in G}gG_{a}g^{-1}. 
+		\end{equation}
+\end{solutions}
+\begin{exc}{2}
+	Let $G$ be a \textit{permutation group} on the set $A$ (i.e., $G \leq S_{A}$), let $\sigma \in G$, and let $a \in A$. Prove that $\sigma G_{a} \sigma^{-1} = G_{\sigma(a)}$. Deduce that if $G$ acts transitively on the set $A$, then 
+		\begin{equation}
+			\bigcap_{\sigma \in G}\sigma G_{a}\sigma^{-1} = 1. 
+		\end{equation}
+\end{exc}
+\begin{solutions}
+	Let $G$ be a permutation group on the set $A$, and let $\sigma \in G$, $a \in A$. Then 
+		\begin{align}
+			\begin{split}
+				\tau \in G_{\sigma(a)} &\iff \tau \cdot \sigma(a) = \sigma(a) \iff (\sigma^{-1}\tau\sigma)(a) = a \iff \sigma^{-1}\tau\sigma \in G_{a} \\
+				&\iff \tau \in \sigma G_{a}\sigma^{-1}. 
+			\end{split}
+		\end{align}
+	This proves the first claim. Now assume that $A$ acts transitively on the set $A$. Fix $a \in A$; by transitivity, for every $b \in B$, there exists some $\sigma \in G$ such that $b = \sigma(a)$. But then, this implies that $G_{b} = G_{\sigma(b)} = gG_{a}g^{-1}$. Therefore, if $\alpha: G \times A \to A$ denotes the group action, then 
+		\begin{equation}
+			\tau \in \ker{\alpha} \iff h \in \bigcap_{b \in A}G_{b} = \bigcap_{\sigma \in G}G_{\sigma(a)3} = \bigcap_{\sigma \in G}\sigma G_{a}\sigma^{-1}. 
+		\end{equation}
+	On the other hand, by uniqueness of the identity in a group, it follows that the only permutation that fixes \textit{every} element of $A$ is the identity. This means that $\ker{\alpha} = 1$. Hence, the proof concludes. 
+\end{solutions}
+\begin{exc}{9}
+	Assume $G$ acts transitively on the finite set $A$ and let $H$ be a normal subgroup of $G$. Let $\mathscr{O}_{1}, \ldots, \mathscr{O}_{r}$ be the distinct orbits of $H$ on $A$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\textbf{\alph{*}})]
+			\item Prove that $G$ permutes the sets $\mathscr{O}_{1}, \ldots, \mathscr{O}_{r}$ in the sense that for each $g \in G$ and each  $i \in \{1, \ldots, r\}$ there is a $j$ such that $g\mathscr{O}_{i} = \mathscr{O}_{j}$, where $g\mathscr{O} = \brac*{g\cdot a: a \in \mathscr{O}}$. Prove that $G$ is transitive on $\{\mathscr{O}_{1}, \ldots, \mathscr{O}_{r}\}$. Deduce that all orbits of $H$ on $A$ have the same cardinality. 
+		\end{enumerate}
+\end{exc}
+\begin{solutions}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Remember that orbits of an action are equivalence classes under the equivalence relation $b \sim a$ iff $b = h \cdot a$ for some $h \in H$. For each of the $r$ orbits of $H$ on $A$, let $a_{j} \in A$ be a representative element; that is, for each $j = 1, \ldots, r$, suppose that 
+		\begin{equation}
+			\mathscr{O}_{j} = \brac*{h \cdot a_{j}: h \in H}. 
+		\end{equation}
+		
+		Since the orbits of $H$ on $A$ partition $A$, for each $i \in \{1, \ldots, r\}$ and $g \in G$, $g \cdot a_{i}$ lies in some orbit $\mathscr{O}_{j}$. We claim that $g\mathscr{O}_{i} = \mathscr{O}_{j}$. Suppose $g \cdot a_{i} = h' \cdot a_{j}$ for some $h' \in H$. Then 
+		\begin{align}
+			\begin{split}
+				g\mathscr{O}_{i} &= \brac*{g \cdot (h \cdot a_{i}): h \in H} = \brac*{(gh) \cdot a_{i}: h \in H} \\
+				&= \brac*{h'' \cdot (g \cdot a_{i}): h'' \in H} \qquad (\text{by normality of $H$ in $G$}) \\
+				&= \brac*{h'' \cdot (h' \cdot a_{j}): h'' \in H} = \brac*{h \cdot a_{j}: h \in H} \\
+				&= \mathscr{O}_{j}. 
+			\end{split}
+		\end{align}
+		Hence, this concludes the proof that $G$ permutes the orbits of $H$ on $A$. Now, since $G$ acts transitively on $A$, for each pair $(i, j) \in \{1, \ldots, r\}$, there exists some $g \in G$ such that $g \cdot a_{i} = a_{j}$. By our previous observation, this implies that for each pair of orbits $(\mathscr{O}_{i}, \mathscr{O}_{j})$, there exists some $g \in G$ such that $g \mathscr{O}_{i} = \mathscr{O}_{j}$. Hence, $G$ acts transitively on the set of orbits of $H$ on $A$. Finally, given any pair $\mathscr{O}_{i}, \mathscr{O}_{j}$ of orbits of $H$ on $A$, the map $\varphi: \mathscr{O}_{i} \to \mathscr{O}_{j}$ given by $\varphi(a) = g \cdot a$ for all $a \in \mathscr{O}_{i}$ and where $g \in G$ is the group element such that $g\mathscr{O}_{i} = \mathscr{O}_{j}$ can be easily shown to be a bijection by the above reasoning. 
+	\end{enumerate}
+\end{solutions}
+\subsection{Groups Acting on Themselves by Left Multiplication}
 \newpage 
 \section{Direct and Semidirect Products and Abelian Groups}
 
