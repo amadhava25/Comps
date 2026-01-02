@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  2 JAN 2026 12:35
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  2 JAN 2026 16:04
  restricted system commands enabled.
 **GeoTop_Crash_Course.tex
 (./GeoTop_Crash_Course.tex
@@ -1877,24 +1877,35 @@ LaTeX Font Info:    Font shape `TU/NotoSansMono(0)/m/n' will be
 [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1155.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1170.
+(mdframed)              on input line 1210.
+Package mdframed Info: Not enough space on this page on input line 1212.
 
 
 [28]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1201.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1212.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1219.
+Package mdframed Info: Not enough space on this page on input line 1212.
 
-Overfull \hbox (2.37012pt too wide) in paragraph at lines 1230--1233
+
+[29]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1235.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1250.
+
+
+[30]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1281.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1292.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1299.
+
+Overfull \hbox (2.37012pt too wide) in paragraph at lines 1310--1313
 \TU/NotoSerif(0)/m/n/10 First, we show that $\OML/cmm/m/it/10 G$ \TU/NotoSerif(
 0)/m/n/10 is in-jec-tive. Sup-pose $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 x[]; y[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cm
@@ -1904,48 +1915,52 @@ m/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$\TU/NotoSerif(0)/m/n/10 . Since $[]\OML/cmm
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1234.
-Package mdframed Info: Not enough space on this page on input line 1246.
+(mdframed)              on input line 1314.
+Package mdframed Info: Not enough space on this page on input line 1326.
 
 
-[29]
-Package mdframed Info: Not enough space on this page on input line 1246.
+[31]
+Package mdframed Info: Not enough space on this page on input line 1326.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1256.
+(mdframed)              on input line 1336.
 
 
-[30]
+[32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1266.
+(mdframed)              on input line 1346.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1284.
+(mdframed)              on input line 1364.
+
+
+[33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1298.
+(mdframed)              on input line 1379.
+Package mdframed Info: Not enough space on this page on input line 1385.
 
 
-[31] (./GeoTop_Crash_Course.aux)
+[34] (./GeoTop_Crash_Course.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `GeoTop_Crash_Course.out' has not changed.
-(rerunfilecheck)             Checksum: 61D5C9688599A1856CDBFDEB9DB8DF71;6862.
+(rerunfilecheck)             Checksum: 3463EF8222541FD1A2B606701AE3F856;7493.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33365 strings out of 475915
+ 33388 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 5708 words of node memory still in use:
+ 5756 words of node memory still in use:
    166 hlist, 35 vlist, 16 rule, 24 math, 65 glue, 71 kern, 2 sub_mlist, 108 gly
-ph, 341 attribute, 111 glue_spec, 341 attribute_list, 2 write, 6 pdf_colorstack 
+ph, 353 attribute, 111 glue_spec, 353 attribute_list, 2 write, 6 pdf_colorstack 
 nodes
-   avail lists: 1:4,2:1559,3:540,4:374,5:666,6:142,7:8342,8:78,9:1800,10:14,11:5
-25,12:3
- 54779 multiletter control sequences out of 65536+600000
+   avail lists: 1:5,2:1703,3:540,4:373,5:670,6:142,7:8342,8:91,9:1800,10:14,11:5
+24,12:3
+ 54782 multiletter control sequences out of 65536+600000
  113 fonts using 21762815 bytes
  99i,19n,134p,1904b,1590s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSansMono-Regular.ttf>
@@ -1964,10 +1979,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/a
 msfonts/euler/eusm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on GeoTop_Crash_Course.pdf (31 pages, 376126 bytes).
+Output written on GeoTop_Crash_Course.pdf (34 pages, 388022 bytes).
 
-PDF statistics: 712 PDF objects out of 1000 (max. 8388607)
- 647 compressed objects within 7 object streams
- 321 named destinations out of 1000 (max. 131072)
- 376 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 753 PDF objects out of 1000 (max. 8388607)
+ 685 compressed objects within 7 object streams
+ 341 named destinations out of 1000 (max. 131072)
+ 400 words of extra memory for PDF output out of 10000 (max. 100000000)
 

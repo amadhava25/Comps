@@ -895,7 +895,7 @@
 	\end{align}
 	\item \textbf{Def. (Covariant $k$-Tensor)} Let $V$ be a finite-dimensional real vector space, and let $k$ be a natural number. A \textit{covariant $k$-tensor} on $V$ is a real-valued multilinear function of $k$ elements of $V$: 
 	\begin{equation}
-		T: \underbrace{V \times \dotsm V}_{k \text{ copies}} \to \mathbb{R}. 
+		T: \underbrace{V \times \dotsm \times V}_{k \text{ copies}} \to \mathbb{R}. 
 	\end{equation}
 	The number $k$ is called the \textit{rank} of $T$. 
 	\item \textbf{Def. (Tensor Product)} We can build up covariant tensors of larger ranks as follows: let $V$ be a finite-dimensional real vector space and let $S \in T^{k}(V)$, $T \in T^{l}(V)$. Define a map $S \otimes T: \underbrace{V \times \dotsm \times V}_{k + l \text{ copies}} \to \mathbb{R}$ by 
@@ -1146,6 +1146,86 @@ Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if
 \end{itemize}
 
 
+\newpage 
+\section{Differential Forms}
+\subsection{The Geometry of Volume Measurement}
+\begin{itemize}
+	\item \textbf{Lem. 12.1. (Intuition Behind Using Alternating Tensors for Integration)} Suppose $\Omega$ is a $k$-tensor on a vector space with the property that $\Omega(X_{1}, \ldots, X_{k}) = 0$ whenever $X_{1}, \ldots, X_{k}$ are linearly dependent. Then $\Omega$ is alternating. 
+	
+	{\color{orange}
+		Let $\Omega$ be a $k$-tensor on a vector space with the above property. Remember that an alternating $k$-tensor is a multilinear function $\Omega: V \times \dotsm \times V \to \mathbb{R}$ such that 
+			\begin{equation}
+				\Omega(X_{1}, \ldots, X_{i}, \ldots, X_{j}, \ldots, X_{k}) + \Omega(X_{1}, \ldots, X_{j}, \ldots, X_{i}, \ldots, X_{k}) = 0. 
+			\end{equation}
+		By our hypothesis, whenever two arguments of $\Omega$ are the same, we ought to get zero. Therefore, 
+			\begin{align}
+				\begin{split}
+					0 &= \Omega(X_{1}, \ldots, X_{i} + X_{j}, \ldots, X_{i} + X_{j}, \ldots, X_{n}) \\
+					&= \Omega(X_{1}, \ldots, X_{i}, \ldots, X_{i}, \ldots, X_{n}) + \Omega(X_{1}, \ldots, X_{i}, \ldots, X_{j}, \ldots, X_{n}) \\
+					&\quad + \Omega(X_{1}, \ldots, X_{j}, \ldots, X_{i}, \ldots, X_{n}) + \Omega(X_{1}, \ldots, X_{j}, \ldots, X_{j}, \ldots, X_{n}) \\
+					&= \Omega(X_{1}, \ldots, X_{i}, \ldots, X_{j}, \ldots, X_{n}) + \Omega(X_{1}, \ldots, X_{j}, \ldots, X_{i}, \ldots, X_{n}). 
+				\end{split}
+			\end{align}
+		Hence, $\Omega$ is alternating. 
+	}
+\end{itemize}
+\subsection{The Algebra of Alternating Tensors}
+\begin{itemize}
+	\item \textbf{Obs. (Alternating 2-Tensors)} Any 2-tensor $T$ can be expressed as the sum of an alternating tensor and a symmetric one. 
+	
+	{\color{orange}
+		Let $T$ be an alternating tensor. Then we observe that 
+			\begin{align}
+				\begin{split}
+					T(X, Y) &= \frac{1}{2}\left(T(X, Y) - T(Y, X)\right) + \frac{1}{2}\left(T(X, Y) + T(Y, X)\right) \\
+					&= A(X, Y) + S(X, Y). 
+				\end{split}
+			\end{align}
+		We claim that $A$ is an alternating tensor, and $S$ is a symmetric tensor. To see this, note that 
+			\begin{align}
+				\begin{split} 
+					A(X, Y) + A(Y, X)&= \frac{1}{2}\left(T(X, Y) - T(Y, X)\right) + \frac{1}{2}\left(T(Y, X) - T(X, Y)\right) = 0. \\
+					S(X, Y) - S(Y, X) &= \frac{1}{2}(T(X, Y) + T(Y, X)) - \frac{1}{2}\left(T(X, Y) + T(Y, X)\right) = 0. 
+				\end{split}
+			\end{align}
+	}
+	
+	\item \textbf{Def. (Alternating Projection)} Define the \textit{alternating projection}, $\operatorname{Alt}: T^{k}(V) \to \Lambda^{k}(V)$ as follows: 
+		\begin{equation}
+			\operatorname{Alt}(T)(X_{1}, \ldots, X_{k}) = \frac{1}{k!}\sum_{\sigma \in S_{k}}(\operatorname{sgn}{\sigma})T(X_{\sigma(1)}, \ldots, X_{\sigma(k)}) \iff \operatorname{Alt}{T} = \frac{1}{k!}\sum_{\sigma \in S_{k}}(\operatorname{sgn}{\sigma})(^{\sigma}T)
+		\end{equation}
+	\item \textbf{Ex. (Examples of Alternating Projections)} Let $T$ be any 1-tensor. Then $\operatorname{Alt}{T} = T$. If $T$ is a 2-tensor, then $\operatorname{Alt}{T(X, Y)} = (1/2)(T(X, Y) - T(Y,X))$. If $T$ is a 3-tensor, then 
+		\begin{align}
+			\begin{split}
+				\operatorname{Alt}T(X, Y, Z) &= \frac{1}{6}\left(T(X, Y, Z)  -T(X, Z, Y) - T(Z, Y, X)\right. \\
+				&\quad \left. T(Z, X, Y) + T(Y, Z, X) - T(Y, X, Z)\right). 
+			\end{split}
+		\end{align}
+	\item \textbf{Lem. 12.3 (Properties of the Alternating Projection)} \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item For any tensor $T$, $\operatorname{Alt}{T}$ is alternating. 
+			\item $T$ is alternating if and only if $\operatorname{Alt}{T} = T$. 
+		\end{enumerate}
+\end{itemize}
+\begin{exc}{12.2}
+	Prove Lemma 12.3. 
+\end{exc}
+\begin{solutions}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $T$ be an arbitrary $k$-tensor, and $\operatorname{Alt}{T}$ its alternating projection. Let $\tau$ be the transposition $(i\;j)$. Then 
+			\begin{align}
+				\begin{split}
+					\operatorname{Alt}{T}(X_{1}, \ldots, X_{j}, \ldots, X_{i}, \ldots, X_{k}) &= \operatorname{Alt}{T}(X_{\tau(1)}, \ldots, X_{\tau(i)}, \ldots, X_{\tau(j)}, \ldots, X_{k}) \\
+					&= \frac{1}{k!}\sum_{\sigma \in S_{k}}(\operatorname{sgn}{\sigma \tau})T(X_{\sigma\tau(1)}, \ldots, X_{\sigma \tau(k)}) \\
+					&= -\frac{1}{k!}\sum_{\sigma \in S_{k}}(\operatorname{sgn}{\sigma}){T}(X_{\sigma\tau(1)}, \ldots, X_{\sigma\tau(k)}) \\
+					&= -\frac{1}{k!}\sum_{\sigma' \in S_{k}}(\operatorname{\sgn}{\sigma'}){T}(X_{\sigma'(1)}, \ldots, X_{\sigma'(k)}) \\
+					&= -\operatorname{Alt}{T}(X_{1}, \ldots, X_{i}, \ldots, X_{j}, \ldots, X_{k}). 
+				\end{split}
+			\end{align}
+		Hence, the alternating projection is indeed alternating. 
+		\item If $\operatorname{Alt}{T} = T$, then by (a), $T$ is alternating. 
+	\end{enumerate}
+\end{solutions}
 
 
 
@@ -1295,10 +1375,23 @@ Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if
 		\end{equation}
 	which is clearly not isomorphic to the trivial group. But this is a contradiction. Hence, by contradiction, $S^{2} \times S^{2}$ \textit{cannot} be diffeomorphic to $M_{1} \times M_{2} \times M_{3}$. 
 \end{solutions}
-\begin{prb}{2021-A-II-3}
-	Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to a great circle in $S^{2}$. Compute the fundamental group of $X$. 
+\newpage 
+\begin{prb}{2024-J-I-5}
+	Let $\alpha$ be a closed 1-form on $\mathbb{R}\text{P}^{n}$, $n > 1$. Show that if $f: [0,1] \to \mathbb{R}\text{P}^{n}$ is a smooth function such that $f(0) = f(1)$, then 
+		\begin{equation*}
+			\int_{[0,1]}f^{\ast}\alpha = 0.
+		\end{equation*}
+	Include all calculations that are relevant to your solution. 
 \end{prb}
 \begin{solutions}
-	Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to a great circle in $S^{2}$. 
+	Let $\alpha$ be a closed 1-form on $\mathbb{R}\text{P}^{n}$, $n > 1$, and $f: [0,1] \to \mathbb{R}\text{P}^{n}$ a smooth function such that $f(0) = f(1)$. We should show this computation in light of the above problem, but we know that the $k^{\text{th}}$ de Rham Cohomology group of $\mathbb{R}\text{P}^{n}$ vanishes for all $0 < k < n$. Since 
+		\begin{equation}
+			H^{1}(\mathbb{R}\text{P}^{n}) = \frac{\brac*{\text{closed 1-forms on $\mathbb{R}\text{P}^{n}$}}}{\brac*{\text{exact 1-forms on $\mathbb{R}\text{P}^{n}$}}} = 0, 
+		\end{equation}
+	it follows that a 1-form on $\mathbb{R}\text{P}^{n}$ is closed iff it is exact. So, since $\alpha$ is a closed 1-form, there exists a smooth function $g$ on $\mathbb{R}\text{P}^{n}$ such that $\alpha = dg$. Then $f^{\ast}\alpha = f^{\ast}dg = d(g \circ f)$. Therefore, 
+		\begin{equation}
+			(\ast) \coloneqq \int_{[0,1]}f^{\ast}\alpha = \int_{0}^{1}\;d(g \circ f) = g(f(1)) - g(f(0)). 
+		\end{equation}
+	By hypothesis, since $f(1) = f(0)$, $g(f(1)) = g(f(0))$. Therefore, $(\ast) = 0$, which concludes the proof. 
 \end{solutions}
 \end{document}
