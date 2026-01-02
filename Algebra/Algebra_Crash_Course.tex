@@ -404,7 +404,57 @@
 \begin{exc}{14}
 	Prove that a group of order 312 has a normal Sylow $p$-subgroup for some prime $p$ dividing its order. 
 \end{exc}
-
+\begin{solutions}
+	Let $G$ be a group of order 312. We start by considering the prime factorization of 312: 
+		\begin{equation}
+			312 = 2^{3} \cdot 3 \cdot 13. 
+		\end{equation}
+	By Sylow's Theorem: 
+		\begin{align}
+			\begin{split}
+				n_{2} &\in \{1, 3, 13, 39\} \cap \{1, 3, \ldots\} = \{1, 3, 13, 39\}. \\
+				n_{3} &\in \{1, 2, 4, 8, 13, 26, 52, 104\} \cap \{1, 4, 7, 10, 13, \ldots, 52, \ldots\} = \{1, 4, 7, 10, 52\}. \\
+				n_{13} &\in \{1, 2, 3, 4, 6, 8, 12, 24\} \cap \{1, 14, 27, \ldots\} = \{1\}.
+			\end{split}
+		\end{align}
+	Hence, $G$ has a single Sylow 13-subgroup, which must be normal. 
+\end{solutions}
+\begin{exc}{15}
+	Prove that a group of order 351 has a normal Sylow $p$-subgroup for some prime $p$ dividing its order. 
+\end{exc}
+\begin{solutions}
+	Let $G$ be a group of order 351. We start by considering the prime factorization of 351: 
+		\begin{equation}
+			351 = 3^{3} \times 13. 
+		\end{equation}
+	By Sylow's Theorem, 
+		\begin{align}
+			\begin{split}
+				n_{13} &\in \brac*{1, 3, 9, 27} \cap \{1, 14, 27, \ldots\} = \{1, 27\}. \\
+				n_{3} &\in \brac*{1, 13} \cap \{1, 4, \ldots, 13, \ldots\} = \{1, 13\}. 
+			\end{split}
+		\end{align}
+	If $n_{13} = 1$, we are done. So assume $n_{13} = 27$. Since every element of $G$ of order 13 is contained in a Sylow 13-subgroup, each Sylow 13-subgroup of $G$ contains 12 nonidentity elements, and by Lagrange's Theorem, Sylow 13-subgroups intersect trivially in $G$, $G$ must contain $12(27) = 324$ elements of order 13. This means that $G$ contains \textit{at most} 27 elements whose order is a power of 3. Assume $n_{3} = 13$, and let $P_{1}, P_{2}$ be distinct Sylow $3$-subgroups of $G$. Then by definition of distinct, $P_{2}$ contains at least one element that is not contained in $P_{1}$. Since Sylow $3$-subgroups of $G$ contain $27$ elements, it follows that $|P_{1} \cup P_{2}| \geq 28$. But then $G$ must contain at least $28 + 324 = 352$ elements, which is a contradiction. Hence, by contradiction, $n_{3} = 1$ and the proof concludes. 
+\end{solutions}
+\begin{exc}{17}
+	Prove that if $|G| = 105$, then $G$ has a normal Sylow 5-subgroup and a normal Sylow 7-subgroup. 
+\end{exc}
+\begin{solutions}
+	Let $G$ be a group of order $105 = 3 \cdot 5 \cdot 7$. By Sylow's Theorem, 
+		\begin{align}
+			\begin{split}
+				n_{7} &\in \brac*{1, 3, 5, 15} \cap \{1, 8, 15, \ldots\} = \{1, 15\}. \\
+				n_{5} &\in \{1, 3, 7, 21\} \cap \{1, 6, 11, \ldots\} = \{1, 21\}. \\
+				n_{3} &\in \{1, 5, 7, 35\} \cap \{1, 4, 7, \ldots\} = \{1, 7\}. 
+			\end{split}
+		\end{align}
+	We consider three separate cases. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\textbf{\roman{*}})]
+			\item Suppose $G$ has neither a normal Sylow 7-subgroup nor a normal Sylow 5-subgroup, which means that $n_{7} = 15$ and $n_{5} = 21$. Then $G$ has 90 nonidentity elements of order 7 and 84 nonidenity elements of order 5, which means that $|G| \geq 174$, which is a contradiction. Hence, at least one of $n_{5}$ and $n_{7}$ must be one. 
+			\item Suppose $n_{5}= 1$ and $n_{7} = 15$. Then $G$ has 94 nonidentity elements whose order is not three. This leaves 10 nonidentity elements to be distributed amongst the Sylow 3-subgroups. But each Sylow 3-subgroup contains two nonidentity elements. Since the Sylow 3-subgroups all intersect trivially, this implies that there are 5 Sylow 3-subgroups which contradicts Sylow's Theorems. Hence, this is not a possible case. 
+			\item Finally, assume $n_{5} = 21$ and $n_{7} =1$. 
+		\end{enumerate}
+\end{solutions}
 \newpage 
 \section{Direct and Semidirect Products and Abelian Groups}
 

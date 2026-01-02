@@ -12,4 +12,4 @@
 \contentsline {subsection}{\numberline {2.4}Sylow's Theorems}{9}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Application of Sylow's Theorem}{10}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Exercises}{10}{subsubsection.2.4.2}%
-\contentsline {section}{\numberline {3}Direct and Semidirect Products and Abelian Groups}{11}{section.3}%
+\contentsline {section}{\numberline {3}Direct and Semidirect Products and Abelian Groups}{12}{section.3}%

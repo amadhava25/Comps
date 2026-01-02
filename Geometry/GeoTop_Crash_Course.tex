@@ -1260,4 +1260,45 @@ Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if
 		\item Show that the assignment $M \mapsto T^{\ast}M$, $F \mapsto F^{\ast}$ defines a contravariant functor from the category of smooth manifolds to the category of smooth vector bundles. 
 	\end{enumerate}
 \end{prb}	
+
+\newpage 
+\subsection{Comps}
+\begin{prb}{2017-J-II-1}
+	Let $f: M \to \mathbb{R}$ be a smooth function on a smooth manifold $M$. In an arbitrary smooth local coordinate chart $x: U \to \mathbb{R}^{n}$ of $M$, define 
+		\begin{equation}
+			\mathscr{D}f \coloneqq \sum_{i = 1}^{n}\frac{\partial f}{\partial x^{i}}\frac{\partial}{\partial x^{i}}. 
+		\end{equation}
+	Does $\mathscr{D}f$ give a well-defined vector field on $M$? 
+\end{prb}
+\begin{solutions}
+	Let $f: M \to \mathbb{R}$ be a smooth function on a smooth manifold $M$, and define $\mathscr{D}f$ as prescribed above. For any given smooth local coordinate chart $(U, (x^{i}))$, by smoothness of $f$, all of the partial derivatives $\partial f/\partial x^{i}$ are smooth so that the component functions of $\mathscr{D}f$ are all smooth; hence $\mathscr{D}f$ is smooth in each smooth local coordinate chart. However, we need to check if $\mathscr{D}f$ transforms like a vector field. Suppose $p \in (U, (x^{i})) \cap (V, (\ti{x}^{i}))$. Then 
+		\begin{align}
+			\begin{split}
+				\mathscr{D}f &= \frac{\partial f}{\partial x^{i}}(p)\frac{\partial}{\partial x^{i}}\bigg|_{p} \\
+				&= \frac{\partial f}{\partial \ti{x}^{j}}(p)\frac{\partial \ti{x}^{j}}{\partial x^{i}}(\hat{p}) \cdot \frac{\partial \ti{x}^{k}}{\partial x^{i}}(\hat{p})\frac{\partial}{\partial \ti{x}^{k}}\bigg|_{p} \\
+				&\neq \frac{\partial f}{\partial \ti{x}^{k}}(p) \frac{\partial}{\partial \ti{x}^{k}}\bigg|_{p}, 
+			\end{split}
+		\end{align}
+	where $\hat{p}$ is the coordinate representation of $p$ in the $(x^{i})$ coordinates, and we used the contravariant vector transformation law in the second line. Therefore, since $\mathscr{D}f$ does not transform as a vector field on $M$, it cannot be a well-defined vector field on $M$. 
+\end{solutions}
+\begin{prb}{2023-J-II-4}
+	Prove that $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$, where $M_{1}, M_{2}, M_{3}$ are smooth manifolds of nonzero dimension. 
+\end{prb}
+\begin{solutions}
+	Assume to the contrary that $S^{2} \times S^{2}$ is diffeomorphic to $M_{1} \times M_{2} \times M_{3}$; since diffeomorphisms preserve dimensions,  $\dim(S^{2} \times S^{2}) = \dim{S^{2}} + \dim{S^{2}} = 4$, and $\dim{M_{1,2,3}} \neq 0$, without loss of generality, we must have $\dim{M_{1}} = \dim{M_{2}} = 1$ and $\dim{M_{3}} = 2$. Additionally, since $S^{2}$ is compact and connected, $\bigtimes_{j = 1}^{3}M_{j}$ must be compact and connected, which then implies that each $M_{j}$ must be compact and connected. Moreover, since diffeomorphisms induce isomorphisms between fundamental groups, we must have 
+		\begin{equation}
+			\pi_{1}(S^{2} \times S^{2}) \cong \pi_{1}\left(\bigtimes_{j = 1}^{3}M_{j}\right). 
+		\end{equation}
+	On the left side, since $S^{2}$ is simply connected, $\pi_{1}(S^{2} \times S^{2})$ is trivial. On the right side, since the only compact, connected, smooth $1$-manifold, up to diffeomorphism, is $S^{1}$, and $\pi_{1}(S^{1}) \cong \mathbb{Z}$, 
+		\begin{equation}
+			\pi_{1}\left(\bigcup_{j = 1}^{3}M_{j}\right) = \mathbb{Z} \times \mathbb{Z} \times \pi_{1}(M_{3}), 
+		\end{equation}
+	which is clearly not isomorphic to the trivial group. But this is a contradiction. Hence, by contradiction, $S^{2} \times S^{2}$ \textit{cannot} be diffeomorphic to $M_{1} \times M_{2} \times M_{3}$. 
+\end{solutions}
+\begin{prb}{2021-A-II-3}
+	Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to a great circle in $S^{2}$. Compute the fundamental group of $X$. 
+\end{prb}
+\begin{solutions}
+	Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to a great circle in $S^{2}$. 
+\end{solutions}
 \end{document}

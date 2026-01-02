@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  1 JAN 2026 15:58
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  1 JAN 2026 20:21
  restricted system commands enabled.
 **Algebra_Crash_Course.tex
 (./Algebra_Crash_Course.tex
@@ -1763,8 +1763,17 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [10]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 422.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 439.
 
-[11] (./Algebra_Crash_Course.aux)
+
+[11]
+
+[12] (./Algebra_Crash_Course.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -1774,13 +1783,13 @@ Package rerunfilecheck Info: File `Algebra_Crash_Course.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32977 strings out of 475915
+ 32988 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 3848 words of node memory still in use:
-   89 hlist, 10 vlist, 7 rule, 20 math, 98 glue, 33 kern, 120 glyph, 105 attribu
-te, 111 glue_spec, 105 attribute_list, 2 write, 4 pdf_colorstack nodes
-   avail lists: 1:4,2:1471,3:540,4:201,5:520,6:75,7:9578,8:77,9:966,10:17,11:552
-
+ 3196 words of node memory still in use:
+   51 hlist, 7 vlist, 6 rule, 16 math, 82 glue, 8 kern, 133 glyph, 84 attribute,
+ 111 glue_spec, 84 attribute_list, 2 write nodes
+   avail lists: 1:4,2:1513,3:540,4:208,5:546,6:75,7:9585,8:77,9:1008,10:17,11:55
+2
  54606 multiletter control sequences out of 65536+600000
  87 fonts using 19230279 bytes
  99i,19n,134p,1017b,1210s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1798,10 +1807,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fon
 ts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on Algebra_Crash_Course.pdf (11 pages, 211571 bytes).
+Output written on Algebra_Crash_Course.pdf (12 pages, 217109 bytes).
 
-PDF statistics: 289 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 106 named destinations out of 1000 (max. 131072)
+PDF statistics: 303 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
+ 117 named destinations out of 1000 (max. 131072)
  136 words of extra memory for PDF output out of 10000 (max. 100000000)
 
