@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  2 JAN 2026 19:30
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  2 JAN 2026 20:23
  restricted system commands enabled.
 **GeoTop_Crash_Course.tex
 (./GeoTop_Crash_Course.tex
@@ -1890,28 +1890,38 @@ Package mdframed Info: Not enough space on this page on input line 1212.
 [30]
 
 [31]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1372.
+
 
 [32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1369.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1384.
+(mdframed)              on input line 1406.
 
 
 [33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1415.
+(mdframed)              on input line 1417.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1426.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1433.
+(mdframed)              on input line 1432.
 
-Overfull \hbox (2.37012pt too wide) in paragraph at lines 1444--1447
+
+[34]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1463.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1474.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1481.
+
+Overfull \hbox (2.37012pt too wide) in paragraph at lines 1492--1495
 \TU/NotoSerif(0)/m/n/10 First, we show that $\OML/cmm/m/it/10 G$ \TU/NotoSerif(
 0)/m/n/10 is in-jec-tive. Sup-pose $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 x[]; y[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cm
@@ -1921,71 +1931,54 @@ m/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$\TU/NotoSerif(0)/m/n/10 . Since $[]\OML/cmm
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1448.
-Package mdframed Info: Not enough space on this page on input line 1460.
-
-
-[34]
-Package mdframed Info: Not enough space on this page on input line 1460.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1470.
+(mdframed)              on input line 1496.
+Package mdframed Info: Not enough space on this page on input line 1508.
 
 
 [35]
+Package mdframed Info: Not enough space on this page on input line 1508.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1480.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1498.
+(mdframed)              on input line 1518.
 
 
 [36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1513.
-Package mdframed Info: Not enough space on this page on input line 1519.
+(mdframed)              on input line 1528.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1546.
 
 
-[37] (./GeoTop_Crash_Course.aux)
+[37]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1561.
+Package mdframed Info: Not enough space on this page on input line 1567.
+
+
+[38] (./GeoTop_Crash_Course.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-
-
-Package rerunfilecheck Warning: File `GeoTop_Crash_Course.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `GeoTop_Crash_Course.out':
-(rerunfilecheck)             Before: B6D28CA07802BC9414EFD37CF28BB516;7982
-(rerunfilecheck)             After:  9601F070BEEE597F6CDDC951D96F15D1;7969.
+Package rerunfilecheck Info: File `GeoTop_Crash_Course.out' has not changed.
+(rerunfilecheck)             Checksum: 23B2B292A7F95A912A5412D685A074AF;8374.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33427 strings out of 475915
+ 33436 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 5892 words of node memory still in use:
+ 5924 words of node memory still in use:
    166 hlist, 35 vlist, 16 rule, 24 math, 65 glue, 71 kern, 2 sub_mlist, 108 gly
-ph, 387 attribute, 111 glue_spec, 387 attribute_list, 2 write, 6 pdf_colorstack 
+ph, 395 attribute, 111 glue_spec, 395 attribute_list, 2 write, 6 pdf_colorstack 
 nodes
-   avail lists: 1:5,2:1561,3:540,4:374,5:675,6:142,7:8342,8:91,9:1800,10:14,11:5
+   avail lists: 1:5,2:1561,3:540,4:376,5:679,6:142,7:8342,8:91,9:1800,10:14,11:5
 24,12:3
- 54786 multiletter control sequences out of 65536+600000
+ 54788 multiletter control sequences out of 65536+600000
  114 fonts using 22284103 bytes
  99i,23n,134p,1904b,1590s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-warning  (pdf backend): unreferenced destination with name 'subsection.10.4'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.10.3'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.10.2'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.10.1'
-
-warning  (pdf backend): unreferenced destination with name 'subsection.9.5'
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSansMono-Regular.ttf>
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Italic.ttf><c:/
 texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Bold.ttf><c:/texliv
@@ -2002,10 +1995,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/a
 msfonts/euler/eusm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on GeoTop_Crash_Course.pdf (37 pages, 403309 bytes).
+Output written on GeoTop_Crash_Course.pdf (38 pages, 411857 bytes).
 
-PDF statistics: 811 PDF objects out of 1000 (max. 8388607)
- 739 compressed objects within 8 object streams
- 376 named destinations out of 1000 (max. 131072)
- 424 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 829 PDF objects out of 1000 (max. 8388607)
+ 756 compressed objects within 8 object streams
+ 383 named destinations out of 1000 (max. 131072)
+ 440 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1361,6 +1361,54 @@ Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if
 
 \newpage
 \section{Orientations}
+\subsection{Orientations of Vector Spaces}
+\begin{itemize}
+	\item \textbf{Def. (Consistently Oriented Ordered Bases)} Let $V$ be a vector space of dimension $n \geq 1$. We say that two ordered bases $(V_{1}, \ldots, V_{n})$ and ($\ti{E}_{1}, \ldots, \ti{E}_{n})$ are \textit{consistently oriented} if the transition matrix $(B_{i}^{j})$ defined by, 
+		\begin{equation}
+			E_{i} = B_{i}^{j}\ti{E}_{j}
+		\end{equation}
+	has positive determinant. 
+\end{itemize}
+\begin{exc}{13.1}
+	Show that being consistently ordered is an equivalence relation on the set of all ordered bases for $V$, and show that there are exactly two equivalence classes. 
+\end{exc}
+\begin{solutions}
+	Let $V$ be a vector space of dimension $n \geq 1$, and let $\mathscr{V}$ denote the set of all ordered bases for $V$. Define the binary relation $\sim$ on $V$ as follows: $(E_{i}) \sim (\ti{E}_{i})$ if and only if $(E_{i})$ and $(\ti{E}_{i})$ are consistently oriented. Then, we observe the following: 
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item For any $(E_{i}) \in \mathscr{V}$, clearly $(E_{i}) \sim (E_{i})$ since the transition matrix is the identity matrix, which has determinant $1 > 0$. 
+			\item Suppose $(E_{i}) \sim (F_{i})$, where the transition matrix $(B^{j}_{i})$ defined by $E_{i} = B^{j}_{i}F_{j}$ has positive determinant. Multiplying both sides by the inverse of the transition matrix, 
+				\begin{equation}
+					F_{j} = D^{i}_{j}E_{i}, 
+				\end{equation}
+			where $D^{i}_{j}$ is the inverse of $B^{j}_{i}$. Since $1 = \det{I} = \det{B^{j}_{i}D^{i}_{j}} = \det{B^{j}_{i}}\det{D^{i}_{j}}$, and $\det{B^{j}_{i}} > 0$, it follows that $\det{D^{i}_{j}} > 0$. Hence, $(F_{i}) \sim (E_{i})$. 
+			\item Suppose $(E_{i}) \sim (F_{i})$ and $(F_{i}) \sim (G_{i})$; let $F_{i} = B^{j}_{i}E_{j}$ and $G_{k} = C^{l}_{k}F_{l}$. Then 
+				\begin{equation}
+					G_{k} = C^{l}_{k}F_{l} = C^{l}_{k}B^{j}_{l}E_{j}. 
+				\end{equation}
+			Sinc $\det{B^{j}_{l}}, \det{C^{l}_{k}} > 0$, it follows that $\det{C^{l}_{k}B^{j}_{l}} > 0$. Hence, $(E_{i}) \sim (G_{k})$. 
+		\end{enumerate}
+	The above observations prove that $\sim$ is an equivalence relation on $\mathscr{V}$. Now pick two bases $(E_{i}), (F_{i}) \in\mathscr{V}$ such that they are \textit{not} consistently oriented. That is, if $B^{j}_{i}$ is the corresponding transition matrix such that $F_{i} = B^{j}_{i}E_{j}$, then $B^{j}_{i}$ has \textit{negative} determinant. Now let $(G_{i})$ be an arbitrary ordered basis for $V$. If $(G_{i})$ and $(E_{i})$ are consistently oriented, then it follows trivially that $(G_{i}) \in [(E_{i})]$. On the other hand, if $(G_{i})$ is not consistently oriented with $(E_{i})$ such that the transition matrix defined by $E_{k} = C^{l}_{k}G_{l}$ has negative determinant, then $(G_{i}) \sim (F_{i})$ since 
+		\begin{equation}
+			F_{i} = B^{j}_{i}E_{j} = B^{j}_{i}C^{l}_{j}G_{l},
+		\end{equation}
+	and $\det{B^{j}_{i}C^{l}_{j}} = \det{B^{j}_{i}}\det{C^{l}_{j}} > 0$. Therefore, there are exactly two equivalence classes. 
+\end{solutions}
+\begin{itemize}
+	\item \textbf{Def. (Orientation for a Vector Space)} Let $V$ be a vector space of dimension $n \geq 1$. We define an \textit{orientation} for $V$ as an equivalence class of ordered bases. 
+	\item \textbf{Lem. 13.2. (Orientations and Alternating Tensors)} Let $V$ be a vector space of dimension $n\geq 1$ and suppose $\Omega$ is a nonzero element of $\Lambda^{n}(V)$. The set of ordered bases $(E_{1}, \ldots, E_{n})$ such that $\Omega(E_{1}, \ldots, E_{n}) > 0$ is an orientation for $V$. 
+\end{itemize}
+\subsection{Orientations of Manifolds}
+\begin{itemize}
+	\item \textbf{Def. (Pointwise Orientation)} Let $M$ be a smooth manifld. We define a \textit{pointwise orientation} on $M$ to be a choice of orientation of each tangent space. 
+	\item \textbf{Def. (Oriented Local Frames)} Suppose that $M$ is a smooth $n$-manifold with a given pointwise orientation. A local frame $(E_{i})$ for $M$ is (\textit{positively}) \textit{oriented} if $(E_{1}|_{p}, \ldots, E_{n}|_{p})$ is a positively oriented basis for $T_{p}M$ at each point $p \in U$. A \textit{negatively oriented} frame is defined analogously. 
+	\item \textbf{Def. (Continuous Pointwise Orientation)} A pointwise orientation for $M$ is said to be \textit{continuous} if every point of $M$ is contained in the domain of an oriented local frame. Such a pointwise orientation is called an \textit{orientation} of $M$. 
+\end{itemize}
+\begin{exc}{13.2}
+	If $M$ is an oriented manifold of dimension $n \geq 1$, show that every local frame with connected domain is either positively oriented or negatively oriented. Show that the connectedness assumption is necessary. 
+\end{exc}
+\begin{solutions}
+	Let $M$ be an oriented manifold of dimension $n \geq 1$. 
+\end{solutions}
 
 
 \newpage
