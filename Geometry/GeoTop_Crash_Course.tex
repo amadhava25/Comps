@@ -1226,7 +1226,141 @@ Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if
 		\item If $\operatorname{Alt}{T} = T$, then by (a), $T$ is alternating. 
 	\end{enumerate}
 \end{solutions}
+\begin{itemize}
+	\item \textbf{Def. (Multi-Index)} Let $k$ be a positive integer. An ordered $k$-tuple $I = (i_{1}, \ldots, i_{k})$ of positive integers is called an \textit{multi-index} of length $k$. If $\sigma \in S_{k}$ is a permutation, then we write 
+		\begin{equation}
+			I_{\sigma} = (i_{\sigma(1)}, \ldots, i_{\sigma(k)}). 
+		\end{equation}
+	\item \textbf{Def. (Generalized Kronecker delta)} Let $I$ and $J$ be multi-indices of length $k$. Then we may define 
+		\begin{equation}
+			\delta_{I}^{J} = 
+			\begin{cases}
+				\operatorname{sgn}{\sigma}, & \text{ if neither $I$ nor $J$ has a repeated index} \\
+				& \qquad \text{and $J = I_{\sigma}$ for some $\sigma \in S_{k}$} \\
+				0 & \text{ if $I$ or $J$ has a repeated index} \\
+				& \qquad \text{ or $J$ is not a permutation of $I$.}
+			\end{cases}
+		\end{equation}
+	\item \textbf{Def. (Elementary Alternating Tensor/$k$-Covector)} Let $V$ be an $n$-dimensional vector space, and suppose $(\epsilon^{1}, \ldots, \epsilon^{n})$ be a basis for $V^{\ast}$. We will define a collection of alternating tensors on $V$ that generalize the determinant function on $\mathbb{R}^{n}$. For each multi-index $I = (i_{1}, \ldots, i_{k})$ of length $k$ such that $1 \leq i_{1}, \ldots, i_{k} \leq n$, define a covariant $k$-tensor $\epsilon^{I}$ by 
+		\begin{align}
+			\begin{split}
+				\epsilon^{I}(X_{1}, \ldots, X_{k}) &= \det{
+					\begin{pmatrix}
+						\epsilon^{i_{1}}(X_{1}) & \dotsm & \epsilon^{i_{1}}(X_{k}) \\
+						\vdots & & \vdots \\
+						\epsilon^{i_{k}}(X_{1}) & \dotsm &  \epsilon^{i_{k}}(X_{k})
+					\end{pmatrix}} \\
+				&= \det{
+					\begin{pmatrix}
+						X_{1}^{i_{1}} & \dotsm & X_{k}^{i_{1}} \\
+						\vdots & & \vdots \\
+						X_{1}^{i_{k}} & \dotsm & X_{k}^{i_{k}}
+					\end{pmatrix}
+				.}
+			\end{split}
+		\end{align}
+		I.e., if $\mathbb{X}$ denotes the matrix whose columns are the components of the vectors $X_{1}, \ldots, X_{k}$ with respect to the basis $(E_{i})$ dual to the basis $(\epsilon^{i})$, then $\epsilon^{I}(X_{1}, \ldots, X_{k})$ is the determinant of the $k\times k$ minor consisting of rows $i_{1}, \ldots, i_{k}$ of $\mathbb{X}$. Since the determinant is an alternating tensor, $\epsilon^{I}$ must also be an alternating tensor. We call $\epsilon^{I}$ an \textit{elementary alternating tensor} or \textit{elementary $k$-covector}.
+	\item \textbf{Def. (Example of an Elementary $k$-Covector)} Let $\left(e^{1}, e^{2}, e^{3}\right)$ be the standard dual basis for $(\mathbb{R}^{3})^{\ast}$. Then 
+		\begin{equation}
+			\mathbb{X} = 
+				\begin{pmatrix}
+					X^{1} & Y^{1} \\ 
+					X^{2} & Y^{2} \\
+					X^{3} & Y^{3} \\
+				\end{pmatrix}
+			\implies 
+			\epsilon^{13}(X, Y) = \det{
+				\begin{pmatrix}
+					X^{1} & Y^{1} \\
+					X^{3} & Y^{3}
+				\end{pmatrix}
+			} = X^{1}Y^{3} - Y^{1}X^{3}.
+		\end{equation}
+	\item \textbf{Lem. 12.4. (Properties of Elementary Alternating Tensor)} Let $(E_{i})$ be a basis for $V$, let $(\epsilon^{i})$ be the dual basis for $V^{\ast}$, and let $\epsilon^{I}$ be as defined above. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item If $I$ has a repeated index, then $\epsilon^{I} = 0$. 
+			\item If $J= I_{\sigma}$ for some $\sigma \in S_{k}$, then $\epsilon^{I} = (\operatorname{sgn}{\sigma})\epsilon^{J}$. 
+			\item $\epsilon^{I}(E_{j_{1}}, \ldots, E_{j_{k}}) = \delta^{I}_{J}$. 
+		\end{enumerate}
+	\item \textbf{Prop. 12.5. (Basis for $\Lambda^{k}V$)} Let $V$ be an $n$-dimensional vector space. If $(\epsilon^{i})$ is any basis for $V^{\ast}$, then for each positive integer $k \leq n$, the collection of $k$-covectors 
+		\begin{equation}
+			\mathscr{E} = \brac*{\epsilon^{I}: I \text{ is an increasing multi-index of length $k$}}
+		\end{equation}
+	is a basis for $\Lambda^{k}V$. Therefore, 
+		\begin{equation}
+			\dim{\Lambda^{k}V} = 
+				\begin{cases} 
+					\displaystyle
+					\binom{n}{k} = \frac{n!}{k!(n - k)!}, & k \leq n \\
+					0, & n < k.
+				\end{cases}
+		\end{equation}
+	\item \textbf{Lem. 12. 6. (The Space $\Lambda^{n}(V)$)} Suppose $V$ is an $n$-dimensional vector space and $\omega \in \Lambda^{n}(V)$. If $T: V \to V$ is any linear map and $X_{1}, \ldots, X_{n}$ are arbitrary vectors in $V$, then 
+		\begin{equation}
+			\omega(TX_{1}, \ldots, TX_{n}) = (\det{T})\omega(X_{1}, \ldots, X_{n}). 
+		\end{equation}
+		
+	{\color{orange}
+		Let $(E_{i})$ be any basis for $V$, and let $(\epsilon^{i})$ be the corresponding dual basis for $V^{\ast}$. Let $(T^{j}_{i})$ denote the matrix of $T$ with respect to this basis, and let $T_{i}= TE_{i} = T_{i}^{j}E_{j}$. It suffices to prove this relationship holds when $X_{i} = E_{i}$ for each $i$. By Proposition 12.5, $\dim{\Lambda^{n}V} = 1$. This implies that $\omega = c\epsilon^{1\dotsm n}$ for some real number $n$. Then we obeerve that 
+		\begin{align}
+			\begin{split}
+				(\det{T})c\epsilon^{1\dotsm n}(E_{1}, \ldots, E_{n}) &= c\det{T}.\\
+				c\epsilon^{1\dotsm n}(TE_{1}, \ldots, TE_{n}) &= c\epsilon^{1\dotsm n}(T_{1}, \ldots, T_{n}) =  c\det(\epsilon^{j}(T_{i})) = c\det{T_{i}^{j}}. 
+			\end{split}
+		\end{align}
+		Hence, this concludes the proof. 
+	}
+\end{itemize}
+\subsection{The Wedge Product}
+\begin{itemize}
+	\item \textbf{Def. (Wedge/Exterior Product)} Let $\omega \in \Lambda^{k}V$ and $\eta \in \Lambda^{l}V$. Define the \textit{wedge product}, or \textit{exterior product}, of $\omega$ and $\eta$ to be the alternating $(k + l)$-tensor: 
+		\begin{equation}
+			\omega \wedge \eta = \frac{(k + l)!}{k!l!}\operatorname{Alt}(\omega \otimes \eta). 
+		\end{equation}
+	\item \textbf{Lem. 12.7. (Wedge Product of Multi-Indices)} Let $(\epsilon^{1}, \ldots, \epsilon^{n})$ be a basis for $V^{\ast}$. For any multi-indices $I = (i_{1}, \ldots, i_{k})$ and $J = (j_{1}, \ldots, j_{l})$, 
+		\begin{equation}
+			\epsilon^{I} \wedge \epsilon^{J} = \epsilon^{IJ}, 
+		\end{equation}
+	where $IJ = (i_{1}, \ldots, i_{k}, j_{1}, \ldots, j_{l})$ is the concatenated multi-index. 
+	\item \textbf{Prop. 12.8. (Properties of the Wedge Product)} \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item {\small \uppercase{Bilinearity:}} 
+				\begin{align}
+					\begin{split}
+						(a\omega' + a'\omega') \wedge \eta &= a(\omega \wedge \eta) + a'(\omega' \wedge \eta). \\
+						\eta \wedge (a\omega + a'\omega') &= a(\eta \wedge \omega) + a'(\eta \wedge \omega'). 
+					\end{split}
+				\end{align}
+			\item {\small\uppercase{Associativity:}}
+				\begin{equation}
+					\omega \wedge (\eta \wedge \xi) = (\omega \wedge \eta) \wedge \xi. 
+				\end{equation}
+			\item {\small\uppercase{Anticommutativity:}} For any $\omega \in \Lambda^{k}(V)$ and $\eta \in \Lambda^{l}(V)$, 
+				\begin{equation}
+					\omega \wedge \eta = (-1)^{kl}\eta \wedge \omega. 
+				\end{equation}
+			\item 
+				\begin{equation}
+					\epsilon^{i_{1}} \wedge \dotsm \wedge \epsilon^{i_{k}} =\epsilon^{I}. 
+				\end{equation}
+			\item For any covectors $\omega^{1}, \ldots, \omega^{k}$ and vectors $X_{1}, \ldots, X_{k}$, 
+				\begin{equation}
+					\omega^{1} \wedge \dotsm \wedge \omega^{k}(X_{1}, \ldots, X_{k}) = \det(\omega^{j}(X_{i})). 
+				\end{equation}
+		\end{enumerate}
+\end{itemize}
+\subsection{Differential Forms on Manifolds}
+\begin{itemize}
+	\item \textbf{Def. (Space of all Alternating $k$-Tensors)} Let $M$ be an $n$-dimensional smooth manifold. The subset of $T^{k}M$ consisting of alternating tensors is denoted by $\Lambda^{k}M$: 
+		\begin{equation}
+			\Lambda^{k}M = \coprod_{p \in M}\Lambda^{k}(T_{p}M). 
+		\end{equation}
+	\item \textbf{Note:} Look over Cartan's Lemma (Exercise 12-17 on pg. 323).
+\end{itemize}
 
+
+\newpage
+\section{Orientations}
 
 
 \newpage
