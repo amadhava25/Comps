@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{../header}
+\title{Geometry Comps Practice}
+\author{\me}
+\date{January 2, 2026}
+
+\begin{document}
+	\maketitle
+	\fullline 
+	\tableofcontents
+	\halfline 
+	\newpage 
+	
+\begin{prb}{2019-J-II-6}
+	Let $X$ and $Y$ be vector fields on $\mathbb{R}^{3}$, defined by 
+		\begin{equation}
+			X = \frac{\partial}{\partial x} + x \frac{\partial}{\partial y} + y\frac{\partial}{\partial z} \quad \text{ and } \quad Y =y\frac{\partial}{\partial x} + z \frac{\partial}{\partial y} + \frac{\partial}{\partial z}. 
+		\end{equation}
+	Is there a coordinate chart $\varphi = (x_{1}, x_{2}, x_{3}): U \to \mathbb{R}^{3}$ of the origin $0 \in \mathbb{R}^{3}$ such that 
+		\begin{equation}
+			X|_{U} = \frac{\partial}{\partial x^{1}} \quad \text{ and } \quad Y|_{U} = \frac{\partial}{\partial x^{2}}. 
+		\end{equation}
+\end{prb}
+\begin{solutions}
+	No, there exists no coordinate chart containing the origin $0 \in \mathbb{R}^{3}$ that satisfies the above conditions. To show this, we will compute the Lie Brackets of the given vector fields; let $\ti{X} = \partial/\partial x^{1}$ and $\ti{Y} = \partial/\partial x^{2}$. First, we observe that 
+		\begin{align}
+			\begin{split}
+				[X, Y] &= \frac{\partial}{\partial x}(y, z, 1) + x\frac{\partial}{\partial y}(y, z, 1) + y\frac{\partial}{\partial z}(y, z, 1) - y\frac{\partial}{\partial x}(1, x, y) -z \frac{\partial}{\partial y}(1, x, y) - \frac{\partial}{\partial z}(1, x, y) \\
+				&= x(1,0,0) + y(0,1,0) - y(0,1,0) - z(0,0,1) \\
+				&= x\frac{\partial}{\partial x} - z\frac{\partial}{\partial z}. 
+			\end{split}
+		\end{align}
+	This means that the Lie Bracket of $X$ and $Y$ is not identically zero on any neighborhood of the origin. On the other hand, it is straightforward to see that the Lie Bracket of $\ti{X}$ and $\ti{Y}$ is identically zero on \textit{all} of $U$. This is a contradiction. Therefore, such a coordinate chart cannot exist. 
+\end{solutions}	
+	
+\end{document}
