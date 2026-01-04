@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  2 JAN 2026 22:55
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  3 JAN 2026 20:39
  restricted system commands enabled.
 **Geo_Comps_Practice.tex
 (./Geo_Comps_Practice.tex
@@ -1687,44 +1687,107 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 14.
 Package mdframed Info: Not enough space on this page on input line 23.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 35.
 
 
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/sl' in size <10> not availabl
 e
 (Font)              Font shape `TU/NotoSerif(0)/m/it' tried instead on input li
-ne 36.
-[2] (./Geo_Comps_Practice.aux)
+ne 66.
+[2]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 98.
+
+
+[3]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 125.
+Package mdframed Info: Not enough space on this page on input line 127.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 136.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 141.
+
+
+[4]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 188.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 214.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 222.
+
+
+[5]
+Package mdframed Info: Not enough space on this page on input line 224.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 238.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 241
+.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 256.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 262.
+
+
+
+[6]
+
+[7] (./Geo_Comps_Practice.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `Geo_Comps_Practice.out' has not changed.
-(rerunfilecheck)             Checksum: E63C4330C8D4D0CA596802A5AC560230;142.
+(rerunfilecheck)             Checksum: 2B55D77A5991CB790D2DA8DA6C759564;1556.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32731 strings out of 475915
+ 32821 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 4136 words of node memory still in use:
-   100 hlist, 17 vlist, 16 rule, 16 math, 95 glue, 74 kern, 134 glyph, 56 attrib
-ute, 110 glue_spec, 56 attribute_list, 2 write, 2 pdf_colorstack nodes
-   avail lists: 2:428,3:124,4:48,5:324,6:22,7:2402,8:85,9:652,10:3,11:90
- 54462 multiletter control sequences out of 65536+600000
- 83 fonts using 18564543 bytes
- 99i,15n,134p,554b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 1512 words of node memory still in use:
+   27 hlist, 5 vlist, 4 rule, 8 math, 19 glue, 6 kern, 9 glyph, 67 attribute, 11
+0 glue_spec, 67 attribute_list, 2 write, 4 pdf_colorstack nodes
+   avail lists: 1:2,2:1149,3:318,4:170,5:585,6:60,7:7663,8:85,9:1272,10:9,11:396
+
+ 54498 multiletter control sequences out of 65536+600000
+ 86 fonts using 18708927 bytes
+ 99i,19n,134p,917b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Italic.ttf><c:/
 texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Bold.ttf><c:/texliv
 e/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Regular.ttf><c:/texlive/2
 024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Geo_Comps_Practice.pdf (2 pages, 85073 bytes).
+/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/te
+xmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Geo_Comps_Practice.pdf (7 pages, 160353 bytes).
 
-PDF statistics: 81 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 131072)
- 24 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 200 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 131072)
+ 104 words of extra memory for PDF output out of 10000 (max. 100000000)
 
