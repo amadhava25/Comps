@@ -1,5 +1,9 @@
 \RequirePackage{fontspec}
-\RequirePackage{noto}
+\setmainfont{Noto Serif}
+\usepackage{notomath}
+\let\Bbbk\relax
+\let\openbox\relax
+%\RequirePackage{noto}
 %\newfontfamily\kannadafont{Noto Sans Kannada}
 %\RequirePackage{polyglossia}
 %\setmainlanguage{english}
@@ -164,6 +168,7 @@
 \newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
 \newcommand{\Int}[1]{#1^{\circ}}
 \newcommand{\Clo}[1]{\overline{#1}}
+\newcommand{\empspace}{\hspace{2pt}\cdot\hspace{2pt}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\ext}{ext}
 \DeclarePairedDelimiter{\brac}{\{}{\}}
