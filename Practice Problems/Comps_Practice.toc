@@ -4,21 +4,35 @@
 \contentsline {subsubsection}{Problem 2023-A-I-6}{3}{section*.5}%
 \contentsline {subsubsection}{Problem 2024-J-II-5}{3}{section*.6}%
 \contentsline {subsubsection}{Problem (Steinhaus' Theorem)}{4}{section*.7}%
-\contentsline {subsubsection}{Problem 2024-J-II-2}{4}{section*.8}%
-\contentsline {subsection}{Differential Geometry}{5}{section*.9}%
-\contentsline {subsubsection}{Problem 2019-J-II-6}{5}{section*.10}%
-\contentsline {subsubsection}{Problem 2019-A-I-5}{5}{section*.11}%
-\contentsline {subsubsection}{Problem 2023-A-II-5}{6}{section*.12}%
-\contentsline {subsubsection}{Problem 2023-A-I-2}{7}{section*.13}%
-\contentsline {subsubsection}{Problem 2023-J-I-3}{7}{section*.14}%
-\contentsline {subsubsection}{Problem 2018-J-I-6}{7}{section*.15}%
-\contentsline {subsubsection}{Problem 2019-J-11-6}{8}{section*.16}%
-\contentsline {subsubsection}{Problem 2019-A-I-4}{8}{section*.17}%
-\contentsline {subsubsection}{Problem 2017-J-II-1}{9}{section*.18}%
-\contentsline {subsubsection}{Problem 2012-J-I-4}{9}{section*.19}%
-\contentsline {subsubsection}{Problem 2011-A-II-5}{10}{section*.20}%
-\contentsline {subsubsection}{Problem 2010-J-I-2}{10}{section*.21}%
-\contentsline {subsubsection}{Problem 2010-J-I-3}{10}{section*.22}%
-\contentsline {subsubsection}{Problem 2002-J-II-1 (Comps Lemma)}{11}{section*.23}%
-\contentsline {subsubsection}{Problem 2025-A-II-2}{11}{section*.24}%
-\contentsline {subsubsection}{Problem 2003-J-11-5}{12}{section*.25}%
+\contentsline {subsubsection}{Problem 2023-J-II-1}{5}{section*.8}%
+\contentsline {subsubsection}{Problem 2023-J-II-2}{5}{section*.9}%
+\contentsline {subsubsection}{Problem (Folland 6.1.3)}{6}{section*.10}%
+\contentsline {subsubsection}{Problem (Folland 6.1.4)}{6}{section*.11}%
+\contentsline {subsection}{Differential Geometry}{7}{section*.12}%
+\contentsline {subsubsection}{Problem 2019-J-II-6}{7}{section*.13}%
+\contentsline {subsubsection}{Problem 2019-A-I-5}{7}{section*.14}%
+\contentsline {subsubsection}{Problem 2023-A-II-5}{8}{section*.15}%
+\contentsline {subsubsection}{Problem 2023-A-I-2}{9}{section*.16}%
+\contentsline {subsubsection}{Problem 2023-J-I-3}{9}{section*.17}%
+\contentsline {subsubsection}{Problem 2018-J-I-6}{9}{section*.18}%
+\contentsline {subsubsection}{Problem 2019-J-11-6}{10}{section*.19}%
+\contentsline {subsubsection}{Problem 2019-A-I-4}{10}{section*.20}%
+\contentsline {subsubsection}{Problem 2017-J-II-1}{11}{section*.21}%
+\contentsline {subsubsection}{Problem 2012-J-I-4}{11}{section*.22}%
+\contentsline {subsubsection}{Problem 2011-A-II-5}{12}{section*.23}%
+\contentsline {subsubsection}{Problem 2010-J-I-2}{12}{section*.24}%
+\contentsline {subsubsection}{Problem 2010-J-I-3}{12}{section*.25}%
+\contentsline {subsubsection}{Problem 2002-J-II-1 (Comps Lemma)}{13}{section*.26}%
+\contentsline {subsubsection}{Problem 2025-A-II-2}{13}{section*.27}%
+\contentsline {subsubsection}{Problem 2003-J-11-5}{14}{section*.28}%
+\contentsline {subsection}{Algebra}{15}{section*.29}%
+\contentsline {subsubsection}{Problem 2019-J-I-1}{15}{section*.30}%
+\contentsline {subsubsection}{Problem 2024-J-I-4}{15}{section*.31}%
+\contentsline {subsubsection}{Problem 2020-J-I-1}{15}{section*.32}%
+\contentsline {subsubsection}{Problem 2018-J-II-5}{16}{section*.33}%
+\contentsline {subsubsection}{Problem 2016-J-I-1}{16}{section*.34}%
+\contentsline {subsubsection}{Problem 2017-J-II-6}{16}{section*.35}%
+\contentsline {subsubsection}{Problem 2013-J-I-2}{16}{section*.36}%
+\contentsline {subsubsection}{Problem 2012-J-I-6}{17}{section*.37}%
+\contentsline {subsubsection}{Problem 2009-J-I-5}{17}{section*.38}%
+\contentsline {subsubsection}{Problem 2007-J-I-3}{17}{section*.39}%

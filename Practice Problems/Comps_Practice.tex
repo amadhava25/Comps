@@ -115,36 +115,148 @@
 	Let $E \subset \mathbb{R}^{n}$ be a set of positive Lebesgue measure. Then the set $E - E = \brac*{a - b: a, b \in E}$ contains a neighborhood around the origin. 
 \end{prb}
 \begin{solutions}
-	Let $E \subset \mathbb{R}^{n}$ be a set of positive Lebesgue measure. Then by the Lebesgue Differentiation Theorem, almost every point of $E$ is a Lebesgue point, which is to say that there exists at least one point $x \in E$ such that for all $\epsilon > 0$, there exists a $r > 0$ so that 
-		\begin{equation}
-			\frac{m(E \cap B(r, x))}{m(B(r,x))} \geq (1 - \epsilon) \implies m(E \cap B(r, x)) \geq (1 - \epsilon)m(B(r, x)). 
-		\end{equation}
-	Suppose for contradiction that $E - E$ does not contain a neighborhood of the origin. Then there exists a sequence $x_{n} \to 0$ such that $x_{n} \notin E - E$ for any $n$. Equivalently, $(E + x_{n}) \cap E = \varnothing$ for all $n$. Taking $n$ large enough so that $\abs{x_{n}} < \epsilon r$, 
-		\begin{equation}
-			m(B(r, x) \cap (B(r, x) - x_{n})) \geq (1 - \epsilon)m(B(r, x)).  
-		\end{equation}
-	By translation invariance of the Lebesgue measure, 
-		\begin{equation}
-			m((E + x_{n}) \cap B(r,x)) = m(E \cap (B(r, x) - x_{n})). 
-		\end{equation}
+	Let $E \subset \mathbb{R}^{n}$ be a subset of positive Lebesgue measure, and let $E - E \coloneqq \{e_{1} - e_{2}: e_{1},e_{2} \in E\}$.  Since $E$ has positive Lebesgue measure, by the Lebesgue Differentiation Theorem, there exists $x \in E$ such that for any $\epsilon > 0$, there exists a $r > 0$ satisfying the following inequality: 
+	\begin{equation}
+		m(E \cap \b{r}) \geq (1 - \epsilon)m(\b{r}) \implies m(\b{r}\setminus E) \leq \epsilon m(\b{r}). 
+	\end{equation}
+	Assume to the contrary that $E - E$ does \textit{not} contain a neighborhood about the origin, which means that there exists a sequence $x_{n} \to 0$ so that $x_{n} \not \in E - E$ for any $n$; equivalently $(E + x_{n}) \cap E = \varnothing$ for all $n$. Therefore, our goal is to force a contradiction to show that $(E + x_{n}) \cap E \neq \varnothing$ for some $n$. First, observe that 
+	\begin{align}
+		\begin{split}
+			0 = \lim_{n \to \infty}m(\b{r}\Delta (\b{r} - x_{n})) &= \lim_{n \to \infty}m(\b{r} \cup (\b{r} - x_{n})) \\
+			&\qquad- \lim_{n \to \infty}m(\b{r}\cap  (\b{r} - x_{n})) \\
+			&= m(B_{r}(x)) - \lim_{n \to \infty}m(\b{r} \cap (\b{r} - x_{n})) \\
+			\implies m(\b{r}) &= \lim_{n \to \infty}m(\b{r} \cap (\b{r} - x_{n})). 
+		\end{split}
+	\end{align}
+	Therefore, we may choose $n$ large enough so that $$m(\b{r} \cap (\b{r} - x_{n})) \geq (1 - \epsilon)m(\b{r}).$$
+	We will use these bounds to place a nonzero lower bound on $m(\b{r} \cap E \cap (E + x_{n}))$. Observe that since 
+	\begin{equation}
+		E \cap (E + x_{n}) \cap \b{r} \supset E \cap (E + x_{n}) \cap \b{r} \cap (\b{r} - x_{n}), 
+	\end{equation}
+	we have 
+	\begin{equation}
+		m(E \cap (E + x_{n}) \cap \b{r}) \geq m\left(E \cap (E + x_{n}) \cap \b{r} \cap (\b{r} -x_{n})\right). 
+	\end{equation}
+	Now, we want to simplify the right side. Remember that if $A, B$ are finite measured sets, $m(B) = m(B\setminus A) + m(B \cap A)$ so that $m(B \cap A) = m(B) - m(B \setminus A)$. Applying this above, 
+	\begin{align}
+		\begin{split}
+			m\left(\left[\b{r} \cap (\b{r} - x_{n})\right] \cap \left[E \cap (E + x_{n}\right]\right) &= m(\b{r} \cap (\b{r}-x_{n})) \\
+			&\quad - m(\left[\b{r} \cap (\b{r} - x_{n})\right] \setminus \left[E \cap (E + x_{n}\right]) \\
+			&\geq m(\b{r} \cap (\b{r} -x_{n})) \\
+			&\quad- m([\b{r} \cap (\b{r} - x_{n})] \setminus E) \\
+			&\quad -m([\b{r} \cap (\b{r} - x_{n})] \setminus (E + x_{n})).
+		\end{split}
+	\end{align}
+	Now, since 
+	\begin{equation}
+		\b{r} \cap (\b{r} - x_{n}) \subset \b{r}, 
+	\end{equation}
+	we have the inequality, 
+	\begin{align}
+		\begin{split}
+			m(\left[\b{r} \cap (\b{r} - x_{n})\right]\setminus E) &\leq m(\b{r} \setminus E) = m(\b{r}) - m(E \cap \b{r}) \\
+			&\leq \epsilon m(\b{r}). 
+		\end{split}
+	\end{align}
+	Likewise, since $\b{r} \cap (\b{r} - x_{n}) \subset \b{r} - x_{n}$ and $(\b{r} - x_{n})\setminus (E + x_{n}) = (\b{r}\setminus E) - x_{n}$ and translation invariance tells us that $m((\b{r}\setminus E) - x_{n}) = m(\b{r} \setminus E)$, 
+	\begin{equation}
+		m([\b{r} \cap (\b{r} - x_{n})]\setminus (E + x_{n})) \leq m(\b{r}) - m(\b{r} \cap E) \leq \epsilon m(\b{r}). 
+	\end{equation}
 	Therefore, 
-		\begin{align}
-			\begin{split}
-				m((E + x_{n}) \cap B(r, x)) &\geq m(B(r, x) \cap (B(r,x) - x_{n})) - m(B(r, x)\setminus E) - m((B(r, x) - x_{n})\setminus E) \\
-				&\geq (1 - \epsilon) m(B(r, x)) - 2\epsilon m(B(r, x)) \\
-				&\geq 0
-			\end{split}
-		\end{align}
-	for $\epsilon$ small enough. Therefore, $(E + x_{n}) \cap E \cap B(r, x) \neq \varnothing$, contradicting $(E + x_{n}) \cap E_{n} = \varnothing$ for all $n$. Hence, $E - E$ contains a neighborhood of the origin. 
+	\begin{equation}
+		m([\b{r} \cap (\b{r} - x_{n})] \cap [E \cap (E + x_{n})]) \geq (1 - 3\epsilon)m(\b{r}). 
+	\end{equation}
+	Hence, this implies that 
+	\begin{equation}
+		m(E \cap (E + x_{n}) \cap \b{r}) \geq (1 - 3\epsilon)m(\b{r}) > 0
+	\end{equation}
+	for $\epsilon$ small enough. This contradicts our hypothesis that $E \cap (E + x_{n}) = \varnothing$ for all $n$. Hence, by contradiction, $E - E$ contains a neighborhood of the origin. 
 \end{solutions}
 
 
-
-
-\begin{prb}{2024-J-II-2}
-	Suppose $E \subset \mathbb{R}^{2}$ is a set of positive Lebesgue measure. Show that there are points $a, b, c$ in $E$ such that their connecting segments form a right angle, i.e., $a - b$ is perpendicular to $c - b$ (as vectors in $\mathbb{R}^{2}$). 
+\begin{prb}{2023-J-II-1}
+	Suppose that $f: \mathbb{R} \to \mathbb{R}$ is continuous. Show that $f^{-1}(y) = \brac*{x \in \mathbb{R}: f(x) = y}$ has Lebesgue measure zero for Lebesgue almost $y$. 
 \end{prb}
+\begin{solutions}
+	Let $f: \mathbb{R} \to \mathbb{R}$ be continuous, and let
+		\begin{equation}
+			\Gamma = \brac*{(x, y) \in \mathbb{R}^{2}: f(x) = y}
+		\end{equation}
+	be the graph of $f$. Since $f$ is a continuous function, $\Gamma$ is a measurable set. Define the function $g: \mathbb{R} \to \mathbb{R}$ as follows: for each $y \in \mathbb{R}$, $g(y) = m(f^{-1}(y))$. Our goal is to conclude that $m(f^{-1}(y)) = 0$ for almost all $y \in \mathbb{R}$. Define the following $x$- and $y$- slices of $\Gamma$, respectively, as follows: 
+		\begin{equation}
+			\Gamma_{x} = \brac*{y \in \mathbb{R}: f(x) = y} \qquad \text{ and } \qquad \Gamma^{y} = \brac*{x \in \mathbb{R}: f(x) = y} = f^{-1}(y). 
+		\end{equation}		
+	We observe that since $f$ is a function, for each $x \in \mathbb{R}$, $\Gamma_{x}$ is the singleton $\{f(x)\}$. Hence, $m(\Gamma_{x}) = 0$ for all $x \in \mathbb{R}$. By Fubini-Tonelli, we know that 
+		\begin{equation}
+			m(\Gamma) = \int_{\mathbb{R}}\int_{\mathbb{R}}\chi_{\Gamma}(x, y)\;d(x \times y) = \int_{\mathbb{R}}\left(\int_{\mathbb{R}}\chi_{\Gamma}(x, y)\;dx\right)\;dy = \int_{\mathbb{R}}\left(\int_{\mathbb{R}}\chi_{\Gamma}(x,y)\;dy\right)\;dx. 
+		\end{equation}
+	We observe that 
+		\begin{equation}
+			\int_{\mathbb{R}}\chi_{\Gamma}(x, y)\;dy = m(\Gamma_{x})= 0 \implies m(\Gamma) =0. 
+		\end{equation}
+	On the other hand, 
+		\begin{equation}
+			\int_{\mathbb{R}}\chi_{\Gamma}(x, y)\;dx = m(\Gamma^{y}) = m(f^{-1}(y)) = g(y). 
+		\end{equation}
+	Hence, we find that 
+		\begin{equation}
+			\int_{\mathbb{R}}g(y)\;dy = 0 \implies m(f^{-1}(y)) = g(y) = 0 \text{ for almost all $y \in \mathbb{R}$}. 
+		\end{equation}
+	The proof concludes. 
+\end{solutions}
+\begin{prb}{2023-J-II-2}
+	Suppose that $f$ is continuous on $[0,1]$ and $\int_{0}^{1}f(x)x^{k}\;dx = 0$ for $k = 0, \ldots, n$. Prove that either $f$ is identically zero or $f$ must change sign at least $n + 1$ times. We say that $f$ changes sign $n$ times if there are points $x_{1} < \dotsm < x_{n + 1}$ so that $f(x_{j})f(x_{j + 1}) < 0$ for $j = 1, \ldots, n$. 
+\end{prb}
+\begin{solutions}
+	Let $f$ be continuous on $[0,1]$ and $\int_{0}^{1}f(x)\;dx$ and assume $\int_{0}^{1}f(x)x^{k}\;dx = 0$ for $k = 0, \ldots, n$. If $f$ is identically zero, then the claim is straightforward to see. So assume $f$ is not identically zero. Assume to the contrary that $f$ changes sign at most $m \leq n$ times, and let $x_{1} < \dotsm < x_{m + 1}$ be the $m + 1$ points such that $f(x_{j})f(x_{j + 1}) < 0$ for $j = 1, \ldots, m$. For each $j$, let $y_{j} = f(x_{j})$, which gives us a collection of points $\{(x_{j}, y_{j})\}_{j = 1}^{n} \subset [0,1]\times \mathbb{R}$. Let $L(x)$ be the Lagrange polynomial of degree $\leq n$ such that $L(x_{j}) = y_{j}$ for each $j$. \textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
 
+\newpage 
+\begin{prb}{(Folland 6.1.3)}
+	If $1 \leq p < r \leq \infty$, $L^{p} \cap L^{r}$ is a Banach space with norm $\norm{f} = \norm{f}_{p} + \norm{f}_{r}$, and if $p < q < r$, the inclusion map $L^{p} \cap L^{r} \to L^{q}$ is continuous. 
+\end{prb}
+\begin{solutions}
+	Since $L^{p}$ and $L^{r}$ are vector spaces, and the intersection of vector spaces is a vector space, $L^{p} \cap L^{r}$ is a vector space. Define the map $\norm{\empspace}: L^{p} \cap L^{r} \to [0, \infty)$ as follows: $\norm{f} = \norm{f}_{p} + \norm{f}_{r}$. First, we will prove that this map is a norm. 
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item $\norm{f} = 0$ iff $\norm{f}_{p} + \norm{f}_{r} = 0$ iff $\norm{f}_{p} = 0$ and $\norm{f}_{r} = 0$ (since $\norm{\empspace}_{p}, \norm{\empspace}_{r}$ are nonnegative) iff $f = 0$ a.e. 
+			\item Let $a \in K$ and $f \in L^{p} \cap L^{r}$. Then 
+				\begin{align}
+					\begin{split}
+						\norm{af} &= \norm{af}_{p} + \norm{af}_{r} \\
+						&= \abs{a}\norm{f}_{p} + \abs{a}\norm{f}_{r} \\
+						&= \abs{a}\norm{f}. 
+					\end{split}
+				\end{align}
+			\item Let $f, g \in L^{p} \cap L^{r}$. Then 
+				\begin{align}
+					\begin{split}
+						\norm{f + g} &= \norm{f + g}_{p} + \norm{f + g}_{r} \\
+						&\leq \norm{f}_{p} + \norm{g}_{p} + \norm{f}_{r} + \norm{g}_{r} \\
+						&= \norm{f} + \norm{g}. 
+					\end{split}
+				\end{align}
+		\end{enumerate}
+	Hence, $\norm{\empspace}$ is indeed a norm. Finally, we will show that $L^{p} \cap L^{r}$ is closed under this norm. Let $\{f_{n}\} \subset L^{p} \cap L^{r}$ such that $\sum \norm{f_{n}} < \infty$. This implies that 
+		\begin{equation}
+			\infty > \sum \norm{f_{n}} = \sum \norm{f_{n}}_{p} + \sum \norm{f_{n}}_{r} \implies \sum \norm{f_{n}}_{p}, \sum \norm{f_{n}}_{r} < \infty. 
+		\end{equation}
+	Since $L^{p}$ and $L^{r}$ are Banach spaces, $\sum^{m} f_{n} \longrightarrow f \in L^{p}$ and $\sum^{m} f_{n}\longrightarrow g \in L^{r}$ as $m \to \infty$. Since convergence is unique, $f = g$ a.e. and $f, g \in L^{p} \cap L^{r}$. Therefore, all that remains is to show that $\sum^{m} f_{n}\to f$ in $L^{p} \cap L^{r}$. But this is straightforward since 
+		\begin{equation}
+			\norm{\sum^{m} f_{n} - f} = \norm{\sum^{m} f_{n} - f}_{p} + \norm{\sum^{m} f_{n} - f}_{r} \longrightarrow 0 \text{ as $m \to \infty$}. 
+		\end{equation}
+	Hence, $L^{p} \cap L^{r}$ is a Banach space with the specified norm. Now we will show that the inclusion map $i: L^{p} \cap L^{r}\hookrightarrow L^{q}$ is continuous. It suffices to show that $i$ is bounded since continuity of linear maps between $L^{p}$ spaces is equivalent to boundedness. Let $f \in L^{p} \cap L^{r}$ such that $\norm{f} = 1$. Since $1 = \norm{f} = \norm{f}_{p} + \norm{f}_{r}$, we must have $\norm{f}_{p}, \norm{f}_{r} \leq 1$. Therefore, 
+		\begin{equation}
+			\norm{if}_{q} = \norm{f}_{q} \leq \norm{f}_{p}^{\lambda}\norm{f}_{r}^{1 - \lambda} \leq 1 = \norm{f}, 
+		\end{equation}
+	where $\lambda$ is defined to be the constant $q^{-1} = \lambda^{-1}p^{-1} + (1 - \lambda)r^{-1}$. Now if $f \in L^{p} \cap L^{r}$ so that $\norm{f} = a$, since $f = a \cdot \frac{f}{\norm{f}}$, where $\norm{f/\norm{f}} =1$, 
+		\begin{equation}
+			\norm{if}_{q} = \norm{a \cdot \frac{f}{\norm{f}}}_{q} \leq |a|^{\lambda}|a|^{1 -\lambda}\norm{\frac{f}{\norm{f}}}^{\lambda}_{p} \norm{\frac{f}{\norm{f}}}_{r}^{1 - \lambda} \leq |a| \cdot 1= |a| \cdot \norm{\frac{f}{\norm{f}}} = \norm{f}
+		\end{equation}
+	Hence, $i$ is bounded, with a bounding constant of $1$. This concludes the proof that $i$ is continuous. 
+\end{solutions}
+\begin{prb}{(Folland 6.1.4)}
+	If $1 \leq p < r \leq \infty$, $L^{p} + L^{r}$ is a Banach space with norm $\norm{f} = \inf\brac*{\norm{g}_{p} + \norm{h}_{r}: f = g + h}$, and if $p < q < r$, the inclusion map $L^{q} \to L^{p} + L^{r}$ is continuous. 
+\end{prb}
 
 \newpage 
 \subsection{Differential Geometry}
@@ -500,4 +612,118 @@
 	We claim that $S^{3}$ \textit{cannot} be diffeomorphic to the product of two other smooth manifolds of nonzero dimensions. Assume to the contrary: let $M_{1}, M_{2}$ be smooth manifolds of nonzero dimensions such that $S^{3} \cong_{f} M_{1} \times M_{2}$. Since diffeomorphisms preserve dimensions, $3 = \dim{S^{3}} = \dim{M_{1} \times M_{2}} = \dim{M_{1}} + \dim{M_{2}}$. Since neither of $M_{1}, M_{2}$ are 0-manifolds, without loss of generality, we must have $\dim{M_{1}} = 1$ and $\dim{M_{2}} = 2$. Next, since $S^{3}$ is compact and connected, it follows that $M_{1} \times M_{2}$ must be compact and connected, so that $M_{1}$ and $M_{2}$ are compact and connected. Third, since $f: S^{3} \to M_{1} \times M_{2}$ is a diffeomorphism, the induced homomorphism $f_{\ast}: \pi_{1}(S^{3}) \longmapsto \pi_{1}(M_{1} \times M_{2}) = \pi_{1}(M_{1}) \times \pi_{1}(M_{2})$ is an isomorphism. Since $S^{n}$ is simply connected for all $n \geq 2$, $\pi_{1}(S^{3}) = \{0\}$. On the other hand, since the only compact connected smooth 1-manifold, up to diffeomorphism, is the circle $S^{1}$, $\pi_{1}(M_{1}) \cong \pi_{1}(S^{1}) \cong \mathbb{Z}$. This implies that $\pi_{1}(M_{1} \times M_{2})$ is not a trivial group, which contradicts our claim that $f_{\ast}$ is an isomorphism. Hence, by contradiction, $S^{3}$ cannot be diffeomorphic to the product of two smooth manifolds of nonzero dimensions. 
 \end{solutions}
 
+
+
+
+
+\newpage 
+\subsection{Algebra}
+\begin{prb}{2019-J-I-1}
+	Let $A$ and $B$ be $n \times n$ invertible matrices over complex numbers, satisfying $$AB = \lambda BA \qquad \text{ for some } \lambda \in \mathbb{C}.$$ Prove that $A^{n}$ and $B$ commute. 
+\end{prb}
+\begin{solutions}
+	Let $A, B$ be $n \times n$ invertible matrices over the complex numbers, and $\lambda \in \mathbb{C}$ such that $AB = \lambda BA$. Multiplying both sides by $A^{-1}$, 
+		\begin{equation}
+			B = A^{-1}AB = \lambda A^{-1}BA \implies \det{B} = \lambda^{n}\det{A^{-1}}\det{B}\det{A}. 
+		\end{equation}
+	Since $\det{A^{-1}} = \det{A}^{-1}$, it follows that $\det{B} = \lambda^{n}\det{B}$. Since $B$ is invertible, $\det{B} \neq 0$, which implies that $\lambda^{n} = 1$. Now we claim that $A^{m}B = \lambda^{m}BA^{m}$ for all $m \in \mathbb{Z}_{+}$. By the hypothesis, the case for $m = 1$ is true. Suppose that for some $m\geq 1$, $A^{m}B = \lambda^{m}BA^{m}$. Then for $m +1$, 
+		\begin{equation}
+			A^{m + 1}B = A(A^{m}B) = A(\lambda^{m}BA^{m}) = \lambda^{m}(AB)A^{m} = \lambda^{m}(\lambda BA)A^{m} = \lambda^{m + 1}BA^{m + 1}, 
+		\end{equation}
+	which means that our claim holds by induction. Hence, we finally see that 
+		\begin{equation}
+			A^{n}B = \lambda^{n}BA^{n} = BA^{n}, 
+		\end{equation}
+	which means that $A^{n}$ and $B$ commute. 
+\end{solutions}
+\begin{prb}{2024-J-I-4}
+	For each field $K$, prove that the polynomial ring $K[x, y]$ in two variables is not a principal ideal domain. 
+\end{prb}
+\begin{solutions}
+	Let $K$ be a field, and consider the polynomial ring $K[x, y]$. To show that $K[x, y]$ is not a principal ideal domain, it suffices to demonstrate an ideal of the polynomial ring that is not principal. Consider the ideal $(x, y)$ generated by $x, y \in K[x, y]$. It is straightforward to see that $(x,y)$ is a \textit{proper} ideal of $K[x, y]$ since, for example, $K \ni 1 \not \in K[x, y]$. Assume to the contrary that $(x, y) = (f(x, y))$ is principal. Then since $x$ and $y$ are contained in $(f(x, y))$, $f(x,y)$ must divide both $x$ and $y$. Since $f$ divides $x$, either $f$ is a unit or $f$ must be an associate of $x$. Likewise, since $f$ divides $y$, either $f$ is a unit or $f$ is an associate of $y$. But since $x$ and $y$ are not associates of each other, $f$ is forced to be a unit. But this implies that the ideal generated by $f$ must be the whole polynomial ring; i.e., $(x, y)= (f(x, y)) = K[x, y]$, which is impossible since $(x, y)$ was shown to be proper. Therefore, by contradiction, $(x, y)$ cannot be a principal ideal, and so $K[x, y]$ cannot be a PID. 
+\end{solutions}
+\begin{prb}{2020-J-I-1}
+	Let $G$ be a finite non-abelian group, and let $Z(G)$ denote its center. Prove that $|Z(G)| \leq \frac{1}{4}|G|$, and then give an example where equality holds. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a finite non-abelian group, and let $Z(G)$ denote its center. Assume to the contrary that $|Z(G)| > \frac{1}{4}|G| \implies |G|/|Z(G)| < 4$. Since $Z(G)$ is a normal subgroup of $G$, 
+		\begin{equation}
+			|G/Z(G)| = |G|/|Z(G)| < 4. 
+		\end{equation}
+	Since the order of a group must necessarily be a positive integer, the above observation forces $|G/Z(G)|$ to be $1, 2$, or $3$. (i) If $|G/Z(G)| = 1$, then since $|G| = |Z(G)|$, $G$ is abelian, which contradicts our hypothesis. (ii) if $|G/Z(G)| = 2$, then $G/Z(G) \cong \mathbb{Z}_{2}$ is cyclic, forcing $G$ to be abelian, which is a contradiction of the hypothesis and the fact that $Z(G)$ is a proper subgroup of $G$ since $|Z(G)| = \frac{1}{2}|G|$. (iii) Likewise, if $|G/Z(G)| = 3$, then $G/Z(G) \cong \mathbb{Z}_{3}$ is cyclic, forcing $G$ to abelian, which is a contradiction. Hence, by contradiction, we must have $|G/Z(G)| = |G|/|Z(G)| \geq 4 \implies |Z(G)| \leq \frac{1}{4}|G|$. For an explicit example where equality holds, consider the quaternion group $Q_{8}$ consisting of eight elements, whose center consists of just the two elements, $\pm 1$. 
+\end{solutions}
+\begin{prb}{2018-J-II-5}
+	Let $G$ denote a group of order 80. Prove that $G$ contains a nontrivial normal subgroup. 
+\end{prb}
+\begin{solutions}
+	Let $G$ denote a group of order $80 = 2^{4} \cdot 5$. By the Sylow Theorems, 
+		\begin{equation}
+			n_{2} \in \{1, 5\} \qquad \text{ and } \qquad n_{5} \in \{1, 16\}. 
+		\end{equation}
+	If $n_{5} = 1$ or $n_{2} = 1$, then we are done since either $G$ has a nontrivial, proper, normal subgroup of order 5 or a nontrivial, proper, normal subgroup of order 16. So suppose $n_{5} = 16$ and $n_{2} = 5$. Since every element of $G$ of order 5 must be contained in a Sylow 5-subgroup, Sylow 5-subgroups intersect trivally (by Lagrange's Theorem), and each Sylow 5-subgroup contains 4 nonidentity elements, $G$ must contain 64 elements of order 5. Now choose two distinct Sylow 2-subgroups, and denote these by $P_{1}$ and $P_{2}$. Since $P_{1}$ and $P_{2}$ are distinct, $P_{2}$ contains at least one nonidentity element that is not contained in $P_{1}$. Since each Sylow 2-subgroup contains 15 nonidentity elements whose order is a power of 2, we see that $G$ must contain at least 16 nonidentity elements whose order is a power of 2 (15 from $P_{1}$, and at least one from $P_{2}$). But this means that $G$ contains at least $16 + 64 + 1 = 81$ elements, which is a contradiction. Hence, either $n_{2} = 1$ or $n_{5}= 1$. 
+\end{solutions}
+\begin{prb}{2016-J-I-1}
+	Let $G$ be a finite group of order 80. Prove that $G$ is not simple. 
+\end{prb}
+\begin{solutions}
+	See above. 
+\end{solutions}
+\begin{prb}{2017-J-II-6}
+	Without using the classification of simple groups, show that every simple group of order 60 has exactly 10 subgroups of order 3. Hint: Consider the action of this group on subgroups of order 3 by conjugation. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $60 = 2^{2} \cdot 3 \cdot 5$. By Sylow's Theorem: 
+		\begin{align}
+			\begin{split}
+				n_{2} &\in \{1, 3, 5,15\}. \\ 
+				n_{3} &\in \{1, 4, 10\}. \\
+				n_{5} &\in \{1, 6\}. 
+			\end{split}
+		\end{align}
+	Every subgroup of order 3 must necessarily be a Sylow 3-subgroup of $G$, so it suffices to show that $n_{3} = 10$. Since $G$ is a simple group, $n_{3} \neq 1$, because if $n_{3} = 1$, then $G$ has a nontrivial proper normal subgroup of order 3, which is a contradiction. So either $n_{3} = 4$ or $n_{3} = 10$. Suppose $n_{3} = 4$, and let $G$ act on $\operatorname{Syl}_{3}(G)$ by conjugation; this group action induces a homomorphism, $\varphi: G \to S_{4}$. Since $|G| = 60 \nmid 24 = |S_{4}|$, it follows that $\varphi$ is not injective. Hence, the kernel $K = \ker{\varphi}$ is a nontrivial normal subgroup of $G$. $K$ must be a proper subgroup of $G$ since otherwise the group action is trivial, which means that $G$ contains a single Sylow 3-subgroup, which is impossible because $n_{3} = 4$. However, if $K$ is a proper nontrivial normal subgroup of $G$, then $G$ cannot be simple, which is a contradiction. Hence, $n_{3}$ must be 10. 
+\end{solutions}
+\begin{prb}{2013-J-I-2}
+	Prove that every group of order 72 is non-simple. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $72 = 2^{3} \cdot 3^{2}$. By Sylow's Theorem, 
+		\begin{equation}
+			n_{2} \in \{1, 3, 9\} \qquad \text{ and } \qquad n_{3} \in \{1, 4\}. 
+		\end{equation}
+	If $n_{3} = 1$, then we are done since $G$ contains a nontrivial normal proper subgroup of order $9$. So suppose $n_{3} = 4$, and let $G$ act on $\operatorname{Syl}_{3}(G)$ by conjugation. This group action induces a homomorphism $\varphi: G \to S_{4}$. Since $|G| = 72 \nmid 24 = |S_{4}|$, $\varphi$ cannot be injective. This means that $K = \ker{\varphi}$ must be a nontrivial normal subgroup of $G$. If $K = G$, then the group action is trivial which means that for any $P \in \operatorname{Syl}_{3}(G)$ and $g \in G$, $gPg^{-1} = P$ so that $P$ is normal. But since every Sylow 3-subgroup of $G$ is a conjugate of each other, $G$ must contain a single Sylow 3-subgroup contradicting our hypothesis that $n_{3} = 4$. Hence, $K$ must be a nontrivial normal proper subgroup of $G$. This concludes the proof that $G$ is non-simple. 
+\end{solutions}
+\begin{prb}{2012-J-I-6}
+	Let $G$ be a group of order 315 whose center contains a subgroup $N$ of order 9. Prove that $G$ is abelian.  
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $315 = 3^{2} \cdot 5 \cdot 7$, whose center $Z = Z(G)$ contains a subgroup $N$ of order 9; immediately, we see by Sylow's Theorem that $N$ is a Sylow 3-subgroup of $G$. By Lagrange's Theorem, $|Z| = 9k$ for some positive integer $k$. Then since $N \leq Z \leq G$, we have 
+		\begin{equation}
+			35 = [G:N] = [G:Z][Z:N] = k \cdot [G:Z] \implies |G|/|Z| =|G/Z| = 35k^{-1}. 
+		\end{equation}
+	Since $G/Z$ is a positive integer, we must have $k = 1, 5, 7$, or $35$. We cannot have $k = 5$: if $k = 5$, then $|G/Z| = 7$ so that $G/Z$ is cyclic. Then $G$ is abelian, forcing $|Z| = |G| \implies |G|/|Z| = 1$, which is a contradiction. For the same reason, $k \neq 7$. Suppose $k = 1$ so that $|G/Z| = 35$. Using Sylow's Theorem again, we see that $G/Z \cong \mathbb{Z}_{35}$, and hence is cyclic. Therefore, $G$ is abelian, which contradicts our hypothesis that $Z$ is a proper group of order $315/35 = 9$. Hence, by process of elimination, we deduce that $k = 35 \implies |G|/|Z| = 1 \implies |G| = |Z|$. Hence, $G$ is abelian. 
+\end{solutions}
+\begin{prb}{2009-J-I-5}
+	Let $G$ be a group of order 63. Prove that $G$ is not simple (i.e., that $G$ contains a nontrivial normal subgroup). 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $63 = 3^{2} \cdot 7$. By Sylow's Theorem, 
+		\begin{equation}
+			n_{3} \in \{1, 7\} \qquad \text{ and } \qquad n_{7} \in \{1\}. 
+		\end{equation}
+	Hence, $G$ contains a unique Sylow 7-subgroup $P$, which must then be normal in $G$. Since Sylow 7-subgroups of $G$ have order 7, $P \lneq G$, so that $G$ is not simple. 
+\end{solutions}
+\begin{prb}{2007-J-I-3}
+	Let $A$ and $B$ be $n \times n$ invertible matrices with complex entries such that $$AB = \lambda BA$$ for some scalar $\lambda$. Prove that $\lambda$ is an $n^{\text{th}}$ root of unity. If $\lambda$ is a primitive $n^{\text{th}}$ root of unity, prove that the characteristic polynomials of $A$ and $B$ both have the form $\chi(t) = t^{n} + \text{constant}$.
+\end{prb}
+\begin{solutions}
+	Since $A$ is invertible, left-multiplying both sides by $A^{-1}$: 
+		\begin{equation}
+			AB = \lambda BA \implies B = \lambda A^{-1}BA. 
+		\end{equation}
+	Taking the determinant, 
+		\begin{equation}
+			\det{B} = \det(\lambda A^{-1}BA) = \lambda^{n}\det{A^{-1}}\det{B}\det{A} = \lambda^{n}\det{A}^{-1}\det{B}\det{A} = \lambda^{n}\det{B}. 
+		\end{equation}
+	Since $B$ is invertible, $\det{B} \neq 0$ so that cancelling this term from both sides yields $\lambda^{n} = 1$. Hence, $\lambda$ is an $n^{\text{th}}$ root of unit. Suppose $\lambda$ is a primitive $n^{\text{th}}$ root of unity, which means that $n$ is the \textit{smallest} positive integer for which $\lambda^{n} = 1$. \textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
 \end{document}

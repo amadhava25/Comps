@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  4 JAN 2026 22:30
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  5 JAN 2026 23:08
  restricted system commands enabled.
 **Comps_Practice.tex
 (./Comps_Practice.tex
@@ -2105,91 +2105,485 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 114.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 144.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 120.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 120.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 120.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 120.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 130.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 131.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 131.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 131.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 132.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 134.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 138.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 138.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 138.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 149.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 152.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 152.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 152.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 160.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 161.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 163.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 163.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 163.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 163.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 163.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+
+LaTeX Warning: Command \b invalid in math mode on input line 167.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 167.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 167.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
 
 
 [4]
+
+LaTeX Warning: Command \b invalid in math mode on input line 171.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 171.
+
+Missing character: There is no ̲ (U+0332) in font notomi!
+Missing character: There is no ̲ (U+0332) in font notomi!
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 151.
+(mdframed)              on input line 177.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 172.
+(mdframed)              on input line 207.
 
 
 [5]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 235.
+(mdframed)              on input line 215.
+Package mdframed Info: Not enough space on this page on input line 217.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 257.
+
+Overfull \hbox (55.36325pt too wide) in paragraph at lines 258--259
+[][]\TU/NotoSerif(1)/b/n/10 Prob-lem (Fol-land 6.1.4). []\TU/NotoSerif(1)/m/n/1
+0 If $\OT1/NotoSerif-TLF/m/n/10 1 \LMS/ntxsy/m/n/10  \OML/notomi/m/it/10 p < r \LMS/ntxsy/m/n/10  1$\TU/NotoSerif(1)/m/n/10 , $\OML/notomi/m/it/10 L[] \LMS/ntxsy/m/n/10 
+Ï \OML/notomi/m/it/10 L[]$ \TU/NotoSerif(1)/m/n/10 is a Ba-nach space with norm
+ $[] \U/ntxmia/m/it/10 = [][][]$\TU/NotoSerif(1)/m/n/10 ,
+ []
+
 
 
 [6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 262.
-Package mdframed Info: Not enough space on this page on input line 264.
+(mdframed)              on input line 263.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 273.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 278.
+(mdframed)              on input line 284.
 
 
 [7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 325.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 350.
+(mdframed)              on input line 347.
 
 
 [8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 366.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 369
+(mdframed)              on input line 374.
+Package mdframed Info: Not enough space on this page on input line 376.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 385.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 390.
+
+
+[9]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 437.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 462.
+
+
+[10]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 478.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 481
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 384.
+(mdframed)              on input line 496.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 404.
-Package mdframed Info: Not enough space on this page on input line 410.
-
-
-[9]
-Package mdframed Info: Not enough space on this page on input line 410.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 427.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 444.
-
-
-[10]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 462.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 470.
+(mdframed)              on input line 516.
+Package mdframed Info: Not enough space on this page on input line 522.
 
 
 [11]
+Package mdframed Info: Not enough space on this page on input line 522.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 496.
+(mdframed)              on input line 539.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 556.
 
-Overfull \hbox (3.78613pt too wide) in paragraph at lines 497--498
+
+[12]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 574.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 582.
+
+
+[13]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 608.
+
+Overfull \hbox (3.78613pt too wide) in paragraph at lines 609--610
 [][]\TU/NotoSerif(1)/b/n/10 Prob-lem 2003-J-11-5. []\TU/NotoSerif(1)/m/n/10 Is 
 the unit three-sphere $\OML/notomi/m/it/10 S[]$ \TU/NotoSerif(1)/m/n/10 dif-feo-
 mor-phic to the prod-uct of two other smooth
@@ -2197,24 +2591,74 @@ mor-phic to the prod-uct of two other smooth
 
 
 
-[12] (./Comps_Practice.aux)
+[14]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 621.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 639.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 645.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 655.
+Package mdframed Info: Not enough space on this page on input line 657.
+
+
+[15]
+Package mdframed Info: Not enough space on this page on input line 657.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 665.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 671.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 685.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 695.
+Package mdframed Info: Not enough space on this page on input line 697.
+
+
+[16]
+Package mdframed Info: Not enough space on this page on input line 697.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 705.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 715.
+
+
+[17] (./Comps_Practice.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-Package rerunfilecheck Info: File `Comps_Practice.out' has not changed.
-(rerunfilecheck)             Checksum: 6F450C5F1AB52F7F77C3F31766C3DECA;3692.
+
+
+Package rerunfilecheck Warning: File `Comps_Practice.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Comps_Practice.out':
+(rerunfilecheck)             Before: 5CE2D1519EAD46BCBA537B6D3E60766E;5636
+(rerunfilecheck)             After:  9411DA832A8E2EC954B815BCDF8014D9;5819.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36327 strings out of 475915
+ 36404 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 4428 words of node memory still in use:
-   52 hlist, 8 vlist, 7 rule, 20 math, 100 glue, 97 kern, 186 glyph, 142 attribu
-te, 110 glue_spec, 142 attribute_list, 2 write, 2 pdf_colorstack nodes
-   avail lists: 1:5,2:1161,3:440,4:336,5:754,6:111,7:10444,8:85,9:1378,10:8,11:5
-67
- 57688 multiletter control sequences out of 65536+600000
+ 3680 words of node memory still in use:
+   54 hlist, 7 vlist, 6 rule, 16 math, 81 glue, 23 kern, 95 glyph, 227 attribute
+, 110 glue_spec, 227 attribute_list, 2 write, 22 pdf_colorstack nodes
+   avail lists: 1:5,2:1055,3:635,4:482,5:851,6:164,7:10569,8:87,9:1597,10:12,11:
+567
+ 57701 multiletter control sequences out of 65536+600000
  251 fonts using 30230119 bytes
  101i,19n,147p,1438b,1034s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-BoldItalic.ttf>
@@ -2232,10 +2676,10 @@ eusm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 fonts/type1/public/txfonts/txsyc.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pub
 lic/newtx/txsym.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.p
 fb>
-Output written on Comps_Practice.pdf (12 pages, 201349 bytes).
+Output written on Comps_Practice.pdf (17 pages, 246636 bytes).
 
-PDF statistics: 340 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
- 114 named destinations out of 1000 (max. 131072)
- 208 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 475 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
+ 178 named destinations out of 1000 (max. 131072)
+ 312 words of extra memory for PDF output out of 10000 (max. 100000000)
 
