@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  5 JAN 2026 23:08
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  6 JAN 2026 20:27
  restricted system commands enabled.
 **Comps_Practice.tex
 (./Comps_Practice.tex
@@ -1565,10 +1565,16 @@ Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
+(c:/texlive/2024/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip150
+\L@UnitsRaiseTextstyle=\skip151
+\L@UnitsRaiseScriptstyle=\skip152
+)
 (c:/texlive/2024/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box129
 \UL@hyphenbox=\box130
-\UL@skip=\skip150
+\UL@skip=\skip153
 \UL@hook=\toks56
 \UL@height=\dimen315
 \UL@pe=\count368
@@ -1605,7 +1611,7 @@ File: p2e-luatex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 \pIIe@tempdime=\dimen324
 \pIIe@tempdimf=\dimen325
 )
-\@HwM@arrowfill@skip=\skip151
+\@HwM@arrowfill@skip=\skip154
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryarrows.code.tex
@@ -1778,9 +1784,9 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip152
+\Hy@SectionHShift=\skip155
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 84.
+Package hyperref Info: Option `colorlinks' set `true' on input line 85.
 \c@theorem=\count381
 \c@corollary=\count382
 \c@definition=\count383
@@ -2063,15 +2069,21 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 7.3pt on input line 1.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 5.5pt on input line 1.
-)
+
+
+[1
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write5
 
 \openout5 = Comps_Practice.toc
 
 
-[1
-
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `TU/NotoSerif(1)/m/sl' in size <10> not availabl
+e
+(Font)              Font shape `TU/NotoSerif(1)/m/it' tried instead on input li
+ne 14.
+[2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 17.
@@ -2088,11 +2100,7 @@ rif(1)/m/n/10 . There-fore, for any given $\OML/notomi/m/it/10 x \LMS/ntxsy/m/n
 
 
 
-LaTeX Font Info:    Font shape `TU/NotoSerif(1)/m/sl' in size <10> not availabl
-e
-(Font)              Font shape `TU/NotoSerif(1)/m/it' tried instead on input li
-ne 71.
-[2]
+[3]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 71.
@@ -2101,7 +2109,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 100.
 
 
-[3]
+[4]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 114.
@@ -2469,7 +2477,7 @@ Missing character: There is no ̲ (U+0332) in font notomi!
 Missing character: There is no ̲ (U+0332) in font notomi!
 
 
-[4]
+[5]
 
 LaTeX Warning: Command \b invalid in math mode on input line 171.
 
@@ -2486,7 +2494,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 207.
 
 
-[5]
+[6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 215.
@@ -2504,7 +2512,7 @@ Overfull \hbox (55.36325pt too wide) in paragraph at lines 258--259
 
 
 
-[6]
+[7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 263.
@@ -2513,13 +2521,13 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 284.
 
 
-[7]
+[8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 347.
 
 
-[8]
+[9]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 374.
@@ -2532,7 +2540,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 390.
 
 
-[9]
+[10]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 437.
@@ -2541,7 +2549,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 462.
 
 
-[10]
+[11]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 478.
@@ -2559,7 +2567,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: Not enough space on this page on input line 522.
 
 
-[11]
+[12]
 Package mdframed Info: Not enough space on this page on input line 522.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2569,7 +2577,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 556.
 
 
-[12]
+[13]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 574.
@@ -2578,7 +2586,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 582.
 
 
-[13]
+[14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 608.
@@ -2591,50 +2599,83 @@ mor-phic to the prod-uct of two other smooth
 
 
 
-[14]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 621.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 639.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 645.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 655.
-Package mdframed Info: Not enough space on this page on input line 657.
-
-
 [15]
-Package mdframed Info: Not enough space on this page on input line 657.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 665.
+(mdframed)              on input line 616.
+Package mdframed Info: Not enough space on this page on input line 618.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 671.
+(mdframed)              on input line 633.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 685.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 695.
-Package mdframed Info: Not enough space on this page on input line 697.
+(mdframed)              on input line 652.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 654.
 
 
 [16]
-Package mdframed Info: Not enough space on this page on input line 697.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 705.
+(mdframed)              on input line 665.
+
+
+[17]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 715.
+(mdframed)              on input line 695.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 713.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 719.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 729.
+Package mdframed Info: Not enough space on this page on input line 731.
 
 
-[17] (./Comps_Practice.aux)
+[18]
+Package mdframed Info: Not enough space on this page on input line 731.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 739.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 745.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 759.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 769.
+Package mdframed Info: Not enough space on this page on input line 771.
+
+
+[19]
+Package mdframed Info: Not enough space on this page on input line 771.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 779.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 789.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 804.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 814.
+Package mdframed Info: Not enough space on this page on input line 816.
+
+
+[20]
+Package mdframed Info: Not enough space on this page on input line 816.
+
+
+[21] (./Comps_Practice.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -2646,20 +2687,20 @@ Package rerunfilecheck Warning: File `Comps_Practice.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Comps_Practice.out':
-(rerunfilecheck)             Before: 5CE2D1519EAD46BCBA537B6D3E60766E;5636
-(rerunfilecheck)             After:  9411DA832A8E2EC954B815BCDF8014D9;5819.
+(rerunfilecheck)             Before: 7F7BF111E641531B06219B7966B143C7;6802
+(rerunfilecheck)             After:  2A030735FB33818FD039630D23DB75F7;6957.
 )
 
 Here is how much of LuaTeX's memory you used:
- 36404 strings out of 475915
+ 36474 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 3680 words of node memory still in use:
-   54 hlist, 7 vlist, 6 rule, 16 math, 81 glue, 23 kern, 95 glyph, 227 attribute
-, 110 glue_spec, 227 attribute_list, 2 write, 22 pdf_colorstack nodes
-   avail lists: 1:5,2:1055,3:635,4:482,5:851,6:164,7:10569,8:87,9:1597,10:12,11:
+ 4290 words of node memory still in use:
+   60 hlist, 7 vlist, 6 rule, 16 math, 105 glue, 23 kern, 115 glyph, 277 attribu
+te, 110 glue_spec, 277 attribute_list, 2 write, 34 pdf_colorstack nodes
+   avail lists: 1:6,2:1089,3:661,4:497,5:987,6:172,7:10525,8:87,9:1591,10:12,11:
 567
- 57701 multiletter control sequences out of 65536+600000
- 251 fonts using 30230119 bytes
+ 57740 multiletter control sequences out of 65536+600000
+ 255 fonts using 30422375 bytes
  101i,19n,147p,1438b,1034s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-BoldItalic.ttf>
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/noto/a_wcjgjy.enc}<c:/texlive/2024/t
@@ -2670,16 +2711,16 @@ ts/type1/public/notomath/NotoMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/
 public/notomath/NotoMathRM.pfb><c:/texlive/2024/texmf-dist/fonts/type1/google/no
 to/NotoSerif-Regular.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
 /euler/eusm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/
-eusm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/
-2024/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2024/texmf-dist/
-fonts/type1/public/txfonts/txsyc.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pub
-lic/newtx/txsym.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.p
-fb>
-Output written on Comps_Practice.pdf (17 pages, 246636 bytes).
+eusm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
+.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+<c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/2024/
+texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2024/texmf-dist/fonts
+/type1/public/txfonts/txsyc.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/n
+ewtx/txsym.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on Comps_Practice.pdf (21 pages, 273375 bytes).
 
-PDF statistics: 475 PDF objects out of 1000 (max. 8388607)
- 428 compressed objects within 5 object streams
- 178 named destinations out of 1000 (max. 131072)
- 312 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 544 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 204 named destinations out of 1000 (max. 131072)
+ 360 words of extra memory for PDF output out of 10000 (max. 100000000)
 

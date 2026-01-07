@@ -612,8 +612,82 @@
 	We claim that $S^{3}$ \textit{cannot} be diffeomorphic to the product of two other smooth manifolds of nonzero dimensions. Assume to the contrary: let $M_{1}, M_{2}$ be smooth manifolds of nonzero dimensions such that $S^{3} \cong_{f} M_{1} \times M_{2}$. Since diffeomorphisms preserve dimensions, $3 = \dim{S^{3}} = \dim{M_{1} \times M_{2}} = \dim{M_{1}} + \dim{M_{2}}$. Since neither of $M_{1}, M_{2}$ are 0-manifolds, without loss of generality, we must have $\dim{M_{1}} = 1$ and $\dim{M_{2}} = 2$. Next, since $S^{3}$ is compact and connected, it follows that $M_{1} \times M_{2}$ must be compact and connected, so that $M_{1}$ and $M_{2}$ are compact and connected. Third, since $f: S^{3} \to M_{1} \times M_{2}$ is a diffeomorphism, the induced homomorphism $f_{\ast}: \pi_{1}(S^{3}) \longmapsto \pi_{1}(M_{1} \times M_{2}) = \pi_{1}(M_{1}) \times \pi_{1}(M_{2})$ is an isomorphism. Since $S^{n}$ is simply connected for all $n \geq 2$, $\pi_{1}(S^{3}) = \{0\}$. On the other hand, since the only compact connected smooth 1-manifold, up to diffeomorphism, is the circle $S^{1}$, $\pi_{1}(M_{1}) \cong \pi_{1}(S^{1}) \cong \mathbb{Z}$. This implies that $\pi_{1}(M_{1} \times M_{2})$ is not a trivial group, which contradicts our claim that $f_{\ast}$ is an isomorphism. Hence, by contradiction, $S^{3}$ cannot be diffeomorphic to the product of two smooth manifolds of nonzero dimensions. 
 \end{solutions}
 
-
-
+\newpage 
+\begin{prb}{2017-A-I-5}
+	On $\mathbb{R}^{4}$, with standard coordinates $(x, y, z, t)$, consider the 1-form $$\theta = xdy - ydx + zdt -tdz.$$ Is there a smooth immersion $j: \mathbb{R}^{3} \looparrowright \mathbb{R}^{4}$ such that $j^{\ast}\theta = 0$ everywhere? 
+\end{prb}
+\begin{solutions}
+	Suppose there exists a smooth immersion $j: \mathbb{R}^{3} \looparrowright \mathbb{R}^{4}$ such that $j^{\ast}\theta = 0$ everywhere; without loss of generality, we may replace $\mathbb{R}^{3}$ with an open ball inside $\mathbb{R}^{3}$, which is diffeomorphic to $\mathbb{R}^{3}$ so that $0$ is not contained in the image of $j$. 
+	
+	Since $j^{\ast}\theta = 0$ everywhere, for each $p\in \mathbb{R}^{3}$, $\theta_{j(p)}(dj_{p}(v)) = 0$ for all $v \in T_{p}(\mathbb{R}^{3})$. But this implies that for every $p \in \mathbb{R}^{3}$, $T_{j(p)}j(\mathbb{R}^{3}) \subset \ker{\theta_{j(p)}}$. Since $j$ is an immersion, $dj_{p}$ is injective for every $p \in \mathbb{R}^{3}$ so that $\dim{T_{j(p)}j(\mathbb{R}^{3})} = 3$. Since $\theta \neq 0$ except at the origin, $\ker{\theta_{j(p)}}$ is also 3-dimensional. Hence, $T_{j(p)}j(\mathbb{R}^{3}) = \ker{\theta_{j(p)}}$. Therefore, the image $j(\mathbb{R}^{3})$ is a 3-dimensional integral manifold of the distribution $D = \ker{\theta_{j(p)}}$. 
+	
+	Now, we investigate the distribution given by $\theta$. We observe that 
+		\begin{align}
+			\begin{split}
+				d\theta &= d(xdy - ydx + zdt - tdz) = 2dx\wedge dy + 2dz \wedge dt.  \\
+				\theta \wedge d\theta &= 2zdt\wedge dx \wedge dy -2t dz\wedge dx \wedge dy + 2x dy \wedge dz \wedge dt -2y dx \wedge dz \wedge dt. 
+			\end{split}
+		\end{align}
+	Hence, we see that $\theta \wedge d\theta \neq 0$ for all $q \in \mathbb{R}^{4} \setminus \{0\}$, which means by the Frobenius theorem that $D$ is not integrable anywhere in $\mathbb{R}^{4}\setminus \{0\}$. Hence, there is no immersed 3-dimensional submanifold whose tangent spaces equals $D$ at any point $p \neq 0$. But this contradicts our previous claim that the image of $j$ is such a manifold. Therefore, no such immersion can exist unless its image lies entirely in $\{0\}$, which is impossible. 
+\end{solutions}
+\begin{prb}{2017-A-I-5 (Practice)}
+	On $\mathbb{R}^{4}$, with standard coordinates $(x, y, z, t)$, consider the 1-form $$\alpha = zdx + xdz + ydt - tdy.$$ Is there a smooth immersion $i: \mathbb{R}^{3} \looparrowright \mathbb{R}^{4}$ such that $j^{\ast}\alpha = 0$?
+\end{prb}
+\begin{solutions}
+	Suppose $i: \mathbb{R}^{3}\looparrowright \mathbb{R}^{4}$ is a smooth immersion such that $i^{\ast}\alpha= 0$ everywhere on $\mathbb{R}^{3}$ for the 1-form described above; without loss of generality, we may replace $\mathbb{R}^{3}$ with a unit ball contained in $\mathbb{R}^{3}$ so that the image of $i$ does not contain point of the form $(0,y,0,t)$ for $y, t \in \mathbb{R}$. Let $D$ be the smooth rank 3 distribution on $\mathbb{R}^{4}\setminus \{0\}$ defined by $D_{q} = \ker{\alpha_{q}}$ for all $q \in \mathbb{R}^{4}$ ($D$ is indeed a smooth rank 3 distribution since $\alpha_{q} \neq 0$ for all $q \neq 0$). 
+	
+	Since $i^{\ast}\alpha = 0$, for every $p \in \mathbb{R}^{3}$ and $v \in T_{p}\mathbb{R}^{3}$, 
+		\begin{equation}
+			\alpha_{i(p)}(di_{p}(v)) = 0. 
+		\end{equation}
+	This implies that $T_{i(p)}i(\mathbb{R}^{3}) \subset \ker{\alpha_{i(p)}} = D_{i(p)}$ for every $p \in \mathbb{R}^{3}$. Since $i$ is an immersion, $\dim{T_{i(p)}i(\mathbb{R}^{3})} = 3$. From this, we conclude that $T_{i(p)}i(\mathbb{R}^{3}) = D_{i(p)}$ for every $p \in \mathbb{R}^{3}$; therefore, the image $i(\mathbb{R}^{3})$ is a 3-dimensional integral manifold of the distribution $D$. Now we investigate $D$. We observe that 
+		\begin{align}
+			\begin{split}
+				d\alpha &= d(zdx + xdz + ydt - tdy) = 2dy \wedge dt. \\
+				\alpha \wedge d\alpha &= 2zdx\wedge dy \wedge dt + 2x dz \wedge dy \wedge dt.
+			\end{split}
+		\end{align}
+	We note that $\alpha \wedge d\alpha \neq 0$ everywhere in $\mathbb{R}^{4}\setminus \{(0,y,0,t): y, t \in \mathbb{R}\}$. Therefore, by the Frobenius theorem, $D$ is nowhere integrable on $\mathbb{R}^{4}\setminus \{(0,y,0,t): y, t \in \mathbb{R}\}$. This means there is no immersed 3-dimensional submanifold whose tangent spaces are sections of $D$ at any point $p \notin \{(0,y,0,t): y, t \in\mathbb{R}\}$. But the image of $i$ must be such a submanifold according to our work above. Therefore, by contradiction, $i$ cannot be an immersion. 
+\end{solutions}
+\begin{prb}{2017-A-I-5 (Practice II)}
+	On $\mathbb{R}^{3}$, with standard coordinates $(x, y, z)$, consider the 1-form $$\beta = dx + dy + dz.$$ Is there a smooth immersion $k: \mathbb{R}^{2} \looparrowright \mathbb{R}^{3}$ such that $k^{\ast}\beta = 0$?
+\end{prb}
+\begin{solutions}
+	We claim that there exists a smooth immersion $k: \mathbb{R}^{2} \looparrowright \mathbb{R}^{3}$ such that $k^{\ast}\beta = 0$. First, note that $\beta \neq 0$ for all $q \in \mathbb{R}^{3}$, which means that $\beta$ defines a smooth rank 2 distribution $D$ on $\mathbb{R}^{3}$ as follows: $D_{q} = \ker{\beta_{q}}$ for all $q \in \mathbb{R}^{3}$. Moreover, since $d\beta = d(dx + dy + dz) = 0$ everywhere on $\mathbb{R}^{3}$, $\beta \wedge d\beta = 0$ everywhere. This implies that $D$ is involutive; by the Frobenius Theorem, $D$ is everywhere integrable. Hence, $D$ has 2-dimensional integral manifolds. Now since $\beta = dx + dy + dz = d(x + y + z)$, $x + y + z$ is constant along any integral manifold. Hence, the integral manifolds are exactly of the form $\brac*{(x, y, z) \in \mathbb{R}^{3}: x + y + z  = c}$. Consider, for concreteness, the integral manifold $M = \brac*{(x, y, z) \in \mathbb{R}^{3}: x + y + z = 0}$, and let $k: \mathbb{R}^{2} \to M \subset \mathbb{R}^{3}$ be the map $(x, y, z) = k(u, v) = (u, v, -u -v)$. It is straightforward to check that $k$ is a smooth immersion and that
+		\begin{equation}
+			dx = du, \qquad dy = dv, \qquad dz = -du - dv, 
+		\end{equation}
+	so that 
+		\begin{equation}
+			k^{\ast}\beta = du + dv - du -dv = 0. 
+		\end{equation}
+\end{solutions}
+\begin{prb}{2017-A-I-5 (Practice III)}
+	On $\mathbb{R}^{3}$, with standard coordinates $(x, y, z)$, consider the 1-form $$\gamma = xdx + dy + dz.$$ Is there a smooth immersion $K: \mathbb{R}^{2} \looparrowright$ such that $k^{\ast}\gamma = 0$?
+\end{prb}
+\begin{solutions}
+	We claim there exists a smooth immersion $k: \mathbb{R}^{2} \looparrowright \mathbb{R}^{3}$ such that $k^{\ast}\gamma = 0$. First, we observe that $\gamma \neq 0$ for all $q \in \mathbb{R}^{3}$, so that $\gamma$ defines a smooth rank 2 distribution $D$ on $\mathbb{R}^{3}$ as follows: $D_{q} = \ker{\gamma_{q}}$ for all $q \in \mathbb{R}^{3}$. Next, since 
+		\begin{equation}
+			d\gamma = d(x dx + dy + dz) = dx \wedge dx = 0 \text{ everywhere on $\mathbb{R}^{3}$}, 
+		\end{equation}
+	$\gamma \wedge d\gamma = 0$ everywhere on $\mathbb{R}^{3}$. Hence, by the Frobenius Theorem, $D$ is involutive and hence everywhere integrable. In particular, this means that $D$ has 2-dimensional integral manifolds at every $q \in \mathbb{R}^{3}$. We note that $\gamma = xdx + dy + dz = d((1/2)x^{2} + y + z)$, so that $(1/2)x^{2} + y + z$ is constant along the integral manifolds. Therefore, the integral manifolds of $D$ are of the form: 
+		\begin{equation}
+			\brac*{(x, y, z) \in \mathbb{R}^{3}: \frac{1}{2}x^{2} + y + z = c}, 
+		\end{equation}
+	where $c$ is some constant. For concreteness, let $M = \brac*{(x, y, z) \in \mathbb{R}^{3}: \nicefrac{1}{2}x^{2} + y + z = 0}$, and define the map $k: \mathbb{R}^{2} \to \mathbb{R}^{3}$ by $k(u, v) = (u, v, -\nicefrac{1}{2}u^{2} - v)$. Since the coordinate functions of $k$ are polynomials, $k$ is smooth. Moreover, since 
+		\begin{equation}
+			dk = \begin{pmatrix} 
+					1 & 0 \\
+					0 & 1 \\ 
+					-u & -1
+				\end{pmatrix}, 
+		\end{equation}
+	we see that the columns of $dk$ are linearly independent for all $(u, v) \in \mathbb{R}^{2}$ so that $\operatorname{rank}{dk_{p}} = 2$ for all $p \in \mathbb{R}^{2}$. Hence, $dk_{p}$ is injective, which proves that $k$ is an immersion. Finally, since $dx = du$, $dy = dv$, and $dz = -u du - dv$, 
+		\begin{equation}
+			k^{\ast}\gamma = u du + dv - udu - dv = 0.
+		\end{equation}
+	Hence, $k$ is a smooth immersion that satisfies the desired conditions. 
+\end{solutions}
 
 
 \newpage 
@@ -726,4 +800,22 @@
 		\end{equation}
 	Since $B$ is invertible, $\det{B} \neq 0$ so that cancelling this term from both sides yields $\lambda^{n} = 1$. Hence, $\lambda$ is an $n^{\text{th}}$ root of unit. Suppose $\lambda$ is a primitive $n^{\text{th}}$ root of unity, which means that $n$ is the \textit{smallest} positive integer for which $\lambda^{n} = 1$. \textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
+
+\begin{prb}{2022-J-I-3}
+	Show that a group of order $1,000,000$ contains a proper normal subgroup (i.e., is not simple). 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $1,000,000 = 250 \cdot 4 \cdot 250 \cdot 4 = (5^{3} \cdot 2^{3})^{2} = 2^{6}5^{6}$. By Sylow's Theorem, 
+		\begin{equation}
+			n_{5} \in \{1, 2^{4}\} \qquad \text{ and } \qquad n_{2} \in \{1, 5,5^{2}, \ldots, 5^{6}\}. 
+		\end{equation}
+	If $n_{5} = 1$, we are done. So assume $n_{5} = 16$, and let $G$ act on $\operatorname{Syl}_{5}(G)$ by conjugation. This induces a homomorphism $\varphi: G \to S_{16}$. Suppose that this mapping is an embedding, which means that $\ker{\varphi}$ is trivial. Then $|G|$ must divide $16!$. But since $10^{6} \nmid 16!$, $\varphi$ cannot be an embedding. Hence, $\ker{\varphi}$ is a nontrivial proper normal subgroup of $G$ so that $G$ is not simple. 
+\end{solutions}
+\begin{prb}{2006-A-II-5}
+	Show that a group of order 55 is not simple. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $55 = 5 \cdot 11$. Then by Sylow's Theorem, $G$ contains a unique Sylow 11-subgroup of order 11, which must then be normal. I.e., $G$ contains a nontrivial normal proper subgroup of order 11 so that $G$ is not simple. 
+\end{solutions}
+
 \end{document}
