@@ -43,6 +43,11 @@
 %\RequirePackage{biblatex}
 \RequirePackage{pifont}
 \RequirePackage{tikz-cd}
+% Source - https://tex.stackexchange.com/a
+% Posted by fish_monster
+% Retrieved 2026-01-08, License - CC BY-SA 4.0
+\RequirePackage{MnSymbol}
+
 
 \usetikzlibrary{decorations.pathmorphing}
 \tikzset{snake it/.style={decorate, decoration=snake}}
@@ -104,6 +109,8 @@
 \newcommand{\matlab}{\text{MATLAB }}
 \newcommand{\wh}[1]{\widehat{#1}}
 \newcommand{\ti}[1]{\widetilde{#1}}
+\newcommand{\h}[1]{H^{#1}_{\text{dr}}}
+\renewcommand{\b}{B_{r}}
 \DeclareMathOperator*{\esssup}{ess\,sup}
 \DeclareMathOperator{\cov}{cov}
 \DeclareMathOperator{\supp}{supp}

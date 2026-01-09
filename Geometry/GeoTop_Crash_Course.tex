@@ -1409,6 +1409,150 @@ Hence, $\overline{F}$ is linear. The proof of uniqueness follows as proceeds: if
 \begin{itemize}
 	\item \textbf{Def. (Smooth Oriented Coordinate Chart)} A smooth oriented coordinate chart on an oriented manifold is said to be (\textit{positively}) \textit{oriented} if the coordinate frame $(\partial/\partial x^{i})$ is positively oriented. A collection of smooth charts $\{(U_{\alpha}, \varphi_{\alpha})\}$ is said to be \textit{consistently oriented} if for each $\alpha, \beta$, the transition map $\varphi_{\alpha} \circ \varphi_{\beta}^{-1}$ has positive Jacobian determinant everywhere on $\varphi_{\alpha}(U_{\alpha} \cap U_{\beta})$. 
 \end{itemize}
+
+
+\newpage 
+\section{de Rham Theory}
+\subsection{de Rham Cohomology}
+\begin{itemize}
+	\item \textbf{Def. (Closed and Exact Differential Forms)} Let $M$ be a smooth manifold, and $\omega$ a differential form on $M$. $\omega$ is \textit{closed} if $d\omega = 0$ and \textit{exact} if $\omega = d\tau$ for some form $\tau$ of degree $\operatorname{deg}{\omega} -1$. 
+	
+	\item \textbf{Def. (de Rham Cohomology Group in degree $k$)} Let $Z^{k}(M)$ be the vector space of all closed $k$-forms, and $B^{k}(M)$ the space of all exact $k$-forms on a smooth manifold $M$; since $d^{2} = 0$, $B^{k}(M)$ is a subspace of $Z^{k}(M)$. Therefore, the quotient space $H^{k}_{dR}(M) \coloneqq Z^{k}(M)/B^{k}(M)$ is called the \textit{de Rham cohomology group of degree $k$}, and measures the extent to which closed forms ``fail'' to be exact forms. 
+	
+	\item \textbf{Prop. 24.1. (de Rham Cohomology Group in degree 0)} Let $M$ be a smooth manifold, with $r$ connected components. Then its de Rham cohomology group in degree 0 is $H^{0}_{\text{dr}}(M) = \mathbb{R}^{r}$. An element of $H^{0}(M)$ is specified by an ordered $r$-tuple of real numbers, each real number representing a constant function on a connected component of $M$. 
+	
+	{\color{orange}
+		Since there are no nonzero exact $0$-forms, it follows that $H^{0}_{\text{dr}}(M) = Z^{0}(M) = \brac*{\text{closed 0-forms}}$. Suppose $f$ is a closed 0-form on $M$; i.e., $f$ is a $C^{\infty}$ function on $M$ such that $df =0$. On a smooth chart $(U, (x^{i}))$, the differential of $f$ was found to be
+			\begin{equation}
+				df = \frac{\partial f}{\partial x^{i}}dx^{i}. 
+			\end{equation}
+		Hence, $df = 0$ on $U$ iff $\partial_{x^{i}}f = 0$ on $U$, which is equivalent to requiring that $f$ be locally constant on $U$. Therefore, the closed 0-forms on $M$ are exactly the locally constant functions on $M$. Such a function must then be constant one each connected component of $M$. If $M$ has $r$ connected components, then a locally constant function on $M$ can be specified by an ordered set of $r$ real numbers. Therefore, $Z^{0}(M) = \mathbb{R}^{r} \implies \h{0}(M) = \mathbb{R}^{r}$. 
+	}
+	
+	\item \textbf{Prop. 24.2. (de Rham Cohomology Group in degree $k > n$)} On a manifold of dimension $n$, $\h{k}(M)$ vanishes for $k > n$. 
+	
+	{\color{orange}
+		At any point $p \in M$, $T_{p}M$ is a vector space of dimension $n$. If $\omega$ is a $k$-form on $M$, then $\omega_{p} \in \Lambda_{k}(T_{p}M)$, the space of alternating $k$-linear functions on $T_{p}M$. But if $k > n$, then any collection of $k$ vectors is linearly dependent, and hence $\Lambda_{k}(T_{p}M) = 0$. Therefore, for $k > n$, the only $k$-form on $M$ is the 0-form. 
+	}
+	
+	\item \textbf{Ex. 24.3. ($\h{0}(\mathbb{R})$)} Consider the de Rham cohomology group in degree 0 of $\mathbb{R}$. By Proposition 24.1, since $\mathbb{R}$ is connected (i.e., has one connected component), $\h{0}(\mathbb{R}) = \mathbb{R}$. 
+	
+	\item \textbf{Ex. 24.3b ($\h{k}(\mathbb{R})$)} For dimensional reasons, there are no nonzero 2-forms on $\mathbb{R}$. Hence, every 1-form on $\mathbb{R}$ is closed. A 1-form $f(x)dx$ on $\mathbb{R}$ is exact if and only if there exists a $C^{\infty}$ function on $\mathbb{R}$ such that $f(x)dx = dg = g'(x) dx$. But such a function always exists: 
+		\begin{equation}
+			g(x) = \int_{0}^{x}f(t)\;dt. 
+		\end{equation}
+	Hence, every 1-form on $\mathbb{R}$ is closed, which proves that $H^{1}(\mathbb{R}) = 0$. Also using Proposition 24.2, we conclude that 
+		\begin{equation}
+			\h{k}(\mathbb{R}) = 
+				\begin{cases}
+					\mathbb{R}, & k = 0 \\
+					0, & k \geq 1.
+				\end{cases}
+		\end{equation}
+	
+	\item \textbf{Ex. 24.4. (de Rham Cohomology of a Circle)} Let $S^{1}$ be the unit circle in the plane. Since $S^{1}$ is connected, by Proposition 24.1, $\h{0}(S^{1}) = \mathbb{R}$. On the other hand, since $S^{1}$ is one-dimensional, $H^{k}(S^{1}) = 0$ for all $k > 1$. It remains for us to determine $H^{1}(S^{1})$. Consider the map $h:\mathbb{R} \to S^{1}$ defined by $h(t)= (\cos(t), \sin(t))$. Let $i: [0,2\pi] \to \mathbb{R}$ be the inclusion map. Restricting the domain of $h$ to $[0,2\pi]$ gives us a parametrization $F: h \circ i: [0,2\pi] \to S^{1}$ of the circle. Consider the 1-form $\omega = -ydx + xdy$ on $S^{1}$. Then it is straightforward to see that $F^{\ast}\omega = i^{\ast}h^{\ast}\omega = i^{\ast}dt = dt$. Then 
+		\begin{equation}
+			\int_{S^{1}}\omega = \int_{F([0,2\pi])}\omega = \int_{[0,2\pi]}F^{\ast}\omega = \int_{0}^{2\pi}dt = 2\pi. 
+		\end{equation}
+	Since $S^{1}$ is 1-dimensional, all 1-forms on $S^{1}$ are closed, so that $\Omega^{1}(S^{1}) = Z^{1}(S^{1})$. The integration of $1$-forms on $S^{1}$ defines a linear map 
+		\begin{equation}
+			\varphi: Z^{1}(S^{1}) = \Omega^{1}(S^{1}) \to \mathbb{R}, \qquad \varphi(\alpha) = \int_{S^{1}}\alpha. 
+		\end{equation}
+	Since $\varphi(\omega) = 2\pi \neq 0$, the linear map $\varphi: \Omega^{1}(S^{1}) \to \mathbb{R}$ is onto. Now suppose $\alpha$ is an exact form: $\alpha = df$, for some $f \in C^{\infty}(S^{1})$. Then by Stokes's Theorem, 
+		\begin{equation}
+			\int_{S^{1}}\alpha = \int_{S^{1}}df = \int_{\partial S^{1}}f = 0,
+		\end{equation}
+	since $S^{1}$ is a smooth manifold without boundary. Therefore, every exact 1-form is contained in $\ker{\varphi}$. On the other hand, suppose $\alpha$ is a 1-form in $\ker{\varphi}$. In particular, suppose $\alpha = f\omega$ is a smooth 1-form on $S^{1}$ such that $\varphi(\alpha) = 0$. Let $\overline{f} = h^{\ast}f = f \circ h \in \Omega^{0}(\mathbb{R})$. The $\overline{f}$ is $2\pi$-periodic and 
+		\begin{equation}
+			0 = \int_{S^{1}}\alpha = \int_{F([0,2\pi])}\alpha = \int_{[0,2\pi]}F^{\ast}\alpha = \int_{[0,2\pi]}(i^{\ast}h^{\ast}f)(t) \cdot F^{\ast}\omega = \int_{0}^{2\pi}\overline{f}(t)dt. 
+		\end{equation}
+	Therefore, we see that 
+		\begin{equation}
+			\h{1}(S^{1}) = Z^{1}(S^{1})/\ker{\varphi} \cong \operatorname{img}{\varphi} = \mathbb{R}. 
+		\end{equation}
+	This concludes the example. 
+\end{itemize}
+\subsection{Diffeomorphism Invariance}
+\begin{itemize}
+	\item \textbf{Lem. 24.6. (Pullback of Differential Forms)} Let $N$ and $M$ be smooth manifolds, and $F: M \to N$ a smooth map. Then the pullback map $F^{\ast}: \Omega^{\ast}(M) \to \Omega^{\ast}(N)$ sends closed forms to closed forms, and exact forms to exact forms. 
+	
+	{\color{orange}
+		Suppose $\omega$ is closed. By commutativity of $F^{\ast}$ with $d$, 
+			\begin{equation}
+				dF^{\ast}\omega = F^{\ast}d\omega = 0. 
+			\end{equation}
+		Hence, $F^{\ast}\omega$ is closed. Now, suppose $\omega = d\tau$ is exact. Then 
+			\begin{equation}
+				F^{\ast}\omega = F^{\ast}d\tau = dF^{\ast}\tau, 
+			\end{equation}
+		so that $F^{\ast}\omega$ is exact. 
+	}
+	
+	\item \textbf{Def. (Pullback in Cohomology)} The pullback map $F^{\ast}$ of differential forms induces a linear map of quotient spaces, denoted by $F^{\#}$: 
+		\begin{equation}
+			F^{\#}: \frac{Z^{k}(M)}{B^{k}(M)} \to \frac{Z^{k}(N)}{B^{k}(N)}, \quad F^{\#}([\omega]) = [F^{\ast}(\omega)],
+		\end{equation}
+	called the \textit{pullback map in cohomology}. In particular, $F^{\#}$ defines a contravariant functor. Moreover, \textit{if $F: M \to N$ is a diffeomorphism, then $F^{\#}: H^{k}(M) \to H^{k}(N)$ is an isomorphism of vector spaces.} 
+\end{itemize}
+\subsection{The Ring Structure on de Rham Cohomology}
+\begin{itemize}
+	\item \textbf{Lem. (Product Structure in Cohomology)} The wedge product of differential forms on a manifold $M$ gives the vector space $\Omega^{\ast}(M)$ of differential forms a product structure. This product structure induces a product structure in cohomology: if $[\omega] \in H^{k}(M)$ and $[\tau] \in H^{\ell}(M)$, define 
+		\begin{equation}
+			[\omega] \wedge [\tau] = [\omega \wedge \tau] \in \h{k + \ell}(M). 
+		\end{equation}
+\end{itemize}
+\begin{exc}{24.1}
+	Prove that a nowhere vanishing 1-form on a compact manifold cannot be exact. 
+\end{exc}
+\begin{solutions}
+	Let $M$ be a smooth compact manifold, and $\omega$ a nowhere vanishing 1-form on $M$. Assume to the contrary that $\omega$ is exact; i.e., let $f$ be a 0-form (i.e., a smooth map $f: M \to \mathbb{R}$) such that $\omega = df$. Since $M$ is compact, $f$ must attain a maximum value at some $p \in M$. But then if $(U, (x^{i}))$ is a smooth coordinate chart containing $p$, 
+		\begin{equation}
+			\omega = df = \frac{\partial f}{\partial x^{i}}dx^{i}. 
+		\end{equation}
+	Since $f$ is smooth, all of the partial derivatives $\partial_{x^{i}}f$ vanish at the maximum, which means $\omega$ must vanish at $p$; this is a contradiction. Hence, any nowhere vanishing 1-form on a compact manifold cannot be exact. 
+\end{solutions}
+\begin{exc}{24.2}
+	Suppose a manifold $M$ has infinitely many connected components. Compute its de Rham cohomology vector space $\h{0}(M)$ in degree 0. (\textit{Hint}: By second countability, the number of connected components of a manifold is countable.)
+\end{exc}
+\begin{solutions}
+	Let $M$ be a smooth manifold with infinitely many connected components; by the second countability axiom for manifolds, $M$ has countably many connected components. Since $M$ has no nonzero exact 0-forms, it follows that $\h{0}(M) \cong Z^{0}(M) = \brac*{\text{closed 0-forms on } M}$. Let $\omega$ be a closed $0$-form on $M$. Then in any smooth coordinate chart $(U, (x^{i}))$, 
+		\begin{eqnarray}
+			0 = df = \frac{\partial f}{\partial x^{i}}dx^{i}, 
+		\end{eqnarray}
+	so that $f$ is locally constant on $U$. This means that the closed 0-forms on $M$ are exactly the locally constant functions on $M$. Such a function must then be constant on each connected component of $M$. If $M$ has countable infinitely many connected components, then a locally constant function on $M$ can be specified by an ordered set of countable infinitely many numbers. Therefore, $Z^{0}(M) = \mathbb{R}^{\omega}$, so that $\h{0}(M) \cong \mathbb{R}^{\omega}$. 
+\end{solutions}
+\newpage 
+\section{The Long Exact Sequence in Cohomology}
+\subsection{Exact Sequences}
+\begin{itemize}
+	\item \textbf{Def. (Cochain Complex)} A collection of vector space $\{C^{k}\}_{k \in \mathbb{Z}}$ together with a sequence of linear maps $d_{k}: C^{k} \to C^{k + 1}$, 
+		\begin{equation}
+			\dotsm \to C^{-1} \xrightarrow{d_{-1}} C^{0} \xrightarrow{d_{0}} C^{1}  \xrightarrow{d_{1}} C^{2} \xrightarrow{d_{2}} \dotsm, 
+		\end{equation}
+	such that $d_{k} \circ d_{k - 1} = 0$ for all $k$. The collection of linear maps $\{d_{k}\}$ is called the \textit{differential} of the cochain complex $\mathscr{C}$. 
+	\item \textbf{Def. (de Rham Complex)} Let $M$ be a smooth manifold. The vector space $\Omega^{\ast}(M)$ of differential forms on $M$ together with the exterior derivative $d$ is a cochain complex, denoted the \textit{de Rham complex of $M$}: 
+		\begin{equation}
+			0 \to \Omega^{0}(M) \xrightarrow{d} \Omega^{1}(M) \xrightarrow{d} \Omega^{2}(M) \xrightarrow{d} \dotsm. 
+		\end{equation}
+	\item \textbf{Def. (Exact Sequences)} A sequence of homomorphisms of vector spaces $A \xrightarrow[f] B \xrightarrow[g] C$ is said to be \textit{exact at $B$} if $\operatorname{im}{f} = \ker{g}$. A sequence of homomorphisms 
+		\begin{equation}
+			A^{0} \xrightarrow{f_{0}} A^{1} \xrightarrow{f_{1}} A^{2} \xrightarrow{f_{2}} \dotsm \xrightarrow{f_{n-1}} A_{n}
+		\end{equation}
+	that is exact at every term except the first and the last is an \textit{exact sequence}. 
+	
+	\item \textbf{Def. (Short Exact Sequence)} A five-term exact sequence of the form $0 \to A \to B \to 0$. 
+\end{itemize}
+\subsection{Cohomology of Cochain Complexes}
+\begin{itemize}
+	\item \textbf{Def. ($k$th Cohomology Vector Space of $\mathscr{C}$)} If $\mathscr{C}$ is a cochain complex, then $\operatorname{img}{d_{k - 1}} \subset \ker{d_{k}}$. Hence, we can form the quotient space $H^{k}(\mathscr{C}) = \ker{d_{k}}/\operatorname{img}{d_{k- 1}}$, called the $k^{\text{th}}$ cohomology vector space of the cochain complex $\mathscr{C}$. 
+\end{itemize}
+
+
+
+
+
+
+
 \newpage
 \section{Problems}
 \subsection{Smooth Maps}

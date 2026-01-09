@@ -36,18 +36,25 @@
 \contentsline {section}{\numberline {10}Orientations}{32}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Orientations of Vector Spaces}{32}{subsection.10.1}%
 \contentsline {subsection}{\numberline {10.2}Orientations of Manifolds}{33}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Problems}{34}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Smooth Maps}{34}{subsection.11.1}%
-\contentsline {subsubsection}{Problem 2-5}{34}{section*.3}%
-\contentsline {subsubsection}{Problem 2-6}{34}{section*.4}%
-\contentsline {subsection}{\numberline {11.2}Tangent Vectors}{35}{subsection.11.2}%
-\contentsline {subsubsection}{Problem 3-1}{35}{section*.5}%
-\contentsline {subsubsection}{Problem 3-3}{35}{section*.6}%
-\contentsline {subsubsection}{Problem 3-4}{35}{section*.7}%
-\contentsline {subsection}{\numberline {11.3}The Cotangent Bundle}{35}{subsection.11.3}%
-\contentsline {subsubsection}{Problem 6-1}{36}{section*.8}%
-\contentsline {subsubsection}{Problem 6-2}{36}{section*.9}%
-\contentsline {subsection}{\numberline {11.4}Comps}{37}{subsection.11.4}%
-\contentsline {subsubsection}{Problem 2017-J-II-1}{37}{section*.10}%
-\contentsline {subsubsection}{Problem 2023-J-II-4}{37}{section*.11}%
-\contentsline {subsubsection}{Problem 2024-J-I-5}{38}{section*.12}%
+\contentsline {section}{\numberline {11}de Rham Theory}{34}{section.11}%
+\contentsline {subsection}{\numberline {11.1}de Rham Cohomology}{34}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Diffeomorphism Invariance}{35}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}The Ring Structure on de Rham Cohomology}{36}{subsection.11.3}%
+\contentsline {section}{\numberline {12}The Long Exact Sequence in Cohomology}{37}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Exact Sequences}{37}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Cohomology of Cochain Complexes}{37}{subsection.12.2}%
+\contentsline {section}{\numberline {13}Problems}{38}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Smooth Maps}{38}{subsection.13.1}%
+\contentsline {subsubsection}{Problem 2-5}{38}{section*.3}%
+\contentsline {subsubsection}{Problem 2-6}{38}{section*.4}%
+\contentsline {subsection}{\numberline {13.2}Tangent Vectors}{39}{subsection.13.2}%
+\contentsline {subsubsection}{Problem 3-1}{39}{section*.5}%
+\contentsline {subsubsection}{Problem 3-3}{39}{section*.6}%
+\contentsline {subsubsection}{Problem 3-4}{39}{section*.7}%
+\contentsline {subsection}{\numberline {13.3}The Cotangent Bundle}{39}{subsection.13.3}%
+\contentsline {subsubsection}{Problem 6-1}{40}{section*.8}%
+\contentsline {subsubsection}{Problem 6-2}{40}{section*.9}%
+\contentsline {subsection}{\numberline {13.4}Comps}{41}{subsection.13.4}%
+\contentsline {subsubsection}{Problem 2017-J-II-1}{41}{section*.10}%
+\contentsline {subsubsection}{Problem 2023-J-II-4}{41}{section*.11}%
+\contentsline {subsubsection}{Problem 2024-J-I-5}{42}{section*.12}%

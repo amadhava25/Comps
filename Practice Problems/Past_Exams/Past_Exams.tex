@@ -1,0 +1,394 @@
+\documentclass{article}
+\usepackage{../../header}
+\usepackage{notomath}
+\setcounter{secnumdepth}{0}
+\title{Comps Practice}
+\author{\me}
+\date{January 8, 2026}
+
+\begin{document}
+	\maketitle
+	\fullline 
+	\tableofcontents
+	\halfline 
+	\newpage 
+
+\subsection{Comps Lemma}
+\begin{prb}{Comps Lemma}
+	Let $M, N$ be smooth, connected, $n$-manifolds, and $f: M \to N$ a (smooth) immersion. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a (smooth) covering map. 
+\end{prb}
+\begin{solutions}
+	Let $M, N$ be smooth, connected $n$-manifolds and $f: M \to N$ an immersion. Assume that $M$ is compact and nonempty. Since $\operatorname{dim}{N} = n$ and $f$ is an immersion, $\operatorname{rank}{df_{p}} = n$ at every $p \in M$. Hence, by the Inverse Function Theorem, $f$ is a local diffeomorphism. Since local diffeomorphisms are open maps, $f(M)$ is open in $N$. On the other hand, since the continuous image of compact sets is compact, $f(M)$ is compact in $N$. Since $N$ is Hausdorff, $f(M)$ is closed in $N$. Since $N$ is connected, $f(M) = N$. Therefore, $N$ is compact. 
+	
+	Now, let $q \in N$, and consider $f^{-1}(q) \subset M$. For each $x \in f^{-1}(q)$, let $U_{x}$ be an open neighborhood of $M$ containing $x$. Since $M$ is Hausdorff, we can shrink each $U_{x}$ so that these neighborhoods are pairwise disjoint. This means that each $x \in f^{-1}(q)$ is isolated, and hence $f^{-1}(q)$ is discrete. Since $M$ is compact, we conclude that $f^{-1}(q)$ must be finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As noted above, for each $j = 1, \ldots, s$, let $U_{j}$ be a neighborhood of $x_{j}$ such that $f|_{U_{j}}: U_{j} \to V_{j} \subset N$ is a diffeomorphism. Then by the Hausdorff condition on $M$, shrink each $U_{j}$ so that $U_{i}\cap U_{j} = \varnothing$ for all $i \neq j$; $f$ remains a diffeomorphism on these shrunken neighborhoods. Setting $V = \bigcap_{1}^{s}f(U_{j})$ and taking $\ti{U}_{j} = f^{-1}(V) \cap U_{j}$ gives us an evenly covered neighborhood of $q$ in $N$. 
+\end{solutions}
+
+\subsection{January 2025}
+\begin{prb}{2025-J-I-1 (Algebra)}
+Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. Let $p(x) = x^{n} + b_{n - 1}x^{n- 1} + \dotsm + b_{0} \in F[x]$ be a monic polynomial with coefficients in $R$ admitting a root $a \in F$. Prove that $a \in R$. 
+\end{prb}
+\begin{solutions}
+	Let $R$ be a UFD, and $F$ its quotient field. Let $p(x) = x^{n} + b_{n- 1}x^{n - 1} + \dotsm + b_{0} \in F[x]$ be a monic polynomial with coefficients in $R$ admitting a root $a \in F$. Let $a = c/d$, where $c, d \in R\setminus \{0\}$ so that $\gcd(c, d) = 1$. By definition of a root, we must have 
+		\begin{equation}
+			0 = p(a) = \left(\frac{c}{d}\right)^{n} + b_{n - 1}\left(\frac{c}{d}\right)^{n - 1} + \dotsm + b_{0}. 
+		\end{equation}
+	Multiplying both sides by $d^{n}$, 
+		\begin{equation}
+			c^{n} + d(b_{n-1}c^{n-1} + b_{n - 2}c^{n - 2}d \dotsm + b_{0}d^{n-1}) = 0 \implies c^{n} = -d(b_{n - 1}c^{n - 1} + \dotsm + b_{0}d^{n-1}). 
+		\end{equation}
+	From this, we observe that $d \mid c^{n}$. If $d$ is not a unit in $R$, then every nonidentity irreducible divisor of $d$ is an irreducible divisor of $c^{n}$, and hence an irreducible divisor of $c$. But this contradicts our hypothesis that $\gcd(c, d) = 1$. Hence, $d$ has to be a unit of $R$. If $v \in R\setminus \{0\}$ such that $dv= vd = 1$, then 
+		\begin{equation}
+			a = \frac{c}{d} = \frac{c}{d}\cdot \frac{v}{v} = cv \in R. 
+		\end{equation}
+	Hence, this concludes the proof. 
+\end{solutions}
+\begin{prb}{2025-J-I-2 (Real Analysis)}
+	Let $\{f_{n}\}_{n\geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$. Suppose that 
+		\begin{equation*}
+			\int_{0}^{1}f^{2}_{n}dm \leq \frac{1}{n^{2}} \quad \text{ for all $n\geq 1$}. 
+		\end{equation*}
+	Prove that $f_{n}$ converges to $0$ a.e. on $[0,1]$. 
+\end{prb}
+\begin{solutions}
+	Let $\{f_{n}\}_{n\geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$ so that 
+		\begin{equation}
+			\int_{0}^{1}f_{n}^{2}dm \leq \frac{1}{n^{2}} \quad \text{ for all } n \geq 1. 
+		\end{equation}
+	Consider the sequence $\brac*{\sum_{1}^{m}f_{n}^{2}}$, which is increasing and converges a.e. to $\sum_{1}^{\infty}f_{n}^{2}$. Hence, by the Monotone Convergence Theorem, 
+		\begin{equation}
+			\sum_{1}^{\infty}\int_{0}^{1} f_{n}^{2} = \lim_{m \to \infty}\sum_{1}^{m}\int_{0}^{1} f_{n}^{2} = \lim_{m \to \infty}\int_{0}^{1} \sum_{1}^{m}f_{n}^{2} = \int_{0}^{1}\sum_{1}^{\infty}f_{n}^{2} \leq \int_{0}^{1}\sum_{1}^{\infty}\frac{1}{n^{2}} < \infty. 
+		\end{equation}
+	Therefore, $\sum_{1}^{\infty}f_{n}^{2} \in L^{1}(\mathbb{R})$, which means that $\sum_{1}^{\infty}f_{n}^{2} < \infty$ a.e. on $[0,1]$. Hence, $\sum_{n = 1}^{\infty}f_{n}^{2}$ converges a.e. on $[0,1]$. This implies that $f_{n}^{2} \to 0$ a.e. on $[0,1]$, and hence $f_{n} \to 0$ a.e. on $[0,1]$. 
+\end{solutions}
+\begin{prb}{2025-J-I-3 (Geometry/Topology)}
+	Let $M$ be an orientable, connected, and compact smooth $n$-manifold with boundary. Show that there is no (smooth) retraction to the boundary, that is, there does not exist a smooth map $f: M \to \partial M$ such that $f(x) = x$ when $x \in \partial M$. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be an orientable, connected, and compact smooth $n$-manifold with boundary. Assume to the contrary that there exists a smooth map $f: M \to \partial M$ such that $f(x) = x$ when $x \in \partial M$. Let $\omega \in \Omega^{n- 1}(\partial M)$ be a volume form for the boundary of $M$. Since volume forms are closed (hence, $\omega$ is closed), we have by Stokes's theorem 
+		\begin{equation}
+			0 = \int_{M}f^{\ast}d\omega = \int_{M}\partial(f^{\ast}\omega) = \int_{\partial M}f^{\ast}\omega = \int_{\partial M}\omega > 0, 
+		\end{equation}
+	which is a contradiction. Hence, by contradiction, there cannot exist a smooth retraction to the boundary. 
+\end{solutions}
+\begin{prb}{2025-J-II-3 (Algebra)}
+	Let $V$ be a vector space of dimension $n$ over $\mathbb{Q}$. Let $T: V \to V$ be a linear transformation with minimal polynomial $x^{4} - x^{2} - 2$ over $\mathbb{Q}$. Show that $n$ must be even. 
+\end{prb}
+\begin{solutions}
+	Consider $V$ as a module over the ring $\mathbb{Q}[x]$ by letting a polynomial $f(x) \in \mathbb{Q}[x]$ act as the linear operator $f(T)$. Since $\dim{V} = n$, this module is finitely generated. By the structure theorem for finitely generated modules over principal ideal domains, $V$ is isomorphic to a direct sum of modules of the form $\mathbb{Q}[x]/(p(x))^{e}$, where $p(x) \in \mathbb{Q}[x]$ is irreducible. Moreover, each $p(x)$ must divide the minimal polynomial of $T$. We note that over $\mathbb{Q}$, 
+		\begin{equation}
+			x^{4} - x^{2} - 2 = (x^{2} - 2)(x^{2} + 1),
+		\end{equation}
+	where both factors are irreducible over $\mathbb{Q}$. Therefore, the only choices for $p(x)$ are $x^{2} - 2$ and $x^{2} + 1$. Therefore, $\mathbb{Q}[x]/(p(x))^{e}$ has dimension $\deg{p} \cdot e = 2e$ for each choice of $p$. Since $2$ divides these dimensions, we conclude that $2$ must divide $n$. Hence, $n$ is even. 
+\end{solutions}
+\begin{prb}{2025-J-II-4 (Topology)}
+	Let $\Sigma_{2}$ be a compact oriented surface of genus 2. Is there a submersion $f: \Sigma_{2} \to S^{1} \times S^{1}$, where $S^{1}$ denotes the unit circle? 
+\end{prb}
+\begin{solutions}
+	Assume to the contrary that there exists a submersion $f: \Sigma_{2} \to S^{1} \times S^{1}$, where $S^{1}$ denotes the unit circle. Since $\dim{\Sigma_{2}} = \dim{S^{1} \times S^{1}} = 2$, $df_{p}$ must have constant rank 2 at every $p \in \Sigma_{2}$. Hence, $f$ is a local diffeomorphism. Since $f$ is a local diffeomorphism, $f(\Sigma_{2})$ is compact in $S^{1} \times S^{1}$; since $S^{1} \times S^{1}$ is Hausdorff, $f(\Sigma_{2})$ must be closed in $S^{1} \times S^{1}$. On the other hand, since local diffeomorphisms are open maps, $f(\Sigma_{2})$ is open in $S^{1} \times S^{1}$. Therefore, since $S^{1} \times S^{1}$ is connected, $f(\Sigma_{2}) = S^{1} \times S^{1}$; i.e., $f$ is surjective. Therefore, $f$ is a covering map. This means that the induced homomorphism, $f_{\ast}: \pi_{1}(\Sigma_{2}) \to \pi_{1}(S^{1}\times S^{1})$ is injective, and so $f_{\ast}(\pi_{1}(\Sigma_{2})) \cong \operatorname{img}{f_{\ast}} \leq \pi_{1}(S^{1} \times S^{1})$. However, $\pi_{1}(S^{1} \times S^{1}) \cong \mathbb{Z} \times\mathbb{Z}$ is an abelian group and cannot have any nonabelian subgroups, whereas $\pi_{1}(\Sigma_{2})$ is nonabelian. Hence, by contradiction, $f$ cannot be a submersion. 
+\end{solutions}
+\begin{prb}{2025-J-II-5 (Analysis)}
+	Let $V$ be a topological vector space whose topology is Hausdorff. Let $X_{1}$ and $X_{2}$ be two Banach spaces, and assume there exist continuous linear bijections $F_{1}: X_{1} \to V$ and $F_{2}: X_{2} \to V$. Show that there is a continuous linear bijection $G: X_{1} \to X_{2}$. 
+\end{prb}
+\begin{solutions}
+	Assume the given hypotheses. Let $G = F_{2}^{-1} \circ F_{2}$. Since $F_{1}, F_{2}$ are bijections, we conclude that $G$ is a bijection. Likewise, since $F_{1}, F_{2}$ are linear, $G$ must also be linear. It suffices to prove that $G$ is continuous. By the Closed Graph Theorem, continuity of $G$ is equivalent to the graph of $G$ being a closed subspace of $X_{1} \times X_{2}$. Let $\{x_{n}\} \subset X_{1}$ be a sequence in $X_{1}$ such that $x_{n} \to x$ and $y_{n} = Gx_{n} \to y$. We need to show that $y = Gx$. By continuity of $F_{1}$, $F_{1}x_{n} \to Fx$. By continuity of $F_{2}$, 
+		\begin{equation}
+			F_{2}y = \lim F_{2}y_{n} = \lim F_{2}Gx_{n} = \lim F_{1}x_{n} = F_{1}x. 
+		\end{equation}
+	Since $F_{2}$ is bijective, $y = F_{2}^{-1}F_{1}x = Gx$. Hence, the graph of $G$ is closed, which implies that $G$ is continuous. 
+\end{solutions}
+
+\subsection{August 2025}
+\begin{prb}{2025-A-I-1 (Geometry/Topology)}
+	Let $S$ be a closed orientable surface of genus 4 and $C$ be an embedded circle that partitions $S$ into two subsurfaces of genus 2. Does $S$ retract to $C$? 
+\end{prb}
+\begin{solutions}
+	We claim that the answer is no; assume to the contrary that there exists a retraction $r: S \to C$. Let $i: C \hookrightarrow S$ be the inclusion map so that $r \circ i = \operatorname{id}_{C}$. Now since $C$ is an embedded circle, $H_{1}(C)$ (i.e., the first homology) is isomorphic to $H_{1}(S^{1}) = \mathbb{Z}$. On the other hand, since $C$ is separating in $S$, its homology class in $H_{1}(S)$ is the zero element. Hence, the induced map $i_{\ast}: H_{1}(C) \to H_{1}(S)$ is the zero map. But this is impossible since if $i_{\ast}$ is the zero map,
+		\begin{equation}
+			0 = r_{\ast} \circ i_{\ast} = (r \circ i)_{\ast} = \operatorname{id}_{H_{1}}(C),
+		\end{equation}
+	which is a contradiction. Hence, no such retraction can exist. 
+\end{solutions}
+
+\begin{prb}{2025-A-I-6 (Algebra)}
+	Let $f(x)$ be an irreducible polynomial of degree $n$ over a field $F$, and let $g(x)$ be any polynomial in $F[x]$. Prove that every irreducible factor of the composition $f(g(x))$ has degree divisible by $n$. 
+\end{prb}
+\begin{solutions}
+	Let $h(x)$ be an irreducible factor of $f(g(x))$ in $F[x]$ and let $\alpha$ be the root of $h(x)$ in some algebraic closure of $F$. Since $h$ is irreducible and $\alpha$ is a root, the minimum polynomial of $\alpha$ over $F$ is $h$. Therefore, 
+		\begin{equation}
+			\deg{h} = [F(\alpha): F]. 
+		\end{equation}
+	Now since $\alpha$ is a root of $h(x)= f(g(x))$, $f(g(\alpha)) = 0$. In particular, $g(\alpha)$ is a root of $f$. Since $f$ is irreducible of degree $n$ over $F$, the minimal polynomial of $g(\alpha)$ over $\alpha$ is $f$. Hence, 
+		\begin{equation}
+			[F(g(\alpha)):F] = n. 
+		\end{equation}
+	Since $F \subset F(g(\alpha)) \subset F(\alpha)$, by the Tower Law, 
+		\begin{equation}
+			\deg{h} = [F:(\alpha):F] = [F(\alpha):F(g(\alpha))] \cdot [F(g(\alpha)): F] = n[F(\alpha):F(g(\alpha))],
+		\end{equation}
+	so that $n \mid \deg{h}$. Hence, this concludes the proof. 
+\end{solutions}
+\begin{prb}{2025-A-II-2 (Geometry/Topology)}
+	Consider the plane distribution in $\mathbb{R}^{3}$ spanned by two vector fields 
+		\begin{equation}
+			V = \partial_{x} + 2xy\partial_{z}, \qquad W = x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}. 
+		\end{equation}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Show that this distribution is integrable. 
+		\item Does the pair of vector fields $V$ and $W$ generate a coordinate system on integral surfaces? If not, find a pair that can play this role for the local integral surfaces passing through points $(0,0,z_{0})$. 
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-0.65cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $D$ be the plane distribution in $\mathbb{R}^{3}$ spanned by the two vector fields $V$ and $W$ given above. Then by the Frobenius Theorem, $D$ is integrable if and only if $D$ is involutive, which is true if and only if the Lie Bracket of $V$ and $W$ is a smooth section of $D$ at each $p \in \mathbb{R}^{3}$. We observe that: 
+			\begin{align}
+				\begin{split}
+					V(W) &= \left(\partial_{x} + 2xy\partial_{z}\right)(x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}) \\
+					&= \partial_{x} + (4xy + 2x)\partial_{z}. \\
+					W(V) &= \left(x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}\right)(\partial_{x}+ 2xy\partial_{z}) \\
+					&= 2xy\partial_{z} + 2x\partial_{z}. 
+				\end{split}
+			\end{align}
+		Therefore, for any $p \in \mathbb{R}^{3}$, 
+			\begin{equation}
+				[V, W] = V(W) - W(V) = \partial_{x} + 2xy\partial_{z} = V. 
+			\end{equation}
+		Since $V$ is a smooth section of $D$, we conclude that $D$ is involutive, and hence integrable. 
+		\item Let $\mathscr{S}$ be an integral surface, and assume there are coordinates $(u, v)$ on $\mathscr{S}$ such that $V|_{\mathscr{S}} = \partial_{u}$ and $W|_{\mathscr{S}} = \partial_{v}$. Then we observe that $[V|_{\mathscr{S}}, W|_{\mathscr{S}}] = \partial_{u}(\partial_{v}) - \partial_{v}(\partial_{u}) = 0$. On the other hand, 
+			\begin{equation}
+				[V|_{\mathscr{S}}, W|_{\mathscr{S}}] = ([V, W])|_{\mathscr{S}} = V|_{\mathscr{S}} \neq 0, 
+			\end{equation}
+		which is a contradiction. Therefore, $V$ and $W$ cannot generate a coordinate system on integral surfaces. However, consider the fields $\ti{V} = V$ and $\ti{W} = W - xV$ on $\mathbb{R}^{3}$. Then since
+			\begin{equation}
+				[\ti{V}, \ti{W}] = V(W - xV) - (W - xV)(V) = VW - xVV - W(V) + xVV = 0, 
+			\end{equation} 
+		and so this pair generates a coordinate system on all integral surfaces. 
+	\end{enumerate}
+\end{solutions}
+
+
+\subsection{January 2024}
+\begin{prb}{2024-J-I-1 (Algebra)}
+	For distinct odd primes $p$ and $q$, prove that every finite group of order $2pq$ is a semidirect product of a normal subgroup of order $pq$ and a subgroup of order 2. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $2pq$, where $p, q$ are distinct odd primes. Without loss of generality, assume $q > p$. By Sylow's Theorem, 
+		\begin{equation}
+			n_{q} \in \{1, 2, p, 2p\} \cap \{1, q + 1, \ldots\} = 1, 
+		\end{equation}
+	since $q > 2$ and $q > p$. Therefore, $G$ has a unique, normal, Sylow $q$-subgroup, which we denote as $Q$. Let $P$ be a Sylow $p$-subgroup of $G$. By the Second Isomorphism Theorem, we conclude that $N = PQ$ is a subgroup of $G$ of order $|P||Q| = pq$. Since $|G: N| = 2pq/(pq) = 2$, where $2$ is the smallest prime dividing $|G|$, we conclude that $N$ is a normal subgroup of $G$. Next, by Cauchy's Theorem, $G$ contains an element of order 2. Let $M$ be the subgroup generated by this element, which also must have order 2. By Lagrange's Theorem, $N \cap M = \{e\}$. Next, 
+		\begin{equation}
+			|NM| = \frac{|N||M|}{|N \cap M|} = |N||M| = 2pq = |G|,
+		\end{equation}
+	so that $G = NM$. Therefore, we conclude that $G = N \rtimes M$. 
+\end{solutions}
+\begin{prb}{2024-J-I-2 (Geometry/Topology)}
+	Let $p: E \to B$ be a covering space map, with $B$ and $E$ path connected. Choose a point $e_{0} \in E$ and $b_{0} \in B$ such that $p(e_{0}) = b_{0}$. This gives us a subgroup $H = p_{\ast}\pi_{1}(E, e_{0})$ of the fundamental group $G = \pi_{1}(B, b_{0})$. 
+	
+	Construct a bijection between the fiber $p^{-1}(b_{0})$ and the set of right cosets of $H$ and prove that this is indeed a bijection. Prove that the number of sheets of $p$ equals the index $(G: H)$. 
+\end{prb}
+\begin{solutions}
+	Assume all of the given hypotheses. Let $\phi: \pi_{1}(B, b_{0}) \to p^{-1}(b_{0})$ be the lifting correspondence induced by $p$ defined by $\phi([f]) = \tilde{f}(1)$, where $\tilde{f}$ is the lift of $f$, and let $\Phi: \pi_{1}(B, b_{0})/H \to p^{-1}(b_{0})$ be the map induced by $\phi$. It suffices to prove that $\Phi$ is a bijection. 
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Since $E$ is path connected and $p: E \to B$ is a covering map, the lifting correspondence $\phi$ must be surjective. Hence, since $\Phi$ is induced by $\phi$, it follows that $\Phi$ is also surjective. 
+			\item Now we will show that $\Phi$ is injective. Let $f$ and $g$ be two paths in $B$, and $\ti{f}, \ti{g}$ their liftings to paths in $E$ that begin at $e_{0}$. We must show that $\ti{f}(1) = \ti{g}(1)$ iff $[f] \in H \ast [g]$. 
+			
+			($\Leftarrow$) Suppose $[f] = [h \ast g]$, where $h = p \circ \tilde{h}$ for some loop $\tilde{h}$ in $E$ based at $e_{0}$. Since $\tilde{g}$ is a path in $E$ that \textit{begins} at $e_{0}$, the product $\tilde{h} \ast \tilde{g}$ is well-defined. Since $[f] = [h \ast g]$, it follows that $\tilde{f}$ and $\tilde{h} \ast \tilde{g}$ must end at the same point. Hence, $\tilde{f}$ and $\tilde{g}$ end at the same point. Therefore, $\phi([f]) = \phi([g])$. 
+			
+			($\Rightarrow$) Suppose $\phi([f]) = \phi([g])$, which means that $\tilde{f}(1) = \tilde{g}(1)$. Then the product of $\tilde{f}$ with the reverse of $\tilde{g}$ is well-defined and is a loop $\tilde{h}$ in $E$ based at $e_{0}$. By direct computation, $[\tilde{h} \ast \tilde{g}] = [\tilde{f}]$. If $\tilde{F}$ is a path homotopy between $\tilde{h} \ast \tilde{g}$ and $\tilde{f}$, then $p \circ \tilde{F}$ is a path homotopy between $h \ast g$ and $f$, which means that $[f] \in H\ast [g]$. Hence, this concludes the proof that $\Phi$ is injective. 
+		\end{enumerate}
+	Hence, $|p^{-1}(b_{0})| = |G/H| = (G:H)$. 
+\end{solutions}
+\begin{prb}{2024-J-I-4 (Algebra)}
+	For each field $K$, prove that the polynomial ring $K[x, y]$ in two variables is not a principal ideal domain. 
+\end{prb}
+\begin{solutions}
+	Let $K$ be a field, and consider the polynomial ring $K[x, y]$. Let $(x, y)$ be the proper ideal of $K[x, y]$ generated by the monomials $x$ and $y$. Assume to the contrary that $(x, y) = (f(x,y))$ where $f(x, y) \in K[x, y]$ is not a unit of the polynomial ring. Since $x \in (f(x, y))$, $f(x, y) \mid x$. By our assumption that $f$ is not a unit, it follows that $f(x, y)$ is an associate of $x$. Likewise, $f(x, y)$ must be an associate of $y$. But this is impossible since $x$ and $y$ are not associates of each other. This forces $f(x, y)$ to be a unit, which means that $(f(x, y)) = K[x, y]$. But this contradicts the fact that $(x, y) = (f(x, y))$ is a proper ideal. Hence, by contradiction, $(x, y)$ is not a principal ideal, and so $K[x, y]$ is not a principal ideal domain. 
+\end{solutions}
+\begin{prb}{2024-J-I-5 (Geometry/Topology)}
+	Let $\alpha$ be a closed 1-form on $\mathbb{RP}^{n}$, $n > 1$. Show that if $f:[0,1] \to \mathbb{RP}^{n}$ is a smooth function such that $f(0) = f(1)$, then 
+		\begin{equation*}
+			\int_{[0,1]}f^{\ast}\alpha = 0. 
+		\end{equation*}
+	Include all calculations that are relevant to your solution. 
+\end{prb}
+\begin{solutions}
+	We recall that $H^{k}(\mathbb{RP}^{n}) = 0$ for all $0 < k < n$ so that $H^{1}(\mathbb{RP}^{n}) = 0$ if $n > 1$. In particular, this means that $\alpha$ is also an exact 1-form on $\mathbb{RP}^{n}$. Let $g$ be a smooth function on $\mathbb{RP}^{n}$ so that $\alpha = dg$. Then 
+		\begin{equation}
+			\int_{0}^{1}f^{\ast}\alpha = \int_{0}^{1}f^{\ast}dg = \int_{0}^{1}d(f^{\ast}g) = g(f(1)) - g(f(0)) = 0, 
+		\end{equation}
+	where the last equality follows from the fact that $f(1) = f(0)$. Hence, the proof concludes. 
+\end{solutions}
+\newpage 
+\begin{prb}{2024-J-II-3 (Geometry/Topology)}
+	Let $\Sigma$ be a genus 2 surface embedded in $\mathbb{R}^{3}$ as shown in the picture. Let $M$ be the closure of the \textit{unbounded} component of $\mathbb{R}^{3}\setminus \Sigma$; in other words, $M$ is the part of $\mathbb{R}^{3}$ which is \textit{not} enclosed by $\Sigma$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Compute $\pi_{1}(M)$. 
+			\item Is $\Sigma$ a retract of $M$? 
+		\end{enumerate}
+	\begin{center}
+		\includegraphics[width = 0.3\linewidth]{"../Graphics/2024JII3"}
+	\end{center}
+\end{prb}
+\begin{solutions}
+	$ $\newline 
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item 
+	\end{enumerate}
+\end{solutions}
+
+
+\begin{prb}{2024-J-II-6 (Geometry/Topology)}
+	Let $M$ be a smooth $n$-manifold, and let $\varphi$ be a differential $k$-form on $M$ which is closed, in the sense that $d\varphi = 0$. At each point $p \in M$, define 
+		\begin{equation}
+			D_{p}= \brac*{v \in T_{p}M: v\righthalfcup\varphi = 0}, 
+		\end{equation}
+	where $\righthalfcup$ denotes the interior product. Assume $\ell \coloneqq \dim{D_{p}}$, so that $D \subset TM$ is a rank-$\ell$ vector sub-bundle of the tangent bundle of $M$. Prove that $D$ is an integrable distribution of $\ell$-planes, in the sense of the Frobenius Theorem. 
+\end{prb}
+\begin{solutions}
+	By the Frobenius Theorem, it suffices to prove that $D$ is involutive, which is to say that if $X, Y$ are smooth sections of $D$, then $[X, Y]$ is also a smooth section of $D$. Indeed, let $X, Y$ be smooth sections of $D$, which means that $X\righthalfcup \varphi, Y\righthalfcup \varphi = 0$. Observe that,
+		\begin{equation}
+			[X,Y]\righthalfcup \varphi = \mathscr{L}_{X}(Y\righthalfcup \varphi) - Y\righthalfcup(\mathscr{L}_{X}\varphi). 
+		\end{equation}
+	By hypothesis, $Y \righthalfcup \varphi = 0$ so that $\mathscr{L}_{X}(Y \righthalfcup \varphi) = 0$. On the other hand, by Cartan's Formula, 
+		\begin{equation}
+			\mathscr{L}_{X}\varphi = d(X\righthalfcup \varphi) + X\righthalfcup d\varphi = 0, 
+		\end{equation}
+	by the hypotheses. Hence, this shows that $[X, Y] \righthalfcup \varphi = 0$, and so $[X, Y]$ is a smooth section of $D$. Therefore, $D$ is involutive, which means that it is Frobenius integrable. 
+\end{solutions}
+
+\subsection{August 2023}
+\begin{prb}{2023-A-II-1 (Algebra)}
+	A field extension $K/L$ is called algebraic, if every element in $K$ satisfies a polynomial equation with coefficients in $L$. Let $F, K, L$ be fields such that $F \supset K \supset L$, and $F/K$ and $K/L$ are algebraic extensions. Prove that $F/L$ is also an algebraic extension. 
+\end{prb}
+\begin{solutions}
+	Since subfields of subfields is a subfield, $L$ is a subfield of $F$. Hence, it suffices to show that every element in $F$ satisfies a polynomial equation with coefficients in $L$. Let $a \in F$, and let 
+		\begin{equation}
+			k(x) = k_{n}x^{n} + k_{n - 1}x^{n-1} + \dotsm + k_{0} \in K[x]
+		\end{equation}
+	such that $k(a) = 0$; this follows since $F/K$ is an algebraic extension. Each $k_{j} \in K$, and hence is algebraic over $L$. Therefore, $L' = L(k_{0}, \ldots, k_{n})$ is a finite extension of $L$. Since $k(a) = 0$ and $k(x)$ now has its coefficients in $L'$, it follows that $a$ is algebraic over $L'$ so that $L'(a)$ is a finite extension of $L$. Then since 
+		\begin{equation}
+			[L(a):L] = [L(a):L'][L':L], 
+		\end{equation}
+	it follows that $L(a)$ is a finite extension of $L$. Therefore, $a$ is algebraic over $L$. Since $a$ was arbitrary, $F/L$ is an algebraic extension. 
+\end{solutions}
+
+\subsection{January 2023}
+\begin{prb}{2023-J-II-4 (Geometry/Topology)}
+	Prove that $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$, where $M_{1}, M_{2}, M_{3}$ are smooth manifolds of nonzero dimension. 
+\end{prb}
+\begin{solutions}
+	We begin with a technical lemma, that we will use to prove the desired result. 
+		\begin{quote}
+			(\textbf{Comps Lemma}) Let $M, N$ be smooth, connected $n$-manifolds and $f: M \to N$ a (smooth) immersion. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a (smooth) covering map. 
+			
+			\begin{proof}
+				Let $M, N$ be smooth connected $n$-manifolds, $f: M \to N$ an immersion, and $M$ compact and nonempty. Since $\dim{N} = n$ everywhere and $f$ is an immersion, $df_{p}: T_{p}M \to T_{f(p)}N$ has constant rank $n$ everywhere. Hence, by the Inverse Function Theorem, $f$ is a local diffeomorphism. Since local diffeomorphisms are open maps, $f(M)$ is open in $N$. Next since the continuous image of compact sets is compact, $f(M)$ is compact in $N$. Since $N$ is Hausdorff, $f(M)$ must be closed in $N$. Therefore, since $N$ is connected, we conclude that $f(M) = N$. This means that $N$ is compact and $f$ is surjective. All that remains is to show that $f$ is a covering map. 
+				
+				Let $q \in N$, and consider $f^{-1}(q)$, which is closed in $M$. For each $x \in f^{-1}(q)$, there exists a neighborhood $U_{x}$ of $x$ such that $f|_{U_{j}}$ is a diffeomorphism.  Since $M$ is Hausdorff, we may shrink these neighborhoods so that they are pairwise disjoint. This means that each $x \in f^{-1}(q)$ is isolated. Hence, $f^{-1}(q)$ is discrete in $M$. Since discrete subspaces of compact spaces must be finite, it follows that $f^{-1}(q)$ is finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As stated above, for each $j = 1, \ldots, s$, we can find a neighborhood $U_{j}$ of $x_{j}$ such that $f|_{U_{j}}: U_{j} \to V_{j} \subset N$ is a diffeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods so that $U_{i} \cap U_{j} = \varnothing$ for all $i \neq j$; $f$ restricted to each of these new $U_{j}$'s remains a diffeomorphism. Set $V = \bigcap_{1}^{s}f(U_{j})$, and define $\ti{U}_{j} = f^{-1}(V) \cap  U_{j}$. For each $j$, $f: \ti{U}_{j} \to V$ is a diffeomorphism and $V =  \bigsqcup_{1}^{s}f(U_{j})$. Hence, $V$ is an evenly covered neighborhood of $q$, so that $f$ is a covering map.  
+			\end{proof}
+		\end{quote} 
+	Now, assume to the contrary that $f: S^{2} \times S^{2} \to M_{1} \times M_{2} \times M_{3}$ is a diffeomorphism; since diffeomorphisms preserve dimensions and $M_{1}, M_{2}, M_{3}$ have nonzero dimensions, it follows, without loss of generality,  that $M_{1}, M_{2}$ are 1-dimensional and $M_{3}$ is 2-dimensional. Since diffeomorphisms of manifolds are immersions, by the Comps Lemma, $M_{1} \times M_{2} \times M_{3}$ must be compact and connected; by projecting onto each manifold, $M_{1}, M_{2}, M_{3}$ must be compact and connected. Moreover, the induced group homomorphism $f_{\ast}: \pi_{1}(S^{2} \times S^{2}) \to \pi_{1}(M_{1} \times M_{2} \times M_{3}) = \pi_{1}(M_{1}) \times \pi_{1}(M_{2}) \times \pi_{1}(M_{3})$ must be an isomorphism. Since $S^{2}$ is simply connected, 
+		\begin{equation}
+			\pi_{1}(S^{2} \times S^{2}) = \pi_{1}(S^{2}) \times \pi_{1}(S^{2}) = \{0\}. 
+		\end{equation}
+	On the other hand, since the only compact connected 1-manifold, up to diffeomorphism, is the unit circle $S^{1}$, and $\pi_{1}(S^{1}) \cong \mathbb{Z}$ is not trivial, $\pi_{1}(M_{1} \times M_{2} \times M_{3})$ is not trivial. But this contradicts our claim that $f_{\ast}$ is an isomorphism. Hence, by contradiction, $f$ cannot be a diffeomorphism. 
+\end{solutions}
+\begin{prb}{2023-J-II-3 (Geometry/Topology)}
+	Consider the form $\omega = (x^{2} + x + y)dy \wedge dz$ on $\mathbb{R}^{3}$. Let $S^{2} \subset \mathbb{R}^{3}$ be the unit sphere, and $i: S^{2} \to \mathbb{R}^{3}$ be the inclusion map. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Calculate $\int_{S^{2}}i^{\ast}\omega$. 
+			\item Construct a closed form $\alpha$ on $\mathbb{R}^{3}$ such that $i^{\ast}\alpha = i^{\ast}\omega$, or show that such a form $\alpha$ does not exist. 
+		\end{enumerate}
+\end{prb}
+
+
+\begin{prb}{2023-A-I-2 (Geometry/Topology)}
+	Let $f: T^{2} \to S^{2}$ be a smooth map from the 2-torus to the 2-sphere. Can $f$ be an immersion? If the answer is yes, given an explicit example. If the answer is no, then give a proof. 
+\end{prb}
+\begin{solutions}
+	There cannot be an immersion $f: T^{2} \to S^{2}$. To prove our answer, we will state and proof a technical lemma. 
+	\begin{quote}
+		(\textbf{Comps Lemma}) Let $M, N$ be smooth, connected, $n$-manifolds and $f: M \to N$ a (smooth) immersion. If $M$ is compact and nonempty, then $f$ is a (smooth) covering map. 
+		\begin{proof}
+			Let $M, N$ be smooth connected $n$-manifolds, $M$ compact, and $f: M \to N$ an immersion. Since $\dim{N} = n$ everywhere and $f$ is an immersion, $df_{p}: T_{p}M \to T_{f(p)}N$ has constant rank $n$ everywhere. Hence, by the Inverse Function Theorem, $f$ is a local diffeomorphism. Let $q \in N$ so that $f^{-1}(q) \subset M$ is closed. For each $x \in f^{-1}(q)$, there exists a neighborhood $U_{x}$ such that $f|_{U_{x}}: U_{x} \to V_{x} \subset N$ is a diffeomorphism. Since $M$ is Hausdorff, we can shrink these neighborhoods so that they are pairwise disjoint. Since every $x \in f^{-1}(q)$ is now isolated, it follows that $f^{-1}(q)$ is discrete. Since $M$ is compact, we conclude that $f^{-1}(q)$ must be finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As stated above, for each $j = 1, \ldots, s$, we can find a neighborhood $U_{j}$ of $x_{j}$ so that $f|_{U_{j}}: U_{j} \to V_{j} \subset N$ is a diffeomorphism. Again, since $M$ is Hausdorff, we can shrink these neigborhoods so that $U_{i} \cap U_{j} = \varnothing$ for all $i \neq j$; $f$ restricted to each of these shrunken neighborhoods remains a diffeomorphism. Now set $V = \bigcap_{1}^{s}f(U_{j})$, and define $\ti{U}_{j} \subset M$ by $\ti{U}_{j} = f^{-1}(V) \cap U_{j}$ for each $j = 1, \ldots, s$. Hence, $V$ is an evenly covered neighborhood of $q \in N$, which means $f$ is a covering map. That $f$ is surjective comes from recognizing that $f(M) = N$ due to connectedness of $N$. 
+		\end{proof}
+	\end{quote}
+	
+	Now, assume $f: T^{2} \to S^{2}$ is an immersion. Since $T^{2}, S^{2}$ are smooth, connected 2-manifolds, and $T^{2}$ is compact and nonempty, by the Comps Lemma, $f$ is a covering map. Hence, the induced homomorphism $f_{\ast}: \pi_{1}(T^{2})\to \pi_{1}(S^{2})$ is injective. Since $S^{2}$ is simply connected, $\pi_{1}(S^{2}) \cong \{0\}$. On the other hand, $\pi_{1}(T^{2}) \cong \mathbb{Z} \times \mathbb{Z}$. Since the order of $\pi_{1}(T^{2})$ is more than one, $f_{\ast}$ cannot be injective. Hence, $f$ cannot be an immersion. 
+\end{solutions}
+
+\begin{prb}{2023-A-II-5 (Geometry/Topology)}
+Let $(t, x, y, z)$ be the standard coordinate system on $\mathbb{R}^{4}$, and let $\phi$ be the non-zero smooth 1-form on $\mathbb{R}^{4}$ defined by 
+	\begin{equation*}
+		\phi = dt + ydx + zdy. 
+	\end{equation*}
+Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vectors $V$ such that $\phi(V) = 0$. Is $D$ Frobenius integrable? Support your answer with a proof. 
+\end{prb}
+\begin{solutions}
+	Let $D$ be the 3-plane field on $\mathbb{R}^{4}$  defined as follows: for each $p \in \mathbb{R}^{4}$, 
+		\begin{equation}
+			D_{p} = \brac*{v \in T_{p}\mathbb{R}^{4}: \phi(v) = 0} \eqqcolon \ker{\phi_{p}}. 
+		\end{equation}
+	Hence, by the Frobenius Theorem, $D$ is Frobenius integrable if and only if $\phi \wedge d\phi = 0$. We compute: 
+		\begin{equation}
+			d\phi = d(dt + y\;dx + z\;dy) = d^{2}t + dy \wedge dx + dz \wedge dy = dy \wedge dx + dz \wedge dy. 
+		\end{equation}
+	Therefore, 
+		\begin{equation}
+			\phi \wedge d\phi = dt \wedge dy \wedge dx + dt \wedge dz \wedge dy + y dx \wedge dz \wedge dy. 
+		\end{equation}
+	Since $\phi \wedge d\phi$ is nowhere vanishing on $\mathbb{R}^{4}$, $D$ is not Frobenius integrable. 
+\end{solutions}
+\begin{prb}{2023-A-I-1 (Algebra)}
+	Let $V$ be a $n$-dimensional vector space over a field $F$. An element $A \in \operatorname{End}{V}$ is called \textit{nilpotent}, if $A^{k} = 0$ for some $k > 1$. Prove that $A$ is nilpotent if and only if 
+		\begin{equation}
+			\operatorname{Tr}(\Lambda^{i}A) = 0, \quad i = 1, \ldots, n,
+		\end{equation} 
+	where $\Lambda^{i}A$ denotes the induced action of $A$ on the wedge product $\Lambda^{i}V$ for each $i$. 
+\end{prb}
+\begin{solutions}
+	Let $V$ be a $n$-dimensional vector space over a field $F$, and let $A \in \operatorname{End}{V}$. Recall that $\Lambda^{i}A$, the induced action of $A$ on the wedge product $\Lambda^{i}V$, is defined to be 
+		\begin{equation}
+			(\Lambda^{i}A)(v_{1} \wedge \dotsm \wedge v_{i}) = Av_{1} \wedge \dotsm \wedge Av_{i}, \qquad v_{j} \in V \text{ for all } j =1, \ldots, i. 
+		\end{equation}
+	Over an algebraic closure of $F$, $A$ has eigenvalues $\lambda_{1}, \ldots, \lambda_{n}$. Suppose $A$ is diagonalizable, with the set of eigenvectors given by $\{v_{1}, \ldots, v_{n}\}$. Then for each $i = 1, \ldots, n$, since the collection 
+		\begin{equation*}
+			\brac*{v_{j_{1}} \wedge \dotsm\wedge v_{j_{i}}: 1 \leq j_{1} < \dotsm < j_{i} \leq n}
+		\end{equation*}
+	is a basis of $\Lambda^{i}V$, and for each $i$-tuple, $\Lambda^{i}A(v_{j_{1}} \wedge \dotsm \wedge v_{j_{i}}) = Av_{j_{1}} \wedge \dotsm \wedge Av_{j_{i}} = (\lambda_{j_{1}}\dotsm\lambda_{j_{i}})(v_{j_{1}} \wedge \dotsm \wedge v_{j_{i}})$, it follows that the eigenvalues of $\Lambda^{i}A$ are the set of all products of the form $\lambda_{j_{1}} \dotsm \lambda_{j_{i}}$ for $1 \leq j_{1} < \dotsm < j_{i} \leq n$, counting for multiplicity. Hence,
+		\begin{equation}
+			\operatorname{Tr}(\Lambda^{i}A) = \sum_{1 \leq j_{1} < \dotsm < j_{i} \leq n}\lambda_{j_{1}}\dotsm\lambda_{j_{i}}. 
+		\end{equation}
+	If $A$ is not diagonalizable, since the eigenvalues of $\Lambda^{i}A$ depend only on the eigenvalues of $A$, we may assume $A$ is in Jordan normal form. Indeed, if $A = PJP^{-1}$, then 
+		\begin{equation}
+			\Lambda^{i}(A) = \Lambda^{i}(PJP^{-1}) = \Lambda^{i}(P)\Lambda^{i}(J)\Lambda^{i}(P^{-1}), 
+		\end{equation}
+	so $\Lambda^{i}A$ and $\Lambda^{i}J$ are similar and therefore have the same eigenvalues. Thus it suffices to compute the eigenvalues of $\Lambda^{i}J$, which are exactly the products $\lambda_{j_{1}}\dotsm\lambda_{j_{i}}$ of the eigenvalues of $A$. 
+	
+	If $A$ is nilpotent so that $A^{k} = 0$ for some $k > 1$, then since $0 = A^{k}v = \lambda^{k}v$ for all eigenvectors $v$ of $A$, it follows that every eigenvalue of $A$ is zero. Therefore, the above expression implies that $\operatorname{Tr}(\Lambda^{i}A) = 0$ for all $i = 1, \ldots, n$. On the other hand, expanding the characteristic polynomial for $A$ is given by:
+		\begin{equation}
+			p_{A}(t) = \det(tI - A) = t^{n} - \operatorname{Tr}(\Lambda^{1}A)t^{n - 1} + \dotsm + (-1)^{n}\operatorname{Tr}(\Lambda^{n}A). 
+		\end{equation}
+	If $\operatorname{Tr}(\Lambda^{i}A)=0$ for all $i = 1, \ldots, n$, then we conclude that the characteristic polynomial of $A$ is precisely $t^{n}$. Therefore, $A$'s eigenvalues are all zero. Hence, the minimal polynomial of $A$ is of the form $t^{k}$ for some $k \leq n$. This implies that $A^{k} = 0$, and so $A$ is nilpotent. 
+\end{solutions}
+\begin{prb}{2023-A-II-6 (Complex Analysis)}
+	Find the number of solutions (counting multiplicity) to $z^{8} - 5z^{6} + 2z^{3} - z - 1 = 0$ that lie inside the unit disk. 
+\end{prb}
+\begin{solutions}
+	Recall Rouch{\'e}'s Formula, which states that 
+		\begin{quote}
+			For any two complex-valued functions $f$ and $g$ holomorphic inside some region $K$ with closed and simple contour $\partial K$, if $|g(z)| < |f(z)|$ on $\partial K$, then $f$ and $f +g$ have the same number of zeros inside $K$, where each zero is counted as many times as its multiplicity. 
+		\end{quote} 
+	Pick $f(z) = 5z^{6}$ and set $h(z) = z^{8} + 2z^{3} - z - 1$ so that $p(z) = z^{8} - 5z^{6} + 2z^{3} - z - 1 = h(z) - f(z)$. On the unit disk $\partial S^{1}$, we observe that 
+		\begin{align}
+			\begin{split}
+				\abs{f(z)} &= \abs{5z^{6}} = 5 \\
+				&= 1 + 2 + 1 + 1 \\
+				&= |z^{8}| + 2|z^{3}| + |z| + |1| \\
+				&\geq |h(z)|. 
+			\end{split}
+		\end{align}
+	Hence, $p(z) = h(z) - f(z)$ has the same number of zeros, counting multiplicity, as $f(z)$. Since $f(z)$ has six zeros in the unit disk, we conclude that $p(z)$ must also have six zeros inside the unit disk. 
+\end{solutions}
+\end{document}
