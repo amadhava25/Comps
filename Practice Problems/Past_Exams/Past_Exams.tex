@@ -23,6 +23,44 @@
 	Now, let $q \in N$, and consider $f^{-1}(q) \subset M$. For each $x \in f^{-1}(q)$, let $U_{x}$ be an open neighborhood of $M$ containing $x$. Since $M$ is Hausdorff, we can shrink each $U_{x}$ so that these neighborhoods are pairwise disjoint. This means that each $x \in f^{-1}(q)$ is isolated, and hence $f^{-1}(q)$ is discrete. Since $M$ is compact, we conclude that $f^{-1}(q)$ must be finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As noted above, for each $j = 1, \ldots, s$, let $U_{j}$ be a neighborhood of $x_{j}$ such that $f|_{U_{j}}: U_{j} \to V_{j} \subset N$ is a diffeomorphism. Then by the Hausdorff condition on $M$, shrink each $U_{j}$ so that $U_{i}\cap U_{j} = \varnothing$ for all $i \neq j$; $f$ remains a diffeomorphism on these shrunken neighborhoods. Setting $V = \bigcap_{1}^{s}f(U_{j})$ and taking $\ti{U}_{j} = f^{-1}(V) \cap U_{j}$ gives us an evenly covered neighborhood of $q$ in $N$. 
 \end{solutions}
 
+\subsection{Steinhaus Theorem}
+\begin{prb}{(Steinhaus Theorem)}
+	Let $E$ be a Lebesgue measurable subset of $\mathbb{R}^{n}$ such that $m^{n}(E) > 0$, and let $v_{1}, \ldots, v_{N}$ be a finite collection of vectors in $\mathbb{R}^{n}$. Then there exists $R > 0$, depending on $E$, and $M = \max\{|v_{1}|, \ldots, |v_{N}|\}$ such that for all $0 < r < R$, there exists $p \in S$ so that the $(N + 1)$-points, $p, p + rv_{1}, \ldots, p + rv_{1} + \dotsm + rv_{n}\in S$. 
+\end{prb}
+\begin{solutions}
+	Let $E$ be a measurable subset of $\mathbb{R}^{n}$ with positive Lebesgue measure. We recall that the Lebesgue measure is \textit{regular} (which means it is both \textit{inner} and \textit{outer} regular). By inner regularity, there exists a compact set $K_{1} \subset E$ such that $m^{n}(K_{1}) > 0$. Let $\beta < (2^{N} - 1)^{-1}$; by outer regularity, there exists an open set $U$ containing $K_{1}$ such that 
+		\begin{equation}
+			m^{n}(U) \leq (1 + \beta)m^{n}(K_{1}). 
+		\end{equation}
+	Since $K_{1}$ is compact, $d_{1} = d(K_{1}, U^{c}) > 0$. Let $R = d_{1}/M$, and choose an arbitrary $r$ such that $0 < r < R$. First, observe that the set $K_{1} + rv_{1}$ is contained in $U$, since otherwise, 
+		\begin{equation}
+			d(K_{1}, U^{c}) \leq |rv_{1}| \leq rM < d_{1}. 
+		\end{equation}
+	Therefore, $K_{1} \cup (K_{1} + rv_{1}) \subset U$, and so 
+		\begin{equation}
+			m^{n}(U) \geq m^{n}(K_{1}\cup (K_{1} + rv_{1})) = m^{n}(K_{1}) + m^{n}(K_{1} + rv_{1}) - m^{n}(K_{1} \cap (K_{1} + rv_{1})). 
+		\end{equation}
+	Since the Lebesgue measure is translation invariant, 
+		\begin{equation}
+			m^{n}(K_{1} \cap (K_{1} + rv_{1})) \geq 2m^{n}(K_{1}) - m^{n}(U) \geq 2m^{n}(K_{1}) - m^{n}(K_{1}) - \beta m^{n}(K_{1}) = (1 - \beta)m^{n}(K_{1}). 
+		\end{equation}
+	Since $\beta < 1$, it follows that $m^{n}(K_{1} \cap (K_{1} + rv_{1})) > 0$, and so $K_{1} \cap (K_{1} + rv_{1}) \neq \varnothing$. Now we proceed by induction. For each $i = 1, \ldots, N$, let $K_{i + 1} = K_{i} \cap (K_{i} + rv_{i})$. Each $K_{i} + rv_{i}$ must be contained in $U$ (by a generalization of the argument made above) and each $K_{i + 1} \subset K_{i} \subset U$. We claim that for each $i$, $m^{n}(K_{i + 1}) \geq (1- (2^{i} - 1)\beta)m^{n}(K_{1})$. We have already proven the base case $i = 1$. So assume the result holds for some $1 \leq m < N$. Then 
+		\begin{equation}
+			m^{n}(U) \geq m^{n}(K_{i} \cup (K_{i} + rv_{i})) = m^{n}(K_{i}) + m^{n}(K_{i} + rv_{i}) - m^{n}(K_{i} \cap (K_{i} + rv_{i})). 
+		\end{equation}
+	By translation invariance of the Lebesgue measure, 
+		\begin{align}
+			\begin{split}
+			m^{n}(K_{i + 1}) = m^{n}(K_{i} + rv_{i}) &\geq 2m^{n}(K_{i}) - m^{n}(U) \geq 2(1 - (2^{i} - 1)\beta)m^{n}(K_{1}) - (1 + \beta)m^{n}(K_{1}) \\
+			&= m^{n}(K_{1}) - 2^{i + 1}\beta m^{n}(K_{1}) + 2 \beta m^{n}(K_{1}) - \beta m^{n}(K_{1}) \\
+			&= (1 - (2^{i + 1} - 1)\beta)m^{n}(K_{1}). 
+			\end{split} 
+		\end{align}
+	Hence, since $\beta < (2^{N} - 1)^{-1}$, we obtain a nested sequence of compact subsets $\varnothing \neq K_{N + 1} \subset K_{N} \subset \dotsm\subset K_{1} \subset U$. Let $q \in K_{N + 1}$ be arbitrary. Since $K_{N + 1} = K_{N} \cap (K_{N} + rv_{N})$, the point $q - rv_{N}$ is contained in $K_{N}$. Then since $K_{N} = K_{N - 1} \cap (K_{N - 1} \cap rv_{N - 1})$, $q - rv_{N} - rv_{N - 1} \in K_{N - 1}$. Proceeding inductively, we obtain the sequence $\{q, q - rv_{N}, q - rv_{N} - rv_{N - 1}, \ldots, q - rv_{N} - \dotsm -rv_{1}\} \subset K_{1} \subset E$. Hence, the proof concludes. 
+	
+\end{solutions}
+
+\newpage 
 \subsection{January 2025}
 \begin{prb}{2025-J-I-1 (Algebra)}
 Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. Let $p(x) = x^{n} + b_{n - 1}x^{n- 1} + \dotsm + b_{0} \in F[x]$ be a monic polynomial with coefficients in $R$ admitting a root $a \in F$. Prove that $a \in R$. 
@@ -276,7 +314,61 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\end{equation}
 	where the last equality follows from the fact that $f(1) = f(0)$. Hence, the proof concludes. 
 \end{solutions}
-\newpage 
+\begin{prb}{2024-J-I-6 (Real Analysis)}
+	Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$. Define the convolution 
+		\begin{equation*}
+			(f \ast g)(x) = \int_{\mathbb{R}}f(x - y)g(y)\;dy
+		\end{equation*}
+	for all $x$ such that the integral exists. Prove that if $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$ with $p, q \in (1, \infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$, then $f \ast g$ is a bounded continuous function on $\mathbb{R}$. 
+\end{prb}
+\begin{solutions}
+	Assume the given hypotheses. Then by H\"older's inequality, for any $x \in \mathbb{R}$, 
+		\begin{equation}
+			\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}\abs{f(x -y)g(y)}\;dy \leq \norm{f(x - \cdot)}_{p} \norm{g}_{q}. 
+		\end{equation}
+	Since $L^{p}$ norms are translation invariant, $\norm{f(x - \cdot)}_{p} = \norm{f}_{p}$. Hence, $|(f \ast g)(x)| \leq \norm{f}_{p}\norm{g}_{q} = M < \infty$ for all $x \in \mathbb{R}$. Hence, we conclude that $f \ast g$ is a bounded function on $\mathbb{R}$. Next, let $\tau_{z}$ be the translation operator defined by $\tau_{z}f = f(x - z)$. Since translation operators are continuous in the $L^{p}$ norms, $\norm{\tau_{z}f - f} \to 0$ as $z \to 0$, which implies that 
+		\begin{align}
+			\norm{\tau_{z}(f \ast g) - (f\ast g)}_{\infty} &= \norm{(\tau_{z}f - f)\ast g}_{\infty} \\
+			&\leq \norm{\tau_{z}f - f}_{p}\norm{g}_{q} \longrightarrow 0 \text{ as $z \to 0$}. 
+		\end{align}
+	Hence, $f \ast g$ is uniformly continuous, and therefore continuous on $\mathbb{R}$. Note that the inequality used in the second line of the above equation comes from \textit{Young's convolution inequality}, which states the following: 
+		\begin{quote}
+			\textbf{(Young's Convolution Inequality)} Let $f \in L^{p}$, $g \in L^{q}$, and $p^{-1} + q^{-1} = r^{-1} + 1$. Then $\norm{f \ast g}_{r} \leq \norm{f}_{p} \norm{g}_{q}$.
+		\end{quote}
+	In our case, we had $r = \infty$ so that $r^{-1} = 0$. 
+\end{solutions}
+\begin{prb}{2024-J-II-2}
+	Suppose $E \subset \mathbb{R}^{2}$ is a set of positive Lebesgue measure. Show that there are points $a, b, c$ in $E$ such that their connecting segments form a right angle, i.e., $a - b$ is perpendicular to $c - b$ (as vectors in $\mathbb{R}^{2}$). 
+\end{prb}
+\begin{solutions}
+	Let $E \subset \mathbb{R}^{2}$ be a set of positive Lebesgue measure; let $m^{2}$ denote the Lebesgue measure on $\mathbb{R}^{2}$. Let $\{v_{1}, v_{2}, v_{3}\}$ be a collection of vectors in $\mathbb{R}^{2}$ such that $v_{1} \perp v_{2}$, and $v_{3} = -v_{1}$. Without loss of generality, assume that $\norm{v_{j}} = 1$ for all $j = 1, \ldots, 3$. By inner regularity of the Lebesgue measure, there exists a compact subset $K_{1} \subset E$ such that $m^{2}(K_{1}) > 0$. Taking $\beta < 1/7$, by outer regularity of the Lebesgue measure, there exists an open set $U$ containing $K_{1}$ such that $m^{2}(U) \leq (1 + \beta)m^{2}(K_{1})$.
+	
+	Since $K_{1}$ is compact, $d_{1} = d(K_{1}, U^{c}) > 0$. Hence, let $R = d_{1}$. Fix some $r \in (0, R)$ and consider the set $K_{1} + rv_{1}$. We claim that $K_{1} + rv_{1} \subset U$ since if otherwise, 
+		\begin{equation}
+			d(K_{1}, U^{c}) \leq |rv_{1}| = r < d_{1}, \text{ which is a contradiction.}
+		\end{equation}
+	Hence, $K_{1} \cup (K_{1} + rv_{1}) \subset U$, which means that 
+		\begin{equation}
+			m^{2}(U) \geq m^{2}(K_{1} \cup (K_{1} + rv_{1})) = m^{2}(K_{1}) + m^{2}(K_{1} + rv_{1}) - m^{2}(K_{1} \cap (K_{1} + rv_{1})). 
+		\end{equation}
+	By translation invariance of the Lebesgue measure, $m^{2}(K_{1}) + m^{2}(K_{1} + rv_{1}) = 2m^{2}(K_{1})$ so that 
+		\begin{equation}
+			m^{2}(K_{1} \cap (K_{1} + rv_{1})) = 2m^{2}(K_{1}) - m^{2}(U) \geq (1 - \beta)m^{2}(K_{1}). 
+		\end{equation}
+	Since $\beta < 1$, $m^{2}(K_{1} \cap (K_{1} + rv_{1})) > 0$ so that the set is nonempty. For $i = 1, \ldots, 3$, define $K_{i + 1} = K_{i} \cap  (K_{i} + rv_{i})$. Generalizing the argument from above shows that each $K_{i + 1} \subset U$. We claim that $m^{2}(K_{i + 1}) \geq (1 - (2^{i} - 1)\beta)m^{2}(K_{1})$ for each $i$; the above work establishes the result for $i = 1$. Now assume the result holds for some $1 \leq j < 3$. Then 
+		\begin{equation}
+			m^{2}(U) \geq m^{2}(K_{j} \cup (K_{j} + rv_{j})) = m^{2}(K_{j}) + m^{2}(K_{j} + rv_{j}) - m^{2}(K_{j} \cap (K_{j} + rv_{j})) = 2m^{2}(K_{j}) - m^{2}(K_{j} \cap (K_{j} + rv_{j})). 
+		\end{equation} 
+	Therefore, 
+		\begin{align}
+			\begin{split} 
+			m^{2}(K_{j} \cap (K_{j} + rv_{j})) &= 2m^{2}(K_{j}) - m^{2}(U) \\
+			&\geq 2m^{2}(K_{1}) -2^{j + 1}\beta m^{2}(K_{1}) + 2\beta m^{2}(K_{1}) - m^{2}(K_{1}) - \beta m^{2}(K_{1}) \\
+			&= (1 - (2^{j + 1} - 1)\beta)m^{2}(K_{1}). 
+			\end{split} 
+		\end{align} 
+	Since $\beta < (2^{3} - 1)^{-1} = 7^{-1}$, we conclude that each $K_{i}$ is nonempty. Hence, we obtain a nested sequence $\varnothing \neq K_{4} \subset \dotsm \subset K_{1} \subset E$. Let $q \in K_{4}$; since $K_{4} = K_{3} \cap (K_{3} + rv_{3})$, $q - rv_{3} \in K_{3}$. Following inductively, we obtain a sequence of points $\{p, p + rv_{1}, p + rv_{1} + rv_{2}, p + rv_{1}+ rv_{2} + rv_{3}\}\subset E$, with $p \in K_{1}$, and $p + rv_{j} \in K_{j}$ for $j= 1, 2, 3$ (note we have renamed $q - rv_{1} - \dotsm - rv_{3} = p$, and so on). Let $a = p$, $b = p + rv_{1}$, and $c = p + rv_{1} + rv_{2}$. Then $a - b = -rv_{1}$ and $c - b= rv_{2}$. By hypothesis on $v_{1}$ and $v_{2}$, $a - b$ is orthogonal to $c - b$. 
+\end{solutions}
 \begin{prb}{2024-J-II-3 (Geometry/Topology)}
 	Let $\Sigma$ be a genus 2 surface embedded in $\mathbb{R}^{3}$ as shown in the picture. Let $M$ be the closure of the \textit{unbounded} component of $\mathbb{R}^{3}\setminus \Sigma$; in other words, $M$ is the part of $\mathbb{R}^{3}$ which is \textit{not} enclosed by $\Sigma$. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
@@ -486,7 +578,33 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 	Let $V$ be an $n$-dimensional vector space over a field $F$. An element $A \in \operatorname{End}{V}$ is called \textit{nilpotent} if $A^{k} = 0$ for some $k > 1$. Prove that $A$ is nilpotent if and only if $$\operatorname{Tr}(\Lambda^{i}A) = 0, \quad i = 1, \ldots, n$$ where $\Lambda^{i}A$ denotes the induced action of $A$ on the wedge product $\Lambda^{i}V$ for each $i$. 
 \end{prb}
 
-
+\begin{prb}{2023-A-I-5 (Geometry/Topology)}
+	Let $T$ be the 2-torus $S^{1} \times S^{1}$ with an open 2-disk removed: 
+		\begin{center}
+			\includegraphics[width = 0.2\linewidth]{"../Graphics/2023A15.png"}
+		\end{center} 
+	Show that there is no continuous retraction $r$ onto its boundary (i.e., no continuous map $r: T \to \partial T$ satisfying $r^{2} = r$). 
+\end{prb}
+\begin{solutions}
+	Let $T$ be the 2-torus $S^{1} \times S^{1}$ with an open 2-disk removed, $\iota: \partial T \to T$ the inclusion map, and assume to the contrary that $r: T \to \partial T$ is a continuous retraction. Then the composition $r_{\ast} \circ \iota_{\ast}: \pi_{1}(\partial T) \to \pi_{1}(\partial T)$ must be the identity map. Since $\partial T \cong S^{1}$, $\pi_{1}(\partial T) = \mathbb{Z}$, and is generated by the element $1$. By a direct computation, since $\partial_{1}(T) = \mathbb{Z} \ast \mathbb{Z}$ is the free product on two generators $a$ and $b$  $\iota_{\ast}$ maps $1$ to the element $aba^{-1}b^{-1}$. But then $r_{\ast}$ maps the commutator into the abelian group $\mathbb{Z}$, where the commutator must be zero. This contradicts our claim that $r_{\ast} \circ \iota_{\ast}$ is the identity map. Hence, by contradiction, there cannot be any continuous retraction of $T$ onto its boundary. 
+\end{solutions}
+\begin{prb}{2023-A-I-6 (Complex Analysis)}
+	Let $\mathbb{D} \subset \mathbb{C}$ be the open unit disk. Is there a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$? If so, give a formula. If not, prove that it cannot exist. 
+\end{prb}
+\begin{solutions}
+	The problem lends itself nicely to an application of the Schwarz-Pick Theorem: 
+		\begin{quote}
+			(\textbf{Schwarz-Pick Theorem}) Let $f: \mathbb{D} \to \mathbb{D}$ be holomorphic. If $\abs{f(z)} \leq 1$ for all $z$, and $f(a) = b$ for some $a, b \in \mathbb{D}$, then 
+				\begin{equation*}
+					\abs{f'(a)} \leq \frac{1 - |b|^{2}}{1 - |a|^{2}}.
+				\end{equation*}
+		\end{quote}
+	Now assume that a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$ exists. Then by the Schwarz-Pick Lemma, 
+		\begin{equation}
+			\frac{2}{3} \leq \frac{1 - \nicefrac{4}{9}}{1 - 0} = \frac{5}{9} < \frac{2}{3}, 
+		\end{equation}
+	which is a contradiction. Hence, no such holomorphic function can exist. 
+\end{solutions}
 \begin{prb}{2023-A-I-2 (Geometry/Topology)}
 	Let $f: T^{2} \to S^{2}$ be a smooth map from the 2-torus to the 2-sphere. Can $f$ be an immersion? If the answer is yes, give an explicit example. If the answer is no, then give a proof. 
 \end{prb}
@@ -609,6 +727,33 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 
 
 
+
+\subsection{August 2022}
+\begin{prb}{A-II-I (Real Analysis)}
+	Suppose $E \subset \mathbb{R}^{2}$ has positive Lebesgue area. Show that $E$ contains 3 points that form the vertices of an equilateral triangle. 
+\end{prb}
+\begin{solutions}
+	Let $E \subset \mathbb{R}^{2}$ be a set of positive Lebesgue measure (we will denote by $m^{2}$ the Lebesgue measure on $\mathbb{R}^{2}$). Let $\{v_{1}, v_{2}\}$ be a collection of unit vectors in $\mathbb{R}^{2}$ so that the angle between $v_{1}$ and $v_{2}$ is $120^{\circ}$, and let $\beta < 1/3$. By inner regularity of the Lebesgue measure, there exists a compact set $K_{1} \subset E$ so that $m^{2}(K_{1}) > 0$. Then by \textit{outer} regularity of the Lebesgue measure, there exists an open set $U$ containing $K_{1}$ such that $m^{2}(U) \leq (1 + \beta)m^{2}(K_{1})$. 
+	
+	Since $K_{1}$ is compact, $d_{1} = d(K_{1}, U^{c})$ is positive; so let $R = d_{1}$, pick an arbitrary $r \in (0, R)$, and consider the set $K_{1} + rv_{1}$. $K_{1} + rv_{1}$ has to be contained within $U$ since otherwise, 
+		\begin{equation}
+			d(K_{1}, U^{c}) < |rv_{1}| = r < d_{1}, \text{ which is a contradiction.}
+		\end{equation}
+	Hence, $K_{1} \cup (K_{1} + rv_{1}) \subset U$, which means 
+		\begin{equation}
+			m^{2}(U) \geq m^{2}(K_{1}\cup (K_{1} + rv_{1})) = m^{2}(K_{1}) + m^{2}(K_{1} + rv_{1}) - m^{2}(K_{1} \cap (K_{1} + rv_{1})) = 2m^{2}(K_{1}) - m^{2}(K_{1} \cap (K_{1} + rv_{1})), 
+		\end{equation}
+	where the last equality follows from translation invariance of the Lebesgue measure. Hence, $m^{2}(K_{1} \cap (K_{1} + rv_{1})) = 2m^{2}(K_{1}) - m^{2}(U) \geq (1 -\beta)m^{2}(K_{1}) > 0$. Therefore, $K_{2} \coloneqq K_{1}\cap (K_{1} + rv_{1})$ is nonempty. Now define $K_{3} = K_{2} \cap (K_{2} + rv_{2})$. Using the same reasoning as above, we observe that $K_{3}\neq \varnothing$ and $K_{3} \subset K_{2}$. Hence, we obtain a nested sequence of sets $\varnothing \neq K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $M \in K_{3}$. Since $K_{3} = K_{2} \cap (K_{2} + rv_{1})$, $N = q - rv_{2} \in K_{2}$. Likewise, $O = q - rv_{2} - rv_{1} \in K_{1}$. These three points form the vertices of a triangle. Then since 
+		\begin{align}
+			\begin{split}
+				\norm{M - N} = r, \qquad \norm{N - O} = r, \qquad \norm{M - O} = \norm{r(v_{2} + v_{1})} = r \norm{v_{2} + v_{1}} = r. 
+			\end{split}
+		\end{align}
+\end{solutions}
+
+
+
+
 \subsection{August 2020}
 \begin{prb}{2020-A-II-1 (Complex Analysis)}
 	How many roots (counted with multiplicity) does the function $$g(z) = 6z^{3} + e^{z} + 1$$ have in the unit disk $|z| < 1$?
@@ -623,6 +768,43 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			\end{split}
 		\end{align} 
 	Hence, by Rouch{\'e}'s Formula, $g(z)$ has the same number of zeros as $f(z)$. Counting multiplicity, $f(z)$ has three solutions in the unit disk, which means that $g(z)$ also has three solutions in the unit disk. 
+\end{solutions}
+
+\newpage 
+\subsection{January 2019}
+\begin{prb}{2019-J-I-1 (Algebra)}
+	Let $A$ and $B$ be $n\times n$ invertible matrices over complex numbers, satisfying 
+		\begin{equation*}
+			AB = \lambda BA \text{ for some $\lambda \in \mathbb{C}$}.
+		\end{equation*}
+	Prove that $A^{n}$ and $B$ commute. 
+\end{prb}
+\begin{solutions}
+	Let $A$ and $B$ be $n\times n$ invertible matrices over complex numbers so that $AB = \lambda BA$ for some $\lambda \in \mathbb{C}$. Since $A$ is invertible, left-multiplying both sides by $A^{-1}$ yields, 
+		\begin{equation}
+			B = \lambda A^{-1}BA. 
+		\end{equation}
+	So taking the determinant, we obtain: 
+		\begin{equation}
+			\det{B} = \lambda^{n}\det{A^{-1}}\det{B}\det{A} = \lambda^{n}\det{A}^{-1}\det{B}\det{A} = \lambda^{n}\det{B}. 
+		\end{equation}
+	Since $B$ is invertible, $\det{B} \neq 0$, which means that $\lambda^{n} = 1$ (i.e., $\lambda$ is an $n\textsuperscript{th}$ root of unity). Now, we claim that for any $m \in \mathbb{N}$, $A^{m}B = \lambda^{m}BA^{m}$. By hypothesis, this claim is true for the base case $m = 1$. Suppose the claim is true for some $m\geq 1$. Then 
+		\begin{equation}
+			A^{m + 1}B = A(A^{m}B) = \lambda^{m}(ABA^{m}) = \lambda^{m}(\lambda BA)A^{m} = \lambda^{m + 1}BA^{m + 1}. 
+		\end{equation}
+	Therefore, the claim is true by induction. This implies that 
+		\begin{equation}
+			A^{n}B = \lambda^{n}BA^{n} = BA^{n}, 
+		\end{equation}
+	so that $A^{n}$ and $B$ commute. 
+\end{solutions}
+
+
+\begin{prb}{2019-J-II-5}
+	Let $G$ be a finite group, and let $H$ be a non-normal subgroup of $G$ of index $n$. Show that if $|H|$ is divisible by a prime $p \geq n$, then $G$ is not simple. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a finite group, $H$ a non-normal subgroup of $G$ of index $n$ such that $|H|$ is divisible by a prime $p \geq n$. Let $G$ act on the set of left cosets of $H$; this induces a group homomorphism $\varphi: G \to S_{n}$. Consider the kernel of this group action, $K = \ker{\varphi}$. \textit{If} $K = G$, then for every $g \in G$, $gHg^{-1} = H$, which implies that $H$ is a normal subgroup of $G$ -- a contradiction. Hence, $\ker{\varphi}$ is a proper normal subgroup of $G$. Likewise, $\ker{\varphi} \neq H$ since this equality also forces $H$ to be normal. All that remains is to show that $\ker{\varphi}$ is not trivial. Since $p\mid |H|$, let $P$ be a Sylow $p$-subgroup of $H$. \textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
 
 \end{document}
