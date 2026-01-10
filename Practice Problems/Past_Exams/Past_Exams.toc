@@ -1,29 +1,40 @@
-\contentsline {subsection}{Comps Lemma}{2}{section*.2}%
-\contentsline {subsubsection}{Problem Comps Lemma}{2}{section*.3}%
-\contentsline {subsection}{January 2025}{2}{section*.4}%
-\contentsline {subsubsection}{Problem 2025-J-I-1 (Algebra)}{2}{section*.5}%
-\contentsline {subsubsection}{Problem 2025-J-I-2 (Real Analysis)}{2}{section*.6}%
-\contentsline {subsubsection}{Problem 2025-J-I-3 (Geometry/Topology)}{3}{section*.7}%
-\contentsline {subsubsection}{Problem 2025-J-II-3 (Algebra)}{3}{section*.8}%
-\contentsline {subsubsection}{Problem 2025-J-II-4 (Topology)}{3}{section*.9}%
-\contentsline {subsubsection}{Problem 2025-J-II-5 (Analysis)}{3}{section*.10}%
-\contentsline {subsection}{August 2025}{4}{section*.11}%
-\contentsline {subsubsection}{Problem 2025-A-I-1 (Geometry/Topology)}{4}{section*.12}%
-\contentsline {subsubsection}{Problem 2025-A-I-6 (Algebra)}{4}{section*.13}%
-\contentsline {subsubsection}{Problem 2025-A-II-2 (Geometry/Topology)}{4}{section*.14}%
-\contentsline {subsection}{January 2024}{5}{section*.15}%
-\contentsline {subsubsection}{Problem 2024-J-I-1 (Algebra)}{5}{section*.16}%
-\contentsline {subsubsection}{Problem 2024-J-I-2 (Geometry/Topology)}{5}{section*.17}%
-\contentsline {subsubsection}{Problem 2024-J-I-4 (Algebra)}{6}{section*.18}%
-\contentsline {subsubsection}{Problem 2024-J-I-5 (Geometry/Topology)}{6}{section*.19}%
-\contentsline {subsubsection}{Problem 2024-J-II-3 (Geometry/Topology)}{7}{section*.20}%
-\contentsline {subsubsection}{Problem 2024-J-II-6 (Geometry/Topology)}{7}{section*.21}%
-\contentsline {subsection}{August 2023}{7}{section*.22}%
-\contentsline {subsubsection}{Problem 2023-A-II-1 (Algebra)}{7}{section*.23}%
-\contentsline {subsection}{January 2023}{8}{section*.24}%
-\contentsline {subsubsection}{Problem 2023-J-II-4 (Geometry/Topology)}{8}{section*.25}%
-\contentsline {subsubsection}{Problem 2023-J-II-3 (Geometry/Topology)}{8}{section*.26}%
-\contentsline {subsubsection}{Problem 2023-A-I-2 (Geometry/Topology)}{8}{section*.27}%
-\contentsline {subsubsection}{Problem 2023-A-II-5 (Geometry/Topology)}{9}{section*.28}%
-\contentsline {subsubsection}{Problem 2023-A-I-1 (Algebra)}{9}{section*.29}%
-\contentsline {subsubsection}{Problem 2023-A-II-6 (Complex Analysis)}{10}{section*.30}%
+\contentsline {subsection}{Comps Lemma}{3}{section*.2}%
+\contentsline {subsubsection}{Problem Comps Lemma}{3}{section*.3}%
+\contentsline {subsection}{January 2025}{3}{section*.4}%
+\contentsline {subsubsection}{Problem 2025-J-I-1 (Algebra)}{3}{section*.5}%
+\contentsline {subsubsection}{Problem 2025-J-I-2 (Real Analysis)}{3}{section*.6}%
+\contentsline {subsubsection}{Problem 2025-J-I-3 (Geometry/Topology)}{4}{section*.7}%
+\contentsline {subsubsection}{Problem 2025-J-II-3 (Algebra)}{4}{section*.8}%
+\contentsline {subsubsection}{Problem 2025-J-II-4 (Topology)}{4}{section*.9}%
+\contentsline {subsubsection}{Problem 2025-J-II-5 (Analysis)}{4}{section*.10}%
+\contentsline {subsection}{August 2025}{5}{section*.11}%
+\contentsline {subsubsection}{Problem 2025-A-I-1 (Geometry/Topology)}{5}{section*.12}%
+\contentsline {subsubsection}{Problem 2025-A-I-6 (Algebra)}{5}{section*.13}%
+\contentsline {subsubsection}{Problem 2025-A-II-2 (Geometry/Topology)}{5}{section*.14}%
+\contentsline {subsection}{January 2024}{6}{section*.15}%
+\contentsline {subsubsection}{Problem 2024-J-I-1 (Algebra)}{6}{section*.16}%
+\contentsline {subsubsection}{Problem 2024-J-I-2 (Geometry/Topology)}{6}{section*.17}%
+\contentsline {subsubsection}{Problem 2024-J-I-3 (Complex Analysis)}{7}{section*.18}%
+\contentsline {subsubsection}{Problem 2024-J-I-4 (Algebra)}{7}{section*.19}%
+\contentsline {subsubsection}{Problem 2024-J-I-5 (Geometry/Topology)}{8}{section*.20}%
+\contentsline {subsubsection}{Problem 2024-J-II-3 (Geometry/Topology)}{9}{section*.21}%
+\contentsline {subsubsection}{Problem 2024-J-II-6 (Geometry/Topology)}{9}{section*.22}%
+\contentsline {subsubsection}{Problem 2024-J-II-4 (Algebra)}{9}{section*.23}%
+\contentsline {subsection}{January 2023}{10}{section*.24}%
+\contentsline {subsubsection}{Problem 2023-J-II-4 (Geometry/Topology)}{10}{section*.25}%
+\contentsline {subsubsection}{Problem 2023-J-II-3 (Geometry/Topology)}{10}{section*.26}%
+\contentsline {subsubsection}{Problem 2023-J-I-5 (Algebra)}{11}{section*.27}%
+\contentsline {subsubsection}{Problem 2023-J-I-5 (Algebra I)}{12}{section*.28}%
+\contentsline {subsubsection}{Problem 2023-J-I-5 (Algebra II)}{12}{section*.29}%
+\contentsline {subsubsection}{Problem 2023-J-I-5 (Algebra III)}{12}{section*.30}%
+\contentsline {subsubsection}{Problem 2023-J-I-4 (Geometry/Topology)}{12}{section*.31}%
+\contentsline {subsection}{August 2023}{13}{section*.32}%
+\contentsline {subsubsection}{Problem 2023-A-I-1 (Algebra)}{13}{section*.33}%
+\contentsline {subsubsection}{Problem 2023-A-I-2 (Geometry/Topology)}{13}{section*.34}%
+\contentsline {subsubsection}{Problem 2023-A-II-1 (Algebra)}{14}{section*.35}%
+\contentsline {subsubsection}{Problem 2023-A-I-2 (Geometry/Topology)}{14}{section*.36}%
+\contentsline {subsubsection}{Problem 2023-A-II-5 (Geometry/Topology)}{14}{section*.37}%
+\contentsline {subsubsection}{Problem 2023-A-I-1 (Algebra)}{15}{section*.38}%
+\contentsline {subsubsection}{Problem 2023-A-II-6 (Complex Analysis)}{16}{section*.39}%
+\contentsline {subsection}{August 2020}{16}{section*.40}%
+\contentsline {subsubsection}{Problem 2020-A-II-1 (Complex Analysis)}{16}{section*.41}%

@@ -66,7 +66,7 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 \begin{solutions}
 	Let $M$ be an orientable, connected, and compact smooth $n$-manifold with boundary. Assume to the contrary that there exists a smooth map $f: M \to \partial M$ such that $f(x) = x$ when $x \in \partial M$. Let $\omega \in \Omega^{n- 1}(\partial M)$ be a volume form for the boundary of $M$. Since volume forms are closed (hence, $\omega$ is closed), we have by Stokes's theorem 
 		\begin{equation}
-			0 = \int_{M}f^{\ast}d\omega = \int_{M}\partial(f^{\ast}\omega) = \int_{\partial M}f^{\ast}\omega = \int_{\partial M}\omega > 0, 
+			0 = \int_{M}f^{\ast}d\omega = \int_{M}d(f^{\ast}\omega) = \int_{\partial M}f^{\ast}\omega = \int_{\partial M}\omega > 0, 
 		\end{equation}
 	which is a contradiction. Hence, by contradiction, there cannot exist a smooth retraction to the boundary. 
 \end{solutions}
@@ -199,6 +199,63 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\end{enumerate}
 	Hence, $|p^{-1}(b_{0})| = |G/H| = (G:H)$. 
 \end{solutions}
+\begin{prb}{2024-J-I-3 (Complex Analysis)}
+	Suppose $f$ is continuous on the plane and holomorphic on $\mathbb{C}\setminus \mathbb{R}$. Prove that $f$ is holomorphic on the whole plane. 
+\end{prb}
+\begin{solutions}
+		Let $f:\mathbb{C}\to\mathbb{C}$ be continuous on $\mathbb{C}$ and holomorphic on 
+		$\mathbb{C}\setminus\mathbb{R}$. We show that $f$ is holomorphic on all of $\mathbb{C}$.
+		
+		By Morera's Theorem, it suffices to prove that
+		
+		
+		\[
+		\oint_{\gamma} f(z)\,dz = 0
+		\]
+		
+		
+		for every closed piecewise $C^{1}$ curve $\gamma \subset \mathbb{C}$.
+		
+		If $\gamma$ lies entirely in the upper or lower half-plane, then $f$ is holomorphic
+		on a neighborhood of $\gamma$, and by the Cauchy--Goursat theorem,
+		
+		
+		\[
+		\oint_{\gamma} f(z)\,dz = 0.
+		\]
+		
+		
+		
+		Now suppose that $\gamma$ intersects the real axis.  
+		For $\varepsilon>0$, construct a closed piecewise $C^{1}$ curve $\gamma_{\varepsilon}$ 
+		by modifying $\gamma$ so that it avoids the real axis by small detours of height 
+		$\pm\varepsilon$. Then $\gamma_{\varepsilon}\subset \mathbb{C}\setminus\mathbb{R}$, 
+		so $f$ is holomorphic on a neighborhood of $\gamma_{\varepsilon}$, and hence
+		
+		
+		\[
+		\oint_{\gamma_{\varepsilon}} f(z)\,dz = 0.
+		\]
+		
+		
+		
+		Since $f$ is continuous on $\mathbb{C}$, it is uniformly continuous on compact sets, 
+		and the total length of the detours tends to $0$ as $\varepsilon\to 0$. Therefore,
+		
+		
+		\[
+		\lim_{\varepsilon\to 0} \oint_{\gamma_{\varepsilon}} f(z)\,dz
+		= \oint_{\gamma} f(z)\,dz.
+		\]
+		
+		
+		Thus $\oint_{\gamma} f(z)\,dz = 0$.
+		
+		Since this holds for every closed piecewise $C^{1}$ curve in $\mathbb{C}$, 
+		Morera's Theorem implies that $f$ is holomorphic on all of $\mathbb{C}$.
+\end{solutions}
+
+
 \begin{prb}{2024-J-I-4 (Algebra)}
 	For each field $K$, prove that the polynomial ring $K[x, y]$ in two variables is not a principal ideal domain. 
 \end{prb}
@@ -256,21 +313,19 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\end{equation}
 	by the hypotheses. Hence, this shows that $[X, Y] \righthalfcup \varphi = 0$, and so $[X, Y]$ is a smooth section of $D$. Therefore, $D$ is involutive, which means that it is Frobenius integrable. 
 \end{solutions}
-
-\subsection{August 2023}
-\begin{prb}{2023-A-II-1 (Algebra)}
-	A field extension $K/L$ is called algebraic, if every element in $K$ satisfies a polynomial equation with coefficients in $L$. Let $F, K, L$ be fields such that $F \supset K \supset L$, and $F/K$ and $K/L$ are algebraic extensions. Prove that $F/L$ is also an algebraic extension. 
+\begin{prb}{2024-J-II-4 (Algebra)}
+	Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$. Let $K$ be the smallest Galois extension of $\mathbb{Q}$ which contains $\alpha$. Describe the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
 \end{prb}
 \begin{solutions}
-	Since subfields of subfields is a subfield, $L$ is a subfield of $F$. Hence, it suffices to show that every element in $F$ satisfies a polynomial equation with coefficients in $L$. Let $a \in F$, and let 
+	Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$, and $K$ the smallest Galois extension of $\mathbb{Q}$ that contains $\alpha$. We start by finding the minimal polynomial of $\alpha$. We observe that 
 		\begin{equation}
-			k(x) = k_{n}x^{n} + k_{n - 1}x^{n-1} + \dotsm + k_{0} \in K[x]
+			\alpha^{2} = 2 + \sqrt{3} \implies (\alpha^{2} - 2)^{2} - 3 = 0. 
 		\end{equation}
-	such that $k(a) = 0$; this follows since $F/K$ is an algebraic extension. Each $k_{j} \in K$, and hence is algebraic over $L$. Therefore, $L' = L(k_{0}, \ldots, k_{n})$ is a finite extension of $L$. Since $k(a) = 0$ and $k(x)$ now has its coefficients in $L'$, it follows that $a$ is algebraic over $L'$ so that $L'(a)$ is a finite extension of $L$. Then since 
+	Simplifying, 
 		\begin{equation}
-			[L(a):L] = [L(a):L'][L':L], 
+			\alpha^{4} - 4\alpha^{2} + 1 = 0. 
 		\end{equation}
-	it follows that $L(a)$ is a finite extension of $L$. Therefore, $a$ is algebraic over $L$. Since $a$ was arbitrary, $F/L$ is an algebraic extension. 
+	I.e., the polynomial $x^{4} - 4x^{2} + 1$ is the minimal polynomial of $\alpha$. Solving this polynomial over an algebraic closure of $\mathbb{Q}$, we obtain the four roots, $\pm\sqrt{2 + \sqrt{3}}, \pm \sqrt{2 - \sqrt{3}}$. Hence, the elements of the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ are the identity permutation, the permutation $\sigma$ that fixes $\pm \sqrt{2 - \sqrt{3}}$ and permutes $\pm \sqrt{2 + \sqrt{3}}$, the permutation $\tau$ that fixes $\pm\sqrt{2 + \sqrt{3}}$ and permutes $\pm \sqrt{2 - \sqrt{3}}$, and the permutation $\sigma \tau$. Labeling these roots as $\alpha_{1}, \ldots, \alpha_{4}$, we see that $\operatorname{Gal}(K/\mathbb{Q}) \cong \{1, (1\;2), (3\;4), (1\;2)(3\;4)\} \cong V \subset S_{4}$, where $V$ is the Klein-4 subgroup. 
 \end{solutions}
 
 \subsection{January 2023}
@@ -301,8 +356,167 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 			\item Construct a closed form $\alpha$ on $\mathbb{R}^{3}$ such that $i^{\ast}\alpha = i^{\ast}\omega$, or show that such a form $\alpha$ does not exist. 
 		\end{enumerate}
 \end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-0.65cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item (\textbf{Method 1}) Consider the form $\omega = (x^{2} + x + y)dy\wedge dz$ on $\mathbb{R}^{3}$, and let $i: S^{2}\hookrightarrow \mathbb{R}^{3}$ be the inclusion map. Let $D = [0, \pi] \times [0, 2\pi]$, and $F: D \to S^{2}$ be the coordinate map defined by 
+			\begin{equation}
+				F(\varphi, \theta) = (\sin(\varphi)\cos(\theta), \sin(\varphi)\sin(\theta),\cos(\varphi)). 
+			\end{equation}
+		Taking $D_{1} = [0, \pi] \times [0, \pi]$ and $D_{2} = [0, \pi]\times [\pi, 2\pi]$, and letting $F_{1} = F|_{D_{1}}$ and $F_{2} = F|D_{2}$, we observe that 
+			\begin{equation}
+				\int_{S^{2}}i^{\ast}\omega = \int_{D_{1}}F_{1}^{\ast}i^{\ast}\omega + \int_{D_{1}}F_{2}^{\ast}\omega = \int_{D_{1}}(i \circ F_{1})^{\ast}\omega + \int_{D_{2}}(i \circ F_{2}^{\ast})\omega = \int_{D}F^{\ast}\omega, 
+			\end{equation}
+		where the last equality follows from the fact that $i \circ F_{1,2} = F_{1,2}$. We observe that 
+			\begin{equation}
+				F^{\ast}dy = \cos(\varphi)\sin(\theta)d\varphi + \sin(\varphi)\cos(\theta)d\theta \qquad \text{and} \qquad F^{\ast}dz = -\sin(\varphi)d\varphi. 
+			\end{equation}
+		Therefore, 
+			\begin{equation}
+				F^{\ast}\omega = \left[\sin^{2}(\varphi)\cos^{2}(\theta) + \sin(\varphi)\cos(\theta) + \sin(\varphi)\sin(\theta)\right]\sin^{2}(\varphi)\cos(\theta)d\varphi \wedge d\theta. 
+			\end{equation}
+		From this, we conclude that 
+			\begin{equation}
+				\int_{S^{2}}i^{\ast}\omega = \int_{0}^{2\pi}\int_{0}^{\pi}\left[\sin^{2}(\varphi)\cos^{2}(\theta) + \sin(\varphi)\cos(\theta) + \sin(\varphi)\sin(\theta)\right]\sin^{2}(\varphi)\cos(\theta)d\varphi d\theta = \frac{4\pi}{3}. 
+			\end{equation}
+		(\textbf{Method 2}) Using Stokes Theorem, 
+			\begin{equation}
+				\int_{S^{2}}i^{\ast}\omega = \int_{B^{3}}d\omega, 
+			\end{equation}
+		where $B^{3}$ indicates the $3$-ball (recall that $S^{1} = \partial B^{3}$). We compute, $d\omega = (2x  + 1)dx \wedge dy \wedge dz$ so that 
+			\begin{equation}
+				\int_{S^{2}}i^{\ast}\omega = \int_{B^{3}}d\omega = \int_{B^{3}}2xdxdydz + \int_{B^{3}}dxdydz = \int_{B^{3}}dxdydz = \frac{4\pi}{3}, 
+			\end{equation}
+		where the first integral after the second inequality is zero due to symmetry. 
+		\item Suppose there exists a closed form $\alpha$ on $\mathbb{R}^{3}$ such that $i^{\ast}\alpha = i^{\ast}\omega$. Since $\alpha$ is closed, $d\alpha = 0$. Hence, 
+			\begin{equation}
+				\int_{S^{2}}i^{\ast}\alpha = \int_{B^{3}}d(i^{\ast}\alpha) = \int_{B^{3}}i^{\ast}d\alpha = 0 \neq \frac{4\pi}{3} =\int_{S^{2}}i^{\ast}\omega, 
+			\end{equation}
+		which is a contradiction. Hence, such a closed form cannot exist. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{2023-J-I-5 (Algebra)}
+	Consider the following irreducible polynomial over $\mathbb{Q}$: $p(x) = x^{4} - 3x^{2} - 1$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Describe the splitting field of $p(x)$. 
+			\item Consider the Galois group of $p(x)$. Compute its order and determine if it is abelian. 
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-1cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item To determine the splitting field of $p(x)$, we must begin by finding the roots of $p(x)$ over some algebraic closure of $\mathbb{Q}$. Let $z = x^{2}$. Then 
+			\begin{align}
+				\begin{split}
+					p(z) = 0 &\iff z^{2} - 3z - 1 = 0 \\
+					&\iff z = \frac{3 \pm \sqrt{13}}{2} \\
+					&\iff x = \pm\sqrt{\frac{3 + \sqrt{13}}{2}}, \pm \sqrt{\frac{3 - \sqrt{13}}{2}}. 
+				\end{split}
+			\end{align}
+		Therefore, the splitting field of $p(x)$ is 
+			\begin{equation}
+				\mathbb{Q}\left(\sqrt{\frac{3 + \sqrt{13}}{2}}, \sqrt{\frac{3 -\sqrt{13}}{2}}\right).
+			\end{equation}
+		\item Label the roots as $\alpha_{1} = ((3 +\sqrt{13})/2)^{1/2}, \alpha_{2} = -((3 +\sqrt{13})/2)^{1/2}$, $\alpha_{3} = ((3 -\sqrt{13})/2)^{1/2}$, and $\alpha_{4} = -((3 -\sqrt{13})/2)^{1/2}$. The elements of the Galois group are the permutations $\{1, \sigma, \tau, \sigma\tau\}$, where $\sigma: \alpha_{1} \to \alpha_{2}$ and fixes $\alpha_{3}$ and $\tau:\alpha_{3} \to \alpha_{4}$ and fixes $\alpha_{1}$; i.e., $\sigma = (1\;2)$ and $\tau = (3\;4)$. Hence, 
+			\begin{equation}
+				\operatorname{Gal}(\mathbb{Q}(\alpha_{1},\alpha_{3})/\mathbb{Q}) \cong \{1, (1\;2), (3\;4), (1\;2)(3\;4)\} \subset S^{4}.
+			\end{equation}
+		In particular, we see that the Galois Group is isomorphic to the Klein-4 subgroup of $S_{4}$. Therefore, the Galois group of $p(x)$ has order 4 and is abelian. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{2023-J-I-5 (Algebra I)}
+	Determine the Galois group of $x^{3} - x^{2} - 4$. 
+\end{prb}
+\begin{solutions}
+	Let $p(x) = x^{3} - x^{2} - 4$. We start by finding the roots of $p(x)$ over some algebraic closure of $\mathbb{Q}$. Observe that $2$ is a solution. Using polnomial long division, 
+		\begin{equation}
+			p(x) = (x - 2)(x^{2} + x + 2) \implies x = 2, \frac{-1 \pm \sqrt{-7}}{2}. 
+		\end{equation}
+	Hence, the splitting field of $p(x)$ is $\mathbb{Q}(\sqrt{7}i)$. Now since $\operatorname{Gal}(\mathbb{Q}(\sqrt{7}i)/\mathbb{Q})$ is the group of automorphisms of the splitting field $\mathbb{Q}(\sqrt{7}i)$ that preserve $\mathbb{Q}$. Since there are exactly two automorphisms (namely, the identity permutation fixing $\sqrt{7}i$ and the conjugation map $\sqrt{7}i \mapsto -\sqrt{7}i$), we conclude that $\operatorname{Gal}(\mathbb{Q}(\sqrt{7}i)/\mathbb{Q}) \cong \mathbb{Z}_{2}$. 
+\end{solutions}
+\begin{prb}{2023-J-I-5 (Algebra II)}
+	Determine the Galois group of $x^{3} - 2x + 4$. 
+\end{prb}
+\begin{solutions}
+	Let $p(x) = x^{3} - 2x + 4$. We start by finding the roots of $p(x)$ over some algebraic closure of $\mathbb{Q}$. Clearly $-2$ is a root of $p(x)$. Using polynomial long division, 
+		\begin{equation}
+			p(x) = (x+ 2)(x^{2} - 2x + 2) \implies x = -2, 1 \pm \sqrt{-1}. 
+		\end{equation}
+	Hence, the splitting field of $p(x)$ is $\mathbb{Q}(i)$, which is a quadratic extension of $\mathbb{Q}$. Now since $\operatorname{Gal}(\mathbb{Q}(i)/\mathbb{Q})$ is the group of automorphisms of the splitting field $\mathbb{Q}(i)$ that preserve $\mathbb{Q}$, and there exactly two such automorphisms (namely, the identity fixing $i$, and the conjugation map $i \mapsto -i$), we conclude that $\operatorname{Gal}(\mathbb{Q}(i)/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$. 
+\end{solutions}
+\begin{prb}{2023-J-I-5 (Algebra III)}
+	Determine the Galois group of $x^{3} - x + 1$. 
+\end{prb}
+\begin{solutions}
+	Let $p(x) = x^{3} - x + 1$. We start by finding the roots of $x$ over some algebraic closure of $\mathbb{Q}$. Since the only possible rational roots of $p$ over $\mathbb{Q}$ are $\pm 1$ by the Rational Root Test, and neither of these are actually roots of $p$, we conclude that $p$ is irreducible. Hence, a root of $f(x)$ generates an extension of degree 3 so that the degree of the splitting field of $F$ is divisible by 3. Since the Galois group is a subgroup of $S_{3}$, either $\operatorname{Gal}(\mathbb{Q}(\alpha_{1}, \alpha_{2}, \alpha_{3})/\mathbb{Q}) \cong A_{3}$ or $\operatorname{Gal}(\mathbb{Q}(\alpha_{1}, \alpha_{2}, \alpha_{3})/\mathbb{Q}) \cong S_{3}$. Since $p$ is already a depressed cubic, we calculate its discriminant to be $-4(-1)^{3} - 27(1)^{2} = -23$. Since the discriminant is not a perfect square in $\mathbb{Q}$, we conclude that $\operatorname{Gal}(\mathbb{Q}(\alpha_{1}, \alpha_{2},\alpha_{3})/\mathbb{Q}) \cong S_{3}$. 
+\end{solutions}
+\begin{prb}{2023-J-I-4 (Geometry/Topology)}
+	Let $\omega$ be a smooth nowhere vanishing 1-form on a smooth 3-manifold $M^{3}$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show that the distribution defined at each point $p \in M$ by 
+				\begin{equation}
+					\ker{\omega_{p}} = \brac*{v \in T_{p}M^{3}: \omega_{p}(v) = 0}
+				\end{equation}
+			is integrable if and only if $\omega \wedge d\omega = 0$. 
+			\item Give an example of a codimension one distribution on $\mathbb{R}^{3}$ that is not integrable. 
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-1cm}
+	\begin{enumerate}[itemsep=-2pt,label = (\alph{*})]
+		\item We recall that a distribution $D$ is Frobenius integrable if and only if given two smooth sections $X, Y$ of $D$, the Lie Bracket $[X, Y]$ is also a smooth section of $D$. Therefore, let $X, Y$ be smooth sections of $D$, which means that $\omega(X), \omega(Y) = 0$ by definition of $D$. We recall that 
+			\begin{equation}
+				d\omega(X, Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X, Y]) = -\omega([X, Y]), 
+			\end{equation}
+		where the first two terms are identically zero by our hypothesis. Therefore, $D$ is integrable if and only if $[X, Y]$ is a smooth section of $D$ if and only if $\omega([X, Y]) = 0$. Now, if $D$ were integrable, then for any field $Z$ on $\mathbb{R}^{3}$, 
+			\begin{equation}
+				\omega \wedge d\omega(X, Y,Z) = \omega(Z)d\omega(X, Y) = 0, 
+			\end{equation}
+		where the other terms vanish by assumption on $X$ and $Y$. Hence, since $X,Y \in \ker{\omega}$ were arbitrary and $Z$ was arbitrary, $\omega \wedge d\omega = 0$. On the other hand, if $\omega \wedge d\omega = 0$, let $p\in M$, $Z_{p} \in T_{p}M$ with $\omega_{p}(Z_{p}) \neq 0$ and $X_{p}, Y_{p} \in \ker{\omega_{p}}$. Then 
+			\begin{equation}
+				0 = (\omega \wedge d\omega)_{p}(X_{p}, Y_{p}, Z_{p}) = \omega_{p}(Z_{p})d\omega_{p}(X_{p}, Y_{p}). 
+			\end{equation}
+		Hece, $d\omega_{p}(X_{p}, Y_{p}) = 0$. This means that for smooth sections $X, Y$ of $\ker{\omega}$, $d\omega(X, Y) = 0$, and so $D$ is integrable. 
+		\item Consider the smooth nowhere vanishing 1-form $\omega = ydx + dy + dz$ on $\mathbb{R}^{3}$, and let $D$ be the distribution on $\mathbb{R}^{3}$ defined at each point $p \in M$ by $D_{p} = \ker{\omega_{p}}$. By the rank-nullity theorem, $\operatorname{dim}{D} = \operatorname{dim}{T_{p}\mathbb{R}^{3}} - \operatorname{rank}{\omega} = 3 - 1 = 2$. Hence, $\operatorname{codim}{D} = 3 - 2 = 1$. Next, we observe that $d\omega = dy \wedge dx$, which is identically not zero. Then $\omega \wedge d\omega = dz \wedge dy \wedge dx$, which is also not identically zero. Hence, by the conclusion in (a), $D$ is not integrable. 
+	\end{enumerate}
+\end{solutions}
+
+\subsection{August 2023}
+\begin{prb}{2023-A-I-1 (Algebra)}
+	Let $V$ be an $n$-dimensional vector space over a field $F$. An element $A \in \operatorname{End}{V}$ is called \textit{nilpotent} if $A^{k} = 0$ for some $k > 1$. Prove that $A$ is nilpotent if and only if $$\operatorname{Tr}(\Lambda^{i}A) = 0, \quad i = 1, \ldots, n$$ where $\Lambda^{i}A$ denotes the induced action of $A$ on the wedge product $\Lambda^{i}V$ for each $i$. 
+\end{prb}
 
 
+\begin{prb}{2023-A-I-2 (Geometry/Topology)}
+	Let $f: T^{2} \to S^{2}$ be a smooth map from the 2-torus to the 2-sphere. Can $f$ be an immersion? If the answer is yes, give an explicit example. If the answer is no, then give a proof. 
+\end{prb}
+\begin{solutions}
+	We begin by stating and proving a technical lemma, which we will then use in our argument. 
+		\begin{quote}
+			(\textbf{Comps Lemma}) Let $M$ and $N$ be smooth connected $n$-manifolds, and $f: M \to N$ a (smooth) immersion. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a (smooth) covering map. 
+			
+			\begin{proof}
+				Let $M$ and $N$ be smooth connected $n$-manifolds, and $f:M \to N$ an immersion. Since $\dim{M} = \dim{N} = n$, and $f$ is an immersion, the map $df_{p}: T_{p}M \to T_{f(p)}N$ has constant rank $n$ at every $p \in M$. Hence, by the Inverse Function Theorem, $f$ is a local diffeomorphism. Since local diffeomorphisms are open maps, $f(M)$ is open in $N$. On the other hand, since continuous images of compact sets are compact, $f(M)$ is compact in $N$; since $N$ is Hausdorff, $f(M)$ is closed in $N$. Since $N$ is connected, it follows that $f(M) = N$. Therefore, $N$ is compact. All that remains is to show is that $f$ is a covering map. 
+				
+				Let $q \in N$; by continuity of $f$, $f^{-1}(q)$ is a closed subset of $M$. For each $x \in f^{-1}(q)$, there exists an open neighborhood $U_{x}$ of $x$ such that $f|_{U_{x}}$ is a diffeomorphism. Since $M$ is Hausdorff, we can shrink these neighborhoods so that they are pairwise disjoint. This means that each $x \in f^{-1}(q)$ is isolated, implying that $f^{-1}(q)$ is discrete. Since $M$ is compact, it follows that $f^{-1}(q)$ is finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As stated above, for each $j= 1, \ldots, s$, we may find an open neighborhood $U'_{j}$ so that $f|U'_{j}$ is a diffeomorphism. Moreover, we can shrink these neighborhoods to obtain a pairwise disjoint collection $\{\ti{U}_{j}\}_{1}^{s}$ of neighborhoods. Set $V = \bigcap_{1}^{s}f(\ti{U}_{j})$. Then taking $U_{j} = f^{-1}(V) \cap \ti{U}_{j}$, $V$ is an evenly covered neighborhood of $p$, so that $f$ is a covering map. 
+			\end{proof}
+		\end{quote}
+	Now assume to the contrary that there exists an immersion $f: T^{2} \to S^{2}$. By the Comps Lemma, $f$ must be a covering map. Hence, the induced homomorphism of groups $f_{\ast}: \pi_{1}(T^{2}) \to \pi_{1}(S^{2})$ must be injective. Since $S^{2}$ is simply connected, $\pi_{1}(S^{2}) \cong \{0\}$. However, $\pi_{1}(T^{2})$ is not a trivial group (in fact, $\pi_{1}(T^{2}) \cong \mathbb{Z} \times \mathbb{Z}$). This means that $f_{\ast}$ cannot be injective. Therefore, by contradiction, $f$ cannot be an immersion. Hence, there exist no immersions from $T^{2}$ to $S^{2}$. 
+\end{solutions}
+\begin{prb}{2023-A-II-1 (Algebra)}
+	A field extension $K/L$ is called algebraic, if every element in $K$ satisfies a polynomial equation with coefficients in $L$. Let $F, K, L$ be fields such that $F \supset K \supset L$, and $F/K$ and $K/L$ are algebraic extensions. Prove that $F/L$ is also an algebraic extension. 
+\end{prb}
+\begin{solutions}
+	Since subfields of subfields is a subfield, $L$ is a subfield of $F$. Hence, it suffices to show that every element in $F$ satisfies a polynomial equation with coefficients in $L$. Let $a \in F$, and let 
+	\begin{equation}
+		k(x) = k_{n}x^{n} + k_{n - 1}x^{n-1} + \dotsm + k_{0} \in K[x]
+	\end{equation}
+	such that $k(a) = 0$; this follows since $F/K$ is an algebraic extension. Each $k_{j} \in K$, and hence is algebraic over $L$. Therefore, $L' = L(k_{0}, \ldots, k_{n})$ is a finite extension of $L$. Since $k(a) = 0$ and $k(x)$ now has its coefficients in $L'$, it follows that $a$ is algebraic over $L'$ so that $L'(a)$ is a finite extension of $L$. Then since 
+	\begin{equation}
+		[L(a):L] = [L(a):L'][L':L], 
+	\end{equation}
+	it follows that $L(a)$ is a finite extension of $L$. Therefore, $a$ is algebraic over $L$. Since $a$ was arbitrary, $F/L$ is an algebraic extension. 
+\end{solutions}
 \begin{prb}{2023-A-I-2 (Geometry/Topology)}
 	Let $f: T^{2} \to S^{2}$ be a smooth map from the 2-torus to the 2-sphere. Can $f$ be an immersion? If the answer is yes, given an explicit example. If the answer is no, then give a proof. 
 \end{prb}
@@ -391,4 +605,24 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{align}
 	Hence, $p(z) = h(z) - f(z)$ has the same number of zeros, counting multiplicity, as $f(z)$. Since $f(z)$ has six zeros in the unit disk, we conclude that $p(z)$ must also have six zeros inside the unit disk. 
 \end{solutions}
+
+
+
+
+\subsection{August 2020}
+\begin{prb}{2020-A-II-1 (Complex Analysis)}
+	How many roots (counted with multiplicity) does the function $$g(z) = 6z^{3} + e^{z} + 1$$ have in the unit disk $|z| < 1$?
+\end{prb}
+\begin{solutions}
+	Let $g(z) = 6z^{3} + e^{z} + 1$, which is holomorphic. Let $f(z) = 6z^{3}$ and $h(z) = e^{z} + 1$. Then on the unit circle $|z| = 1$, 
+		\begin{align}
+			\begin{split}
+				|h(z)| &\leq |e^{z}| + 1 \leq e^{|z|} + 1 \\
+				&\leq e + 1 \\
+				&< 6 = 6|z|^{3} = |f(z)|. 
+			\end{split}
+		\end{align} 
+	Hence, by Rouch{\'e}'s Formula, $g(z)$ has the same number of zeros as $f(z)$. Counting multiplicity, $f(z)$ has three solutions in the unit disk, which means that $g(z)$ also has three solutions in the unit disk. 
+\end{solutions}
+
 \end{document}
