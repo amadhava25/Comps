@@ -23,6 +23,19 @@
 	Now, let $q \in N$, and consider $f^{-1}(q) \subset M$. For each $x \in f^{-1}(q)$, let $U_{x}$ be an open neighborhood of $M$ containing $x$. Since $M$ is Hausdorff, we can shrink each $U_{x}$ so that these neighborhoods are pairwise disjoint. This means that each $x \in f^{-1}(q)$ is isolated, and hence $f^{-1}(q)$ is discrete. Since $M$ is compact, we conclude that $f^{-1}(q)$ must be finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As noted above, for each $j = 1, \ldots, s$, let $U_{j}$ be a neighborhood of $x_{j}$ such that $f|_{U_{j}}: U_{j} \to V_{j} \subset N$ is a diffeomorphism. Then by the Hausdorff condition on $M$, shrink each $U_{j}$ so that $U_{i}\cap U_{j} = \varnothing$ for all $i \neq j$; $f$ remains a diffeomorphism on these shrunken neighborhoods. Setting $V = \bigcap_{1}^{s}f(U_{j})$ and taking $\ti{U}_{j} = f^{-1}(V) \cap U_{j}$ gives us an evenly covered neighborhood of $q$ in $N$. 
 \end{solutions}
 
+\begin{prb}{(Comps Lemma - Local Homeomorphisms)}
+	Let $M, N$ be smooth, connected $n$-manifolds and $f: M \to N$ a local homeomorphism. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a covering map. 
+\end{prb}
+
+\begin{prb}{(Comps Lemma - Submersions)}
+	Let $M, N$ be smooth, connected $n$-manifolds and $F: M \to N$ a submersion. If $M$ is compact and nonempty, then $N$ is compact and $F$ is a covering map. 
+\end{prb}
+\begin{solutions}
+	Let $M, N$ be smooth, connected $n$-manifolds and $F:M \to N$ a submersion. Also assume $M$ is compact and nonempty. Since submersions are open maps, $f(M)$ is open in $N$. On the other hand, since $F$ is continuous, continuous images of compacts sets are compact, and compact subsets of Hausdorff spaces are closed, $F(M)$ is closed in $N$. Hence, since $N$ is connected and $F(M)$ is nonempty, $F(M) = N$. This proves that $N$ is compact. We also claim that $F$ is a local diffeomorphism. Since $F$ is a submersion, at every $p \in M$, $dF_{p}: T_{p}M \to T_{f(p)}N$ is surjective. Since $\dim{M}= \dim{N} = n$, it follows that $dF_{p}$ is bijective. Hence, by the Inverse Function Theorem, $F$ is a local diffeomorphism. 
+	
+	All that remains to be seen is that $F$ is a covering map. Let $q \in N$ and consider the closed subset $F^{-1}(q) \subset M$. Since $F$ is a local diffeomorphism, for each $x \in F^{-1}(q)$, there exists a neighborhood $U_{x}$ such that $F|_{U_{x}}$ is a local diffeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods so that they are pairwise disjoint. This means that each $x \in F^{-1}(q)$ is isolated, and hence, $f^{-1}(q)$ is discrete. Since $M$ is compact, $f^{-1}(q)$ is finite; let $f^{-1}(q) = \{x_{1},\ldots, x_{s}\}$. For each $j = 1, \ldots, s$, let $U_{j}$ be a neighborhood of $x_{j}$ such that $F|_{U_{j}}$ is a diffeomorphism. Since $M$ is Hausdorff, we shrink these neighborhoods such that they are pairwise disjoint; $F$ remains a diffeomorphism on each shrunken $U_{j}$. Set $V = \bigcap_{1}^{s}f(U_{j})$, and let $\ti{U}_{j} = f^{-1}(V) \cap U_{j}$. Hence, $V$ is an evenly covered neighborhood of $q \in N$, which concludes the proof that $F$ is a covering map. 
+\end{solutions}
+
 \subsection{Steinhaus Theorem}
 \begin{prb}{(Steinhaus Theorem)}
 	Let $E$ be a Lebesgue measurable subset of $\mathbb{R}^{n}$ such that $m^{n}(E) > 0$, and let $v_{1}, \ldots, v_{N}$ be a finite collection of vectors in $\mathbb{R}^{n}$. Then there exists $R > 0$, depending on $E$, and $M = \max\{|v_{1}|, \ldots, |v_{N}|\}$ such that for all $0 < r < R$, there exists $p \in S$ so that the $(N + 1)$-points, $p, p + rv_{1}, \ldots, p + rv_{1} + \dotsm + rv_{n}\in S$. 
@@ -420,6 +433,71 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 	I.e., the polynomial $x^{4} - 4x^{2} + 1$ is the minimal polynomial of $\alpha$. Solving this polynomial over an algebraic closure of $\mathbb{Q}$, we obtain the four roots, $\pm\sqrt{2 + \sqrt{3}}, \pm \sqrt{2 - \sqrt{3}}$. Hence, the elements of the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ are the identity permutation, the permutation $\sigma$ that fixes $\pm \sqrt{2 - \sqrt{3}}$ and permutes $\pm \sqrt{2 + \sqrt{3}}$, the permutation $\tau$ that fixes $\pm\sqrt{2 + \sqrt{3}}$ and permutes $\pm \sqrt{2 - \sqrt{3}}$, and the permutation $\sigma \tau$. Labeling these roots as $\alpha_{1}, \ldots, \alpha_{4}$, we see that $\operatorname{Gal}(K/\mathbb{Q}) \cong \{1, (1\;2), (3\;4), (1\;2)(3\;4)\} \cong V \subset S_{4}$, where $V$ is the Klein-4 subgroup. 
 \end{solutions}
 
+
+\subsection{August 2024}
+\begin{prb}{2024-A-I-1 (Geometry/Topology)}
+	Let $M$ be a smooth compact manifold without boundary, and let $\varphi$ be a smooth closed 1-form on $M$ that has the property that $\varphi \neq 0$ at every point of $M$. Prove that the first de Rham cohomology $\h{1}(M)$ of the given manifold is non-zero. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a smooth compact manifold without boundary and let $\varphi$ be a smooth closed 1-form on $M$ that has the property that $\varphi \neq 0$ at every point of $M$. Suppose that $\varphi$ is exact; i.e., assume there exists a smooth function $f$ on $M$ such that $\varphi = df$. By the Extreme Value Theorem, since $M$ is compact, $f$ must have either a maximum or minimum value at some point $p \in M$. Since all of the first-order partial derivatives of $f$ must vanish at the point $p$ where $f$ attains its maximum/minimum value, $df|_{p} = 0$. This means that $\varphi$ must also vanish at $p$, which contradicts our hypothesis that $\varphi$ is nowhere vanishing. Hence, by contradiction, $\varphi$ cannot be an exact form. Since $\h{1}(M) \coloneqq \brac*{\text{closed 1-forms on $M$}}/\brac*{\text{exact 1-forms on $M$}}$ and we have shown the existence of a closed 1-form that is \textit{not} an exact 1-form, we conclude that $\h{1}(M)$ is non-zero. 
+\end{solutions}
+\begin{prb}{2024-A-I-2 (Geometry/Topology)}
+	Suppose that $f: \Sigma_{2} \to \Sigma_{1}$ is a continuous map between a genus 2 closed orientable surface $\Sigma_{2}$ and a torus $\Sigma_{1}$. Prove that $f$ is not a local homeomorphism. In other words, show that there exists a point $x \in \Sigma_{2}$ which does not have an open neighborhood $U \subset \Sigma_{2}$ on which the restriction $f|_{U}$ is a homeomorphism between $U$ and $f(U)$. 
+\end{prb}
+\begin{solutions}
+	Before presenting our argument, we will state and prove a quick technical lemma. 
+		\begin{quote}
+			(\textbf{Modified Comps Lemma}) Let $M$ and $N$ be smooth connected manifolds, and $f: M \to N$ a local homeomorphism. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a covering map. 
+			
+			\begin{proof}
+				Let $M$ and $N$ be smooth connected manifolds, and $f: M \to N$ a local homeomorphism. Since $f$ is an open map, $f(M)$ is open in $M$. Next since the continuous image of a compact set is compact and a compact subset of a Hausdorff space is closed, $f(M)$ is closed in $N$. Hence, since $N$ is connected, $f(M) = N$, which means $N$ is connected and $f$ is surjective. 
+				
+				Now let $q \in N$, and consider the closed subset $f^{-1}(q) \subset M$. For each $x \in f^{-1}(q)$, there exists a neighborhood $U_{x}$ such that $f|_{U_{x}}$ is a homeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods so that they are pairwise disjoint. Hence, each $x \in f^{-1}(q)$ is isolated, which means $f^{-1}(q)$ is discrete. Since discrete subspaces of compact spaces is necessarily finite, $f^{-1}(q)$ is finite; let $\{x_{1}, \ldots, x_{s}\} = f^{-1}(q)$. As stated above, for each $j = 1, \ldots, s$, we may find a neighborhood $U'_{j}$ such that $f|_{U'_{j}}$ is a homeomorphism. Using Hausdorff-ness of $M$, we may shrink these neighborhoods to obtain the collection $\{\ti{U}_{j}\}_{1}^{s}$ of pairwise disjoint open neighborhoods. Set $V = \bigcap_{1}^{s}U_{j}$, which is then an evenly covered neighborhood of $q$. Therefore, $f$ is a covering map. 
+			\end{proof}
+		\end{quote} 
+	Now assume to the contrary that $f: \Sigma_{2} \to \Sigma_{1}$ is a local homeomorphism; by the modified Comps Lemma, $f$ is a covering map. Moreover, $\Sigma_{2}$ must be a $k$-sheeted covering space for some finite positive integer $k$, which means that $\chi(\Sigma_{2}) = k \cdot \chi(\Sigma_{1})$. However, this is impossible since $\chi(\Sigma_{1}) = 0$, while $\chi(\Sigma_{2}) = 2 - 2(2) = 2 - 4 = -2$. Therefore, $f$ cannot be a local homeomorphism. 
+\end{solutions}
+
+\begin{prb}{2024-A-I-5 (Algebra)}
+	Determine whether or not the complex number $i = \sqrt{-1}$ is in the field $\mathbb{Q}(\alpha)$, where $\alpha$ is any complex number subject to the relation $\alpha^{3} + \alpha + 1 = 0$. Justify your answer. 
+\end{prb}
+\begin{solutions}
+	The polynomial $x^{3} + x + 1$ has no roots in $\mathbb{Q}$ (by the rational root test), and so is irreducible (since it is a cubic). This means that $\mathbb{Q}(\alpha)$ is an extension of degree 3 over $\mathbb{Q}$. Therefore, it cannot contain the field $\mathbb{Q}(i)$, which has degree $2$ over $\mathbb{Q}$ (since the minimal polynomial of $i$ is $x^{2} + 1$) since $2 \nmid 3$. 
+\end{solutions}
+\begin{prb}{2024-A-II-1 (Geometry/Topology)}
+	Recall that $S^{n}$ denotes the unit sphere in $\mathbb{R}^{n + 1}$. Also recall that a smooth map is called a smooth submersion if its differential is everywhere surjective. Prove or disprove each of the following statements: \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item There is a smooth submersion $F: S^{3} \to S^{1}$. 
+			\item There is a smooth submersion $F: S^{3} \to S^{2}$. 
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-1cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item \textcolor{red}{[!! Complete Later !!]}
+	\end{enumerate}
+\end{solutions}
+
+\begin{prb}{2024-A-II-2 (Geometry/Topology)}
+	On $\mathbb{R}^{5}$, equipped with standard coordinates \newline $(v, w, x, y,z)$, consider the 1-form 
+		\begin{equation*}
+			\theta = dz + v\;dx + w\;dy. 
+		\end{equation*}
+	Are there two smooth functions $f, g: \mathbb{R}^{5} \to \mathbb{R}$ such that $\theta = f\;dg$? Justify your answer by means of concrete solutions. 
+\end{prb}
+\begin{solutions}
+	We claim that there do \textit{not} exist smooth functions $f, g: \mathbb{R}^{5} \to \mathbb{R}$ such that $\theta = f\;dg$. Assume to the contrary. First, we observe that if $\theta = fdg$, then 
+		\begin{equation}
+			d\theta = d(fdg) = df \wedge dg \implies \theta \wedge d\theta = f dg \wedge df \wedge dg = 0. 
+		\end{equation}
+	I.e., if $\theta = fdg$, then $\theta \wedge d\theta$ must be identically zero. However, since $\theta = dz + vdx + wdy$, we note that 	
+		\begin{equation}
+			d\theta = d^{2}z + d(vdx) + d(wdy) = dv \wedge dx + dw \wedge dy \implies \theta \wedge d\theta = dz \wedge dv \wedge dx + dz \wedge dw \wedge dy + vdx \wedge dw \wedge dy + w dy \wedge dv \wedge dx, 
+		\end{equation}
+	which is nowhere vanishing on $\mathbb{R}^{5}$. Hence, by contradiction, there cannot exist two smooth functions $f, g: \mathbb{R}^{5} \to \mathbb{R}$ such that $\theta = fdg$. 
+\end{solutions}
+
+
 \subsection{January 2023}
 \begin{prb}{2023-J-II-4 (Geometry/Topology)}
 	Prove that $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$, where $M_{1}, M_{2}, M_{3}$ are smooth manifolds of nonzero dimension. 
@@ -806,5 +884,120 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	Let $G$ be a finite group, $H$ a non-normal subgroup of $G$ of index $n$ such that $|H|$ is divisible by a prime $p \geq n$. Let $G$ act on the set of left cosets of $H$; this induces a group homomorphism $\varphi: G \to S_{n}$. Consider the kernel of this group action, $K = \ker{\varphi}$. \textit{If} $K = G$, then for every $g \in G$, $gHg^{-1} = H$, which implies that $H$ is a normal subgroup of $G$ -- a contradiction. Hence, $\ker{\varphi}$ is a proper normal subgroup of $G$. Likewise, $\ker{\varphi} \neq H$ since this equality also forces $H$ to be normal. All that remains is to show that $\ker{\varphi}$ is not trivial. Since $p\mid |H|$, let $P$ be a Sylow $p$-subgroup of $H$. \textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
+
+\subsection{January 2017}
+\begin{prb}{2017-J-I-1 (Geometry/Topology)}
+	Let $\Sigma_{1}$ be a torus and let $\Sigma_{2}$ be a genus-2 surface. Show that there is no submersion from $\Sigma_{2}$ to $\Sigma_{1}$. 		
+\end{prb}
+\begin{solutions}
+	Let $\Sigma_{1}$ be a torus and $\Sigma_{2}$ be a genus-2 surface. We begin with a second modification to the Comps Lemma. Assume to the contrary that $F$ is a submersion from $\Sigma_{2}$ to $\Sigma_{1}$. By the second modification to the Comps Lemma, $F: \Sigma_{2} \to \Sigma_{1}$ must be a $k$-sheeted covering map for some finite $k > 0$. This implies that $\chi(\Sigma_{2}) = k \cdot \chi(\Sigma_{1})$, where $\chi(\cdot) = 2 - 2g$ denotes the Euler characteristic of a closed surface of genus $g$. But this is impossible since $\chi(\Sigma_{2}) = -2 < 0 = k \cdot 0 = k \cdot \chi(\Sigma_{1})$. Hence, by contradiction, there cannot be any submersions from $\Sigma_{2}$ to $\Sigma_{1}$. 
+\end{solutions}
+\begin{prb}{2017-J-I-6 (Geometry/Topology)}
+	Let $M$ be a smooth 4-manifold, let $\phi$ be a 3-form on $M$, and let $U\subset M$ be the open set of points where $\varphi \neq 0$. Show that $\varphi$ is closed if and only if, near any $p\in U$, one can find a smooth coordinate system $(x^{1}, x^{2}, x^{3}, x^{4})$ in which $$\varphi = dx^{1} \wedge dx^{2} \wedge dx^{3}.$$
+\end{prb}
+\begin{solutions}
+	Assume the hypotheses of the problem. Recall that $\varphi$ is closed if and only if $d\varphi$ is identically zero. Let $p \in U$ and suppose that we can find a smooth coordinate system $(x^{1}, x^{2}, x^{3}, x^{4})$ in some neighborhood of $p$ in $U$ so that  $\varphi = dx^{1} \wedge dx^{2} \wedge dx^{3}$. Then $d\varphi_{p} = d^{2}x^{1} \wedge dx^{2} \wedge dx^{3} + \dotsm + dx^{1} \wedge dx^{2} \wedge d^{2}x^{3} = 0$. Since this is true for all $p \in U$, we conclude that $d\varphi$ is identically zero on $M$, and hence $\varphi$ is closed. 
+	
+	Now assume that $\varphi$ is closed, which means that $\varphi \wedge d\varphi$ is identically zero. At each point $p \in U$, define $$D_{p} = \ker{\varphi_{p}},$$ which is Frobenius integrable by our previous observation. In particular, $D_{p}$ is a 1-dimensional distribution. Since $L$ is integrable, we can find smooth coordinates $(x^{1}, \ldots, x^{4})$ near $p$ such that $D_{p} = \operatorname{span}\left\{\partial_{x^{4}}\right\}$. Since $\varphi$ annihilates $\partial_{x^{4}}$, it must be a linear combination of $dx^{1}, dx^{2}$, and $dx^{3}$. Suppose $\varphi = f dx^{1} \wedge dx^{2} \wedge dx^{3}$. Then 
+		\begin{equation}
+			0 = d\varphi = f_{x^{1}}dx^{1} \wedge dx^{1} \wedge \dotsm \wedge dx^{3} + f_{x^{2}}dx^{2} \wedge dx^{1} \wedge \dotsm \wedge dx^{3} + \dotsm +  f_{x^{4}} \wedge dx^{1} \wedge \dotsm \wedge dx^{4}. 
+		\end{equation}
+	The first  three terms are all zero. The last term is zero iff $f_{x^{4}} = 0$, which means $f = f(x^{1}, x^{2}, x^{3})$. \textcolor{red}{[!! Complete Later !!]} 
+\end{solutions}
+
+
+\subsection{August 2017}
+\begin{prb}{2017-A-I-1 (Geometry/Topology)}
+	Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Does $F$ necessarily have a critical point? 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Suppose $F$ has no critical points, which means that $dF_{p}$ is surjective at every $p \in M$. I.e., $\operatorname{rank}{dF_{p}} = n$ for every $p \in M$. Let $F = (f_{1}, \ldots, f_{n})$, where each $f_{j}: M \to \mathbb{R}$ is a component function of $F$. Fix some $f_{j}$; since $M$ is compact, $f_{j}$ must attain a maximum or minimum at some point $p \in M$. This means that $df_{j}(p) =0$. But since $dF_{p} = (df_{1}(p), \ldots, df_{j}(p), \ldots, df_{n}(p))$, $\operatorname{rank}{dF_{p}} \neq n$, which is a contradiction. Hence, $F$ must have a critical point. 
+\end{solutions}
+\begin{prb}{2017-A-II-3 (Algebra)}
+	Let $K$ denote the splitting field of $f(x) = x^{4} + x^{2} + 1$ over $\mathbb{Q}$. Compute the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
+\end{prb}
+\begin{solutions}
+	We begin by finding the splitting field of $f(x)$ over $\mathbb{Q}$. By The rational root test, we observe that $f(x)$ has no roots in $\mathbb{Q}$. Let $z = x^{2}$ so that 
+	\begin{equation}
+		z^{2} + z + 1 = 0 \implies z = \frac{-1 \pm \sqrt{1  - 4}}{2} = \frac{-1 \pm \sqrt{-3}}{2}. 
+	\end{equation}
+	Therefore, the roots of $f$ are 
+		\begin{equation}
+			\alpha_{1} = \sqrt{\frac{-1 + \sqrt{-3}}{2}}, \alpha_{2} = -\sqrt{\frac{-1 + \sqrt{-3}}{2}}, \alpha_{3} = \sqrt{\frac{-1 - \sqrt{-3}}{2}}, \alpha_{4} = -\sqrt{\frac{-1 - \sqrt{-3}}{2}}. 
+		\end{equation}
+	Here, we observe that 
+		\begin{equation}
+			\alpha_{1}^{2} + \beta_{1}^{2} = -1 \qquad \text{ and } \qquad \alpha_{1}^{2} - \beta_{1}^{2} = \sqrt{-3}. 
+		\end{equation}
+	This means that $K = \mathbb{Q}(\sqrt{-3})$ is the splitting field of $f(x)$ over $\mathbb{Q}$. Since the minimal polynomial of $\sqrt{-3}$ is of degree 2, it follows that $[\mathbb{Q}(\sqrt{-3}): \mathbb{Q}] = 2$. Hence, $|\operatorname{Gal}(K/\mathbb{Q})| = 2$. Therefore, we conclude that $\operatorname{Gal}(K/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$.  
+\end{solutions}
+
+
+
+
+\newpage 
+\subsection{Textbook Problems}
+\begin{prb}{Lee-7-5}
+	Let $M$ be a smooth compact manifold. Show that there is no submersion $F: M \to \mathbb{R}^{k}$ for any $k > 0$. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a smooth compact manifold, and assume to the contrary that there exists a submersion $F: M \to \mathbb{R}^{k}$ for some $k > 0$. Since $M$ is compact, $F$ must attain either a maximum or minimum at some point $p \in M$, which means that $dF_{p} = 0$. But this is impossible since $F$ is a submersion, which means that $\operatorname{rank}{dF_{p}} = \operatorname{dim}{\mathbb{R}^{k}} = k > 0$. Hence, by contradiction, $F$ cannot be a submersion. 
+\end{solutions}
+
+
+\begin{prb}{D\&F-14.6.2}
+	Determine the Galois groups of the following polynomials: \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item $x^{3} - x^{2} - 4$ 
+			\item $x^{3} - 2x + 4$
+			\item $x^{3} - x + 1$ 
+			\item $x^{3} + x^{2} - 2x - 1$.
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-1cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f(x) = x^{3} - x^{2} - 4$. We note that $f$ has a rational root $x = 2$ since $2^{3} - 2^{2} - 4 = 8 - 4 - 4= 0$. Using polynomial long division, we find that $f(x)$ is reducible over $\mathbb{Q}$ as the product 
+			\begin{equation}
+				f(x) = (x - 2)(x^{2} + x + 2). 
+			\end{equation}
+		By the rational root test, the quadratic factor is irreducible and has complex roots 
+			\begin{equation}
+				x_{1,2} = \frac{-1 \pm \sqrt{-7}}{2}. 
+			\end{equation}
+		Therefore, the splitting field of $f(x)$ is $\mathbb{Q}(\sqrt{-7})$, which has degree 2 since the minimal polynomial of $\sqrt{-7}$ is $x^{2} + 7$. Therefore, the Galois group $\operatorname{Gal}(\mathbb{Q}(\sqrt{-7})/\mathbb{Q})$ has order 2; hence the Galois group is $\mathbb{Z}/2\mathbb{Z}$. 
+		\item Let $f(x)= x^{3} - 2x + 4$. We note that $f(x)$ has a rational root $x = -2$ since $(-2)^{3} - 2(-2) + 4 = -8 + 4 + 4 = 0$. Hence using polynomial long division, 
+			\begin{equation}
+				f(x) = (x + 2)(x^{2} - 2x + 2). 
+			\end{equation}
+		By the rational root test, $x^{2} - 2x + 2$ is irreducible over $\mathbb{Q}$ with complex roots $1 \pm i$. Therefore, the splitting field of $f(x)$ is $\mathbb{Q}(i)$, which has degree 2 since the minimal polynomial of $i$ is $x^{2} + 1$. Therefore, the Galois group $\operatorname{Gal}(\mathbb{Q}(i)/\mathbb{Q})$ has order 2; hence the Galois group is $\mathbb{Z}/2\mathbb{Z}$. 
+		\item Let $f(x) = x^{3} - x + 1$; by the rational root test $f(x)$ is irreducible over $\mathbb{Q}$. However, since $f$ is already a depressed cubic, we note that its discrimant is $-4p^{3} - 27q^{2} = 4 - 27 = -23$. Since $-23$ is not a perfect square, we conclude that the Galois group is $S_{3}$. In fact, the splitting field for this cubic is $\mathbb{Q}(\alpha, \sqrt{-23})$, where $\alpha$ is a root of $x^{3} - x + 1$. 
+		\item Let $f(x) = x^{3} + x^{2} - 2x - 1$; by the rational root test $f(x)$ is irreducible over $\mathbb{Q}$. Therefore, we will now depress the cubic. Let $x = y - 1/3$. Then 
+			\begin{align}
+				\begin{split}
+					x^{3} + x^{2} - 2x - 1 &= y^{3} - \frac{7}{3}y - \frac{7}{27}. 
+				\end{split}
+			\end{align}
+		The discriminant of the depressed cubic is, 
+			\begin{equation}
+				D = -4p^{3} - 27q^{2} = 4\left(\frac{7^{3}}{27}\right) - 27\left(\frac{7^{2}}{27^{2}}\right) = \frac{7^{2}}{27}\left(4 \cdot 7 - 1\right) = 7^{2}. 
+			\end{equation}
+		Since the discriminant is a square, we see that the Galois group of the polynomial is $A_{3}$. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{D\&F-14.6.4}
+	Determine the Galois group of $x^{4} - 25$. 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{4} - 25$. The roots of $f(x)$ are $\zeta_{4}^{0}\sqrt[4]{25}, \zeta_{4}^{1}\sqrt[4]{25}, \zeta_{4}^{2}\sqrt[4]{25}$, and $\zeta_{4}^{3}\sqrt[4]{25}$, where $\zeta_{4}$ is the primitive 4th root of unity. Here, we recall that the automorphisms in the Galois group of $f$ act transitively on the roots of $f(x)$. Hence, the Galois group of $f(x)$ must contain the automorphism that maps $\sqrt[4]{25} \mapsto -\sqrt[4]{25}$ (i.e., a reflection) and $\sqrt[4]{25} \mapsto \zeta_{4}^{j}\sqrt[4]{25}$ (i.e., a rotation). Hence, the Galois group is $D_{8}$. 
+\end{solutions}
+
+\begin{prb}{D\&F-14.6.5}
+	Determine the Galois group of $x^{4} + 4$. 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{4} + 4$, which is irreducible over $\mathbb{Q}$. However, the four roots of $f(x)$ are $\pm 1 \pm i$. This means that the splitting field of $f(x)$ is $\mathbb{Q}(i)$, which is a degree 2 extension over $\mathbb{Q}$. Hence, the Galois group is of order 2, which implies that the Galois group is the cyclic group $\mathbb{Z}/2\mathbb{Z}$. 
+\end{solutions}
+
 
 \end{document}

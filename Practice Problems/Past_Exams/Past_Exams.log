@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  10 JAN 2026 16:19
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  11 JAN 2026 15:46
  restricted system commands enabled.
 **Past_Exams.tex
 (./Past_Exams.tex
@@ -2151,7 +2151,21 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 17.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 27.
+(mdframed)              on input line 26.
+
+Overfull \hbox (9.97786pt too wide) in paragraph at lines 27--28
+[][]\TU/NotoSerif(1)/b/n/10 Prob-lem (Comps Lemma - Lo-cal Home-o-mor-phisms). 
+[]\TU/NotoSerif(1)/m/n/10 Let $\OML/notomi/m/it/10 M; N$ \TU/NotoSerif(1)/m/n/1
+0 be smooth, con-nected $\OML/notomi/m/it/10 n$\TU/NotoSerif(1)/m/n/10 -manifold
+s
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 30.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 40.
 
 
 [3]
@@ -2159,126 +2173,171 @@ Package mdframed Info: mdframed detected package amsthm
 [4]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 65.
+(mdframed)              on input line 78.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 83.
+(mdframed)              on input line 96.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 101.
+(mdframed)              on input line 114.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 111.
-Package mdframed Info: Not enough space on this page on input line 113.
+(mdframed)              on input line 124.
+Package mdframed Info: Not enough space on this page on input line 126.
 
 
 [5]
-Package mdframed Info: Not enough space on this page on input line 113.
+Package mdframed Info: Not enough space on this page on input line 126.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 121.
+(mdframed)              on input line 134.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 127.
+(mdframed)              on input line 140.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 139.
+(mdframed)              on input line 152.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 150.
+(mdframed)              on input line 163.
 
 
 [6]
-Package mdframed Info: Not enough space on this page on input line 152.
+Package mdframed Info: Not enough space on this page on input line 165.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 168.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 195
+(mdframed)              on input line 181.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 208
 .
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 209.
-Package mdframed Info: Not enough space on this page on input line 211.
+(mdframed)              on input line 222.
+Package mdframed Info: Not enough space on this page on input line 224.
 
 
 [7]
-Package mdframed Info: Not enough space on this page on input line 211.
+Package mdframed Info: Not enough space on this page on input line 224.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 223.
+(mdframed)              on input line 236.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 240.
+(mdframed)              on input line 253.
 
 
 [8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 297.
+(mdframed)              on input line 310.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 303.
+(mdframed)              on input line 316.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 317.
+(mdframed)              on input line 330.
 
 
 [9]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 340.
+(mdframed)              on input line 353.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 372.
-<../Graphics/2024JII3.png, id=372, 333.49594pt x 146.79843pt>
+(mdframed)              on input line 385.
+<../Graphics/2024JII3.png, id=470, 333.49594pt x 146.79843pt>
 File: ../Graphics/2024JII3.png Graphic file (type png)
 <use ../Graphics/2024JII3.png>
-Package luatex.def Info: ../Graphics/2024JII3.png  used on input line 379.
+Package luatex.def Info: ../Graphics/2024JII3.png  used on input line 392.
 (luatex.def)             Requested size: 135.88788pt x 59.8159pt.
-Package mdframed Info: Not enough space on this page on input line 381.
+Package mdframed Info: Not enough space on this page on input line 394.
 
 
 [10]
-Package mdframed Info: Not enough space on this page on input line 381.
+Package mdframed Info: Not enough space on this page on input line 394.
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 390.
+(mdframed)              on input line 403.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 408.
+(mdframed)              on input line 421.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 424.
+(mdframed)              on input line 438.
+
+Overfull \hbox (2.53845pt too wide) in paragraph at lines 439--440
+[][]\TU/NotoSerif(1)/b/n/10 Prob-lem 2024-A-I-1 (Ge-om-e-try/-Topol-ogy). []\TU
+/NotoSerif(1)/m/n/10 Let $\OML/notomi/m/it/10 M$ \TU/NotoSerif(1)/m/n/10 be a sm
+ooth com-pact man-i-fold with-out bound-
+ []
+
 
 
 [11<../Graphics/2024JII3.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 444.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 461.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 467.
+Package mdframed Info: Not enough space on this page on input line 473.
 
 
 [12]
+Package mdframed Info: Not enough space on this page on input line 473.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 490.
+(mdframed)              on input line 481.
+
+Overfull \hbox (1.38882pt too wide) detected at line 496
+[][][]\OML/notomi/m/it/10 d \U/MnSymbolD/m/n/10 ^^@ \OML/notomi/m/it/10 d[]z \
+U/MnSymbolC/m/n/10  \OML/notomi/m/it/10 d\OMX/MnSymbolE/m/n/10 \OML/notomi/m
+/it/10 vdx\OMX/MnSymbolE/m/n/10  \U/MnSymbolC/m/n/10  \OML/notomi/m/it/10 d\
+OMX/MnSymbolE/m/n/10 \OML/notomi/m/it/10 wdy\OMX/MnSymbolE/m/n/10  \U/MnSym
+bolD/m/n/10 ^^@ \OML/notomi/m/it/10 dv \U/MnSymbolC/m/n/10 , \OML/notomi/m/it/1
+0 dx \U/MnSymbolC/m/n/10  \OML/notomi/m/it/10 dw \U/MnSymbolC/m/n/10 , \OML/no
+tomi/m/it/10 dy  \U/MnSymbolA/m/n/10 Ô[]  \OML/notomi/m/it/10  \U/MnSymbolC/
+m/n/10 , \OML/notomi/m/it/10 d \U/MnSymbolD/m/n/10 ^^@ \OML/notomi/m/it/10 dz 
+\U/MnSymbolC/m/n/10 , \OML/notomi/m/it/10 dv \U/MnSymbolC/m/n/10 , \OML/notomi/
+m/it/10 dx \U/MnSymbolC/m/n/10  \OML/notomi/m/it/10 dz \U/MnSymbolC/m/n/10 , \
+OML/notomi/m/it/10 dw \U/MnSymbolC/m/n/10 , \OML/notomi/m/it/10 dy \U/MnSymbolC
+/m/n/10  \OML/notomi/m/it/10 vdx \U/MnSymbolC/m/n/10 , \OML/notomi/m/it/10 dw 
+\U/MnSymbolC/m/n/10 , \OML/notomi/m/it/10 dy \U/MnSymbolC/m/n/10  \OML/notomi/
+m/it/10 wdy \U/MnSymbolC/m/n/10 , \OML/notomi/m/it/10 dv \U/MnSymbolC/m/n/10 , 
+\OML/notomi/m/it/10 dx;
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 519.
-Package mdframed Info: Not enough space on this page on input line 521.
+(mdframed)              on input line 502.
 
 
 [13]
-Package mdframed Info: Not enough space on this page on input line 521.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 522.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 568.
 
-Overfull \hbox (14.1645pt too wide) in paragraph at lines 526--529
+
+[14]
+Package mdframed Info: Not enough space on this page on input line 574.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 597.
+
+Overfull \hbox (14.1645pt too wide) in paragraph at lines 604--607
 \TU/NotoSerif(1)/m/n/10 iden-tity per-mu-ta-tion fix-ing $[]\OML/notomi/m/it/10
  i$ \TU/NotoSerif(1)/m/n/10 and the con-ju-ga-tion map $[]\OML/notomi/m/it/10 i \U/MnSymbolA/m/n/10 ( \U/MnSymbolC/m/n/10 []\OML/notomi/m/it/10 i$\TU/NotoSerif(1)/m/n/10 ), we con-clude that $[]\OMX/MnSymbolE/m/n/10 
 \U/ntxsym/m/n/10 Q\OMX/MnSymbolE/m/n/10 []\OML/notomi/m/it/10 i\OMX/MnSymbo
@@ -2287,130 +2346,176 @@ lE/m/n/10 ~\U/ntxsym/m/n/10 Q\OMX/MnSymbolE/m/n/10  \U/MnSymbolD/m/n/10
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 529.
+(mdframed)              on input line 607.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 539.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 545.
+(mdframed)              on input line 617.
+Package mdframed Info: Not enough space on this page on input line 619.
 
 
-[14]
+[15]
+Package mdframed Info: Not enough space on this page on input line 619.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 577.
+(mdframed)              on input line 623.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 581.
-<../Graphics/2023A15.png, id=450, 187.45032pt x 104.64093pt>
+(mdframed)              on input line 655.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 659.
+<../Graphics/2023A15.png, id=556, 187.45032pt x 104.64093pt>
 File: ../Graphics/2023A15.png Graphic file (type png)
 <use ../Graphics/2023A15.png>
-Package luatex.def Info: ../Graphics/2023A15.png  used on input line 584.
+Package luatex.def Info: ../Graphics/2023A15.png  used on input line 662.
 (luatex.def)             Requested size: 90.58961pt x 50.57034pt.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 591.
-
-
-[15<../Graphics/2023A15.png>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 608.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 624.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 638.
+Package mdframed Info: Not enough space on this page on input line 665.
 
 
 [16]
-Package mdframed Info: Not enough space on this page on input line 640.
+Package mdframed Info: Not enough space on this page on input line 665.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 653.
+(mdframed)              on input line 669.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 675.
+(mdframed)              on input line 686.
+
+
+[17<../Graphics/2023A15.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 702.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 716.
+
+
+[18]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 731.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 753.
+
+
+[19]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 785.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 810.
+
+
+[20]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 836.
+
+
+[21]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 853.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 881.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 889.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 895.
 
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 681.
+(mdframed)                or something else on input line 897.
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 681.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 897.
 
 
-[17]
+[22]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 897.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 707.
+(mdframed)              on input line 910.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 732.
-Package mdframed Info: Not enough space on this page on input line 734.
+(mdframed)              on input line 916.
 
 
-[18]
-Package mdframed Info: Not enough space on this page on input line 734.
+[23]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 758.
-
-
-[19]
+(mdframed)              on input line 940.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 775.
+(mdframed)              on input line 948.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 803.
+(mdframed)              on input line 988.
+Package mdframed Info: Not enough space on this page on input line 990.
 
 
-[20] (./Past_Exams.aux)
+[24]
+Package mdframed Info: Not enough space on this page on input line 990.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 995.
+
+
+[25] (./Past_Exams.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `Past_Exams.out' has not changed.
-(rerunfilecheck)             Checksum: E665BDEA0B2F3F6A79323A562384934A;10570.
+(rerunfilecheck)             Checksum: 146A75BB897C198FD6ED1AFDED468749;14407.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38588 strings out of 475915
+ 38668 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 3985 words of node memory still in use:
-   47 hlist, 7 vlist, 6 rule, 16 math, 62 glue, 19 kern, 162 glyph, 254 attribut
-e, 110 glue_spec, 254 attribute_list, 2 write, 8 pdf_colorstack nodes
-   avail lists: 1:2,2:1061,3:660,4:521,5:684,6:173,7:9002,8:92,9:1199,10:20,11:7
-02
- 59895 multiletter control sequences out of 65536+600000
+ 4043 words of node memory still in use:
+   55 hlist, 9 vlist, 8 rule, 8 math, 45 glue, 24 kern, 170 glyph, 269 attribute
+, 110 glue_spec, 269 attribute_list, 2 write, 4 pdf_colorstack nodes
+   avail lists: 1:2,2:1091,3:660,4:534,5:668,6:172,7:9539,8:92,9:1052,10:20,11:6
+99
+ 59914 multiletter control sequences out of 65536+600000
  264 fonts using 30982431 bytes
  101i,17n,147p,1497b,1034s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{c:/texlive/2
-024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{c:/texlive/2024/texmf-dis
-t/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{c:/texlive/2024/texmf-dist/fonts/enc/d
-vips/mnsymbol/MnSymbolF.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol
-/MnSymbolC.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/noto/a_wcjgjy.enc}<c:
-/texlive/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Italic.ttf><c:/tex
-live/2024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Bold.ttf><c:/texlive/2
-024/texmf-dist/fonts/truetype/google/noto/NotoSerif-Regular.ttf><c:/texlive/2024
-/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb><c:/texlive/2024/texmf-di
-st/fonts/type1/public/mnsymbol/MnSymbol7.pfb><c:/texlive/2024/texmf-dist/fonts/t
-ype1/public/notomath/NotoMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publ
-ic/notomath/NotoMathRM.pfb><c:/texlive/2024/texmf-dist/fonts/type1/google/noto/N
-otoSerif-Regular.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/eul
-er/eusm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm
-7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/newtx/txsym.pfb>
-Output written on Past_Exams.pdf (20 pages, 306790 bytes).
+{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolB.enc}{c:/texlive/2
+024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{c:/texlive/2024/texmf-dis
+t/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{c:/texlive/2024/texmf-dist/fonts/enc/d
+vips/mnsymbol/MnSymbolD.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol
+/MnSymbolE.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.en
+c}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/noto/a_wcjgjy.enc}<c:/texlive/2024
+/texmf-dist/fonts/truetype/google/noto/NotoSerif-Italic.ttf><c:/texlive/2024/tex
+mf-dist/fonts/truetype/google/noto/NotoSerif-Bold.ttf><c:/texlive/2024/texmf-dis
+t/fonts/truetype/google/noto/NotoSerif-Regular.ttf><c:/texlive/2024/texmf-dist/f
+onts/type1/public/mnsymbol/MnSymbol10.pfb><c:/texlive/2024/texmf-dist/fonts/type
+1/public/mnsymbol/MnSymbol5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/m
+nsymbol/MnSymbol7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/notomath/No
+toMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/notomath/NotoMathRM.
+pfb><c:/texlive/2024/texmf-dist/fonts/type1/google/noto/NotoSerif-Regular.pfb><c
+:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb><c:/texlive/2024/
+texmf-dist/fonts/type1/public/newtx/txsym.pfb>
+Output written on Past_Exams.pdf (25 pages, 346955 bytes).
 
-PDF statistics: 581 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 212 named destinations out of 1000 (max. 131072)
- 424 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 744 PDF objects out of 1000 (max. 8388607)
+ 688 compressed objects within 7 object streams
+ 273 named destinations out of 1000 (max. 131072)
+ 576 words of extra memory for PDF output out of 10000 (max. 100000000)
 
