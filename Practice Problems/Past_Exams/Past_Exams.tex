@@ -832,6 +832,43 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 
 
 
+\subsection{August 2021}
+\begin{prb}{2021-A-I-6 (Geometry/Topology)}
+	What connected spaces can be finitely-sheeted covering spaces of a sphere with three handles? 
+\end{prb}
+\begin{solutions}
+	We claim that the finitely-sheeted covering spaces of a sphere with three handles are exactly the closed orientable connected surfaces of genus of the form $2k + 1$ for some positive integer $k$. Let $M$ be a $k$-sheeted covering space of a sphere with three handles. If $M$ were nonorientable, then since covering maps are local diffeomorphisms and local diffeomorphisms preserve orientability, the sphere with three handles must also be nonorientable, which is a contradiction. Hence, $M$ has to be orientable. Next, since $M$ is a $k$-sheeted covering space of the sphere with three handles, which has Euler characteristic $2 - 2(3) = -4$, we must have 
+		\begin{equation}
+			2 - 2g_{M} = \chi(M) = -4k \implies g_{M} -1 = 2k \implies g_{M} = 2k + 1. 
+		\end{equation}
+\end{solutions}
+\begin{prb}{2021-A-II-1 (Geometry/Topology)}
+	Let $M$ be a compact manifold (without boundary) and $\pi: M \to S^{1}$ a submersion onto the circle. Show that the de Rham group $\h{1}(M) \neq 0$. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a compact manifold (without boundary) and $\pi: M \to S^{1}$ a submersion onto the circle. Assume to the contrary that $\h{1}(M) \neq 0$ which means that every closed form on $M$ is an exact form. Since $\h{1}(S^{1}) \cong \mathbb{R}$, let $[\omega]$ be a generator of this cohomology group, where $\omega$ is a nowhere vanishing closed 1-form on $S^{1}$. Since $\pi$ is a submersion, the 1-form $\pi^{\ast}\omega$ must also be a nowhere vanishing closed form on $M$. By our hypothesis on the de Rham cohomology group in degree one of $M$, $\pi^{\ast}\omega$ is exact, which means there exists a smooth function $f$ such that $\pi^{\ast}\omega = df$. Since $M$ is compact and $f$ is smooth, $f$ must attain either a maximum or minimum value at some $p_{0} \in M$. This means that $df_{p_{0}} = 0$. But this contradicts our claim that $\pi^{\ast}\omega$ is nowhere vanishing. Hence, by contradiction, $\h{1}(M) \neq 0$. 
+\end{solutions}
+
+
+\subsection{January 2020}
+\begin{prb}{2020-J-I-1 (Algebra)}
+	Let $G$ be a finite non-abelian group, and let $Z(G)$ denote its center. Prove that $\abs{Z(G)} \leq \frac{1}{4}\abs{G}$, and then give an example where equality holds. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a finite non-abelian group, and let $Z(G)$ denote its center. Assume to the contrary that $|Z(G)| > \frac{1}{4}|G| \implies |G|/|Z(G)| < 4$. Since $|Z(G)| \mid |G|$, $|G|/|Z(G)|$ is a positive integer. Therefore, one of the three must necessarily be true: (1) $|G|/|Z(G)| = 1$, (2) $|G|/|Z(G)| = 2$, (3) $|G|/|Z(G)| = 3$. If (1) were true, then since $|Z(G)| = |G|$, $G$ has to be abelian, which contradicts our hypothesis. If (2) were true, then $G/Z \cong \mathbb{Z}/2\mathbb{Z}$ which is cyclic. Hence, $G$ would have to be abelian, which is a contradiction. Finally, if (3) were true, then $G/Z \cong \mathbb{Z}/3\mathbb{Z}$ which is cyclic. Hence, $G$ would have to be abelian, which ia a contradiction. Hence, $|Z(G)| \not> \frac{1}{4}|G|$, which means $|Z(G)| \leq \frac{1}{4}|G|$. 
+\end{solutions}
+\begin{prb}{2020-J-I-4 (Geometry/Topology)}
+	Let $\theta$ be a closed smooth 1-form on a compact $C^{\infty}$ manifold $M$ with empty boundary, and let $v$ be a smooth vector field on $M$. Prove that the Lie derivative $\mathscr{L}_{v}\theta$ vanishes at some point of $M$. 
+\end{prb}
+\begin{solutions}
+	Let $\theta$ be a closed smooth 1-form on a compact $C^{\infty}$ manifold $M$ with empty boundary, and let $v$ be a smooth vector field on $M$. By Cartan's Formula for the Lie derivative, 
+		\begin{equation}
+			\mathscr{L}_{v}\theta = i_{v}(d\theta) + d(i_{v}\theta), 
+		\end{equation}
+	where $i_{v}(\cdot)$ denotes the interior product. Since $\theta$ is a closed 1-form, $d\theta = 0$. So $\mathscr{L}_{v}\theta = d(i_{v}\theta)$. Since $\theta$ is a 1-form, $i_{v}\theta$ is a 0-form on $M$, i.e., a smooth function on $M$. Since $M$ is compact, $i_{v}\theta$ must attain a extrema at some point in $M$, which means that its differential $d(i_{v}\theta)$ must vanish where it achieves its maximum or minimum. This then implies that $\mathscr{L}_{v}\theta$ vanishes at this point. 
+\end{solutions}
+
+
 \subsection{August 2020}
 \begin{prb}{2020-A-II-1 (Complex Analysis)}
 	How many roots (counted with multiplicity) does the function $$g(z) = 6z^{3} + e^{z} + 1$$ have in the unit disk $|z| < 1$?
@@ -847,6 +884,29 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{align} 
 	Hence, by Rouch{\'e}'s Formula, $g(z)$ has the same number of zeros as $f(z)$. Counting multiplicity, $f(z)$ has three solutions in the unit disk, which means that $g(z)$ also has three solutions in the unit disk. 
 \end{solutions}
+\begin{prb}{2020-A-II-4 (Geometry/Topology)}
+	Let $M$ and $N$ be compact connected orientable smooth manifolds and let $f: M \to N$ be a smooth mapping. Recall the degree of $f$ is the integral 
+		\begin{equation*}
+			\deg(f) = \int_{M}f^{\ast}\omega
+		\end{equation*}
+	over $M$ of the pullback $f^{\ast}\omega$ of any top-degree smooth form $\omega$ on $N$ whose integral over $N$ is one. Recall the degree is an integer, denote it by $\deg(f)$. Now consider the map 
+		\begin{equation*}
+			f_{\#}: \pi_{1}(M) \to \pi_{1}(N)
+		\end{equation*}
+	on fundamental groups induced by $f$. Suppose that the image of $f_{\#}$ has finite index, $\operatorname{ind}(f)$. Prove that $\operatorname{ind}(f)$ divides $\deg(f)$. 
+\end{prb}
+\begin{solutions}
+	Let $M, N$ be compact connected orientable smooth manifolds and let $f: M \to N$ be a smooth mapping. Suppose that $H \coloneqq f_{\#}(\pi_{1}(M))$ is a subgroup of $\pi_{1}(N)$ of finite index $k$. This means there exists a $k$-sheeted covering $p: \ti{N} \to N$ so that $p_{\#}(\pi_{1}(\ti{N})) = H$. By the lifting criterion for coverings, $f$ lifts to a smooth map 
+		\begin{equation}
+			\ti{f}: M \to \ti{N}
+		\end{equation}
+	such that $f = p \circ \ti{f}$. Let $\omega$ be a top-egree smooth form on $N$ whose integral over $N$ is one. Since $p: \ti{N} \to N$ is a $k$-sheeted covering of orientable manifolds, we must have $\deg(p) = k$. Therefore, 
+		\begin{equation}
+			\deg(f) = \deg(p \circ \ti{f}) = \deg(p)\deg(\ti{f}) = \operatorname{ind}(f) \cdot \deg(\ti(f)). 
+		\end{equation}
+	Since $\deg(\ti{f})$ is an integer, we conclude that $\operatorname{ind}(f) \mid \deg(f)$. 
+\end{solutions}
+
 
 \newpage 
 \subsection{January 2019}
@@ -885,6 +945,16 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Let $G$ be a finite group, $H$ a non-normal subgroup of $G$ of index $n$ such that $|H|$ is divisible by a prime $p \geq n$. Let $G$ act on the set of left cosets of $H$; this induces a group homomorphism $\varphi: G \to S_{n}$. Consider the kernel of this group action, $K = \ker{\varphi}$. \textit{If} $K = G$, then for every $g \in G$, $gHg^{-1} = H$, which implies that $H$ is a normal subgroup of $G$ -- a contradiction. Hence, $\ker{\varphi}$ is a proper normal subgroup of $G$. Likewise, $\ker{\varphi} \neq H$ since this equality also forces $H$ to be normal. All that remains is to show that $\ker{\varphi}$ is not trivial. Since $p\mid |H|$, let $P$ be a Sylow $p$-subgroup of $H$. \textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
 
+
+
+\subsection{August 2018}
+\begin{prb}{2018-A-II-3 (Analysis)}
+	Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. Prove that $E + F = \{x + y: x \in E, y \in F\}$ contains an interval. 
+\end{prb}
+
+
+
+
 \subsection{January 2017}
 \begin{prb}{2017-J-I-1 (Geometry/Topology)}
 	Let $\Sigma_{1}$ be a torus and let $\Sigma_{2}$ be a genus-2 surface. Show that there is no submersion from $\Sigma_{2}$ to $\Sigma_{1}$. 		
@@ -904,7 +974,45 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	The first  three terms are all zero. The last term is zero iff $f_{x^{4}} = 0$, which means $f = f(x^{1}, x^{2}, x^{3})$. \textcolor{red}{[!! Complete Later !!]} 
 \end{solutions}
-
+\begin{prb}{2017-J-II-1}
+	Let $f: M \to \mathbb{R}$ be a smooth function on a smooth manifold $M$. In an arbitrary smooth local coordinate chart $x: U \to \mathbb{R}^{n}$ of $M$, define 
+		\begin{equation*}
+			\mathscr{D}f \coloneqq \frac{\partial f}{\partial x^{i}}\frac{\partial}{\partial x^{i}}. 
+		\end{equation*}
+	Does $\mathscr{D}f$ give a well-defined vector field on $M$? 
+\end{prb}
+\begin{solutions}
+	We claim that $\mathscr{D}f$ does not give a well-defined vector field on $M$. Let $(U, (x^{i}))$ and $(V, (\ti{x}^{i}))$ denote two overlapping smooth local coordinate charts on $M$, and let $p \in U \cap V$. Then 
+		\begin{align}
+			\begin{split}
+				\mathscr{D}f &= \frac{\partial f}{\partial x^{i}}(p)\frac{\partial}{\partial x^{i}}\bigg|_{p} \\
+				&= \frac{\partial f}{\partial \ti{x}^{j}}\frac{\partial \ti{x}^{j}}{\partial x^{i}}\bigg|_{p}\frac{\partial \ti{x}^{k}}{\partial x^{i}}\bigg|_{p}\frac{\partial}{\partial \ti{x}^{k}}\bigg|_{\hat{p}}, 
+			\end{split}
+		\end{align}
+	which is identically not equal to $(\partial_{\ti{x^{k}}}f)\partial_{\ti{x}^{k}}$, which is the expression for $\mathscr{D}f$ in the smooth coordinate chart $(V, (\ti{x}^{j}))$.  
+\end{solutions}
+\begin{prb}{2017-J-II-2 (Real Analysis)}
+	Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^{2}([0,1])$, we have that $fg \in L^{2}([0,1])$. Show that $f$ is in $L^{\infty}([0,1])$. 
+\end{prb}
+\begin{solutions}
+	Let $f: [0,1] \to \mathbb{R}$ be measurable, and suppose that for all $g \in L^{2}([0,1])$, $fg \in L^{2}([0,1])$. Assume to the contrary that $f \notin L^{\infty}([0,1])$, which means that for every positive integer $n$, the set 
+		\begin{equation}
+			E_{n} = \{x: |f_{n}(x)| \geq n\}
+		\end{equation}
+	has positive measure. Consider the simple function 
+		\begin{equation}
+			g = \sum_{1}^{\infty}\frac{1}{n\sqrt{m(E_{n})}}\chi_{E_{n}}
+		\end{equation}
+	so that 
+		\begin{equation}
+			\norm{g}_{2}^{2} = \int_{0}^{1} \sum_{1}^{\infty}\frac{1}{n^{2}m(E_{n})}\chi_{E_{n}} = \sum_{1}^{\infty}\frac{1}{n^{2}} < \infty. 
+		\end{equation}
+	On the other hand 
+		\begin{eqnarray}
+			\norm{fg}_{2}^{2} = \int_{0}^{1}|f|^{2}\sum_{1}^{\infty}\frac{1}{n^{2}m(E_{n})}\chi_{E_{n}} \geq \sum_{1}^{\infty}\int_{E_{n}}\frac{1}{m(E_{n})} = \sum_{1}^{\infty}1 >\infty, 
+		\end{eqnarray}
+	which means $fg \notin L^{2}$. This is a contradiction. Hence, by contradiction, $f \in L^{\infty}([0,1])$. 
+\end{solutions}
 
 \subsection{August 2017}
 \begin{prb}{2017-A-I-1 (Geometry/Topology)}
@@ -998,6 +1106,18 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	Let $f(x) = x^{4} + 4$, which is irreducible over $\mathbb{Q}$. However, the four roots of $f(x)$ are $\pm 1 \pm i$. This means that the splitting field of $f(x)$ is $\mathbb{Q}(i)$, which is a degree 2 extension over $\mathbb{Q}$. Hence, the Galois group is of order 2, which implies that the Galois group is the cyclic group $\mathbb{Z}/2\mathbb{Z}$. 
 \end{solutions}
-
+\begin{prb}{MAT532-F-4}
+	Suppose $E \subset \mathbb{R}^{2}$ is Lebesgue measurable. For a square $Q$, let $C_{Q}$ be the \textit{white} squares of a $(8 \times 8)$ checkerboard fitted exactly in $Q$ (so a white square has sidelength 1/8 the sidelength of $Q$). Suppose that for almost any $x \in E$, and any square $Q_{x}$ with $x$ in its lower left corner, we have that $E \cap C_{Q_{x}} = \varnothing$, i.e., $E$ does not intersect the white squares of a checkerboard fitted to $Q_{x}$. Show $m(E) = 0$, where $m$ is Lebesgue measure. 
+\end{prb}
+\begin{solutions}
+	Let $E \subset \mathbb{R}^{2}$ be Lebesgue measurable, and set $A = \{x \in E: E \cap C_{Q_{x}} = \varnothing \text{ for any square $Q_{x}$}\}$; by hypothesis, $A$ consists of almost every $x \in E$. Assume to the contrary that $m(E) \neq 0$ and pick $x \in A$. For this $x$, construct a family of sets $\{E_{r}\}_{r > 0}$ as follows: for each $r$, let $E_{r}$ be a square of sidelength $r/\sqrt{2}$ with $x$ in its lower left corner. It is straightforward to see that for every $r > 0$, $E_{r} \subset B(x, r)$ and $m(E_{r}) = 2\pi^{-1}m(B(r, x))$. Hence, $\{E_{r}\}$ shrinks nicely to $x$. Now, by hypothesis, $m(E \cap E_{r}) \leq \frac{1}{2}m(E_{r})$ for every $r$ since $E$ intersects at most half of $E_{r}$. This means that 
+	\begin{equation}
+		\limsup_{r \to 0}\frac{m(E \cap E_{r})}{m(E_{r})} \leq \frac{1}{2}. 
+	\end{equation}
+	I.e., for almost every $x \in E$, the Lebesgue density is at most $1/2$, which contradicts the Lebesgue Density Theorem. Therefore, by contradiction, $m(E) = 0$. 
+\end{solutions}
+\begin{prb}{MAT532-7-4}
+	Suppose a set $E \subset \mathbb{R}^{3}$ satisfies that for every $x \in\mathbb{R}^{3}$ and $r > 0$, there exists a point $z \in B(x, r)$ such that $E \cap B(z, r/2) \cap B(x, 2r) = \varnothing$. Show that $m(E) = 0$, where $m$ is the Lebesgue measure on $\mathbb{R}^{3}$. 
+\end{prb}
 
 \end{document}
