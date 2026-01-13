@@ -398,7 +398,24 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\item 
 	\end{enumerate}
 \end{solutions}
-
+\begin{prb}{2024-J-II-5 (Real Analysis)}
+	Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty, \infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: You may use the Baire Category Theorem. 
+\end{prb}
+\begin{solutions}
+	We recall the Baire Category Theorem: 
+		\begin{quote}
+			\textbf{(Baire Category Theorem)} Let $X$ be a complete metric space. \vspace{-0.35cm}
+				\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+					\item If $\{U_{n}\}_{1}^{\infty}$ is a sequence of open dense subsets of $X$, then $\bigcap_{1}^{\infty}U_{n}$ is dense in $X$. 
+					\item $X$ is not a countable union of nowhere dense sets. 
+				\end{enumerate}
+		\end{quote}
+	For each positive integer $n$, let $P_{n}$ be the vector space of all polynomials of degree $\leq n$ so that $P = \bigcup_{n \in \mathbb{N}}P_{n}$. Let $\norm{\empspace}$ be a norm on $P$ and assume to the contrary that $P$ is complete under this norm; this means that $P$ is a complete metric space. Since $X$ cannot be the countable union of nowhere dense sets, it follows that there exists some positive integer $n_{0}$ so that $P_{n_{0}}$ is not nowhere dense; i.e., the closure of $P_{n_{0}}$ has nonempty interior. Since any finite dimensional vector subspace of a normed vector space is closed, it follows that $P_{n_{0}}$ is closed in $P$; i.e., $\overline{P}_{n_{0}} = P_{n_{0}}$. Hence, by our hypothesis, $P_{n_{0}}$ has nonempty interior. Let $p \in P_{n_{0}}$ and $B(r, p)$ a ball of radius $r > 0$ centered at $p$ that is contained \textit{entirely within} $P_{n_{0}}$. Let $u \in P\setminus \{0\}$ be arbitrary, and set 
+		\begin{equation}
+			u' = p + \frac{r \cdot u}{2\norm{u}} \implies u' \in B(r, p) \subset P_{n_{0}}. 
+		\end{equation}
+	But since $P_{n_{0}}$ is a vector space, this implies that $u \in P_{n_{0}}$. Since $u$ was arbitrary in $P$, this means that $P_{n_{0}}= P$, which is a contradiction. Hence, every $P_{n}$ must have empty interior, which then contradicts the Baire Category Theorem. Hence, $P$ cannot be a Banach space with respect to any norm. 
+\end{solutions}
 
 \begin{prb}{2024-J-II-6 (Geometry/Topology)}
 	Let $M$ be a smooth $n$-manifold, and let $\varphi$ be a differential $k$-form on $M$ which is closed, in the sense that $d\varphi = 0$. At each point $p \in M$, define 
@@ -575,23 +592,42 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 \begin{solutions}
 	$ $\newline \vspace{-1cm}
 	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-		\item To determine the splitting field of $p(x)$, we must begin by finding the roots of $p(x)$ over some algebraic closure of $\mathbb{Q}$. Let $z = x^{2}$. Then 
-			\begin{align}
-				\begin{split}
-					p(z) = 0 &\iff z^{2} - 3z - 1 = 0 \\
-					&\iff z = \frac{3 \pm \sqrt{13}}{2} \\
-					&\iff x = \pm\sqrt{\frac{3 + \sqrt{13}}{2}}, \pm \sqrt{\frac{3 - \sqrt{13}}{2}}. 
-				\end{split}
-			\end{align}
-		Therefore, the splitting field of $p(x)$ is 
+		\item Let $p(x) = x^{4} - 3x^{2} - 1$. By the rational root test, $p(x)$ has no roots over $\mathbb{Q}$. Moreover, it is straightforward to check that $p(x)$ is not the product of irreducible quadratics with rational coefficients. Hence, $p(x)$ is irreducible over $\mathbb{Q}$. We start by finding the roots of $p(x)$; let $u = x^{2}$. Then 
 			\begin{equation}
-				\mathbb{Q}\left(\sqrt{\frac{3 + \sqrt{13}}{2}}, \sqrt{\frac{3 -\sqrt{13}}{2}}\right).
+				u^{2} - 3u - 1 = 0 \implies u = \frac{3 \pm \sqrt{13}}{2} \implies x = \pm \sqrt{\frac{3 \pm \sqrt{13}}{2}}. 
 			\end{equation}
-		\item Label the roots as $\alpha_{1} = ((3 +\sqrt{13})/2)^{1/2}, \alpha_{2} = -((3 +\sqrt{13})/2)^{1/2}$, $\alpha_{3} = ((3 -\sqrt{13})/2)^{1/2}$, and $\alpha_{4} = -((3 -\sqrt{13})/2)^{1/2}$. The elements of the Galois group are the permutations $\{1, \sigma, \tau, \sigma\tau\}$, where $\sigma: \alpha_{1} \to \alpha_{2}$ and fixes $\alpha_{3}$ and $\tau:\alpha_{3} \to \alpha_{4}$ and fixes $\alpha_{1}$; i.e., $\sigma = (1\;2)$ and $\tau = (3\;4)$. Hence, 
+		Let 
 			\begin{equation}
-				\operatorname{Gal}(\mathbb{Q}(\alpha_{1},\alpha_{3})/\mathbb{Q}) \cong \{1, (1\;2), (3\;4), (1\;2)(3\;4)\} \subset S^{4}.
+				\alpha = \sqrt{\frac{3 + \sqrt{13}}{2}}, \qquad \beta = \sqrt{\frac{3 - \sqrt{13}}{2}}. 
 			\end{equation}
-		In particular, we see that the Galois Group is isomorphic to the Klein-4 subgroup of $S_{4}$. Therefore, the Galois group of $p(x)$ has order 4 and is abelian. 
+		Observe that $\alpha^{2}\beta^{2} = -1$ so that $\beta = \pm \frac{i}{\alpha}$. Therefore, the splitting field of $p(x)$ is 
+			\begin{equation}
+				\mathbb{Q}(\alpha, i). 
+			\end{equation}
+		Observe that the minimal polynomial of $i$ is $x^{2} + 1$, which is irreducible over $\mathbb{Q}(\alpha)$ so that $[\mathbb{Q}(\alpha, i):\mathbb{Q}(\alpha)] = 2$. On the other hand, the minimal polynomial of $\alpha$ is a degree 4 polynomial so that $[\mathbb{Q}(\alpha): \mathbb{Q}] = 4$. Hence, by the tower law, $[\mathbb{Q}(\alpha, i): \mathbb{Q}] = 8$. 
+		\item By the last work in (a), the order of the Galois group of $p(x)$ is $8$. Now, we will determine the Galois group of $p(x)$. Recall that elements of $\operatorname{Gal}(\mathbb{Q}(\alpha, i)/\mathbb{Q})$ are automorphisms $\varphi$ of the field $\mathbb{Q}(\alpha, i)$ with the constraints that: (1) $\varphi$ fixes $\mathbb{Q}$, (2) $\varphi(\alpha)$ must be another root of the minimal polynomial of $\alpha$ over $\mathbb{Q}$, and (3) $\varphi(i)$ must be another root of $x^{2} + 1$. We will explicitly work through each of the elements. 
+			\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
+				\item $\sigma: i \mapsto -i, \alpha \mapsto \alpha$. This permutation has order 2 since $\sigma^{2}(\alpha)  = \sigma(\alpha) = \alpha$ and $\sigma^{2}(i) = \sigma(-i) = i$. 
+				\item $\tau: i \mapsto i, \alpha \mapsto -\alpha$. Once again, this permutation has order 2. 
+				\item $\rho: i \mapsto -i, \alpha \mapsto \beta = \frac{i}{\alpha}$. To compute the order of this permutation, observe that 
+					\begin{equation}
+						\rho^{2}(\alpha) = \rho(i\alpha^{-1}) = (-i) \cdot \frac{1}{i/\alpha} = -\alpha \implies \rho^{4}(\alpha) = \rho^{2}(-\alpha) = \alpha. 
+					\end{equation}
+				Likewise, $\rho^{4}(i) = \rho^{2}(i) = i$. Hence, $\rho$ has order $4$. 
+			\end{enumerate}
+		Now, consider the three elements given above. We compute 
+			\begin{equation}
+				\sigma\rho\sigma(i) = \sigma\rho(-i) = \sigma(i) = -i = \rho^{-1}(i). 
+			\end{equation}
+		Likewise, 
+			\begin{equation}
+				\sigma\rho\sigma(\alpha) = \sigma\rho(\alpha) = \sigma(i)\sigma(\alpha)^{-1} = -\frac{i}{\alpha} = \rho^{-1}(\alpha). 
+			\end{equation}
+		Therefore, $\sigma \rho \sigma = \rho^{-1}$. Hence, 
+			\begin{equation}
+				\operatorname{Gal}(\mathbb{Q}(\alpha,i)/\mathbb{Q}) = \{1, \sigma, \rho, \rho^{2}, \rho^{3}, \sigma\rho, \sigma\rho^{2},  \sigma\rho^{3}\} \cong D_{8}. 
+			\end{equation}
+		Since the dihedral group is not abelian, we conclude that the Galois group for $p(x)$ is non-abelian. 
 	\end{enumerate}
 \end{solutions}
 \begin{prb}{2023-J-I-5 (Algebra I)}
@@ -803,7 +839,24 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 
 
+\begin{prb}{2023-A-II-4 (Real Analysis)}
+	Let $\mu$ be a (positive) Borel probability measure on $[0,1]$, such that for all $t \in [0,1]$ we have $\mu(\{t\}) = 0$. Let $\mu_{n}$ be a (positive) Borel probability measure on $[0,1]$ for $n = 1, 2, \ldots$. Suppose $\mu_{n} \to \mu$ in the weak$^{\ast}$ topology. Let $F(t)=  \mu([0,t])$ and $F_{n}(t)  = \mu_{n}([0,t])$. Prove that $F_{n} \to F$ uniformly. 
+\end{prb}
 
+\subsection{January 2022}
+\begin{prb}{2022-J-I-3 (Algebra)}
+	Show that a group of order 1,000,000 contains a proper normal subgroup (i.e., is not simple). 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order 1,000,000 $=10^{6} = 2^{6} \cdot 5^{6}$. By Sylow's Theorem, 
+	\begin{align}
+		\begin{split}
+			n_{2} &\in \{1, 5, 5^{2}, 5^{3}, 5^{4}, 5^{5}, 5^{6}\} \cap \{2k + 1: k \in \mathbb{N}\}, \\
+			n_{5} &\in \{1, 2, 4, 8, 16, 32, 64\} \cap \{5k + 1: k \in \mathbb{N}\} = \{1, 16\}. 
+		\end{split}
+	\end{align}
+	If $n_{5} = 1$, then we are done since the unique Sylow 5-subgroup must necessarily be normal. So suppose $n_{5} = 16$, and let $G$ act on $\operatorname{Syl}_{5}(G)$ by conjugation. This induces a homomorphism $\varphi: G \to \varphi(G) \leq S_{16}$. However, $|G| = 10^{6} \nmid 16! = |S_{16}|$. This means that $\varphi$ cannot be an injective homomorphism since if otherwise, $|\varphi(G)| = |G|$, but this is impossible since $|G| \nmid |S_{16}|$. Therefore, $\ker{\varphi}$ is a nontrivial normal subgroup of $G$. If $\ker{\varphi} = G$, then every Sylow 5-subgroup of $G$ is normal and is, in fact, unique, which contradicts our hypothesis that $n_{5} = 16$. Hence, $\ker{\varphi}$ is a proper nontrivial normal subgroup of $G$, which means that $G$ cannot be simple. 
+\end{solutions}
 
 
 \subsection{August 2022}
@@ -827,6 +880,28 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 				\norm{M - N} = r, \qquad \norm{N - O} = r, \qquad \norm{M - O} = \norm{r(v_{2} + v_{1})} = r \norm{v_{2} + v_{1}} = r. 
 			\end{split}
 		\end{align}
+\end{solutions}
+\begin{prb}{2022-A-II-4 (Algebra)}
+	Let $G$ be a finite group in which $(ab)^{p} = a^{p}b^{p}$ for every $a, b \in G$, where $p$ is a prime dividing $|G|$. Prove that the Sylow $p$-subgroup of $G$ is normal in $G$ (and is in fact unique). 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a finite group in which $(ab)^{p} = a^{p}b^{p}$ for  every $a, b \in G$, where $p$ is a prime dividing $|G|$. Consider the map $\varphi: G \to G$ defined by $\varphi(g)= g^{p}$. This map is a homomorphism since for any $g, h \in G$, 
+		\begin{equation}
+			\varphi(gh) = (gh)^{p} = g^{p}h^{p} = \varphi(g)\varphi(h), 
+		\end{equation}
+	where the second equality follows from the hypothesis. Consider the map 
+		\begin{equation}
+			\varphi^{k} \coloneqq \underbrace{\varphi \circ \dotsm \circ \varphi}_{k \text{ copies}}, 
+		\end{equation}
+	which must also be a homomorphism since the composition of homomorphisms is a homomorphism. The kernel of $\varphi^{k}$ consists exactly of those elements $x \in G$ whose order is a power of $p$ (i.e., $x^{p^{r}} = 1$ for some positive integer $r$) since 
+		\begin{equation}
+			\varphi^{k}(x) = x^{p^{k}} = x^{p^{r + (k - r)}} = \left(x^{p^{r}}\right)^{p^{k - r}} = 1^{p^{k - r}} = 1. 
+		\end{equation}
+	Hence, since every element with order equal to some order of $p$ belongs in a Sylow $p$-subgroup of $G$, 
+		\begin{equation}
+			\ker{\varphi^{k}} = \bigcup_{P\in \operatorname{Syl}_{p}(G)}P. 
+		\end{equation}
+	Moreover, $\ker{\varphi^{k}}$ must be a $p$-subgroup of $G$ since if not, there exists a prime $p' \neq p$ dividing $|\ker{\varphi^{k}}|$, which means by Cauchy's Theorem that $\ker{\varphi^{k}}$ contains an element of order $p'$ (which is impossible). Hence, since $\ker{\varphi^{k}}$ is a $p$-subgroup of $G$ containing a Sylow $p$-subgroup, by maximality of Sylow $p$-subgroups, $\ker{\varphi^{k}}$ must be a Sylow $p$-subgroup of $G$. Hence, $G$ has a unique Sylow $p$-subgroup. And since kernels of homomorphisms are normal subgroups, this Sylow $p$-subgroup must be normal. 
 \end{solutions}
 
 
@@ -900,12 +975,15 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\begin{equation}
 			\ti{f}: M \to \ti{N}
 		\end{equation}
-	such that $f = p \circ \ti{f}$. Let $\omega$ be a top-egree smooth form on $N$ whose integral over $N$ is one. Since $p: \ti{N} \to N$ is a $k$-sheeted covering of orientable manifolds, we must have $\deg(p) = k$. Therefore, 
+	such that $f = p \circ \ti{f}$. Let $\omega$ be a top-degree smooth form on $N$ whose integral over $N$ is one. Since $p: \ti{N} \to N$ is a $k$-sheeted covering of orientable manifolds, we must have $\deg(p) = k$. Therefore, 
 		\begin{equation}
-			\deg(f) = \deg(p \circ \ti{f}) = \deg(p)\deg(\ti{f}) = \operatorname{ind}(f) \cdot \deg(\ti(f)). 
+			\deg(f) = \deg(p \circ \ti{f}) = \deg(p)\deg(\ti{f}) = \operatorname{ind}(f) \cdot \deg(\ti{f}). 
 		\end{equation}
 	Since $\deg(\ti{f})$ is an integer, we conclude that $\operatorname{ind}(f) \mid \deg(f)$. 
 \end{solutions}
+\begin{prb}{2020-J-I-2 (Geometry/Topology)}
+	Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary. Suppose that $\pi_{1}(M)$ is finite, but that $\pi_{1}(M)$ is infinite. Prove that every smooth map $\Psi: M \to N$ has degree zero. 
+\end{prb}
 
 
 \newpage 
@@ -1025,21 +1103,47 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Let $K$ denote the splitting field of $f(x) = x^{4} + x^{2} + 1$ over $\mathbb{Q}$. Compute the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
 \end{prb}
 \begin{solutions}
-	We begin by finding the splitting field of $f(x)$ over $\mathbb{Q}$. By The rational root test, we observe that $f(x)$ has no roots in $\mathbb{Q}$. Let $z = x^{2}$ so that 
-	\begin{equation}
-		z^{2} + z + 1 = 0 \implies z = \frac{-1 \pm \sqrt{1  - 4}}{2} = \frac{-1 \pm \sqrt{-3}}{2}. 
-	\end{equation}
-	Therefore, the roots of $f$ are 
+	Let $f(x) = x^{4} + x^{2} + 1$; by the rational root test, $f(x)$ has no rational roots. However,
 		\begin{equation}
-			\alpha_{1} = \sqrt{\frac{-1 + \sqrt{-3}}{2}}, \alpha_{2} = -\sqrt{\frac{-1 + \sqrt{-3}}{2}}, \alpha_{3} = \sqrt{\frac{-1 - \sqrt{-3}}{2}}, \alpha_{4} = -\sqrt{\frac{-1 - \sqrt{-3}}{2}}. 
+			f(x) = x^{4} + x + 1 = (x^{2} + x + 1)(x^{2} - x+ 1), 
 		\end{equation}
-	Here, we observe that 
+	where each quadratic factor is irreducible by the rational root test. The roots of these quadratic factors are 
 		\begin{equation}
-			\alpha_{1}^{2} + \beta_{1}^{2} = -1 \qquad \text{ and } \qquad \alpha_{1}^{2} - \beta_{1}^{2} = \sqrt{-3}. 
+			x = \pm\sqrt{\frac{-1 \pm \sqrt{-3}}{2}}. 
 		\end{equation}
-	This means that $K = \mathbb{Q}(\sqrt{-3})$ is the splitting field of $f(x)$ over $\mathbb{Q}$. Since the minimal polynomial of $\sqrt{-3}$ is of degree 2, it follows that $[\mathbb{Q}(\sqrt{-3}): \mathbb{Q}] = 2$. Hence, $|\operatorname{Gal}(K/\mathbb{Q})| = 2$. Therefore, we conclude that $\operatorname{Gal}(K/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$.  
+	Let $\alpha = \sqrt{\frac{-1 + \sqrt{-3}}{2}}$ and $\beta = \sqrt{\frac{-1 -\sqrt{-3}}{2}}$. We observe then that $\alpha^{2}\beta^{2} = 1 \implies \beta = \pm \frac{1}{\alpha}$. On the other hand, 
+		\begin{equation}
+			\alpha^{2} = -\frac{1}{2} + \frac{\sqrt{-3}}{2},
+		\end{equation}
+	so that $\alpha \in \mathbb{Q}(\sqrt{-3})$. Hence, we conclude that the splitting field of $f(x)$ over $\mathbb{Q}$ is $K = \mathbb{Q}(\sqrt{-3})$. Since the minimal polynomial of $\sqrt{-3}$ over $\mathbb{Q}$ has degree 2, $[\mathbb{Q}(\sqrt{3}): \mathbb{Q}] = 2$. Hence, the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ has order 2, which means $\operatorname{Gal}(K/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$. 
 \end{solutions}
 
+
+
+\newpage 
+\subsection{August 2013}
+\begin{prb}{2013-A-II-4 (Geometry/Topology)}
+	Let $\theta$ be a smooth 1-form on a manifold $M$ such that $\theta \neq 0$ everywhere. Let $D \subset TM$ be the vector subbundle defined by 
+		\begin{equation*}
+			D = \ker{\theta} = \brac*{v \in TM: \theta(v) =0}. 
+		\end{equation*}
+	Prove that $D$ is Frobenius integrable if and only if $\theta \wedge d\theta = 0$ everywhere. 
+\end{prb}
+\begin{solutions}
+	Assume the hypotheses of the problem. We recall that $D$ is Frobenius integrable if and only if for any pair of smooth sections $X, Y$ of $D$, $[X, Y]$ is a smooth section of $D$. So let $X, Y$ be smooth sections of $D$, which means that $\theta(X) = \theta(Y) = 0$ everywhere. Suppose that $D$ is Frobenius integrable so that $\theta([X, Y]) = 0$. Since $\theta$ is not identically zero, for any $p \in M$, there exists a vector $R_{p}$ with $\theta_{p}(R_{p}) = 1$. This means that locally one can choose a smooth vector field $R$ with $\theta(R) = 1$. On this neighborhood, we have $T_{p}M= RR_{p} \oplus D_{p}$. Now, we note that 
+		\begin{equation}
+			\theta \wedge d\theta(X, Y, R) = \theta(X)d\theta(Y,R) + \theta(Y)d\theta(R,X) + \theta(R)d\theta(X, Y). 
+		\end{equation}
+	The first two terms are identically zero by our hypothesis. For the latter, we note that
+		\begin{equation}
+			d\theta(X, Y) = X(\theta(Y)) - Y(\theta(X)) - \theta([X, Y]), 
+		\end{equation}
+	which is identically zero. Hence, this means that $\theta \wedge d\theta(R, X, Y)$ is zero. This means that $(\theta \wedge d\theta)_{p} = 0$ for all $p \in M$. Hence, $\theta \wedge d\theta$ is identically zero. Now suppose $\theta \wedge d\theta$ is identically zero. Let $X, Y$ be smooth sections of $D$ and pick a local vector field $R$ such that $\theta(R) = 1$. We recover once again that 
+		\begin{equation}
+			0 = \theta \wedge d\theta(X, Y, R) = -\theta(R)\theta([X,Y]) \implies \theta([X, Y]) = 0. 
+		\end{equation}
+	Hence, $[X, Y] \in \Gamma(D)$, which means that $D$ is Frobenius integrable. 
+\end{solutions}
 
 
 
@@ -1119,5 +1223,192 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{prb}{MAT532-7-4}
 	Suppose a set $E \subset \mathbb{R}^{3}$ satisfies that for every $x \in\mathbb{R}^{3}$ and $r > 0$, there exists a point $z \in B(x, r)$ such that $E \cap B(z, r/2) \cap B(x, 2r) = \varnothing$. Show that $m(E) = 0$, where $m$ is the Lebesgue measure on $\mathbb{R}^{3}$. 
 \end{prb}
+\textcolor{red}{[!! Complete Later !!]}
+
+\begin{prb}{(Algebra-Classification-I)}
+	Classify all groups of order 2026. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $2026 = 2 \cdot 1013$. By Sylow's Theorem, $G$ must contain a normal Sylow 5-subgroup, which we denote by $H$. Let $K$ be a Sylow 2-subgroup of $G$; note $K \cong \mathbb{Z}_{2}$. By Lagrange's Theorem, $H$ and $K$ must intersect trivially. Moreover, $|HK| = |H||K|/|H \cap K| = |H||K| = |G|$, so that $G = HK$. Hence, by the recognition theorem for semidirect products, $G \cong H \rtimes_{\varphi} \mathbb{Z}_{2}$, where $\varphi \in \operatorname{Aut}{H} = \mathbb{Z}_{1013}^{\ast} \cong \mathbb{Z}_{1012}$. So we look for homomorphisms $\varphi: \mathbb{Z}_{2} \to \mathbb{Z}_{1012}$; each homomorphism is completely determined by where the generator $1$ is mapped to. 
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Consider the map $1 \mapsto 0$, which corresponds to the trivial homomorphism. Then the semidirect product is just the direct product, and so $G \cong \mathbb{Z}_{1013} \times \mathbb{Z}_{2}$. 
+			\item Consider the map $\varphi: 1 \mapsto 506$, where $506$ is the unique element of $\mathbb{Z}_{1012}$ with order 2. This is a non-trivial homomorphism with kernel $\{0\}$. Hence, this gives a non-abelian group $\mathbb{Z}_{1013} \rtimes_{\varphi} \mathbb{Z}_{2}$. 
+		\end{enumerate}
+	Hence, up to isomorphism, there are only two groups of order 2026. 
+\end{solutions} 
+\begin{prb}{(Algebra-Classification-II)}
+	Classify all groups of order 1969. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $1969 = 11 \cdot 179$. By Sylow's Theorem, $G$ must contain a normal Sylow 179-subgroup, which we denote by $H$. Let $K$ be a Sylow 11-subgroup of $G$; note $K \cong \mathbb{Z}_{11}$. By Langrage's Theorem, $H$ and $K$ must intersect trivially and $G = HK$. Therefore, $G = H \rtimes_{\varphi} K$ for some $\varphi \in \operatorname{Aut}{H} = \mathbb{Z}_{179}^{\ast}\cong \mathbb{Z}_{178}$. So we look for homomorphisms $\varphi: \mathbb{Z}_{11} \to \mathbb{Z}_{178}$; each homomorphism is completely determine by where the generator 1 is mapped to. \vspace{-0.35cm}
+		\begin{enumerate}[itemsep =-2pt,label= (\roman{*})]
+			\item Consider the map $1 \mapsto 0$. This corresponds to the trivial homomorphism so that the semidirect product is just the direct product. Therefore, $G \cong \mathbb{Z}_{179} \times \mathbb{Z}_{11} \cong \mathbb{Z}_{1969}$ (by the Chinese Remainder Theorem). 
+			\item Since $1$ has order 11, $1$ must map to some nonzero element of $\mathbb{Z}_{178}$ of order 11; but since $11$ and $178$ are relatively prime, there exists no such element. 
+		\end{enumerate}
+	Hence, we conclude that there is exactly one group of order 1969, which is precisely $\mathbb{Z}_{1969}$. 
+\end{solutions}
+\begin{prb}{2008-J-I-3 (Algebra)}
+	Classify all groups of order 28. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of rder $28 = 2^{2} \cdot 7$. By Sylow's Theorem, $G$ contains a normal Sylow 7-subgroup, which we denote by $H$. Let $K$ be a Sylow 2-subgroup, which has order 4. By Lagrange's Theorem, $H$ and $K$ must intersect trivially and $G = HK$. Hence, by the recognition theorem for semidirect products, $G = H \rtimes_{\varphi} K$ for some $\varphi \in \operatorname{Aut}(H) = \mathbb{Z}_{7}^{\ast} \cong \mathbb{Z}_{6}$. So we look for homomorphisms $\varphi: K \to \mathbb{Z}_{6}$, where $K$ is a group of order 4. Up to isomorphism, there are precisely two groups of order 4: (1) $\mathbb{Z}_{4}$, and (2) $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$. We consider each case separately: 
+		\begin{enumerate}[itemsep =-2pt,label = (\Roman{*})]
+			\item Consider the case $K = \mathbb{Z}_{4}$, which has two generators: $1$ and $3$. Each homomorphism $\varphi: \mathbb{Z}_{4} \to \mathbb{Z}_{6}$ is determined by where $\varphi$ sends a generator with the constrain that $1$ may be sent to only those elements of $\mathbb{Z}_{6}$ whose order divides 4 (namely $0,3$). 
+				\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+					\item Suppose $\varphi_{1}: 1 \mapsto 0$. Then since $\varphi(3) = 3 \cdot \varphi(1) = 0$, $\varphi$ is the trivial homomorphism. In this case, the semidirect product is the direct product and $G$ is isomorphic to the abelian group $\mathbb{Z}_{7} \times \mathbb{Z}_{4}$. 
+					\item Suppose $\varphi_{2}: 1 \mapsto 3$. Then this is a nontrivial homomorphism with image consisting of $\{0,3\}$ and kernel consisting of $\{0,2\}$. Hence, this produces a non-abelian group $\mathbb{Z}_{7} \rtimes_{\varphi_{2}} \mathbb{Z}_{4}$. 
+				\end{enumerate}
+			\item Now consider the case $K = \mathbb{Z}_{2} \times \mathbb{Z}_{2} = \braket{a} \times \braket{b}$. $\psi: \mathbb{Z}_{2} \times \mathbb{Z}_{2} \to \mathbb{Z}_{6}$ is determined uniquely by $\psi(a)$ and $\psi(b)$ provided that its order divides 2. This means $\psi(a),\psi(b) \in \{0,3\}$. 
+				\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+					\item Suppose $\psi_{1}(a) = \psi_{1}(b) = 0$. The semidirect is then a direct product and so $G \cong \mathbb{Z}_{7} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \cong \mathbb{Z}_{14} \times \mathbb{Z}_{2}$. 
+					\item Suppose $\psi_{2}(a) = 0$ and $\psi_{2}(b) = 3$. This is a nontrivial homomorphism so that $G \cong \mathbb{Z}_{7} \rtimes_{\psi_{2}}\mathbb{Z}_{2}^{2}$ is non-abelian. 
+					\item Suppose $\psi_{3}(a) = 3$ and $\psi_{3}(b) = 0$. Then $\psi_{3} = \psi_{2} \circ \theta$ where $\theta$ is the automorphism of $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$ given by $\theta(a) = b$ and $\theta(b) = a$. Hence, this semidirect product gives the same group as in case (ii). 
+					\item Suppose $\psi_{4}(a) = \psi_{4}(b) = 3$. Then $\psi_{4} = \psi_{3} \circ \theta$ where $\theta$ is the automorphism of $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$ given by $\theta(a) = a$ and $\theta(b) = ab$. Hence, this semidirect product gives the same group as in case (iii). 
+				\end{enumerate}
+		\end{enumerate}
+	Altogether, we conclude that there are exactly four isomorphism classes of groups of order 28, namely $\mathbb{Z}_{7} \times \mathbb{Z}_{4}$, $\mathbb{Z}_{7} \rtimes_{\varphi_{2}}\mathbb{Z}_{4}$, $\mathbb{Z}_{14} \times \mathbb{Z}_{2}$, and $\mathbb{Z}_{7} \rtimes_{\psi_{2}}\mathbb{Z}_{2}^{2}$, of which exactly two are abelian. 
+\end{solutions}
+\begin{prb}{2010-J-II-5 (Algebra)}
+	Classify (up to isomorphism) all groups of order 45. 
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $45 = 3^{2} \cdot 5$. By Sylow's Theorem, $G$ has a normal Sylow 5-subgroup, which we denote by $H$. Let $K$ denote a Sylow 3-subgroup of $G$, which has order 9. By Lagrange's Theorem, $H, K$ intersect trivially and $|G| = |H||K|$ so that $G = HK$. Hence, $G \cong H \rtimes_{\varphi} K$ for some $\varphi \in \operatorname{Aut}(H) \cong \mathbb{Z}_{5}^{\ast} \cong \mathbb{Z}_{4}$. Hence, we look at homomorphisms $\varphi: K \to \mathbb{Z}_{4}$. There are exactly two groups of order 9, up to isomorphism; namely, these are $\mathbb{Z}_{9}$ and $\mathbb{Z}_{3} \times \mathbb{Z}_{3}$. Hence, we consider each separately. 
+		\begin{enumerate}[itemsep=-2pt,label = (\Roman{*})]
+			\item Let $K = \mathbb{Z}_{9}$, which has generators 1, 2, 4, 5, 7, and 8. Each homomorphism $\varphi: K \to \mathbb{Z}_{4}$ is determined uniquely by where $\varphi$ sends a generator with the constraint that they may only be sent to those elements of $\mathbb{Z}_{4}$ whose order divides $9$. There is only one such element, namely 0. Hence, the only group we get is the direct product $\mathbb{Z}_{9} \times \mathbb{Z}_{5} \cong \mathbb{Z}_{45}$, which is abelian. 
+			\item Let $K = \mathbb{Z}_{3} \times \mathbb{Z}_{3}$. Each $\psi: \mathbb{Z}_{3} \times\mathbb{Z}_{3} = \braket{a} \times \braket{b} \to \mathbb{Z}_{4}$ is uniquely determined by $\psi(a)$ and $\psi(b)$ provided they divide $3$. But there is only one such element in $\mathbb{Z}_{4}$, which is zero. Hence, we only get the direct product $\mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{5} \cong \mathbb{Z}_{3} \times \mathbb{Z}_{15}$, which is abelian. 
+		\end{enumerate}
+	Therefore, we find that (1) there are exactly two groups, up to isomorphism, of order 45; and (2) both groups are abelian. 
+\end{solutions}
+\begin{prb}{2003-J-I-6 (Algebra)}
+	$ $\newline \vspace{-0.65cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Prove that a group of order $p^{2}$, where $p$ is a prime number, is abelian. 
+		\item Classify groups of order $p^{2}$ up to isomorphism. 
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	$ $\newline \vspace{-1cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $G$ be a group of order $p^{2}$, and let $Z(G)$ be its center. By Lagrange's Theorem, $|Z(G)| \in \{1, p, p^{2}\}$. If $|Z(G)| = p^{2}$ and so $G = Z(G)$, which means $G$ is abelian. $|Z(G)| \neq p$ since otherwise $|G/Z(G)| = p$ forcing $G/Z$ to be cyclic and $G$ to be abelian (which contradicts $Z(G)$ being a proper subgroup of $G$). Finally $|Z(G)|$ cannot be one, since the center of any $p$-group must necessarily be nontrivial (by the class equation). Hence, $Z(G) = G$, which means $G$ is abelian. 
+		\item Since every group of order $p^{2}$ must necessarily be abelian, up to isomorphism, there must be exactly two groups, namely $\mathbb{Z}_{p}\times \mathbb{Z}_{p}$ and $\mathbb{Z}_{p^{2}}$. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{2010-J-I-5 (Algebra)}
+	Consider the following irreducible polynomial over $\mathbb{Q}$: $p(x) = x^{4} - 3x^{2} - 1$. \vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Describe the splitting field of $p(x)$. 
+		\item Consider the Galois group of $p(x)$. Compute its order and determine if it is abelian. 
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Let $p(x) = x^{4} - 3x^{2} - 1$. By the rational root test, $p(x)$ has no roots over $\mathbb{Q}$. Moreover, it is straightforward to check that $p(x)$ is not the product of irreducible quadratics with rational coefficients. Hence, $p(x)$ is irreducible over $\mathbb{Q}$. We start by finding the roots of $p(x)$; let $u = x^{2}$. Then 
+			\begin{equation}
+				u^{2} - 3u - 1 = 0 \implies u = \frac{3 \pm \sqrt{13}}{2} \implies x = \pm \sqrt{\frac{3 \pm \sqrt{13}}{2}}. 
+			\end{equation}
+			Let 
+			\begin{equation}
+				\alpha = \sqrt{\frac{3 + \sqrt{13}}{2}}, \qquad \beta = \sqrt{\frac{3 - \sqrt{13}}{2}}. 
+			\end{equation}
+			Observe that $\alpha^{2}\beta^{2} = -1$ so that $\beta = \pm \frac{i}{\alpha}$. Therefore, the splitting field of $p(x)$ is 
+			\begin{equation}
+				\mathbb{Q}(\alpha, i). 
+			\end{equation}
+			Observe that the minimal polynomial of $i$ is $x^{2} + 1$, which is irreducible over $\mathbb{Q}(\alpha)$ so that $[\mathbb{Q}(\alpha, i):\mathbb{Q}(\alpha)] = 2$. On the other hand, the minimal polynomial of $\alpha$ is a degree 4 polynomial so that $[\mathbb{Q}(\alpha): \mathbb{Q}] = 4$. Hence, by the tower law, $[\mathbb{Q}(\alpha, i): \mathbb{Q}] = 8$. 
+			\item By the last work in (a), the order of the Galois group of $p(x)$ is $8$. Now, we will determine the Galois group of $p(x)$. Recall that elements of $\operatorname{Gal}(\mathbb{Q}(\alpha, i)/\mathbb{Q})$ are automorphisms $\varphi$ of the field $\mathbb{Q}(\alpha, i)$ with the constraints that: (1) $\varphi$ fixes $\mathbb{Q}$, (2) $\varphi(\alpha)$ must be another root of the minimal polynomial of $\alpha$ over $\mathbb{Q}$, and (3) $\varphi(i)$ must be another root of $x^{2} + 1$. We will explicitly work through each of the elements. 
+			\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
+				\item $\sigma: i \mapsto -i, \alpha \mapsto \alpha$. This permutation has order 2 since $\sigma^{2}(\alpha)  = \sigma(\alpha) = \alpha$ and $\sigma^{2}(i) = \sigma(-i) = i$. 
+				\item $\tau: i \mapsto i, \alpha \mapsto -\alpha$. Once again, this permutation has order 2. 
+				\item $\rho: i \mapsto -i, \alpha \mapsto \beta = \frac{i}{\alpha}$. To compute the order of this permutation, observe that 
+				\begin{equation}
+					\rho^{2}(\alpha) = \rho(i\alpha^{-1}) = (-i) \cdot \frac{1}{i/\alpha} = -\alpha \implies \rho^{4}(\alpha) = \rho^{2}(-\alpha) = \alpha. 
+				\end{equation}
+				Likewise, $\rho^{4}(i) = \rho^{2}(i) = i$. Hence, $\rho$ has order $4$. 
+			\end{enumerate}
+			Now, consider the three elements given above. We compute 
+			\begin{equation}
+				\sigma\rho\sigma(i) = \sigma\rho(-i) = \sigma(i) = -i = \rho^{-1}(i). 
+			\end{equation}
+			Likewise, 
+			\begin{equation}
+				\sigma\rho\sigma(\alpha) = \sigma\rho(\alpha) = \sigma(i)\sigma(\alpha)^{-1} = -\frac{i}{\alpha} = \rho^{-1}(\alpha). 
+			\end{equation}
+			Therefore, $\sigma \rho \sigma = \rho^{-1}$. Hence, 
+			\begin{equation}
+				\operatorname{Gal}(\mathbb{Q}(\alpha,i)/\mathbb{Q}) = \{1, \sigma, \rho, \rho^{2}, \rho^{3}, \sigma\rho, \sigma\rho^{2},  \sigma\rho^{3}\} \cong D_{8}. 
+			\end{equation}
+			Since the dihedral group is not abelian, we conclude that the Galois group for $p(x)$ is non-abelian. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{2015-A-II-5 (Algebra)}
+	Find the splitting field and the Galois group of the polynomial $x^{4} - 5x^{2} + 5$ over $\mathbb{Q}$. 
+\end{prb}
+\begin{solutions}
+	Let $p(x) = x^{4} - 5x^{2} + 5$. By the rational root test, $p(x)$ has no rational roots. Moreover, it is straightforward to see that $p(x)$ is not expressible as the product of irreducible quadratics. Hence, $p(x)$ is irreducible over $\mathbb{Q}$. We find its four complex roots as follows. Let $u = x^{2}$. Then 
+		\begin{equation}
+			u^{2} - 5u + 5 = 0 \implies u = \frac{5 \pm \sqrt{25 - 20}}{2} = \frac{5 \pm \sqrt{5}}{2} \implies x = \pm \sqrt{\frac{5 \pm \sqrt{5}}{2}}. 
+		\end{equation}
+	Let
+		\begin{equation}
+			\alpha \coloneqq \sqrt{\frac{5 + \sqrt{5}}{2}}, \qquad \beta \coloneqq \sqrt{\frac{5 - \sqrt{5}}{2}}. 
+		\end{equation}
+	We observe that 
+		\begin{equation}
+			\alpha^{2} = \frac{5}{2} + \frac{\sqrt{5}}{2} \qquad \text{ and } \qquad \alpha^{2}\beta^{2} = 5 \implies \beta = \pm \frac{5}{\alpha}. 
+		\end{equation}
+	Therefore, the splitting field is $\mathbb{Q}(\sqrt{5}, \alpha)$. Since the minimal polynomial of $\sqrt{5}$ over $\mathbb{Q}$ is $x^{2} - 5$, which has degree 2, $[\mathbb{Q}(\sqrt{5}):\mathbb{Q}] = 2$. On the other hand, the minimal polynomial of $\alpha$ over $\mathbb{Q}(\sqrt{5})$ is 
+		\begin{equation}
+			x^{2} - \frac{5 + \sqrt{5}}{2},
+		\end{equation}
+	so that $[\mathbb{Q}(\sqrt{5},\alpha):\mathbb{Q}] = 2$. Hence, by the Tower Law, $[\mathbb{Q}(\sqrt{5},\alpha): \mathbb{Q}] = 4$, which means that the corresponding Galois group has order 4; there are two groups, up to isomorphism, of order 4 (namely $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$ and $\mathbb{Z}_{4}$). The elements of $\operatorname{Gal}(\mathbb{Q}(\sqrt{5}, \alpha)/\mathbb{Q})$ are precisely the automorphisms on $\mathbb{Q}(\sqrt{5}, \alpha)$ that fix $\mathbb{Q}$ such that the automorphism group acts transitively on the roots. Consider the permutation $\rho: \alpha \mapsto -\beta = -\frac{5}{\alpha}$ and $\rho: \sqrt{5} \mapsto -\sqrt{5}$. We observe that 
+		\begin{align}
+			\begin{split}
+				\rho^{2}(\sqrt{5}) &= \rho(-\sqrt{5}) = \sqrt{5}. \\
+				\rho^{2}(\alpha) &= \rho\left(-\frac{5}{\alpha}\right) = -5\rho(\alpha)^{-1} = \alpha  \\
+				\implies \rho^{3}(\alpha) &= \rho(\alpha) = -5\alpha^{-1} \\
+				\implies \rho^{4}(\alpha) &= -5\rho(\alpha)^{-1} = -5 \cdot \left(-\frac{\alpha}{5}\right) = \alpha. 
+			\end{split}
+		\end{align}
+	I.e., $\rho$ is an element of order 4. Therefore, since only $\mathbb{Z}_{4}$ has an element of order 4, we conclude that $\operatorname{Gal}(\sqrt{5}, \alpha)/\mathbb{Q}) \cong \mathbb{Z}/4\mathbb{Z}$. 
+\end{solutions}
+\begin{prb}{2003-A-II-4 (Algebra)}
+	Let $E$ be a splitting field of $f(x) = x^{3} + x^{2} - 2x - 1$ over the field of rational numbers $\mathbb{Q}$. Find the Galois group of $E/\mathbb{Q}$. (Hint: first prove that $f(x):f(x^{2} - 2)$.) \textcolor{orange}{This was the exact notation used in the problem...} 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{3} + x^{2} - 2x - 1$. By the rational root test, $f(x)$ has no rational roots and hence is irreducible over $\mathbb{Q}$ (being a polynomial of degree 3). Consider the substitution $x = y - 1/3$: 
+		\begin{equation}
+			f(y) = y^{3} - \frac{7}{3}y - \frac{7}{27}. 
+		\end{equation}
+	The discriminant of this depressed cubic is 
+		\begin{equation}
+			D = -4p^{3} - 27q^{2} =4\left(\frac{7^{3}}{27}\right) - 27\left(\frac{7^{2}}{27^{2}}\right) = 7^{2}\left(\frac{28}{27} -\frac{1}{27}\right) = 7^{2}. 
+		\end{equation}
+	Since the discriminant is a perfect square, we conclude that the Galois group is $A_{3}$. 
+\end{solutions}
+\begin{prb}{2014-J-I-5 (Algebra)}
+	Let $K$ denote the splitting field for $(x^{5} - 1)(x^{3} - 2)$ over the rational numbers $\mathbb{Q}$. Compute the cardinality of the Galois group $G$ for the extension $\mathbb{Q} \subset K$, and show that $G$ is not abelian. 
+\end{prb}
+\begin{solutions}
+	Let $K$ denote the splitting field for $(x^{5} - 1)(x^{3} - 2)$. We note that the splitting field for $x^{3} - 2$ is $\mathbb{Q}(\sqrt[3](2), \zeta_{3})$, where $\zeta_{3}$ is the primitive 3rd root of unity, and the splitting field for $x^{5} - 1$ is $\mathbb{Q}(\zeta_{5})$, where $\zeta_{5}$ is the primitive 5th root of unity. Now, since 3 and 5 are relatively prime, the 3rd primitive roots of unity cannot be expressed as a linear combination of 5th roots of unity. Likewise, $\sqrt[3]{2} \notin \mathbb{Q}(\zeta_{5})$. Hence, $\mathbb{Q}(\sqrt[3]{2}, \zeta_{3}) \cap \mathbb{Q}(\zeta_{5}) = \mathbb{Q}$, which means that 
+		\begin{equation}
+			\operatorname{Gal}(K/\mathbb{Q}) \cong \operatorname{Gal}(\mathbb{Q}(\sqrt[3]{2},\zeta_{3})/\mathbb{Q}) \times \operatorname{Gal}(\mathbb{Q}(\zeta_{5})/\mathbb{Q}). 
+		\end{equation}
+	From this, we see that the order of $G$ is 24. Now consider $\operatorname{Gal}(\mathbb{Q}(\sqrt[3]{2},\zeta_{3})/\mathbb{Q})$. The corresponding minimal polynomial is $x^{3} - 2$, which is a depressed cubic. Since its discriminant is $-108$, which is not a square, we conclude that $\operatorname{Gal}(\mathbb{Q}(\sqrt[3]{2}, \zeta_{3})/\mathbb{Q}) \cong S_{3}$, which is not abelian. Hence, we conclude that $G$ is not abelian.  
+\end{solutions}
+\begin{prb}{2003-J-I-5 (Algebra)}
+	Let $f(x) = x^{5} - 2$. Find generators and relations for the Galois group $G \coloneqq \operatorname{Gal}(F/\mathbb{Q})$ of the splitting field $F$ of $f(x)$ over the rational numbers $\mathbb{Q}$. 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{5} - 2$, which has no roots in $\mathbb{Q}$ by the rational root test. It is also straightforward to check that $x^{5} - 2$ cannot be written as the product of an irreducible cubic and irreducible quadratic so that $f(x)$ is indeed irreducible over $\mathbb{Q}$. The roots of this polynomial are $\sqrt[5]{2}, \zeta_{5}\sqrt[5]{2}, \ldots, \zeta_{5}^{4}\sqrt[5]{2}$, where $\zeta_{5}$ is the primitive 5th root of unity. Therefore, the splitting field $F$ of $f(x)$ must contain the field $\mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$. On the other hand, each of the roots mentioned above lie in this field so that $F = \mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$. Moreover, it follows that $[F: \mathbb{Q}] = 5 \cdot 4 = 20$ so that $G$ is a group of order 20. \textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+\newpage 
+\subsection{Essential Review Notes}
+\subsubsection{Topological Vector Spaces}
+\begin{itemize}
+	\item \textbf{Def. (Topological Vector Space)} A vector space $\mathscr{X}$ over a field $K$ such that vector addition in $\mathscr{X}$ and scalar multiplication are continuous maps from $\mathscr{X} \times \mathscr{X}$ and $K \times \mathscr{X}$, respectively, to $\mathscr{X}$. 
+	\item \textbf{Def. (Weak Convergence)} A sequence $\{x_{n}\}$ in a normed linear space $\mathscr{X}$ \textit{converges weakly} to $x \in X$ if the sequence of scalars $\{f(x_{n})\}$ converges to $f(x)$ for all $f \in \mathscr{X}^{\ast}$. 
+	\item \textbf{Def. (Weak$^{\ast}$ Convergence)} Let $\mathscr{X}$ be a normed linear space. A sequence $\{f_{n}\} \subseteq \mathscr{X}^{\ast}$ is \textit{weak$^{\ast}$ convergent} to $f \in \mathscr{X}^{\ast}$ if $\{f_{n}(x)\}$ converges to $f(x)$ for all $x \in \mathscr{X}$. Note, all this really says that the sequence of scalars $\{\hat{x}(f_{n})\} = \{f_{n}(x)\}$ converges to $\hat{x}(f) = f(x)$ for all $\hat{x} \in \mathscr{X}^{\ast\ast}$ (read $x \in \mathscr{X}$). 
+\end{itemize}
 
 \end{document}
