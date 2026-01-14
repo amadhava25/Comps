@@ -80,24 +80,30 @@
 \contentsline {subsection}{August 2017}{28}{section*.81}%
 \contentsline {subsubsection}{Problem 2017-A-I-1 (Geometry/Topology)}{28}{section*.82}%
 \contentsline {subsubsection}{Problem 2017-A-II-3 (Algebra)}{28}{section*.83}%
-\contentsline {subsection}{August 2013}{29}{section*.84}%
-\contentsline {subsubsection}{Problem 2013-A-II-4 (Geometry/Topology)}{29}{section*.85}%
-\contentsline {subsection}{Textbook Problems}{30}{section*.86}%
-\contentsline {subsubsection}{Problem Lee-7-5}{30}{section*.87}%
-\contentsline {subsubsection}{Problem D\&F-14.6.2}{30}{section*.88}%
-\contentsline {subsubsection}{Problem D\&F-14.6.4}{31}{section*.89}%
-\contentsline {subsubsection}{Problem D\&F-14.6.5}{31}{section*.90}%
-\contentsline {subsubsection}{Problem MAT532-F-4}{31}{section*.91}%
-\contentsline {subsubsection}{Problem MAT532-7-4}{31}{section*.92}%
-\contentsline {subsubsection}{Problem (Algebra-Classification-I)}{31}{section*.93}%
-\contentsline {subsubsection}{Problem (Algebra-Classification-II)}{32}{section*.94}%
-\contentsline {subsubsection}{Problem 2008-J-I-3 (Algebra)}{32}{section*.95}%
-\contentsline {subsubsection}{Problem 2010-J-II-5 (Algebra)}{32}{section*.96}%
-\contentsline {subsubsection}{Problem 2003-J-I-6 (Algebra)}{33}{section*.97}%
-\contentsline {subsubsection}{Problem 2010-J-I-5 (Algebra)}{33}{section*.98}%
-\contentsline {subsubsection}{Problem 2015-A-II-5 (Algebra)}{34}{section*.99}%
-\contentsline {subsubsection}{Problem 2003-A-II-4 (Algebra)}{35}{section*.100}%
-\contentsline {subsubsection}{Problem 2014-J-I-5 (Algebra)}{35}{section*.101}%
-\contentsline {subsubsection}{Problem 2003-J-I-5 (Algebra)}{35}{section*.102}%
-\contentsline {subsection}{Essential Review Notes}{36}{section*.103}%
-\contentsline {subsubsection}{Topological Vector Spaces}{36}{section*.104}%
+\contentsline {subsection}{January 2013}{28}{section*.84}%
+\contentsline {subsubsection}{Problem 2013-J-II-6 (Geometry/Topology)}{28}{section*.85}%
+\contentsline {subsection}{August 2013}{30}{section*.86}%
+\contentsline {subsubsection}{Problem 2013-A-II-4 (Geometry/Topology)}{30}{section*.87}%
+\contentsline {subsection}{Textbook Problems}{31}{section*.88}%
+\contentsline {subsubsection}{Problem Lee-7-5}{31}{section*.89}%
+\contentsline {subsubsection}{Problem D\&F-14.6.2}{31}{section*.90}%
+\contentsline {subsubsection}{Problem D\&F-14.6.4}{32}{section*.91}%
+\contentsline {subsubsection}{Problem D\&F-14.6.5}{32}{section*.92}%
+\contentsline {subsubsection}{Problem MAT532-F-4}{32}{section*.93}%
+\contentsline {subsubsection}{Problem MAT532-7-4}{32}{section*.94}%
+\contentsline {subsubsection}{Problem (Algebra-Classification-I)}{32}{section*.95}%
+\contentsline {subsubsection}{Problem (Algebra-Classification-II)}{33}{section*.96}%
+\contentsline {subsubsection}{Problem 2008-J-I-3 (Algebra)}{33}{section*.97}%
+\contentsline {subsubsection}{Problem 2010-J-II-5 (Algebra)}{33}{section*.98}%
+\contentsline {subsubsection}{Problem 2003-J-I-6 (Algebra)}{34}{section*.99}%
+\contentsline {subsubsection}{Problem 2010-J-I-5 (Algebra)}{34}{section*.100}%
+\contentsline {subsubsection}{Problem 2015-A-II-5 (Algebra)}{35}{section*.101}%
+\contentsline {subsubsection}{Problem 2003-A-II-4 (Algebra)}{36}{section*.102}%
+\contentsline {subsubsection}{Problem 2014-J-I-5 (Algebra)}{36}{section*.103}%
+\contentsline {subsubsection}{Problem 2003-J-I-5 (Algebra)}{36}{section*.104}%
+\contentsline {subsubsection}{Problem 2014-J-II-2 (Algebra)}{36}{section*.105}%
+\contentsline {subsection}{Other Qualifying Exams}{37}{section*.106}%
+\contentsline {subsubsection}{Problem RUT-2023-A-I-1 (Algebra)}{37}{section*.107}%
+\contentsline {subsection}{Classification of Finite Groups}{38}{section*.108}%
+\contentsline {subsection}{Essential Review Notes}{39}{section*.109}%
+\contentsline {subsubsection}{Topological Vector Spaces}{39}{section*.110}%

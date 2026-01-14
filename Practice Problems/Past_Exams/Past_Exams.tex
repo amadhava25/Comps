@@ -1117,7 +1117,13 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	so that $\alpha \in \mathbb{Q}(\sqrt{-3})$. Hence, we conclude that the splitting field of $f(x)$ over $\mathbb{Q}$ is $K = \mathbb{Q}(\sqrt{-3})$. Since the minimal polynomial of $\sqrt{-3}$ over $\mathbb{Q}$ has degree 2, $[\mathbb{Q}(\sqrt{3}): \mathbb{Q}] = 2$. Hence, the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ has order 2, which means $\operatorname{Gal}(K/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$. 
 \end{solutions}
-
+\subsection{January 2013}
+\begin{prb}{2013-J-II-6 (Geometry/Topology)}
+	Let $M$ be a smooth compact manifold, and suppose that there is a smooth map $F: M \to S^{1}$ whose derivative is non-zero at every point. Prove that the de Rham cohomology space $\h{1}(M)$ is non-zero. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a smooth compact manifold, and $F: M \to S^{1}$ a smooth map whose derivative is non-zero at every point. Assume to the contrary that the de Rham cohomology space $\h{1}(M) =0$, which means that every closed 1-form on $M$ is exact. Since $\h{1}(S^{1}) \cong \mathbb{R}$, there exists a nowhere vanishing closed 1-form $\omega$ on $S^{1}$ such that its equivalence class generates $\h{1}(S^{1})$. Then since $F$ is a smooth map, $F^{\ast}\omega$ is a closed 1-form on $M$. Since $\h{1}(M) = 0$, $F^{\ast}\omega$ is an exact form; i.e., there exists a smooth function: $f: M \to \mathbb{R}$ such that $F^{\ast}\omega = df$. Since $f$ is smooth and $M$ is compact, $f$ must have a maximum or minimum at some point $p \in M$, which implies that $df_{p} = 0$ at $p \in M$. Therefore, $0 = (F^{\ast}\omega)_{p} = \omega_{F(p)} \circ dF_{p}$. Since $\omega$ is nowhere vanishing, we conclude that $dF_{p} =0$. But this contradicts our assumption that $dF$ is non-zero at every point. Hence, by contradiction, $\h{1}(M) \neq 0$. 
+\end{solutions}
 
 
 \newpage 
@@ -1402,6 +1408,59 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	Let $f(x) = x^{5} - 2$, which has no roots in $\mathbb{Q}$ by the rational root test. It is also straightforward to check that $x^{5} - 2$ cannot be written as the product of an irreducible cubic and irreducible quadratic so that $f(x)$ is indeed irreducible over $\mathbb{Q}$. The roots of this polynomial are $\sqrt[5]{2}, \zeta_{5}\sqrt[5]{2}, \ldots, \zeta_{5}^{4}\sqrt[5]{2}$, where $\zeta_{5}$ is the primitive 5th root of unity. Therefore, the splitting field $F$ of $f(x)$ must contain the field $\mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$. On the other hand, each of the roots mentioned above lie in this field so that $F = \mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$. Moreover, it follows that $[F: \mathbb{Q}] = 5 \cdot 4 = 20$ so that $G$ is a group of order 20. \textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
+\begin{prb}{2014-J-II-2 (Algebra)}
+	Let $H$ denote a normal subgroup of the finite group $G$. If $P$ denotes a Sylow $p$-subgroup of $H$, then prove that $G= N(P;G)H$ (where $N(P;G)$ denotes the normalizer of $P$ in $G$). 
+\end{prb}
+\begin{solutions}
+	Let $H$ denote a normal subgroup of the finite group $G$, and let $P$ be a Sylow $p$-subgroup of $H$. Let $N_{G}(P) \coloneqq N(P;G)$ denote the normalizer of $P$ in $G$. Since $H$ is normal, $KH \leq G$ for any $K \leq G$. In particular, $N_{G}(P)H \leq G$. Hence, it suffices to show that $G \leq N_{G}(P)H$. Since $P \leq H$ and $H$ is a normal subgroup of $G$, for any $g \in G$, $gPg^{-1} \leq gHg^{-1}= H$ so that $gPg^{-1}$ is another Sylow $p$-subgroup of $H$. On the other hand, we also know that all Sylow $p$-subgroups of $H$ are conjugate by elements of $H$. Hence, for each $g \in G$, there exists a corresponing $h \in H$ such that 
+		\begin{equation}
+			hPh^{-1} = gPg^{-1} \implies (g^{-1}h)P(g^{-1}h)^{-1} = P. 
+		\end{equation}
+	I.e, $g^{-1}h \in N_{G}(P)$, which means $g \in HN_{G}(P) = N_{G}(P)H$, where the equality stems from $N_{G}(P)H$ being a subgroup of $G$. Hence, since $g$ was arbitrary, $G \subseteq N_{G}(P)H$, which concludes the proof. 
+\end{solutions}
+
+
+
+\newpage 
+\subsection{Other Qualifying Exams}
+\begin{prb}{RUT-2023-A-I-1 (Algebra)}
+	Classify the groups of order $2023 = 7 \cdot 17^{2}$ up to isomorphism. (You may use without proof the well-known result that if $p$ is a prime, then every group of order $p^{2}$ is abelian.)
+\end{prb}
+\begin{solutions}
+	Let $G$ be a group of order $2023 = 7 \cdot 17^{2}$. By Sylow's Theorem, $G$ contains a normal Sylow 7-subgroup and a normal Sylow 17-subgroup. Let $H \cong \mathbb{Z}_{7}$ denote the Sylow 7-subgroup and $K$ denote the Sylow 17-subgroup; note that either $K \cong \mathbb{Z}_{17^{2}}$ or $K \cong \mathbb{Z}_{17} \times \mathbb{Z}_{17}$. Hence, $G \cong H \rtimes_{\varphi} K$, where $\varphi \in \operatorname{Aut}(H) \cong \mathbb{Z}_{7}^{\times} \cong \mathbb{Z}_{6}$. We consider various cases. 
+		\begin{enumerate}[itemsep =-2pt,label = (\Roman{*})]
+			\item Suppose $K = \mathbb{Z}_{17^{2}}$, which has a single generator, $1$. Each homomorphism $\varphi: K \to \mathbb{Z}_{6}$ is uniquely determined by where the generator $1$ is mapped to, with the constraint that $\varphi(1)$ is an element that divides the order of $1$, namely $17^{2}$. Since the only such element is $0$, $\varphi$ is the trivial homomorphism, which means that the semidirect product is just the direct product, and so $G \cong \mathbb{Z}_{7} \times \mathbb{Z}_{17^{2}} \cong \mathbb{Z}_{2023}$; this is an abelian group. 
+			\item Suppose $K = \mathbb{Z}_{17} \times \mathbb{Z}_{17} = \braket{a} \times \braket{b}$. Each homomorphism $\psi: \mathbb{Z}_{17} \times \mathbb{Z}_{17} \to \mathbb{Z}_{6}$ is uniquely determined by $\psi(a)$ and $\psi(b)$ with the constraint that these elements divide the order of $a$ and $b$ in $\mathbb{Z}_{17}$, which is 17. Since there is only one such element, namely 0, we find that the semidirect is just the direct product, and $G \cong \mathbb{Z}_{7} \times \mathbb{Z}_{17} \times \mathbb{Z}_{17} \cong \mathbb{Z}_{289} \times \mathbb{Z}_{7}$; which is abelian. 
+		\end{enumerate}
+	Hence, up to isomorphism, there are exactly two groups of order 2023, both of which are abelian. 
+\end{solutions}
+
+
+\newpage 
+\subsection{Classification of Finite Groups}
+Some facts we will use to classify groups are: 
+\begin{itemize}
+	\item Every group of order $p^{2}$, where $p$ is abelian, is abelian. 
+	\item Every group of order $p$, where $p$ is prime, is isomorphic to $\mathbb{Z}_{p}$. 
+\end{itemize}
+\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+	\item $|G| = 1$: This is the trivial group $\{1\}$. 
+	\item $|G| = 2$: There is exactly one group, up to ismorphism, which is $\mathbb{Z}/2\mathbb{Z}$. This follows from Cauchy's Theorem which states that if $p$ divides $|G|$, where $p$ is prime, then $G$ contains an element of order $p$. 
+	\item $|G| = 3$: There is exactly one group, up to isomorphism, which is $\mathbb{Z}/3\mathbb{Z}$. This follows from Cauchy's Theorem, which states that if $p$ divides $|G|$, where $p$ is prime, then $G$ contains an element of order $p$. 
+	\item $|G| = 4 = 2^{2}$: $\mathbb{Z}_{4}$ and $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$ are both groups of order 4. Now let $G$ be an arbitrary group of order 4; by Lagrange's Theorem, each element of $G$ can have order 1, 2, or 4. Suppose $G$ contains an element $x$ of order 4. Then $G = \braket{g}$; let $\varphi: \mathbb{Z}_{4} \to G$ be the map given by $\varphi(n) \mapsto g^{n}$; this is easily seen to be a group isomorphism. Now suppose $G$ has no element of order 4. Since the only element of $G$ with order 1 is the identity (by uniqueness of group identities), the three nontrivial elements of $G$ must have order 2. Consider the map $\varphi: \mathbb{Z}_{2} \times \mathbb{Z}_{2} \to G$ defined as follows: 
+		\begin{equation}
+			\begin{matrix}
+				\varphi(0,0) = 1_{G}, & \varphi(1, 0) = a, \\
+				\varphi(0,1) = b, & \varphi(1,1) = c, 
+			\end{matrix} 
+		\end{equation}
+	where $a, b,$ and $c$ are the three nonidentity elements of $G$; $\varphi$ is easily seen to be an isomorphism. Hence, $G \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2}$. 
+	\item $|G| = 5$: There is exactly one group, up to isomorphism, which is $\mathbb{Z}/5\mathbb{Z}$. 
+	\item $|G| = 6 = 2 \cdot 3$. By Sylow's Theorem, there exists a normal Sylow 3-subgroup, which we denote by $H$. Let $K$ be a Sylow 2-subgroup. By Lagrange's Theorem, $H$ and $K$ intersect trivially and $|HK| = |H||K|/|H \cap K| = |H||K| = 6 = |G|$ so that $G = HK$. Hence, by the recognition theorem for semidirect products, $G \cong H \rtimes_{\varphi} K$, where $\varphi \in \operatorname{Aut}(H) \cong \mathbb{Z}_{3}^{\ast} \cong \mathbb{Z}_{2}$. Hence, we look for homomorphisms $\varphi: K \to \mathbb{Z}_{2}$. Since $K$ is a group of order 2, $K\cong \mathbb{Z}_{2}$. Homomorphisms $\varphi: \mathbb{Z}_{2} \to \mathbb{Z}_{2}$ are determined uniquely by where the generator $1$ is sent to with the constraint that $\varphi(1)$ divides the order of $1$, which is $2$. Hence, either $\varphi_{1}(1) = 0$ (in which case, the homomorphism is trivial, the semidirect is just the direct product, and $G$ is the abelian group $\mathbb{Z}_{3} \times \mathbb{Z}_{2} \cong \mathbb{Z}_{6}$), or $\varphi_{2}(1) = 1$ (in which case, the homomorphism is \textit{non}trivial, and $G$ is the nonabelian group $\mathbb{Z}_{3} \rtimes_{\varphi_{2}}\mathbb{Z}_{2}$). Hence, up to isomorphism, there are exactly two groups of order 6, one abelian and the other nonabelian. 
+	\item 
+\end{enumerate}
+
+
 \newpage 
 \subsection{Essential Review Notes}
 \subsubsection{Topological Vector Spaces}
