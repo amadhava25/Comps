@@ -950,6 +950,24 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	The statement is not necessarily true. Consider the \textit{fat Cantor} set, which is a subset of $\mathbb{R}$ that is nowhere dense and has positive Lebesgue measure $1/2$; call this set $E$. Assume to the contrary that $\mathbb{R}$ is the countable union of translates of $E$. Since $E$ is nowhere dense, each translate of $E$ must also be nowhere dense. Then $\mathbb{R}$ is the countable union of nowhere dense sets, which violates the Baire Category Theorem. Hence, the statement is not necessarily true. 
 \end{solutions}
+\begin{prb}{2022-J-II-4 (Complex Analysis)}
+	Let $U \subset \mathbb{C}$ be an open subset. Suppose $f_{i}: U \to \mathbb{C}$ is a sequence of holomorphic functions converging uniformly on compact subsets to a function $f: U \to \mathbb{C}$. Show that $f$ is also holomorphic. Justify each step clearly. 
+\end{prb}
+\begin{solutions}
+	It is sufficient to show that $f$ is holomorphic on any disk $\mathbb{D}\subset \mathbb{C}$ with $\overline{\mathbb{D}} \subset \mathbb{C}$. Since $f_{i} \to f$ uniformly on $\mathbb{D}$, $f$ is continuous on $\mathbb{D}$. We will use Morera's Theorem, which states the following: 
+		\begin{quote}
+			\textbf{(Morera's Theorem)} A continuous, complex-valued function $f$ defined on an open set $D$ in the complex plane that satisfies 
+				\begin{equation*}
+					\oint_{\gamma}f(z)\;dz = 0
+				\end{equation*}
+			for every closed piecewise $C^{1}$ curve $\gamma$ in $D$ must be holomorphic on $D$. 
+		\end{quote}
+	Let $\gamma$ be a closed piecewise $C^{1}$ curve in $\mathbb{D}$. Then 
+		\begin{equation}
+			\oint_{\gamma}f(z)\;dz = \oint_{\gamma}\lim_{i \to \infty}f_{i}(z)\;dz = \lim_{i \to \infty}\oint_{\gamma}f_{i}(z)\;dz  = \lim_{i \to \infty}(0) = 0. 
+		\end{equation}
+	The first equality follows from the hypothesis that $f_{i} \to f$; the second equality follows from the fact that this convergence is uniform; and the third equality follows from the fact that each $f_{i}$ is holomorphic. Therefore, $f$ is also holomorphic. 	
+\end{solutions}
 
 \subsection{August 2022}
 \begin{prb}{2022-A-I-3 (Real Analysis)}
@@ -1060,9 +1078,9 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 \begin{prb}{2022-A-II-5}
 	If $f: [-1,2] \to \mathbb{R}$ is continuous and increasing, show that the set of $x \in [0,1]$ where 
-		\begin{equation}
+		\begin{equation*}
 			\int_{0}^{1}\frac{f(x + t) - f(x - t)}{t}\;dt = \infty, 
-		\end{equation}
+		\end{equation*}
 	has Lebesgue zero measure. 
 \end{prb}
 \begin{solutions}
@@ -1075,12 +1093,38 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			\abs{f(x + t) - f(x)} \leq M\abs{t}, 
 		\end{equation}
 	which means 
-		\begin{eqnarray}
+		\begin{equation}
 			\abs{\int_{0}^{1}\frac{f(x + t) - f(x - t)}{t}\;dt} \leq \int_{0}^{1}\frac{\abs{f(x + t) - f(x - t)}}{t}dt \leq \int_{0}^{1}M\;dt < \infty
-		\end{eqnarray}
+		\end{equation}
 	for Lebesgue almost $x$. 
 \end{solutions}
+\begin{prb}{2021-A-II-6 (Real Analysis)}
+	Suppose $\mu$ is a finite positive measure of compact support and 
+		\begin{equation*}
+			\int_{\mathbb{R}}x^{n}d\mu(x) =0
+		\end{equation*}
+	for every $n \in \{0,1,2,\ldots\}$. Show that $\mu$ is the zero measure. 
+\end{prb}
+\begin{solutions}
+	Suppose $\mu$ is a finite positive measure of compact support and that 
+		\begin{equation}
+			\int_{\mathbb{R}}x^{n}\;d\mu(x) =0, \qquad \forall n \in \{0,1,2,\ldots\}. 
+		\end{equation}
+	 Let $E$ be the support of $\mu$. Our strategy is to show that $\int_{\mathbb{R}}f\;d\mu(x) =0$ for all continuous functions $f$ on $\mathbb{R}$, for which we shall use the Stone-Weierstra{\ss} theorem: 
+	 	\begin{quote}
+	 		\textbf{(Stone-Weierstra{\ss} Theorem)} Let $X$ be a compact Hausdorff space, $C(X,\mathbb{R})$ the space of all continuous functions on $X$. Suppose $\mathscr{B}$ is a subalgebra of $C(X,\mathbb{R})$ that separates points. If there exists $x_{0} \in X$ such that $f(x_{0}) = 0$ for all $f \in \mathscr{B}$, then $\mathscr{B}$ is dense in $\{f \in C(X,  \mathbb{R}): f(x_{0}) = 0\}$. Otherwise, $\mathscr{B}$ is dense in $C(X, \mathbb{R})$. 
+	 	\end{quote} 
+	 Since $\mathbb{R}$ is Hausdorff, $E$ is Hausdorff; by hypothesis, $E$ is compact. Hence, the Stone-Weierstrass theorem is applicable for our case. Let $\mathscr{B}$ be the subalgebra of $C(E,\mathbb{R})$ that separates points. Then by the theorem, $\mathscr{B}$ is dense in $C(E, \mathbb{R})$, which means that any continuous function can be uniformly approximated by a sequence of polynomials in $\mathscr{B}$. Let $f \in C(E, \mathbb{R})$ be arbitrary, and consider a sequence $\{p_{j}(x)\}_{1}^{\infty}$ that uniformly converges to $f$. Then 
+	 	\begin{equation}
+	 		\int_{\mathbb{R}}f(x)\;d\mu(x) = \int_{E}f(x)\;d\mu(x) = \int_{E}\lim_{j \to \infty}p_{j}(x)\;d\mu(x) = \lim_{j \to \infty}\int_{E}p_{j}(x)\;d\mu(x) = \lim_{j \to \infty}\left[\sum_{k = 1}^{\deg{p_{j}}}a_{k}\int_{E}x^{k}\;d\mu(x)\right] = 0, 
+	 	\end{equation}
+	 where the last equality follows from the hypothesis. Hence, since for \textit{every} continuous function $f$, the integral over $\mathbb{R}$ with respect to $\mu$ is zero, we conclude that $\mu$ has to be the zero measure. 
+\end{solutions}
 
+\subsection{January 2021}
+\begin{prb}{2021-J-1-3 (Real Analysis)}
+	If $E \subset \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is Lipschitz, then show that $f(E)$ is also Lebesgue measurable. 
+\end{prb}
 
 \subsection{August 2021}
 \begin{prb}{2021-A-I-6 (Geometry/Topology)}
@@ -1628,7 +1672,23 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	Hence, by the hypothesis on $V$, $\sum_{1}^{N}y_{n}$ converges to $\sum_{1}^{\infty}y_{n}$. But this means that $\{x_{n_{j}}\}$ converges in $V$. Since $\{x_{n}\}$ is Cauchy, it follows that the sequence converges to the same limit. Hence, $V$ is complete. 
 \end{solutions}
-
+\begin{prb}{2006-A-II-4 (Complex Analysis)}
+	Show that $z^{7} - 4z^{3} + z - 1$ has 3 zeros inside the unit circle (counted with multiplicity.)
+\end{prb}
+\begin{solutions}
+	Let $f(z) = -4z^{3}$, and $g(z) = z^{7} + z - 1$, both of which are holomorphic functions. For all $\abs{z} = 1$, we observe that 
+		\begin{align}
+			\begin{split} 
+				\abs{g(z)} &\leq |z|^{7} + |z| + 1 \\
+				&= 1 + 1 + 1 = 3 \\
+				&\leq 4 = 4|z|^{3} = |f(z)|. 
+			\end{split}
+		\end{align}
+	Therefore, by Rouch{\'e}'s Theorem, $f(z)$ and $f(z) + g(z)$ have the same number of zeros inside the unit circle (counted with multiplicity). $f(z)$ has 3 zeros (being a degree 3 polynomial), and $f(z) + g(z) = z^{7} - 4z^{3} + z - 1$. Hence, this concludes the claim. 
+\end{solutions}
+\begin{prb}{2012-A-I-4 (Complex Analysis)}
+	Find, with proof, the precise number of zeros of the complex polynomial $p(z) = z^{9} - 2z^{6} + z^{2} - 8z + 2$ inside the annulus $1 < \abs{z} < 2$. 
+\end{prb}
 
 \newpage 
 \subsection{Other Qualifying Exams}
