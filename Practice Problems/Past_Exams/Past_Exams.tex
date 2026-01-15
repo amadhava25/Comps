@@ -1010,6 +1010,15 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	\end{align}
 	This shows that $f \in L^{p}$, which contradicts our hypothesis that $f \in L^{p}\setminus L^{q}$. Therefore, by contradiction, $\mu(E_{n}) \to 0$ and $\mu(E_{n}) > 0$ for all $n$. 
 \end{solutions}
+
+
+\begin{prb}{2022-A-I-4 (Geometry/Topology)}
+	Find the fundamental group of the space of unordered pairs of distinct points of $z^{n}$. 
+\end{prb}
+
+
+
+
 \begin{prb}{2022-A-I-5 (Complex Analysis)}
 	If $\Omega \subset \mathbb{C}$ is simply connected and $f: \Omega \to \mathbb{C}\setminus \{0\}$ is a holomorphic function, is there a holomorphic function $g: \Omega \to \mathbb{C}$ such that $f = \exp(g)$ on $\Omega$? Prove or give a counterexample. 
 \end{prb}
@@ -1248,6 +1257,29 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{prb}{2018-A-II-3 (Analysis)}
 	Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. Prove that $E + F = \{x + y: x \in E, y \in F\}$ contains an interval. 
 \end{prb}
+
+
+\begin{prb}{2018-A-I-3 (Complex Analysis)}
+	Show that if $c > 1$, then the function 
+		\begin{equation*}
+			f(z) = ze^{c - z} -1
+		\end{equation*}
+	has precisely one root in $\Delta = \{\abs{z} < 1\}$, and this root is real and positive. 
+\end{prb}
+\begin{solutions}
+	Let $c > 1$, and $f(z) = ze^{c - z} - 1$. Let $g(z) = ze^{c - z}$ and $h(z) =1$. On $\partial \Delta$, 
+		\begin{align}
+			\begin{split}
+				|h(z)| &= 1 < e^{c - 1} = |g(z)|,
+			\end{split}
+		\end{align}
+	so that by Rouch{\'e}'s Theorem, $f(z)$ has the same number of roots as $g(z)$. Since the exponential has no roots but the function $z$ has one root inside the unit disk, we conclude that $f(z)$ has precisely one root in $\Delta$. Now consider the real-valued function $\ti{f}(x) = xe^{c - z} - 1$ obtained by restricting $f(z)$ to the real line. We observe that 
+		\begin{equation}
+			f(0) = -1 < 0 \qquad \text{ and } \qquad f(1) = e^{c - 1} - 1 > 0. 
+		\end{equation}
+	Since $f(z)$ is continuous, it follows from the intermediate value theorem that $f(x)$ must have a root inside the interval $(0,1)$. Such a root must necessarily be real and positive. Hence, the proof concludes. 
+\end{solutions}
+
 
 
 
@@ -1689,6 +1721,32 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{prb}{2012-A-I-4 (Complex Analysis)}
 	Find, with proof, the precise number of zeros of the complex polynomial $p(z) = z^{9} - 2z^{6} + z^{2} - 8z + 2$ inside the annulus $1 < \abs{z} < 2$. 
 \end{prb}
+\begin{solutions}
+	Let $p(z) = z^{9} - 2z^{6} + z^{2} - 8z + 2$. The number of solutions to $p(z)$ inside the disk $\mathbb{D}_{2}$ of radius 2 must be the sum of the number of the number of solutions inside the unit disk $\mathbb{D}$ and the number of solutions in the annulus $1 < |z| < 2$. First, we compute the number of solutions inside $\mathbb{D}_{2}$. 
+	
+	Let $f(z) = z^{9}$, and $g(z) = -2z^{6} + z^{2} - 8z + 2$. Then on $\partial \mathbb{D}_{2}$, 
+		\begin{align}
+			\begin{split}
+				|g(z)| &\leq 2|z|^{6} + |z|^{2} + 8|z| + 2 \\
+				&= 2^{7} + 2^{2} + 16 + 2 = 2(3 + 8 + 2^{6}) \\
+				&= 2(11 + 64) = 2(75) = 150 < 2^{9} = 8(64) = 512 = |f(z)|. 
+			\end{split}
+		\end{align}
+	Hence, by Rouch{\'e}'s Theorem, since $p(z) = f(z) + g(z)$ and $f(z)$ has nine roots, $p(z)$ has nine roots inside $\mathbb{D}_{2}$. Now let $f(z) = -8z$ and $g(z) = z^{9} - 2z^{6} + z^{2} + 2$. On $\partial \mathbb{D}$, 
+		\begin{align}
+			\begin{split}
+				\abs{g(z)} &\leq 1 + 2 + 1 + 2 = 6 \\
+				&< 8 = |f(z)|. 
+			\end{split}
+		\end{align}
+	Hence, by Rouch{\'e}'s Theorem, $p(z)$ has the same number of roots as $f(z)$ in $\mathbb{D}$, which is one. Therefore, we conclude that $p(z)$ has a total of eight solutions inside the annulus $1 < |z| < 2$. 
+\end{solutions}
+\begin{prb}{2015-A-I-3 (Complex Analysis)}
+	Let $f$ be a holomorphic function defined on a neighborhood of the closed unit disk $\overline{\mathbb{D}} \coloneqq \brac*{z \in \mathbb{C}: |z| \leq 1}$, and assume that $|f(z)| < 1$ for all $|z| = 1$. Determine the number of fixed points of $f$ in $\overline{\mathbb{D}}$. 
+\end{prb}
+\begin{solutions}
+	Let $f$ be a holomorphic function defined on a neighborhood of the closed unit disk $\overline{D}$ such that $|f(z)| < 1$ for all $|z| = 1$. If $z$ is a fixed point of $f$ in $\overline{D}$, then $z$ is a solution to the function $f(z) - z$. Hence, the number of fixed points of $f$ in $\overline{\mathbb{D}}$ is equal to the number of solutions to $f(z) - z$ in $\overline{\mathbb{D}}$. Since $|f(z)| < |z|$ for all $z \in \partial\overline{\mathbb{D}}$ and $z$ has exactly one root in $\overline{\mathbb{D}}$, we conclude that $f$ has exactly one fixed point in $\overline{\mathbb{D}}$.
+\end{solutions}
 
 \newpage 
 \subsection{Other Qualifying Exams}
