@@ -1013,8 +1013,11 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 
 
 \begin{prb}{2022-A-I-4 (Geometry/Topology)}
-	Find the fundamental group of the space of unordered pairs of distinct points of $z^{n}$. 
+	Find the fundamental group of the space of unordered pairs of distinct points of $S^{n}$. 
 \end{prb}
+\begin{solutions}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
 
 
 
@@ -1136,6 +1139,27 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{prb}
 
 \subsection{August 2021}
+\begin{prb}{2021-A-I-2 (Complex Analysis)}
+	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. Prove that either there is $|z| = 1$ such that $|P(z)| > 1$ or $P(z) = z^{n}$. 
+\end{prb}
+\begin{solutions}
+	This problem requires the Cauchy Integral Formula, which states the following: 
+		\begin{quote}
+			\textbf{(Cauchy's Integral Formula)} Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed disk $\mathbb{D}$ defined as 
+				\begin{equation}
+					\mathbb{D}= \brac*{z \in \mathbb{C}: \abs{z - z_{0}} \leq r}
+				\end{equation}
+			is completely contained in $U$. Let $f: U\to \mathbb{C}$ be a holomorphic function. Then for every $a \in \operatorname{int}{\mathbb{D}}$, 
+				\begin{equation}
+					f^{(n)}(a) = \frac{n!}{2\pi i}\oint_{\partial \mathbb{D}}\frac{f(z)}{(z - a)^{n + 1}}\;dz. 
+				\end{equation}
+		\end{quote}
+	Returning to our original problem, assume that $|P(z)| \leq 1$ for all $|z| = 1$. Then by the Cauchy Integral Formula, 
+		\begin{equation}
+			n! = P^{(n)}(0) = \frac{n!}{2\pi i}\oint_{|z| = 1}\frac{P(z)}{z^{n + 1}}\;dz = 
+		\end{equation}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
 \begin{prb}{2021-A-I-6 (Geometry/Topology)}
 	What connected spaces can be finitely-sheeted covering spaces of a sphere with three handles? 
 \end{prb}
@@ -1350,6 +1374,27 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Suppose $F$ has no critical points, which means that $dF_{p}$ is surjective at every $p \in M$. I.e., $\operatorname{rank}{dF_{p}} = n$ for every $p \in M$. Let $F = (f_{1}, \ldots, f_{n})$, where each $f_{j}: M \to \mathbb{R}$ is a component function of $F$. Fix some $f_{j}$; since $M$ is compact, $f_{j}$ must attain a maximum or minimum at some point $p \in M$. This means that $df_{j}(p) =0$. But since $dF_{p} = (df_{1}(p), \ldots, df_{j}(p), \ldots, df_{n}(p))$, $\operatorname{rank}{dF_{p}} \neq n$, which is a contradiction. Hence, $F$ must have a critical point. 
 \end{solutions}
+\begin{prb}{2017-A-II-1 (Real Analysis)}
+	Suppose that $f \in C([0,1])$ is a continuous real-valued function on $[0,1]$ for which 
+		\begin{equation*}
+			\int_{0}^{1}x^{n}f(x)dx = 0
+		\end{equation*}
+	for all non-negative integers $n$. Does it follow that $f(x) = 0$ for all $x \in [0,1]$. 
+\end{prb}
+\begin{solutions}
+	It is necessarily true that $f(x) =0$ for all $x \in [0,1]$. By the Stone-Weierstra{\ss} Theorem, one can show that the hypothesis forces 
+		\begin{equation}
+			\int_{0}^{1}f(x)g(x)dx = 0, 
+		\end{equation} 
+	for all continuous functions $g(x)$ on $[0,1]$. Taking $g(x) = f(x)$ so that $f(x)g(x) = f(x)^{2}$, we observe that 
+		\begin{equation}
+			\int_{0}^{1}f^{2}(x)dx = 0 \implies f(x)^{2} = 0 \implies f(x) =0. 
+		\end{equation}
+	Hence, the proof concludes. 
+\end{solutions}
+
+
+
 \begin{prb}{2017-A-II-3 (Algebra)}
 	Let $K$ denote the splitting field of $f(x) = x^{4} + x^{2} + 1$ over $\mathbb{Q}$. Compute the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
 \end{prb}
@@ -1746,6 +1791,103 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{prb}
 \begin{solutions}
 	Let $f$ be a holomorphic function defined on a neighborhood of the closed unit disk $\overline{D}$ such that $|f(z)| < 1$ for all $|z| = 1$. If $z$ is a fixed point of $f$ in $\overline{D}$, then $z$ is a solution to the function $f(z) - z$. Hence, the number of fixed points of $f$ in $\overline{\mathbb{D}}$ is equal to the number of solutions to $f(z) - z$ in $\overline{\mathbb{D}}$. Since $|f(z)| < |z|$ for all $z \in \partial\overline{\mathbb{D}}$ and $z$ has exactly one root in $\overline{\mathbb{D}}$, we conclude that $f$ has exactly one fixed point in $\overline{\mathbb{D}}$.
+\end{solutions}
+
+\begin{prb}{2014-A-II-5 (Real Analysis)}
+	Suppose $f$ is a continuous function on $[0,1]$ and $\int_{0}^{1}f(t)t^{n}\;dt = 0$ for every $n = 0, 1, 2, \ldots$. Prove that $f$ is the zero function. 
+\end{prb}
+\begin{solutions}
+	Let $f$ be a continuous function on $[0,1]$, and assume that $\int_{0}^{1}f(t)t^{n}\;dt = 0$ for all nonnegative integers $n$. We will use the Stone-Weierstra{\ss} Theorem in our argument. Let $g(x)$ be an arbitrary continuous function on $[0,1]$. Since $[0,1]$ is compact, and $\mathbb{R}$ is Hausdorff (which implies that $[0,1]$ is Hausdorff), by the Stone-Weierstra{\ss} Theorem, there exists a sequence of polynomials $\{p_{j}\}_{1}^{\infty}$ that converges to $g$ uniformly. Writing 
+		\begin{equation}
+			p_{j}(t) = \sum_{k = 1}^{\deg{p_{j}}}a_{k}t^{k}, 
+		\end{equation}
+	we observe the following 
+		\begin{align}
+			\begin{split}
+				\int_{0}^{1}f(t)g(t)\;dt &= \int_{0}^{1}\lim_{j \to \infty}f(t)p_{j}(t)\;dt \\
+				&= \lim_{j \to \infty}\int_{0}^{1}f(t)\sum_{k = 1}^{\deg{p_{j}}}a_{k}t^{k}\;dt \\
+				&= \lim_{j \to \infty}\left[\sum_{k = 1}^{\deg{p_{j}}}a_{k}\int_{0}^{1}f(t)t^{k}\;dt\right] \\
+				&= \lim_{j \to \infty}(0) = 0, 
+			\end{split}
+		\end{align}
+	where (1) the second equality follows from uniform convergence of the $p_{j}$ to $f$, and (2) the final line follows from the hypothesis. Hence, since $g$ was arbitrary, taking $g = f$ for example, forces $f$ to be identically zero. Hence, the proof concludes. 
+\end{solutions}
+\begin{prb}{2016-J-II-3 (Real Analysis)}
+	Suppose $f$ is a continuous function on $[0,1]$ and $\int_{0}^{1}f(x)x^{k}dx = 0$ for $k =0, \ldots, n$. Prove that either $f$ is identically zero of $f$ must change signs at least $n + 1$ times. (We say $f$ changes sign $n + 1$ times if there are points $0 < x_{1} < \dotsm < x_{n + 1} < 1$ so that $f(x_{j})f(x_{j + 1}) < 0$ for $j = 1, \ldots, n$.) 
+\end{prb}
+\begin{solutions}
+	Suppose $f$ is a continuous function on $[0,1]$ so that $\int_{0}^{1}f(x)x^{k}dx = 0$ for $k =0, \ldots, n$. Suppose $f$ changes sign $m \leq n$ times. By definition of ``change signs'', there exist $m$ points $0 \leq x_{1} < x_{2} < \dotsm < x_{m} \leq 1$ such that $f(x_{j}) = 0$ for $j = 1, \ldots, m$. Then the function $g(x) = \pm f(x)(x - x_{1})\dotsm (x - x_{m})$ is a continuous nonnegative function on $[0,1]$ for some choice of $\pm$, chosen so that the sign of the polynomial $(x - x_{1})\dotsm(x - x_{m})$ is the same as the sign of $f(x)$ on each interval $(0,x_{1}), \ldots, (x_{m - 1}, x_{m})$. Since $(x - x_{1}) \dotsm (x - x_{m})$ is a polynomial of degree $m \leq n$, expanding out the polynomial, and interchanging the sum and the integral, the hypothesis gives us that 
+		\begin{equation}
+			\int_{0}^{1}g(x)dx = 0. 
+		\end{equation}
+	Since $g(x) \geq 0$, the above result forces $g$ to be identically zero. Since $(x - x_{1})\dotsm (x - x_{m})$ is not identically zero, we conclude that $f \equiv 0$. Hence, the proof concludes. 
+\end{solutions}
+\begin{prb}{2016-J-II-6 (Real Analysis)}
+	Let $\mathscr{M}$ be a closed linear subspace of $L^{2}([0,1]; \mathbb{R})$ that is contained in $C([0,1]; \mathbb{R})$. \vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Prove that there exists $A > 0$ such that 
+			\begin{equation*}
+				\norm{f}_{u} \leq A\norm{f}_{2}
+			\end{equation*}
+		for all $f \in \mathscr{M}$. Here $\norm{\empspace}_{u}$ is the uniform norm. 
+		\item Prove that $\dim{\mathscr{M}} \leq A^{2}$. (\textit{Hint}: Show that if $\{f_{j}\}$ is an $L^{2}$ orthonormal basis of $\mathscr{M}$, then $\sum \abs{f_{j}}^{2} \leq A^{2}$ for all $x \in [0,1]$.)
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item For this part of the problem, we required the Closed Graph Theorem, which states the following: 
+			\begin{quote}
+				(\textbf{Closed Graph Theorem}) If $\mathscr{X}$ and $\mathscr{Y}$ are Banach spaces and $T: \mathscr{X} \to \mathscr{Y}$ is a closed linear map, then $T$ is bounded, where $T$ is a closed linear map iff the following is true: if $x_{n} \to x$ and $Tx_{n} \to y$, then $y = Tx$. 
+			\end{quote}
+		Let $\iota: \mathscr{M} \hookrightarrow C([0,1];\mathbb{R})$ be the (linear) inclusion map. Since closed linear subspaces of Banach spaces is a Banach space, $\mathscr{M}$ is a Banach space, itself. Therefore, it suffices to show that $\iota$ is closed. Suppose $f_{n} \to f$ in $\mathscr{M}$ (hence, $f_{n} \to f$ in $L^{2}([0,1];\mathbb{R})$) and $f_{n} \to g$ in $C([0,1];\mathbb{R})$ (which means that $f_{n} \to g$ in the supremum norm). By definition of the supremum norm, we observe that 
+			\begin{equation}
+				0 \leq \norm{f_{n} - g}_{2}^{2} = \int_{0}^{1} \abs{f_{n} - g}^{2}dx \leq \int_{0}^{1}\sup_{x \in [0,1]}\abs{f_{n} - g}^{2}dx = \norm{f_{n} - g}_{u}^{2} \longrightarrow 0 \text{ as $n \to \infty$}. 
+			\end{equation}
+		Hence, $f_{n} \to g$ in $L^{2}$. But since $f_{n} \to f$ in $L^{2}$ and limits in $L^{2}$ are unique, we conclude that $f = g$ a.e. Therefore, $\iota$ is closed. By the Closed Graph Theorem, we conclude that $\iota$ is bounded. 
+		\item \textcolor{red}{[!! Complete Later !!]}
+	\end{enumerate}
+\end{solutions} 
+
+\begin{prb}{2016-A-II-2 (Algebra)}
+	Find the Galois group of the polynomial $p(x) = x^{3} - 2$ over the field $\mathbb{Z}_{11} \coloneqq \mathbb{Z}/11\mathbb{Z}$. 
+\end{prb}
+\begin{solutions}
+	We begin by looking for roots of $p(x)$ over $\mathbb{Z}_{11}$. We find that $p(x)$ has one root, $x = 7$. Therefore, using polynomial long division in $\mathbb{Z}_{11}$, we find that 
+		\begin{equation}
+			p(x) = (x + 4)(x^{2} + 7x + 5). 
+		\end{equation}
+	Then it is straightforward to verify that the quadratic $x^{2} + 7x + 5$ is irreducible over $\mathbb{Z}_{11}$ since it has no roots contained in this field. Finding the roots of this quadratic and reducing it modulo 11, 
+		\begin{equation}
+			x = -\frac{7}{2} \pm \frac{\sqrt{29}}{2} \equiv 2 \pm 6\sqrt{7} \pmod{11}. 
+		\end{equation}
+	Since $\sqrt{7} \notin \mathbb{Z}_{11}$, the splitting field of $p(x)$ over $\mathbb{Z}_{11}$ must contain the field $\mathbb{Z}_{11}(\sqrt{7})$. On the other hand, both of the aforementioned roots must lie in $\mathbb{Z}_{11}(\sqrt{7})$. Therefore, the splitting field of $p(x)$ is $\mathbb{Z}_{11}(\sqrt{7})$. Since the minimal polynomial of $\sqrt{7}$ over $\mathbb{Z}_{11}$ is $x^{2} - 7$ (which is seen easily by verifying that this polynomial is irreducible over this field), it follows that $[\mathbb{Z}(\sqrt{7}): \mathbb{Z}] = 2$. Hence, the Galois group of $p(x)$ over the field $\mathbb{Z}_{11}$ must be of order 2; since there is only one group of order 2, up to isomorphism, the Galois group must be $\mathbb{Z}_{2} \coloneqq \mathbb{Z}/2\mathbb{Z}$. 
+\end{solutions}
+
+\begin{prb}{2016-J-I-2 (Geometry/Topology)}
+	Let $X = S^{1} \times S^{1}$ be the $2$-torus, and let $Y = X \setminus \{p\}$ be the complement of one point in the 2-torus. \vspace{-0.35cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Prove that there is no covering map $X \to Y$. 
+			\item Prove that there is no covering map $Y \to X$. 
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Assume to the contrary that $f: X \to Y$ is a covering map. Since $X$ is compact, $f(X) = Y$ must also be compact. But this is a contradiction since $Y$ is not compact. Therefore, $f$ cannot be surjective and hence not a covering map. 
+		\item Suppose there exists a covering map $f: Y \to X$. We recall that $\pi_{1}(Y) \cong \mathbb{Z} \ast \mathbb{Z}$, while $\pi_{1}(X) \cong \mathbb{Z} \oplus \mathbb{Z}$. The former is a nonabelian group, which implies that its image under the induced map $f_{\ast}$ must be nonabelian in $\pi_{1}(X)$, which is a contradiction since $\pi_{1}(X)$ is abelian. Hence, by contradiction, $f$ cannot be a covering map. 
+	\end{enumerate}
+\end{solutions}
+
+\begin{prb}{2016-A-I-1 (Algebra)}
+	For $p(x)= x^{5} + 1$ over the field $\mathbb{F}_{19}$, find the splitting field $K$, find the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
+\end{prb}
+\begin{solutions}
+	Let $p(x)= x^{5} + 1$. By plugging in all of the elements in $\mathbb{F}_{19}$, we find that $18$ is a root of $p(x)$. Hence, using polynomial long division in $\mathbb{F}_{19}$, 
+		\begin{equation}
+			p(x) = (x + 18)(x^{4} + 18x^{3} + x^{2} + 18x + 1). 
+		\end{equation}
+	\textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
 
 \newpage 
