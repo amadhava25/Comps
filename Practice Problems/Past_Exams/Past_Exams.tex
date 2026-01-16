@@ -1907,13 +1907,101 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	For $p(x)= x^{5} + 1$ over the field $\mathbb{F}_{19}$, find the splitting field $K$, find the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
 \end{prb}
 \begin{solutions}
-	Let $p(x)= x^{5} + 1$. By plugging in all of the elements in $\mathbb{F}_{19}$, we find that $18$ is a root of $p(x)$. Hence, using polynomial long division in $\mathbb{F}_{19}$, 
-		\begin{equation}
-			p(x) = (x + 18)(x^{4} + 18x^{3} + x^{2} + 18x + 1). 
-		\end{equation}
 	\textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
 
+\begin{prb}{2013-A-I-2 (Algebra)}
+	Find the Galois group of $x^{3} - 2$ over the field $\mathbb{Z}_{5}$. 
+\end{prb}
+\begin{solutions}
+	Let $p(x)= x^{3} - 2$. We observe the following:
+		\begin{equation}
+			\begin{matrix}
+				p(0) = -2 \equiv 3 \pmod{5} & p(1) = -1 \equiv 4 \pmod{5} & p(2) = 6 \equiv 1 \pmod{5} \\
+				p(3) = 25 \equiv 0 \pmod{5} & p(4) = 62 \equiv 2 \pmod{5}.
+			\end{matrix}
+		\end{equation}
+	Hence, $x = 3$ is a root of $p(x)$. In $\mathbb{Z}_{5}$, we can write 
+		\begin{equation}
+			p(x) = (x + 2)(x^{2} + 3x + 4). 
+		\end{equation}
+	It is straightforward to check that $x^{2} + 3x + 4$ is irreducible over $\mathbb{Z}_{5}$ as it has no roots in this field. The roots of the irreducible quadratic are, 
+		\begin{equation}
+			x = \frac{-3 \pm \sqrt{9 - 16}}{2} = \frac{-3}{2} \pm \frac{\sqrt{-7}}{2} \equiv 1 \pm 3\sqrt{3} \pmod{5}. 
+		\end{equation}
+	Since $3$ is not a square in $\mathbb{Z}_{5}$, the splitting field of $p(x)$ must contain the field $\mathbb{Z}_{5}(\sqrt{3})$. On the other hand, the field $\mathbb{Z}_{5}(\sqrt{3})$ contains both of the aforementioned roots of the irreducible quadratic. Therefore, the splitting field of $p(x)$ is $\mathbb{Z}_{5}(\sqrt{3})$. Since $3$ is not a square in $\mathbb{Z}_{5}$, the polynomial $x^{2} - 3$ is the minimal polynomial of $\sqrt{3}$. Since this polynomial has degree 2, $[\mathbb{Z}_{5}(\sqrt{3}): \mathbb{Z}_{5}] = 2$. Therefore, the Galois group of $p(x)$ must be of order 2. Thus, we conclude that $\operatorname{Gal}(\mathbb{Z}_{5}(\sqrt{3})/\mathbb{Z}_{5}) \cong \mathbb{Z}_{2}$. 
+\end{solutions}
+
+\begin{prb}{2014-A-II-1 (Algebra)}
+	Determine the Galois group of the polynomial of the polynomial group $f(x) = x^{4} + 4$ over $\mathbb{Q}$. 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{4} + 4$. The roots of $f(x)$ are $\sqrt[4]{-4}, \zeta_{4}\sqrt[4]{-4}$, $\zeta_{4}^{2}\sqrt[4]{-4}$, and $\zeta_{4}^{3}\sqrt[4]{-4}$, where $\zeta_{4}$ are the primitive fourth roots of unity. Observe that $\zeta_{4} = e^{2\pi i/4} = i$. Moreover, 
+		\begin{equation}
+			-4 = 4e^{i\pi} \implies \sqrt[4]{-4} = \sqrt{2}e^{i\pi/4} = \sqrt{2} \cdot \left(\frac{1 + i}{\sqrt{2}}\right) = 1 + i. 
+		\end{equation}
+	This means that the splitting field of $f(x)$ must contain $\mathbb{Q}(i)$. On the other hand, $\mathbb{Q}(i)$ contains all of the roots of $f(x)$. Hence, the splitting field of $f(x)$ over $\mathbb{Q}$ is $\mathbb{Q}(i)$. Since the minimal polynomial of $i$ over $\mathbb{Q}$ is $x^{2} + 1$, which is a degree 2 polynomial, $\operatorname{Gal}(\mathbb{Q}(i)/\mathbb{Q}) \cong \mathbb{Z}_{2}$. 
+\end{solutions}
+\begin{prb}{2011-A-II-1 (Algebra)}
+	Determine the Galois group of $x^{4} - 25$ over $\mathbb{Q}$. 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{4} - 25$. The roots of $f(x)$ are $\zeta_{4}^{j}\sqrt{5}$ for $j = 0, \ldots, 3$, where $\zeta_{4} = e^{2\pi i/4} = i$ is the primitive fourth root of unity. Hence, the splitting field must contain the field $\mathbb{Q}(i,\sqrt{5})$. On the other hand, the field $\mathbb{Q}(i, \sqrt{5})$ contains all of the aforementioned roots. Hence, the splitting field of $f(x)$ over $\mathbb{Q}$ is $\mathbb{Q}(i,\sqrt{5})$. Since the minimal polynomial of $i$ over $\mathbb{Q}$ is $x^{2} + 1$, $[\mathbb{Q}(i): \mathbb{Q}] = 2$. Likewise, since the minimal polynomial of $\sqrt{5}$ over $\mathbb{Q}(i)$ is $x^{2} - 5$, $[\mathbb{Q}(i,\sqrt{5}): \mathbb{Q}(i)] = 2$. Therefore, by the tower law, $\operatorname{Gal}(\mathbb{Q}(i,\sqrt{5})/\mathbb{Q})$ is a group of order 4. Since the Galois group is the group of automorphisms of the field $\mathbb{Q}(i, \sqrt{5})$ that fixes $\mathbb{Q}$, we have the following automorphisms: 
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item $e$: $i \mapsto i$, $\sqrt{5} \mapsto \sqrt{5}$: This is the identity permutation. 
+			\item $\sigma$: $i \mapsto i$, $\sqrt{5} \mapsto -\sqrt{5}$: This is a permutation of order $2$. 
+			\item $\tau$: $i \mapsto -i$, $\sqrt{5} \mapsto \sqrt{5}$: This is also a permutation of order $2$. 
+			\item $\rho$: $i \mapsto -i$, $\sqrt{5} \mapsto -\sqrt{5}$: This is equivalent to $\sigma\tau = \tau\sigma$. 
+		\end{enumerate}
+	Hence, it is straightforward to see that this group is isomorphic to the Klein-4 subgroup $V$ of $S_{4}$. I.e., $\operatorname{Gal}(\mathbb{Q}(i,\sqrt{5})/\mathbb{Q}) \cong V$. 
+\end{solutions} 
+\begin{prb}{2005-J-I-4 (Algebra)}
+	Find the Galois group of the polynomial $p(x) = x^{3} - 3x + 1$ over $\mathbb{Q}$. 
+\end{prb}
+\begin{solutions}
+	By the Rational Root Test, $p(x)$ has no roots in $\mathbb{Q}$, and hence must be irreducible. Therefore, we shall examine its determinant: 
+		\begin{equation}
+			D = -4p^{3} - 27q^{2} = -4(-3)^{3} - 27(1)^{2} = -27(-4 + 1) = 81. 
+		\end{equation}
+	Since $81$ is a square in $\mathbb{Q}$ (namely $\sqrt{81} = 9$), we conclude that the Galois group of the polynomial over $\mathbb{Q}$ is isomorphic to $A_{3}$. 
+\end{solutions}
+\begin{prb}{2003-J-I-5 (Algebra)}
+	Let $f(x) = x^{5} - 2$. Find generators and relations for the Galois group $G \coloneqq \operatorname{Gal}(F/\mathbb{Q})$ of the splitting field $F$ of $f(x)$ over the rational numbers $\mathbb{Q}$. 
+\end{prb}
+\begin{solutions}
+	Let $f(x) = x^{5} - 2$, which has the roots $\zeta_{5}^{j}\sqrt[5]{2}$ for $j = 0, \ldots, 4$, where $\zeta_{5}$ is the primitive fifth root of unity. The splitting field of $f(x)$ over $\mathbb{Q}$ must contain the field $\mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$. On the other hand, the field $\mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$ contains all of the roots of $f(x)$. Hence, the splitting field of the polynoomial over $\mathbb{Q}$ is exactly $\mathbb{Q}(\sqrt[5]{2}, \zeta_{5})$. Now, since $\zeta_{5}^{j}$ are the roots to $x^{5} - 1$ over $\mathbb{Q}$, but $x^{5} - 1$ splits into the product $(x -1)(x^{4} + \dotsm + 1)$, the minimal polynomial of $\zeta_{5}$ is a degree 4 polynomial, which means that $[\mathbb{Q}(\zeta_{5}): \mathbb{Q}] = 4$. On the other hand, since $x^{5} - 2$ is irreducible over $\mathbb{Q}(\zeta_{5})$, $[\mathbb{Q}(\sqrt[5]{2},\zeta_{5}): \mathbb{Q}(\zeta_{5})] = 5$. Hence, from the Tower Law, 
+		\begin{equation}
+			[\mathbb{Q}(\sqrt[5]{2},\zeta_{5}):\mathbb{Q}] = 20 \implies \abs{\operatorname{Gal}(\mathbb{Q}(\sqrt[5]{2},\zeta_{5}))} = 20. 
+		\end{equation}
+	By classification of groups of order 20, $G$ must be of the form $\mathbb{Z}_{5} \rtimes_{\varphi} (\mathbb{Z}_{2} \times \mathbb{Z}_{2})$ or $\mathbb{Z}_{5} \rtimes_{\varphi} \mathbb{Z}_{4}$ for some $\varphi \in \operatorname{Aut}(\mathbb{Z}_{5}) \cong \mathbb{Z}_{4}$. Since the automorphism group of $\mathbb{Q}(\zeta_{5}))$, which sends $\zeta_{5} \to \zeta_{5}^{j}$ for some $j$ coprime to 5, is cyclic of order 4, we deduce that $G \cong \mathbb{Z}_{5} \rtimes_{\varphi} \mathbb{Z}_{4}$ for some $\varphi \in \operatorname{Aut}(\mathbb{Z}_{5})$. It is straightforward to see that the permutations $\sigma: \sqrt[5]{2} \to \zeta_{5}\sqrt[5]{2}$ (of order 5) and $\tau: \zeta_{5} \to \zeta_{5}^{2}$ are generators of $G$. Moreover, 
+		\begin{equation}
+			\tau\sigma\tau^{-1}(\zeta_{5}) = \tau\sigma(\zeta_{5}^{4}) = \tau(\zeta_{5}^{4}) = \zeta_{5}, \qquad \text{and} \qquad \tau\sigma\tau^{-1}(\sqrt[5]{2}) = \tau\sigma(\sqrt[5](2)) = \zeta_{5}^{2}\sqrt[5]{2} = \sigma^{2}(\sqrt[5]{2}). 
+		\end{equation}
+	Hence, we obtain the relation $\tau\sigma\tau^{-1} = \sigma^{2}$. Therefore, 
+		\begin{equation}
+			G = \braket{\sigma,\tau: \sigma^{5} = \tau^{4} = 1, \tau\sigma\tau^{-1} = \sigma^{2}}. 
+		\end{equation}
+\end{solutions}
+\begin{prb}{2010-A-II-2 (Algebra)}
+	Find a rational number $c$ such that the splitting field over $\mathbb{Q}$ of the cubic polynomial $x^{3} + cx - 1$ has a nonabelian Galois group over $\mathbb{Q}$. For your value of $c$, compute the isomorphism type of the Galois group. 
+\end{prb}
+\begin{solutions}
+	Let $c = 1$ so that $f(x) = x^{3} + x -1$. Since $f(1) = 1 + 1 - 1 = 1$ and $f(-1) = -1 - 1 -1 = -3$, we conclude by the rational root test that $f(x)$ has no rational roots, and hence is irreducible over $\mathbb{Q}$. Moreover, since the discriminant of $f(x)$ is, 
+		\begin{eqnarray}
+			\Delta = -4p^{3} -27q^{2} = -4(1)^{3} - 27(-1)^{2} = -4 - 27 = -31, 
+		\end{eqnarray}
+	which is \textit{not} a square in $\mathbb{Q}$, the Galois group of $f(x)$ over $\mathbb{Q}$ must be isomorphic to $S_{3}$, which is not abelian. 
+\end{solutions} 
+\begin{prb}{2004-A-I-4 (Algebra)}
+	Give an example of a Galois extension $E$ of the rational numbers $\mathbb{Q}$ such that $\operatorname{Gal}(E/\mathbb{Q})$ is $\mathbb{Z}_{7}$ (the cyclic group of order 7). 
+\end{prb}
+\begin{solutions}
+	Consider the field extension $\mathbb{Q}(\zeta_{29})$, where $\zeta_{29}$ is the primitive 29th root of unity. Since 29 is prime, we observe that 
+		\begin{equation}
+			\operatorname{Gal}(\mathbb{Q}(\zeta_{29})/\mathbb{Q}) \cong \left(\mathbb{Z}/29\mathbb{Z}\right)^{\ast}, 
+		\end{equation}
+	which is abelian and cyclic of order 28. Since $7 \mid 28$ and $4 \mid 28$, $\operatorname{Gal}(\mathbb{Q}(\zeta_{29})/\mathbb{Q})$ has exactly one subgroup of order 7 and one subgroup of order 4. I.e., there exists a unique subfield $E \subset \mathbb{Q}(\zeta_{29})$ such that $[E: \mathbb{Q}] = 7$. Hence, we conclude that $\operatorname{Gal}(E/\mathbb{Q})$ is a group of order 7, and hence is isomorphic to $\mathbb{Z}_{7}$. 
+\end{solutions} 
 \newpage 
 \subsection{Other Qualifying Exams}
 \begin{prb}{RUT-2023-A-I-1 (Algebra)}
