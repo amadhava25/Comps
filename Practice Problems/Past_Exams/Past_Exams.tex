@@ -1173,7 +1173,7 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Let $M$ be a compact manifold (without boundary) and $\pi: M \to S^{1}$ a submersion onto the circle. Show that the de Rham group $\h{1}(M) \neq 0$. 
 \end{prb}
 \begin{solutions}
-	Let $M$ be a compact manifold (without boundary) and $\pi: M \to S^{1}$ a submersion onto the circle. Assume to the contrary that $\h{1}(M) \neq 0$ which means that every closed form on $M$ is an exact form. Since $\h{1}(S^{1}) \cong \mathbb{R}$, let $[\omega]$ be a generator of this cohomology group, where $\omega$ is a nowhere vanishing closed 1-form on $S^{1}$. Since $\pi$ is a submersion, the 1-form $\pi^{\ast}\omega$ must also be a nowhere vanishing closed form on $M$. By our hypothesis on the de Rham cohomology group in degree one of $M$, $\pi^{\ast}\omega$ is exact, which means there exists a smooth function $f$ such that $\pi^{\ast}\omega = df$. Since $M$ is compact and $f$ is smooth, $f$ must attain either a maximum or minimum value at some $p_{0} \in M$. This means that $df_{p_{0}} = 0$. But this contradicts our claim that $\pi^{\ast}\omega$ is nowhere vanishing. Hence, by contradiction, $\h{1}(M) \neq 0$. 
+	Let $M$ be a compact manifold (without boundary) and $\pi: M \to S^{1}$ a submersion onto the circle. Assume to the contrary that $\h{1}(M) = 0$ which means that every closed form on $M$ is an exact form. Since $\h{1}(S^{1}) \cong \mathbb{R}$, let $[\omega]$ be a generator of this cohomology group, where $\omega$ is a nowhere vanishing closed 1-form on $S^{1}$. Since $\pi$ is a submersion, the 1-form $\pi^{\ast}\omega$ must also be a nowhere vanishing closed form on $M$. By our hypothesis on the de Rham cohomology group in degree one of $M$, $\pi^{\ast}\omega$ is exact, which means there exists a smooth function $f$ such that $\pi^{\ast}\omega = df$. Since $M$ is compact and $f$ is smooth, $f$ must attain either a maximum or minimum value at some $p_{0} \in M$. This means that $df_{p_{0}} = 0$. But this contradicts our claim that $\pi^{\ast}\omega$ is nowhere vanishing. Hence, by contradiction, $\h{1}(M) \neq 0$. 
 \end{solutions}
 
 
@@ -1236,7 +1236,30 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{prb}{2020-J-I-2 (Geometry/Topology)}
 	Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary. Suppose that $\pi_{1}(M)$ is finite, but that $\pi_{1}(M)$ is infinite. Prove that every smooth map $\Psi: M \to N$ has degree zero. 
 \end{prb}
-
+\begin{prb}{2020-A-II-6 (Real Analysis)}
+	Let $g: \mathbb{R} \to \mathbb{R}$ be a strictly decreasing function. \vspace{-0.35cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Prove there is no continuous function $f: \mathbb{R} \to \mathbb{R}$ such that 
+				\begin{equation*}
+					f(f(x)) = g(x), \qquad \text{ for all $x \in \mathbb{R}$}. 
+				\end{equation*}
+			\item Show that there exists a function $f: [-1,1] \to [-1,1]$ with finitely many points of discontinuity such that $$f(f(x)) =-x \qquad \text{ for all $x \in [-1,1]$}.$$
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $g: \mathbb{R}$ be a strictly decreasing function, and assume to the contrary that there exists a continuous function $f: \mathbb{R} \to \mathbb{R}$ such that $f(f(x)) = g(x)$ for all $x \in \mathbb{R}$. Then $f(f(x))$ must be strictly decreasing as well. Suppose $f$ is strictly decreasing. Then for any $x_{1} < x_{2}$, $f(x_{1}) > f(x_{2}) \implies f(f(x_{1})) < f(f(x_{2}))$ so that $f \circ f$ is strictly increasing. Suppose $f$ is strictly increasing. Then for any $x_{1} < x_{2}$, $f(x_{1}) < f(x_{2})$ so that $f(f(x_{1})) < f(f(x_{2}))$, so that $f$ is again strictly increasing. Hence, we run into a contradiction, which means that such a continuous function $f$ cannot exist. 
+		\item We explicitly construct such a function: 
+			\begin{equation}
+				f(x) = 
+					\begin{cases}
+						x - 0.5, & x \in [-0.5, 0] \cup [0.5,1] \\
+						x + 0.5, & x \in [-1,-0.5] \cup [0,0.5]. 
+					\end{cases}
+			\end{equation}
+	\end{enumerate}
+\end{solutions} 
 
 \newpage 
 \subsection{January 2019}
