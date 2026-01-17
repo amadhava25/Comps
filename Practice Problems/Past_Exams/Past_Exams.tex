@@ -13,6 +13,20 @@
 	\halfline 
 	\newpage 
 
+\subsection{Some Helpful Resources}
+\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+	\item \href{https://en.wikipedia.org/wiki/Main\_Page}{https://en.wikipedia.org/wiki/Main\_Page}
+	\item \href{https://encyclopediaofmath.org/wiki/Main\_Page}{https://encyclopediaofmath.org/wiki/Main\_Page}
+	\item \href{https://www.math3ma.com/}{https://www.math3ma.com/}
+	\item \href{https://mathworld.wolfram.com/}{https://mathworld.wolfram.com/}
+	\item \href{https://math.stackexchange.com/}{https://math.stackexchange.com/}
+	\item \href{https://www.amazon.com/Real-Analysis-Modern-Techniques-Applications/dp/0471317160}{Folland, \textit{Real Analysis}}
+	\item \href{https://www.amazon.com/Abstract-Algebra-3rd-David-Dummit/dp/0471433349/ref=sr\_1\_1?crid=2QCEP6X7QBOXZ\&dib=eyJ2IjoiMSJ9.4lpFqXqi4gfno3aacXf0MjatThq5tLEJhAp-fh-ZjoEcpVe6BepfcaakfakkUP11RZ0suA8TjaFWP839kuylJN6HFv0BVFTsPnjGhtLspwbcq18NH\_QG7IPgfLW09sHPIP89\_aZC4YkgtkH8VF4ti3-uwBq2qtNHbb7urgKZAOSRB9HHcJ0TmqsqzWqhb-RqqMi48Npdgh9Xa15HMlw95FCH67WPMr9zUPn9DyEZhAA.58K0BCGVFKYHckU-lNQ\_Xjh1YVuOBflo8ho9tPPGUqo\&dib\_tag=se\&keywords=dummit+and+foote\%2C+abstract+algebra+3rd+edition\&qid=1768622868\&sprefix=dummit+and+foot\%2Caps\%2C124\&sr=8-1}{Dummit \& Foote, \textit{Abstract Algebra}}
+	\item 
+\end{enumerate}
+
+\newpage 
+
 \subsection{Comps Lemma}
 \begin{prb}{Comps Lemma}
 	Let $M, N$ be smooth, connected, $n$-manifolds, and $f: M \to N$ a (smooth) immersion. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a (smooth) covering map. 
@@ -71,7 +85,8 @@
 		\end{align}
 	Hence, since $\beta < (2^{N} - 1)^{-1}$, we obtain a nested sequence of compact subsets $\varnothing \neq K_{N + 1} \subset K_{N} \subset \dotsm\subset K_{1} \subset U$. Let $q \in K_{N + 1}$ be arbitrary. Since $K_{N + 1} = K_{N} \cap (K_{N} + rv_{N})$, the point $q - rv_{N}$ is contained in $K_{N}$. Then since $K_{N} = K_{N - 1} \cap (K_{N - 1} \cap rv_{N - 1})$, $q - rv_{N} - rv_{N - 1} \in K_{N - 1}$. Proceeding inductively, we obtain the sequence $\{q, q - rv_{N}, q - rv_{N} - rv_{N - 1}, \ldots, q - rv_{N} - \dotsm -rv_{1}\} \subset K_{1} \subset E$. Hence, the proof concludes. 
 \end{solutions}
-\begin{prb}{Fat Cantor Set}
+\subsection{Fat Cantor Set}
+\begin{prb}{(Fat Cantor Set)}
 	There exists a closed nowhere dense subset $E \subset \mathbb{R}$ of positive Lebesgue measure. 
 \end{prb}
 \begin{solutions}
@@ -89,6 +104,56 @@
 		\end{equation}
 	which means that the Lebesgue measure of the overall set is $1/2 > 0$. Moreover, the set is the intersection of a sequence of closed sets so that it is closed. Finally, the set does not contain any intervals so that it has empty interior. Therefore, the fat Cantor set is a closed nowhere dense subset of $\mathbb{R}$ of positive Lebesgue measure. 
 \end{solutions}
+
+\subsection{Fundamental Group of the Projective Planes}
+\begin{prb}{(Fundamental Group of the Projective Planes)}
+	Compute the fundamental group of $\mathbb{RP}^{n}$ for all $n \geq 1$. 
+\end{prb}
+\begin{solutions}
+	We recall the definition of $\mathbb{RP}^{n}$ for $n \geq 1$. 
+		\begin{quote}
+			(\textbf{Real Projective Space}) $\mathbb{RP}^{n}$ is the quotient space obtained from $S^{n}$ by identifying each point $x$ of $S^{2}$ with its antipodal point $-x$. 
+		\end{quote} 
+	Now we prove the following: 
+		\begin{quote}
+			(\textbf{Theorem}) For all $n\geq 1$, $\mathbb{RP}^{n}$ is compact, and the quotient map $p: S^{n} \to \mathbb{RP}^{n}$ is a covering map. 
+			
+			\begin{proof}
+				First, we will show that $\mathbb{RP}^{n}$ is compact. Let $U \subset S^{2}$ be open. The antipodal map $a: S^{n} \to S^{n}$ given by $a(x) = -x$ is a homeomorphism of $S^{n}$, which means that $a(U)$ is open in $S^{n}$. Then since $p$ is a quotient map,
+					\begin{equation}
+						p^{-1}(p(U)) = U \cup a(U), 
+					\end{equation}
+				the set is also open in $S^{n}$. Therefore, $p(U)$ is open in $\mathbb{RP}^{n}$. Hence, $p$ is an open map. Likewise, we can show that $p$ is a closed map. Since $\mathbb{RP}^{n}$ is connected, $S^{n}$ is compact, and $p$ is surjective, we conclude that $p(S^{n}) = \mathbb{RP}^{n}$, and so $\mathbb{RP}^{n}$ is compact. 
+				
+				Now let $y \in \mathbb{RP}^{n}$, and choose $x \in p^{-1}(y)$. Then choose an $\epsilon$-neighborhood $U$ of $x$ in $S^{n}$ for some $\epsilon < 1$, using the euclidean metric of $\mathbb{R}^{n}$. Then $U$ contains no pair $\{z, a(z)\}$ of antipodal points of $S^{n}$, since $d(z, a(z)) = 2$. As a result, the map $$p: U\to p(U)$$ is bijective. Since $p$ is continuous and open, $p$ is a homeomorphism. Likewise, $p: a(U) \to p(a(U)) = p(U)$ is a homeomorphism. The set $p^{-1}(p(U))$ is thus the union of the two disjoint open sets $U$ and $a(U)$, each of which is homeomorphically mapped by $p$ onto $p(U)$. Hence, $p(U)$ is a neighborhood of $p(x) =y$ that is evenly covered by $p$. 
+			\end{proof} 
+		\end{quote}
+		Now we have the following theorem 
+		\begin{quote}
+			(\textbf{Theorem}) Let $p: E \to B$ be a covering map; let $p(e_{0}) = b_{0}$. If $E$ is path connected, then the lifting correspondence $$\phi: \pi_{1}(B, b_{0})\to p^{-1}(b_{0})$$ is surjective. If $E$ is simply connected, it is bijective. 
+			
+			\begin{proof}
+				Let $E$ be path connected. Then given $e_{1} \in p^{-1}(b_{0})$, there is a path $\ti{f}$ in $E$ from $e_{0}$ to $e_{1}$. Then $f = p \circ \ti{f}$ is a loop in $B$ at $b_{0}$, and $\phi([f]) = e_{1}$ by definition. Therefore, $\phi$ is surjective. 
+				
+				Now suppose $E$ is simply connected. Let $[f], [g]$ be two elements of $\pi_{1}(B, b_{0})$ such that $\phi([f]) = \phi([g])$. Let $\ti{f}$ and $\ti{g}$ be the liftings of $f$ and $g$, respectively, to paths in $E$ that begin at $e_{0}$; then $\ti{f}(1) = \ti{g}(1)$. Since $E$ is simply connected, there is a path homotopy $\ti{F}$ in $E$ between $\ti{f}$ and $\ti{g}$. Hence, $F = p \circ \ti{F}$ is a path homotopy between $f$ and $g$, which proves injectivity. 
+			\end{proof}
+		\end{quote}
+	Now, suppose $n \geq 2$. Then since $S^{n}$ is simply connected, $\phi: \pi_{1}(\mathbb{RP}^{n}, b_{0}) \to p^{-1}(b_{0})$ is bijective. But since $|p^{-1}(b_{0})| = 2$, $|\pi_{1}(\mathbb{RP}^{n},b_{0})| = 2$ for all $b_{0} \in \mathbb{RP}^{n}$. Therefore, $\pi_{1}(\mathbb{RP}^{n},b_{0}) \cong \mathbb{Z}/2\mathbb{Z}$. Now suppose $n = 1$. Since $\mathbb{RP}^{1}$ is homeomorphic to $S^{1}$, their fundamental groups must be isomorphic. Therefore, $\pi_{1}(\mathbb{RP}^{1}, b_{0}) \cong \pi_{1}(S^{1}, p_{0}) \cong \mathbb{Z}$. Hence, we conclude that 
+		\begin{equation}
+			\pi_{1}(\mathbb{RP}^{n}) \cong 
+			\begin{cases}
+				\mathbb{Z}, & n = 1, \\
+				\mathbb{Z}/2\mathbb{Z}, & n \geq 2. 
+			\end{cases}
+		\end{equation}
+\end{solutions}
+
+\begin{prb}{(Lifting Criterion)}
+	Let $f: (Y, y_{0}) \to (X, x_{0})$ be a map with $Y$ path-connected and locally path-connected. Then a lift of $f$ exists if and only if 
+		\begin{equation*}
+			f_{\ast}(\pi_{1}(Y, y_{0})) \subseteq p_{\ast}(\pi_{1}(\ti{X},\ti{x}_{0})). 
+		\end{equation*}
+\end{prb}
 
 \newpage 
 \subsection{January 2025}
@@ -176,7 +241,25 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\end{equation}
 	which is a contradiction. Hence, no such retraction can exist. 
 \end{solutions}
-
+\begin{prb}{2025-A-II-1 (Geometry/Topology)}
+	For $n\geq 2$, \vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Calculate the fundamental group of the real $n$-dimensional projective space $\mathbb{P}^{n}$; 
+		\item Show that any continuous map $f: \mathbb{P}^{n} \to \mathbb{T}^{n}$ from $\mathbb{P}^{n}$ to the $n$-dimensional torus is homotopic to a constant map. 
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	Let $n \geq 2$. \vspace{-0.35cm}
+	
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $\sim$ be an equivalence relation on $S^{n}$ that identifies each $x \in S^{n}$ with its antipodal point $-x$, and let $\mathbb{RP}^{n} = S^{n}/\sim$ with quotient map $p: S^{n} \to \mathbb{RP}^{n}$. We begin by proving that $p: S^{n} \to \mathbb{RP}^{n}$ is a covering map. 
+		
+		Let $y \in \mathbb{RP}^{n}$. For each $x \in p^{-1}(y)$, choose an $\epsilon$-neighborhood $U$ in $S^{n}$ for $\epsilon < 1$ using the euclidean metric on $\mathbb{R}^{n}$. Let $a: S^{n} \to S^{n}$ be the antipodal map given by $a(x)= -x$, which is clearly seen to be a homeomorphism of $S^{n}$; this means that $a(U)$ is open in $S^{n}$. By construction of $U$, $U$ does not contain an pair $\{z, a(z)\}$ of antipodal points of $S^{n}$ since $d(z, a(z)) = 2$. Therefore, the map $p: U\to p(U)$ is bijective. Since $p$ is continuous and open, $p$ is a homeomorphism. Likewise, $p: a(U) \to p(a(U)) = p(U)$ is a homeomorphism. The set $p^{-1}(p(U)) = U \sqcup a(U)$, each of which is homeomorphically mapped by $p$ onto $p(U)$. Therefore, $p(U)$ is a neighborhood of $p(x) = y$ that is evenly covered by $p$. Hence, $p$ is a covering map. 
+		
+		Now we recall that if $p: E \to B$ is a covering map, $b_{0} \in B$, $e_{0} \in p^{-1}(b_{0})$, and $E$ is simply connected, then the map $\phi: \pi_{1}(B, b_{0}) \to p^{-1}(b_{0})$ defined by $\phi([f]) = \ti{f}(1)$, where $\ti{f}$ is a lift of $f$ to a path in $E$ beginning at $e_{0}$, is bijective. Since $p^{-1}(b_{0})$ contains only two elements for every $b_{0} \in \mathbb{RP}^{n}$ and $S^{n}$ is simply connected, $\pi_{1}(\mathbb{RP}^{n}, b_{0})$ is a group of two elements. Therefore, the fundamental group of $\mathbb{RP}^{n}$ is simply $\mathbb{Z}_{2}$. 
+		\item Now let $f: \mathbb{RP}^{n} \to \mathbb{T}^{n}$ be a continuous map; $f$ induces a group homomorphism $f_{\ast}: \pi_{1}(\mathbb{RP}^{n}) \longrightarrow \pi_{1}(\mathbb{T}^{n})$. We observe that $\pi_{1}(\mathbb{RP}^{n}) \cong \mathbb{Z}_{2}$, while $\pi_{1}(\mathbb{T}^{n}) \cong \mathbb{Z}^{n}$. Since $\mathbb{Z}^{n}$ has no subgroup of order 2, we conclude that $f_{\ast}$ be the trivial homomorphism. By the lifting criterion, this then implies that $f$ lifts to a path $\ti{f}: \mathbb{RP}^{n} \to \mathbb{R}^{n}$, where $\mathbb{R}^{n}$ is the universal cover of $S^{n}$. But since $\mathbb{R}^{n}$ is contractible, $\ti{f}$ is homotopic to a constant map. Hence, projecting down, we conclude that $f$ is homotopic to a constant map. 
+	\end{enumerate}
+\end{solutions}
 \begin{prb}{2025-A-I-6 (Algebra)}
 	Let $f(x)$ be an irreducible polynomial of degree $n$ over a field $F$, and let $g(x)$ be any polynomial in $F[x]$. Prove that every irreducible factor of the composition $f(g(x))$ has degree divisible by $n$. 
 \end{prb}
@@ -533,6 +616,16 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 
 
 \subsection{January 2023}
+\begin{prb}{2023-J-I-3 (Geometry/Topology)}
+	Show that if $M$ is a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover, then its fundamental group is either trivial or $\mathbb{Z}_{2}$. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover. Then $M = S^{2n}/G$, where $G$ is the group of deck transformations. Since $S^{2n}$ is path connected, each nonidentity deck transformation $g$ is a homeomorphism $S^{2n} \to S^{2n}$ with no fixed points. Then 
+		\begin{equation}
+			\deg{g} = (-1)^{2n + 1} =-1. 
+		\end{equation}
+	If $G$ contains two nontrivial elements $f$ and $g$, this implies $\deg(f \circ g) = \deg{f}\deg{g}= 1$. Hence, by our observation $f \circ g = \operatorname{id}_{S^{2n}}$, and so $f = g^{-1}$. Likewise, $g^{2} = \operatorname{id}_{S^{2n}}$ so that $f = g$. Since $S^{2n}$ is simply connected, we have $\pi_{1}(M) \cong G$, and therefore $\pi_{1}(M)$ is either trivial or $\mathbb{Z}_{2}$. 
+\end{solutions}
 \begin{prb}{2023-J-II-4 (Geometry/Topology)}
 	Prove that $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$, where $M_{1}, M_{2}, M_{3}$ are smooth manifolds of nonzero dimension. 
 \end{prb}
@@ -970,6 +1063,17 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 
 \subsection{August 2022}
+\begin{prb}{2022-A-I-1 (Geometry/Topology)}
+	Let $Y \subset \mathbb{R}^{3}$ be a surface of genus two. 
+		\begin{center}
+			\includegraphics[width=0.3\linewidth]{../Graphics/2022AI1.png}
+		\end{center}
+		
+	Let $Z$ be the closure of the bounded component in $\mathbb{R}^{3}\setminus Y$. (Thus, $Z$ is the compact domain-with-boundary whose interior is the region inside of $Y$.) Prove that the inclusion homomorphism $\pi_{1}(Y, \text{pt}) \to \pi_{1}(Z, \text{pt})$ is surjective. Then use this to show that the fundamental group $\pi_{1}(Y, \text{pt})$ of the surface $Y$ is non-abelian. 
+\end{prb}
+\begin{solutions}
+	Let $X \subset Y$ be a figure-eight along the top of the surface. Then $Z$ is a deformation retract of $Z$ and $X \hookrightarrow Z$ induces an isomorphism of fundamental groups. Hence, the image of $\pi_{1}(X)$ in $\pi_{1}(Y)$ maps isomorphically to $\pi_{1}(Z)$. In particular, $\pi_{1}(X) \to \pi_{1}(Z)$ is surjective. But since $\pi_{1}(Z) \cong \pi_{1}(X) \cong \mathbb{Z} \ast \mathbb{Z}$ is non-abelian. Since any homomorphic image of an abelian group is abelian, it follows that $\pi_{1}(Y)$ cannot be abelian. 
+\end{solutions}
 \begin{prb}{2022-A-I-3 (Real Analysis)}
 	Show that $L^{4}(X, \mu) \not\subset L^{5}(X, \mu)$ if and only if there are subsets of arbitrarily small measure. 
 \end{prb}
@@ -1016,7 +1120,7 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Find the fundamental group of the space of unordered pairs of distinct points of $S^{n}$. 
 \end{prb}
 \begin{solutions}
-	\textcolor{red}{[!! Complete Later !!]}
+	Let $X$ be the space of unordered pairs of distinct points of $S^{n}$. We claim that $X$ is homotopy equivalent to the real projective space $\mathbb{RP}^{n}$. Indeed the projective space of dimension $n$ can be identified to the space of unordered pairs of antipodal points of $S^{n}$, and there is a deformation retraction of the whole space to this subspace: draw through the pair of distinct points a line and take the parallel line through the center of $S^{n}$. This means that $\pi_{1}(X) \cong \pi_{1}(\mathbb{RP}^{n}) \cong \mathbb{Z}/2\mathbb{Z}$ for $n\geq 2$, $\cong \mathbb{Z}$ for $n = 1$, and $\cong \{0\}$ for $n =0$. 
 \end{solutions}
 
 
@@ -1390,6 +1494,31 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{eqnarray}
 	which means $fg \notin L^{2}$. This is a contradiction. Hence, by contradiction, $f \in L^{\infty}([0,1])$. 
 \end{solutions}
+
+\begin{prb}{2017-J-II-4 (Geometry/Topology)}
+	Let $X = \mathbb{RP}^{2} \vee \mathbb{RP}^{2}$ be the ``wedge'' of two real projective planes, meaning the quotient space obtained from the disjoint union $\mathbb{RP}^{2} \sqcup \mathbb{RP}^{2}$ by identifying a single point $p$ in one copy of $\mathbb{RP}^{2}$ with a single point $\ti{p}$ in the other. (1) What is the fundamental group of $X$? (2) Give a concrete description of the universal cover $\ti{X}$ of $X$, accompanied by a drawing of $X$. 
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item Let $X = \mathbb{RP}^{2} \vee \mathbb{RP}^{2}$. Since the fundamental group of the wedge product of two manifolds corresponds to the free product of the fundamental groups of each manifold, and the fundamental group of $\mathbb{RP}^{2}$ is $\mathbb{Z}/2\mathbb{Z}$, we conclude that 
+			\begin{equation}
+				\pi_{1}(X) \cong (\mathbb{Z}/2\mathbb{Z}) \ast (\mathbb{Z}/2\mathbb{Z}). 
+			\end{equation}
+		\item Recall that $S^{2}$ is the universal covering of $\mathbb{RP}^{2}$; a base point in $\mathbb{RP}^{2}$ has two preimages in $S^{2}$. To obtain $\ti{X}$, wedge another sphere to each of the two preimages of the base point. Then wedge another sphere to each the new preimages of the base point, and keep repeating. $\ti{X}$ resembles the following diagram: 
+	\end{enumerate}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-5,0) -- (5,0); 
+			\draw (-3,1) circle(1); \draw[fill=blue] (-3,0) circle (3pt);
+			\draw (0,1) circle (1); \draw[fill=blue] (0,0) circle (3pt);
+			\draw (3,1) circle (1); \draw[fill=blue] (3,0) circle (3pt);
+			\draw[Stealth-] (-5.5,1) -- (-4.5,1); \draw[-Stealth] (4.5,1) -- (5.5,1); 
+		\end{tikzpicture}
+	\end{center}
+\end{solutions}
+
+
 
 \subsection{August 2017}
 \begin{prb}{2017-A-I-1 (Geometry/Topology)}
@@ -2002,6 +2131,10 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	which is abelian and cyclic of order 28. Since $7 \mid 28$ and $4 \mid 28$, $\operatorname{Gal}(\mathbb{Q}(\zeta_{29})/\mathbb{Q})$ has exactly one subgroup of order 7 and one subgroup of order 4. I.e., there exists a unique subfield $E \subset \mathbb{Q}(\zeta_{29})$ such that $[E: \mathbb{Q}] = 7$. Hence, we conclude that $\operatorname{Gal}(E/\mathbb{Q})$ is a group of order 7, and hence is isomorphic to $\mathbb{Z}_{7}$. 
 \end{solutions} 
+
+
+
+
 \newpage 
 \subsection{Other Qualifying Exams}
 \begin{prb}{RUT-2023-A-I-1 (Algebra)}
