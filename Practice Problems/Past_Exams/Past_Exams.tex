@@ -2036,9 +2036,18 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	For $p(x)= x^{5} + 1$ over the field $\mathbb{F}_{19}$, find the splitting field $K$, find the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
 \end{prb}
 \begin{solutions}
-	\textcolor{red}{[!! Complete Later !!]}
+	Let $p(x) = x^{5} + 1$. We first note that $p(x)$ has the root $-1 \equiv 18 \pmod{19}$. If $\zeta$ is a fifth root of unity in some field extension of $\mathbb{F}_{19}$, then it follows that $-\zeta_{5}^{n}$ is a root for all $n$. Since $5 \mid 19^{2} - 1$ but $5 \nmid 19$, it follows that $\zeta_{5} \in \mathbb{F}_{19^{2}}$. Hence, the splitting field of $p(x)$ is $K = \mathbb{F}_{19^{2}}$. This means that the Galois group $\operatorname{Aut}(K)$ has order $[\mathbb{F}_{19^{2}}: \mathbb{F}_{19}] = 2$. Since there is only one group of order 2 up to isomorphism, we conclude that $\operatorname{Aut}(K) \cong \mathbb{Z}_{2}$. Hence, there is only one nontrivial automorphism, which maps each root to its inverse. 
 \end{solutions}
 
+\begin{prb}{2016-A-I-1 (Algebra I)}	For $q(x) = x^{4} - 2$ over the field $\mathbb{F}_{11}$, find the splitting field $K$, the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
+\end{prb}
+\begin{solutions}
+	Let $q(x) = x^{4} - 2$ over the field $\mathbb{F}_{11}$. It is straightforward to check that $q(x)$ has no roots in $\mathbb{F}_{11}$. However, if $\zeta$ is a fourth root of unity in some field extension of $\mathbb{F}_{11}$ and $\sqrt[4]{2}$ is contained in this extension, then $\zeta_{4}^{n}\sqrt[4]{2}$ is a root for all $n$. Since $4 \nmid 11$ but $4 \mid 11^{2} - 1$, it follows that $\zeta_{4} \in \mathbb{F}_{11^{2}}$. Hence, the splitting field of $q(x)$ is $K = \mathbb{F}_{11^{2}}(\sqrt[4]{2})$. Hence, 
+		\begin{equation}
+			|\operatorname{Aut}(K)| = [\mathbb{F}_{11^{2}}(\sqrt[4]{2}):\mathbb{F}_{11}] = [\mathbb{F}_{11^{2}}(\sqrt[4]{2}):\mathbb{F}_{11^{2}}] \cdot [\mathbb{F}_{11^{2}}:\mathbb{F}_{11}] = 4 \cdot 2 = 8. 
+		\end{equation}
+	I.e., the Galois group is of order 8. 
+\end{solutions} 
 \begin{prb}{2013-A-I-2 (Algebra)}
 	Find the Galois group of $x^{3} - 2$ over the field $\mathbb{Z}_{5}$. 
 \end{prb}
