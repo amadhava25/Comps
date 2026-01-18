@@ -22,7 +22,7 @@
 	\item \href{https://math.stackexchange.com/}{https://math.stackexchange.com/}
 	\item \href{https://www.amazon.com/Real-Analysis-Modern-Techniques-Applications/dp/0471317160}{Folland, \textit{Real Analysis}}
 	\item \href{https://www.amazon.com/Abstract-Algebra-3rd-David-Dummit/dp/0471433349/ref=sr\_1\_1?crid=2QCEP6X7QBOXZ\&dib=eyJ2IjoiMSJ9.4lpFqXqi4gfno3aacXf0MjatThq5tLEJhAp-fh-ZjoEcpVe6BepfcaakfakkUP11RZ0suA8TjaFWP839kuylJN6HFv0BVFTsPnjGhtLspwbcq18NH\_QG7IPgfLW09sHPIP89\_aZC4YkgtkH8VF4ti3-uwBq2qtNHbb7urgKZAOSRB9HHcJ0TmqsqzWqhb-RqqMi48Npdgh9Xa15HMlw95FCH67WPMr9zUPn9DyEZhAA.58K0BCGVFKYHckU-lNQ\_Xjh1YVuOBflo8ho9tPPGUqo\&dib\_tag=se\&keywords=dummit+and+foote\%2C+abstract+algebra+3rd+edition\&qid=1768622868\&sprefix=dummit+and+foot\%2Caps\%2C124\&sr=8-1}{Dummit \& Foote, \textit{Abstract Algebra}}
-	\item 
+	\item Comps solutions for 2014-2018 by Mads Bach Villadsen
 \end{enumerate}
 
 \newpage 
@@ -1238,6 +1238,14 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 
 \subsection{January 2021}
+\begin{prb}{2021-J-I-2 (Geometry/Topology)}
+	Define an equivalence relation $\sim$ on the $2$-dimensional torus $S^{1} \times S^{1}$ as follows: $(x,y) \sim (u, v)$ iff either $(x, y) = (u, v)$ or $(x, y) = (v, u)$. Compute the fundamental group for the quotient space $S^{1} \times S^{1}/\sim$ and describe the universal cover for this space. 
+\end{prb}
+\begin{solutions}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+
+
 \begin{prb}{2021-J-1-3 (Real Analysis)}
 	If $E \subset \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is Lipschitz, then show that $f(E)$ is also Lebesgue measurable. 
 \end{prb}
@@ -1404,8 +1412,65 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 
 
+\begin{prb}{2019-A-I-3 (Geometry/Topology)}
+	Let $M^{n}$ be a compact, connected, oriented $n$-manifold, and assume that $n$ is odd. Compute the Euler characteristic $\chi(M^{n}\setminus\{\text{pt}\})$. 
+\end{prb}
+\begin{solutions}
+	Let $M^{n}$ be a compact, connected, oriented $n$-manifold, where $n$ is odd. We recall the following two facts:
+		\begin{quote}
+			(\textbf{Euler Characteristic}) The Euler characteristic is defined to be the constant: 
+				\begin{equation}
+					\chi(M^{n}) \coloneqq \sum_{1}^{n}(-1)^{n}\operatorname{rank}(H_{i}(M^{n})).
+				\end{equation}
+				
+			(\textbf{Euler Characteristic of Disjoint Union}) The Euler characteristic is additive over disjoint unions. 
+		\end{quote}
+	Let $U = M^{n}\setminus \{\text{pt}\}$ and $V$ be an open ball around $p$ so that $U \cap V$ is homeomorphic to $\mathbb{R}^{n}\setminus \{\text{pt}\}$. Hence, we obtain 
+		\begin{equation}
+			\chi(U) + \chi(V) = \chi(M) + \chi(\mathbb{R}^{n}\setminus \{\text{pt}\}). 
+		\end{equation}
+	Since $V$ is contractible, $\chi(V) = 0$; since $M$ is a compact, odd-dimensional manifold, $\chi(M) = 0$; since $\mathbb{R}^{n}\setminus \{\text{pt}\}$ deformation retracts onto $S^{n - 1}$, which is an even-dimensional sphere, $\chi(\mathbb{R}^{n}\setminus \{\text{pt}\}) = 2$. Hence, 
+		\begin{equation}
+			\chi(U) = 2 - 1= 1. 
+		\end{equation}
+\end{solutions}
+
+
+
+\subsection{August 2019}
+\begin{prb}{2019-A-I-3 (Real Analysis)}
+	For every positive integer $n$, let $T_{n}: \mathbb{X} \to \mathbb{Y}$ be a linear transformation with $\mathbb{X}, \mathbb{Y}$ normed vector spaces. Suppose that $\norm{T_{n}} \leq 1$. Let $\{x_{\alpha}\}$ be a dense subset of $\mathbb{X}$. Suppose that for any $\alpha$, 
+		\begin{equation*}
+			\lim_{n} T_{n}(x_{\alpha}) = y_{\alpha}
+		\end{equation*}
+	for some $y_{\alpha} \in \mathbb{Y}$. Suppose further that if $x = \lim_{i}x_{\alpha_{i}}$, then $y_{\alpha_{i}}$ converges to some $y_{x} \in \mathbb{Y}$. Show that $$\lim_{n}T_{n}(x) = y_{x}.$$ 
+\end{prb}
+\begin{solutions}
+	Assume all of the given hypotheses of the problem. Then 
+		\begin{align}
+			\begin{split} 
+				\norm{T_{n}(x) - y_{x}} &\leq \norm{T_{n}(x) - T_{n}(x_{\alpha_{i}})}  + \norm{T_{n}(x_{\alpha_{i}}) - y_{\alpha_{i}}} + \norm{y_{\alpha_{i}} - y_{x}}  \\
+				&\leq \norm{T_{n}}\norm{x - x_{\alpha_{i}}} + \norm{T_{n}(x_{\alpha_{i}}) - y_{\alpha_{i}}} +  \norm{y_{\alpha_{i}} - y_{x}} \\
+				&\leq \norm{x - x_{\alpha_{i}}} + \norm{T_{n}(x_{\alpha_{i}}) - y_{\alpha_{i}}} + \norm{y_{\alpha_{i}} - y_{x}}. 
+			\end{split} 
+		\end{align}
+	Let $\epsilon > 0$. Choose $I$ large enough so that for all $i \geq I$, $\norm{x - x_{\alpha_{i}}}, \norm{y_{x} - y_{\alpha_{i}}} < \epsilon/3$. Now choose $N$ large enough so that for all $n\geq N$, $\norm{T_{n}(x_{\alpha_{i}}) - y_{\alpha_{i}}} < \epsilon/3$.  Hence, it follows that $T_{n}(x) \to y_{x}$. 
+\end{solutions}
 
 \subsection{August 2018}
+\begin{prb}{2018-A-I-2 (Geometry/Topology)}
+	Let $M^{n}$ be a compact, connected, oriented $n$-manifold, and assume that $n$ is odd. Compute the Euler characteristic $\chi(M\setminus \{\text{pt}\})$. 
+\end{prb}
+\begin{solutions}
+	Let $U = M^{n}\setminus \{\text{pt}\}$ and $V$ be an open ball around $p$ so that $U \cap V$ is homeomorphic to $\mathbb{R}^{n}\setminus \{\text{pt}\}$. Hence, we obtain 
+	\begin{equation}
+		\chi(U) + \chi(V) = \chi(M) + \chi(\mathbb{R}^{n}\setminus \{\text{pt}\}). 
+	\end{equation}
+	Since $V$ is contractible, $\chi(V) = 0$; since $M$ is a compact, odd-dimensional manifold, $\chi(M) = 0$; since $\mathbb{R}^{n}\setminus \{\text{pt}\}$ deformation retracts onto $S^{n - 1}$, which is an even-dimensional sphere, $\chi(\mathbb{R}^{n}\setminus \{\text{pt}\}) = 2$. Hence, 
+	\begin{equation}
+		\chi(U) = 2 - 1= 1. 
+	\end{equation}
+\end{solutions}
 \begin{prb}{2018-A-II-3 (Analysis)}
 	Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. Prove that $E + F = \{x + y: x \in E, y \in F\}$ contains an interval. 
 \end{prb}
@@ -1432,7 +1497,25 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Since $f(z)$ is continuous, it follows from the intermediate value theorem that $f(x)$ must have a root inside the interval $(0,1)$. Such a root must necessarily be real and positive. Hence, the proof concludes. 
 \end{solutions}
 
-
+\begin{prb}{2018-A-I-5 (Real Analysis)}
+	If $\{\mu_{n}\}$ are finite positive measures on $[0,1]$ that converge in the weak$^{\ast}$ topology to $\mu$, prove $\{\mu_{n} \times \mu_{n}\}$ converges in the weak$^{\ast}$-topology to $\mu \times \mu$. 
+\end{prb}
+\begin{solutions}
+	Recall that if $\mu_{n} \to \mu$ in the weak$^{\ast}$ topology, then for all $f \in C([0,1])$, 
+		\begin{equation}
+			\int_{[0,1]}f\;d\mu_{n}(x) \to \int_{[0,1]}f\;d\mu(x). 
+		\end{equation}
+	Therefore, our goal is to show that for any $f \in C([0,1]^{2})$, 
+		\begin{equation}
+			\int_{[0,1]^{2}}f\;d(\mu_{n} \times \mu_{n}) \longrightarrow \int_{[0,1]^{2}}f\;d(\mu \times \mu). 
+		\end{equation}
+	By the Stone-Weierstrass, functions of the form $g(x)h(y)$, where $g(x), h(y) \in C([0,1])$ are dense in $C([0,1]^{2})$. Hence it suffices to prove that the claim holds for these functions. Since continuous functions on compact spaces are in $L^{1}$, by Fubini-Tonelli, 
+		\begin{multline}
+			\int g(x)h(y)\;d(\mu_{n}\times \mu_{n}) = \left(\int g(x)\;d\mu_{n}(x)\right)\left(\int h(y)\;d\mu_{n}(y)\right)  \\
+			\longrightarrow \left(\int g(x)\;d\mu(x)\right)\left(\int h(y)\;d\mu(y)\right) = \int g(x)h(y)\;d(\mu \times\mu). 
+		\end{multline}
+	Hence, $\mu_{n} \times \mu_{n} \to \mu \times \mu$ in the weak$^{\ast}$-topology. 
+\end{solutions}
 
 
 
@@ -2039,14 +2122,14 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Let $p(x) = x^{5} + 1$. We first note that $p(x)$ has the root $-1 \equiv 18 \pmod{19}$. If $\zeta$ is a fifth root of unity in some field extension of $\mathbb{F}_{19}$, then it follows that $-\zeta_{5}^{n}$ is a root for all $n$. Since $5 \mid 19^{2} - 1$ but $5 \nmid 19$, it follows that $\zeta_{5} \in \mathbb{F}_{19^{2}}$. Hence, the splitting field of $p(x)$ is $K = \mathbb{F}_{19^{2}}$. This means that the Galois group $\operatorname{Aut}(K)$ has order $[\mathbb{F}_{19^{2}}: \mathbb{F}_{19}] = 2$. Since there is only one group of order 2 up to isomorphism, we conclude that $\operatorname{Aut}(K) \cong \mathbb{Z}_{2}$. Hence, there is only one nontrivial automorphism, which maps each root to its inverse. 
 \end{solutions}
 
-\begin{prb}{2016-A-I-1 (Algebra I)}	For $q(x) = x^{4} - 2$ over the field $\mathbb{F}_{11}$, find the splitting field $K$, the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
+\begin{prb}{2016-A-I-1 (Algebra I)}	For $q(x) = x^{4} - 2$ over the field $\mathbb{F}_{11}$, find the splitting field $K$, the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 4 roots (up to labeling of the roots). 
 \end{prb}
 \begin{solutions}
-	Let $q(x) = x^{4} - 2$ over the field $\mathbb{F}_{11}$. It is straightforward to check that $q(x)$ has no roots in $\mathbb{F}_{11}$. However, if $\zeta$ is a fourth root of unity in some field extension of $\mathbb{F}_{11}$ and $\sqrt[4]{2}$ is contained in this extension, then $\zeta_{4}^{n}\sqrt[4]{2}$ is a root for all $n$. Since $4 \nmid 11$ but $4 \mid 11^{2} - 1$, it follows that $\zeta_{4} \in \mathbb{F}_{11^{2}}$. Hence, the splitting field of $q(x)$ is $K = \mathbb{F}_{11^{2}}(\sqrt[4]{2})$. Hence, 
+	Let $q(x) = x^{4} - 2$ over the field $\mathbb{F}_{11}$. It is straightforward to see that $q(x)$ has no roots in this field. However, $q(x)$ is reducible since 
 		\begin{equation}
-			|\operatorname{Aut}(K)| = [\mathbb{F}_{11^{2}}(\sqrt[4]{2}):\mathbb{F}_{11}] = [\mathbb{F}_{11^{2}}(\sqrt[4]{2}):\mathbb{F}_{11^{2}}] \cdot [\mathbb{F}_{11^{2}}:\mathbb{F}_{11}] = 4 \cdot 2 = 8. 
+			q(x) = (x^{2} + 4x + 8)(x^{2} + 7x +  8). 
 		\end{equation}
-	I.e., the Galois group is of order 8. 
+	Is is then straightforward to see that each of these quadratics are irreducible over $\mathbb{F}_{11}$. Let $\alpha$ be a root of $x^{2} + 4x + 8$ so that $\mathbb{F}_{11}(\alpha) \cong \mathbb{F}_{11^{2}}$ since the minimal polynomial of $\alpha$ has degree 2. Since for each $n \geq 1$, there exists a unique extension of degree $n$, up to isomorphism, which is $\mathbb{F}_{11^{n}}$, we conclude that the other irreducible quadratic must also split over $\mathbb{F}_{11^{2}}$. Hence, the splitting field of $q(x)$ is $\mathbb{F}_{11^{2}}$, which is a degree 2 extension. This means that the order of the Galois group of $g(x)$ is $2$. Hence, $K \cong \mathbb{Z}_{2}$. This implies that there exists only one non-trivial automorphism, which is the Frobenius automorphism $\phi(x) = x^{11}$ maps a root of each irreducible quadratic to its conjugate root. 
 \end{solutions} 
 \begin{prb}{2013-A-I-2 (Algebra)}
 	Find the Galois group of $x^{3} - 2$ over the field $\mathbb{Z}_{5}$. 
@@ -2140,9 +2223,68 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	which is abelian and cyclic of order 28. Since $7 \mid 28$ and $4 \mid 28$, $\operatorname{Gal}(\mathbb{Q}(\zeta_{29})/\mathbb{Q})$ has exactly one subgroup of order 7 and one subgroup of order 4. I.e., there exists a unique subfield $E \subset \mathbb{Q}(\zeta_{29})$ such that $[E: \mathbb{Q}] = 7$. Hence, we conclude that $\operatorname{Gal}(E/\mathbb{Q})$ is a group of order 7, and hence is isomorphic to $\mathbb{Z}_{7}$. 
 \end{solutions} 
-
-
-
+\begin{prb}{2016-A-II-1 (Geometry/Topology)}
+	Let $X$ be the topological space obtained by making a 2-sphere and a 2-torus touch at a single point. Give a concrete description of the universal cover $\ti{X}$ of $X$, acommpanied by a drawing of $\ti{X}$. 
+\end{prb}
+\begin{solutions}
+	Let $X = S^{2} \vee T^{2}$, obtained by identifying some $p \in S^{2}$ with $q \in T^{2}$. We recall that the universal cover of $S^{2}$ is $S^{2}$ (which is a 1-fold covering of itself), and the universal cover of $T^{2}$ is $\mathbb{R}^{2}$. The universal cover $\ti{X}$ of $X$ is $\mathbb{R}^{2}$, whose integer lattice points are the lifts $\ti{q}$ of $q$, with a copy of $S^{2}$ attached at each such point by identifying its basepoint (the lift of $p$) with that lattice point. Visually: 
+		\begin{center}
+			\includegraphics[width=0.7\linewidth]{"../Graphics/2016AII1"}
+		\end{center}
+\end{solutions}
+\begin{prb}{2011-J-I-3 (Geometry/Topology)}
+	Let $\Sigma$ be the double torus (i.e., a compact oriented surface of genus 2) and $T = S^{1} \times S^{1}$ the torus, where $S^{1}$ is the circle. Suppose that $f: \Sigma \to T$ is continuous. Show that $f$ is not a local homeomorphism. 
+\end{prb}
+\begin{solutions}
+	We begin with a modified version of the comps lemma. 
+		\begin{quote}
+			(\textbf{Comps Lemma}) Let $M$ and $N$ be smooth connected $n$-manifolds, and $f: M \to N$ a local homeomorphism. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a covering map. 
+			
+			\begin{proof}
+				Let $M$ and $N$ be smooth connected $n$ manifolds, $f: M \to N$ a local homeomorphism, and assume $M$ is compact and nonempty. Since local homeomorphisms are open maps, $f(M)$ is open in $N$. On the other hand, since the continuous image of a compact set is compact, and a compact subset of a Hausdorff space (like $N$) is closed, $f(M)$ is closed. Since $f(M)$ is nonempty and $N$ is connected, we conclude that $f(M) = N$. Hence, $N$ is compact and $f$ is surjective. 
+				
+				Now we show that $f$ is a covering map. Let $y \in N$. Then for each $x \in f^{-1}(y)$, there exists a neighborhood $U_{x}$ such that $f|_{U_{x}}$ is a homeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods so that each $x \in M$ is isolated. This means that $f^{-1}(y)$ is discrete. Since discrete subspaces of compact spaces are finite, $f^{-1}(y)$ is finite; let $f^{-1}(y) = \{x_{1}, \ldots, x_{s}\}$. As identified earlier, for each $j = 1, \ldots, s$, there exists a neighborhood $U_{j}$ of $x_{j}$ such that $f|U_{j}$ is a homeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods so that they are pairwise disjoint. Now set $V = \bigcap_{1}^{s}f(U_{j})$, and let $\ti{U}_{j} = f^{-1}(V) \cap U_{j}$ for each $j$ so that $V$ is an evenly covered neighborhood of $y$. This shows that $f$ is a covering map. 
+			\end{proof} 
+		\end{quote} 
+	
+	Now assume to the contrary that $f: \Sigma \to T$ is a local homeomorphism. By the Comps Lemma, it follows that $f$ is a covering map. Hence, the induced group homorphism $f_{\ast}: \pi_{1}(\Sigma) \to \pi_{1}(S^{1}\times S^{1})$ is injective. We recall that $\pi_{1}(\Sigma) \cong \mathbb{Z} \ast \mathbb{Z}$ is non-abelian, while $\pi_{1}(S^{1} \times S^{1}) \cong \pi_{1}(S^{1}) \times \pi_{1}(S^{1}) \cong \mathbb{Z} \times \mathbb{Z}$. Since $f_{\ast}$ is injective, $f_{\ast}(\pi_{1}(\Sigma))$ is a nonabelian subgroup of $\mathbb{Z} \times \mathbb{Z}$, which is a contradiction. Hence, by contradiction, $f$ cannot be a local homeomorphism. 
+\end{solutions}
+\begin{prb}{2004-A-I-5 (Geometry/Topology)}
+	In this problem, the term ``surface'' means a compact orientable 2-manifold without boundary. \vspace{-0.35cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Does a surface of genus 1 have a covering space which is homeomorphic to a surface of genus 2? Explain. 
+			\item Does a surface of genus 2 have a covering space which is homeomorphic to a surface of genus 3? Explain. 
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $\Sigma_{1}$ denote a surface of genus 1 and $\Sigma_{2}$ denote a surface of genus 2; let $p: X \to \Sigma_{1}$ be a covering space. Assume to the contrary that $X$ is homeomorphic to $\Sigma_{2}$; this means that $\pi_{1}(X) \cong \pi_{1}(\Sigma_{2})$. Since $\pi_{1}(\Sigma_{2})$ is nonabelian, the fundamental group of $X$ must also be nonabelian. On the other hand, since $p: X \to \Sigma_{1}$ is a covering space, the induced group homomorphism $p_{\ast}: \pi_{1}(X) \to \pi_{1}(\Sigma_{1})$ is injective. Since $\pi_{1}(X)$ is non-abelian, $p_{\ast}(\pi_{1}(X))$ must be a nonabelian subgroup of $\pi_{1}(\Sigma_{1})$. But this is impossible since $\pi_{1}(\Sigma_{1}) \cong \mathbb{Z} \times \mathbb{Z}$ is abelian. Hence, $X$ cannot be homeomorphic to $\Sigma_{2}$. 
+		\item The plot line of this solution is that every surface group is residually finite, and surface groups $\pi_{1}(\Sigma_{g})$ for $g \geq 2$ contains subgroups of every finite index. Now suppose $X$ is a covering space of $\Sigma_{2}$ that is homeomorphic to $\Sigma_{3}$. If the covering is $k$-sheeted, then 
+			\begin{equation}
+				\chi(X) = k \cdot \chi(\Sigma_{2}), 
+			\end{equation}
+		where $\chi(\cdot)$ denotes the Euler characteristic. Since $\chi(\Sigma_{2}) = 2 - 2(2) = -2$, and $\chi(X) = \chi(\Sigma_{3}) = 2 - 2(3) = -4$, it follows that $k = 2$. Hence, $X$ must be a connected 2-sheet covering of $\Sigma_{2}$ \textit{if} it exists. This is where the plot line becomes useful. Since $\pi_{1}(\Sigma_{2})$ contains a subgroup of index 2, and by classification of covering spaces, corresponds to a connected 2-sheeted covering. Hence, $\Sigma_{2}$ does have a covering space which is homeomorphic to a surface of genus 3. 
+	\end{enumerate}
+\end{solutions} 
+\begin{prb}{2005-MAT530-II-4 (Geometry/Topology)}
+	Determine the number of coverings of the space $\mathbb{RP}^{2} \times \mathbb{RP}^{2}$ (up to equivalence, with path-connected covering space.)
+\end{prb}
+\begin{solutions}
+	Let $X= \mathbb{RP}^{2} \times \mathbb{RP}^{2}$ so that $\pi_{1}(\mathbb{RP}^{2} \times \mathbb{RP}^{2}) \cong \pi_{1}(\mathbb{RP}^{2}) \times \pi_{1}(\mathbb{RP}^{2}) \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2}$. Since $\mathbb{RP}^{2} \times \mathbb{RP}^{2}$ has a universal cover (namely $S^{2} \times S^{2}$), the equivalence classes of coverings of $\mathbb{RP}^{2} \times \mathbb{RP}^{2}$ correspond to the conjugacy classes of subgroups of $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$. Since this group is abelian, the number of coverings of $\mathbb{RP}^{2} \times \mathbb{RP}^{2}$ corresponds to the number of subgroups of $\mathbb{Z}_{2} \times \mathbb{Z}_{2}$. Since there are five such subgroups, it follows that there are five coverings spaces of $\mathbb{RP}^{2} \times \mathbb{RP}^{2}$ up to equivalence. 
+\end{solutions}
+\begin{prb}{2005-MAT530-II-4 (Geometry/Topology I)}
+	Determine the number of coverings of the space $\mathbb{RP}^{1} \times \mathbb{RP}^{1}$ (up to equivalence, with path-connected covering space.)
+\end{prb}
+\begin{solutions}
+	Let $X = \mathbb{RP}^{1} \times \mathbb{RP}^{1}$ so that $\pi_{1}(\mathbb{RP}^{1} \times \mathbb{RP}^{1}) \cong \pi_{1}(\mathbb{RP}^{1}) \times \pi_{1}(\mathbb{RP}^{1}) \cong \mathbb{Z} \oplus \mathbb{Z}$. Since $\mathbb{RP}^{1} \times \mathbb{RP}^{1}$ has a universal cover (namely $\mathbb{R}^{2}$), the equivalence classes of coverings of $\mathbb{RP}^{1} \times \mathbb{RP}^{1}$ correspond to conjugacy classes of subgroups of $\mathbb{Z} \oplus \mathbb{Z}$. Since this group is abelian, the number of coverings of $\mathbb{RP}^{1} \times \mathbb{RP}^{1}$ correspond to the number of subgroups of $\mathbb{Z} \oplus \mathbb{Z}$. Since there are countably many such subgroups, we conclude that there are a countable infinitely many covering spaces of $\mathbb{RP}^{1} \times \mathbb{RP}^{1}$ up to equivalence. 
+\end{solutions} 
+\begin{prb}{2005-J-II-5 (Geometry/Topology)}
+	Give an example of a topological space admitting exactly 3 coverings up to equivalence (including the space itself). 
+\end{prb}
+\begin{solutions}
+	Consider the Lens space $L(4\;1)$, which has fundamental group $\mathbb{Z}_{4}$. Since $L(4\;1)$ has a universal cover (namely $S^{3}$), $\mathbb{Z}_{4}$ is abelian, and $\mathbb{Z}_{4}$ has exactly 3 subgroups (namely $\{0\}$, $\mathbb{Z}_{2}$, and $\mathbb{Z}_{4}$), we conclude that $L(4\;1)$ has exactly 3 coverings up to equivalence. 
+\end{solutions} 
 
 \newpage 
 \subsection{Other Qualifying Exams}
