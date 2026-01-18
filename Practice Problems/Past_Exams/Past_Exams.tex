@@ -236,10 +236,28 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 \end{prb}
 \begin{solutions}
 	We claim that the answer is no; assume to the contrary that there exists a retraction $r: S \to C$. Let $i: C \hookrightarrow S$ be the inclusion map so that $r \circ i = \operatorname{id}_{C}$. Now since $C$ is an embedded circle, $H_{1}(C)$ (i.e., the first homology) is isomorphic to $H_{1}(S^{1}) = \mathbb{Z}$. On the other hand, since $C$ is separating in $S$, its homology class in $H_{1}(S)$ is the zero element. Hence, the induced map $i_{\ast}: H_{1}(C) \to H_{1}(S)$ is the zero map. But this is impossible since if $i_{\ast}$ is the zero map,
-		\begin{equation}
-			0 = r_{\ast} \circ i_{\ast} = (r \circ i)_{\ast} = \operatorname{id}_{H_{1}}(C),
-		\end{equation}
+	\begin{equation}
+		0 = r_{\ast} \circ i_{\ast} = (r \circ i)_{\ast} = \operatorname{id}_{H_{1}}(C),
+	\end{equation}
 	which is a contradiction. Hence, no such retraction can exist. 
+\end{solutions}
+\begin{prb}{2025-A-I-6 (Algebra)}
+	Let $f(x)$ be an irreducible polynomial of degree $n$ over a field $F$, and let $g(x)$ be any polynomial in $F[x]$. Prove that every irreducible factor of the composition $f(g(x))$ has degree divisible by $n$. 
+\end{prb}
+\begin{solutions}
+	Let $h(x)$ be an irreducible factor of $f(g(x))$ in $F[x]$ and let $\alpha$ be the root of $h(x)$ in some algebraic closure of $F$. Since $h$ is irreducible and $\alpha$ is a root, the minimum polynomial of $\alpha$ over $F$ is $h$. Therefore, 
+	\begin{equation}
+		\deg{h} = [F(\alpha): F]. 
+	\end{equation}
+	Now since $\alpha$ is a root of $h(x)= f(g(x))$, $f(g(\alpha)) = 0$. In particular, $g(\alpha)$ is a root of $f$. Since $f$ is irreducible of degree $n$ over $F$, the minimal polynomial of $g(\alpha)$ over $\alpha$ is $f$. Hence, 
+	\begin{equation}
+		[F(g(\alpha)):F] = n. 
+	\end{equation}
+	Since $F \subset F(g(\alpha)) \subset F(\alpha)$, by the Tower Law, 
+	\begin{equation}
+		\deg{h} = [F:(\alpha):F] = [F(\alpha):F(g(\alpha))] \cdot [F(g(\alpha)): F] = n[F(\alpha):F(g(\alpha))],
+	\end{equation}
+	so that $n \mid \deg{h}$. Hence, this concludes the proof. 
 \end{solutions}
 \begin{prb}{2025-A-II-1 (Geometry/Topology)}
 	For $n\geq 2$, \vspace{-0.35cm}
@@ -260,29 +278,11 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\item Now let $f: \mathbb{RP}^{n} \to \mathbb{T}^{n}$ be a continuous map; $f$ induces a group homomorphism $f_{\ast}: \pi_{1}(\mathbb{RP}^{n}) \longrightarrow \pi_{1}(\mathbb{T}^{n})$. We observe that $\pi_{1}(\mathbb{RP}^{n}) \cong \mathbb{Z}_{2}$, while $\pi_{1}(\mathbb{T}^{n}) \cong \mathbb{Z}^{n}$. Since $\mathbb{Z}^{n}$ has no subgroup of order 2, we conclude that $f_{\ast}$ be the trivial homomorphism. By the lifting criterion, this then implies that $f$ lifts to a path $\ti{f}: \mathbb{RP}^{n} \to \mathbb{R}^{n}$, where $\mathbb{R}^{n}$ is the universal cover of $S^{n}$. But since $\mathbb{R}^{n}$ is contractible, $\ti{f}$ is homotopic to a constant map. Hence, projecting down, we conclude that $f$ is homotopic to a constant map. 
 	\end{enumerate}
 \end{solutions}
-\begin{prb}{2025-A-I-6 (Algebra)}
-	Let $f(x)$ be an irreducible polynomial of degree $n$ over a field $F$, and let $g(x)$ be any polynomial in $F[x]$. Prove that every irreducible factor of the composition $f(g(x))$ has degree divisible by $n$. 
-\end{prb}
-\begin{solutions}
-	Let $h(x)$ be an irreducible factor of $f(g(x))$ in $F[x]$ and let $\alpha$ be the root of $h(x)$ in some algebraic closure of $F$. Since $h$ is irreducible and $\alpha$ is a root, the minimum polynomial of $\alpha$ over $F$ is $h$. Therefore, 
-		\begin{equation}
-			\deg{h} = [F(\alpha): F]. 
-		\end{equation}
-	Now since $\alpha$ is a root of $h(x)= f(g(x))$, $f(g(\alpha)) = 0$. In particular, $g(\alpha)$ is a root of $f$. Since $f$ is irreducible of degree $n$ over $F$, the minimal polynomial of $g(\alpha)$ over $\alpha$ is $f$. Hence, 
-		\begin{equation}
-			[F(g(\alpha)):F] = n. 
-		\end{equation}
-	Since $F \subset F(g(\alpha)) \subset F(\alpha)$, by the Tower Law, 
-		\begin{equation}
-			\deg{h} = [F:(\alpha):F] = [F(\alpha):F(g(\alpha))] \cdot [F(g(\alpha)): F] = n[F(\alpha):F(g(\alpha))],
-		\end{equation}
-	so that $n \mid \deg{h}$. Hence, this concludes the proof. 
-\end{solutions}
 \begin{prb}{2025-A-II-2 (Geometry/Topology)}
 	Consider the plane distribution in $\mathbb{R}^{3}$ spanned by two vector fields 
-		\begin{equation}
-			V = \partial_{x} + 2xy\partial_{z}, \qquad W = x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}. 
-		\end{equation}
+	\begin{equation}
+		V = \partial_{x} + 2xy\partial_{z}, \qquad W = x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}. 
+	\end{equation}
 	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
 		\item Show that this distribution is integrable. 
 		\item Does the pair of vector fields $V$ and $W$ generate a coordinate system on integral surfaces? If not, find a pair that can play this role for the local integral surfaces passing through points $(0,0,z_{0})$. 
@@ -292,27 +292,27 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 	$ $\newline \vspace{-0.65cm}
 	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
 		\item Let $D$ be the plane distribution in $\mathbb{R}^{3}$ spanned by the two vector fields $V$ and $W$ given above. Then by the Frobenius Theorem, $D$ is integrable if and only if $D$ is involutive, which is true if and only if the Lie Bracket of $V$ and $W$ is a smooth section of $D$ at each $p \in \mathbb{R}^{3}$. We observe that: 
-			\begin{align}
-				\begin{split}
-					V(W) &= \left(\partial_{x} + 2xy\partial_{z}\right)(x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}) \\
-					&= \partial_{x} + (4xy + 2x)\partial_{z}. \\
-					W(V) &= \left(x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}\right)(\partial_{x}+ 2xy\partial_{z}) \\
-					&= 2xy\partial_{z} + 2x\partial_{z}. 
-				\end{split}
-			\end{align}
+		\begin{align}
+			\begin{split}
+				V(W) &= \left(\partial_{x} + 2xy\partial_{z}\right)(x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}) \\
+				&= \partial_{x} + (4xy + 2x)\partial_{z}. \\
+				W(V) &= \left(x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\partial_{z}\right)(\partial_{x}+ 2xy\partial_{z}) \\
+				&= 2xy\partial_{z} + 2x\partial_{z}. 
+			\end{split}
+		\end{align}
 		Therefore, for any $p \in \mathbb{R}^{3}$, 
-			\begin{equation}
-				[V, W] = V(W) - W(V) = \partial_{x} + 2xy\partial_{z} = V. 
-			\end{equation}
+		\begin{equation}
+			[V, W] = V(W) - W(V) = \partial_{x} + 2xy\partial_{z} = V. 
+		\end{equation}
 		Since $V$ is a smooth section of $D$, we conclude that $D$ is involutive, and hence integrable. 
 		\item Let $\mathscr{S}$ be an integral surface, and assume there are coordinates $(u, v)$ on $\mathscr{S}$ such that $V|_{\mathscr{S}} = \partial_{u}$ and $W|_{\mathscr{S}} = \partial_{v}$. Then we observe that $[V|_{\mathscr{S}}, W|_{\mathscr{S}}] = \partial_{u}(\partial_{v}) - \partial_{v}(\partial_{u}) = 0$. On the other hand, 
-			\begin{equation}
-				[V|_{\mathscr{S}}, W|_{\mathscr{S}}] = ([V, W])|_{\mathscr{S}} = V|_{\mathscr{S}} \neq 0, 
-			\end{equation}
+		\begin{equation}
+			[V|_{\mathscr{S}}, W|_{\mathscr{S}}] = ([V, W])|_{\mathscr{S}} = V|_{\mathscr{S}} \neq 0, 
+		\end{equation}
 		which is a contradiction. Therefore, $V$ and $W$ cannot generate a coordinate system on integral surfaces. However, consider the fields $\ti{V} = V$ and $\ti{W} = W - xV$ on $\mathbb{R}^{3}$. Then since
-			\begin{equation}
-				[\ti{V}, \ti{W}] = V(W - xV) - (W - xV)(V) = VW - xVV - W(V) + xVV = 0, 
-			\end{equation} 
+		\begin{equation}
+			[\ti{V}, \ti{W}] = V(W - xV) - (W - xV)(V) = VW - xVV - W(V) + xVV = 0, 
+		\end{equation} 
 		and so this pair generates a coordinate system on all integral surfaces. 
 	\end{enumerate}
 \end{solutions}
@@ -450,7 +450,7 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\end{quote}
 	In our case, we had $r = \infty$ so that $r^{-1} = 0$. 
 \end{solutions}
-\begin{prb}{2024-J-II-2}
+\begin{prb}{2024-J-II-2 (Real Analysis)}
 	Suppose $E \subset \mathbb{R}^{2}$ is a set of positive Lebesgue measure. Show that there are points $a, b, c$ in $E$ such that their connecting segments form a right angle, i.e., $a - b$ is perpendicular to $c - b$ (as vectors in $\mathbb{R}^{2}$). 
 \end{prb}
 \begin{solutions}
@@ -498,6 +498,20 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		\item 
 	\end{enumerate}
 \end{solutions}
+\begin{prb}{2024-J-II-4 (Algebra)}
+	Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$. Let $K$ be the smallest Galois extension of $\mathbb{Q}$ which contains $\alpha$. Describe the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
+\end{prb}
+\begin{solutions}
+	Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$, and $K$ the smallest Galois extension of $\mathbb{Q}$ that contains $\alpha$. We start by finding the minimal polynomial of $\alpha$. We observe that 
+	\begin{equation}
+		\alpha^{2} = 2 + \sqrt{3} \implies (\alpha^{2} - 2)^{2} - 3 = 0. 
+	\end{equation}
+	Simplifying, 
+	\begin{equation}
+		\alpha^{4} - 4\alpha^{2} + 1 = 0. 
+	\end{equation}
+	I.e., the polynomial $x^{4} - 4x^{2} + 1$ is the minimal polynomial of $\alpha$. Solving this polynomial over an algebraic closure of $\mathbb{Q}$, we obtain the four roots, $\pm\sqrt{2 + \sqrt{3}}, \pm \sqrt{2 - \sqrt{3}}$. Hence, the elements of the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ are the identity permutation, the permutation $\sigma$ that fixes $\pm \sqrt{2 - \sqrt{3}}$ and permutes $\pm \sqrt{2 + \sqrt{3}}$, the permutation $\tau$ that fixes $\pm\sqrt{2 + \sqrt{3}}$ and permutes $\pm \sqrt{2 - \sqrt{3}}$, and the permutation $\sigma \tau$. Labeling these roots as $\alpha_{1}, \ldots, \alpha_{4}$, we see that $\operatorname{Gal}(K/\mathbb{Q}) \cong \{1, (1\;2), (3\;4), (1\;2)(3\;4)\} \cong V \subset S_{4}$, where $V$ is the Klein-4 subgroup. 
+\end{solutions}
 \begin{prb}{2024-J-II-5 (Real Analysis)}
 	Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty, \infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: You may use the Baire Category Theorem. 
 \end{prb}
@@ -534,20 +548,6 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 			\mathscr{L}_{X}\varphi = d(X\righthalfcup \varphi) + X\righthalfcup d\varphi = 0, 
 		\end{equation}
 	by the hypotheses. Hence, this shows that $[X, Y] \righthalfcup \varphi = 0$, and so $[X, Y]$ is a smooth section of $D$. Therefore, $D$ is involutive, which means that it is Frobenius integrable. 
-\end{solutions}
-\begin{prb}{2024-J-II-4 (Algebra)}
-	Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$. Let $K$ be the smallest Galois extension of $\mathbb{Q}$ which contains $\alpha$. Describe the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
-\end{prb}
-\begin{solutions}
-	Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$, and $K$ the smallest Galois extension of $\mathbb{Q}$ that contains $\alpha$. We start by finding the minimal polynomial of $\alpha$. We observe that 
-		\begin{equation}
-			\alpha^{2} = 2 + \sqrt{3} \implies (\alpha^{2} - 2)^{2} - 3 = 0. 
-		\end{equation}
-	Simplifying, 
-		\begin{equation}
-			\alpha^{4} - 4\alpha^{2} + 1 = 0. 
-		\end{equation}
-	I.e., the polynomial $x^{4} - 4x^{2} + 1$ is the minimal polynomial of $\alpha$. Solving this polynomial over an algebraic closure of $\mathbb{Q}$, we obtain the four roots, $\pm\sqrt{2 + \sqrt{3}}, \pm \sqrt{2 - \sqrt{3}}$. Hence, the elements of the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ are the identity permutation, the permutation $\sigma$ that fixes $\pm \sqrt{2 - \sqrt{3}}$ and permutes $\pm \sqrt{2 + \sqrt{3}}$, the permutation $\tau$ that fixes $\pm\sqrt{2 + \sqrt{3}}$ and permutes $\pm \sqrt{2 - \sqrt{3}}$, and the permutation $\sigma \tau$. Labeling these roots as $\alpha_{1}, \ldots, \alpha_{4}$, we see that $\operatorname{Gal}(K/\mathbb{Q}) \cong \{1, (1\;2), (3\;4), (1\;2)(3\;4)\} \cong V \subset S_{4}$, where $V$ is the Klein-4 subgroup. 
 \end{solutions}
 
 
@@ -1023,6 +1023,16 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			(\textbf{Analytic Continuation}) Let $f$ be an analytic function defined on a non-empty open subset $U$ of the complex plane $\mathbb{C}$. If $V$ is a larger open subset of $\mathbb{C}$ containing $U$, and $F$ is an analytic function defined on $V$ such that $F(z) = f(z)$ for all $z \in U$, then $F$ is called an \textit{analytic continuation of $f$}. I.e., $F|_{U} = f$. 
 		\end{quote}
 	For our problem, since the function $F(z) = 5z^{2}$ agrees with $f(z)$ at a sequence of points converging in $\mathbb{D}$ and $\mathbb{D}$ is connected, $f(z) = 5z^{2}$. Hence, $f''(0) = 10$. 
+\end{solutions} 
+\begin{prb}{2022-J-I-2 (Geometry/Topology)}
+	Let $\mathbb{T}^{2} = \mathbb{R}^{2}/\mathbb{Z}^{2}$, where $\mathbb{Z}^{2} \subset \mathbb{R}^{2}$ is the standard integer lattice. Is it true that (a) every continuous map $f: S^{2} \to \mathbb{T}^{2}$ is nulhomotopic? (b) every continuous map $g: \mathbb{T}^{2} \to S^{2}$ is nulhomotopic? 
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f: S^{2} \to \mathbb{T}^{2}$ be continuous, and consider the induced group homomorphism $f_{\ast}: \pi_{1}(S^{2}) \to \pi_{1}(\mathbb{T}^{2})$. Recall that $\pi_{1}(S^{2}) = \{e\}$ and $\pi_{1}(\mathbb{T}^{2}) = \mathbb{Z} \times \mathbb{Z}$. This means that $f_{\ast}$ must be the trivial homomorphism. Hence, since $f_{\ast}\pi_{1}(S^{2}) = \{(e,e)\} \subset \pi_{1}(\mathbb{T}^{2})$, by the General Lifting Lemma, $f$ lifts to a continuous map $\ti{f}: S^{2} \to \mathbb{R}^{2}$, where $\mathbb{R}^{2} = \ti{\mathbb{T}^{2}}$. Since $\mathbb{R}^{2}$ is contractible, $\ti{f}$ must be nulhomotopic; let $\ti{H}$ be a corresponding nulhomotopy. Hence, if $q: \mathbb{R}^{2} \to \mathbb{T}^{2}$ is a covering map, then $H \coloneqq q\circ \ti{H}$ would be a homotopy between $f$ and a constant map. Hence, $f$ is nulhomotopic. This concludes that every continuous map $f: S^{2} \to \mathbb{T}^{2}$ is nulhomotopic. 
+		\item Let $g: \mathbb{T}^{2} \to S^{2}$ be continuous, and let $q: S^{2} \to S^{2}$ be a universal covering space of $S^{2}$. It is not necessarily true that $g$ is nulhomotopic. Consider $X = (S^{1} \cup \{p\}) \cup (\{p\}\times S^{1})$, and consider the projection map $\pi: T^{2} \to S^{2}/X \cong S^{2}$. Then $\pi$ is not nulhomotopic (has degree one). Hence, this statement is not generally true.  
+	\end{enumerate}
 \end{solutions} 
 \begin{prb}{2022-J-I-3 (Algebra)}
 	Show that a group of order 1,000,000 contains a proper normal subgroup (i.e., is not simple). 
@@ -2283,9 +2293,37 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Give an example of a topological space admitting exactly 3 coverings up to equivalence (including the space itself). 
 \end{prb}
 \begin{solutions}
-	Consider the Lens space $L(4\;1)$, which has fundamental group $\mathbb{Z}_{4}$. Since $L(4\;1)$ has a universal cover (namely $S^{3}$), $\mathbb{Z}_{4}$ is abelian, and $\mathbb{Z}_{4}$ has exactly 3 subgroups (namely $\{0\}$, $\mathbb{Z}_{2}$, and $\mathbb{Z}_{4}$), we conclude that $L(4\;1)$ has exactly 3 coverings up to equivalence. 
+	Consider the Lens space $L(4;1)$, which has fundamental group $\mathbb{Z}_{4}$. Since $L(4;1)$ has a universal cover (namely $S^{3}$), $\mathbb{Z}_{4}$ is abelian, and $\mathbb{Z}_{4}$ has exactly 3 subgroups (namely $\{0\}$, $\mathbb{Z}_{2}$, and $\mathbb{Z}_{4}$), we conclude that $L(4\;1)$ has exactly 3 coverings up to equivalence. 
 \end{solutions} 
-
+\begin{prb}{2002-A-II-1 (Geometry/Topology)}
+	Let $X$ denote three copies of $S^{1}$ identified along a common point. \vspace{-0.35cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Compute the fundamental group of $X$. 
+			\item Show that any continuous map $f: \mathbb{RP}^{2} \to X$ from real projective space is nullhomotopic. 
+		\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $X$ denote three copies of $S^{1}$ identified along a common point: 
+			\begin{center}
+				\begin{tikzpicture}
+					\draw (-2,-2) circle (1); 
+					\draw (0,1) circle (1); 
+					\draw (2,-2) circle (1);
+					\draw[fill=blue] (2,-1) circle (2pt);
+					\draw[fill=blue] (-2,-1) circle (2pt);
+					\draw[fill=blue] (0,0) circle (2pt);
+					\draw[dashed] (2,-1) -- (0,0) -- (-2,-1) -- (2,-1);
+				\end{tikzpicture}
+			\end{center}
+		Let $U$ consist of two entire circles, and a portion of the third circle, and let $V$ consist of the third circle and a portion of the second circle. Then $U \cap V$ is contractible so that $\pi_{1}(U \cap V) = 0$; $U$ deformation retracts onto $S^{1} \vee S^{1}$ so that $\pi_{1}(U \cap V) = \braket{\alpha,\beta: \varnothing} \cong S^{1} \vee S^{1}$; $V$ deformation retracts onto $S^{1}$ so that $\pi_{1}(V) = \braket{\gamma:\varnothing}$. Hence, if $i_{1}: U \cap V \hookrightarrow U$ and $i_{2}: U \cap V \hookrightarrow V$, then 
+			\begin{equation}
+				\pi_{1}(X) \cong \pi_{1}(U) \ast \pi_{1}(V)/N \cong \braket{\alpha,\beta,\gamma: \varnothing} \cong \mathop{\scalebox{2.5}{\ast}}_{j = 1}^{3}\mathbb{Z}. 
+			\end{equation}
+		\item Let $f: \mathbb{RP}^{2} \to X$ be continuous, and consider the induced group homomorphism $f_{\ast}: \pi_{1}(\mathbb{RP}^{2}) \to X$; the universal cover of $X$ is a tree, and hence contractible. Since $\pi_{1}(\mathbb{RP}^{2}) \cong \mathbb{Z}_{2}$ and $\pi_{1}(X) \cong \mathbb{Z} \ast \mathbb{Z} \ast \mathbb{Z}$, it follows that $f_{\ast}$ is the trivial homomorphism. I.e., $f_{\ast}\pi_{1}(\mathbb{RP}^{2}) = \{e\}\subset \pi_{1}(X)$. Hence, by the General Lifting Lemma, $f$ lifts to a continuous map $\ti{f}: \mathbb{RP}^{2} \to \ti{X}$. But since $\ti{X}$ is contractible, $\ti{f}$ is nulhomotopic. if $\ti{H}$ is a nulhomotopy and $q: \ti{X} \to X$ is a covering map, then $H = q \circ \ti{H}$ is a nulhomotopy from $f$. Hence, $f$ is nulhomotopic. 
+	\end{enumerate}
+\end{solutions}
 \newpage 
 \subsection{Other Qualifying Exams}
 \begin{prb}{RUT-2023-A-I-1 (Algebra)}
