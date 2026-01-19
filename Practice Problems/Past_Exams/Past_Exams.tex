@@ -812,6 +812,25 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 \begin{solutions}
 	\textcolor{red}{[!! Complete Later]}
 \end{solutions}
+
+\begin{prb}{2023-J-I-6 (Algebra)}
+	Let $V$ be a real vector space of finite dimension $d > 2$. Let $T: V \to V$ be a finite order automorphism. Prove that the associated linear operator 
+		\begin{equation*}
+			\Lambda^{2}(T): \Lambda^{2}(V) \to \Lambda^{2}(V), \quad v_{1} \wedge v_{2} \mapsto T(v_{1}) \wedge T(v_{2})
+		\end{equation*}
+	fixes a nonzero vector. 
+\end{prb}
+\begin{solutions}
+	Let $T: V \to V$ be a finite order automorphism, which means that there exists some positive integer $m$ such that $T^{m} = \operatorname{id}_{V}$. This means that $T$ is diagonalizable over $\mathbb{C}$, with eigenvalues that are $m$th roots of unity. If $T$ has a nonreal eigenvalue $z$, then in the complexification $V_{\mathbb{C}}$, there is a nonzero eigenvector $v$ of $T_{\mathbb{C}}$ with eigenvector $z$. Since $T$ is real, its characteristic polynomial is real, and so complex eigenvalues come in conjugate pairs. This means that the conjugate vector $v^{\ast}$ has eigenvalue $z^{\ast}$. Since $z \neq z^{\ast}$, $v$ and $v^{\ast}$ are $\mathbb{C}$-linearly independent. Therefore, $w = iv\wedge v^{\ast}$ is a nonzero element of $\Lambda^{2}_{\mathbb{C}}V_{\mathbb{C}}$ with eigenvalue $z^{\ast}z$ under $\Lambda^{2}(T)$ and which is fixed by complex conjugation. Hence, it is the image of a nonzero element $w$ of $\Lambda^{2}(V)$, which also has eigenvalue $z^{\ast}z$. Since $T$ has finite order, every eigenvalue of $z$ is a root of unity, and so $z^{\ast}z = 1$. 
+	
+	On the other hand, if every eigenvalue of $T$ was real $\pm 1$, since $d > 2$, $T$ has at least three real eigenvalues, of which at least two must have the same sign. I.e., there exist two linearly independent nonzero eigenvectors $v$ and $w$ with eigenvalues both $+ 1$ or both $-1$. Then 
+		\begin{equation}
+			\Lambda^{2}(T)(v \wedge w) = (\pm 1)^{2}(v \wedge w) = v \wedge w, 
+		\end{equation}
+	so that $T$ fixes the nonzero vector $v \wedge w$. Hence, the proof concludes.
+\end{solutions}
+
+
 \begin{prb}{2023-J-II-1 (Real Analysis)}
 	Suppose that $f: \mathbb{R} \to \mathbb{R}$ is continuous. Show that $f^{-1}(y) = \{x \in \mathbb{R}: f(x) = y\}$ has Lebesgue measure zero for Lebesgue almost all $y$. 
 \end{prb}
@@ -857,7 +876,12 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 \begin{prb}{2023-A-I-1 (Algebra)}
 	Let $V$ be an $n$-dimensional vector space over a field $F$. An element $A \in \operatorname{End}{V}$ is called \textit{nilpotent} if $A^{k} = 0$ for some $k > 1$. Prove that $A$ is nilpotent if and only if $$\operatorname{Tr}(\Lambda^{i}A) = 0, \quad i = 1, \ldots, n$$ where $\Lambda^{i}A$ denotes the induced action of $A$ on the wedge product $\Lambda^{i}V$ for each $i$. 
 \end{prb}
-
+\begin{prb}{2023-A-I-3 (Algebra)}
+	Let $A$ be a square matrix with integer entries. Suppose that for some odd prime number $p$, all eigenvalues of $A$ are $p$th roots of unity, and that $A$ is congruent to the identity matrix modulo $p$. Show that all the eigenvalues of $A$ are equal to $1$. 
+\end{prb}
+\begin{solutions}
+	Let $A$ be a square matrix with integer entries. \textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
 \begin{prb}{2023-A-I-5 (Geometry/Topology)}
 	Let $T$ be the 2-torus $S^{1} \times S^{1}$ with an open 2-disk removed: 
 		\begin{center}
@@ -2324,6 +2348,52 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\item Let $f: \mathbb{RP}^{2} \to X$ be continuous, and consider the induced group homomorphism $f_{\ast}: \pi_{1}(\mathbb{RP}^{2}) \to X$; the universal cover of $X$ is a tree, and hence contractible. Since $\pi_{1}(\mathbb{RP}^{2}) \cong \mathbb{Z}_{2}$ and $\pi_{1}(X) \cong \mathbb{Z} \ast \mathbb{Z} \ast \mathbb{Z}$, it follows that $f_{\ast}$ is the trivial homomorphism. I.e., $f_{\ast}\pi_{1}(\mathbb{RP}^{2}) = \{e\}\subset \pi_{1}(X)$. Hence, by the General Lifting Lemma, $f$ lifts to a continuous map $\ti{f}: \mathbb{RP}^{2} \to \ti{X}$. But since $\ti{X}$ is contractible, $\ti{f}$ is nulhomotopic. if $\ti{H}$ is a nulhomotopy and $q: \ti{X} \to X$ is a covering map, then $H = q \circ \ti{H}$ is a nulhomotopy from $f$. Hence, $f$ is nulhomotopic. 
 	\end{enumerate}
 \end{solutions}
+
+\begin{prb}{2015-A-II-3 (Geometry/Topology)}
+	Suppose $f: \Sigma_{2} \to \Sigma_{1}$ is a continuous map from a compact orientable surface $\Sigma_{2}$ of genus 2 to a torus $\Sigma_{1}$ (a compact orientable surface of genus 1). Show that $f$ is not a local homeomorphism (i.e., for some $x \in \Sigma_{2}$, there exists no neighborhood on which $f$ is a homeomorphism onto its image.)
+\end{prb}
+\begin{solutions}
+	We will begin with a technical lemma that we will use in our proof. 
+		\begin{quote}
+			(\textbf{Modified Comps Lemma}) Let $M, N$ be smooth, connected, $n$-manifolds, and $f: M\to N$ a local homeomorphism. If $M$ is compact and nonempty, then $N$ is compact and $f$ is a covering map. 
+			
+			\begin{proof}
+				Let $M, N$ be smooth, connected, $n$-manifolds, $f: M \to N$ a local homeomorphism, and let $M$ be compact and nonempty. Since local homeomorphisms are open maps, $f(M)$ is open in $N$. Since the continuous image of a compact set is compact, and a compact subspace of a Hausdorff space is closed, $f(M)$ is closed in $N$. Since $f(M)$ is nonempty and $N$ is connected, $f(M) = N$. Hence, $N$ is compact and $f$ is surjective. 
+				
+				Now let $q \in N$. For each $x \in f^{-1}(q)$, there exists a neighborhood $U_{x}$ such that $f|_{U_{x}}$ is a homeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods so that they are pairwise disjoint. This shows that $f^{-1}(q)$ is discrete. Since discrete subspaces of compact spaces are finite, $f^{-1}(q)$ is finite; let $f^{-1}(q) = \{x_{1}, \ldots x_{s}\}$. As mentioned above, for each $j = 1, \ldots, s$, we can obtain a neighborhood $\ti{U}_{j}$ on which $f$ is a local homeomorphism. Since $M$ is Hausdorff, we may shrink these neighborhoods (and re-denote them as $\ti{U}_{j}$ for each $j$) so that $f$ remains a homeomorphism on these shrunken, pairwise disjoint neighborhoods. Set $V = \bigcap_{j = 1}^{s}f(U_{j})$, and define $U_{j} = f^{-1}(V) \cap \ti{U}_{j}$. Then $V$ is an evenly covered neighborhood of $q$. Hence, we conclude that $f$ is a covering map. 
+			\end{proof}
+		\end{quote}
+	Now, assume to the contrary that $f$ is a local homeomorphism; by the Modified Comps Lemma, $f$ is a covering map. This means $\chi(\Sigma_{2}) = k \cdot \chi(\Sigma_{1})$, where $k \in \mathbb{N}$ is the number of sheets of the covering space. Since $\Sigma_{2}$ is of genus 2, its Euler characteristic is $\chi(\Sigma_{2}) = 2 - 2(2) = 2- 4 = -2$. On the other hand, $\chi(\Sigma_{1}) = 2 - 2(1) = 0$. Hence, there exists no positive integer $k$ such that $-2 = k \cdot 0$, which contradicts our claim that $f$ is a covering map. Hence, by contradiction, $f$ cannot be a local homeomorphism. 
+\end{solutions}
+\begin{prb}{2009-J-I-1 (Geometry/Topology)}
+	Let $M^{k}$ be a smooth compact $k$-manifold, and let $F: M \to S^{n}$ be a smooth map, where $n > k$. Prove that $F$ is homotopic to a constant map. 
+\end{prb}
+\begin{solutions}
+	Let $M^{k}$ be a smooth compact $k$-manifold, and let $F: M \to S^{n}$ be a smooth map, where $n > k$. Since the differential $dF_{p}: T_{p}M \to T_{F(p)}S^{n}$ has rank at most $k < n$ at every $p \in M$, it follows that it is never surjective, and hence, every $q \in F(M)$ is a critical value of $F$. By Sard's Theorem, $F(M)$ has measure zero in $S^{n}$, which means there exists some $q \in S^{n}$ so that $q \in S^{n}\setminus F(M)$. In particular, $F(M) \subset S^{n}\setminus \{q\}$. Now, since $S^{n} \setminus \{q\}$ is diffeomorphic to the contractible space $\mathbb{R}^{n}$, we conclude that $S^{n}\setminus \{q\}$ is a contractible. Let $H: S^{n} \setminus \{q\} \times [0,1]$ be a homotopy between the identity map on $S^{n} \setminus \{q\}$ and a constant map $g: S^{n}\setminus \{q\} \to S^{n} \setminus \{q\}$ defined by $g(s) = q'$ for all $s \in S^{n}\setminus \{q\}$. Then it is straightforward to see that the map $H(F(p),t)$ is a homotopy between $F$ and a constant map on $S^{n}\setminus \{q\}$. Hence, $F$ is homotopic to a constant map. 
+\end{solutions}
+\begin{prb}{2012-A-I-2 (Geometry/Topology)}
+	Prove that every local homeomorphism between compact, connected, topological spaces is a covering map of some finite degree. 
+\end{prb}
+\begin{solutions}
+	Let $M$ and $N$ be compact, connected, topological spaces, and $f: M \to N$ a local homeomorphism. Let $q \in N$. For each $x \in f^{-1}(q)$, there exists a neighborhood $U_{x}$ such that the restriction of $f$ to $U_{x}$ is a homeomorphism. Since $M$ is (assumed) Hausdorff, we can shrink each of the neighborhoods so that they are pairwise disjoint. This means that every $x \in f^{-1}(q)$ is isolated, and hence $f^{-1}(q)$ is discrete. Since discrete subspaces of compact spaces are finite, we conclude that $f^{-1}(q)$ is finite; let $f^{-1}(q) = \{x_{1}, \ldots, x_{s}\}$. As stated above, for each $j = 1, \ldots, s$, there exists a neighborhood $\ti{U_{j}}$ so that $f|_{\ti{U}_{j}}$ is a homeomorphism. Since $M$ is Hausdorff, we may shrink these sets to obtain a pairwise disjoint collection of neighborhoods $\{\ti{\ti{U}}_{j}\}_{1}^{s}$ of each point in the preimage of $q$; the restriction of $f$ to each of these neighborhoods remains a homeomorphism. Setting $V$ to be the open set $\bigcap_{1}^{s}f(\ti{\ti{U}}_{j})$, define 
+		\begin{equation}
+			U_{j} = f^{-1}(V) \cap \ti{\ti{U}}_{j}. 
+		\end{equation}
+	Hence, $V$ is an evenly covered neighborhood of $q$. Since $q \in N$ was arbitrary, we conclude that $f$ is a covering map of finite degree $s$. 
+\end{solutions}
+\begin{prb}{2010-A-II-4 (Geometry/Topology)}
+	Let $p$ be a prime. Let $M$ be the two-dimensional torus $S^{1} \times S^{1}$. How many distinct $p$-sheeted covering spaces $\varpi: \ti{M} \to M$ are there such that $\ti{M}$ is path connected? Count these up to isomorphism of covering spaces of $M$, i.e., $\varpi_{1}: \ti{M}_{1} \to M$ is isomorphic to $\varpi_{2}: \ti{M}_{2} \to M$ if there exists a homeomorphism $f: \ti{M}_{1} \to \ti{M}_{2}$ such that $\varpi_{2} \circ f = \varpi_{1}$. 
+\end{prb}
+\begin{solutions}
+	Let $M$ be the two-dimensional torus $S^{1} \times S^{1}$, whose fundamental group is given by 
+		\begin{equation}
+			\pi_{1}(M) = \pi_{1}(S^{1} \times S^{1}) = \pi_{1}(S^{1}) \oplus \pi_{1}(S^{1}) \cong \mathbb{Z} \oplus \mathbb{Z}. 
+		\end{equation}
+	Since $M$ has a universal cover (namely, $\mathbb{R} \times \mathbb{R}$), the path-connected covering spaces of $M$ correspond to the conjugacy classes of subgroups of $\mathbb{Z} \oplus \mathbb{Z}$. Since this group is abelian, the path-connected covering spaces correspond to the subgroups of $\mathbb{Z} \oplus \mathbb{Z}$; in particular, $p$-sheeted covering spaces correspond to the subgroups of $\mathbb{Z} \oplus \mathbb{Z}$ of prime index $p$. By the First Isomorphism Theorem for groups, subgroups of $\mathbb{Z}^{2}$ of index $p$ correspond to the kernels of surjective homomorphisms from $\mathbb{Z}^{2}$ onto $\mathbb{Z}_{p}$, with two homeomorphisms having the same kernel iff they differ by multiplication by a unit in $\mathbb{Z}_{p}$. Hence, index-$p$ subgroups of $\mathbb{Z}^{2}$ are in one-to-one correspondence with the 1-dimensional subspaces of $(\mathbb{Z}/p\mathbb{Z})^{2} \cong \mathbb{F}_{p}^{2}$. Since there are a total of $p^{2} - 1$ nonzero elements in $\mathbb{F}_{p}^{2}$, and each 1-dimensonal subspace contains $p-1$ nonzero elements, we conclude that there are $p + 1$ such subspaces. Hence, there are $p + 1$ distinct $p$-sheeted path-connected covering spaces. 
+\end{solutions}
+
+
+
 \newpage 
 \subsection{Other Qualifying Exams}
 \begin{prb}{RUT-2023-A-I-1 (Algebra)}
