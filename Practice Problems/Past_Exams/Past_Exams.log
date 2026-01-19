@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  18 JAN 2026 20:00
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  18 JAN 2026 22:55
  restricted system commands enabled.
 **Past_Exams.tex
 (./Past_Exams.tex
@@ -2310,7 +2310,7 @@ Package mdframed Warning: You got a bad break
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 485.
-<../Graphics/2024JII3.png, id=1062, 333.49594pt x 146.79843pt>
+<../Graphics/2024JII3.png, id=1067, 333.49594pt x 146.79843pt>
 File: ../Graphics/2024JII3.png Graphic file (type png)
 <use ../Graphics/2024JII3.png>
 Package luatex.def Info: ../Graphics/2024JII3.png  used on input line 492.
@@ -2462,7 +2462,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 885.
-<../Graphics/2023A15.png, id=1192, 187.45032pt x 104.64093pt>
+<../Graphics/2023A15.png, id=1197, 187.45032pt x 104.64093pt>
 File: ../Graphics/2023A15.png Graphic file (type png)
 <use ../Graphics/2023A15.png>
 Package luatex.def Info: ../Graphics/2023A15.png  used on input line 888.
@@ -2542,7 +2542,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1100.
-<../Graphics/2022AI1.png, id=1244, 418.56375pt x 100.12407pt>
+<../Graphics/2022AI1.png, id=1249, 418.56375pt x 100.12407pt>
 File: ../Graphics/2022AI1.png Graphic file (type png)
 <use ../Graphics/2022AI1.png>
 Package luatex.def Info: ../Graphics/2022AI1.png  used on input line 1103.
@@ -2930,7 +2930,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2260.
-<../Graphics/2016AII1.jpeg, id=1588, 1399.2275pt x 712.6625pt>
+<../Graphics/2016AII1.jpeg, id=1593, 1399.2275pt x 712.6625pt>
 File: ../Graphics/2016AII1.jpeg Graphic file (type jpg)
 <use ../Graphics/2016AII1.jpeg>
 Package luatex.def Info: ../Graphics/2016AII1.jpeg  used on input line 2266.
@@ -2982,38 +2982,43 @@ Package mdframed Info: Not enough space on this page on input line 2376.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2384.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2395.
 
 
 [60]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2399.
-
 
 [61]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2429.
+
 
 [62]
 
 [63]
 
-[64] (./Past_Exams.aux)
+[64]
+
+[65] (./Past_Exams.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `Past_Exams.out' has not changed.
-(rerunfilecheck)             Checksum: 82EE6D93414183C904F76651BC29219B;38597.
+(rerunfilecheck)             Checksum: 36125C75CC3CC8AF6BD0DBD224CC57F7;38857.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39298 strings out of 475915
+ 39306 strings out of 475915
  125126,1977958 words of node,token memory allocated
- 7684 words of node memory still in use:
-   36 hlist, 6 vlist, 5 rule, 12 math, 52 glue, 20 kern, 510 glyph, 629 attribut
-e, 111 glue_spec, 629 attribute_list, 2 write nodes
-   avail lists: 1:7,2:1637,3:660,4:598,5:773,6:179,7:9301,8:99,9:1327,10:20,11:7
+ 7716 words of node memory still in use:
+   36 hlist, 6 vlist, 5 rule, 12 math, 52 glue, 20 kern, 510 glyph, 637 attribut
+e, 111 glue_spec, 637 attribute_list, 2 write nodes
+   avail lists: 1:7,2:1621,3:661,4:598,5:774,6:179,7:9354,8:99,9:1327,10:20,11:7
 12,12:2
- 60100 multiletter control sequences out of 65536+600000
+ 60101 multiletter control sequences out of 65536+600000
  264 fonts using 30982431 bytes
  101i,18n,147p,1497b,1034s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{c:/texlive/2
@@ -3033,10 +3038,10 @@ pfb><c:/texlive/2024/texmf-dist/fonts/type1/google/noto/NotoSerif-Regular.pfb><c
 :/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texli
 ve/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb><c:/texlive/2024/
 texmf-dist/fonts/type1/public/newtx/txsym.pfb>
-Output written on Past_Exams.pdf (64 pages, 704976 bytes).
+Output written on Past_Exams.pdf (65 pages, 710647 bytes).
 
-PDF statistics: 1766 PDF objects out of 2073 (max. 8388607)
- 1658 compressed objects within 17 object streams
- 711 named destinations out of 1000 (max. 131072)
- 1424 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1780 PDF objects out of 2073 (max. 8388607)
+ 1671 compressed objects within 17 object streams
+ 718 named destinations out of 1000 (max. 131072)
+ 1432 words of extra memory for PDF output out of 10000 (max. 100000000)
 

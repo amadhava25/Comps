@@ -2392,7 +2392,37 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Since $M$ has a universal cover (namely, $\mathbb{R} \times \mathbb{R}$), the path-connected covering spaces of $M$ correspond to the conjugacy classes of subgroups of $\mathbb{Z} \oplus \mathbb{Z}$. Since this group is abelian, the path-connected covering spaces correspond to the subgroups of $\mathbb{Z} \oplus \mathbb{Z}$; in particular, $p$-sheeted covering spaces correspond to the subgroups of $\mathbb{Z} \oplus \mathbb{Z}$ of prime index $p$. By the First Isomorphism Theorem for groups, subgroups of $\mathbb{Z}^{2}$ of index $p$ correspond to the kernels of surjective homomorphisms from $\mathbb{Z}^{2}$ onto $\mathbb{Z}_{p}$, with two homeomorphisms having the same kernel iff they differ by multiplication by a unit in $\mathbb{Z}_{p}$. Hence, index-$p$ subgroups of $\mathbb{Z}^{2}$ are in one-to-one correspondence with the 1-dimensional subspaces of $(\mathbb{Z}/p\mathbb{Z})^{2} \cong \mathbb{F}_{p}^{2}$. Since there are a total of $p^{2} - 1$ nonzero elements in $\mathbb{F}_{p}^{2}$, and each 1-dimensonal subspace contains $p-1$ nonzero elements, we conclude that there are $p + 1$ such subspaces. Hence, there are $p + 1$ distinct $p$-sheeted path-connected covering spaces. 
 \end{solutions}
 
-
+\begin{prb}{2015-J-I-I (Complex Analysis)}
+	Suppose $f$ and $g$ are two entire holomorphic functions with the property that $\abs{f(z)} \leq \abs{g(z)}$ for every $z \in \mathbb{C}$. Prove that there is a constant $\lambda \in \mathbb{C}$ such that $f = \lambda g$. 
+\end{prb}
+\begin{solutions}
+	The key concepts for this problem are \textit{Liouville's Theorem} and the concept of \textit{removable singularities}. 
+		\begin{quote}
+			(\textbf{Liouville's Theorem}) Every holomorphic function $f: \mathbb{C} \to \mathbb{C}$ for which there exists a positive number $M$ such that $|f(z)| \leq M$ for all $z \in \mathbb{C}$ is constant. 
+			
+			(\textbf{Removable Singularities}) If $U \subset \mathbb{C}$ is an open subset, $a \in U$, and $f: U \setminus \{a\} \to \mathbb{C}$ is holomorphic, then $a$ is a \textit{removable singularity} for $f$ if there exists a holomorphic function $g: U \to \mathbb{C}$ which coincides with $f$ on $U\setminus \{a\}$. We say $f$ is \textit{holomorphically extendable} over $U$ if such $g$ exists. 
+		\end{quote}
+	Assume $f$ and $g$ are entire holomorphic functions with the property that $\abs{f(z)} \leq \abs{g(z)}$ for all $z \in \mathbb{C}$. If $f, g \equiv 0$, then we are done trivially. So assume $f, g \nequiv 0$. Consider the function $f(z)/g(z)$; by our hypothesis, 
+		\begin{equation}
+			\abs{\frac{f(z)}{g(z)}} \leq 1 \quad \text{ for all $z \in \mathbb{C}$}. 
+		\end{equation}
+	To invoke Liouville's Theorem, we must show that $f(z)/g(z)$ is holomorphic. Suppose $g(z_{0}) = 0$; without loss of generality, assume this is the only root of $g(z)$. Otherwise, we can apply the following argument repeatedly. Since $|f(z)| \leq |g(z)|$ for all $z$, it follows that $z_{0}$ must also be a root of $f$. Suppose $f(z) = (z - z_{0})^{n}\ti{f}(z)$ and $g(z) = (z - z_{0})^{m}\ti{g}(z)$ for some $n, m \in \mathbb{N}$. Suppose that $n < m$. Then since 
+		\begin{equation}
+			\lim_{z \to z_{0}}\frac{f(z)}{g(z)} = \lim_{z \to z_{0}}(z - z_{0})^{n - m} \frac{\ti{f}(z)}{\ti{g}(z)} \to \infty, 
+		\end{equation}
+	which contradicts our hypothesis that $\abs{f(z)} \leq \abs{g(z)}$ for all $z$. Therefore, $n \geq m$, which means $z_{0}$ must be a removable singularity of $f/g$. Hence, by Riemann's Theorem on Removable Singularities, there exists an holomorphic extension, $h$ of $f/g$ defined as follows: 
+		\begin{equation}
+			h(z) = 
+				\begin{cases}
+					\frac{f(z)}{g(z)}, & z \neq z_{0}, \\
+					\lim_{z \to z_{0}}\frac{f(z)}{g(z)}, & z = z_{0}. 
+				\end{cases}
+		\end{equation}
+	Since $|h(z)| \leq 1$ for all $z \in \mathbb{C}$, by Liouville's Theorem, we conclude that there exists $\lambda \in \mathbb{C}$ so that $h(z)= \lambda$. Since $h$ is the holomorphic extension of $f/g$, we conclude that
+		\begin{equation}
+			f(z) =\lambda g(z). 
+		\end{equation}
+\end{solutions}
 
 \newpage 
 \subsection{Other Qualifying Exams}

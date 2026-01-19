@@ -169,8 +169,9 @@
 \contentsline {subsubsection}{Problem 2009-J-I-1 (Geometry/Topology)}{59}{section*.170}%
 \contentsline {subsubsection}{Problem 2012-A-I-2 (Geometry/Topology)}{60}{section*.171}%
 \contentsline {subsubsection}{Problem 2010-A-II-4 (Geometry/Topology)}{60}{section*.172}%
-\contentsline {subsection}{Other Qualifying Exams}{61}{section*.173}%
-\contentsline {subsubsection}{Problem RUT-2023-A-I-1 (Algebra)}{61}{section*.174}%
-\contentsline {subsection}{Classification of Finite Groups}{62}{section*.175}%
-\contentsline {subsection}{Essential Review Notes}{64}{section*.176}%
-\contentsline {subsubsection}{Topological Vector Spaces}{64}{section*.177}%
+\contentsline {subsubsection}{Problem 2015-J-I-I (Complex Analysis)}{60}{section*.173}%
+\contentsline {subsection}{Other Qualifying Exams}{62}{section*.174}%
+\contentsline {subsubsection}{Problem RUT-2023-A-I-1 (Algebra)}{62}{section*.175}%
+\contentsline {subsection}{Classification of Finite Groups}{63}{section*.176}%
+\contentsline {subsection}{Essential Review Notes}{65}{section*.177}%
+\contentsline {subsubsection}{Topological Vector Spaces}{65}{section*.178}%
