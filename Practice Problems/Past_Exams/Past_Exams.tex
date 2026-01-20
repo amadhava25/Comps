@@ -316,6 +316,19 @@ Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. L
 		and so this pair generates a coordinate system on all integral surfaces. 
 	\end{enumerate}
 \end{solutions}
+\begin{prb}{2025-A-II-4 (Real Analysis)}
+	$ $\newline \vspace{-0.65cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Characterize $L^{1}$-functions $f: \mathbb{R} \to \mathbb{R}$ such that $f \ast f = f$. 
+		\item The same question for $L^{2}$-functions. 
+	\end{enumerate}
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $f \in L^{1}(\mathbb{R})$ such that $f \ast f = f$. By equality, $f \ast f \in L^{1}$. So taking the Fourier transform of both sides, $\hat{f}^{2} = \hat{f}$, which means that $\hat{f}(\xi) = 0$ or $\hat{f}(\xi) = 1$. In other words, $\hat{f}$ must be the characteristic function $\chi_{E}$ of some measurable subset $E$. Since the Fourier transform of a $L^{1}$ function must necessarily be continuous, either $E = \varnothing$ or $E = \mathbb{R}$. Moreover, by the Riemann-Lebesgue Lemma, $\hat{f}$ must vanish at infinity. Since $\chi_{\mathbb{R}}$ does not vanish at infinity, $\hat{f} = \chi_{\varnothing}$. This means that $\hat{f} \equiv 0$. Therefore, by injectivity of the Fourier transform on $L^{1}$, we conclude that the only $L^{1}$-function for which $f \ast f = f$ is the zero function $f \equiv 0$. 
+	\end{enumerate}
+\end{solutions}
 
 
 \subsection{January 2024}
@@ -1279,32 +1292,32 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	\textcolor{red}{[!! Complete Later !!]}
 \end{solutions}
 
+\begin{prb}{2021-J-II-6 (Real Analysis)}
+	Using Lebesgue measure on $\mathbb{R}$, prove that for almost every $\lambda > 1$, the set $\brac*{\lambda^{n}\mod{1}: n \in \mathbb{Z}^{+}}$ is dense in $[0,1]$. 
+\end{prb}
+
 
 \begin{prb}{2021-J-1-3 (Real Analysis)}
 	If $E \subset \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is Lipschitz, then show that $f(E)$ is also Lebesgue measurable. 
 \end{prb}
+\begin{solutions}
+	Let $E \subset \mathbb{R}$ be Lebesgue measurable, and $f: \mathbb{R} \to \mathbb{R}$ be Lipschitz. 
+\end{solutions}
 
 \subsection{August 2021}
 \begin{prb}{2021-A-I-2 (Complex Analysis)}
 	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. Prove that either there is $|z| = 1$ such that $|P(z)| > 1$ or $P(z) = z^{n}$. 
 \end{prb}
 \begin{solutions}
-	This problem requires the Cauchy Integral Formula, which states the following: 
+	This problem requires the Maximum Modulus Principle, which states the following 
 		\begin{quote}
-			\textbf{(Cauchy's Integral Formula)} Let $U$ be an open subset of the complex plane $\mathbb{C}$, and suppose the closed disk $\mathbb{D}$ defined as 
-				\begin{equation}
-					\mathbb{D}= \brac*{z \in \mathbb{C}: \abs{z - z_{0}} \leq r}
-				\end{equation}
-			is completely contained in $U$. Let $f: U\to \mathbb{C}$ be a holomorphic function. Then for every $a \in \operatorname{int}{\mathbb{D}}$, 
-				\begin{equation}
-					f^{(n)}(a) = \frac{n!}{2\pi i}\oint_{\partial \mathbb{D}}\frac{f(z)}{(z - a)^{n + 1}}\;dz. 
-				\end{equation}
-		\end{quote}
-	Returning to our original problem, assume that $|P(z)| \leq 1$ for all $|z| = 1$. Then by the Cauchy Integral Formula, 
+			(\textbf{Maximum Modulus Principle}) Let $f$ be a holomorphic function on some bounded and connected open subset $D$ of the complex plane $\mathbb{C}$ and taking complex values. If $z_{0} \in D$ such that $\abs{f(z_{0})} \geq \abs{f(z)}$ for all $z$ in some neighborhood of $z_{0}$, then $f$ is constant on $D$. 
+		\end{quote} 
+	So assume that for all $|z| = 1$, $\abs{P(z)} \leq 1$. Define the function 
 		\begin{equation}
-			n! = P^{(n)}(0) = \frac{n!}{2\pi i}\oint_{|z| = 1}\frac{P(z)}{z^{n + 1}}\;dz = 
+			g(z) = z^{n}P(1/z) = 1 + a_{1}z + \dotsm + a_{n}z^{n}. 
 		\end{equation}
-	\textcolor{red}{[!! Complete Later !!]}
+	Then for all $|z| = 1$, $|g(z)| = |z|^{n}|P(1/z)| \leq 1$ and $g(0) = 0$. Hence, by the Maximum Modulus Principle, $g(z) = 1$ for all $z$. In particular, this means that $P(z^{-1}) = z^{-n} \implies P(z) = z^{n}$. 
 \end{solutions}
 \begin{prb}{2021-A-I-6 (Geometry/Topology)}
 	What connected spaces can be finitely-sheeted covering spaces of a sphere with three handles? 
@@ -1321,7 +1334,38 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	Let $M$ be a compact manifold (without boundary) and $\pi: M \to S^{1}$ a submersion onto the circle. Assume to the contrary that $\h{1}(M) = 0$ which means that every closed form on $M$ is an exact form. Since $\h{1}(S^{1}) \cong \mathbb{R}$, let $[\omega]$ be a generator of this cohomology group, where $\omega$ is a nowhere vanishing closed 1-form on $S^{1}$. Since $\pi$ is a submersion, the 1-form $\pi^{\ast}\omega$ must also be a nowhere vanishing closed form on $M$. By our hypothesis on the de Rham cohomology group in degree one of $M$, $\pi^{\ast}\omega$ is exact, which means there exists a smooth function $f$ such that $\pi^{\ast}\omega = df$. Since $M$ is compact and $f$ is smooth, $f$ must attain either a maximum or minimum value at some $p_{0} \in M$. This means that $df_{p_{0}} = 0$. But this contradicts our claim that $\pi^{\ast}\omega$ is nowhere vanishing. Hence, by contradiction, $\h{1}(M) \neq 0$. 
 \end{solutions}
-
+\begin{prb}{2021-A-I-3 (Real Analysis)}
+	Characterize all functions $f \in L^{2}(\mathbb{R}^{n})$ such that $f \ast f = f$. Here $\ast$ means convolution. 
+\end{prb}
+\begin{solutions}
+	The key ingredients for this problem are Plancherel's Theorem, properties of the Fourier transform, and the Fourier Inversion Theorem: 
+		\begin{quote}
+			(\textbf{Plancherel's Theorem}) Suppose $f$ and $\hat{f}$ are both continuous and improperly Riemann integrable on $\mathbb{R}^{n}$. Then 
+				\begin{equation}
+					\int \abs{f(x)}^{2}\;dx = \int \abs{\hat{f}(\xi)}^{2}\;d\xi. 
+				\end{equation}
+				
+			(\textbf{Fourier Transforms and Convolutions}) If $h(x) = (f \ast g)(x)$, then $\hat{h}(\xi) = \hat{f}(\xi)\hat{g}(\xi)$. 
+		\end{quote}
+	Suppose $f \in L^{2}(\mathbb{R}^{n})$; by equality, $f \ast f \in L^{2}(\mathbb{R}^{n})$. Hence, taking the Fourier transform of both sides, $\hat{f}^{2} = \hat{f}$. This means that either $\hat{f} = 0$ or $\hat{f} = 1$. Hence, $\hat{f}(\xi) = \chi_{E}$ for some measurable set $E$. Applying Plancherel's Theorem, we find that $\hat{f} \in L^{2}$. Therefore, $E$ must have finite measure. Applying the inversion theorem, we can recover $f$ by taking the inverse Fourier transform. Therefore, $f$ must be of the form 
+		\begin{equation}
+			f(x) = \int_{E}\hat{f}(\xi)e^{2\pi i \xi x}\;dx. 
+		\end{equation}
+\end{solutions}
+\begin{prb}{2021-A-II-2 (Real Analysis)}
+	Suppose $X$ is a compact metric space and $\rho: C(X) \to C$ is an algebra homomorphism ($\rho$ respects addition and multiplication of functions). Prove that $\rho$ satisfies $\abs{\rho(f)} \leq \norm{f}$. ($C(X)$ is the Banach space of continuous complex-valued functions on $X$ has its usual supremum norm.)
+\end{prb}
+\begin{solutions}
+	If $\rho$ is the zero algebra homomorphism (i.e., $\rho(f) = 0$ for all $f \in C(X)$), then the claim is trivially true. So suppose $\rho$ is not the trivial homomorphism. Since for any $f \in C(X)$, 
+		\begin{equation}
+			\rho(f) = \rho(1f) =\rho(1)\rho(f), 
+		\end{equation}
+	it follows that $\rho(1) = 1$. If $f$ never vanishes, then $1 = \rho(1) = \rho(f)\rho(1/f)$ so that $\rho(f) \neq 0$. If $\abs{\rho(f)} > \norm{f}$, then $g = f/\rho(f)$ satisfies $\norm{g} < 1$. Hence, $1 - g$ never vanishes, and is therefore invertible. This means that 
+		\begin{equation}
+			\rho(1 - g) = \rho(1) - \rho(g) = 1 - \rho(f)/\rho(f) = 0, 
+		\end{equation}
+	which is a contradiction. Hence, $\abs{\rho(f)} \leq \norm{f}$ holds. 
+\end{solutions}
 
 \subsection{January 2020}
 \begin{prb}{2020-J-I-1 (Algebra)}
@@ -1329,6 +1373,20 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{prb}
 \begin{solutions}
 	Let $G$ be a finite non-abelian group, and let $Z(G)$ denote its center. Assume to the contrary that $|Z(G)| > \frac{1}{4}|G| \implies |G|/|Z(G)| < 4$. Since $|Z(G)| \mid |G|$, $|G|/|Z(G)|$ is a positive integer. Therefore, one of the three must necessarily be true: (1) $|G|/|Z(G)| = 1$, (2) $|G|/|Z(G)| = 2$, (3) $|G|/|Z(G)| = 3$. If (1) were true, then since $|Z(G)| = |G|$, $G$ has to be abelian, which contradicts our hypothesis. If (2) were true, then $G/Z \cong \mathbb{Z}/2\mathbb{Z}$ which is cyclic. Hence, $G$ would have to be abelian, which is a contradiction. Finally, if (3) were true, then $G/Z \cong \mathbb{Z}/3\mathbb{Z}$ which is cyclic. Hence, $G$ would have to be abelian, which ia a contradiction. Hence, $|Z(G)| \not> \frac{1}{4}|G|$, which means $|Z(G)| \leq \frac{1}{4}|G|$. 
+\end{solutions}
+\begin{prb}{2020-J-I-3 (Real Analysis)}
+	Let $p > 1$ be a real number, and set $q = \frac{p}{p - 1}$. Suppose that $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$. Prove that $\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;d\mu =0$, where $\mu$ denotes the Lebesgue measure on $\mathbb{R}$. 
+\end{prb}
+\begin{solutions}
+	Let $p > 1$ be a real number, and $q$ the conjugate exponent of $p$. Further suppose that $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$. By H\"older's inequality, we observe that 
+		\begin{equation}
+			\abs{\int_{\mathbb{R}}f(x)g(nx)\;d\mu} \leq \int_{\mathbb{R}}\abs{f(x)g(nx)}\;d\mu \leq \norm{f}_{p}\norm{g(n\cdot)}_{q}. 
+		\end{equation}
+	Hence, it suffices to show that $\norm{g(n\cdot)}_{q} \to 0$. Let $y = nx \implies dy =ndx \implies dx = n^{-1}dy$. Then 
+		\begin{equation}
+			\norm{g(n\cdot)}_{q}^{q} \coloneqq \int_{\mathbb{R}}|g(nx)|^{q}\;dx = n^{-1}\int_{\mathbb{R}}|g(y)|^{q}\;dy = n^{-1}\norm{g}_{q}^{q}. 
+		\end{equation}
+	Hence, $\norm{g(n \cdot)}_{q} = \frac{1}{n^{1/q}} \norm{g}_{q}$. From this, we conclude that $\norm{g(n \cdot )}_{q} \longrightarrow 0$ since $q > 1$, which then concludes the proof. 
 \end{solutions}
 \begin{prb}{2020-J-I-4 (Geometry/Topology)}
 	Let $\theta$ be a closed smooth 1-form on a compact $C^{\infty}$ manifold $M$ with empty boundary, and let $v$ be a smooth vector field on $M$. Prove that the Lie derivative $\mathscr{L}_{v}\theta$ vanishes at some point of $M$. 
@@ -1339,6 +1397,27 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			\mathscr{L}_{v}\theta = i_{v}(d\theta) + d(i_{v}\theta), 
 		\end{equation}
 	where $i_{v}(\cdot)$ denotes the interior product. Since $\theta$ is a closed 1-form, $d\theta = 0$. So $\mathscr{L}_{v}\theta = d(i_{v}\theta)$. Since $\theta$ is a 1-form, $i_{v}\theta$ is a 0-form on $M$, i.e., a smooth function on $M$. Since $M$ is compact, $i_{v}\theta$ must attain a extrema at some point in $M$, which means that its differential $d(i_{v}\theta)$ must vanish where it achieves its maximum or minimum. This then implies that $\mathscr{L}_{v}\theta$ vanishes at this point. 
+\end{solutions}
+\begin{prb}{2020-J-I-6 (Real Analysis)}
+	Let $E \subset \mathbb{R}^{n}$ be a measurable set of positive Lebesgue measure, and let $S^{n - 1}$ denote the unit sphere $\brac*{w \in \mathbb{R}^{n}: \norm{w} = 1}$. Given any $w \in S^{n - 1}$, prove there exist $x, y \in E$ such that $$w = \frac{x - y}{\norm{x - y}}.$$
+\end{prb}
+\begin{solutions}
+	Let $E \subset \mathbb{R}^{n}$ be a measurable set of positive Lebesgue measure, and select some $w \in S^{n - 1}$. By inner regularity of the Lebesgue measure, there exists a compact set $K_{1} \subset E$ such that $m(K_{1}) > 0$, where $m$ denotes the Lebesgue measure on $\mathbb{R}^{n}$. On the other hand, given $\epsilon \in (0,1)$, by outer regularity of the Lebesgue measure, there exists an open subset $U \subset \mathbb{R}^{n}$ such that $K_{1} \subset U$ and $m(U) \leq (1 + \epsilon)m(K_{1})$. Since $K_{1}$ is compact, $d_{1} = d(K_{1}, U^{c}) > 0$. So choose an arbitrary $r \in (0, d_{1})$, and consider the set $K_{1} + rw$. We claim that $K_{1} + rw \subset U$. If not, then 
+		\begin{equation}
+			d(K_{1}, U^{c}) < \norm{rw} = r < d_{1}, 
+		\end{equation}
+	which is a contradiction. Therefore, the set $K_{1} \cup (K_{1} + rw) \subset U$, which then implies that 	
+		\begin{equation}
+			m(U) \geq m(K_{1} \cup (K_{1} + rw)) = m(K_{1}) + m(K_{1} + rw) - m(K_{1} \cap (K_{1} + rw)). 
+		\end{equation}
+	Since the Lebesgue measure is translation invariant, 
+		\begin{equation}
+			m(K_{1} \cap (K_{1} + rw)) \geq 2m(K_{1}) - m(U) \geq 2m(K_{1}) - (1 + \epsilon)m(K_{1}) = (1 - \epsilon)m(K_{1}) > 0. 
+		\end{equation}
+	Hence, $K_{1} \cap (K_{1} + rw)$ is nonempty. This gives us a nested sequence of nonempty sets $\varnothing \neq K_{1} \cap (K_{1} + rw) \subset K_{1} \subset E$. Let $x \in K_{1} \cap (K_{1} + rw) \subset E$. Then the element $y = x - rw$ is contained in $K_{1} \subset E$. We observe that 
+		\begin{equation}
+			\frac{x - y}{\norm{x - y}} = \frac{x - (x - rw)}{\norm{x - (x - rw)}} = \frac{rw}{\norm{rw}} = w. 
+		\end{equation}
 \end{solutions}
 
 
@@ -1436,7 +1515,22 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	so that $A^{n}$ and $B$ commute. 
 \end{solutions}
-
+\begin{prb}{2019-J-I-3 (Geometry/Topology)}
+	Let $M$ and $N$ be connected, compact, oriented $n$-manifolds. Prove that if $\h{k}(N) \neq 0$ and $\h{k}(M) = 0$ for some $k \neq 0$, then any smooth map $f: M \to N$ has degree $0$.  
+\end{prb}
+\begin{solutions}
+	Assume the given hypotheses. The map $f$ induces a smooth pullback map $f^{\ast}: \h{k}(N) \to \h{k}(M)$; since $\h{k}(M)$ is zero, it follows that $f^{\ast}$ is the zero map. 
+	
+	Since $\h{k}(N) \neq 0$, there exists a closed $k$-form $\alpha$ such that $[\alpha] \neq 0$. Since $f^{ast}$ is the zero map, $[f^{\ast}\alpha] = 0 \in \h{k}(M)$. Therefore, $f^{\ast}\alpha$ is an exact form on $M$, which means there exists a $(k - 1)$-form $\beta$ on $M$ such that $f^{\ast}\alpha = d\beta$. Now choose a $(n - k)$-form $\gamma$ on $N$ such that 
+		\begin{equation}
+			\int_{N}\alpha \wedge \gamma \neq 0; 
+		\end{equation} 
+	this is possible due to the \textit{Poincar{\'e} Duality}: if $N$ is a compact oriented $n$-manifold, then there exists a map $\alpha \smile \beta = \int_{N} \alpha \wedge \beta$ that descends to a nondegenerate bilinear pairing in cohomology:
+		\begin{equation}
+			H^{k}(M, \mathbb{R}) \otimes H^{n - k}(M, \mathbb{R}) \to \mathbb{R}. 
+		\end{equation}
+	
+\end{solutions}
 
 \begin{prb}{2019-J-II-5}
 	Let $G$ be a finite group, and let $H$ be a non-normal subgroup of $G$ of index $n$. Show that if $|H|$ is divisible by a prime $p \geq n$, then $G$ is not simple. 
@@ -1446,7 +1540,9 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 
 
-\begin{prb}{2019-A-I-3 (Geometry/Topology)}
+\subsection{August 2019}
+
+\begin{prb}{2019-A-II-4 (Geometry/Topology)}
 	Let $M^{n}$ be a compact, connected, oriented $n$-manifold, and assume that $n$ is odd. Compute the Euler characteristic $\chi(M^{n}\setminus\{\text{pt}\})$. 
 \end{prb}
 \begin{solutions}
@@ -1469,9 +1565,6 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 \end{solutions}
 
-
-
-\subsection{August 2019}
 \begin{prb}{2019-A-I-3 (Real Analysis)}
 	For every positive integer $n$, let $T_{n}: \mathbb{X} \to \mathbb{Y}$ be a linear transformation with $\mathbb{X}, \mathbb{Y}$ normed vector spaces. Suppose that $\norm{T_{n}} \leq 1$. Let $\{x_{\alpha}\}$ be a dense subset of $\mathbb{X}$. Suppose that for any $\alpha$, 
 		\begin{equation*}
@@ -1489,6 +1582,23 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			\end{split} 
 		\end{align}
 	Let $\epsilon > 0$. Choose $I$ large enough so that for all $i \geq I$, $\norm{x - x_{\alpha_{i}}}, \norm{y_{x} - y_{\alpha_{i}}} < \epsilon/3$. Now choose $N$ large enough so that for all $n\geq N$, $\norm{T_{n}(x_{\alpha_{i}}) - y_{\alpha_{i}}} < \epsilon/3$.  Hence, it follows that $T_{n}(x) \to y_{x}$. 
+\end{solutions}
+\begin{prb}{2019-A-II-1 (Complex Analysis)}
+	Suppose $f: \mathbb{C} \to \mathbb{C}$ is continuous on the closed disk $\brac*{z: \abs{z}\leq 1} \subset \mathbb{C}$ and holomorphic on its interior. If $f$ restricted to the boundary of this disk only takes values on the curve $xy = 1$ (where a point $z \in \mathbb{C}$ is written as $z = x + iy$, with $x, y \in \mathbb{R}$), show that $f$ is constant on the whole disk. 
+\end{prb}
+\begin{solutions}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+
+\begin{prb}{2019-A-I-4 (Geometry/Topology)}
+	Let $f: \mathbb{RP}^{3} \to \mathbb{T}^{3} = S^{1}\times S^{1}\times S^{1}$ be a smooth map. Show that $f$ is not a immersion. 
+\end{prb}
+\begin{solutions}
+	Let $f: \mathbb{RP}^{3} \to \mathbb{T}^{3} = S^{1}\times S^{1}\times S^{1}$ be a smooth map. Assume to the contrary that $f$ is an immersion. Since $\mathbb{RP}^{3}$ is smooth, compact, connected, and nonempty, it follows from the Comps Lemma that $f$ is a covering map. In particular, this forces the induced group homomorphism, $f_{\ast}: \pi_{1}(\mathbb{RP}^{3}) \to \pi_{1}(\mathbb{T}^{3})$ to be injective. We recall that 
+		\begin{equation}
+			\pi_{1}(\mathbb{RP}^{3}) \cong \mathbb{Z}/2\mathbb{Z} \qquad \text{ and } \qquad \pi_{1}(\mathbb{T}^{3}) \cong \bigtimes_{j = 1}^{3}\pi_{1}(S^{1}) \cong \mathbb{Z}^{3}. 
+		\end{equation}
+	Since $f_{\ast}$ is injective, it cannot be the trivial homomorphism. Therefore, $f_{\ast}$ must map the equivalence class $[\gamma] \in \pi_{1}(\mathbb{RP}^{3})$ of order two to a nonzero equivalence class $[\zeta]$ with order dividing $2$ in $\pi_{1}(\mathbb{T}^{3})$. However, since $\mathbb{Z}\times \dotsm \times \mathbb{Z}$ is torsion-free, there exists no nonzero element of finite order in $\mathbb{Z} \times \mathbb{Z} \times \mathbb{Z} \cong \pi_{1}(\mathbb{T}^{3})$. This leads to a contradiction. Therefore, $f$ cannot be an immersion. 
 \end{solutions}
 
 \subsection{August 2018}
