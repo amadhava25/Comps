@@ -1121,6 +1121,16 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \begin{solutions}
 	Let $X \subset Y$ be a figure-eight along the top of the surface. Then $Z$ is a deformation retract of $Z$ and $X \hookrightarrow Z$ induces an isomorphism of fundamental groups. Hence, the image of $\pi_{1}(X)$ in $\pi_{1}(Y)$ maps isomorphically to $\pi_{1}(Z)$. In particular, $\pi_{1}(X) \to \pi_{1}(Z)$ is surjective. But since $\pi_{1}(Z) \cong \pi_{1}(X) \cong \mathbb{Z} \ast \mathbb{Z}$ is non-abelian. Since any homomorphic image of an abelian group is abelian, it follows that $\pi_{1}(Y)$ cannot be abelian. 
 \end{solutions}
+\begin{prb}{2022-A-I-2 (Algebraa)}
+	Let $f(x) \in \mathbb{Q}[x]$ be an irreducible polynomial of odd degree greater than 1 and having only one real root $u \in \mathbb{R}$. Show that $\mathbb{Q}(u)$ is not a normal extension. 
+\end{prb}
+\begin{solutions}
+	This problem requires the definition of a normal extension, which is the following: 
+		\begin{quote}
+			(\textbf{Normal Extension}) An algebraic field extension $L/K$ for which every irreducible polynomial over $K$ that has a root in $L$ splits into linear factors over $L$. 
+		\end{quote}
+	By hypothesis, $f$ is an irreducible polynomial of odd-degree greater than 1 that has a real root $u$ trivially contained in $\mathbb{Q}(u)$. If $v \in \mathbb{C}$ is a complex-valued root of $f$ (which $f$ must have since the number of complex solutions of a polynomial is equal to its degree), then $v \notin \mathbb{Q}(u)$ since $\mathbb{Q}(u) \subset \mathbb{R}$. This means that $f$ cannot split over $\mathbb{Q}(u)$. And hence, $\mathbb{Q}(u)/\mathbb{Q}$ cannot be a normal extension. 
+\end{solutions}
 \begin{prb}{2022-A-I-3 (Real Analysis)}
 	Show that $L^{4}(X, \mu) \not\subset L^{5}(X, \mu)$ if and only if there are subsets of arbitrarily small measure. 
 \end{prb}
@@ -1194,6 +1204,16 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			\exp(g) = \exp(h + C) = e^{C}\exp(h) = c\exp(h) = f. 
 		\end{equation}
 	The proof concludes. The main ideas are simple connectedness and Cauchy's Theorem, and the fact that for every holomorphic function $f$, there exists a primitive holomorphic function $g$ such that $g'(z) = f(z)$. But the existence of a primitive function holds only on simply connected regions. 
+\end{solutions}
+\begin{prb}{2022-A-I-6 (Algebra)}
+	Denote by $\operatorname{Mat}(m, \mathbb{C})$ and $\operatorname{Mat}(m,n,\mathbb{C})$ the space of $m\times m$ and $m \times n$ matrices with complex coefficients. Let $A \in \operatorname{Mat}(n, \mathbb{C})$, $B \in \operatorname{Mat}(m, \mathbb{C})$ be given and suppose $A$ and $B$ have no common eigenvalues. Show that the only solution of 
+		\begin{equation*}
+			AX = XB, \qquad X \in \operatorname{Mat}(m,n, \mathbb{C})
+		\end{equation*}
+	is the trivial solution $X = 0$. 
+\end{prb}
+\begin{solutions}
+	Assume all of the given hypotheses. 
 \end{solutions}
 
 \begin{prb}{2022-A-II-I (Real Analysis)}
@@ -1290,6 +1310,52 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{prb}
 \begin{solutions}
 	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+
+\begin{prb}{2021-J-II-2 (Real Analysis)}
+	A real-valued function $f: [0,1] \to \mathbb{R}$ is said to be H\"older continuous of order $\alpha$ if there is a constant $C > 0$ such that $\abs{f(x) - f(y)} \leq C|x - y|^{\alpha}$ for all $x, y \in [0,1]$. Define 
+		\begin{equation*}
+			\norm{f}_{\alpha} = \max_{x \in[0,1]}\abs{f(x)} + \sup_{x, y \in [0,1]}\frac{|f(x) - f(y)|}{|x - y|^{\alpha}}. 
+		\end{equation*}
+	Show that for $\alpha \in (0,1)$, the set of functions 
+		\begin{equation*}
+			S_{\alpha} = \brac*{f \in C([0,1]): \norm{f}_{\alpha} \leq 1}
+		\end{equation*}
+	is a compact subset of $C([0,1])$ in the topology of uniform convergence. 
+\end{prb}
+\begin{solutions}
+	By Arz{\`e}la-Ascoli, a subset of $C([0,1])$ is compact if and only if it is closed, bounded, and equicontinuous. Hence, it suffices to prove that for any $\alpha \in (0,1)$, $S_{\alpha}$ is closed, bounded, and equicontinuous in the topology of uniform convergence. \vspace{-0.1cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item First, we show that $S_{\alpha}$ is uniformly bounded. Since for all $f \in S_{\alpha}$, $\norm{f}_{\alpha} \leq 1$, and $\norm{f}_{\alpha} \geq \max_{x \in [0,1]}|f(x)|$, it follows that for all $f \in S_{\alpha}$ and $x \in [0,1]$, $\abs{f(x)} \leq 1$. Hence, $S_{\alpha}$ is uniformly bounded. 
+			\item Now we will show that $S_{\alpha}$ is closed. Suppose $\{f_{n}\}\subset S_{\alpha}$ converges uniformly to a function $f \in C([0,1])$. We must show that $f \in S_{\alpha}$. First, we observe that 
+				\begin{equation}
+					\max_{x \in [0,1]}|f(x)| \leq \max_{x \in [0,1]}\abs{f_{n}(x)} + \norm{f - f_{n}}_{\infty}. 
+				\end{equation}
+			Next, we observe that 
+				\begin{align}
+					\begin{split}
+						\sup_{x, y \in [0,1]}\frac{\abs{f(x) - f(y)}}{\abs{x -y}^{\alpha}} &\leq \sup_{x, y \in [0,1]}\brac*{\frac{\abs{f(x) - f_{n}(x)}}{\abs{x - y}^{\alpha}} + \frac{\abs{f_{n}(x) - f_{n}(y)}}{\abs{x - y}^{\alpha}} + \frac{\abs{f_{n}(y) - f(y)}}{\abs{x - y}^{\alpha}}} \\
+						&\leq 2\norm{f - f_{n}}_{\infty} + \sup_{x, y \in [0,1]}\frac{\abs{f_{n}(x) - f_{n}(y)}}{\abs{x - y}^{\alpha}}. 
+					\end{split}
+				\end{align}
+			Therefore, 
+				\begin{align}
+					\begin{split}
+						\norm{f}_{\alpha} &= \max_{x \in [0,1]}\abs{f(x)} + \sup_{x, y \in [0,1]}\frac{\abs{f(x) - f(y)}}{\abs{x - y}^{\alpha}} \\
+						&\leq 3\norm{f - f_{n}}_{\infty} + \norm{f_{n}}_{\alpha} \leq \lim_{n \to \infty}\norm{f_{n}}_{\alpha} \leq 1. 
+					\end{split}
+				\end{align}
+			Hence, $f \in S_{\alpha}$, which proves closedness. 
+			\item Finally, we will show equicontinuity. By definition of $S_{\alpha}$, for any $f \in S_{\alpha}$, 
+				\begin{equation}
+					\frac{\abs{f(x) - f(y)}}{\abs{x - y}^{\alpha}} \leq 1 \implies \abs{f(x) - f(y)} \leq \abs{x -y}^{\alpha}. 
+				\end{equation}
+			Let $\epsilon > 0$, and choose $\delta = \epsilon^{1/\alpha}$. Then for any $d(x, y) < \delta$, 
+				\begin{equation}
+					\abs{f(x) - f(y)} \leq \abs{x - y}^{\alpha} < \delta^{\alpha} = \epsilon. 
+				\end{equation}
+			Hence, $S_{\alpha}$ is equicontinuous. 
+		\end{enumerate}
 \end{solutions}
 
 \begin{prb}{2021-J-II-6 (Real Analysis)}
@@ -1419,7 +1485,9 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			\frac{x - y}{\norm{x - y}} = \frac{x - (x - rw)}{\norm{x - (x - rw)}} = \frac{rw}{\norm{rw}} = w. 
 		\end{equation}
 \end{solutions}
-
+\begin{prb}{2020-J-I-2 (Geometry/Topology)}
+	Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary. Suppose that $\pi_{1}(M)$ is finite, but that $\pi_{1}(N)$ is infinite. Prove that every smooth map $\Psi: M \to N$ has degree zero. 
+\end{prb}
 
 \subsection{August 2020}
 \begin{prb}{2020-A-II-1 (Complex Analysis)}
@@ -1529,8 +1597,29 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\begin{equation}
 			H^{k}(M, \mathbb{R}) \otimes H^{n - k}(M, \mathbb{R}) \to \mathbb{R}. 
 		\end{equation}
-	
+	Then 
+		\begin{equation}
+			\int_{M}f^{\ast}(\alpha \wedge \gamma) = \int_{M}f^{\ast}\alpha \wedge f^{\ast}\gamma = \int_{M}d\beta \wedge f^{\ast}\gamma. 
+		\end{equation}
+	Since $f^{\ast}\gamma$ is closed, 
+		\begin{equation}
+			d(\beta \wedge f^{\ast}\gamma) = d\beta \wedge f^{\ast}\gamma. 
+		\end{equation}
+	Therefore, 
+		\begin{equation}
+			\int_{M}f^{\ast}(\alpha \wedge \gamma) = \int_{M}d(\beta \wedge f^{\ast}\gamma) = \int_{\partial M}\beta \wedge f^{\ast}\gamma = 0, 
+		\end{equation} 
+	since $M$ is without boundary. But $\alpha \wedge \gamma$ is a top form on $N$. Hence, we conclude that $\operatorname{deg}(f) = 0$. 
 \end{solutions}
+
+
+\begin{prb}{2019-J-II-4 (Real Analysis)}
+	Suppose that $f \in L^{1}(\mathbb{R}) \cap C^{1}(\mathbb{R})$ and $f' \in L^{1}(\mathbb{R})$. Let $\hat{f}$ be the Fourier transform of $f$. Prove that $\hat{f} \in L^{2}(\mathbb{R})$. 
+\end{prb}
+\begin{solutions}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+
 
 \begin{prb}{2019-J-II-5}
 	Let $G$ be a finite group, and let $H$ be a non-normal subgroup of $G$ of index $n$. Show that if $|H|$ is divisible by a prime $p \geq n$, then $G$ is not simple. 
@@ -1615,9 +1704,35 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\chi(U) = 2 - 1= 1. 
 	\end{equation}
 \end{solutions}
+\begin{prb}{2018-A-I-4 (Geometry/Topology)}
+	Let $D$ denote the closed unit ball in $\mathbb{R}^{n}$, and let $\Psi: D \to D$ be a smooth map. Suppose, moreover, that $\Psi$ sends the $(n - 1)$-sphere $S^{n - 1} = \partial D$ to itself via some diffeomorphism. If $\omega$ is any smooth $n$-form on $D$, use the Poincar{\'e} Lemma to prove that 
+		\begin{equation*}
+			\int_{D}\Psi^{\ast}\omega = \pm \int_{D}\omega. 
+		\end{equation*}
+	Then use this to show that $\Psi$ must be surjective. 
+\end{prb}
+\begin{solutions}
+	The Poincar{\'e} Lemma states the following: 
+		\begin{quote}
+			(\textbf{Poincar{\'e} Lemma}) If $U$ is a star-shaped open subset of $\mathbb{R}^{n}$ or $\mathbb{H}^{n}$, then $\h{p}(U) = 0$ for $p\geq 1$. 
+		\end{quote}
+	By the Poincar{\'e} Lemma, it follows that $\omega = d\eta$ for some $\eta$. By Stoke's Theorem, we have 
+		\begin{equation}
+			\int_{D}\Psi^{\ast}\omega = \int_{\partial D}\Psi^{\ast}\eta = \pm \int_{\partial D}\eta =\pm \int_{D}\omega, 
+		\end{equation}
+	where the sign depends on whether or not $\Psi$ preserves orientation. We observe that the quotient of the integral is $\pm 1$, and computes the degree of the map $\Psi$. But if $\Psi$ were not surjective, then we could compute the degree of $\Psi$ locally at a point not in the image of $\Psi$, so $\Psi$ would have degree 0 (a contradiction). Hence, $\Psi$ must be surjective. 
+\end{solutions}
+
 \begin{prb}{2018-A-II-3 (Analysis)}
 	Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. Prove that $E + F = \{x + y: x \in E, y \in F\}$ contains an interval. 
 \end{prb}
+\begin{solutions}
+	Translating $E$ and $F$ is necessary, the Lebesgue Density Theorem implies that there exists an interval $I= [-\delta, \delta]$ such that $\frac{3}{4}m(I) \leq m(I \cap E)$ and $\frac{3}{4}\leq m(I \cap F)$, and such that these inequalities also hold for the intervals $rI$ with $r < 1$. Suppose $a \in \frac{1}{2}I$ but $a \notin E + F$. Then $E \cap (F - a) = \varnothing$ so $m((E \cup (F - a)) \cap I) = m(E \cap I) + m((F - a) \cap I)$. Since $(F - a) \cap I \supset (F \cap \frac{1}{2}I) - a$, $m((F - a)\cap I) \geq \frac{3}{8}m(I)$, while $m(E \cap I) \geq \frac{3}{4}m(I)$. Therefore, 
+		\begin{equation}
+			m(E \cap I) + m((F - a)\cap I) \geq \frac{9}{8}m(I). 
+		\end{equation}
+	On the other hand, $m((E \cup (F - a))\cap I) \leq m(I)$, which gives a contradiction. Hence, $\frac{1}{2}I \subset E + F$. 
+\end{solutions} 
 
 
 \begin{prb}{2018-A-I-3 (Complex Analysis)}
@@ -1669,6 +1784,20 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{prb}
 \begin{solutions}
 	Let $\Sigma_{1}$ be a torus and $\Sigma_{2}$ be a genus-2 surface. We begin with a second modification to the Comps Lemma. Assume to the contrary that $F$ is a submersion from $\Sigma_{2}$ to $\Sigma_{1}$. By the second modification to the Comps Lemma, $F: \Sigma_{2} \to \Sigma_{1}$ must be a $k$-sheeted covering map for some finite $k > 0$. This implies that $\chi(\Sigma_{2}) = k \cdot \chi(\Sigma_{1})$, where $\chi(\cdot) = 2 - 2g$ denotes the Euler characteristic of a closed surface of genus $g$. But this is impossible since $\chi(\Sigma_{2}) = -2 < 0 = k \cdot 0 = k \cdot \chi(\Sigma_{1})$. Hence, by contradiction, there cannot be any submersions from $\Sigma_{2}$ to $\Sigma_{1}$. 
+\end{solutions}
+\begin{prb}{2017-J-I-2 (Real Analysis)}
+	Recall that $L^{2}(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R}\to \mathbb{C}$ so that $|f|^{2}$ is integrable. Show that the linear map 
+		\begin{equation*}
+			T: L^{2}(\mathbb{R}) \to L^{2}(\mathbb{R}), \qquad T(f)(x)\coloneqq f(x - 1), \quad \forall x \in \mathbb{R}, f \in L^{2}(\mathbb{R})
+		\end{equation*}
+	has no non-zero eigenvector. 
+\end{prb}
+\begin{solutions}
+	Assume to the contrary that $T$ has a non-zero eigenvector $f$, which means that $f(x - 1) = \lambda f(x)$ for all $x \in \mathbb{R}$. Since $f$ is not identically zero, $\lambda \neq 0$. In particular, we can write $f(x) = \lambda^{-n}f(x - n)$ for all $n \in \mathbb{Z}$. If we denote $A = \int_{0}^{1}|f(x)|^{2}\;dx$, then
+		\begin{equation}
+			\int_{n}^{n + 1}|f(x)|^{2}\;dx = |\lambda|^{-2n}A \implies \int_{\mathbb{R}}|f|^{2}\;dm = \sum_{n \in \mathbb{Z}}|\lambda|^{-2n}A, 
+		\end{equation}
+	which does not converge since $\lambda \neq 0$. This contradicts our claim that $f \in L^{2}$. 
 \end{solutions}
 \begin{prb}{2017-J-I-6 (Geometry/Topology)}
 	Let $M$ be a smooth 4-manifold, let $\phi$ be a 3-form on $M$, and let $U\subset M$ be the open set of points where $\varphi \neq 0$. Show that $\varphi$ is closed if and only if, near any $p\in U$, one can find a smooth coordinate system $(x^{1}, x^{2}, x^{3}, x^{4})$ in which $$\varphi = dx^{1} \wedge dx^{2} \wedge dx^{3}.$$
@@ -1794,6 +1923,35 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	so that $\alpha \in \mathbb{Q}(\sqrt{-3})$. Hence, we conclude that the splitting field of $f(x)$ over $\mathbb{Q}$ is $K = \mathbb{Q}(\sqrt{-3})$. Since the minimal polynomial of $\sqrt{-3}$ over $\mathbb{Q}$ has degree 2, $[\mathbb{Q}(\sqrt{3}): \mathbb{Q}] = 2$. Hence, the Galois group $\operatorname{Gal}(K/\mathbb{Q})$ has order 2, which means $\operatorname{Gal}(K/\mathbb{Q}) \cong \mathbb{Z}/2\mathbb{Z}$. 
 \end{solutions}
 \subsection{January 2013}
+\begin{prb}{2013-J-I-4 (Real Analysis)}
+	Let $f: \mathbb{R} \to \mathbb{R}$ be smooth and such that for every $x$ 
+		\begin{equation*}
+			\int_{-\infty}^{\infty}\frac{\abs{f(x) - f(y)}}{\abs{x -y}^{2}}\;dy < \infty. 
+		\end{equation*}
+	Prove $f$ is constant. 
+\end{prb}
+\begin{solutions}
+	Assume the given conditions of the problem. Our goal is to show that $f'(x) = 0$ for every $x \in \mathbb{R}$. Assume to the contrary. Since $f$ is smooth, by Taylor's Theorem, there exists a function $H(y)$ such that 
+		\begin{equation}
+			f(y) = f(x) + f'(x)(y - x) + H(y), \qquad \lim_{y \to x}H(y) = 0. 
+		\end{equation}
+	In particular, 
+		\begin{equation}
+			\abs{f(y) - f(x)} = \abs{f'(x)(y -x) + H(y)} \implies \frac{\abs{f(y) -f(x)}}{\abs{x - y}^{2}} = \abs{ \frac{f'(x)}{x - y} + \frac{H(y)}{(x -y)^{2}} }. 
+		\end{equation}
+	Since $H(y) \to 0$, for every $\epsilon > 0$, there exists a $\delta > 0$ such that $|x - y| < \delta$ implies $|H(y)| < \epsilon\abs{y - x}$. Taking $\epsilon = f'(x)/2$, for any $y \in (x - \delta, x + \delta)$, 
+		\begin{align}
+			\begin{split}
+				\frac{\abs{f(x) - f(y)}}{\abs{x - y}^{2}} &= \abs{\frac{f'(x)}{x - y} + \frac{H(y)}{(x -y)^{2}} } \\
+				&\geq \frac{\abs{f'(x)}}{\abs{x - y}} - \frac{\abs{H(y)}}{\abs{x - y}^{2}} > \frac{\abs{f'(x)}}{\abs{x - y}} - \frac{\abs{f'(x)}}{2\abs{x - y}}
+			\end{split}
+		\end{align}
+	Hence, 
+		\begin{equation}
+			\int_{x -\delta}^{x + \delta}\frac{\abs{f(x) - f(y)}}{\abs{x - y}^{2}}\;dy \geq \frac{\abs{f'(x)}}{2}\int_{x - \delta}^{x + \delta}\frac{1}{\abs{x - y}}\;dy  = \frac{\abs{f'(x)}}{2\abs{x - y}}= \frac{\abs{f'(x)}}{2}\int_{0}^{\delta}\frac{1}{t}\;dt = \infty, 
+		\end{equation}
+	which contradicts the hypothesis. Therefore, we must have $f'(x) = 0$ for all $x \in \mathbb{R}$, which means $f$ is constant. 
+\end{solutions}
 \begin{prb}{2013-J-II-6 (Geometry/Topology)}
 	Let $M$ be a smooth compact manifold, and suppose that there is a smooth map $F: M \to S^{1}$ whose derivative is non-zero at every point. Prove that the de Rham cohomology space $\h{1}(M)$ is non-zero. 
 \end{prb}
@@ -1804,6 +1962,16 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 
 \newpage 
 \subsection{August 2013}
+
+\begin{prb}{2013-A-I-3 (Complex Analysis)}
+	Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disc into the closed unit disk. Can the image of $f$ contain both the points $0$ and $1$? 
+\end{prb}
+\begin{solutions}
+	The image of $f$ cannot contain both the points $0$ and $1$. If $f$ is a constant holomorphic function, then the result is trivial. So assume $f$ is a nonconstant holomorphic function. Then by the Open Mapping Theorem, $f$ must map the open unit disc $D(0,1)$ into an open subset $U$ of $\mathbb{C}$. Since $f(D(0,1)) \subset \overline{D(0,1)}$, $U \subset \overline{D(0,1)}$. Since $1$ is contained on the boundary of $\overline{D(0,1)}$, $1 \notin U$. Hence, the image of $f$ cannot contain both the points 0 and 1. 
+\end{solutions}
+
+
+
 \begin{prb}{2013-A-II-4 (Geometry/Topology)}
 	Let $\theta$ be a smooth 1-form on a manifold $M$ such that $\theta \neq 0$ everywhere. Let $D \subset TM$ be the vector subbundle defined by 
 		\begin{equation*}
@@ -2533,6 +2701,19 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			f(z) =\lambda g(z). 
 		\end{equation}
 \end{solutions}
+\begin{prb}{2015-A-II-2 (Geometry/Topology)}
+	Let $M$ be a connected oriented smooth $n$-dimensional manifold-with-boundary, and suppose that $\partial M \neq \varnothing$. Let $\Phi: M \to M$ be a smooth map whose restriction to $\partial M$ is the identity. If $\omega$ is any smooth $n$-form on $M$, prove that 
+		\begin{equation*}
+			\int_{M}\Phi^{\ast}\omega = \int_{M}\omega. 
+		\end{equation*}
+	Then use this to prove that $\Phi$ must be surjective.
+\end{prb}
+\begin{solutions}
+	Let $M$ be a connected, oriented smooth $n$-dimensional manifold-with-boundary such that $\partial M \neq \varnothing$. Let $\Phi: M \to M$ be a smooth map so that $\Phi|_{\partial M} = \operatorname{id}_{\partial M}$. This implies that $\Phi$ \textit{preserves} orientation. Let $\omega$ be an arbitrary smooth $n$-form on $M$. Since the top de Rham cohomology group \textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+\begin{prb}{2014-J-II-5 (Real Analysis)}
+	Suppose that $f: \mathbb{R} \to \mathbb{R}$ is measurable with respect to the Lebesgue measure $\mu$ and $f(x) = f(x + 1) = f(x + \pi)$ for almost all $x$. Prove that $f$ is a constant almost everywhere. 
+\end{prb}
 
 \newpage 
 \subsection{Other Qualifying Exams}
