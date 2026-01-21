@@ -1108,7 +1108,38 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	The first equality follows from the hypothesis that $f_{i} \to f$; the second equality follows from the fact that this convergence is uniform; and the third equality follows from the fact that each $f_{i}$ is holomorphic. Therefore, $f$ is also holomorphic. 	
 \end{solutions}
-
+\begin{prb}{2022-J-II-6 (Algebra)}
+	Construct a Galois field extension $E \supset \mathbb{Q}$ with $\operatorname{Gal}(E/\mathbb{Q}) = \mathbb{Z}_{3} \times \mathbb{Z}_{9}$. 
+\end{prb}
+\begin{solutions}
+	We observe that $\mathbb{Z}_{3} \subset \mathbb{Z}_{2}\times \mathbb{Z}_{3} = \mathbb{Z}_{6} \approx \mathbb{Z}_{7}^{\ast}$ and $\mathbb{Z}_{9} \subset \mathbb{Z}_{2} \times \mathbb{Z}_{9} = \mathbb{Z}_{18} \approx \mathbb{Z}_{19}^{\ast}$. Hence, by the Chinese Remainder Theorem, 
+		\begin{equation}
+			\mathbb{Z}_{133}^{\ast} \approx \mathbb{Z}_{7}^{\ast} \times \mathbb{Z}_{19}^{\ast} \approx (\mathbb{Z}_{3} \times\mathbb{Z}_{9}) \times (\mathbb{Z}_{2}\times \mathbb{Z}_{2}). 
+		\end{equation}
+	Here, we note that $\mathbb{Z}_{133}^{\ast}$ is the Galois group of $\mathbb{Q}(\zeta)$, where $\zeta$ is a primitive root of unit of degree 133. Take 
+		\begin{equation}
+			E = \mathbb{Q}(\zeta)^{\mathbb{Z}_{2} \times \mathbb{Z}_{2}} \subset \mathbb{Q}(\zeta). 
+		\end{equation}
+\end{solutions}
+\begin{prb}{2022-J-II-6 (Algebra I)}
+	Construct a Galois field extension $E \supset \mathbb{Q}$ with $\operatorname{Gal}(E/\mathbb{Q}) = \mathbb{Z}_{4} \times \mathbb{Z}_{6}$. 
+\end{prb}
+\begin{solutions}
+	We observe the following: 
+		\begin{equation}
+			\mathbb{Z}_{5}^{\ast} \cong \mathbb{Z}_{4} \qquad \text{ and } \mathbb{Z}_{13}^{\ast} \cong \mathbb{Z}_{12}. 
+		\end{equation}
+	Since $\mathbb{Q}(\zeta_{5})$ is Galois over $\mathbb{Q}$, let $L = \mathbb{Q}(\zeta_{5})$. Likewise, since a group of order 12 has a unique subgroup of index 2, there exists a unique subfield $K \subset \mathbb{Q}(\zeta_{13})$ such that $[K:\mathbb{Q}] = 6$ so that $\operatorname{Gal}(K/\mathbb{Q}) \cong \mathbb{Z}_{6}$. Since $9$ and $13$ are relatively prime, $K$ and $L$ are linearly disjoint over $\mathbb{Q}$. Since $K \cap L = \mathbb{Q}$, we conclude that 
+		\begin{equation}
+			\operatorname{Gal}(KL/\mathbb{Q}) \cong \operatorname{Gal}(K/\mathbb{Q}) \times \operatorname{Gal}(L/\mathbb{Q}) \cong \mathbb{Z}_{6} \times \mathbb{Z}_{4}. 
+		\end{equation}
+\end{solutions}
+\begin{prb}{2022-J-II-6 (Algebra II)}
+		Construct a Galois field extension $E \supset \mathbb{Q}$ with $\operatorname{Gal}(E/\mathbb{Q}) = \mathbb{Z}_{4} \times \mathbb{Z}_{12}$. 
+\end{prb}
+\begin{solutions}
+	Let $E = KL$, where $K = \mathbb{Q}(\zeta_{5}) \cong \mathbb{Z}_{4}$ and $L = \mathbb{Q}(\zeta_{13}) \cong (\mathbb{Z}/13\mathbb{Z})^{\ast} \cong \mathbb{Z}_{12}$.
+\end{solutions}
 \subsection{August 2022}
 \begin{prb}{2022-A-I-1 (Geometry/Topology)}
 	Let $Y \subset \mathbb{R}^{3}$ be a surface of genus two. 
@@ -1213,7 +1244,22 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	is the trivial solution $X = 0$. 
 \end{prb}
 \begin{solutions}
-	Assume all of the given hypotheses. 
+	Assume all of the given hypotheses. Observe that $A^{2}X = A(AX) = (AX)B = XB^{2}$. Hence, by induction, it follows that for all $k$, 
+		\begin{equation}
+			A^{k}X = XB^{k}. 
+		\end{equation}
+	In particular, this means that $p(A)X = Xp(B)$ for any $p \in \mathbb{C}[z]$. Let $p$ be the characteristic polynomial $p_{B}(z)$ of $B$. Hence, we obtain 
+		\begin{equation}
+			p_{B}(A)X = Xp_{B}(B) = 0. 
+		\end{equation}
+	We can write 
+		\begin{equation}
+			p_{B}(z) = \prod_{i=1}^{k}(z-\lambda_{k})^{m_{k}}. 
+		\end{equation}
+	By the hypothesis, $\lambda_{k}$ is not an eigenvalue of $A$. Hence, $(A - I\lambda_{k})^{m_{k}}$ is invertible. Therefore, $p_{B}(A)$ is invertible. Therefore, 
+		\begin{equation}
+			p_{B}(A)X = 0 \implies p_{B}^{-1}(A)p_{B}(A)X = 0 \implies X = 0. 
+		\end{equation}
 \end{solutions}
 
 \begin{prb}{2022-A-II-I (Real Analysis)}
@@ -1370,6 +1416,14 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 	Let $E \subset \mathbb{R}$ be Lebesgue measurable, and $f: \mathbb{R} \to \mathbb{R}$ be Lipschitz. 
 \end{solutions}
 
+
+\begin{prb}{2021-J-I-4 (Algebra)}
+	Let $X$ denote a metric space and $C(X, \mathbb{R})$ denote the ring of continuous real valued functions defined on $X$. Show that if $C(X, \mathbb{R})$ is a Noetherian ring, then $X$ is a finite set. 
+\end{prb}
+\begin{solutions}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+
 \subsection{August 2021}
 \begin{prb}{2021-A-I-2 (Complex Analysis)}
 	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. Prove that either there is $|z| = 1$ such that $|P(z)| > 1$ or $P(z) = z^{n}$. 
@@ -1384,6 +1438,58 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 			g(z) = z^{n}P(1/z) = 1 + a_{1}z + \dotsm + a_{n}z^{n}. 
 		\end{equation}
 	Then for all $|z| = 1$, $|g(z)| = |z|^{n}|P(1/z)| \leq 1$ and $g(0) = 0$. Hence, by the Maximum Modulus Principle, $g(z) = 1$ for all $z$. In particular, this means that $P(z^{-1}) = z^{-n} \implies P(z) = z^{n}$. 
+\end{solutions}
+\begin{prb}{2021-A-I-4 (Algebra)}
+	If $\beta$ is a nonzero algebraic number, find coefficients of the minimal polynomial over $\mathbb{Q}$ for $\beta^{-1}$ in terms of coefficients of the minimal polynomial over $\mathbb{Q}$ for $\beta$. 
+\end{prb}
+\begin{solutions}
+	Let $\beta$ be a nonzero algebraic number, and let $q(x) = x^{n} + a_{n}x^{n- 1} + \dotsm + a_{1}$ be the minimal polynomial of $\beta$ over $\mathbb{Q}$. I.e., 
+		\begin{equation}
+			\beta^{n} + a_{n}\beta^{n-1} + \dotsm + a_{1} = 0. 
+		\end{equation}
+	From this, we observe that 
+		\begin{equation}
+			a_{1}(\beta^{-1})^{n} + a_{2}(\beta^{-1})^{n-1} + \dotsm + 1 = 0. 
+		\end{equation}
+	If $a_{1} \neq 0$, then $\beta = 0$ is a root, which contradicts our hypothesis that $\beta$ is nonzero. Hence multiplying both sides by $a_{1}^{-1}$ gets us: 
+		\begin{equation}
+			\beta^{-n} + \frac{a_{2}}{a_{1}}\beta^{1 - n} + \dotsm + \frac{1}{a_{1}} = 0. 
+		\end{equation}
+	We claim that 
+		\begin{equation}
+			p(x) = x^{n} + \frac{a_{2}}{a_{1}}x^{n - 1} + \dotsm + \frac{1}{a_{1}} 
+		\end{equation}
+	is the minimal polynomial of $\beta^{-1}$ over $\mathbb{Q}$. We will show that $p$ is irreducible over $\mathbb{Q}$. Assume to the contrary. Then since 
+		\begin{equation}
+			p(x) = x^{n}q(1/x) \implies q(1/x) = x^{-n}p(x) \implies q(x) = x^{n}p(1/x). 
+		\end{equation}
+	If $p(x)$ is reducible, which means it can be factored into the product of polynomials of degree less than $n$, then it follows that $q(x)$ can also be factorized into the product of polynomials degree less than $n$, contradicting irreducibility of $q$. Hence, $p$ is irreducible. Likewise, it is straightforward to see that $p$ has minimal degree among all polynomials in $\mathbb{Q}[x]$ that vanish at $\beta$ since if otherwise, $q$ cannot be the minimal polynomial of $\beta$. 
+\end{solutions} 
+\begin{prb}{2021-A-I-5 (Algebra)}
+	Let $R$ be an integral domain with field of fractions $Q$. Show that $Q/R \mathop{\otimes}\limits_{R} Q/R = 0$. 
+\end{prb}
+\begin{solutions}
+	In a break with tradition, we will use short exact sequences to answer this problem. Taking $\iota: R \hookrightarrow Q$ and $\pi: Q \to Q/R$ to be the inclusion and quotient maps, respectively, we obtain the short exact sequence 
+		\begin{equation}
+			0 \longrightarrow R \xrightarrow{\iota} Q \xrightarrow{\pi} Q/R \longrightarrow 0. 
+		\end{equation}
+	Tensoring the short exact sequence with $Q/R$: 
+		\begin{equation}
+			Q/R \mathop{\otimes}_{R} R \longrightarrow Q/R \mathop{\otimes}_{R} Q \longrightarrow Q/R \mathop{\otimes}_{R} Q/R \longrightarrow 0. 
+		\end{equation}
+	First, we note that since $Q/R$ is an $R$-module, $Q/R \mathop{\otimes}_{R} R \cong Q/R$ via the module isomorphism $\varphi: Q/R \mathop{\otimes}_{R}R \to Q/R$ defined by $\varphi(m \otimes r) = mr$. Now consider $Q/R \mathop{\otimes}_{R} Q$. A typical element of this module is a finite linear combination 
+		\begin{equation}
+			\sum_{i}(x_{i} + R) \otimes q_{i}, \quad q_{i} \in Q, x_{i} \in Q. 
+		\end{equation}
+	Consider just the simple tensor $(x + R) \otimes q$. Since $x \in Q$, let $x = a/b$, where $b \neq 0$. Then we observe that 
+		\begin{equation}
+			b(x + R) \otimes q) = b(a/b + R) \otimes q = (a + R) \otimes q = 0 \otimes q = 0 \in Q/R \mathop{\otimes}_{R} Q,
+		\end{equation}
+	where the third equality stems from the fact that $a \in R$. Hence, since $b$ is invertible in $Q$, we obtain $(x + R) \otimes q = 0$. Since this was an arbitrary simple tensor, we conclude that $Q/R \mathop{\otimes}_{R} Q = 0$. Hence, we obtain the short exact sequence 
+		\begin{equation}
+			Q/R \longrightarrow 0 \longrightarrow Q/R \mathop{\otimes}_{R} Q/R \longrightarrow 0. 
+		\end{equation}
+	This implies that $Q/R \mathop{\otimes} Q/R = 0$. Hence, the proof concludes. 
 \end{solutions}
 \begin{prb}{2021-A-I-6 (Geometry/Topology)}
 	What connected spaces can be finitely-sheeted covering spaces of a sphere with three handles? 
@@ -1432,6 +1538,31 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 		\end{equation}
 	which is a contradiction. Hence, $\abs{\rho(f)} \leq \norm{f}$ holds. 
 \end{solutions}
+\begin{prb}{2021-A-II-5 (Algebra)}
+	Find infinitely many primitive elements of the field $K = \mathbb{Q}(\alpha, \omega)$ where $\alpha$ is a root of $x^{3} - x + 1=0$ and $\omega = e^{2\pi i/3}$. 
+\end{prb}
+\begin{solutions}
+	First, observe that 
+		\begin{equation}
+			\omega = e^{2\pi i/3} = -\frac{1}{2} + \frac{\sqrt{-3}}{2}, 
+		\end{equation}
+	so that $\mathbb{Q}(\alpha, \omega) = \mathbb{Q}(\alpha, \sqrt{-3})$. Since $[\mathbb{Q}(\alpha, \sqrt{-3}):\mathbb{Q}] = 3 \cdot 2 = 6$, a primitive element of $K$ must be of degree 6. Consider the sequence $\{\beta_{n}\}= \{i\sqrt{3}\alpha n\}_{1}^{\infty}$. $\beta_{n}$ is a root of 
+		\begin{equation}
+			x^{6} + 6n^{2}x^{4} + 9n^{4}x^{2} + 27n^{6}. 
+		\end{equation}
+	Moreover, 
+		\begin{equation}
+			\frac{\beta_{n}^{3} + 3n^{2}\beta_{n}}{2n^{3}} =-i\sqrt{3}, \qquad \alpha = \frac{\beta_{n}}{i\sqrt{3}n}. 
+		\end{equation}
+	Hence, $K = \mathbb{Q}(\alpha,\sqrt{-3}) \subset \mathbb{Q}(\beta_{n})$. On the other hand, $\beta_{n} \in K$ so that $\mathbb{Q}(\beta_{n}) \subset K$. This means $\mathbb{Q}(\beta_{n}) = K$, and so $\{\beta_{n}\}$ is an infinite series of primitive elements. 
+\end{solutions}
+\begin{prb}{2021-J-I-1 (Algebra)}
+	Let $G$ denote a finite group, $P \subset G$ a Sylow $p$-subgroup of $G$, and $Z(P)$ the center of $P$. If $x, y \in Z(P)$ are conjugate in $G$, then show that $x, y$ are also conjugate in $N(P)$, the normalizer of $P$ in $G$. 
+\end{prb}
+\begin{solutions}
+	\textcolor{red}{[!! Complete Later !!]}
+\end{solutions}
+
 
 \subsection{January 2020}
 \begin{prb}{2020-J-I-1 (Algebra)}
@@ -2713,6 +2844,37 @@ Let $D$ be the 3-plane field on $\mathbb{R}^{4}$ that consists of tangent vector
 \end{solutions}
 \begin{prb}{2014-J-II-5 (Real Analysis)}
 	Suppose that $f: \mathbb{R} \to \mathbb{R}$ is measurable with respect to the Lebesgue measure $\mu$ and $f(x) = f(x + 1) = f(x + \pi)$ for almost all $x$. Prove that $f$ is a constant almost everywhere. 
+\end{prb}
+
+
+\begin{prb}{Foll-6-I-9 (Real Analysis)}
+	Suppose $1 \leq p < \infty$. If $\norm{f_{n} - f}_{p} \to 0$, then $f_{n} \to f$ in measure, and hence some subsequence converges to $f$ a.e. On the other hand, if $f_{n} \to f$ in measure and $\abs{f_{n}} \leq g \in L^{p}$ for all $n$, then $\norm{f_{n} - f}_{p} \to 0$. 
+\end{prb}
+\begin{solutions}
+	\vspace{-0.35cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Suppose $\norm{f_{n} - f}_{p} \to 0$, which means that 
+			\begin{equation}
+				\norm{f_{n} - f}_{p}^{p} = \int \abs{f_{n}(x) - f(x)}^{p} \longrightarrow 0. 
+			\end{equation}
+		For $\epsilon > 0$, define 
+			\begin{equation}
+				E_{n}(\epsilon) \coloneqq \brac*{x: \abs{f_{n}(x) - f(x)} \geq \epsilon}. 
+			\end{equation}
+		Then 
+			\begin{equation}
+				0 \longleftarrow \int \abs{f_{n}(x) - f(x)}^{p} \geq \int_{E_{n}(\epsilon)}\abs{f_{n}(x) - f(x)}^{p} \geq \int_{E_{n}(\epsilon)}\epsilon^{p} = \mu(E_{n}(\epsilon))\epsilon^{p} \geq 0. 
+			\end{equation}
+		Since $\epsilon > 0$ was arbitrary, it follows that $\mu(E_{n}(\epsilon)) \to 0$. Hence, $f_{n} \to f$ in measure. 
+		\item Now assume $f_{n} \to f$ in measure and that $|f_{n}| \leq g \in L^{p}$ for all $n$. Then there exists a subsequence $\{g_{n}\} \subset \{f_{n}\}$ that converges to $f$ $\mu$-a.e; this implies that $\abs{f} \leq g$ $\mu$-a.e. Hence, since $|g_{n}(x) - f(x)|^{p} \leq 2^{p}g^{p}$ for all $n$, and $g^{p} \in L^{1}$, by the Dominated Convergence Theorem, we conclude that 
+			\begin{equation}
+				\int \abs{g_{n}(x) - f(x)}^{p} \longrightarrow 0. 
+			\end{equation}
+		I.e., the subsequence converges to $f$ in the $L^{p}$-norm. Now assume to the contrary that $f_{n} \mathop{\not\longrightarrow}_{L^{p}} f$, which means that for some $\epsilon > 0$, there exists a subsequence $\{h_{n}\} \subset \{f_{n}\}$ such that $\int |h_{n} - f|^{p} \geq \epsilon$ for all $n$. But since $h_{n}$ satisfies the same conditions as the original sequence $\{f_{n}\}$, there exists a subsubsequence $\{\ti{h}_{n}\} \subset \{h_{n}\} \subset \{f_{n}\}$ that converges $\mu$-a.e. to $f$ and hence converges in $L^{p}$ to $f$, contradicting the hypothesis on $\{h_{n}\}$. Hence, by contradiction, every subsequence of $\{f_{n}\}$ admits a subsubsequence that converges to $f$ under the $L^{p}$ norm, and therefore, $f_{n} \mathop{\longrightarrow}_{p} f$. 
+	\end{enumerate}
+\end{solutions}
+\begin{prb}{Foll-6-I-10 (Real Analysis)}
+	Suppose $1 \leq p < \infty$. If $f_{n}, f \in L^{p}$ and $f_{n} \to f$ a.e., then $\norm{f_{n} - f}_{p} \to 0$ iff $\norm{f_{n}}_{p} \to \norm{f}_{p}$. (Use Exercise 20 in \S2.3.)
 \end{prb}
 
 \newpage 
