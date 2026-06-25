@@ -1,4 +1,5 @@
 \contentsline {section}{\numberline {1}About}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Organization}{6}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Differential Geometry and Topology}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Frobenius Theorem}{7}{subsection.2.1}%
 \contentsline {subsubsection}{Problem 2025-A-II-2}{7}{section*.2}%
@@ -166,41 +167,45 @@
 \contentsline {subsubsection}{Problem 2015-J-II-5}{68}{section*.148}%
 \contentsline {subsection}{\numberline {4.2}$L^{p}$ Spaces}{69}{subsection.4.2}%
 \contentsline {subsubsection}{Problem 2025-A-II-4}{69}{section*.149}%
-\contentsline {subsubsection}{Problem 2017-J-II-2}{69}{section*.150}%
-\contentsline {subsubsection}{Problem F-6-1-2}{69}{section*.151}%
-\contentsline {subsubsection}{Problem F-6-1-3}{71}{section*.152}%
-\contentsline {subsubsection}{Problem F-6-1-7}{71}{section*.153}%
-\contentsline {subsubsection}{Problem F-6-1-10}{72}{section*.154}%
-\contentsline {subsubsection}{Problem F-6-1-14}{72}{section*.155}%
-\contentsline {subsubsection}{Problem F-6-1-4}{73}{section*.156}%
-\contentsline {subsection}{\numberline {4.3}Distribution Theory}{75}{subsection.4.3}%
-\contentsline {subsubsection}{Problem F-9-1-1}{75}{section*.157}%
-\contentsline {subsubsection}{Problem F-9-1-2}{75}{section*.158}%
-\contentsline {subsubsection}{Problem F-9-1-3}{76}{section*.159}%
-\contentsline {subsubsection}{Problem F-9-1-5}{76}{section*.160}%
-\contentsline {subsubsection}{Problem F-9-1-6}{77}{section*.161}%
-\contentsline {section}{\numberline {5}Complex Analysis}{78}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Holomorphic Functions}{78}{subsection.5.1}%
-\contentsline {subsubsection}{Problem 2026-J-II-4}{78}{section*.162}%
-\contentsline {subsection}{\numberline {5.2}Rouch\'e's Theorem}{78}{subsection.5.2}%
-\contentsline {subsubsection}{Problem 2023-A-II-6}{78}{section*.163}%
-\contentsline {subsubsection}{Problem 2020-A-II-1}{78}{section*.164}%
-\contentsline {subsubsection}{Problem 2018-A-I-3}{79}{section*.165}%
-\contentsline {subsubsection}{Problem 2015-A-I-3}{79}{section*.166}%
-\contentsline {subsubsection}{Problem 2012-A-I-4}{79}{section*.167}%
-\contentsline {section}{\numberline {6}Partial Differential Equations}{80}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Introduction}{80}{subsection.6.1}%
-\contentsline {subsubsection}{Problem E-1-1}{80}{section*.168}%
-\contentsline {subsubsection}{Problem E-1-2}{80}{section*.171}%
-\contentsline {subsubsection}{Problem E-1-4}{81}{section*.172}%
-\contentsline {section}{\numberline {7}Notes}{82}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Differential Geometry and Topology}{82}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}De Rham Cohomology}{82}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{Problem LSM-17-5}{86}{section*.173}%
-\contentsline {subsubsection}{Problem LSM-17-6}{87}{section*.174}%
-\contentsline {subsubsection}{Problem LSM-17-7}{88}{section*.175}%
-\contentsline {subsection}{\numberline {7.2}Partial Differential Equations}{90}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Introduction}{90}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Four Important Linear Partial Differential Equations}{90}{subsubsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.3}Sobolev Spaces}{105}{subsubsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.3}Semidirect Products}{107}{subsection.7.3}%
+\contentsline {subsubsection}{Problem 2024-J-I-6}{69}{section*.150}%
+\contentsline {subsubsection}{Problem 2019-J-I-4}{70}{section*.151}%
+\contentsline {subsubsection}{Problem 2017-J-II-2}{70}{section*.152}%
+\contentsline {subsubsection}{Problem F-6-1-2}{70}{section*.153}%
+\contentsline {subsubsection}{Problem F-6-1-3}{72}{section*.154}%
+\contentsline {subsubsection}{Problem F-6-1-7}{73}{section*.155}%
+\contentsline {subsubsection}{Problem F-6-1-10}{73}{section*.156}%
+\contentsline {subsubsection}{Problem F-6-1-14}{74}{section*.157}%
+\contentsline {subsubsection}{Problem F-6-1-4}{74}{section*.158}%
+\contentsline {subsection}{\numberline {4.3}Baire Category Theorem}{75}{subsection.4.3}%
+\contentsline {subsubsection}{Problem 2024-J-II-5}{75}{section*.159}%
+\contentsline {subsection}{\numberline {4.4}Distribution Theory}{76}{subsection.4.4}%
+\contentsline {subsubsection}{Problem F-9-1-1}{76}{section*.160}%
+\contentsline {subsubsection}{Problem F-9-1-2}{76}{section*.161}%
+\contentsline {subsubsection}{Problem F-9-1-3}{77}{section*.162}%
+\contentsline {subsubsection}{Problem F-9-1-5}{77}{section*.163}%
+\contentsline {subsubsection}{Problem F-9-1-6}{78}{section*.164}%
+\contentsline {section}{\numberline {5}Complex Analysis}{79}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Holomorphic Functions}{79}{subsection.5.1}%
+\contentsline {subsubsection}{Problem 2026-J-II-4}{79}{section*.165}%
+\contentsline {subsection}{\numberline {5.2}Rouch\'e's Theorem}{79}{subsection.5.2}%
+\contentsline {subsubsection}{Problem 2023-A-II-6}{79}{section*.166}%
+\contentsline {subsubsection}{Problem 2020-A-II-1}{79}{section*.167}%
+\contentsline {subsubsection}{Problem 2018-A-I-3}{80}{section*.168}%
+\contentsline {subsubsection}{Problem 2015-A-I-3}{80}{section*.169}%
+\contentsline {subsubsection}{Problem 2012-A-I-4}{80}{section*.170}%
+\contentsline {section}{\numberline {6}Partial Differential Equations}{81}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Introduction}{81}{subsection.6.1}%
+\contentsline {subsubsection}{Problem E-1-1}{81}{section*.171}%
+\contentsline {subsubsection}{Problem E-1-2}{81}{section*.174}%
+\contentsline {subsubsection}{Problem E-1-4}{82}{section*.175}%
+\contentsline {section}{\numberline {7}Notes}{83}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Differential Geometry and Topology}{83}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}De Rham Cohomology}{83}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{Problem LSM-17-5}{87}{section*.176}%
+\contentsline {subsubsection}{Problem LSM-17-6}{88}{section*.177}%
+\contentsline {subsubsection}{Problem LSM-17-7}{89}{section*.178}%
+\contentsline {subsection}{\numberline {7.2}Partial Differential Equations}{91}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Introduction}{91}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Four Important Linear Partial Differential Equations}{91}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Sobolev Spaces}{106}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Semidirect Products}{108}{subsection.7.3}%

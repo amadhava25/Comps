@@ -9,7 +9,6 @@
 \newcommand{\embedd}{\hookrightarrow}
 \newcommand{\complete}{\textcolor{red}{[!! Complete Later !!]}}
 \newcommand{\tor}{\text{Tor}}
-
 \title{Comps Mega Review}
 \author{\me}
 \date{June 4, 2026}
@@ -21,19 +20,26 @@
 	\halfline 
 	\newpage 
 	\section{About}
-	The following document contains questions that I have solved as preparation for the August 2026 comprehensive exams given by the Department of Mathematics at Stony Brook University. The problems are divided by subjects. The problem labeling scheme is as follows: \vspace{-0.25cm}
-		\begin{enumerate}[itemsep=-2pt,label = (\arabic{*})]
-			\item Any problem that has the format ``\verb|{20--}-{ }-{ }-{ }|'' or ``\verb|{19--}-{ }-{ }-{ }|'' are questions from past comprehensive exams. The labels indicate (1) in what year, (2) in what month, (3) in which part, and (4) in what the order the problem was given, respectively. 
-			\item Any problem that has the format ``\verb|LSM-{ }-{ }|'' was taken from Lee's \textit{Introduction to Smooth Manifolds} (2nd Ed.)
-			\item Any problem that the format ``\verb|D&F-{ }-{ }|'' was taken from Dummit\& Foote's \textit{Abstract Algebra} (3rd ed.)
-			\item Any problem that has the format ``\verb|F-{ }-{ }-{ }|'' was taken from Folland's \textit{Real Analysis}.
-		\end{enumerate}
+	As part of the mathematics PhD program at Stony Brook University, graduate students are required to pass seven core classes (Algebra I and II, Real Analysis I and II, Differential Geometry I and II, and Complex Analysis). Furthermore, students are required to pass a comprehensive qualifying exam based on the syllabi of each of these courses.
+	
+	To that end, this document is a compilation of the notes, exercises/problems, and general work I have completed to prepare for these exams (along with a few miscellaneous notes I've added since I didn't wish to put them in a separate document).
+	
+	As always, the aim is to contain no errors, especially since these are comps problems. However, it is entirely possible that an original writeup in this document might be incorrect since I could've forgotten to update the solutions after fixing my errors. Any errors in these pages is entirely my responsibility. 
+	\subsection{Organization}
+	The problems are divided by subjects. The problem labeling scheme is as follows: \vspace{-0.25cm}
+	\begin{enumerate}[itemsep=-2pt,label = (\arabic{*})]
+		\item Any problem that has the format ``\verb|{20--}-{ }-{ }-{ }|'' or ``\verb|{19--}-{ }-{ }-{ }|'' are questions from past comprehensive exams. The labels indicate (1) in what year, (2) in what month, (3) in which part, and (4) in what the order the problem was given, respectively. 
+		\item Any problem that has the format ``\verb|LSM-{ }-{ }|'' was taken from Lee's \textit{Introduction to Smooth Manifolds} (2nd Ed.)
+		\item Any problem that the format ``\verb|D&F-{ }-{ }|'' was taken from Dummit\& Foote's \textit{Abstract Algebra} (3rd ed.)
+		\item Any problem that has the format ``\verb|F-{ }-{ }-{ }|'' was taken from Folland's \textit{Real Analysis}.
+		\item Any problem that has the format ``\verb|SS-{ }-{ }|'' was taken from Stein and Shakarchi's \textit{Functional Analysis}.
+	\end{enumerate}
 	Some resources I found indispensable while studying for this exam are: 
-		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-			\item Math StackExchange 
-			\item Wikipedia
-			\item The SBU Past Comps website 
-		\end{enumerate}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item Math StackExchange 
+		\item Wikipedia
+		\item The SBU Past Comps website 
+	\end{enumerate}
 	\newpage 
 	\section{Differential Geometry and Topology}
 	\subsection{Frobenius Theorem}
@@ -2383,6 +2389,68 @@
 			\item The same question for $L^{2}$-functions. 
 		\end{enumerate}
 	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f \in L^{1}(\mathbb{R})$ so that $f \ast f = f$. Taking the Fourier transform of both sides, one has 
+		\begin{equation*}
+			\hat{f} = (f \ast f)^{\hat{}} = \hat{f} \cdot \hat{f} = (\hat{f})^{2}, 
+		\end{equation*}
+		so that at each point $\xi \in \mathbb{R}$, either $\hat{f}(\xi) = 0$ or $\hat{f}(\xi) = 1$. Thus, $\hat{f}$ is the indicator function of some measurable subset $E \subset \mathbb{R}$. We recall that the Fourier transform maps integrable functions to the space of continuous functions $C_{0}(\mathbb{R})$ that vanish at infinity. By the vanishing criteria, $E$ must be a proper subset of $\mathbb{R}$, and by continuity, $E$ has to be the empty set. Thus in fact, $\hat{f} \equiv 0$. By the Fourier Inversion theorem, it follows that $f = 0$ a.e. 
+		
+		\item Now let $f \in (L^{1} \cap  L^{2})(\mathbb{R})$ so that $f = f \ast f$. As above, taking the Fourier transform of both sides forces $\hat{f}(\xi) = 0$ or $\hat{f}(\xi) = 1$ at each $\xi \in \mathbb{R}$. Therefore, $\hat{f}$ must be the characteristic function of some measurable subset $E \subset \mathbb{R}$. By Plancherel's Theorem, since $f \in L^{2}$, $\hat{f} \in L^{2}$. This means that 
+		\begin{equation*}
+			\infty > \int_{\mathbb{R}}|\hat{f}(\xi)|^{2}\;d\xi  = \int_{\mathbb{R}}\chi_{E}^{2}\;d\xi  = \int_{\mathbb{R}}\chi_{E}\;d\xi = m(E). 
+		\end{equation*}
+		Thus $\hat{f} = \chi_{E}$ for some finitely-measured subset $E \subset \mathbb{R}$. By the Fourier Inversion Theorem, it follows that 
+		\begin{equation*}
+			f(x) = \mathcal{F}^{-1}\{\chi_{E}\} = \int_{E}e^{2\pi i x \xi}\;d\xi, 
+		\end{equation*}
+		for some finite-measured subset $E \subseteq \mathbb{R}$. 
+	\end{enumerate}
+	
+	\begin{prb}{2024-J-I-6}
+		Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$. Define the convolution 
+		\begin{equation*}
+			(f \ast g)(x) = \int_{\mathbb{R}}f(x - y)g(y)\;dy
+		\end{equation*}
+		for all $x$ such that the integral exists. Prove that if $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$ with $p,q \in (1, \infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$, then $f \ast g$ is a bounded continuous function on $\mathbb{R}$. 
+	\end{prb}
+	Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$, and define their convolution as given above. Further assume that $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$ with $(p, q) \in (1, \infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$. First, we will show that $f \ast g$ is bounded. For any $x \in \mathbb{R}$, by H\"older's continuity, one has 
+	\begin{equation*}
+		|(f \ast g)(x)| = \abs{\int_{\mathbb{R}}f(x -y)g(y)\;dy} \leq \int_{\mathbb{R}}|f(x - y)||g(y)|\;dy \leq \norm{f(x - \cdot)}_{p}\norm{g}_{q} = \norm{f}_{p}\norm{g}_{q}< \infty, 
+	\end{equation*}
+	where the final equality follows from translation invariance of the $L^{p}$-norm. Since the bound is independent of $x$, we conclude that $f \ast g$ is bounded. To show that $f \ast g$ is continuous on $\mathbb{R}$, we observe the following: 
+	\begin{align*}
+		\begin{split}
+			|(f \ast g)(x + h) - (f \ast g)(x)| &\leq \int_{\mathbb{R}}|f(x + h - y) - f(x - y)||g(y)|\;dy \\
+			&= \int_{\mathbb{R}}|f(t + h) - f(t)||g(x - t)|\;dt \\
+			&\leq \norm{\tau_{h}f - f}_{p}\norm{g(x - \cdot)}_{q} = \norm{\tau_{h}f - f}_{p}\norm{g}_{q} \xrightarrow{h \to 0}0, 
+		\end{split}
+	\end{align*}
+	where the final line follows from continuity of the translation operator. Thus the convolution is (uniformly) continuous. 
+	
+	\begin{prb}{2019-J-I-4}
+		Let $(X, \mu)$ be a measure space and let $f \in L^{1}(X,\mu) \cap L^{\infty}(X, \mu)$. Show that $f \in L^{q}(X,\mu)$ for all $q > 1$ and 
+		\begin{equation*}
+			\norm{f}_{\infty} = \lim_{q \to \infty}\norm{f}_{q}. 
+		\end{equation*}
+	\end{prb}
+	Let $(X, \mu)$ be a measure space, and let $f \in L^{1}(X, \mu) \cap L^{\infty}(X,\mu)$. Fix any arbitrary $q > 1$. Then 
+	\begin{equation*}
+		\norm{f}_{L^q}^{q} = \int_{X}|f|^{q}\;d\mu =  \int_{X}|f| \cdot |f|^{q - 1}\;d\mu \leq \int_{X}|f|\cdot \norm{f}_{L^\infty}^{q - 1} = \norm{f}_{L^{1}}\cdot \norm{f}_{L^{\infty}}^{q - 1} < \infty. 
+	\end{equation*}
+	Thus since $\norm{f}_{L^q} < \infty$, we conclude that $f \in L^{q}(X,\mu)$. From the above result, one has 
+	\begin{equation*}
+		\norm{f}_{L^{q}} \leq \norm{f}_{L^{1}}^{1/q} \cdot \norm{f}_{L^{\infty}}^{1 - (1/q)}, 
+	\end{equation*}
+	so that $\lim_{q \to \infty}\norm{f}_{L^{q}} \leq \norm{f}_{L^{\infty}}$. Now fix $\epsilon > 0$, and let $E = \{x \in X: |f(x)| \geq \norm{f}_{\infty} - \epsilon\}$. By definition of the essential supremum, $E$ must have positive measure. On the other hand, since $f \in L^{\infty}$, $E$ must have finite measure. Then one has 
+	\begin{equation*}
+		\norm{f}_{q}^{q} \geq \int_{E}|f(x)|^{q}\;d\mu \geq \int_{E}(\norm{f}_{\infty} - \epsilon)^{q}\;d\mu \geq \mu(E) \cdot (\norm{f}_{\infty} - \epsilon)^{q}. 
+	\end{equation*}
+	Taking the $q$th roots, one has 
+	\begin{equation*}
+		\norm{f}_{q} \geq \mu(E)^{1/q} \cdot (\norm{f}_{\infty} - \epsilon). 
+	\end{equation*}
+	Since the left side is independent of $\epsilon$, passing $\epsilon \to 0$ gives $\norm{f}_{q} \geq \mu(E)^{1/q}\cdot \norm{f}_{\infty}$ so that $\lim_{q \to \infty}\norm{f}_{q} \geq \norm{f}_{\infty}$. This concludes the proof. 
 	
 	\begin{prb}{2017-J-II-2}
 		Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^{2}([0,1])$ we have that $fg \in L^{2}([0,1])$. Show $f$ is in $L^{\infty}([0,1])$. 
@@ -2585,6 +2653,24 @@
 		\norm{f + g} = \inf\mathcal{C} \leq  \inf(\mathcal{A} + \mathcal{B}) = \inf\mathcal{A} + \inf\mathcal{B} = \norm{f} + \norm{g}. 
 	\end{equation*}
 	Thus, we conclude that $\norm{\empspace}$ is indeed a valid norm on $L^{p} + L^{r}$. Now we need to show that $(L^{p} + L^{r}, \norm{\empspace})$ is Banach. Let $\{f_{n}\}_{n = 1}^{\infty}$ be a Cauchy sequence under this norm. 
+	
+	\subsection{Baire Category Theorem}
+	\begin{prb}{2024-J-II-5}
+		Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty,\infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: you may use the Baire category theorem. 
+	\end{prb}
+	Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty,\infty)$. Let $\norm{\empspace}$ be a norm on $P$, and assume to the contrary that $P$ is complete under this norm. We can write 
+	\begin{equation*}
+		P = \bigcup_{n \geq 1}P_{n}, 
+	\end{equation*}
+	where for each $n$, $P_{n}$ is the subset consisting of all polynomials with degree at most $n$. By the Baire Category Theorem, there must exist at least one $n_{0} \in \mathbb{N}$ so that $\overline{P}_{n_{0}}$ has nonempty interior. Since $P_{n_{0}}$ is a finite-dimensional subspace of a Banach space, it must be closed: $\overline{P}_{n_{0}} = P_{n_{0}}$. So since $P_{n_{0}}$ has nonempty interior, there exists some $p \in P_{n_{0}}$ and $R > 0$ so that $B_{R}(p) \Subset P_{n_{0}}$. Fix an arbitrary polynomial $q \in P$. Then define 
+	\begin{equation*}
+		r = p + \frac{(q - p)R}{\norm{q - p}} \in \overline{B}_{R}(p) \subset P_{n_{0}}.
+	\end{equation*}
+	But then since 
+	\begin{equation*}
+		q = p + \frac{\norm{q - p}}{R}(r - p) \in P_{n_{0}}, 
+	\end{equation*}
+	one has that $q \in P_{n_{0}}$. Thus since any arbitrary polynomial in $P$ is contained in $P_{n_{0}}$, we are led to conclude that $P = P_{n_{0}}$. But this is impossible! Thus, by contradiction, $P$ cannot be complete under $\norm{\empspace}$. 
 	
 	\newpage 
 	\subsection{Distribution Theory}
