@@ -1,14 +1,25 @@
 \documentclass{article}
 \usepackage{../header}
 \usepackage{esint}
+\usetikzlibrary{decorations.markings}
 \rhead{Comps Mega Review}
-%\om 
+%om 
 \newcommand{\contract}{\mathbin{\vrule height 0.4pt width 8pt depth 0pt\vrule height 6pt width 0.4pt depth 0pt}}
 \setlength{\droptitle}{-3cm}
 \renewcommand{\div}{\text{div}}
 \newcommand{\embedd}{\hookrightarrow}
-\newcommand{\complete}{\textcolor{red}{[!! Complete Later !!]}}
 \newcommand{\tor}{\text{Tor}}
+\newcommand{\complete}{\textcolor{red}{[!! Complete Later !!]}}
+\tikzset
+{decoration=
+	{markings,
+		mark=at position 0.5 with {\arrow{stealth}}
+	},
+	plain/.style={line width=0.8pt},
+	arrow/.style={plain,postaction=decorate}
+}
+
+
 \title{Comps Mega Review}
 \author{\me}
 \date{June 4, 2026}
@@ -2788,6 +2799,177 @@
 	
 	\newpage 
 	\section{Complex Analysis}
+	
+	\subsection{Contour Integration and the Residue Theorem}
+	
+	\begin{prb}{2018-J-I-2}
+		Use the method of residues to compute the improper integral 
+			\begin{equation*}
+				\int_{-\infty}^{\infty}\frac{x + 1}{x^{4} + 2x^{2} + 5}\;dx. 
+			\end{equation*}
+	\end{prb}
+	Let us consider the meromorphic function 
+	\begin{equation*}
+		f(z) = \frac{z + 1}{z^{4} + 2z^{2} + 5}\;dz, 
+	\end{equation*}
+	which has simple poles at the following points, 
+	\begin{equation*}
+		z = \pm \sqrt{-1 + 2i}, \pm \sqrt{-1 - 2i}. 
+	\end{equation*}
+	We will now check which poles (if any) reside in the upper-half plane. Let $\ti{z} = -1 + 2i$. Then we can write $\ti{z}$ as, 
+	\begin{equation*}
+		\ti{z} = \sqrt{5}\exp\left(i(\pi -\tan^{-1}(2))\right) \implies z = \sqrt{\ti{z}} = \sqrt[4]{5}\exp\left(i\left(\frac{\pi}{2} - \frac{1}{2}\tan^{-1}(2)\right)\right). 
+	\end{equation*}
+	Since $\theta \in (0,\pi/2)$, it follows that the imaginary part of $\sqrt{-1 + 2i}$ is positive so that it is contained in the upper-half plane. This implies that its conjugate, $\sqrt{-1 - 2i}$ is contained in the lower-half plane. Thus, $-\sqrt{-1 - 2i}$ must be contained in the upper-half plane, and its conjugate, $-\sqrt{-1 + 2i}$ must be contained in the lower-half plane. Consider the integral of $f(z)$ on the following contour: 
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-0.5)-- (0,3); 
+			
+			\draw[ultra thick] (-2,0) -- (2,0);
+			\draw[arrow] (-2,0) -- (2,0); 
+			\draw[ultra thick] (2,0) arc (0:180:2);
+			\draw[arrow] (2,0) arc (0:180:2);
+			
+			\draw[fill=black] (0.786,1.272) circle(1pt);
+			\draw[fill=black] (-0.786,1.272) circle(1pt);
+			
+			\draw (2,0) node[below] {$R$};
+			\draw (-2,0) node[below] {$-R$};
+		\end{tikzpicture}
+		\caption{Contour in the upper half-plane, with the two points denoting the two simple poles of $f(z)$ in the upper half-plane.}
+		\label{fig:2018JI2}
+	\end{figure} 
+	In the limit that $R \to \infty$, the improper real integral agrees with the integral of $f(z)$ on the portion of the contour that lies along the real-axis. Before we can compute the contour integral of $f(z)$, we must show that the contribution from the semicircle $S_{R}$ vanishes in the limit $R \to \infty$. For sufficiently large $R$, on $|z| = R$, 
+	\begin{equation*}
+		\abs{\frac{z + 1}{z^4 + 2z^2 + 5}} \leq \frac{R+ 1}{R^4 -2R^2 - 5}. 
+	\end{equation*}
+	This implies 
+	\begin{equation*}
+		\abs{\int_{S_{R}}f(z)\;dz} \leq \pi R \cdot \frac{R+ 1}{R^{4} - 2R^{2} - 5} \xrightarrow{R \to \infty} 0. 
+	\end{equation*}
+	Thus since the contribution along the semicircle vanishes in the limit $R \to \infty$, it follows that the improper real integral is equal to the contour integral of $f$ in the limit $R \to \infty$. We wil find the residues of $f$ at the two poles. We compute, 
+	\begin{align*}
+		\begin{split}
+			\operatorname{Res}_{z = \sqrt{-1 + 2i}}(f) &= -\frac{1}{8}\left(i + \frac{\sqrt{5}}{5}\sqrt{1 + 2i}\right). \\
+			\operatorname{Res}_{z =-\sqrt{-1 - 2i}}(f) &= \frac{1}{8}\left(i + \frac{\sqrt{5}}{5}\sqrt{1 - 2i}\right).  
+		\end{split}
+	\end{align*}
+	Therefore, 
+	\begin{equation*}
+		\oint_{\gamma}f(z)\;dz = 2\pi i \cdot \left[-\frac{\sqrt{5}}{40}\sqrt{1 + 2i} + \frac{\sqrt{5}}{40}\sqrt{1 - 2i}\right] = \frac{5^{3/4}\pi}{10}\sin\left(\frac{\tan^{-1}(2)}{2}\right). 
+	\end{equation*}
+	Thus, we conclude that 
+	\begin{equation*}
+		\int_{-\infty}^{\infty}\frac{x + 1}{x^{4} + 2x^{2} + 5}\;dx = \frac{5^{3/4}\pi}{10}\sin\left(\frac{\tan^{-1}(2)}{2}\right). 
+	\end{equation*}
+	We can simplify this expression further. Using the fact that $\sin((1/2)\tan^{-1}(x)) = \sqrt{(\sqrt{1 + x^2} - 1)/2\sqrt{1 + x^2}}$, one obtains 
+	\begin{equation*}
+		\int_{-\infty}^{\infty}\frac{x + 1}{x^4 + 2x^2 + 5}\;dx = \frac{5^{3/4}\pi}{10} \cdot \sqrt{\frac{\sqrt{5} - 1}{2\sqrt{5}}}.
+	\end{equation*}
+	
+	\begin{prb}{2014-J-I-4}
+		Use the method of residues to compute the improper integral $\int_{0}^{\infty}\frac{x^{2}}{x^{6} + x^{4} + x^{2} + 1}\;dx$. 
+	\end{prb}
+	Let us consider the meromorphic function 
+		\begin{equation*}
+			f(z) = \frac{z^2}{z^6 + z^4 + z^2 + 1}, 
+		\end{equation*}
+	which has simple poles at the points 
+		\begin{equation*}
+			z = \pm i, \frac{\sqrt{2}}{2}(1 \pm i), \frac{\sqrt{2}}{2}(-1 \pm i). 
+		\end{equation*}
+	We will consider the integral of $f(z)$ over the following contour ($\gamma$): 
+	\begin{figure}[h!]
+		\centering 
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-0.5) -- (0,3); 
+			\draw[ultra thick] (-2,0) -- (2,0);
+			\draw[arrow] (-2,0) -- (2,0); 
+			\draw[ultra thick] (2,0) arc (0:180:2);
+			\draw[arrow] (2,0) arc (0:180:2);
+			
+			\draw[fill=black] (0.707,0.707) circle(1pt);
+			\draw[fill=black] (-0.707,0.707) circle(1pt);
+			\draw[fill=black] (0,1) circle(1pt); 
+			
+			\draw (2,0) node[below] {$R$};
+			\draw (-2,0) node[below] {$-R$};
+		\end{tikzpicture}
+		\caption{Contour in the upper half-plane, with the three points denoting the three simple poles of $f(z)$ in the upper half-plane.}
+		\label{fig:2014JI4}
+	\end{figure}
+	In the limit $R \to \infty$, the integral of $f(z)$ along the segment of $\gamma$ that lies on the real axis corresponds to the improper integral $\int_{-\infty}^{\infty}\frac{x^{2}}{x^{6} + x^4  + x^2 + 1}\;dx$. Thus, if the contribution along the semicircle of radius $R$ vanishes in the limit $R \to \infty$, then the above improper integral will be exactly equal to the contour integral of $f(x)$ over $\gamma$. Indeed on $|z| = R$, one has 
+	\begin{equation*}
+		\abs{\int_{S_{R}}\frac{z^{2}}{z^6 + z^4 + z^2 + 1}\;dz} \leq \pi R \cdot \frac{R^2}{R^6 + R^4 + R^2 + 1} \xrightarrow{R \to \infty} 0. 
+	\end{equation*}
+	To compute the contour integral of $f$, one needs to compute the residue of $f$ at each of the simple poles depicted in Figure \ref{fig:2014JI4}. We compute, 
+	\begin{align*}
+		\begin{split}
+			\operatorname{Res}_{z = i}(f) &= \lim_{z \to i}(z - i)f(z) = \frac{i}{4}. \\
+			\operatorname{Res}_{z = (\sqrt{2}/2)(1 + i)}(f) &= \lim_{z \to (\sqrt{2}/2)(1 + i)}(z - (\sqrt{2}/2)(1 + i))f(z) = -\frac{i}{4\sqrt{2}}. \\
+			\operatorname{Res}_{z = (\sqrt{2}/2)(-1 + i)}(f) &= \lim_{z \to (\sqrt{2}/2)(-1 + i)}(z - (\sqrt{2}/2)(-1 + i))f(z) = -\frac{i}{4\sqrt{2}}. 
+		\end{split}
+	\end{align*}
+	Hence, this implies that 
+	\begin{equation*}
+		\int_{-\infty}^{\infty}\frac{x^2}{x^6 + x^4 + x^2 + 1}\;dx = 2\pi i \cdot \left(\frac{i}{4} - \frac{i\sqrt{2}}{4}\right) = 2\pi\cdot \left(\frac{\sqrt{2} - 1}{4}\right). 
+	\end{equation*}
+	Thus, since the integrand of the desired improper integral is even, we conclude that 
+	\begin{equation*}
+		\int_{0}^{\infty}\frac{x^2}{x^6 + x^4 + x^2 + 1}\;dx = \pi \cdot \left(\frac{\sqrt{2} - 1}{4}\right). 
+	\end{equation*}
+	
+	\begin{prb}{2008-J-II-3}
+		Compute the real integral $\int_{-\infty}^\infty \frac{1}{1 + x^4}\;dx$. 
+	\end{prb}
+	Consider the meromorphic function $f(z) = 1/(1 + z^4)$ with (simple) poles at 
+	\begin{equation*}
+		z = \frac{\sqrt{2}}{2}(1 + i), \frac{\sqrt{2}}{2}(-1 + i), \frac{\sqrt{2}}{2}(1 - i), \text{ and } \frac{\sqrt{2}}{2}(-1 -i). 
+	\end{equation*}
+	Consider the integral of $f(z)$ on the following contour: 
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-0.5)-- (0,3); 
+			
+			\draw[ultra thick] (-2,0) -- (2,0);
+			\draw[arrow] (-2,0) -- (2,0); 
+			\draw[ultra thick] (2,0) arc (0:180:2);
+			\draw[arrow] (2,0) arc (0:180:2);
+			
+			\draw[fill=black] (0.707,0.707) circle(1pt);
+			\draw[fill=black] (-0.707,0.707) circle(1pt);
+			
+			\draw (2,0) node[below] {$R$};
+			\draw (-2,0) node[below] {$-R$};
+		\end{tikzpicture}
+		\caption{Contour in the upper half-plane, with the two points denoting the two simple poles of $f(z)$ in the upper half-plane.}
+		\label{fig:2008JII3}
+	\end{figure}
+	
+	On $|z| = R$, we note that $|z^4 + 1| \geq R^4 - 1$ so that $|f(z)| \leq 1/(R^4 -1)$. Therefore, 
+	\begin{equation*}
+		\abs{\int_{S_{R}}\frac{1}{z^{4} + 1}\;dz} \leq \pi R \cdot \frac{1}{R^4 -  1} \xrightarrow{R \to \infty} 0. 
+	\end{equation*}
+	On the other hand, the integral of $f(z)$ over the segment of the contour on the real line tends to the desired real integral. It now suffices for us to compute the residue of $f(z)$ at the two poles in the upper half plane. We compute, 
+		\begin{align*}
+			\begin{split}
+				\operatorname{Res}_{z = (\sqrt{2}/2)(1 + i)}(f) &= -\frac{i + 1}{4\sqrt{2}}. \\
+				\operatorname{Res}_{z = (\sqrt{2}/2)(-1 + i)}(f) &= \frac{1 -i}{4\sqrt{2}}. 
+			\end{split}
+		\end{align*}
+	This means that 
+		\begin{equation*}
+			\oint_{\gamma} \frac{1}{z^4 + 1}\;dz = 2\pi i \cdot \left(\frac{1 - i}{4\sqrt{2}} - \frac{i + 1}{4\sqrt{2}}\right) = 2\pi i \cdot \left(-\frac{i}{2\sqrt{2}}\right) = \frac{\pi}{\sqrt{2}}. 
+		\end{equation*}
+	Thus we conclude that 
+		\begin{equation*}
+			\int_{-\infty}^{\infty}\frac{1}{x^4 + 1}\;dx= \frac{\pi}{\sqrt{2}}. 
+		\end{equation*}
 	
 	\subsection{Holomorphic Functions}
 	\begin{prb}{2026-J-II-4}
