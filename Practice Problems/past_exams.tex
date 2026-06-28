@@ -741,6 +741,98 @@
 	\end{prb}
 	Assume that the unit sphere $\mathbb{S}^{3}$ is diffeomorphic to the product of two other smooth manifolds, $M_{1}, M_{2}$, both of nonzero dimension. Since diffeomorphisms preserve the total dimension, $\dim{S^{3}} = \dim{M_{1} \times M_{2}} = \dim{M_{1}} + \dim{M_{2}}$. Thus, up to relabeling of indices, $\dim{M_{1}} = 1$ and $\dim{M_{2}} = 2$. Moreover, since $S^{3}$ is compact, $M_{1} \times M_{2}$ must also be compact. Since the product of manifolds is compact if and only if each factor is compact, $M_{1}, M_{2}$ are both compact. Since there exists only one compact smooth $1$-manifold up to diffeomorphism, namely the unit circle $S^{1}$, $M_{1} \cong S^{1}$. Diffeomorphic manifolds have isomorphic fundamental groups so that $\pi_{1}(S^{3}) \cong \pi_{1}(M_{1} \times M_{2}) \cong \pi_{1}(M_{1}) \times \pi_{1}(M_{2}) \cong \pi_{1}(S^{1}) \times \pi_{1}(M_{2})$. Since $S^{3}$ is simply connected, $\pi_{1}(S^{3})$ is trivial. On the other hand, since $\pi_{1}(S^{1}) \cong \mathbb{Z}$, $\pi_{1}(M_{1} \times M_{2})$ must be non-trivial, which is a contradiction. Thus by contradiction, the unit sphere $S^{3}$ cannot be diffeomorphic to the product of two other smooth manifolds of nonzero dimensions. 
 	
+	\begin{prb}{2002-A-II-1}
+		Let $X$ denote three copies of the unit circle $S^1$ identified along a common point. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Compute the fundamental group of $X$. 
+			\item Show that any continuous map $f: \mathbb{RP}^2 \to X$ from the real projective space is nullhomotopic. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $X$ denote the wedge sum $S^1 \vee S^1 \vee S^1$ of three distinct copies of the unit circle $S^1$ identified along a common point. Consider the following depiction of $X$, 
+			\begin{figure}[h!]
+				\centering 
+				\begin{tikzpicture}[scale=0.5]
+					% Coordinates
+					\coordinate (A) at (-4.00, 10.00);
+					\coordinate (B) at (-4.00, 10.00);
+					\coordinate (C) at (4.00, 10.00);
+					\coordinate (D) at (4.00, 10.00);
+					\coordinate (E) at (0.00, 4.00);
+					\coordinate (F) at (0.00, 4.00);
+					\coordinate (P) at (0.00, 8.00);
+					\coordinate (G) at (0.00, 6.00);
+					\coordinate (H) at (2.00, 10.00);
+					\coordinate (I) at (-2.00, 10.00);
+					\coordinate (J) at (-5.68, 11.30);
+					\coordinate (K) at (1.90, 2.36);
+					
+					% Drawing
+					\draw[blue, thick] (A) circle (2.00);
+					\draw[blue, thick] (C) circle (2.00);
+					\draw[red, thick] (E) circle (2.00);
+					\draw[thick, loosely dashed] (G) -- (P);
+					\draw[thick, loosely dashed] (P) -- (H);
+					\draw[thick, loosely dashed] (P) -- (I);
+					\draw[red, ultra thick, dashed] (-5.75, 9.00) arc (-150.3:76.0:2.02);
+					\draw (5.50, 8.75) arc (-39.8:-39.8:1.95);
+					\draw[red, very thick, dashed] (3.50, 12.00) arc (104.0:-45.0:2.06);
+					\draw (-2.00, 3.50) arc (-166.0:-166.0:2.06);
+					\draw[blue, very thick, dashed] (2.00, 4.25) arc (7.1:-174.3:2.02);
+					\node[above, text=blue, font=\large] at (J) {$U$};
+					\node[below, text=red, font=\large] at (K) {$V$};
+					\fill[black] (P) circle (5pt);
+				\end{tikzpicture}
+			\end{figure}
+		
+		Here, since $U \cap V$ is simply connected, by the Seifert-van Kampen Theorem, one has 
+			\begin{equation*}
+				\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0). 
+			\end{equation*}
+		$V$ is homotopy equivalent to $S^1$, and thus, $\pi_1(V,x_0) \cong \mathbb{Z}$. On the other hand, $U$ is homotopy equivalent to the wedge sum $S^1 \vee S^1$ so that $\pi_1(U,x_0) \cong \mathbb{Z} \ast \mathbb{Z}$. Thus, we conclude that the fundamental group of $X$ is the free group on three generators. 
+		\item Let $f: \mathbb{RP}^2 \to X$ be an arbitrary continuous map. $f$ induces a group homomorphism $f_{\ast}: \pi_1(\mathbb{RP}^2, x_{0}) \to \pi_1(X, x_0)$. Since $\pi_1(\mathbb{RP}^2,x_0) \cong \mathbb{Z}/2\mathbb{Z}$ is a torsion group while we just showed $\pi_{1}(X,x_0)$ to be a free group, it follows that $f_\ast$ must be trivial. Let $\ti{X}$ be the universal cover of $X$ (which we know exists since $X$ is locally path connected and semilocally simply connected). Let $p: \ti{X} \to X$ be the covering map. Since $f_\ast$ is trivial, then $f_\ast(\pi_1(\mathbb{RP}^2,x_0)) \subset p_\ast(\pi_1(\ti{X}, x_0))$. So by the lifting criterion, there exists a lift $\ti{f}: \mathbb{RP}^2 \to \ti{X}$ of $f$. But since $\ti{X}$ is contractible, $\ti{f}$ must be nullhomotopic. Thus it follows that $f$ is also nullhomotopic. The proof concludes. 
+	\end{enumerate}
+	
+	
+	\begin{prb}{R-DGT-1}
+		Compute the fundamental group of the 2-torus $T$ using the Seifert-van Kampen Theorem. 
+	\end{prb} 
+	Let $T$ denote the 2-torus; we will think of $T$ as a square with identified sides $a$ and $b$. Let $p$ be a point at the center of the square, $V$ a small open neighborhood of $p$ in $T$, and $U = T \setminus \{p\}$. Then $V$ is simply connected, $U \cap V$ is homotopy equivalent to the circle $S^1$, and $U$ deformation retracts onto the wire frame. By the Seifert-van Kampen Theorem, $\pi_{1}(T, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0)/N$, where $N$ is the normal closure of the subgroup $\braket{i_1^\ast(g)i_2^\ast(g)^{-1}: g\in \pi_1(U \cap V,x_0)}$, $i_1, i_2$ are the inclusion maps of $U \cap V$ into $U$ and $V$, respectively, and $i_1^\ast, i_2^\ast$ are the respective induced maps on fundamental groups. Since $V$ is contractible, $\pi_1(V,x_0) \cong 1$. On the other hand, $\pi_1(U \cap V,x_0) \cong \pi_1(S^1,x_0) \cong \mathbb{Z}$. So let $[\gamma]$ be a generator of the former fundamental group. Since $U$ deformation retracts onto the wire frame, it is homotopy equivalent to the wedge of 2 circles, which has as its fundamental group the free group $\braket{[a],[b]}$ on two generators. Next, it follows that $i_1^\ast([\gamma]) = [\alpha\beta\alpha^{-1}\beta^{-1}] = [\alpha][\beta][\alpha^{-1}][\beta^{-1}]$. Thus one has by the Seifert-van Kampen Theorem that 
+		\begin{equation*}
+			\pi_1(X,x_0) \cong \braket{[\alpha],[beta] \mid [\alpha][\beta][\alpha]^{-1}[\beta]^{-1} = 1} \cong \mathbb{Z}^{2}. 
+		\end{equation*}
+	
+	
+	\begin{prb}{R-DGT-2}
+		Compute the fundamental group of $S^1 \vee S^1$ using the Seifert-van Kampen Theorem. 
+	\end{prb}
+	Let $X$ denote the wedge space $S^1 \vee S^1$. Consider the following depiction of $X$: 
+		\begin{figure}[h!]
+			\centering 
+			\begin{tikzpicture}[scale=0.5]
+				% Coordinates
+				\coordinate (A) at (0.00, 8.00);
+				\coordinate (B) at (0.00, 8.00);
+				\coordinate (C) at (4.00, 8.00);
+				\coordinate (D) at (4.00, 8.00);
+				\coordinate (E) at (-1.40, 9.52);
+				\coordinate (F) at (5.50, 9.50);
+				
+				% Drawing
+				\draw[blue, thick] (A) circle (2.00);
+				\draw[red, thick] (C) circle (2.00);
+				\draw[blue, very thick, dashed] (4.00, 10.00) arc (90.0:-90.0:2.00);
+				\draw[red, ultra thick, dashed] (2.00, 8.00) arc (0.0:90.0:2.00);
+				\draw[red, ultra thick, dashed] (0.00, 6.00) arc (-90.0:0.0:2.00);
+				\node[above, text=blue, font=\LARGE] at (E) {$U$};
+				\node[above, text=red, font=\LARGE] at (F) {$V$};
+			\end{tikzpicture}
+		\end{figure}
+	Then we see that $U \cap V$ is homotopy equivalent to a point, and hence is simply connected, and $U, V$ are homotopy equivalent to the circle $S^1$ so that $\pi_1(U,x_0), \pi_1(V,x_0) \cong \mathbb{Z}$. Therefore, since $U \cap V$ is simply connected, by the Seifert-van Kampen Theorem, one has 
+		\begin{equation*}
+			\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0) \cong \mathbb{Z} \ast \mathbb{Z}. 
+		\end{equation*}
+		
 	\newpage 
 	\subsection{Vector Fields}
 	\begin{prb}{2020-J-I-4}
@@ -770,6 +862,15 @@
 	I.e., $\mathcal{D}f$ does not follow the correct transformation law for tangent vector fields, so that the proof concludes.  
 	
 	\subsection{Covering Spaces}
+	
+	\begin{prb}{2022-J-I-2}
+		Let $\mathbb{T}^{2} = \mathbb{R}^2/\mathbb{Z}^2$, where $\mathbb{Z}^2 \subset \mathbb{R}^2$ is the standard integer lattice. Is it true that (a) every continuous map $f: S^2 \to \mathbb{T}^2$ is nullhomotopic? (b) every continuous map $g: \mathbb{T}^2 \to S^{2}$?
+	\end{prb}
+	Let $\mathbb{T}^2 = \mathbb{R}^2/\mathbb{Z}^{2}$ be the $2$-torus. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep=-2pt,label = (\alph{*})]
+		\item Let $f: S^{2} \to \mathbb{T}^{2}$ be a continuous map. First, we note that $\pi_{1}(S^2) = 1$ since $S^2$ is simply connected. On the other hand, since $\mathbb{T}^{2} \cong S^1 \times S^1$, $\pi_1(T^2, x_0) \cong \mathbb{Z}^2$. Therefore, the induced map $f_\ast(\pi_1(S^2,x_0)) = \{1\}$. Since $\mathbb{T}^2$ is locally path connected and semilocally simply connected, it has a universal covering space; it's universal covering space is $\mathbb{R}^2$. Let $p: \mathbb{R}^2 \to \mathbb{T}^2$ denote the covering map. Since $f_{\ast}(\pi_1(S^2,x_0)) = \{1\} \subset p_\ast(\pi_1(\mathbb{R}^2, x_0))$, $f$ lifts to a map $\ti{f}: S^2 \to \mathbb{R}^2$. But since $\mathbb{R}^{2}$ is contractible, $\ti{f}$ must be nullhomotopic. Thus projecting down, it follows that $f$ must be nullhomotopic. I.e., every continuous map $f: S^2 \to \mathbb{T}^2$ is nullhomotopic. 
+		\item 
+	\end{enumerate}
 	
 	\begin{prb}{2021-A-I-6}
 		What connected spaces can be finitely-sheeted covering spaces of a sphere with three handles? \label{prb:2021-A-I-6}
@@ -4322,6 +4423,55 @@
 			\operatorname{Aut}(\mathbb{Z}_{15}) \cong (\mathbb{Z}/15\mathbb{Z})^{\times} \cong (\mathbb{Z}/5\mathbb{Z})^{\times} \times (\mathbb{Z}/3\mathbb{Z})^{\times} \qquad (\text{Chinese Remainder Theorem})
 		\end{equation*}
 		Thus, $\operatorname{Aut}(\mathbb{Z}_{15}) \cong \mathbb{Z}/4\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$. 
+	\end{itemize}
+	
+	\newpage 
+	\subsection{Seifert-van Kampen Theorem and Fundamental Groups}
+	\begin{itemize}
+		\item \textbf{Thm. (Seifert-van Kampen I)} Let $X = U \cup V$, where $U$ and $V$ are open in $X$; assume $U$, $V$, and $U \cap V$ are path connected; let $x_0 \in U \cap V$. Let $H$ be a group, and let 
+			\begin{equation*}
+				\phi_1: \pi_1(U,x_{0}) \to H \qquad \text{ and } \qquad \phi_2 : \pi_1(V, x_0) \to H
+			\end{equation*}
+		be homomorphisms. Let $i_1, i_2, j_1, j_2$ be the homomorphisms induced by the following inclusions: 
+			\begin{figure}[h!]
+				\centering 
+				\begin{tikzcd}
+					& \pi_1(U,x_0) \arrow[dr,"\phi_1"] \arrow[hookrightarrow, d, "j_1"] & \\ 
+					\pi_1(U \cap V) \arrow[hookrightarrow, ur, "i_1"] \arrow[hookrightarrow, dr, "i_2"]\arrow[r] & \pi_1(X,x_0) \arrow[dashed,r,"\phi"] & H \\
+					& \pi_1(V,x_0) \arrow[hookrightarrow, u,"j_2"] \arrow[ur,"\phi_2"] & 
+				\end{tikzcd}
+			\end{figure}
+		
+		If $\phi_1 \circ i_1 = \phi_2 \circ i_2$, then there is a unique homomorphism $\phi: \pi_1(X,x_0) \to H$ so that $\phi_1 = \phi \circ j_1$ and $\phi_2 = \phi \circ j_2$. 
+		
+		\item \textbf{Thm. (Seifert-van Kampen II)} Let $X = U \cup V$, where $U$ and $V$ are open in $X$; assume $U$, $V$, and $U \cap V$ are path connected; let $x_0 \in U \cap V$. Let $H$ be a group, and let 
+		\begin{equation*}
+			\phi_1: \pi_1(U,x_{0}) \to H \qquad \text{ and } \qquad \phi_2 : \pi_1(V, x_0) \to H
+		\end{equation*}
+		be homomorphisms. Let $i_1, i_2, j_1, j_2$ be the homomorphisms induced by the following inclusions: 
+		\begin{figure}[h!]
+			\centering 
+			\begin{tikzcd}
+				& \pi_1(U,x_0) \arrow[dr,"\phi_1"] \arrow[hookrightarrow, d, "j_1"] & \\ 
+				\pi_1(U \cap V) \arrow[hookrightarrow, ur, "i_1"] \arrow[hookrightarrow, dr, "i_2"]\arrow[r] & \pi_1(X,x_0) \arrow[dashed,r,"\phi"] & H \\
+				& \pi_1(V,x_0) \arrow[hookrightarrow, u,"j_2"] \arrow[ur,"\phi_2"] & 
+			\end{tikzcd}
+		\end{figure} 
+		
+		Let $j: \pi_1(U,x_0) \ast \pi_1(V,x_0) \to \pi_1(X,x_0)$ be the homomorphism of the free product that extends the homomorphisms $j_1$ and $j_2$ induced by inclusion. Then $j$ is surjective, and its kernel is  generated by all elements of the free product of the form $i_1(g)^-1i_2(g)$ and their conjugates. 
+		
+		\item \textbf{Cor. (Isomorphisms given by SvK)} Assume the hypothesis of the Seifert-van Kampen theorem. Then \vspace{-0.25cm}
+			\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+				\item If $U \cap V$ is simply connected, then there is an isomorphism 
+					\begin{equation*}
+						k: \pi_1(U,x_0) \ast \pi_1(V,x_0) \to \pi_1(X,x_0). 
+					\end{equation*}
+				\item If $V$ is simply connected, there is an isomorphism 
+					\begin{equation*}
+						k: \pi_1(U,x_0)/N \to \pi_1(X,x_0), 
+					\end{equation*}
+				where $N$ is the least normal subgroup of $\pi_1(U,x_0)$ containing the image of the homomorphism $i_1:\pi_1(U \cap V,x_0) \to \pi_1(U,x_0)$. 
+			\end{enumerate}
 	\end{itemize}
 	
 \end{document}
