@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  28 JUN 2026 19:40
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  29 JUN 2026 16:11
  restricted system commands enabled.
 **past_exams.tex
 (./past_exams.tex
@@ -2160,18 +2160,18 @@ ne 100.
 [3]
 
 [4]
-Overfull \hbox (1.26996pt too wide) detected at line 218
- []\TU/NotoSerif(1)/m/n/10 110
+Overfull \hbox (1.26996pt too wide) detected at line 221
+ []\TU/NotoSerif(1)/m/n/10 111
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 219
- []\TU/NotoSerif(1)/m/n/10 112
- []
-
-
-Overfull \hbox (1.26996pt too wide) detected at line 220
+Overfull \hbox (1.26996pt too wide) detected at line 222
  []\TU/NotoSerif(1)/m/n/10 113
+ []
+
+
+Overfull \hbox (1.26996pt too wide) detected at line 223
+ []\TU/NotoSerif(1)/m/n/10 114
  []
 
 )
@@ -2415,446 +2415,444 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 739.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 744.
+(mdframed)              on input line 752.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 757.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 
 [25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 797.
+(mdframed)              on input line 810.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 806.
+(mdframed)              on input line 819.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 15.55188pt on input line 827.
+(Font)              scaled to size 15.55188pt on input line 840.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 11.24992pt on input line 827.
+(Font)              scaled to size 11.24992pt on input line 840.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 8.45993pt on input line 827.
+(Font)              scaled to size 8.45993pt on input line 840.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 17.28pt on input line 827.
+(Font)              scaled to size 17.28pt on input line 840.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 12.5pt on input line 827.
+(Font)              scaled to size 12.5pt on input line 840.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 9.4pt on input line 827.
+(Font)              scaled to size 9.4pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 17.28pt on input line 827.
+(Font)              scaled to size 17.28pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.5pt on input line 827.
+(Font)              scaled to size 12.5pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.4pt on input line 827.
+(Font)              scaled to size 9.4pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 17.28pt on input line 827.
+(Font)              scaled to size 17.28pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.5pt on input line 827.
+(Font)              scaled to size 12.5pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.4pt on input line 827.
+(Font)              scaled to size 9.4pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 17.28pt on input line 827.
+(Font)              scaled to size 17.28pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.5pt on input line 827.
+(Font)              scaled to size 12.5pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.4pt on input line 827.
+(Font)              scaled to size 9.4pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 17.28pt on input line 827.
+(Font)              scaled to size 17.28pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.5pt on input line 827.
+(Font)              scaled to size 12.5pt on input line 840.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.4pt on input line 827.
+(Font)              scaled to size 9.4pt on input line 840.
 
 
 [26]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 839.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 848.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 867.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 876.
-Package mdframed Info: Not enough space on this page on input line 878.
-
 
 [27]
-Package mdframed Info: Not enough space on this page on input line 878.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 893.
+(mdframed)              on input line 852.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 911.
+(mdframed)              on input line 861.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 880.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 883.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
+(Font)              scaled to size 5.57996pt on input line 883.
+LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
+(Font)              scaled to size 8.0pt on input line 883.
+LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
+(Font)              scaled to size 6.2pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 8.0pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 6.2pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 8.0pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.2pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 8.0pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.2pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 8.0pt on input line 883.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.2pt on input line 883.
 
 
 [28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 933.
+(mdframed)              on input line 889.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 949.
+(mdframed)              on input line 898.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 915.
 
 
 [29]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 954.
+(mdframed)              on input line 933.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 955.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 971.
 
 
 [30]
+Package mdframed Info: Not enough space on this page on input line 973.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 972.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 997.
+(mdframed)              on input line 976.
 
 
 [31]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1021.
+(mdframed)              on input line 994.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1026.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1031.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1042.
+(mdframed)              on input line 1019.
 
 
 [32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1063.
+(mdframed)              on input line 1043.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1067.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 1070.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 5.57996pt on input line 1070.
-LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 1070.
-LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 6.2pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.2pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.2pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.2pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1070.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.2pt on input line 1070.
+(mdframed)              on input line 1048.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1072.
+(mdframed)              on input line 1053.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1077.
+(mdframed)              on input line 1064.
 
 
 [33]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1085.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1089.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1094.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1099.
+
+
+[34]
 LaTeX Font Info:    Trying to load font information for OT1+NotoSans(0) on inpu
-t line 1107.
-LaTeX Font Info:    No file OT1NotoSans(0).fd. on input line 1107.
+t line 1129.
+LaTeX Font Info:    No file OT1NotoSans(0).fd. on input line 1129.
 
 
 LaTeX Font Warning: Font shape `OT1/NotoSans(0)/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 1107.
+(Font)              using `OT1/cmr/m/n' instead on input line 1129.
 
 
 LaTeX Font Warning: Font shape `OT1/NotoSans(0)/m/n' in size <5.5> not availabl
 e
-(Font)              size <5> substituted on input line 1107.
+(Font)              size <5> substituted on input line 1129.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1109.
+(mdframed)              on input line 1131.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1115.
-
-
-[34]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1152.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1161.
+(mdframed)              on input line 1137.
 
 
 [35]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1184.
+(mdframed)              on input line 1174.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1189.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1212.
+(mdframed)              on input line 1183.
 
 
 [36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1231.
+(mdframed)              on input line 1206.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1240.
+(mdframed)              on input line 1211.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1246.
+(mdframed)              on input line 1234.
 
 
 [37]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1300.
+(mdframed)              on input line 1253.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1310.
+(mdframed)              on input line 1262.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1268.
 
 
 [38]
-Package mdframed Info: Not enough space on this page on input line 1312.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1317.
+(mdframed)              on input line 1322.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1330.
+(mdframed)              on input line 1332.
 
 
 [39]
+Package mdframed Info: Not enough space on this page on input line 1334.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1342.
+(mdframed)              on input line 1339.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1351.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1375.
+(mdframed)              on input line 1352.
 
 
 [40]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1382.
+(mdframed)              on input line 1364.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1391.
+(mdframed)              on input line 1373.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1414.
+(mdframed)              on input line 1397.
 
 
 [41]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1423.
+(mdframed)              on input line 1404.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1429.
+(mdframed)              on input line 1413.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1439.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1448.
-Package mdframed Info: Not enough space on this page on input line 1450.
+(mdframed)              on input line 1436.
 
 
 [42]
-Package mdframed Info: Not enough space on this page on input line 1450.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1453.
+(mdframed)              on input line 1445.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1458.
+(mdframed)              on input line 1451.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1463.
+(mdframed)              on input line 1461.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1473.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1477.
+(mdframed)              on input line 1470.
+Package mdframed Info: Not enough space on this page on input line 1472.
 
 
 [43]
+Package mdframed Info: Not enough space on this page on input line 1472.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1486.
+(mdframed)              on input line 1475.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1480.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1485.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1495.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1522.
+(mdframed)              on input line 1499.
 
 
 [44]
-Package mdframed Info: Not enough space on this page on input line 1524.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1529.
+(mdframed)              on input line 1508.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1538.
+(mdframed)              on input line 1517.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1544.
 
 
 [45]
-
-[46]
+Package mdframed Info: Not enough space on this page on input line 1546.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1561.
+(mdframed)              on input line 1551.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1560.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1566.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1590.
 
+
+[46]
 
 [47]
-Package mdframed Info: Not enough space on this page on input line 1592.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1602.
+(mdframed)              on input line 1583.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1620.
-
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 1622.
-
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 1622.
+(mdframed)              on input line 1592.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1597.
 
 
 [48]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 1622.
-
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1621.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1633.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1638.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1654.
 
 
 [49]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1651.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1664.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1669.
+
 
 [50]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1671.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1676.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1689.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1704.
+(mdframed)              on input line 1685.
 
 
 [51]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1717.
+(mdframed)              on input line 1702.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1730.
+(mdframed)              on input line 1707.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1720.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1735.
 
 
 [52]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1755.
+(mdframed)              on input line 1748.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1775.
+(mdframed)              on input line 1761.
 
 
 [53]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1783.
+(mdframed)              on input line 1786.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1797.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1800.
+(mdframed)              on input line 1806.
 
 
 [54]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1824.
+(mdframed)              on input line 1814.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1838.
+(mdframed)              on input line 1828.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1860.
+(mdframed)              on input line 1831.
 
 
 [55]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1898.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 190
-8.
- (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
+(mdframed)              on input line 1855.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1869.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1891.
+
 
 [56]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1941.
+(mdframed)              on input line 1929.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 193
+9.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
+
+[57]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1959.
+(mdframed)              on input line 1972.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1990.
 
-Overfull \hbox (5.44507pt too wide) in paragraph at lines 1968--1969
+Overfull \hbox (5.44507pt too wide) in paragraph at lines 1999--2000
 []\TU/NotoSerif(1)/m/n/10 De-scribe the finitely gen-er-ated abelian group $[][
 ]\OMX/MnSymbolE/m/n/10 \U/ntxsym/m/n/10 Z\OMX/MnSymbolE/m/n/10 ~\OT1/NotoSeri
 f-TLF/m/n/10 9\U/ntxsym/m/n/10 Z\OML/notomi/m/it/10 ; \U/ntxsym/m/n/10 Z\OMX/Mn
@@ -2866,209 +2864,209 @@ n/10 
 
 
 
-[57]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2025.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2037.
-Package mdframed Info: Not enough space on this page on input line 2039.
-
-
 [58]
-Package mdframed Info: Not enough space on this page on input line 2039.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2050.
+(mdframed)              on input line 2056.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2068.
+Package mdframed Info: Not enough space on this page on input line 2070.
 
 
 [59]
+Package mdframed Info: Not enough space on this page on input line 2070.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2081.
+
 
 [60]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2105.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2123.
-
 
 [61]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
+(mdframed)              on input line 2136.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
 (mdframed)              on input line 2154.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2168.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2186.
-Package mdframed Info: Not enough space on this page on input line 2188.
 
 
 [62]
-Package mdframed Info: Not enough space on this page on input line 2188.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2224.
+(mdframed)              on input line 2185.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2199.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2217.
+Package mdframed Info: Not enough space on this page on input line 2219.
 
 
 [63]
+Package mdframed Info: Not enough space on this page on input line 2219.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2268.
+(mdframed)              on input line 2255.
+
+
+[64]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2299.
 
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 2278.
+(mdframed)                or something else on input line 2309.
 
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 2278.
-
-
-[64]
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 2278.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2312.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2325.
-Package mdframed Info: Not enough space on this page on input line 2327.
+(mdframed)              on input line 2309.
 
 
 [65]
-Package mdframed Info: Not enough space on this page on input line 2327.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 2309.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2343.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2356.
+Package mdframed Info: Not enough space on this page on input line 2358.
 
 
 [66]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2353.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2376.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2393.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 2399.
+Package mdframed Info: Not enough space on this page on input line 2358.
 
 
 [67]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2410.
+(mdframed)              on input line 2384.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2407.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2424.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 2430.
 
 
 [68]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2452.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2473.
+(mdframed)              on input line 2441.
 
 
 [69]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2498.
+(mdframed)              on input line 2483.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2523.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2544.
-Package mdframed Info: Not enough space on this page on input line 2549.
+(mdframed)              on input line 2504.
 
 
 [70]
-Package mdframed Info: Not enough space on this page on input line 2549.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2568.
+(mdframed)              on input line 2529.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2574.
+(mdframed)              on input line 2554.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2575.
+Package mdframed Info: Not enough space on this page on input line 2580.
 
 
 [71]
-
-[72]
+Package mdframed Info: Not enough space on this page on input line 2580.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2637.
+(mdframed)              on input line 2599.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2605.
 
+
+[72]
 
 [73]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2667.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2688.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2708.
-Package mdframed Info: Not enough space on this page on input line 2710.
+(mdframed)              on input line 2668.
 
 
 [74]
-Package mdframed Info: Not enough space on this page on input line 2710.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2745.
+(mdframed)              on input line 2698.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2719.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2739.
+Package mdframed Info: Not enough space on this page on input line 2741.
 
 
 [75]
+Package mdframed Info: Not enough space on this page on input line 2741.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2771.
+(mdframed)              on input line 2776.
 
 
 [76]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2790.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2816.
+(mdframed)              on input line 2802.
 
 
 [77]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2848.
+(mdframed)              on input line 2821.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2866.
+(mdframed)              on input line 2847.
 
 
 [78]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2889.
+(mdframed)              on input line 2879.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2897.
 
 
 [79]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2907.
+(mdframed)              on input line 2920.
 
 
 [80]
-Overfull \hbox (10.07617pt too wide) in paragraph at lines 2968--2970
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2938.
+
+
+[81]
+Overfull \hbox (10.07617pt too wide) in paragraph at lines 2999--3001
 \TU/NotoSerif(1)/m/n/10 We can sim-plify this ex-pres-sion fur-ther. Us-ing the fact that $[]\OMX/MnSymbolE/m/n/10 
 \OT1/NotoSerif-TLF/m/n/10 1\OMX/MnSymbolE/m/n/10 ~\OT1/NotoSerif-TLF/m/n/10
  2\OMX/MnSymbolE/m/n/10  [][]\OML/notomi/m/it/10 x\OMX/MnSymbolE/m/n/10 
@@ -3077,9 +3075,9 @@ Overfull \hbox (10.07617pt too wide) in paragraph at lines 2968--2970
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2974.
+(mdframed)              on input line 3005.
 
-Overfull \hbox (3.26892pt too wide) in paragraph at lines 2975--2976
+Overfull \hbox (3.26892pt too wide) in paragraph at lines 3006--3007
 [][]\TU/NotoSerif(1)/b/n/10 Prob-lem 2014-J-I-4. []\TU/NotoSerif(1)/m/n/10 Use 
 the method of residues to com-pute the im-proper in-te-gral $[][] [] \OML/notom
 i/m/it/10 dx$\TU/NotoSerif(1)/m/n/10 . 
@@ -3087,150 +3085,148 @@ i/m/it/10 dx$\TU/NotoSerif(1)/m/n/10 .
 
 
 
-[81]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3027.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3077.
-Package mdframed Info: Not enough space on this page on input line 3079.
-
-
 [82]
-Package mdframed Info: Not enough space on this page on input line 3079.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3096.
+(mdframed)              on input line 3058.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 3108.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3123.
-Package mdframed Info: Not enough space on this page on input line 3129.
+Package mdframed Info: Not enough space on this page on input line 3110.
 
 
 [83]
-Package mdframed Info: Not enough space on this page on input line 3129.
+Package mdframed Info: Not enough space on this page on input line 3110.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3138.
+(mdframed)              on input line 3127.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3149.
+(mdframed)              on input line 3139.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3154.
+Package mdframed Info: Not enough space on this page on input line 3160.
 
 
 [84]
+Package mdframed Info: Not enough space on this page on input line 3160.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3169.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 3180.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 3220.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 6.56995pt on input line 3220.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 4.94997pt on input line 3220.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3230.
 
 
 [85]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3245.
+(mdframed)              on input line 3211.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 3251.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 6.56995pt on input line 3251.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 4.94997pt on input line 3251.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3261.
 
 
 [86]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3276.
+
 
 [87]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3328.
-
 
 [88]
-
-[89]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3414.
+(mdframed)              on input line 3359.
 
+
+[89]
 
 [90]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3438.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3482.
+(mdframed)              on input line 3445.
 
 
 [91]
-Package mdframed Info: Not enough space on this page on input line 3484.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3469.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3513.
 
 
 [92]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3536.
+Package mdframed Info: Not enough space on this page on input line 3515.
 
 
 [93]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3567.
+
 
 [94]
 
 [95]
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-
 
 [96]
-LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
-(Font)              scaled to size 10.0pt on input line 3705.
-LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
-(Font)              scaled to size 7.3pt on input line 3705.
-LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
-(Font)              scaled to size 5.5pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 10.0pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 7.3pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 5.5pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 10.0pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 7.3pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 5.5pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 10.0pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 7.3pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 5.5pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 10.0pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 7.3pt on input line 3705.
-LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 5.5pt on input line 3705.
+Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
+Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
+Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
+Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
 
 
 [97]
+LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
+(Font)              scaled to size 10.0pt on input line 3736.
+LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
+(Font)              scaled to size 7.3pt on input line 3736.
+LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
+(Font)              scaled to size 5.5pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
+(Font)              scaled to size 10.0pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
+(Font)              scaled to size 7.3pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
+(Font)              scaled to size 5.5pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
+(Font)              scaled to size 10.0pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
+(Font)              scaled to size 7.3pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
+(Font)              scaled to size 5.5pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
+(Font)              scaled to size 10.0pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
+(Font)              scaled to size 7.3pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
+(Font)              scaled to size 5.5pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
+(Font)              scaled to size 10.0pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
+(Font)              scaled to size 7.3pt on input line 3736.
+LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
+(Font)              scaled to size 5.5pt on input line 3736.
+
 
 [98]
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 3838.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 5.57996pt on input line 3838.
-
 
 [99]
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 3869.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 5.57996pt on input line 3869.
+
 
 [100]
 
@@ -3258,7 +3254,9 @@ LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
 
 [112]
 
-[113] (./past_exams.aux)
+[113]
+
+[114] (./past_exams.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -3272,19 +3270,19 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `past_exams.out' has not changed.
-(rerunfilecheck)             Checksum: 3427ABCFED9461E8B5E6C056D28C77E8;34657.
+(rerunfilecheck)             Checksum: 01A5BF6671A0CC97F9846180B9D2E5A5;35122.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40250 strings out of 475915
+ 40262 strings out of 475915
  156439,1977958 words of node,token memory allocated
- 10993 words of node memory still in use:
-   36 hlist, 6 vlist, 5 rule, 12 math, 68 glue, 31 kern, 740 glyph, 1012 attribu
-te, 111 glue_spec, 1012 attribute_list, 2 write nodes
-   avail lists: 1:8,2:2418,3:1155,4:713,5:1002,6:202,7:10549,8:102,9:1764,10:25,
+ 11126 words of node memory still in use:
+   36 hlist, 6 vlist, 5 rule, 12 math, 69 glue, 31 kern, 750 glyph, 1026 attribu
+te, 111 glue_spec, 1026 attribute_list, 2 write nodes
+   avail lists: 1:8,2:2418,3:1155,4:718,5:1011,6:202,7:10549,8:102,9:1764,10:25,
 11:585
- 60952 multiletter control sequences out of 65536+600000
- 489 fonts using 51731991 bytes
+ 60956 multiletter control sequences out of 65536+600000
+ 490 fonts using 52253279 bytes
  101i,22n,147p,2290b,1419s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{c:/texlive/2
 024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{c:/texlive/2024/texmf-dis
@@ -3312,10 +3310,10 @@ c:/texlive/2024/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texliv
 e/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2024/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf
 -dist/fonts/type1/public/newtx/txsym.pfb>
-Output written on past_exams.pdf (113 pages, 1028147 bytes).
+Output written on past_exams.pdf (114 pages, 1035436 bytes).
 
-PDF statistics: 2151 PDF objects out of 2487 (max. 8388607)
- 1985 compressed objects within 20 object streams
- 703 named destinations out of 1000 (max. 131072)
- 1776 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2180 PDF objects out of 2487 (max. 8388607)
+ 2012 compressed objects within 21 object streams
+ 711 named destinations out of 1000 (max. 131072)
+ 1800 words of extra memory for PDF output out of 10000 (max. 100000000)
 
