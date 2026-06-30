@@ -408,6 +408,18 @@
 	\end{prb}
 	Let $\Sigma_{2}$ be a compact oriented surface of genus 2. Suppose there exists a submersion $f: \Sigma_{2} \to S^{1} \times S^{1}$, where $S^{1}$ denotes the unit circle. By the Comps Lemma it follows that $f$ is a smooth covering map. Thus, the induced map $f_{\ast}: \pi_{1}(\Sigma_{2}) \to \pi_{1}(S^{1} \times S^{1}) \cong \pi_{1}(S^{1})\times \pi_{1}(S^{1}) \cong \mathbb{Z} \times \mathbb{Z}$ must be injective. However, $\pi_{1}(\Sigma_{2})$ is nonabelian, while $\mathbb{Z} \times \mathbb{Z}$ is abelian. Thus, by contradiction, there cannot be any submersion from $\Sigma_{2} \to S^{1} \times S^{1}$. 
 	
+	\begin{prb}{2024-A-I-2}
+		Suppose that $f: \Sigma_2 \to \Sigma_1$ is a continuous map between a genus 2 closed orientable surface $\Sigma_2$ and a torus $\Sigma_1$. Prove that $f$ is not a local homeomorphism. In other words, show that there exists a point $x \in \Sigma_2$ which does not have an open neighborhood $U \subset \Sigma_2$ on which the restriction $f|_U$ is a homeomorphism between $U$ and $f(U)$. 	
+	\end{prb}
+	Assume to the contrary that $f: \Sigma_2 \to \Sigma_1$ is a local homeomorphism. By the Comps Lemma, it follows that $f$ must be a finite $d$-sheeted covering map. Thus, we must have the relation $\chi_{\Sigma_2} = d \cdot \chi_{\Sigma_1}$. We compute, 
+		\begin{align*}
+			\begin{split}
+				\chi_{\Sigma_{2}} &= 2 - 2(2) = -2. \\
+				\chi_{\Sigma_{1}} &= 2 - 2(1) =0. 
+			\end{split} 
+		\end{align*}
+	Since there exists no finite positive constant $d$ such that $-2 = d \cdot 0$, we have reached a contradiction. Thus by contradiction, $f$ cannot be a local homeomorphism. 
+	
 	\begin{prb}{2024-A-I-5}
 		Determine whether or not the complex number $i = \sqrt{-1}$ is in the field $\mathbb{Q}(\alpha)$, where $\alpha$ is any complex number subject to the relation $\alpha^{3} + \alpha + 1$. Justify your answer. 
 	\end{prb}
@@ -467,6 +479,11 @@
 		\chi(\Sigma_{2}) = 2 - 2(2) = 2-4 = -2 \qquad \text{and} \qquad \chi(\Sigma_{1}) = 2 - 2(1) = 0. 
 	\end{equation*}
 	Since $k \cdot 0= 0 \neq -2$, we have reached a contradiction. Thus by contradiction, there cannot be a local homeomorphism from $\Sigma_{2}$ to $\Sigma_{1}$. 
+	
+	\begin{prb}{2015-J-I-4}
+		Let $\Sigma$ be a compact connected orientable surface of genus 4. Let $C \subseteq \Sigma$ be an embedded circle that separates the surface into two homeomorphic pieces. Prove that there is no continuous function $r: \Sigma \to C$ such that $r(x) = x$ for every $x \in C$. 
+	\end{prb}
+	Let $\Sigma$ be a compact connected orientable surface of genus 4, and let $C \subseteq \Sigma$ be an embedded circle that separates the surface into two homeomorphic pieces. Assume to the contrary that there exists a continuous function $r: \Sigma \to C$ such that $r(x) = x$ for every $x\in C$. Then since $r \circ i = \operatorname{id}_{C}$, one has that $(r \circ i)_\ast = \operatorname{id}_{H_{1}(C;\mathbb{Z})}$. Therefore, the map $i_\ast: H_1(C;\mathbb{Z}) \to H_1(\Sigma; \mathbb{Z})$ is injective. Let $A$ denote one of the two pieces the circle $C$ separates $\Sigma$ into; since $A$ is a compact and orientable 2-manifold, $A$ is a 2-chain with boundary $C$. Thus $[C]$ is the zero class in $H_1(\Sigma;\mathbb{Z})$. But $[C]$ is a generator of $H_1(C;\mathbb{Z})$ and thus nonzero. This is a contradiction. Thus, by contradiction, we conclude that there cannot exist a retraction $r: \Sigma \to C$. 
 	
 	\begin{prb}{2011-J-I-3}
 		Let $\Sigma$ be the double torus (i.e., a compact oriented surface of genus 2) and $T = S^{1} \times S^{1}$ the torus, where $S^{1}$ is the circle. Suppose that $f: \Sigma \to T$ is continuous. Show that $f$ is not a local homeomorphism. 
@@ -749,6 +766,33 @@
 		\end{cases}
 	\end{equation*}
 	
+	\begin{prb}{2022-J-II-1}
+		Let $M$ be a smooth connected manifold. Show that $M$ has a 2-fold cover $\ti{M}$ which is an orientable smooth manifold. What can you say about $\pi_0(\ti{M})$ if $M$ is not orientable? 
+	\end{prb}
+	Let $M$ be a smooth connected manifold. Essentially, we have to construct the orientation cover for $M$, which we will do as follows. Define 
+		\begin{equation*}
+			\ti{M} = \{(p, \mathcal{O}_{p}): p \in M \text{ and } \mathcal{O}_{p} \text{ is an orientation of $T_pM$}\}. 
+		\end{equation*}
+	Define the projection map $\hat{\pi}: \ti{M} \to M$ which sends an orientation of $T_pM$ to the point $p$ itself (i.e., $\hat{\pi}(p,\mathcal{O}_{p}) = p$). Since each tangent space has exactly two orientations, each fiber of this map has cardinality exactly 2. We will now show that $\hat{\pi}$ is a generalized covering map. For each pair $(U, \mathcal{O})$, where $U$ is an open subset of $M$ and $\mathcal{O}$ is an orientation for $U$, define a subset $\hat{U}_{\mathcal{O}} \subset \ti{M}$  as follows: 
+	\begin{equation*}
+		\hat{U}_{\mathcal{O}} = \{(p, \mathcal{O}_{p}) \in \ti{M}: p \in U \text{ and $\mathcal{O}_{p}$ is the orientation of $T_pM$ determined by $\mathcal{O}$}\}. 
+	\end{equation*}
+	Consider now an arbitrary point $(p,\mathcal{O}_{p}) \in \ti{M}$, and let $U$ be an orientable neighborhood of $p$ in $M$, and let $\mathcal{O}$ be an orientation on it. By replacing $\mathcal{O}$ by $-\mathcal{O}$ if necessary, we may assume that the given orientation $\mathcal{O}_{p}$ is the same as the orientation of $T_pM$ determined by $\mathcal{O}$. Thus, $(p, \mathcal{O}_{p}) \in \hat{U}_{\mathcal{O}}$. This shows that the collection of all sets of the form $\hat{U}_{\theta}$ covers $\ti{M}$. Now let $V$ be the component of $U \cap U'$ containing $p$. Then the restricted orientations $\mathcal{O}_{V}$ and $\mathcal{O}'_{V}$ agree at $p$, and therefore are identical. Therefore, $\hat{U}_{\mathcal{O}} \cap \hat{U}'_{\mathcal{O}}$ contains the basis set $\hat{V}_{\mathcal{O}\mid_V}$. Therefore, we have constructed a topology on $\ti{M}$. Note that for each orientable open subset $U \subseteq M$ and each orientation $\mathcal{O}$ of $U$, $\hat{\pi}$ maps the basis set $\hat{U}_{\mathcal{O}}$ bijectively onto $U$. Thus $\hat{\pi}$ is a local homeomorphism. 
+	
+	Now suppose that $U \subseteq M$ is an orientable connected open subset and $\mathcal{O}$ is an orientation for $U$. Then $\hat{\pi}^{-1}(U)$ is the disjoint union of open subsets $\hat{U}_\mathcal{O}$ and $\hat{U}_{-\mathcal{O}}$, and $\hat{\pi}$ restricts to a homeomorphism from each of these sets to $U$ Therefore, each such set $U$ is evenly covered, which shows that $\hat{\pi}$ is a generalized covering map. On each component of $\ti{M}$, $\hat{\pi}$ restricts to an ordinary covering map, and so each such component is a topological $n$-manifold and has a unique smooth structure making $\hat{\pi}$ into a smooth covering map. This induces a smooth structure on $\ti{M}$. 
+	
+	Now we will show that $\ti{M}$ is orientable. Let $\hat{p} = (p, \mathcal{O}_{p})$ be a point in $\ti{M}$. By definition, $\mathcal{O}_{p}$ is an orientation of $T_p M$, so that we can give $T_{\hat{p}}\ti{M}$ the unique orientation $\hat{\mathcal{O}}_{\hat{p}}$ such that $d\hat{\pi}_{\hat{p}}: T_{\hat{p}}\ti{M} \to T_p M$is orientation-preserving. This defines a pointwise orientation on $\ti{M}$. On each basis open subset $\hat{U}_{\mathcal{O}}$, the orientation $\hat{\mathcal{O}}$ agrees with the pullback orientation induced from $(U, \mathcal{O})$ by $\hat{\pi}$, so it is continuous. Thus, we have shown that $M$ has a 2-fold cover $\ti{M}$ which is an orientable smooth manifold. Now note that $|\pi_0(\ti{M})|$ is equivalent to the number of connected components of $\ti{M}$. If $M$ is not orientable, then we claim that $\ti{M}$ is connected. If $\ti{M}$ were not connected, a connected component would map diffeomorphically onto $M$ and thus choose a global orientation on $M$. Therefore, since $\ti{M}$ is connected, we conclude that $\pi_0(\ti{M})$ is trivial. 
+	
+	\begin{prb}{2012-A-II-3}
+		Prove that every smooth, connected manifold whose fundamental group has finite, odd order is an orientable manifold. 
+	\end{prb}
+	Let $M$ be a smooth, connected manifold whose fundamental group has finite, odd order. Let $\hat{M}$ denote the orientation cover on $M$, and let $p: \hat{M} \to M$ denote the covering map. Since $p$ is a covering map, one has that $p_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ is injective, and thus $p_\ast(\pi_1(\hat{M}, x_0)) \leq \pi_1(M, p(x_0))$. If $M$ is \textit{not} orientable (i.e., $\hat{M}$ is a connected space), then since $p$ is a 2-sheeted covering space, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M,p(x_0))$. By Lagrange's theorem, it follows that $2$ is a divisor of the order of the fundamental group of $M$, so that it has even order. This is a contradiction! Thus by contradiction, $M$ must be orientable. 
+	
+	\begin{prb}{2009-A-I-4}
+		Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. If $\pi_1(M)$ is a simple group, prove that $M$ is an orientable manifold. 
+	\end{prb}
+	Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. Further assume that $\pi_1(M)$ is a simple group. 
+	
 	\begin{prb}{2003-J-II-5}
 		Is the unit sphere $\mathbb{S}^{3}$ diffeomorphic to the product of two other smooth manifolds of dimension $> 0$? 
 	\end{prb}
@@ -876,6 +920,15 @@
 	I.e., $\mathcal{D}f$ does not follow the correct transformation law for tangent vector fields, so that the proof concludes.  
 	
 	\subsection{Covering Spaces}
+	
+	\begin{prb}{2026-J-II-1}
+		For every even integer $g$ and $g$-holed torus $\Sigma_g$, prove that there is no continuous, fixed-point free orientation-preserving involution of $\Sigma_g$. 
+	\end{prb}
+	Let $g$ be an even integer, $\Sigma_g$ be a $g$-holed torus, and assume to the contrary that there exists a fixed-point free orientation-preserving involution $\tau: \Sigma_g \to \Sigma_g$. Since $\tau^2 = \operatorname{id}$, $\tau$ defines a free action of $\mathbb{Z}/2\mathbb{Z}$ on $\Sigma_g$. Therefore, the quotient space $X = \Sigma_g/\braket{\tau}$ is a closed surface, and the quotent mapping $\Sigma_g \to X$ is a 2-sheeted covering map. Since $\tau$ is orientation-preserving, $X$ is orientable. Therefore, $X \cong \Sigma_h$ for some $h \geq 0$. The genus of $\Sigma_h$ is $2 -2h$. And since $\Sigma_g$ is a 2-sheeted covering space of $\Sigma_h$, we must have 
+	\begin{equation*}
+		2 - 2g = 2(2 - 2h) = 4 - 4h \implies 2g = 4h -2 \implies g = 2h -1, 
+	\end{equation*}
+	which contradicts our hypothesis that $g$ is even. Thus by contradiction, there cannot be a fixed-point free orientation-preserving involution. 
 	
 	\begin{prb}{2023-J-I-3}
 		Show that if $M$ is a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover, then its fundamental group is either trivial or $\mathbb{Z}/2\mathbb{Z}$. 
@@ -3104,6 +3157,7 @@
 			\int_{-\infty}^{\infty}\frac{1}{x^4 + 1}\;dx= \frac{\pi}{\sqrt{2}}. 
 		\end{equation*}
 	
+
 	\subsection{Holomorphic Functions}
 	\begin{prb}{2026-J-II-4}
 		Let $U$ be an open subset of $\mathbb{C}$. Let $(f_{j}(z))$ be a collection of holomorphic functions on $U$ that converges uniformly on every compact subset. Carefully prove that the pointwise limit is holomorphic. 
