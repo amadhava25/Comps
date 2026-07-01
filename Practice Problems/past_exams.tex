@@ -41,10 +41,13 @@
 	\begin{enumerate}[itemsep=-2pt,label = (\arabic{*})]
 		\item Any problem that has the format ``\verb|{20--}-{ }-{ }-{ }|'' or ``\verb|{19--}-{ }-{ }-{ }|'' are questions from past comprehensive exams. The labels indicate (1) in what year, (2) in what month, (3) in which part, and (4) in what the order the problem was given, respectively. 
 		\item Any problem that has the format ``\verb|LSM-{ }-{ }|'' was taken from Lee's \textit{Introduction to Smooth Manifolds} (2nd Ed.)
-		\item Any problem that the format ``\verb|D&F-{ }-{ }|'' was taken from Dummit\& Foote's \textit{Abstract Algebra} (3rd ed.)
+		\item Any problem that the format ``\verb|D&F-{ }-{ }|'' was taken from Dummit \& Foote's \textit{Abstract Algebra} (3rd ed.)
 		\item Any problem that has the format ``\verb|F-{ }-{ }-{ }|'' was taken from Folland's \textit{Real Analysis}.
 		\item Any problem that has the format ``\verb|SS-{ }-{ }|'' was taken from Stein and Shakarchi's \textit{Functional Analysis}.
 	\end{enumerate}
+	
+	Note that some problems may be repeated quite a few times; I've included repetitions because (1) I often revisited repeated problems a week apart to make sure I remembered the techniques, and (2) for sake of completeness. Often times, when writing up a proof the second or third time, I discovered a more efficient way. 
+	
 	Some resources I found indispensable while studying for this exam are: 
 	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
 		\item Math StackExchange 
@@ -370,8 +373,44 @@
 	\end{equation*}
 	This produces a contradiction. Therefore, we conclude that no such retraction $\Phi$ can exist. 
 	
+	\begin{prb}{1998-A-I-5}
+		Let $M$ be a $C^\infty$, oriented, $2n$-dimensional manifold without boundary. If $\theta$ is a $C^\infty$ one-form on $M$, define the $C^\infty$ $2n$-form $\omega_\theta$ by $\omega_\theta = d\theta \wedge \dotsm \wedge d\theta$; here we are wedging together $n$ copies of $d\theta$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show that if $M$ is compact, then for any $\theta$, $\omega_\theta$ must vanish somewhere on $M$. 
+			\item If $M = \mathbb{R}^{2n}$, show that there exist $\theta$ for which $\omega_\theta$ is nowhere vanishing. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $M$ be a smooth, oriented, $2n$-dimensional manifold without boundary. Assume to the contrary that there exists some smooth one-form $\theta$ so that $\omega_{\theta}$ is a nowhere-vanishing smooth $2n$-form on $M$. Then $\omega_\theta$ is an orientation form on $M$; equipping $M$ with the orientation induced by $\omega_{\theta}$, one has 
+		\begin{equation*}
+			\int_{M}\omega_{\theta} = \int_{M}d\theta \wedge \dotsm \wedge d\theta > 0.
+		\end{equation*}
+		But then we note that 
+		\begin{equation*}
+			\omega_\theta = \underbrace{d\theta \wedge \dotsm \wedge d\theta}_{n \text{ copies}} = d(\theta \wedge (\underbrace{d\theta \wedge \dotsm\wedge d\theta}_{n - 1 \text{ copies}})). 
+		\end{equation*}
+		Thus by Stokes' Theorem, one has 
+		\begin{equation*}
+			0 < \int_{M}\omega_\theta = \int_{\partial M}\theta \wedge (d\theta \wedge \dotsm \wedge d\theta) = 0 \qquad (\text{since $\partial M= \varnothing$}), 
+		\end{equation*}
+		which is a contradiction! Thus by contradictio, $\omega_\theta$ must vanish somewhere on $M$. 
+		\item Now let $M = \mathbb{R}^{2n}$  We will explicitly construct a $\theta$ for which $\omega_\theta$ is nowhere vanishing. Let $(x_1, x_2, \ldots, x_{2n})$ be standard coordinates on $M$, and define the 1-form 
+			\begin{equation*}
+				\theta = x_1\;dx_2 + x_3\;dx_4 + \dotsm + x_{2n-1}\;dx_{2n}, 
+			\end{equation*}
+		so that 
+			\begin{equation*}
+				d\theta = dx_1\wedge dx_2 + \dotsm + dx_{2n-1} \wedge dx_{2n}. 
+			\end{equation*}
+		This implies that 
+		\begin{equation*}
+			\omega_\theta = n!(dx_1 \wedge dx_2 \wedge \dotsm \wedge dx_n), 
+		\end{equation*}
+		which is nowhere vanishing on $M$ since $dx_1 \wedge dx_2 \wedge \dotsm \wedge dx_n$ is a volume form on $\mathbb{R}^2n$. Thus the proof concludes. 
+	\end{enumerate}
+	
 	\begin{prb}{1998-J-I-5}
-		Show that a nowhere vanishing 2-form on a compact orientable 2-dimensional manifold cannot be exact. 
+		Show that a nowhere vanishing 2-form on a compact orientable \newline 2-dimensional manifold cannot be exact. 
 	\end{prb}
 	
 	Let $M$ denote a compact orientable 2-dimensional manifold without boundary, and let $\omega$ be a nowhere vanishing 2-form on $M$. Assume to the contrary that $\omega$ is exact; i.e., assume there exists some 1-form $\alpha$ so that $\omega = d\alpha$. Since $\omega$ is nowhere vanishing, it is a volume form on $M$ so that if $M$ is equipped with the orientation induced 
@@ -746,6 +785,22 @@
 		\end{cases}.
 	\end{equation*}
 	
+	\begin{prb}{2006-A-I-2}
+		Prove that if there exists a degree one map from $S^2$ to an orientable surface $M$, then $M$ must in fact be homeomorphic to $S^2$. [Here $M$ is connected, compact, and without boundary.]
+	\end{prb}
+	
+	\begin{prb}{1997-A-II-2}
+		Let $M$ be a connected, simply connected smooth manifold. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show that $M$ is orientable. 
+			\item Show that the first de Rham cohomology of $M$ vanishes. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $M$ be a connected, simply connected smooth manifold; i.e., let $\pi_{1}(M)= \{1\}$. Let $\hat{M}$ be the orientation cover of $M$, and let $\hat{p}: \hat{M} \to M$ be the 2-sheeted covering map. Note that the induced map $\hat{p}_\ast: \pi_1(\hat{M}, x_0) \to \pi_1(\hat{M}, p(x_0))$ is injective. Assume to the contrary that $M$ is not orientable. Then $\hat{p}_\ast(\pi_1(\hat{M}),x_0)$ is an index-2 subgroup of $\pi_1(M, p(x_0))$. But the trivial group has no index-2 subgroups. Thus by contradiction, $M$ must be orientable. 
+		\item Since $M$ is a connected smooth manifold, we note that $H^{1}_{\text{dR}}(M) \cong \operatorname{Hom}(\pi_1(M), \mathbb{R})$. Since $M$ is simply connected ($\pi_1(M)$ is trivial), $\operatorname{Hom}(\pi_1(M), \mathbb{R})$ must be a trivial group. Therefore, the first de Rham cohomology group of $M$ is also trivial, concluding the proof. 
+	\end{enumerate}
+	
 	\newpage 
 	\subsection{Fundamental Groups}
 	\begin{prb}{2023-J-II-4}
@@ -791,7 +846,7 @@
 	\begin{prb}{2009-A-I-4}
 		Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. If $\pi_1(M)$ is a simple group, prove that $M$ is an orientable manifold. 
 	\end{prb}
-	Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. Further assume that $\pi_1(M)$ is a simple group. 
+	Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. Further assume that $\pi_1(M)$ is a simple group. Let $\hat{M}$ be the orientation cover of $M$, and let $\hat{p}: \hat{M} \to M$ denote the covering map; $\hat{p}_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ must be an injective map. Assume to the contrary that $M$ is non-orientable. Then since $\hat{p}$ is a 2-sheeted covering map, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M, p(x_0))$. Since any subgroup of index 2 is normal, $p_\ast(\pi_1(\hat{M}, x_0))$ is a normal subgroup of $\pi_1(M, p(x_0))$. Since this subgroup has index 2, it cannot be the entire group. On the other hand, it cannot be the trivial subgroup either (the index of the trivial subgroup is precisely $|\pi_1(M, p(x_0))| \geq 3$). Therefore, we have shown that $\pi_1(M, x_0)$ has a proper nontrivial normal subgroup, which contradicts our hypothesis that it is a simple group. Thus by contradiction, $M$ must be an orientable manifold. 
 	
 	\begin{prb}{2003-J-II-5}
 		Is the unit sphere $\mathbb{S}^{3}$ diffeomorphic to the product of two other smooth manifolds of dimension $> 0$? 
@@ -850,6 +905,10 @@
 		\item Let $f: \mathbb{RP}^2 \to X$ be an arbitrary continuous map. $f$ induces a group homomorphism $f_{\ast}: \pi_1(\mathbb{RP}^2, x_{0}) \to \pi_1(X, x_0)$. Since $\pi_1(\mathbb{RP}^2,x_0) \cong \mathbb{Z}/2\mathbb{Z}$ is a torsion group while we just showed $\pi_{1}(X,x_0)$ to be a free group, it follows that $f_\ast$ must be trivial. Let $\ti{X}$ be the universal cover of $X$ (which we know exists since $X$ is locally path connected and semilocally simply connected). Let $p: \ti{X} \to X$ be the covering map. Since $f_\ast$ is trivial, then $f_\ast(\pi_1(\mathbb{RP}^2,x_0)) \subset p_\ast(\pi_1(\ti{X}, x_0))$. So by the lifting criterion, there exists a lift $\ti{f}: \mathbb{RP}^2 \to \ti{X}$ of $f$. But since $\ti{X}$ is contractible, $\ti{f}$ must be nullhomotopic. Thus it follows that $f$ is also nullhomotopic. The proof concludes. 
 	\end{enumerate}
 	
+	\begin{prb}{2001-A-I-6}
+		Let $M$ be a connected smooth manifold. Suppose that the fundamental group $\pi_1(M)$ is a finite group whose order $|\pi_1(M)|$ is odd. Show that $M$ is orientable. 
+	\end{prb}
+	Let $M$ be a smooth, connected manifold whose fundamental group has finite, odd order. Let $\hat{M}$ denote the orientation cover on $M$, and let $p: \hat{M} \to M$ denote the covering map. Since $p$ is a covering map, one has that $p_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ is injective, and thus $p_\ast(\pi_1(\hat{M}, x_0)) \leq \pi_1(M, p(x_0))$. If $M$ is \textit{not} orientable (i.e., $\hat{M}$ is a connected space), then since $p$ is a 2-sheeted covering space, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M,p(x_0))$. By Lagrange's theorem, it follows that $2$ is a divisor of the order of the fundamental group of $M$, so that it has even order. This is a contradiction! Thus by contradiction, $M$ must be orientable. 
 	
 	\begin{prb}{R-DGT-1}
 		Compute the fundamental group of the 2-torus $T$ using the Seifert-van Kampen Theorem. 
@@ -930,6 +989,19 @@
 	\end{equation*}
 	which contradicts our hypothesis that $g$ is even. Thus by contradiction, there cannot be a fixed-point free orientation-preserving involution. 
 	
+	\begin{prb}{2025-J-II-2}
+		Determine all path connected covering spaces having base space $\mathbb{RP}^2 \times \mathbb{RP}^2$, up to equivalence, where two covering spaces $\pi_1: X \to \mathbb{RP}^2 \times \mathbb{RP}^2$ and $\pi_2: Y \to \mathbb{RP}^2 \times \mathbb{RP}^2$ are defined to be equivalent if there is a homeomorphism $\phi: X \to Y$ such that $\pi_1 = \pi_2 \circ \phi$. 
+	\end{prb}
+	Let $X$ denote the base space $\mathbb{RP}^2 \times \mathbb{RP}^2$. By the Galois correspondence of covering spaces, there exists a one-to-one correspondence between isomorphism classes of connected covering spaces and conjugacy classes of subgroups of $\pi_1(X)$. Since $\pi_1(\mathbb{RP}^2) \cong \mathbb{Z}/2\mathbb{Z}$, $\pi_1(x) \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$. We note the following subgroups of $\pi_1(X)$: 
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item The whole group, $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \cong \braket{(0,1),(1,0)}$ 
+		\item $\{(0,0), (1,1)\}$
+		\item $\{(0,0), (0,1)\} \cong \{0\} \times \mathbb{Z}/2\mathbb{Z}$ 
+		\item $\{(0,0), (1,0)\} \cong \mathbb{Z}/2\mathbb{Z} \times \{0\}$. 
+		\item The trivial subgroup, $\{(0,0)\}$
+	\end{enumerate}
+	Since $\pi_1(X)$ is abelian, every subgroup is normal, which means that each of the above subgroups belongs to its own conjugacy class. The trivial subgroup corresponds to the covering space $S^2 \times S^2$, which is path connected since $S^2$ is path connected. The whole group itself corresponds to the covering space $\mathbb{RP}^2 \times \mathbb{RP}^2$, which is path-connected since each $\mathbb{RP}^2$ is a path-connected space. The subgroups $\{(0,0), (0,1)\}, \{(0,0),(1,0)\}$ correspond to the path-connected spaces $S^2 \times \mathbb{RP}^2$ and $\mathbb{RP}^2 \times S^2$. Now we know that every manifold $M$ has an orientable orientation cover (which corresponds with an index 2 subgroup of $\pi_1(M)$). Since neither $\{(0,0), (0,1)\}$ nor $\{(0,0), (1,0)\}$ (which are the only other index 2 subgroups) correspond to orientable covering spaces, it follows that $\{(0,0), (1,1)\}$ must correspond to the orientation cover of $X$. Thus since $X$ is non-orientable (since each factor is nonorientable), the orientation cover of $X$ must necessarily be path-connected. Thus up to isomorphism, $X$ has precisely 5 path-connected covering spaces, 2 of which are orientable. 
+	
 	\begin{prb}{2023-J-I-3}
 		Show that if $M$ is a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover, then its fundamental group is either trivial or $\mathbb{Z}/2\mathbb{Z}$. 
 	\end{prb}
@@ -983,6 +1055,18 @@
 		\item Now assume to the contrary that there is a covering map $p: Y \to X$. Then the induced map $p_{\ast}: \pi_{1}(Y) \to \pi_{1}(X)$ is an injective group homomorphism so that $\pi_{1}(Y)$ is isomorphic to some subgroup of $\pi_{1}(X)$. But since $\pi_{1}(X)$ is abelian, every one of its subgroups is abelian, while $\pi_{1}(Y)$ (the free group on two generators) is nonabelian. Thus by contradiction, $Y$ cannot be a covering space of $X$. 
 	\end{enumerate}
 	
+	\begin{prb}{2015-A-I-1}
+		Let $X = \mathbb{RP}^2 \times \mathbb{RP}^2$, where $\mathbb{RP}^2$ denotes the real projective plane. Find all possible connected covering spaces $\ti{X} \to X$ such that $\ti{X}$ is an orientable manifold. 
+	\end{prb}
+	Let $X$ denote the nonorientable, compact, connected space $\mathbb{RP}^2 \times \mathbb{RP}^2$, where $\mathbb{RP}^2$ is the real projective plane. By the Galois correspondence of covering spaces, the isomorphism classes of connected covering spaces of $X$ are in one-to-one correspondence with the conjugacy classes of subgroups of $\pi_1(X)$. Since $\pi_1(\mathbb{RP}^2) \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$, there are precisely five subgroups: 
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item The entire group, $\braket{(0,1),(1,0)}$. If $\ti{X}$ is a connected covering space with fundamental group isomorphic to $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$, then the covering map corresponds to the identity map $\operatorname{id}_{X}: X \to X$ so that $\ti{X} = \mathbb{RP}^2 \times \mathbb{RP}^2$, which is a nonorientable cover. 
+			\item The trivial subgroup $\{(0,0)\}$, which corresponds to $S^2 \times S^2$, which is an orientable connected manifold. 
+			\item The subgroup $\{(0,1), (0,0)\} \cong \{0\} \times \mathbb{Z}/2\mathbb{Z}$, which corresponds to the covering space $S^2 \times \mathbb{RP}^2$, which is nonorientable. 
+			\item The subgroup $\{(1,0) \times (0,0)\} \cong \mathbb{Z}/2\mathbb{Z} \times \{0\}$, which corresponds to the covering space $\mathbb{RP}^2 \times S^2$, which is nonorientable. 
+			\item The subgroup $\{(0,0),(1,1)\}$. This corresponds with the orientation cover of $X$, and thus is a connected orientable space of $X$. 
+		\end{enumerate}
+	
 	\begin{prb}{2013-J-II-5}
 		If $M$ and $N$ are compact 2-manifolds, their connected sum $M\#N$ is obtained by removing an open disk from each, and then identifying the resulting circle boundaries. It is a theorem that any smooth compact non-orientable surface without boundary is homeomorphic to an iterated connected sum
 		\begin{equation*}
@@ -1026,6 +1110,11 @@
 	\end{prb}
 	Let $p$ be a fixed prime number, and let $M = S^{1} \times S^{1}$ denote the 2-torus. We note that $M$ is connected and locally simply connected. Then by the Galois correspondence of covering spaces, the isomorphism classes of $p$-sheeted connected covering spaces of $M$ are in one-to-one correspondence with the index $p$-subgroups of $\pi_{1}(M)$. Since $\pi_{1}(S^{1}) \cong \mathbb{Z}$, we have $\pi_{1}(M) \cong \mathbb{Z} \times \mathbb{Z}$. In turn, the number of such subgroups is equivalent to the number of kernels of surjective group homomorphisms: $\phi: \pi_{1}(M) \twoheadrightarrow \mathbb{Z}/p\mathbb{Z}$. We note that $a = (1,0)$ and $b = (0,1)$ are the generators of $\pi_{1}(M)$. Then each homomorphism $\phi: \pi_{1}(M) \to \mathbb{Z}/p\mathbb{Z}$ is uniquely determined by where $\phi$ maps $a$ and $b$. Since $\mathbb{Z}/p\mathbb{Z}$ has $p$ elements, and $a, b$ can be mapped to any one of these elements, it follows that there are a total of $p^{2}$ homomorphisms from $\pi_{1}(M)$ to $\mathbb{Z}/p\mathbb{Z}$. However, a given homomorphism $\phi$ is not surjective if and only if neither $\phi(a)$ nor $\phi(b)$ is a generator of $\mathbb{Z}/p\mathbb{Z}$. Since $p$ is prime, this means that the only non-surjective group homomorphism is the trivial homomorphism. Therefore, there are exactly $p^{2} - 1$ surjective group homomorphisms from $\pi_{1}(M)$ onto $\mathbb{Z}/p\mathbb{Z}$. However, we must also account for the fact that two kernels may be the same up to multiplication by a constant (in which case, the corresponding connected $p$-sheeted covering spaces are isomorphic). Thus, we conclude that, up to isomorphism, there are exactly $(p^{2} - 1)/(p - 1) = p + 1$ $p$-sheeted connected covering spaces of $M$.
 	
+	\begin{prb}{2005-J-II-5}
+		Give an example of a topological space admitting exactly 3 coverings up to equivalence (including the space itself). 
+	\end{prb}
+	The Galois correspondence of covering spaces tells us that the isomorphism classes of connected covering spaces are in one-to-one correspondence with the conjugacy classes of subgroups of the fundamental group of the base space. Thus, consider e.g. the lens space $L(4;q)$, where $q$ is any positive integer. Since $\pi_1(L(4;q)) \cong \mathbb{Z}/4\mathbb{Z}$, and $\mathbb{Z}/4\mathbb{Z}$ has precisely 3 subgroups ($\{e\}, \{0,2\}, \mathbb{Z}/4\mathbb{Z}$), by the Galois correspondence, $L(4;q)$ must have precisely 3 connected covering spaces up to isomorphism. 
+
 	\begin{prb}{2004-A-I-5}
 		In this problem, the term ``surface'' means a compact orientable 2-manifold without boundary. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
@@ -1037,6 +1126,7 @@
 		\item Let $M$ denote a surface of genus 1. We claim that there is no covering space of $M$ that is homeomorphic to a surface of genus 2. Assume to the contrary that there exists a space $\ti{M}$ homeomorphic to a surface of genus 2 that is a $k$-sheeted covering space of $M$ for some finite $k$. Then we must have $\chi_{\ti{M}} = k \cdot \chi_{M}$, where $\chi_{\cdot}$ denotes the Euler characteristic. Since $\chi_{M} = 2- 2(1) = 0$, $\chi_{\ti{M}} = 2 - 2(2) = -2$, and there exists no finite positive integer $k$ so that $-2 = k \cdot 0$, we conclude that $M$ has no finitely-sheeted covering spaces homeomorphic to a surface 2 genus surface. On the other hand, any infinitely-sheeted covering space of $M$ has to be noncompact, and thus cannot be homeomorphic to a (compact) surface of genus 2. 
 		\item Now let $M$ denote a surface of genus 2. As above, it suffices to check if there exists a finitely-sheeted covering space of $M$ with genus 3. By looking at the Euler characteristics, \textit{if} $M$ has a finitely-sheeted covering space of genus 3, then it must be a 2-sheeted covering space. But by replicating the work from Problem \ref{prb:2021-A-I-6}, we see that by Galois correspondence of covering spaces, $M$ must have a $2$-sheeted covering space. Thus, we conclude that $M$ has a covering space which is homeomorphic to a surface of genus 2. 
 	\end{enumerate}
+	
 	
 	
 	\newpage
