@@ -788,6 +788,19 @@
 	\begin{prb}{2006-A-I-2}
 		Prove that if there exists a degree one map from $S^2$ to an orientable surface $M$, then $M$ must in fact be homeomorphic to $S^2$. [Here $M$ is connected, compact, and without boundary.]
 	\end{prb}
+	Suppose there exists a degree one map, $f: S^2 \to M$, where $M$ is a connected, compact, orientable smooth manifold without boundary. This means that for any 2-form $\omega$ on $M$, 
+		\begin{equation*}
+			\int_{S^2}f^\ast \omega = \int_{M}\omega. 
+		\end{equation*}
+	Suppose there exists a closed 1-form $\alpha$ on $M$ that is not exact (i.e., $[\alpha] \neq [0] \in H^1_{\text{dR}}(M)$). Then by Poincar\'e duality, there exists a closed 1-form $\beta$ on $M$ so that $\int_{M}(\alpha \wedge \beta) \neq 0$. This implies,
+		\begin{equation*}
+			0 \neq \int_{S^2}f^{\ast}(\alpha \wedge \beta) = \int_{S^2}f^\ast\alpha \wedge f^\ast \beta. 
+		\end{equation*}
+	Since $\alpha, \beta$ are 1-forms and $H^1_\text{dR}(M) = 0$, $f^\ast\alpha = f^\ast\beta = 0$, so that $\int_{S^2}f^\ast\alpha \wedge f^\ast \beta = 0$, which is a contradiction! Thus, $H^1_{\text{dR}}(M) =0$. But now recall that if $g$ is the genus of $M$, then 
+		\begin{equation*}
+			2 - 2g = \chi(M) = \sum_{n = 0}^{2}(-1)^{k}\dim H^{i}_{\text{dR}}(M) = (-1)^0(1) + (-1)^1(0) + (-1)^2(1) = 2 \implies g =0. 
+		\end{equation*}
+	Thus by the classification of compact connected oriented manifolds of genus $0$, it follows that $M$ must be homeomorphic to $S^2$. 
 	
 	\begin{prb}{1997-A-II-2}
 		Let $M$ be a connected, simply connected smooth manifold. \vspace{-0.25cm}
