@@ -2,6 +2,16 @@
 \usepackage{../header}
 \usepackage{esint}
 \usetikzlibrary{decorations.markings}
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+	\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+		\vcenter{\hbox{$#2#3$ }}\kern-.6 \wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
 \rhead{Comps Mega Review}
 %om 
 \newcommand{\contract}{\mathbin{\vrule height 0.4pt width 8pt depth 0pt\vrule height 6pt width 0.4pt depth 0pt}}
@@ -2535,442 +2545,718 @@
 	
 	\newpage 
 	\section{Real Analysis}
-	\subsection{Convergence of Functions}
+	
+	\subsection{Generic Convergence Problems}
 	
 	\begin{prb}{2026-J-II-2}
-		Let $c$ be a positive real number, and let $\{f_{n}(x)\}_{n \in \mathbb{N}}$ be a sequence of integrable functions from $[0,1]$ to $[-c,c]$. For the following functions on $[0,1]$, 
-		\begin{equation*}
-			g_{n}(x) \coloneqq \int_{0}^{x}f_{n}(t)\;dt, 
-		\end{equation*}
-		prove that some subsequence $(g_{n_{m}})_{m \in \mathbb{N}}$ converges uniformly to a $c$-Lipschitz function. 
+		Let $c$ be a positive real number, and let $\{f_{n}(x)\}_{x \in \mathbb{N}}$ be a sequence of integrable functions from $[0,1]$ to $[-c,c]$. For the following functions on $[0,1]$,
+			\begin{equation*}
+				g_{n}(x) \coloneqq \int_{0}^{x}f_{n}(t)\;dt, 
+			\end{equation*}
+		prove that some subsequence $\{g_{n_{m}}\}_{m \in \mathbb{N}}$ converges uniformly to a $c$-Lipschitz function. 
 	\end{prb}
-	Define the sequence $\{g_{n}\}$ of functions on $[0,1]$ as given above. We begin by showing that each $g_{n}$ is $c$-Lipschitz. Fix $\epsilon > 0$, and let $\delta = \epsilon/c > 0$. For any $x, y \in [0,1]$ with $x > y$ and $|x- y| < \delta$, one computes, 
+	Let $c$ be a positive real number, and let $\{f_{n}(x)\}_{x \in \mathbb{N}}$ be a sequence of integrable functions from $[0,1]$ to $[-c,c]$. Further for each $n \in \mathbb{N}$, define $g_{n}$ as given above. We begin by showing that $\{g_{n}\}_{n = 1}^{\infty}$ is uniformly bounded. For any $x \in [0,1]$, one has 
 	\begin{align*}
 		\begin{split}
-			|g_{n}(x) - g_{n}(y)| &\leq \int_{y}^{x}|f_{n}(t)|\;dt  \leq \int_{y}^{x}c\;dt = c|x - y| < \epsilon. 
+			|g_{n}(x)| &\leq \int_{0}^{x}|f_{n}(t)|\;dt \leq \int_{0}^{1}|f_{n}(t)|\;dt \leq \int_{0}^{1}c\;dt = c. 
 		\end{split}
 	\end{align*}
-	Thus we have that each $g_{n}$ is $c$-Lipschitz, \textit{and} the sequence $\{g_{j}\}$ is equicontinuous. Thus by the Arzel\`a-Ascoli theorem, it follows that there exists a subsequence $\{g_{n_{m}}\}_{m = 1}^{\infty}$ that converges uniformly to a function $g$ on $[0,1]$. We will now show that this limit is $c$-Lipschitz. Fix $\epsilon > 0$, and take $x, y \in [0,1]$ with $x > y$. Then 
+	Now we will show that each $g_{n}$ is $c$-Lipschitz. Let $x, y \in [0,1]$ with $x > y$. Then 
 	\begin{align*}
 		\begin{split}
-			|g(x) - g(y)| &= |g(x) - g_{n_{m}}(x) + g_{n_{m}}(x) -g_{n_{m}}(y) + g_{n_{m}}(y) - g(y)| \\
-			&\leq |g(x) - g_{n_{m}}(x)| + |g_{n_{m}}(x) - g_{n_{m}}(y)| + |g_{n_{m}}(y) - g(y)| \\
-			&\leq |g(x) - g_{n_{m}}(x)| + c|x - y| + |g_{n_{m}}(y) - g(y)|. 
+			|g_n(x) - g_n(y)| &\leq \int_{y}^{x}|f_{n}(t)|\;dt \leq \int_{y}^{x}c\;dt \leq c|x - y|. 
 		\end{split}
 	\end{align*}
-	By uniform convergence of the subsequence, in the limit $m \to \infty$, one has $|g(x) - g_{n_{m}}(x)|, |g(y) - g_{n_{m}}(y)| \to 0$. Thus, we conclude that $|g(x) - g(y)| \leq c|x - y|$ so that $g$ is $c$-Lipschitz. 
-	
-	\begin{prb}{2025-J-I-2}
-		Let $\{f_{n}\}_{n \geq 1}$ be a sequence of Lebesgue measurable functions on $[0,1]$. Suppose that 
-		\begin{equation*}
-			\int_{0}^{1}f_{n}^{2}\;dm \leq \frac{1}{n^{2}}
-		\end{equation*}
-		for all $n \geq 1$. Prove that $f_{n}$ converges to 0 a.e. on $[0,1]$. 
-	\end{prb}
-	Let $\{f_{n}\}_{n \geq 1}$ be a sequence of Lebesgue measurable functions on $[0,1]$ such that for each $n \geq 1$, 
+	The above argument also shows that the sequence $\{g_{n}\}$ is uniformly equicontinuous. Thus by the Arzel\`a-Ascoli theorem, there exists a subsequence $\{g_{n_{m}}\}_{m \in \mathbb{N}}$ that converges uniformly to some function $g$ on $[0,1]$; by uniform convergence, for any $x, y \in [0,1]$ with $x > y$, 
 	\begin{equation*}
-		\int_{0}^{1}f_{n}^{2}\;dm \leq \frac{1}{n^{2}}. 
+		|g(x) - g(y)| = \lim_{n \to \infty}|g_{n}(x) - g_{n}(y)| \leq \lim_{n \to \infty}c|x - y| = c|x - y|,
 	\end{equation*}
-	To show that $f_{n} \to0$ a.e., it suffices to show that $f_{n}^{2} \to 0$ a.e., and thus $\sum_{1}^{\infty}f_{n}^{2}$ converges a.e. We note that $\sum_{1}^{N}f_{n}^{2} \to \sum_{1}^{\infty}f_{n}^{2}$ a.e., and the sequence of such partial sums is increasing. By the Monotone Convergence Theorem, one has the following:
-	\begin{equation*}
-		\int_{0}^{1}\sum_{1}^{\infty}f_{n}^{2}\;dm = \int_{0}^{1}\lim_{N \to \infty}\sum_{1}^{N}f_{n}^{2}\;dm = \lim_{N \to \infty}\int_{0}^{1}\sum_{1}^{N}f_{n}^{2}\;dm = \sum_{1}^{\infty}\int_{0}^{1}f_{n}^{2}\;dm \leq \sum_{1}^{\infty}\frac{1}{n^{2}} < \infty. 
-	\end{equation*}
-	Thus, $\sum_{1}^{\infty}f_{n}^{2}< \infty$ a.e. on $[0,1]$ so that the sum converges a.e. Since the tail of a convergent series must tend to zero a.e., we must have $f_{n}^{2} \to 0$ a.e., and thus $f_{n} \to 0$ a.e. 
+	so that $g$ is $c$-Lipschitz. The proof concludes. 
 	
 	\begin{prb}{2004-A-II-1}
-		Let $\{f_{n}\}_{n = 1}^{\infty}$ be a sequence of real valued absolutely continuous functions defined on $[0,1]$. Assume there exist constants $c_{0}$ and $c_{1}$ such that 
-		\begin{equation*}
-			\sup_{0 \leq x \leq 1}|f_{n}(x)|\leq c_{0} \qquad \text{and} \qquad \int_{0}^{1}|f'_{n}(x)|^{2}\;dx \leq c_{1}
-		\end{equation*}
-		for $n = 1, 2, 3, \ldots$. Prove that $\{f_{n}\}_{n = 1}^{\infty}$ has a subsequence which converges uniformly on $[0,1]$. 
+		Let $\{f_{n}\}$ be a sequence of real-valued absolutely continuous functions defined on $[0,1]$. Assume there exists constants $c_0, c_1$ such that 
+			\begin{equation*}
+				\sup_{0 \leq x \leq 1}|f_n(x)| \leq c_0 \quad \text{and} \quad \int_{0}^{1}|f'_n(x)|^2\;dx \leq c_1
+			\end{equation*}
+		for $n = 1, 2, 3,\ldots$. Prove that $\{f_n\}_{n=1}^\infty$ has a subsequence which converges uniformly on $[0,1]$. 
 	\end{prb}
-	Let $\{f_{n}\}_{n = 1}^{\infty}$ be a sequence of real-valued absolutely continuous functions defined on $[0,1]$ with the above properties. Since $[0,1]$ is compact, by the Arzel\`a-Ascoli theorem, it suffices to show that the sequence is uniformly bounded and equicontinuous; the first condition on the sequence already proves uniform boundedness. Therefore, we will prove that the sequence is equicontinuous. Let $\epsilon > 0$, and let $\delta = \epsilon^{2}/c_{1}$. Then for any $x, y \in [0,1]$ with $x > y$ and all $j \geq 1$, one has 
+	Let $\{f_{n}\}_{n=1}^\infty$ be a sequence of absolutely continuous functions on $[0,1]$ with the above property. The first condition shows that the sequence is uniformly bounded. We will show that the sequence of functions is also uniformly equicontinuous. Fix $\epsilon > 0$ and $\delta = \epsilon^{2}/c_1$. Then for arbitrary $x, y \in [0,1]$ with $x > y$ and $|x - y| <\delta$, and for any $n \in \mathbb{N}$ be a fixed arbitrary positive integer, one has
 	\begin{align*}
 		\begin{split}
-			|f_{j}(x) - f_{j}(y)| &= \abs{\int_{y}^{x}f_{j}'(x)\;dx} \leq \int_{y}^{x}|f'_{j}(x)|\;dx \\
-			&\leq \left(\int_{y}^{x}|f'_{j}(x)|^{2}\;dx\right)^{1/2}\left(\int_{y}^{x}\;dx\right)^{1/2} \qquad (\text{by Cauchy-Schwarz Inequality)} \\
-			&\leq c_{1}^{1/2} \cdot |x - y|^{1/2} < \epsilon. 
+			|f_n(x) - f_n(y)| &= \abs{\int_{y}^{x}f'_{n}(x)\;dx} \leq \int_{y}^{x}|f'_{n}(x)|\;dx  \\
+			&\leq  \left(\int_{y}^{x}|f'_n(x)|^2\;dx\right)^{1/2} \left(\int_{y}^{x}1\;dx\right)^{1/2} \\
+			&\leq c_{1}^{1/2}\cdot |x - y|^{1/2} < \epsilon.  
 		\end{split}
 	\end{align*}
-	Thus it follows that $\{f_{j}\}_{j \geq 1}$ is uniformly continuous. By Arzel\`a-Ascoli, we conclude that the sequence has a subsequence which converges uniformly on $[0,1]$. 
+	Thus since $\{f_{n}\}$ is uniformly bounded and uniformly equicontinuous, by the Arzel\`a-Ascoli theorem, there exists a subsequence $\{f_{n_{j}}\}_{j= 1}^{\infty}$ that converges uniformly on $[0,1]$. 
 	
-	\begin{prb}{2021-J-II-2}
-		A real-valued function $f: [0,1] \to \mathbb{R}$ is said to be H\"older continuous of order $\alpha$ if there is a constant $C > 0$ such that $|f(x) - f(y)| \leq C|x - y|^{\alpha}$ for all $x, y \in [0,1]$. Define 
-		\begin{equation*}
-			\norm{f}_{\alpha} = \max_{x \in [0,1]}|f(x)| + \sup_{x, y \in [0,1]}\frac{|f(y) - f(x)|}{|x - y|^{\alpha}}. 
-		\end{equation*}
-		Show that for $\alpha \in (0,1)$, the set of functions 
-		\begin{equation*}
-			S_{\alpha} = \{f \in C([0,1]): \norm{f}_{\alpha} \leq 1\} 
-		\end{equation*}
-		is a compact subset of $C([0,1])$ in the topology of uniform convergence. 
-	\end{prb}
-	Fix some order $\alpha \in (0,1)$ and define the set of functions, 
+\subsection{\texorpdfstring{$L^p$}{Lp} Spaces}
+
+\begin{prb}{2025-A-II-4}
+	$ $\newline \vspace{-0.65cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Characterize $L^1$ functions $f: \mathbb{R} \to \mathbb{R}$ such that $f \ast f = f$. 
+		\item The same question for $L^2$-functions. 
+	\end{enumerate}
+\end{prb}
+\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
+	\item Let $f \in L^1(\mathbb{R})$ so that $f \ast f = f$. Then taking the Fourier transform of both sides, one has $\hat{f}^2 = \hat{f}$ so that $\hat{f}(\xi) \in \{0,1\}$ for every $\xi \in \mathbb{R}^n$. Thus, $\hat{f}$ is the characteristic function of some measurable subset $E \subseteq \mathbb{R}$. We also recall that the Fourier transform maps $L^1$ functions to $C_0(\mathbb{R})$ functions, so that $\hat{f}(\xi) \to 0$ as $|\xi| \to \infty$. Therefore, $E$ must be a proper bounded subset of $\mathbb{R}$. But then $\hat{f}$ must be discontinuous at every $x \in \partial E$, which contradicts the fact that $\hat{f}$ must be continuous on $\mathbb{R}$. Therefore, we see that $E = \varnothing$. Therefore, $\hat{f} \equiv 0$. By the Fourier Inversion theorem, we conclude that $f = 0$ a.e. 
+	\item Now let $f \in L^1 \cap L^2(\mathbb{R})$ such that $f \ast f = f$. As above, we must have $\hat{f} = \chi_E$ for some measurable subset $E \subseteq\mathbb{R}$. By Plancherel's theorem, $\hat{f} \in L^2(\mathbb{R})$, which means 
 	\begin{equation*}
-		S_{\alpha} = \{f \in C([0,1]): \norm{f}_{\alpha} \leq 1\}. 
+		\infty > \int_{\mathbb{R}}|\hat{f}|^2 = \int_{\mathbb{R}}\chi_E^2 = \int_{\mathbb{R}}\chi_E = m(E). 
 	\end{equation*}
-	By the Arzel\`a-Ascoli theorem, $S_{\alpha}$ is a compact subset of $C([0,1])$ if and only if it is closed, bounded, and equicontinuous under the topology of uniform convergence. Boundedness is immediately clear: for all $f \in S_{\alpha}$, one has 
+	Therefore, $\hat{f}$ is the characteristic function of a finitely measured subset of $\mathbb{R}$. By the Fourier Inversion theorem, we conclude that
 	\begin{equation*}
-		\norm{f}_{\infty} = \max_{x \in [0,1]}|f(x)| \leq \norm{f}_{\alpha} = 1, 
+		f = \int_{\mathbb{R}}\chi_E(\xi)e^{2\pi i (x \cdot \xi)}\;d\xi. 
 	\end{equation*}
-	where the upper bound of 1 is independent of the individual function $f$. Now we will show that $S_{\alpha}$ is closed under the supremum norm; we must show that if a sequence $\{f_{n}\} \subset S_{\alpha}$ converges uniformly to a function $f$, then $\norm{f}_{\alpha} \leq 1$. We begin by showing first that $f$ is H\"older continuous of exponent $\alpha$. For any $x, y \in [0,1]$, one has 
-	\begin{align*}
-		\begin{split}
-			|f(x) - f(y)| &\leq |f(x) - f_{n}(x)| + |f_{n}(x) - f_{n}(y)| + |f_{n}(y) - f(y)| \\
-			&\leq |f(x) - f_{n}(x)| + C|x - y|^{\alpha} + |f(y) - f_{n}(y)| \qquad \quad (\text{since each $f_{n}$ is H\"older continuous}) \\
-			&\xrightarrow{n \to \infty} C|x -y|^{\alpha} \hspace{6cm} (\text{by uniform convergence}). 
-		\end{split}
-	\end{align*}
-	
-	Now, we must show that $\norm{f}_{\alpha} \leq 1$. We will do this by showing that the H\"older norm is lower semicontinuous. For each distinct pair $x, y \in [0,1]$, the functional $\rho_{x, y}: C([0,1]) \to [0,\infty)$ given by  
+\end{enumerate}
+
+\begin{prb}{2025-J-I-2}
+	Let $\{f_n\}_{n \geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$. Suppose that 
 	\begin{equation*}
-		\rho_{x,y}(g) \coloneqq \frac{|g(x) - g(y)|}{|x - y|^{\alpha}}
+		\int_0^1f_n^2\;dm \leq \frac{1}{n^2}
 	\end{equation*}
-	is continuous under the topology of uniform convergence (hence lower semicontinuous). Since the supremum of lower semicontinuous functions is lower semicontinuous, the H\"older seminorm $[\empspace]_{\alpha}$ must be lower semicontinuous. Thus since $\norm{\empspace}_{\infty}$ is continuous (hence, lower semicontinuous), one has that the H\"older norm is lower semicontinuous. This means that 
+	for all $n \geq 1$. Prove that $f_n$ converges to 0 a.e. on $[0,1]$. 
+\end{prb}
+Let $\{f_{n}\}_{n \geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$ so that for all $n \geq 1$, 
+\begin{equation*}
+	\int_0^1f_n^2\;dm \leq \frac{1}{n^2}. 
+\end{equation*}
+To show that $f_n \to 0$ a.e. on $[0,1]$, it suffices to show that $f_n^2 \to 0$ a.e., for which it suffices to show that the sum 
+\begin{equation*}
+	\sum_{1}^{\infty}f_n^2
+\end{equation*}
+converges a.e. on $[0,1]$. Since the sequence of partial sums $\{\sum_1^Nf_n^2\}_{N = 1}^{\infty}$ is a monotone increasing sequence of measurable functions on $[0,1]$, the monotone convergence theorem tells us that 
+\begin{equation*}
+	\int_{0}^{1}\sum_{1}^{\infty}f_n^2\;dm = \lim_{N \to \infty}\int_{0}^{1}\sum_{1}^{N}f_n^2\;dm = \lim_{N \to \infty}\sum_{1}^{N}\int_{0}^{1}f_n^2\;dm \leq \sum_1^\infty\frac{1}{n^2} < \infty. 
+\end{equation*}
+Thus, this means that $\sum_1^\infty f_n^2\;dm$ must be finite a.e., so that the sum converges. This forces the tail of the infinite sum to vanish a.e.; i.e., $\lim_{n \to \infty}f_n^2(x) = 0$ for a.e. $x \in [0,1]$. Therefore, $f_n \to 0$ a.e. on  $[0,1]$.
+
+\begin{prb}{2024-A-II-4}
+	Suppose $\{f_n\}$ and $f$ are in $L^\infty([0,1])$ and that $f_n \to f$ in the weak-$\ast$ topology. If $0 \leq f_n(x) < f(x) \leq 1$ almost everywhere for all $n$, prove that $f_n$ converges to $f$ in measure. 
+\end{prb}
+Suppose $\{f_n\}$ and $f$ are in $L^\infty([0,1])$ and that $f_n \to f$ in the weak$-\ast$ topology; i.e., assume that that for every $g \in L^1([0,1])$, $\int_{0}^{1}f_n(x)g(x)\;dx \to \int_{0}^{1}f(x)g(x)\;dx$. In particular, taking the function $g = \chi_{[0,1]} \in L^1([0,1])$, one has $\int_{0}^{1}f_n(x)\;dx \to \int_{0}^{1}f(x)\;dx$. Let $\epsilon > 0$, and define $E(\epsilon) = \{x \in [0,1]: |f(x) - f_n(x)|\geq \epsilon\}$. Then 
+\begin{equation*}
+	0 \xleftarrow{n \to \infty} \abs{\int_{0}^{1}f_{n}(x) - f(x)\;dx} = \int_{0}^{1}f(x)- f_{n}(x)\;dx \geq \int_{E(\epsilon)}\epsilon\;dx = \epsilon m(E(\epsilon)) \geq 0, 
+\end{equation*}
+where the first equality follows from the fact that $0 < f(x) - f_n(x) \leq 1$ a.e. Since $\epsilon > 0$, we must have $m(E(\epsilon)) \to 0$ as $n \to \infty$. Since $\epsilon > 0$ was arbitrary, we conclude that $f_n \to f$ in measure. 
+
+\begin{prb}{2024-J-I-6}
+	Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$. Define the convolution 
 	\begin{equation*}
-		\norm{f}_{\alpha} \leq \liminf_{n \to\infty}\norm{f_{n}}_{\alpha} \leq 1. 
+		(f \ast g)(x) = \int_{\mathbb{R}}f(x-y)g(y)\;dy
 	\end{equation*}
-	Thus, $S_{\alpha}$ is closed. Finally, we will show equicontinuity. Let $\epsilon > 0$. and take $\delta = \epsilon^{1/\alpha}$. Then for any $x, y\in [0,1]$ with $|x - y| < \delta$, one has that for all $n$, 
+	for all $x$ such that the integral exists. Prove that if $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$ with $p, q \in (1,\infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$, then $f \ast g$ is a bounded continuous function on $\mathbb{R}$. 
+\end{prb}
+Let $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$, and define the convolution $(f \ast g)(x)$ as defined above for all $x$ such that the integral exists. First, we note that for any $x$, one has 
+\begin{equation*}
+	\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}|f(x-y)||g(y)|\;dy \leq \norm{f}_{L^p}\norm{g}_{L^q}, 
+\end{equation*}
+where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
+\begin{align*}
+	\begin{split}
+		|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
+		&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
+	\end{split}
+\end{align*}
+Now we compute, 
+\begin{align*}
+	\begin{split}
+		\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
+		&= \norm{\tau_hf - f}_{L^p}. 
+	\end{split}
+\end{align*}
+Thus, one has that for all $x \in \mathbb{R}$, 
+\begin{equation*}
+	|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
+\end{equation*}
+by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
+
+\begin{prb}{2021-A-I-3}
+	Characterize all functions $f \in L^2(\mathbb{R}^n)$ such that $f \ast f= f$. Here $\ast$ means convolution. 
+\end{prb}
+Let $f \in L^1 \cap L^2(\mathbb{R}^n)$ such that $f \ast f = f$. As above, we must have $\hat{f} = \chi_E$ for some measurable subset $E \subseteq\mathbb{R}^n$. By Plancherel's theorem, $\hat{f} \in L^2(\mathbb{R}^n)$, which means 
+\begin{equation*}
+	\infty > \int_{\mathbb{R}^n}|\hat{f}|^2 = \int_{\mathbb{R}^n}\chi_E^2 = \int_{\mathbb{R}^n}\chi_E = m(E). 
+\end{equation*}
+Therefore, $\hat{f}$ is the characteristic function of a finitely measured subset of $\mathbb{R}^n$. By the Fourier Inversion theorem, we conclude that
+\begin{equation*}
+	f = \int_{\mathbb{R}^n}\chi_E(\xi)e^{2\pi i (x \cdot \xi)}\;d\xi. 
+\end{equation*}
+
+\begin{prb}{2020-J-I-3}
+	Let $p >1$ be a real number and set $q = \frac{p}{p - 1}$. Suppose that $f \in L^{p}(\mathbb{R})$ and that $g \in L^q(\mathbb{R})$. Prove that $\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;d\mu = 0$, where $\mu$ denotes Lebesgue measure on $\mathbb{R}$. 
+\end{prb}
+Let $p > 1$ be a real number, and set $q = \frac{p}{p - 1}$. Further assume that $f \in L^p(\mathbb{R})$ and that $g \in L^q(\mathbb{R})$. By H\"older's inequality, one has 
+\begin{equation*}
+	\abs{\int_{\mathbb{R}}f(x)g(nx)\;dx} \leq \int_{\mathbb{R}}|f(x)||g(nx)|\;dx \leq \norm{f}_{L^p} \cdot \left(\int_{\mathbb{R}}|g(nx)|^q\;dx\right)^{1/q}. 
+\end{equation*}
+For the latter integral, let $y = nx$ so that $dx = n^{-1}\;dy$. Then one has 
+\begin{equation*}
+	\abs{\int_{\mathbb{R}}f(x)g(nx)\;dx} \leq \frac{1}{n^q}\norm{f}_{L^p}\cdot \left(\int_{\mathbb{R}}|g(y)|^{q}\right)^{1/q} = \frac{1}{n^{1/q}}\norm{f}_{L^p}\norm{g}_{L^q}. 
+\end{equation*}
+But since $p > 1$, $1/q = (1 - 1/p) > 0$. Thus as $n \to \infty$, $1/n^{1/q} \to 0$. Since the right side tends to zero in the limit $n \to \infty$, we conclude that 
+\begin{equation*}
+	\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;dx = 0. 
+\end{equation*}
+
+\begin{prb}{2019-J-I-4}
+	Let $(X, \mu)$ be a measure space and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Show that $f \in L^q(X,\mu)$ for all $q > 1$, and 
 	\begin{equation*}
-		|f_{n}(x) - f_{n}(y)| \leq |x - y|^{\alpha} < \epsilon, 
+		\norm{f}_{L^\infty} = \lim_{q \to \infty}\norm{f}_{L^q}. 
 	\end{equation*}
-	since $[f_{n}]_{\alpha} \leq 1$ (which means we can take $C = 1$) for all $n$. 
-	
-	\begin{prb}{2019-A-I-3}
-		For every positive integer $n$, let $T_{n}: X \to Y$ be a linear transformation with $X, Y$ normed vector spaces. Suppose that $\norm{T_{n}} \leq 1$. Let $\{x_{\alpha}\}$ be a dense subset of $X$. Suppose that for any $\alpha$, 
-		\begin{equation*}
-			\lim_{n \to \infty}T_{n}(x_{\alpha}) = y_{\alpha}. 
-		\end{equation*}
-		for some $y_{\alpha} \in Y$. Suppose further that if $x = \lim_{i}x_{\alpha_{i}}$, then $y_{\alpha_{i}}$ converges to some $y_{x} \in Y$. Show that 
-		\begin{equation*}
-			\lim_{n \to \infty}T_{n}(x) = y_{x}. 
-		\end{equation*}
-	\end{prb}
-	Fix some arbitrary $x \in X$, and let $\epsilon > 0$. By the density of $\{x_{\alpha}\}$ in $X$, there exists a subsequence $\{x_{\alpha_{i}}\}_{i = 1}^{\infty}$ such that the following holds: there exists a positive integer $I$ such that for all $i \geq I$, $\norm{x_{\alpha_{i}} - x}_{X} \leq \epsilon/3$ (i.e., $x_{\alpha_{i}} \to x$). By the hypotheses, for each $i \geq 1$, there exists a corresponding $y_{\alpha_{i}} \in Y$ and a positive integer $N_{i}$ so that for all $n \geq N_{i}$, $\norm{T_{n}x_{\alpha_{i}} - y_{\alpha_{i}}}_{Y} \leq \epsilon/3$. By the final hypothesis, there exists some $y_{x} \in Y$ and some positive integer $J$ such that for all $i \geq J$, $\norm{y_{\alpha_{i}} - y_{x}}_{Y} \leq \epsilon/3$. Set $M = \max\{I, J\}$. Then for all $n \geq N_{M}$, one has 
-	\begin{align*}
-		\begin{split}
-			\norm{T_{n}x - y_{x}}_{Y} &= \norm{T_{n}x - T_{n}x_{\alpha_{M}} + T_{n}x_{\alpha_{M}} - y_{\alpha_{M}} + y_{\alpha_{M}} -y_{x}}_{Y} \\
-			&\leq \norm{T_{n}(x - x_{\alpha_{M}})}_{Y} + \norm{T_{n}x_{\alpha_{M}} - y_{\alpha_{M}}}_{Y} + \norm{y_{\alpha_{M}} - y_{x}}_{Y} \\
-			&\leq \norm{x - x_{\alpha_{M}}}_{Y} + \norm{T_{n}x_{\alpha_{M}} - y_{\alpha_{M}}}_{Y} + \norm{y_{\alpha_{M}} -y_{x}}_{Y} \qquad (\text{since $\norm{T_{n}}\leq 1$}) \\
-			&\leq 3 \cdot \frac{\epsilon}{3}= \epsilon. 
-		\end{split}
-	\end{align*}
-	Thus, since $\epsilon$ was arbitrary, we conclude that $T_{n}x \to y_{x}$ under the norm on $Y$. 
-	
-	\begin{prb}{2015-J-II-5}
-		Let $E$ be a measurable subset of the real numbers whose Lebesgue measure is finite. Let $\chi_{E}: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$ (which equals 1 on the set $E$, and 0 otherwise). Show that $\chi_{E}(x - t)$ converges to $\chi_{E}(x)$ in $L^{1}$ as $t \to 0$. 
-	\end{prb}
-	Let $E$ be a finite Lebesgue measurable subset of $\mathbb{R}$, and let $\chi_{E}$ denote the characteristic function of $E$. We wish to show that 
+\end{prb}
+Let $(X, \mu)$ be a measure space, and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Then one has, 
+\begin{equation*}
+	\norm{f}_{L^q} = \left(\int_{\mathbb{R}}|f|^q\right)^{1/q} = \left(\int_{\mathbb{R}}|f||f|^{q - 1}\right)^{1/q} \leq \left(\int_{\mathbb{R}}|f|\norm{f}_{L^\infty}^{q - 1}\right)^{1/q} = \norm{f}_{L^1}^{1/q}\norm{f}_{L^\infty}^{1 -(1/q)} < \infty. 
+\end{equation*}
+Thus, $f \in L^q$. Since $q > 1$ was arbitrary, the proof of the first statement concludes. From the above result, one has that 
+\begin{equation*}
+	\limsup_{q \to \infty}\norm{f}_{L^q} \leq \limsup_{q \to \infty}\norm{f}_{L^1}^{1/q}\norm{f}_{L^\infty}^{1 - (1/q)} = \norm{f}_{L^\infty}. 
+\end{equation*}
+Now let $\epsilon > 0$ and define $E(\epsilon) = \{x \in X: |f(x)| \geq \norm{f}_{L^\infty}- \epsilon\}$; by definition of the essential supremum, $E(\epsilon)$ must have positive measure. And since $f \in L^1$, $\mu(E(\epsilon)) < \infty$. Then for any $q > 1$, one has 
+\begin{equation*}
+	\norm{f}_{L^q} = \left(\int_{\mathbb{R}}|f|^q\right)^{1/q} \geq \left(\int_{E(\epsilon)}(\norm{f}_{L^\infty} - \epsilon)^q\right)^{1/q} =(\norm{f}_{L^\infty} - \epsilon)m(E(\epsilon))^{1/q}. 
+\end{equation*}
+Thus, one has 
+\begin{equation*}
+	\liminf_{q \to \infty}\norm{f}_{L^q} \geq \liminf_{q \to \infty}(\norm{f}_{L^\infty} - \epsilon)\mu(E(\epsilon))^{1/q} = \norm{f}_{L^\infty} - \epsilon. 
+\end{equation*}
+Since $\epsilon > 0$ was arbitrary, taking the limit $\epsilon \to 0$ gives $\liminf_{q \to \infty}\norm{f}_{L^q} \geq \norm{f}_{L^\infty}$. Thus, the proof concludes. 
+
+\begin{prb}{2017-J-I-2}
+	Recall that $L^2(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R} \to \mathbb{C}$ so that $|f|^2$ is integrable. Show that the linear map
 	\begin{equation*}
-		\int_{\mathbb{R}}|\chi_{E}(x) - \chi_{E}(x - t)|\;dx \xrightarrow{t\to 0} 0. 
+		T: L^2(\mathbb{R})  \to L^2(\mathbb{R}), \qquad T(f)(x) \coloneqq f(x-1), \qquad \forall x \in \mathbb{R}, f \in L^2(\mathbb{R}). 
 	\end{equation*}
-	We begin by studying the function $\chi_{E}(x) - \chi_{E}(x - t)$. We note the following: 
+	has no non-zero eigenvector.
+\end{prb}
+Let $T: L^2(\mathbb{R}) \to T^2(\mathbb{R})$ be the linear map described above, and assume to the contrary that $T$ has a non-zero eigenvector $f \in L^2(\mathbb{R})$, with eigenvector $\lambda \in \mathbb{C} \setminus \{0\}$. By definition of $T$, this means that for every $x \in \mathbb{R}$, $\lambda f(x) = f(x - 1)$. We will first two show two results, 
+\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+	\item ($|\lambda| = 1$): Since $\lambda f(x) = f(x - 1)$ for every $x\in \mathbb{R}$, one has 
 	\begin{equation*}
-		\chi_{E}(x) - \chi_{E}(x - t) = 
-		\begin{cases}
-			1, & x \in E \cap (E + t)^{c} \\
-			0, & x \in E \cap (E + t) \text{ or } x \in E^{c} \cap (E + t)^{c}\\
-			-1, & x \in (E + t) \cap E^{c} \\
-		\end{cases}
+		|\lambda|^2\norm{f}_{L^2(\mathbb{R})}^2 = |\lambda|^2\int_{\mathbb{R}}|f(x)|^2\;dx = \int_{\mathbb{R}}|f(x-1)|^2\;dx  = \norm{\tau_{1}f}_{L^2(\mathbb{R})}^2 = \norm{f}_{L^2(\mathbb{R})}^2, 
 	\end{equation*}
-	Therefore, 
+	so that $|\lambda|^2 = 1 \implies |\lambda| = 1$ since $0 \neq \norm{f}^2_{L^2(\mathbb{R})} < \infty$. 
+	\item ($\norm{f}_{L^{2}([0,1])} \neq 0$): Assume to the contrary that $\norm{f}_{L^2([0,1])} = 0$ so that $f = 0$ a.e on $[0,1]$. Then by translation invariance of $f$, for every $n \in \mathbb{Z}$, $f = 0$ a.e. on $[n, n + 1]$. But this forces $f = 0$ a.e. on $\mathbb{R}$ which contradicts our hypothesis that $f$ is a non-zero eigenvector. 
+\end{enumerate}
+Now by induction, one can show that for any finite positive integer $n$, 
+\begin{equation*}
+	\int_{0}^{n}|f(x)|^2\;dx = n \cdot \norm{f}_{L^{2}([0,1])}^2. 
+\end{equation*}
+Since $|f(x)|^2\chi_{[0,n]}$ is a monotone increasing sequence of measurable functions, by the Monotone Convergence Theorem, one has that 
+\begin{equation*}
+	\infty > \norm{f}_{L^{2}(\mathbb{R})}^2 = \int_{\mathbb{R}}|f(x)|^2\;dx \geq \int_{\mathbb{R}_{+}}|f(x)|^2\;dx = \lim_{n \to \infty}\int_{0}^{n}|f(x)|^2\;dx = \lim_{n \to \infty}n \cdot \norm{f}_{L^2([0,1])}^2 = \infty, 
+\end{equation*}
+which is a contradiction! Therefore, $T$ cannot have a non-zero eigenvector. 
+
+\begin{prb}{2017-J-II-2}
+	Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^2([0,1])$ we have that $fg \in L^2([0,1])$. Show $f$ is in $L^\infty([0,1])$. 
+\end{prb}
+Suppose $f: [0,1] \to \mathbb{R}$ is a measurable function, and further assume that for all $g \in L^2([0,1])$, $fg \in L^2([0,1])$. Define the map $T: L^2([0,1]) \to \mathbb{R}$ by $Tg\coloneqq fg$;  it follows immediately that $T$ is a linear map. Now let $\{g_n\}_{n =1}^{\infty} \subset L^2([0,1])$ such that $g_n \to 0$ under the $L^2$-norm. Further assume that $\{Tg_n\}_{n = 1}^{\infty}$ converges to some $y \in L^2([0,1])$. First, we know that there exists some subsequence $\{g_{n_{j}}\}_{j = 1}^\infty$ so that $g_{n_{j}} \to 0$ pointwise a.e. But then $Tg_{n_{j}} \to y$ under the $L^2$-norm. This implies that there exists a further subsequence $g_{n_{j_{k}}}$ $Tg_{n_{j_{k}}}$ that converges to $y$ pointwise a.e. By construction, $g_{n_{j_{k}}} \to 0$ pointwise a.e., so that $Tg_{n_{j_{k}}} = f(x)g_{n_{j_{k}}}(x) \to 0$ pointwise a.e. Thus one has that $y = 0$ a.e. This implies that the graph of $T$ is closed. Thus by the Closed Graph theorem, $T$ is a bounded linear map. I.e., there exists some $C > 0$ so that forr every $g \in L^2([0,1])$, $\norm{fg}_{L^2([0,1])} \leq C\norm{g}_{L^2([0,1])}$. In particular, one has that $\norm{f}_{L^2([0,1])} \leq C$. Now for each $n \geq 1$, let $E_{n} = \{x \in [0,1]: |f(x)|\geq C + n^{-1}\}$. If $m(E_{n}) > 0$, then we have 
+\begin{equation*}
+	\left(C + \frac{1}{n}\right)m(E_n)^{1/2} \leq \norm{f\chi_{E_{n}}}_{L^{2}([0,1])} \leq Cm(E_n)^{1/2}, 
+\end{equation*}
+so that $(C + 1/n) \leq C$, which is a contradiction. Thus, $m(E_n) =0$ for all $n$, which means that $|f(x)| \leq C$ for a.e. $x$, and thus $f \in L^\infty([0,1])$. 
+
+
+\begin{prb}{2015-A-II-6}
+	Let $1 < p < \infty$ and let $q$ be its conjugate exponent, that is, let $q$ be defined by $\frac{1}{p} + \frac{1}{q} = 1$. Let $f \in L^p(\mathbb{R}^n)$ and $g \in L^q(\mathbb{R}^n)$, with respect to the Lebesgue measure. Show that the convolution $f \ast g$ is uniformly continuous on $\mathbb{R}^n$ and that $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$. 
+\end{prb}
+Let $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$, and define the convolution $(f \ast g)(x)$ as defined above for all $x$ such that the integral exists. First, we note that for any $x$, one has 
+\begin{equation*}
+	\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}|f(x-y)||g(y)|\;dy \leq \norm{f}_{L^p}\norm{g}_{L^q}, 
+\end{equation*}
+where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
+\begin{align*}
+	\begin{split}
+		|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
+		&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
+	\end{split}
+\end{align*}
+Now we compute, 
+\begin{align*}
+	\begin{split}
+		\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
+		&= \norm{\tau_hf - f}_{L^p}. 
+	\end{split}
+\end{align*}
+Thus, one has that for all $x \in \mathbb{R}$, 
+\begin{equation*}
+	|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
+\end{equation*}
+by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
+
+\begin{prb}{2015-J-II-5}
+	Let $E$ be a Lebesgue measurable subset of the real numbers whose Lebesgue measure is finite. Let $\chi_E: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$ (which equals $1$ on $E$, and $0$ otherwise). Show that $\chi_E(x-t)$ converges to $\chi_E(x)$ in $L^1$ as $t \to 0$. 
+\end{prb}
+Let $E$ be a Lebesgue measurable subset of the real numbers whose Lebesgue measure is finite, and let $\chi_{E}: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$. Since $E$ has finite measure, $\chi_{E} \in L^{1}(\mathbb{R})$. Fix an arbitrary $\epsilon > 0$. By the density of compactly supported continuous functions in $L^{1}(\mathbb{R})$, there exists some $\varphi \in C_{c}^{\infty}(\mathbb{R})$ so that $\norm{\chi_E - \varphi}_{L^1} < \epsilon/3$. By continuity of $\varphi$, there exists some $R > 0$ so that for all $|t|\leq R$, $\norm{\tau_{t}\varphi - \varphi}_{L^1} < \epsilon/3$. Thus for all $|t| \leq R$, 
+\begin{equation*}
+	\norm{\tau_{t}\chi_{E} - \chi_{E}}_{L^1} \leq \norm{\tau_{t}\chi_{E} - \tau_t\varphi}_{L^1} + \norm{\tau_{t}\varphi - \varphi}_{L^1} + \norm{\varphi - \chi_{E}}_{L^1} = \epsilon, 
+\end{equation*}
+where the first term on the right side is equal to the last term on the right side by translation invariance of the $L^1$ norm. Thus, we conclude that $\chi_{E}(x - t) \to \chi_{E}(x)$ in $L^1$ as $t \to 0$. 
+
+
+\begin{prb}{2009-A-I-2}
+	Let $(X,\mu)$ be a measure space, and let $f$ be a measurable function on $X$. If there is a real constant $C > 0$ such that 
 	\begin{equation*}
-		\int_{\mathbb{R}}|\chi_{E}(x) - \chi_{E}(x - t)|\;dx = \int_{E \cap (E + t)^{c}}\;dx + \int_{(E + c) \cap E^{c}}\;dx = \mu(E \cap (E + t)^{c}) + \mu((E + t) \cap E^{c}). 
+		f \in L^p(X) \quad\text{and} \quad \norm{f}_{L^p} \leq C
 	\end{equation*}
-	Hence, we need to show that each of the terms on the right side converges to zero as $t \to 0$. \complete
-	
-	\newpage 
-	\subsection{\texorpdfstring{$L^{p}$}{Lp} Spaces}
-	
-	\begin{prb}{2025-A-II-4}
-		$ $\newline \vspace{-0.65cm}
-		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-			\item Characterize $L^{1}$-functions $f: \mathbb{R} \to \mathbb{R}$ such that $f \ast f = f$. 
-			\item The same question for $L^{2}$-functions. 
-		\end{enumerate}
-	\end{prb}
+	for all real numbers $p \in (1,\infty)$, prove that 
+	\begin{equation*}
+		f \in L^\infty(X) \quad \text{and} \quad \norm{f}_{L^\infty} \leq C. 
+	\end{equation*}
+\end{prb}
+Let $f \in L^p(X)$ for all real numbers $p \in (1, \infty)$, and assume that there exists some $C > 0$ so that for all $p > 1$, one has $\norm{f}_{L^p} \leq C$. Assume to the contrary that $f \notin L^\infty(X)$. By definition, this means that for every $\epsilon > 0$, the set $A_{\epsilon} = \{x \in X: |f(x)| \geq C + \epsilon\}$ has positive measure (since $f\in L^p(X,\mu)$ for all $p > 1$, $\mu(A_{\epsilon}) < \infty$ for all $\epsilon > 0$). This implies the following: 
+\begin{equation*}
+	C \geq \left(\int_{X}|f|^p\;d\mu\right)^{1/p} \geq \left(\int_{A_{\epsilon}}(C + \epsilon)^p\;d\mu\right)^{1/p} = (C + \epsilon) \cdot \mu(A_{\epsilon})^{1/q}. 
+\end{equation*}
+Taking the limit $q \to \infty$, since $0 < \mu(A_{\epsilon}) < \infty$, one obtains $C \geq C + \epsilon$, which is a contradiction! Thus by contradiction, for every $\epsilon > 0$, $\mu(A_{\epsilon}) = 0$. This shows that $f$ is essentially bounded (so that $f \in L^\infty(X,\mu)$) and 
+\begin{equation*}
+	\norm{f}_{L^\infty} = \inf\brac*{M > 0: |f(x)| \leq M \text{ a.e.}} \leq C. 
+\end{equation*}
+
+
+\begin{prb}{2009-J-II-1}
+	$ $\newline\vspace{-0.65cm}
 	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-		\item Let $f \in L^{1}(\mathbb{R})$ so that $f \ast f = f$. Taking the Fourier transform of both sides, one has 
-		\begin{equation*}
-			\hat{f} = (f \ast f)^{\hat{}} = \hat{f} \cdot \hat{f} = (\hat{f})^{2}, 
-		\end{equation*}
-		so that at each point $\xi \in \mathbb{R}$, either $\hat{f}(\xi) = 0$ or $\hat{f}(\xi) = 1$. Thus, $\hat{f}$ is the indicator function of some measurable subset $E \subset \mathbb{R}$. We recall that the Fourier transform maps integrable functions to the space of continuous functions $C_{0}(\mathbb{R})$ that vanish at infinity. By the vanishing criteria, $E$ must be a proper subset of $\mathbb{R}$, and by continuity, $E$ has to be the empty set. Thus in fact, $\hat{f} \equiv 0$. By the Fourier Inversion theorem, it follows that $f = 0$ a.e. 
-		
-		\item Now let $f \in (L^{1} \cap  L^{2})(\mathbb{R})$ so that $f = f \ast f$. As above, taking the Fourier transform of both sides forces $\hat{f}(\xi) = 0$ or $\hat{f}(\xi) = 1$ at each $\xi \in \mathbb{R}$. Therefore, $\hat{f}$ must be the characteristic function of some measurable subset $E \subset \mathbb{R}$. By Plancherel's Theorem, since $f \in L^{2}$, $\hat{f} \in L^{2}$. This means that 
-		\begin{equation*}
-			\infty > \int_{\mathbb{R}}|\hat{f}(\xi)|^{2}\;d\xi  = \int_{\mathbb{R}}\chi_{E}^{2}\;d\xi  = \int_{\mathbb{R}}\chi_{E}\;d\xi = m(E). 
-		\end{equation*}
-		Thus $\hat{f} = \chi_{E}$ for some finitely-measured subset $E \subset \mathbb{R}$. By the Fourier Inversion Theorem, it follows that 
-		\begin{equation*}
-			f(x) = \mathcal{F}^{-1}\{\chi_{E}\} = \int_{E}e^{2\pi i x \xi}\;d\xi, 
-		\end{equation*}
-		for some finite-measured subset $E \subseteq \mathbb{R}$. 
+		\item Say $1 < p < \infty$. Exhibit, with proof, a function $f \in L^1(0,1)$ which is not in $L^p(0,1)$. 
+		\item Exhibit, with proof, a function $f \in L^1([0,1])$ which is not in $L^p(0,1)$ for any $p > 1$. (Hint: try to define $F$ piecewise, using the functions of (a)). 
 	\end{enumerate}
-	
-	\begin{prb}{2024-J-I-6}
-		Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$. Define the convolution 
-		\begin{equation*}
-			(f \ast g)(x) = \int_{\mathbb{R}}f(x - y)g(y)\;dy
-		\end{equation*}
-		for all $x$ such that the integral exists. Prove that if $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$ with $p,q \in (1, \infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$, then $f \ast g$ is a bounded continuous function on $\mathbb{R}$. 
-	\end{prb}
-	Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$, and define their convolution as given above. Further assume that $f \in L^{p}(\mathbb{R})$ and $g \in L^{q}(\mathbb{R})$ with $(p, q) \in (1, \infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$. First, we will show that $f \ast g$ is bounded. For any $x \in \mathbb{R}$, by H\"older's continuity, one has 
+\end{prb}
+\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+	\item Fix $1 <p < \infty$. Consider the function $f(x) = 1/x^{1/p}$ on $[0,1]$. $f \in L^1(0,1)$ since 
 	\begin{equation*}
-		|(f \ast g)(x)| = \abs{\int_{\mathbb{R}}f(x -y)g(y)\;dy} \leq \int_{\mathbb{R}}|f(x - y)||g(y)|\;dy \leq \norm{f(x - \cdot)}_{p}\norm{g}_{q} = \norm{f}_{p}\norm{g}_{q}< \infty, 
+		\int_{0}^{1}|f(x)|\;dx = \int_{0}^{1}\frac{1}{x^{1/p}}\;dx =\frac{p}{p - 1} < \infty. 
 	\end{equation*}
-	where the final equality follows from translation invariance of the $L^{p}$-norm. Since the bound is independent of $x$, we conclude that $f \ast g$ is bounded. To show that $f \ast g$ is continuous on $\mathbb{R}$, we observe the following: 
-	\begin{align*}
-		\begin{split}
-			|(f \ast g)(x + h) - (f \ast g)(x)| &\leq \int_{\mathbb{R}}|f(x + h - y) - f(x - y)||g(y)|\;dy \\
-			&= \int_{\mathbb{R}}|f(t + h) - f(t)||g(x - t)|\;dt \\
-			&\leq \norm{\tau_{h}f - f}_{p}\norm{g(x - \cdot)}_{q} = \norm{\tau_{h}f - f}_{p}\norm{g}_{q} \xrightarrow{h \to 0}0, 
-		\end{split}
-	\end{align*}
-	where the final line follows from continuity of the translation operator. Thus the convolution is (uniformly) continuous. 
-	
-	\begin{prb}{2019-J-I-4}
-		Let $(X, \mu)$ be a measure space and let $f \in L^{1}(X,\mu) \cap L^{\infty}(X, \mu)$. Show that $f \in L^{q}(X,\mu)$ for all $q > 1$ and 
-		\begin{equation*}
-			\norm{f}_{\infty} = \lim_{q \to \infty}\norm{f}_{q}. 
-		\end{equation*}
-	\end{prb}
-	Let $(X, \mu)$ be a measure space, and let $f \in L^{1}(X, \mu) \cap L^{\infty}(X,\mu)$. Fix any arbitrary $q > 1$. Then 
+	On the other hand, $f \notin L^p(0,1)$, since $|f(x)|^p = 1/x$ is not integrable over $[0,1]$ ($\lim_{x \to 0}\ln(x) = \text{DNE}$). 
+	\item Now construct the following measurable function, 
 	\begin{equation*}
-		\norm{f}_{L^q}^{q} = \int_{X}|f|^{q}\;d\mu =  \int_{X}|f| \cdot |f|^{q - 1}\;d\mu \leq \int_{X}|f|\cdot \norm{f}_{L^\infty}^{q - 1} = \norm{f}_{L^{1}}\cdot \norm{f}_{L^{\infty}}^{q - 1} < \infty. 
+		f(x)|_{[(n + 1)^{-1}, n^{-1}]} = \frac{1}{n^{3}\left(x - \frac{1}{n + 1}\right)^{1 - 1/n}}. 
 	\end{equation*}
-	Thus since $\norm{f}_{L^q} < \infty$, we conclude that $f \in L^{q}(X,\mu)$. From the above result, one has 
+	Then it is straightforward to see that $f(x)$ is integrable: 
 	\begin{equation*}
-		\norm{f}_{L^{q}} \leq \norm{f}_{L^{1}}^{1/q} \cdot \norm{f}_{L^{\infty}}^{1 - (1/q)}, 
+		\int_{0}^{1}|f(x)|\;dx = \sum_{n = 1}^{\infty}\int_{1/(n + 1)}^{1/n}\frac{1}{n^3(x - 1/(n + 1))^{1 - 1/n}}\;dx = \sum_{n = 1}^{\infty}\frac{(n^2 + n)^{-1/n}}{n^2} < \infty. 
 	\end{equation*}
-	so that $\lim_{q \to \infty}\norm{f}_{L^{q}} \leq \norm{f}_{L^{\infty}}$. Now fix $\epsilon > 0$, and let $E = \{x \in X: |f(x)| \geq \norm{f}_{\infty} - \epsilon\}$. By definition of the essential supremum, $E$ must have positive measure. On the other hand, since $f \in L^{\infty}$, $E$ must have finite measure. Then one has 
+	On the other hand, $f$ does not belong to $L^p(0,1)$ for any $p > 1$ since $1 - (1/n) \to 1$ implies that the exponent $p \cdot (1 - 1/n)$ of a term eventually exceeds 1. 
+\end{enumerate}
+
+
+\subsection{Weierstrass Approximation}
+\begin{prb}{2021-A-II-6}
+	Suppose $\mu$ is a finite positive measure of compact support and 
 	\begin{equation*}
-		\norm{f}_{q}^{q} \geq \int_{E}|f(x)|^{q}\;d\mu \geq \int_{E}(\norm{f}_{\infty} - \epsilon)^{q}\;d\mu \geq \mu(E) \cdot (\norm{f}_{\infty} - \epsilon)^{q}. 
+		\int_\mathbb{R}x^n\;d\mu(x) = 0
 	\end{equation*}
-	Taking the $q$th roots, one has 
+	for every $n \in \{0,1,2, \ldots\}$. Show that $\mu$ is the zero measure. 
+\end{prb}
+Let $\mu$ be a finite positive measure on $\mathbb{R}$ of compact support; let $[a, b] \subset \mathbb{R}$ be a compact set containing the support of $\mu$. Further assume $\int_{a}^{b}x^n\;d\mu(x) = \int_\mathbb{R}x^n\;d\mu(x) =0$ for all $n\in \{0, 1, 2, \ldots\}$. Fix an arbitrary continuous function $f \in C([a,b])$; by the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[a,b]$ so that $p_j \to f$ uniformly on $[a,b]$. By the given hypothesis, since $\int_{a}^{b}p_j\;d\mu(x) =0$ for every $j$, by uniform convergence, $\int_{a}^{b}f\;d\mu(x) = 0$. Since $f$ was arbitrary, it follows that $\int_{\mathbb{R}}f\;d\mu(x) = \int_{a}^{b}f\;d\mu(x) = 0$ for every continuous function $f$ on $[a,b]$. Now let $U$ be an open subset of $\mathbb{R}$ so that $[a,b] \Subset U$. Then by Urysohn's lemma, there exists a nonnegative continuous function $f$ on $U$ such that $f|_{[a,b]} = 1$ and $f|_{U^c} =0$. Moreover, we notice that $f \geq \chi_{[a,b]}$ everywhere. Therefore, 
+\begin{equation*}
+	0 \leq \mu([a,b]) = \int_{\mathbb{R}}\chi_{[a,b]}\;d\mu(x) \leq \int_{\mathbb{R}}f\;d\mu(x) = 0.  
+\end{equation*}
+Thus, $\mu([a,b]) = 0$. Since $[a,b]$ contains the support of $\mu$, we conclude that 
+\begin{equation*}
+	\mu(\mathbb{R}) = \mu(\mathbb{R}\setminus[a,b]) + \mu([a,b]) = 0 + 0 = 0. 
+\end{equation*}
+Thus $\mu$ is the zero measure. 
+
+\begin{prb}{2018-A-I-5}
+	If $\{\mu_{n}\}$ are positive finite measures on $[0,1]$ that converge in the weak-$\ast$ topology to $\mu$, prove $\{\mu_{n} \times \mu_{n}\}$ converges in the weak-$\ast$ topology. 
+\end{prb}
+Let $\{\mu_{n}\}$ be positive finite measures on $[0,1]$ that converge in the weak-$\ast$ topology to $\mu$. In particular, one has that $\{\mu_{n}([0,1])\}_{n=1}^{\infty}$ is a convergent sequence of real numbers. Since every convergent sequence of real numbers is bounded, there exists some finite $M > 0$ so that $\mu_{n}([0,1]) \leq M$ for all $n$, and hence, $\mu([0,1]) \leq M$. Let $f \in C([0,1]^{2})$. Fix some $\epsilon > 0$. By the Stone-Weierstrass theorem\footnote{\href{https://en.wikipedia.org/wiki/Stone\%E2\%80\%93Weierstrass\_theorem\#Applications\_2}{https://en.wikipedia.org/wiki/Stone\%E2\%80\%93Weierstrass\_theorem\#Applications\_2}}, there exist separate finite collections $\{f_{j}\}_{j = 1}^{k}$ and $\{g_{j}\}_{j = 1}^{k}$ of continuous functions in $[0,1]$ so that 
+\begin{equation*}
+	\sup_{(x, y) \in [0,1]^{2}}\abs{f - \sum_{1}^{k}f_{j}g_{j}} < \frac{\epsilon}{3M^{2}}. 
+\end{equation*}
+This means that, 
+\begin{align*}
+	\begin{split}
+		\int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu \times \mu) &< \int \frac{\epsilon}{3M^{2}}\;d(\mu\times\mu) \leq \frac{\epsilon}{3}. \\
+		\int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu_n \times \mu_n) & < \int \frac{\epsilon}{3M^2}\;d(\mu_n \times \mu_n) \leq \frac{\epsilon}{3}, \qquad \forall n \geq 1. 
+	\end{split}
+\end{align*}
+Next, since each $f_{j}, g_{j}$ is integrable on $[0,1]$ (with respect to every $\mu_n$ and $\mu$), by the Fubini-Tonelli theorem and our hypothesis on the $\mu_{n}$, 
+\begin{equation*}
+	\int f_{j}g_{j}\;d(\mu_n \times \mu_n) = \left(\int f_{j}\;d\mu_n\right)\left(\int g_{j}\;d\mu_n\right) \xrightarrow{n \to \infty}\left(\int f_j\;d\mu\right)\left(\int g_j\;d\mu\right) = \int f_jg_j\;d(\mu \times \mu). 
+\end{equation*}
+This means that given our choice of $\epsilon$, there exists some $N \in \mathbb{N}$ large enough so that for all $n\geq N$, one has 
+\begin{equation*}
+	\abs{\int f_{j}g_j\;d(\mu \times \mu) - \int f_jg_j\;d(\mu_n\times\mu_n)} \leq \frac{\epsilon}{3k}. 
+\end{equation*}
+
+So then we note that for all $n \geq N$, one has 
+\begin{align*}
+	\begin{split}
+		\abs{\int f\;d(\mu\times \mu) - \int f\;d(\mu_n \times \mu_n)}&\leq \int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu\times\mu) \\
+		&\qquad + \abs{\sum_{1}^{k}\left(\int f_{j}g_{j}\;d(\mu\times\mu) - \int f_{j}g_{j}\;d(\mu_n\times\mu_n)\right)} \\
+		&\qquad\qquad + \int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu_n\times\mu_n) \\
+		&\leq \int \abs{f - \sum_1^kf_jg_j\;d(\mu \times \mu)} + \int \abs{f - \sum_1^kf_jg_j}\;d(\mu_n\times\mu_n) \\
+		&\qquad \quad + \sum_1^k\abs{\int f_jg_j\;d(\mu\times\mu) - \int f_jg_j\;d(\mu_n\times\mu_n)} \\
+		&\leq \frac{2\epsilon}{3} + \sum_{1}^{k}\frac{\epsilon}{3k}  = \frac{2\epsilon}{3} + \frac{\epsilon}{3} = \epsilon. 
+	\end{split}
+\end{align*}
+Since $f\in C([0,1]^2)$ was arbitrary, we conclude that $\mu_n \times \mu_n \to \mu \times \mu$ in the weak-$\ast$ topology. 
+
+\begin{prb}{2017-A-II-1}
+	Suppose that $f \in C([0,1])$ is a continuous real-valued function on $[0,1]$ for which 
 	\begin{equation*}
-		\norm{f}_{q} \geq \mu(E)^{1/q} \cdot (\norm{f}_{\infty} - \epsilon). 
+		\int_0^1x^nf(x)\;dx = 0
 	\end{equation*}
-	Since the left side is independent of $\epsilon$, passing $\epsilon \to 0$ gives $\norm{f}_{q} \geq \mu(E)^{1/q}\cdot \norm{f}_{\infty}$ so that $\lim_{q \to \infty}\norm{f}_{q} \geq \norm{f}_{\infty}$. This concludes the proof. 
-	
-	\begin{prb}{2017-J-II-2}
-		Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^{2}([0,1])$ we have that $fg \in L^{2}([0,1])$. Show $f$ is in $L^{\infty}([0,1])$. 
-	\end{prb}
-	Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Define the functional $T: L^{2}([0,1]) \to L^{2}([0,1])$ by $Tg \coloneqq fg$ for any $g \in L^{2}([0,1])$. It is immediately clear that this operator is linear. We will now show that $T$ is a closed linear operator. Let $\{g_{j}\}_{j = 1}^{\infty}\subset L^{2}([0,1])$ be a sequence of square-integrable functions so that $g_{j} \to 0$ under the $L^{2}$ norm. Further assume that $Tg_{j}$ converges to some $y \in L^{2}([0,1])$ under the $L^{2}$-norm. Since convergence under the $L^{2}$ norm implies pointwise a.e. convergence of a subsequence, there exists a subsequence $\{g_{j_{k}}\}_{k = 1}^{\infty}$ so that $g_{j_{k}} \to 0$ pointwise a.e. Since $Tg_{j_{k}} \to y$ under the $L^{2}$ norm, there exists a further subsequence $\{g_{j_{k_{l}}}\}_{l = 1}^{\infty}$ so that $Tg_{j_{k_{l}}}$ converges to $y$ pointwise a.e. and by construction, $g_{j_{k_{l}}}$ converges to 0 pointwise a.e. By definition of $T$, it then follows that $f(x)g_{j_{k_{l}}}(x)$ converges to $0$ pointwise a.e. so that $y = 0$ a.e. Thus in fact, we have shown that the graph of $T$, $\Gamma(T)$, is closed. By the closed graph theorem, it follows that $T$ is continuous, and thus bounded. Therefore, we conclude that $f$ must be bounded, and hence, must be in $L^{\infty}([0,1])$. 
-	
-	
-	\begin{prb}{F-6-1-2}
-		Prove Theorem 6.8. 
-	\end{prb}
-	Theorem 6.8 states the following 
-	\begin{quote}
-		\textbf{6.8 Theorem.} $ $\newline \vspace{-0.65cm}
-		\begin{enumerate}[itemsep =-2pt,label = \alph{*}.]
-			\item If $f$ and $g$ are measurable functions on $X$, then $\norm{fg}_{1} \leq \norm{f}_{1}\norm{g}_{\infty}$. If $f \in L^{1}$ and $g \in L^{\infty}$, $\norm{fg}_{1} = \norm{f}_{1}\norm{g}_{\infty}$ iff $|g(x)| = \norm{g}_{\infty}$ a.e. on the set where $f(x) \neq 0$. 
-			\item $\norm{\empspace}_{\infty}$ is a norm on $L^{\infty}$. 
-			\item $\norm{f_{n} - f}_{\infty} \to 0$ iff there exists $E \in \mathcal{M}$ such that $\mu(E^{c}) = 0$ and $f_{n} \to f$ uniformly on $E$. 
-			\item $L^{\infty}$ is a Banach space. 
-			\item Simple functions are dense in $L^{\infty}$. 
-		\end{enumerate}
-	\end{quote}
-	\begin{enumerate}[itemsep =-2pt,label = \alph{*}.]
-		\item Let $f, g$ be measurable functions on $X$. Since $|g(x)| \leq \norm{g}_{\infty}$ a.e., one has 
+	for all non-negative integers $n$. Does it follows that $f(x) = 0$ for all $x \in [0,1]$. 
+\end{prb}
+Let $f$ be a continuous real-valued function on $[0,1]$ such that for all non-negative integers $n$, 
+\begin{equation*}
+	\int_0^1x^nf(x)\;dx = 0. 
+\end{equation*}
+By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[0,1]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(x) = a^{(j)}_nx^n + a^{(j)}_{n-1}x^{n-1} + \dotsm + a^{(j)}_{1}x + a_{0}^{(j)}$, 
+\begin{equation*}
+	\int_{0}^{1}p_j(x)f(x)\;dx = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{0}^1x^{k}f(x)\;dx = 0. 
+\end{equation*}
+Thus, uniform convergence tells us that in the limit $j \to \infty$, 
+\begin{equation*}
+	\int_{0}^{1}f(x)^2\;dx = 0. 
+\end{equation*}
+Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [0,1]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $x_0$ in $[0,1]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[0,1]$. 
+
+\begin{prb}{2014-A-II-5}
+	Suppose $f$ is a continuous function on $[0,1]$ and $\int_0^1f(t)t^n\;dt = 0$ for every $n = 0,1,2\ldots$. Prove that $f$ is the zero function. 
+\end{prb}
+Let $f$ be a continuous real-valued function on $[0,1]$ such that for all non-negative integers $n$, 
+\begin{equation*}
+	\int_0^1t^nf(t)\;dt = 0. 
+\end{equation*}
+By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[0,1]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(t) = a^{(j)}_nt^n + a^{(j)}_{n-1}t^{n-1} + \dotsm + a^{(j)}_{1}t + a_{0}^{(j)}$, 
+\begin{equation*}
+	\int_{0}^{1}p_j(t)f(t)\;dt = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{0}^1t^{k}f(t)\;dt = 0. 
+\end{equation*}
+Thus, uniform convergence tells us that in the limit $j \to \infty$, 
+\begin{equation*}
+	\int_{0}^{1}f(t)^2\;dt = 0. 
+\end{equation*}
+Since $f^2 \geq 0$, we must have $f(t)^2 = 0$ a.e., which implies $f(t) =0$ a.e. Suppose there exists some $t_0 \in [0,1]$ such that $f(t_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $t_0$ in $[0,1]$ so that $f(t) \neq 0$ for any $t \in U$. But then $U$ has nonzero measure, contradicting our result that $f(t) =0 $ a.e. Thus by contradiction, $f(t) = 0$ everywhere on $[0,1]$. 
+
+\begin{prb}{1998-J-II-1}
+	Let $f$ be a measurable compactly supported function on $\mathbb{R}$ where 
+	\begin{equation*}
+		\int f(x)x^n\;dx = 0 
+	\end{equation*}
+	for all $n\geq 0$. Show that $f$ is zero almost everywhere. 
+\end{prb}
+Let $f$ be a measurable compactly supported function on $\mathbb{R}$ such that for all $n \geq 0$, 
+\begin{equation*}
+	\int f(x)x^n\;dx = 0. 
+\end{equation*}
+Let $K = [a,b]$ be a compact subset of $\mathbb{R}$ that contains the support of $f$. By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[a,b]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(x) = a^{(j)}_nx^n + a^{(j)}_{n-1}x^{n-1} + \dotsm + a^{(j)}_{1}x + a_{0}^{(j)}$, 
+\begin{equation*}
+	\int_{a}^{b}p_j(x)f(x)\;dx = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{a}^{b}x^{k}f(x)\;dx = 0. 
+\end{equation*}
+Thus, uniform convergence tells us that in the limit $j \to \infty$, 
+\begin{equation*}
+	\int_{a}^{b}f(x)^2\;dx = 0. 
+\end{equation*}
+Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [a,b]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[a,b]$, there exists a nonempty open interval $U$ of $x_0$ in $[a,b]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[a,b]$. 
+
+\subsection{Partial Differential Equations}
+\begin{prb}{2004-J-II-6}
+	Let $\varphi(x)$ be the characteristic function of the interval $1 \leq x \leq 3$. Find the value $u(1,3)$, where $u(x,t)$ denotes the solution to 
+	\begin{equation*}
+		\left\{
+		\begin{alignedat}{3}
+			&u_{tt} - u_{xx} &=0, &\qquad \text{ in $\mathbb{R}_+ \times (0,\infty)$} \\
+			&u(x,0) = &\varphi(x), &\qquad \text{ in $\mathbb{R}_+$} \\
+			&u_t(x,0)= &0, &\qquad \text{ in $\mathbb{R}_+$} \\
+			&u(0,t) = &0, &\qquad \text{ in $t \geq 0$}. 
+		\end{alignedat}
+		\right.
+	\end{equation*}
+\end{prb}
+This is the Cauchy initial value problem for the wave equation on the half-line. To solve this problem, we will use the method of odd reflection to obtain the Cauchy wave problem on the real line. Define $\ti{u}(x, t)$ and $\ti{\varphi}(x)$ such that 
+\begin{align*}
+	\begin{split}
+		\ti{u}(x, t) &= 
+		\begin{cases}
+			u(x, t), & x \geq 0 \\
+			-u(-x,t), & x < 0
+		\end{cases} \\
+		\ti{\varphi}(x) &= 
+		\begin{cases}
+			\varphi(x), & x \geq 0 \\
+			-\varphi(-x), & x < 0.
+		\end{cases}
+	\end{split}
+\end{align*}
+Then since $\ti{u}$ satisfies the wave equation on $\mathbb{R}$, d'Alembert's formula gives us the general solution, 
+\begin{equation*}
+	\ti{u}(x,t) = \frac{1}{2}[\ti{\varphi}(x + t) + \ti{\varphi}(x - t)]. 
+\end{equation*}
+In particular, one has 
+\begin{equation*}
+	u(x, t) = 
+	\begin{cases}
+		\displaystyle \frac{1}{2}[\varphi(x + t) + \varphi(x - t)], &\qquad x \geq t \geq 0 \\
+		\displaystyle \frac{1}{2}[\varphi(x + t) - \varphi(t - x)], &\qquad 0 \leq x < t. 
+	\end{cases}
+\end{equation*}
+Therefore, we find 
+\begin{equation*}
+	u(1,3) = \frac{1}{2}[\varphi(4) - \varphi(2)] = -\frac{1}{2}\varphi(2) = -\frac{1}{2}. 
+\end{equation*}
+
+\begin{prb}{E-1-1}
+	$ $\newline \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Show the general solution of the PDE $u_{xy} = 0$ is 
 		\begin{equation*}
-			\norm{fg}_{1} = \int_{X}|fg|\;d\mu \leq \int_{X}|f|\norm{g}_{\infty}\;d\mu  \eqqcolon \norm{f}_{1}\norm{g}_{\infty}. 
+			u(x, y) = F(x) + G(y) 
 		\end{equation*}
-		Now suppose $|g(x)| = \norm{g}_{\infty}$ a.e. on the set $E = \{x: f(x) \neq 0\}$. Then 
-		\begin{equation*}
-			\norm{fg}_{1} = \int_{X}|fg|\;d\mu = \int_{E}|f||g|\;d\mu = \int_{E}|f|\norm{g}_{\infty}\;d\mu = \norm{f}_{1}\norm{g}_{\infty}. 
-		\end{equation*}
-		Now suppose $\norm{fg}_{1} = \norm{f}_{1}\norm{g}_{\infty}$ on $E$. I.e., one has 
-		\begin{equation*}
-			\int_{X} |fg|\;d\mu = \int_{E}|f||g|\;d\mu = \int_{E}|f|\norm{g}_{\infty}\;d\mu \implies \int_{E}|f|(|g| - \norm{g}_{\infty})\;d\mu = 0. 
-		\end{equation*}
-		We note that on $E$, $|f| \gneq 0$. Moreover, $|g| - \norm{g}_{\infty} \leq 0$ on $E$. Thus, the integral is zero if and only if $|g| - \norm{g}_{\infty} = 0$ a.e. on $E$ so that $|g(x)| = \norm{g}_{\infty}$ a.e. on $E$. 
-		\item Recall that we defined the following 
-		\begin{equation*}
-			\norm{f}_{\infty} = \inf\{a \geq 0: |f(x)| \leq a \text{ a.e.}\}. 
-		\end{equation*}
-		Thus it follows immediately that for any $f \in L^{\infty}$, $\norm{f}_{\infty} \geq 0$. Now suppose $f(x) = 0$ a.e. Then $|f(x)| = 0$ a.e. so that $\norm{f}_{\infty} = 0$. On the other hand, if $\norm{f}_{\infty} = 0$, then $0 \leq |f(x)|\leq 0$ for a.e. $x$ so that $f(x) = 0$ a.e. Now we will show that the essential supremum is homogeneous. If $\lambda = 0$, the proof is immediate. So suppose $\lambda \neq 0$. Let $\mathcal{A} = \{a \geq 0: |f(x)| \leq a \text{ a.e.}\}$, and let $\mathcal{B} = \{b \geq 0: |\lambda f(x)| \leq b \text{ a.e.}\}$. Suppose $|f(x)| \leq a$ a.e. Then it follows that for any $\lambda \in \mathbb{C}\setminus \{0\}$, $|\lambda f(x)| = |\lambda||f(x)| \leq |\lambda|a$ a.e. This shows that $|\lambda| \mathcal{A} \subset \mathcal{B}$ (which means that $|\lambda|\norm{f}_{\infty} = |\lambda|\inf\mathcal{A} \geq \norm{\lambda f}_{\infty} = \inf\mathcal{B}$). Now suppose $|\lambda f(x)| \leq b$ a.e. so that $|f(x)| \leq b/|\lambda|$ a.e.  This means that $(1/|\lambda|)\mathcal{B} \subset \mathcal{A}$ so that $(1/|\lambda|)\norm{\lambda f}_{\infty} \geq \norm{f}_{\infty} \iff \norm{\lambda f}_{\infty} \geq |\lambda|\norm{f}_{\infty}$. Thus, one has $\norm{\lambda f}_{\infty} = |\lambda|\norm{f}_{\infty}$. Now we will show that the triangle inequality holds. Let $f, g \in L^{\infty}$. Further define the sets $\mathcal{A} = \{a\geq 0: |f(x) + g(x)|\leq a \text{ a.e.}\}$, $\mathcal{F} = \{b \geq 0: |f(x)|\leq b \text{ a.e.}\}$, and $\mathcal{G} = \{c\geq 0: |g(x)|\leq c \text{ a.e.}\}$. Let $b \in \mathcal{F}, c \in \mathcal{G}$. Then a.e. $x$, 
-		\begin{equation*}
-			|f(x) + g(x)|\leq |f(x)| + |g(x)| \leq b + c, 
-		\end{equation*}
-		so that $\mathcal{F} + \mathcal{G} \subset \mathcal{A}$. Taking the infimum of both sides, one has $\norm{f + g}_{\infty} = \inf\mathcal{A} \leq \inf{\mathcal{F}} + \inf{\mathcal{G}} = \norm{f}_{\infty} + \norm{g}_{\infty}$. Thus, the proof that $\norm{\empspace}_{\infty}$ is a norm concludes.  
-		\item Suppose there exists $E \in \mathcal{M}$ so that $\mu(E^{c}) = 0$ and $f_{n} \to f$ uniformly on $E$. I.e., we have that $f_{n} \to f$ uniformly a.e. This means that for every $\epsilon > 0$, there exists $N \in \mathbb{N}$ large enough so that for all $n \geq N$ and almost all $x \in X$, $|f_{n}(x) - f(x)| \leq \epsilon$. By definition of the essential supremum, it follows that for all $n \geq N$, $\norm{f_{n} - f}_{\infty} \leq \epsilon$. Thus we conclude that $\norm{f_{n} - f}_{\infty} \to 0$. Now suppose that $\norm{f_{n} - f}_{\infty} \to 0$. This means that for every $\epsilon > 0$, there exists $N \in \mathbb{N}$ large enough so that for all $n \geq N$, $\norm{f_{n} - f}_{\infty} \leq \epsilon$. For each fixed $n\geq N$, let $Z_{n}$ denote the set $\{x: |f_{n}(x) - f(x)| > \norm{f_{n} - f}_{\infty}\}$; note that $\mu(Z_{n}) = 0$. Let $E_{n} = X \setminus Z_{n}$. One has that $f_{n} \to f$ uniformly on $E \coloneqq \bigcap_{n \geq N}E_{n}$. On the other hand, 
-		\begin{equation*}
-			\mu\left(\left(\bigcap_{n\geq N}E_{n}\right)^{c}\right) = \mu\left(\bigcup_{n \geq N}Z_{n}\right) = 0, 
-		\end{equation*}
-		by countable subadditivity. 
-		
-		\item Let $\{f_{n}\}_{n\geq 1} \subseteq L^{\infty}(X)$ be a Cauchy sequence. It suffices to show that $\{f_{n}\}$ converges to some $f\in L^{\infty}$. by definition of Cauchy sequences, for every $\epsilon > 0$, there exists a positive integer $N$ so that for all $n, m \geq N$, $\norm{f_{n} - f_{m}}_{\infty} \leq \epsilon$. For each pair $(n,m) \geq (N, N)$, let $E_{n,m}$ denote the set $\{x: |f_{n}(x) -f_{m}(x)| > \norm{f_{n} - f_{m}}_{\infty}\}$, and let $E = \bigcup_{n,m = 1}^{\infty}E_{n,m}$. By countable subadditivity, one has $\mu(E) = 0$. On the other hand, for every $x \in E^{c}$, the sequence $\{f_{n}(x)\}_{n = 1}^{\infty}$ is a Cauchy sequence in $\mathbb{C}$ and thus converges to some value. Define the function $f: X \to \mathbb{C}$ as follows 
-		\begin{equation*}
-			f(x) = 
-			\begin{cases}
-				\displaystyle\lim_{n \to \infty}f_{n}(x), & x \in E^{c} \\
-				0, & x \in E.
-			\end{cases}
-		\end{equation*}
-		First, we must show that $f \in L^{\infty}$. Since $\{f_{n}\}$ is a Cauchy sequence, it follows that $\{\norm{f_{n}}_{\infty}\}_{n \geq 1}$ is a Cauchy sequence in $\mathbb{R}$, and thus must be bounded above by some finite constant $M > 0$. Therefore, for every $x \in E^{c}$, one has 
-		\begin{equation*}
-			|f(x)| = \lim_{n \to \infty}|f_{n}(x)| \leq \lim_{n \to \infty}\norm{f_{n}}_{\infty} = M, 
-		\end{equation*}
-		so that $\norm{f}_{\infty} \leq M < \infty$. Thus, $f \in L^{\infty}$. Now we need to show that $f_{n} \to f$ under the $L^{\infty}$ norm. Let $\epsilon > 0$. Let $N \in \mathbb{N}$ so that for all $n, m\geq N$, $\norm{f_{n} - f_{m}} < \epsilon$. Then for every $x \in E^{c}$, 
-		\begin{equation*}
-			|f_{n}(x) - f(x)| = \lim_{m \to\infty}|f_{n}(x) - f_{m}(x)| \leq \epsilon. 
-		\end{equation*}
-		Since this inequality holds for all $n \geq n$, $x \in E^{c}$, we conclude that $\norm{f_{n} - f}_{\infty} \leq \epsilon$, and thus $f_{n} \to f$ under the $L^{\infty}$-norm. 
-		\item First, we will start by showing that simple functions are contained in $L^{\infty}$. To do so, we will look at \textit{characteristic functions}. Since for every $x \in X$, $|\chi_{E}(x)| \leq 1$ for any measurable subset $E \subseteq X$, it follows that $\chi_{E}$ is bounded everywhere on $X$, and hence, is contained in $L^{\infty}$. Thus, it follows that every simple function is contained in $L^{\infty}$. Now we will show that the set of simple functions in $L^{\infty}$ is dense in this space. Fix an arbitrary $f \in L^{\infty}$. By Theorem 2.10, there exists a sequence $\{\phi_{n}\}$ of simple functions such that $0 \leq |\phi_{1}| \leq |\phi_{2}| \leq \dotsm \leq |f|$, $\phi_{n} \to f$ pointwise, and $\phi_{n} \to f$ uniformly on any set on which $f$ is bounded. Since $f$ is essentially bounded, there exists some measurable set $E \in \mathcal{M}$ so that $\mu(E^{c}) = 0$ and $f$ is bounded on $E$. Thus, $\phi_{n} \to f$ uniformly on $E$. But by part (c), it follows that $\norm{\phi_{n} - f}_{\infty} \to \infty$; i.e., for every $\epsilon > 0$, there exists some positive integer $N$ so that for all $n \geq N$, $\norm{\phi_{n} - f}_{\infty} \leq \epsilon$. Thus, this proves density of simple functions in $L^{\infty}$. 
+		for arbitrary functions $F, G$. 
+		\item Using the change of variables $\xi = x + t$, $\eta = x - t$, show $u_{tt} - u_{xx} = 0$ if and only if $u_{\xi\eta} = 0$. 
+		\item Use (a) and (b) to rederive d'Alembert's formula. 
 	\end{enumerate}
-	
-	\begin{prb}{F-6-1-3}
-		If $1 \leq p < r \leq \infty$, $L^{p} \cap L^{r}$ is a Banach space with norm $\norm{f} = \norm{f}_{p} + \norm{f}_{r}$, and if $p < q < r$, the inclusion map $L^{p} \cap L^{r} \to L^{q}$ is continuous. 
-	\end{prb}
-	Fix $1 \leq p < r \leq \infty$, and define the map $\norm{\empspace}: L^{p} \cap L^{r} \to [0, \infty)$ as given above. First, we will begin by showing that this map is a well-defined norm. Let $f \in L^{p} \cap L^{r}$, and assume $\norm{f} = \norm{f}_{p} + \norm{f}_{r} = 0$. Then since $\norm{f}_{p}, \norm{f}_{r} \geq 0$, one must have $\norm{f}_{p} =0$ and $\norm{f}_{r} = 0$. But by positive definiteness of the $L^{p}$ norms, one must have $f = 0$ a.e. Now we will show homogeneity. Let $\lambda \in \mathbb{C}$. Then 
+\end{prb}
+\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+	\item Consider the PDE $u_{xy} =0$. Let $v(x,y) = u_{x}$. Then $v$ satisfies the differential equation $v_{y} = 0$. Thus since $v$ is independent of $y$, one has $u_{x}(x,y) = v(x,y) = f(x)$ for some arbitrary function $f$. But then integrating both sides with respect to $x$, and supposing that $F(x)$ is the antiderivative of $f(x)$, 
+	\begin{equation*}
+		u(x,y) = F(x) + G(y), 
+	\end{equation*}
+	where $G$ is some arbitrary function of $y$. 
+	\item Define $\xi = x + t$ and $\eta = x -t$ so that $x = (\xi + \eta)/2$ and $t = (\xi - \eta)/2$. Then, 
 	\begin{align*}
 		\begin{split}
-			\norm{\lambda f} &= \norm{\lambda f}_{p} + \norm{\lambda f}_{r} \\
-			&= |\lambda|(\norm{f}_{p} + \norm{f}_{r}) \\
-			&= |\lambda|\norm{f}.
+			u_{\xi} &= u_{x}\frac{\partial x}{\partial \xi} + u_{t}\frac{\partial t}{\partial \xi} \\
+			&= \frac{1}{2}u_{x} + \frac{1}{2}u_{t}. \\
+			u_{\xi\eta} &= \frac{1}{2}\left[u_{xx}\frac{\partial x}{\partial \eta} + u_{xt}\frac{\partial t}{\partial \eta}\right] + \frac{1}{2}\left[u_{tx}\frac{\partial x}{\partial \eta} + u_{tt}\frac{\partial t}{\partial \eta}\right] \\
+			&= \frac{1}{2}[u_{xx} -u_{xt}] + \frac{1}{2}[u_{tx} - u_{tt}] =  \frac{1}{2}[u_{tt} - u_{xx}], 
 		\end{split}
 	\end{align*}
-	Finally, we will show that the triangle inequality is satisfied. Let $f, g \in L^{p} \cap L^{r}$. Then 
+	where we used the fact that $u_{xt} = u_{tx}$. Thus, the proof concludes. 
+	\item Consider the initial value problem, 
+	\begin{equation*}
+		\left\{
+		\begin{alignedat}{3}
+			&u_{tt} -u_{xx} &= 0 \qquad &(\text{in $\mathbb{R} \times (0,\infty)$}) \\
+			&u = g, u_{t} &= h \qquad &(\text{on $\mathbb{R} \times \{t = 0\}$}).
+		\end{alignedat}
+		\right.
+	\end{equation*}
+	Define the change of variables $\xi = x + t$ and $\eta = x - t$ as above. By (b), $u_{tt} - u_{xx} = 0$ if and only if $u_{\xi\eta} =0$. By (a), it follows that $u$ must be of the form, 
+	\begin{equation*}
+		u(\xi, \eta) = F(\xi) + G(\eta). 
+	\end{equation*}
+	Thus, $u(x,t) = F(x + t) + G(x - t)$. Now we must match the initial conditions. At $t = 0$, 
 	\begin{align*}
 		\begin{split}
-			\norm{f + g} &= \norm{f + g}_{p} + \norm{f + g}_{r} \\
-			&\leq  \norm{f}_{p} + \norm{g}_{p} + \norm{f}_{r} + \norm{g}_{r} \\
-			&= \norm{f} + \norm{g}. 
+			u(x, 0) &= F(x) + G(x) = g(x). \\
+			u_{t}(x, 0) &= F'(x) - G'(x) = h(x). 
 		\end{split}
 	\end{align*}
-	Thus $\norm{\empspace}$ is a norm on $L^{p} \cap L^{r}$. Now we will show that $L^{p} \cap L^{r}$ is a Banach space under this norm. Let $\{f_{n}\}_{n \geq 1} \subset L^{p} \cap L^{r}$ be a Cauchy sequence. Then by construction of $\norm{\empspace}$, one has that $\{f_{n}\}$ is a Cauchy sequence in $L^{p}$ and in $L^{r}$. Thus since each of these spaces are Banach, $f_{n} \to f$ in $L^{p}$ and $f_{n} \to g$ in $L^{r}$. Our first task is to show that $f = g$ a.e. Since $\{f_{n}\}$ converges to $f$ in $L^{p}$, there exists a subsequence $\{f_{n_{k}}\}$ that converges to $f$ pointwise a.e. But since $\{f_{n_{k}}\} \subset \{f_{n}\}$ and the latter converges to $g$ in $L^{r}$, there exists a further subsequence $\{f_{n_{k_{j}}}\}$ that converges pointwise to $g$ a.e. But since $\{f_{n_{k}}\} \to f$ pointwise a.e., every subsequence must also converge to $f$ pointwise a.e. Thus by uniqueness of limits, we must have $f = g$ a.e. This shows that $f, g \in L^{p} \cap L^{r}$. Thus, 
+	Differentiating the first equation, one first obtains the system 
 	\begin{equation*}
-		\norm{f_{n} - f} = \norm{f_{n} - f}_{p} + \norm{f_{n} - f}_{r} \xrightarrow{n \to \infty} 0. 
-	\end{equation*}
-	This concludes the proof that $(L^{p} \cap L^{r}, \norm{\empspace})$ is Banach. Now let $p < q < r$. By Proposition 6.10, one has $L^{p} \cap L^{r} \subset L^{q}$ so that the inclusion $\iota: L^{p} \cap L^{r} \embedd L^{q}$ is well-defined. To show that $\iota$ is continuous, it suffices to show that it is bounded. By Proposition 6.10 and Young's inequality (in that order), one has 
+		\left\{
+		\begin{alignedat}{2}
+			&F'(x) + G'(x) &= g'(x) \\
+			&F'(x) - G'(x) &= h(x). 
+		\end{alignedat}
+		\right. 
+	\end{equation*} 
+	Thus, we get 
 	\begin{equation*}
-		\norm{\iota(f)}_{q} \leq \norm{f}_{p}^{\lambda} \norm{f}_{r}^{1 - \lambda} \leq \lambda \norm{f}_{p} + (1 - \lambda) \norm{f}_{r} \leq \norm{f}_{p} + \norm{f}_{r} \eqqcolon \norm{f}, 
+		F'(x) = \frac{1}{2}(g'(x) +h(x)) \implies F(x + t) = \frac{1}{2}[g(x+ t) - g(0)] + \frac{1}{2}\int_{0}^{x + t}h(y)\;dy + F(0). 
 	\end{equation*}
-	where $\lambda$ is defined by the relation $q^{-1} = \lambda p^{-1} + (1 - \lambda)q^{-1}$ and $\lambda \in (0,1)$. Thus, since $f \in L^{p} \cap L^{r}$ was arbitrary, $\iota$ is bounded, and thus continuous. 
-	
-	
-	\begin{prb}{F-6-1-7}
-		If $f \in L^{p} \cap L^{\infty}$ for some $p < \infty$, so that $f \in L^{q}$ for all $q > p$, then $\norm{f}_{\infty} = \lim_{q \to \infty}\norm{f}_{q}$. 
-	\end{prb}
-	Fix some $f \in L^{p} \cap L^{\infty}$ for some $p < \infty$. By Proposition 6.10, one has that $f \in L^{q}$ for all $q > p$. Let $\epsilon > 0$, and let $A = \{x: |f(x)| > \norm{f}_{\infty} - \epsilon\}$; by definition of the essential supremum, $A$ has positive measure; note that since $f \in L^{q}$, $A$ must have \textit{finite} measure. Then one has 
+	Likewise, we get 
 	\begin{equation*}
-		\norm{f}_{q}^{q} = \int_{X}|f(x)|^{q}\;d\mu \geq \int_{A}|f(x)|^{q}\;d\mu \geq \mu(A)(\norm{f}_{\infty} - \epsilon)^{q}.  
+		G(x-t) = \frac{1}{2}[g(x - t) - g(0)] -\int_{0}^{x - t}h(y)\;dy + G(0). 
 	\end{equation*}
-	Since both sides are finite, one has $\norm{f}_{q} \geq \mu(A)^{1/q}(\norm{f}_{\infty} - \epsilon)$. Since $\epsilon > 0$ was arbitrary, one has $\norm{f}_{q} \geq \mu(A)^{1/q}\norm{f}_{\infty}$. Thus taking the limit $q \to \infty$, one has 
+	Adding the two equations, and using the fact that $F(0) + G(0) = g(0)$, we conclude that 
 	\begin{equation*}
-		\lim_{q \to \infty}\norm{f}_{q} \geq \norm{f}_{\infty}.
+		u(x,t) = \frac{1}{2}[g(x - t) + g(x + t)] + \frac{1}{2}\int_{x - t}^{x + t}h(y)\;dy, 
 	\end{equation*}
-	On the other hand, set $\lambda \in (0,1)$ so that $q^{-1} = \lambda p^{-1}$. Then by Proposition 6.10, one has 
+	which is precisely d'Alembert's formula. 
+\end{enumerate}
+
+\begin{prb}{E-1-2}
+	Assume $\mathbf{E} = (E^{1}, E^{2}, E^{3})$ and $\mathbf{B} = (B^{1}, B^{2}, B^{3})$ solve Maxwell's equations. Show 
 	\begin{equation*}
-		\norm{f}_{q} \leq \norm{f}_{p}^{\lambda} \norm{f}_{\infty}^{1 - \lambda} = \norm{f}_{p}^{p/q}\norm{f}_{\infty}^{1 - p/q}. 
+		u_{tt} - \Delta u= 0
 	\end{equation*}
-	Thus, taking the limit $q \to \infty$ on both sides yields, 
+	where $u = E^{i}$ or $B^{i}$ ($i = 1, 2, 3$). 
+\end{prb}
+Recall that Maxwell's equations are given by the following system, 
+\begin{equation*}
+	\left\{
+	\begin{alignedat}{1}
+		&\mathbf{E}_{t} = \nabla \times \mathbf{B} \\
+		&\mathbf{B}_{t} = -\nabla \times \mathbf{E} \\
+		&\mathbf{\nabla} \cdot \mathbf{B}= \nabla \cdot \mathbf{E} =0. 
+	\end{alignedat}
+	\right.
+\end{equation*}
+Assume $\mathbf{E} = (E^{1}, E^{2}, E^{3})$ and $\mathbf{B} = (B^{1}, B^{2}, B^{3})$ solve Maxwell's equations. Then differentiating the first equation and using the fact that time derivatives commute with spatial derivatives, one obtains 
+\begin{equation*}
+	\mathbf{E}_{tt} = \nabla \times \mathbf{B}_{t} = -\nabla \times (\nabla \times E) = -\nabla (\nabla \cdot \mathbf{E}) + \Delta \mathbf{E} = \Delta \mathbf{E}, 
+\end{equation*}
+where the final equality follows from the fact that $\nabla \cdot \mathbf{E} = 0$. Thus, we have 
+\begin{equation*}
+	\mathbf{E}_{tt} - \Delta \mathbf{E} = 0 \iff (E^{1}_{tt} - \Delta E^{1}, \ldots, E^{3}_{tt} - \Delta E^{3}) = \mathbf{0}. 
+\end{equation*}
+Hence, each $E^{i}$ satisfies the wave equation. Now differentiate the second equation. We get 
+\begin{equation*}
+	\mathbf{B}_{tt} =-\nabla \times \mathbf{E}_{t} = -\nabla \times (\nabla \times \mathbf{B}) = -\nabla (\nabla \cdot \mathbf{B}) + \Delta \mathbf{B} = \Delta \mathbf{B}. 
+\end{equation*}
+Thus we have, 
+\begin{equation*}
+	\mathbf{B}_{tt} - \Delta \mathbf{B} = 0 \iff (B^{1}_{tt} - \Delta B^{1}, \ldots, B^{3}_{tt} - \Delta B^{3}) = \mathbf{0}. 
+\end{equation*}
+Therefore, each $B^{i}$ satisfies the wave equation. 
+
+\begin{prb}{E-1-3}
+	(Equipartition of Energy). Let $u \in C^{2}(\mathbb{R} \times [0,\infty))$ solve the initial-value problem for the wave equation in one-dimension: 
 	\begin{equation*}
-		\lim_{q\to \infty}\norm{f}_{q} \leq \lim_{q \to \infty}\norm{f}_{q}^{p/q}\norm{f}_{\infty}^{1 - p/q} = \norm{f}_{\infty}. 
-	\end{equation*}
-	Thus the proof concludes. 
-	
-	\begin{prb}{F-6-1-10}
-		Suppose $1 \leq p < \infty$. If $f_{n}, f \in L^{p}$, and $f_{n} \to f$ a.e., then $\norm{f_{n} - f}_{p} \to 0$ iff $\norm{f_{n}}_{p}  \to \norm{f}_{p}$. (Use Exercise 20 in \S2.3.)
-	\end{prb}
-	Suppose $1 \leq p < \infty$, $f_{n}, f \in L^{p}$, and $f_{n} \to f$ a.e. Exercise 20 in \S2.3 states the following 
-	\begin{quote}
-		\textbf{(Generalized Dominated Convergence Theorem)} If $f_{n}, g_{n}, f, g \in L^{1}$, $f_{n} \to f$ and $g_{n} \to g$ a.e., $|f_{n}| \leq g_{n}$, and $\int g_{n}\to \int g$, then $\int f_{n} \to \int f$. 
-	\end{quote}
-	First assume that $\norm{f_{n} - f}_{p} \to 0$. Then one has 
+		\left\{
+		\begin{alignedat}{3}
+			&u_{tt} - u_{xx} &=0 \qquad &(\text{in } \mathbb{R} \times (0,\infty)) \\
+			&u=g, u_t &= h \qquad &(\text{on } \mathbb{R} \times \{t = 0\}).
+		\end{alignedat}
+		\right. 
+	\end{equation*} 
+	Suppose $g,h$ have compact support. The \textit{kinetic energy} is $k(t) \coloneqq \frac{1}{2}\int_{-\infty}^{\infty}u_t^2(x,t)\;dx$ and the \textit{potential energy} is $p(t) \coloneqq \frac{1}{2}\int_{-\infty}^{\infty}u_x^2(x,t)\;dx$. Prove \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
+		\item $k(t) + p(t)$ is constant in $t$, 
+		\item $k(t) = p(t)$ for all large enough times $t$. 
+	\end{enumerate}
+\end{prb}
+\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+	\item Let us define the kinetic and potential energy, $k(t)$ and $p(t)$ as given above. We wish to show that the total energy 
 	\begin{equation*}
-		\norm{f_{n}}_{p} \leq \norm{f_{n} - f}_{p} + \norm{f}_{p}. 
+		e(t) = k(t) + p(t) = \frac{1}{2}\int_{-\infty}^{\infty}u_t^2 + u_x^2\;dx
 	\end{equation*}
-	Thus taking the limit as $n \to \infty$ on both sides, one has 
+	is conserved, where $u$ is given by d'Alembert's formula, 
 	\begin{equation*}
-		\lim_{n \to \infty}\norm{f_{n}}_{p} = \lim_{n \to \infty}\norm{f_{n} - f}_{p} + \norm{f}_{p} = \norm{f}_{p}. 
+		u(x, t) = \frac{1}{2}[g(x + t) + g(x - t)] + \frac{1}{2}\int_{x - t}^{x + t}h(y)\;dy. 
 	\end{equation*}
-	Now suppose $\norm{f_{n}}_{p} \to\norm{f}_{p}$. We will use Exercise 20 from \S2.3. Since $f_{n}, f \in L^{p}$, one has that $|f_{n} - f|^{p}, 0, 2^{p -1}(|f_{n}|^{p} + |f|^{p}), 2^{p}|f|^{p} \in L^{1}$, $|f_{n} - f|^{p} \leq 2^{p - 1}(|f_{n}|^{p} + |f|^{p})$ for all $n$, and $\int 2^{p-1}(|f_{n}|^{p} + |f|^{p}) \to \int 2^{p}|f|^{p}$ (by the hypothesis). Thus by the Generalized Dominated Convergence Theorem, we conclude that 
-	\begin{equation*}
-		\norm{f_{n} - f}^{p}_{p} =\int |f_{n} - f|^{p} \to \int 0 = 0 \implies \norm{f_{n} - f}_{p} \to 0. 
-	\end{equation*}
-	
-	\begin{prb}{F-6-1-14}
-		If $g \in L^{\infty}$, the operator $T$ defined by $Tf = fg$ is bounded on $L^{p}$ for $1 \leq p \leq \infty$. Its operator norm is at most $\norm{g}_{\infty}$, with equality if $\mu$ is semifinite. 
-	\end{prb}
-	Fix an arbitrary $g \in L^{\infty}$, $1 \leq p \leq \infty$, and define the operator $T$ on $L^{p}$ by $Tf \coloneqq fg$. We begin by showing that for any $f \in L^{p}$, $fg \in L^{p}$. We compute (for $1 \leq p < \infty$), 
-	\begin{equation*}
-		\norm{fg}_{p}^{p} = \int_{X}|f|^{p}|g|^{p}\;d\mu \leq \int_{X}\norm{g}_{\infty}^{p}|f|^{p}\;d\mu = \norm{g}_{\infty}^{p}\norm{f}_{p}^{p} < \infty \implies \norm{fg}_{p} < \infty. 
-	\end{equation*}
-	The case for $p =\infty$ can be shown trivially. Thus, one has that for any $f \in L^{p}$, 
-	\begin{equation*}
-		\norm{Tf}_{p} = \norm{fg}_{p} \leq \norm{g}_{\infty}\norm{f}_{p}, 
-	\end{equation*}
-	so that $T$ is a bounded operator. Indeed we see that the operator norm of $T$ is at most $\norm{g}_{\infty}$. Now assume that $\mu$ is semifinite. Let $\epsilon > 0$, and first assume that $1 \leq p < \infty$. By semifiniteness, there exists a measurable set $E \in \mathcal{M}$ of finite positive measure so that $|g(x)| > \norm{g}_{\infty} - \epsilon$ on $E$. Then one has that for all $f \in L^{p}$, 
-	\begin{equation*}
-		\norm{fg}_{p}^{p} = \int_{X}|f|^{p}|g|^{p}\;d\mu \geq \int_{E}|f|^{p}(\norm{g}_{\infty} - \epsilon)^{p}\;d\mu. 
-	\end{equation*}
-	Let 
-	\begin{equation*}
-		f = \frac{\chi_{E}\operatorname{sgn}(g)}{\mu(E)^{1/p}} \implies \norm{f}_{p} = 1. 
-	\end{equation*}
-	For this particular choice of $f$, one has 
-	\begin{equation*}
-		\norm{Tf}_{p}^{p} \geq (\norm{g}_{\infty} - \epsilon)^{p} \implies \norm{Tf}_{p} \geq \norm{g}_{\infty} - \epsilon. 
-	\end{equation*}
-	Since this is true for all $\epsilon > 0$, $\norm{Tf}_{p} \geq \norm{g}_{\infty}$. Thus in fact, one has 
-	\begin{equation*}
-		\norm{T}= \sup_{\norm{h}_{p} \leq 1}\norm{Th} \geq \norm{Tf}_{p} \geq \norm{g}_{\infty}.
-	\end{equation*}
-	Therefore, in this case, we conclude that the operator norm of $T$ is exactly $\norm{g}_{\infty}$. Now consider the case $p = \infty$, and let $f = \chi_{E}\operatorname{sgn}(g)$. Then, one has 
-	\begin{equation*}
-		|f(x)g(x)| = |g(x)| > \norm{g}_{\infty} - \epsilon \implies \norm{fg}_{\infty} \geq \norm{g}_{\infty} - \epsilon. 
-	\end{equation*}
-	Therefore, one has 
-	\begin{equation*}
-		\norm{T} = \sup_{\norm{h}_{\infty} \leq 1}\norm{Th}_{\infty} \geq \norm{fg}_{\infty} \geq \norm{g}_{\infty} - \epsilon. 
-	\end{equation*}
-	Since $\epsilon > 0$ was arbitrary, we conclude that $\norm{T} \geq \norm{g}_{\infty}$. Thus the proof concludes in both cases by using the upper bound we proved above. 
-	
-	\begin{prb}{F-6-1-4}
-		If $1 \leq p < r \leq \infty$, $L^{p} + L^{r}$ is a Banach space with norm $\norm{f} = \inf\{\norm{g}_{p} + \norm{h}_{r}: f = g + h\}$, and if $p < q < r$, the inclusion map $L^{q} \embedd L^{p} + L^{r}$ is continuous. 
-	\end{prb}
-	Let $1 \leq p < r \leq \infty$, and let $\norm{\empspace}: L^{p} + L^{r} \to [0, \infty)$ be the map defined by 
-	\begin{equation*}
-		\norm{\empspace} \coloneqq \inf\{\norm{g}_{p} + \norm{h}_{r}: \cdot = g + h\}.
-	\end{equation*}
-	First, we will show that the above map is a norm. We begin by showing positive definiteness. Suppose $f \in L^{p} + L^{r}$ with $f= 0$ a.e. Then the sum $0 + 0$ is a decomposition of $f$ into a sum of an $L^{p}$ function with an $L^{r}$ function; i.e., $f = 0 + 0$ a.e. But then 
-	\begin{equation*}
-		\norm{f} = \inf\{\norm{g}_{p} + \norm{h}_{r}: f = g + h\} \leq \norm{0}_{p} + \norm{0}_{r} = 0 + 0 = 0. 
-	\end{equation*}
-	Now assume $\norm{f} =0$. By definition of infimum, for every $j \geq 1$, there exists a decomposition $g_{j} + h_{j}$ of $f$ so that $\norm{g_{j}}_{p} + \norm{h_{j}}_{r} \leq j^{-1}$. In particular, one has $\norm{g_{j}}_{p} \leq j^{-1}$ and $\norm{h_{j}}_{r} \leq j^{-1}$. Consider the sequence $\{g_{j}\}_{j = 1}^{\infty}$. By the above reasoning, it follows that the sequence converges to $0 =\norm{0}_{p}$. Thus since $\{g_{j}\}$ converges to 0 under the $L^{p}$ norm, it follows that there exists a subsequence $\{g_{j_{k}}\}_{k = 1}^{\infty}$ that converges to 0 pointwise a.e. Let $\{h_{j_{k}}\}_{k = 1}^{\infty}$ be the corresponding subsequence. Then since $\{h_{j}\} \to 0$ under the $L^{r}$ norm, $\{h_{j_{k}}\}_{k = 1}^{\infty}$ converges to 0 under the $L^{r}$ norm. Thus there exists a subsequence $\{h_{j_{k_{m}}}\}_{m = 1}^{\infty}$ that converges pointwise to 0 a.e. By construction, $\{g_{j_{k_{m}}}\}_{m = 1}^{\infty}$ also converges pointwise to 0 a.e. Thus, since $f = g_{j_{k_{m}}} + h_{j_{k_{m}}}$, taking the limit $m \to \infty$ yields that $f = 0$ a.e. Thus, we conclude that $\norm{\empspace}$ is positive definite. Now we will show that $\norm{\empspace}$ is homogeneous. If $\lambda \in \mathbb{C}$ is zero, the proof follows trivially. Thus let $\lambda \in \mathbb{C} \setminus \{0\}$, $\mathcal{A} = \{\norm{g}_{p} + \norm{h}_{r}: f = g + h\}$ and $\mathcal{B} = \{\norm{i}_{p} + \norm{j}_{r}: \lambda f = i + j\}$. If $g + h$ is a decomposition of $f$, then $\lambda g + \lambda h$ is a decomposition of $\lambda f$. Thus, we have $|\lambda|\mathcal{A} \subseteq \mathcal{B}$ so that $\norm{\lambda f} = \inf\mathcal{B}\leq |\lambda|\inf\mathcal{A} = |\lambda|\norm{f}$. On the other hand, suppose $i + j$ is a decomposition of $\lambda f$. Then $(1/\lambda)(i + j)$ is a decomposition of $f$ so that $1/|\lambda|\mathcal{B} \subseteq \mathcal{A}$, which implies $\norm{f} \leq \frac{1}{|\lambda|}\inf{\mathcal{B}} = \frac{1}{|\lambda|}\norm{\lambda f} \implies \norm{\lambda f}\geq |\lambda|\norm{f}$. Thus we conclude that $\norm{\lambda f} = |\lambda|\norm{f}$ so that $\norm{\empspace}$ is homogeneous. Finally, we will show that the triangle inequality is satisfied. Let $f_{1},f_{2} \in L^{p} + L^{r}$, and define the following sets 
+	so that 
 	\begin{align*}
 		\begin{split}
-			\mathcal{A} &= \{\norm{g_{1}}_{p} + \norm{h_{1}}_{r}: f_{1} = g_{1} + h_{1}\} \\
-			\mathcal{B} &= \{\norm{g_{2}}_{p} + \norm{h_{2}}_{r}: f_{2} = g_{2} + h_{2}\} \\
-			\mathcal{C} &= \{\norm{g_{3}}_{p} + \norm{h_{3}}_{r}: f_{1} + f_{2} = g_{3} + h_{3}\}. 
+			u_t(x,t) &= \frac{1}{2}[g'(x + t) - g'(x - t) + h(x + t) + h(x - t)]. \\
+			u_x(x, t) &= \frac{1}{2}[g'(x + t) + g'(x - t) + h(x + t) - h(x - t)]. 
 		\end{split}
 	\end{align*}
-	Let $g_{1} + h_{1}$ and $g_{2} + h_{2}$ be decompositions of $f_{1}$ and $f_{2}$, respectively. Then $(g_{1} + g_{2}) + (h_{1} + h_{2})$ is a decomposition of $f + g$ so that $\mathcal{A} + \mathcal{B} \subset \mathcal{C}$. This implies that 
+	Let $T > 0$, and let $K \subset \mathbb{R}$ be a compact set large enough so that $\operatorname{supp}{g}, \operatorname{supp}{h}$ are both contained in $K$. Then it follows that $u_t^2$ and $u_x^2$ are both supported in $K_{T} \coloneqq K + [-T,T]$ for all $0 \leq t \leq T$. Since $u_t^2$ and $u_x^2$ are continuous on $\mathbb{R}$ (and thus on $K_T$) for all $0 \leq t \leq T$, by the extreme value theorem, there exist finite constants $M$ and $N$ so that for all $x \in K$ and $0 \leq t \leq T$, $|u_t|^2 \leq M\chi_{K_T}$ and $|u_x^2| \leq N\chi_{K_T}$, where both dominating functions are integrable since $K_{T}$ is compact. Thus using the Dominated Convergence Theorem, taking the derivative of $e(t)$ gives us, 
+	\begin{align*}
+		\begin{split}
+			\dot{e}(t) &= \frac{1}{2}\frac{\partial}{\partial t}\int_{-\infty}^{\infty}u_t^2 + u_x^2\;dx = \frac{1}{2}\frac{\partial}{\partial t}\int_{K_T}u_t^2 + u_x^2\;dx \\
+			&= \frac{1}{2}\int_{K_T}\partial_t(u_t^2 + u_x^2)\;dx \\
+			&= \int_{K_T}u_tu_{tt} + u_x \cdot \partial_x u_t\;dx \\
+			&= \int_{K_T}u_t(u_{tt} - u_{xx})\;dx \qquad (\text{by integration by parts}) \\
+			&= 0, 
+		\end{split}
+	\end{align*}	
+	where there is no boundary term since $u_x, u_t$ are supported inside $K_T$. So we have shown that $\dot{e}(t) = 0$ for all $0 \leq t \leq T$. Since $T > 0$ was chosen arbitrarily, it follows that $\dot{e}(t)\equiv 0$. Therefore, the total energy is constant in $t$. 
+	\item What we wish is that in the limit $t \to \infty$, 
 	\begin{equation*}
-		\norm{f + g} = \inf\mathcal{C} \leq  \inf(\mathcal{A} + \mathcal{B}) = \inf\mathcal{A} + \inf\mathcal{B} = \norm{f} + \norm{g}. 
+		\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} \to 0. 
 	\end{equation*}
-	Thus, we conclude that $\norm{\empspace}$ is indeed a valid norm on $L^{p} + L^{r}$. Now we need to show that $(L^{p} + L^{r}, \norm{\empspace})$ is Banach. Let $\{f_{n}\}_{n = 1}^{\infty}$ be a Cauchy sequence under this norm. 
-	
-	\subsection{Baire Category Theorem}
-	\begin{prb}{2024-J-II-5}
-		Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty,\infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: you may use the Baire category theorem. 
-	\end{prb}
-	Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty,\infty)$. Let $\norm{\empspace}$ be a norm on $P$, and assume to the contrary that $P$ is complete under this norm. We can write 
+	First, we compute 
 	\begin{equation*}
-		P = \bigcup_{n \geq 1}P_{n}, 
+		u_t^2 - u_x^2 = h(x + t)h(x - t) - h(x + t)g'(x - t) + h(x - t)g'(x + t) - g'(x - t)g'(x + t). 
 	\end{equation*}
-	where for each $n$, $P_{n}$ is the subset consisting of all polynomials with degree at most $n$. By the Baire Category Theorem, there must exist at least one $n_{0} \in \mathbb{N}$ so that $\overline{P}_{n_{0}}$ has nonempty interior. Since $P_{n_{0}}$ is a finite-dimensional subspace of a Banach space, it must be closed: $\overline{P}_{n_{0}} = P_{n_{0}}$. So since $P_{n_{0}}$ has nonempty interior, there exists some $p \in P_{n_{0}}$ and $R > 0$ so that $B_{R}(p) \Subset P_{n_{0}}$. Fix an arbitrary polynomial $q \in P$. Then define 
+	Then 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} &\leq \int_{-\infty}^{\infty}|h(y)h(y - 2t)|\;dy + \int_{-\infty}^{\infty}|h(y)g'(y - 2t)|\;dy \\
+			&\quad+ \int_{-\infty}^{\infty}|h(y - 2t)g'(y)|\;dy + \int_{-\infty}^{\infty}|g'(y - 2t)g'(y)|\;dy.
+		\end{split}
+	\end{align*}
+	Let $K \subset \mathbb{R}$ be a compact set large enough that contains the support of both $g$ and $h$. Then we may write, 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} &\leq \int_{K}|h(y)h(y - 2t)|\;dy + \int_{K}|h(y)g'(y - 2t)|\;dy \\
+			&\quad+ \int_{K}|h(y - 2t)g'(y)|\;dy + \int_{K}|g'(y - 2t)g'(y)|\;dy.
+		\end{split}
+	\end{align*}
+	We will only show that the first term on the right vanishes since the work for the remaining terms is identical. Since $h(u) \to 0$ as $|u| \to \infty$ (by compact support of $h$), we know that pointwise $|h(y)h(y - 2t)| \to 0$ as $t \to \infty$. Next since $h$ is continuous, there exists some finite $M > 0$ so that $|h(y)|, |h(y - 2t)| \leq M$ for all $y \in K$. Thus, $|h(y)h(y-2t)| \leq M^2\chi_{K} \in L^1(\mathbb{R})$ since $K$ is compact. Hence, by the Dominated Convergence Theorem, one has that the first term vanishes as $t \to \infty$. As we stated before, the remaining three terms also vanish as $t \to \infty$. Thus, we conclude that as $t \to \infty$,
 	\begin{equation*}
-		r = p + \frac{(q - p)R}{\norm{q - p}} \in \overline{B}_{R}(p) \subset P_{n_{0}}.
+		\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} \to 0. 
 	\end{equation*}
-	But then since 
+\end{enumerate}
+
+\begin{prb}{E-1-4}
+	Let $u$ solve 
 	\begin{equation*}
-		q = p + \frac{\norm{q - p}}{R}(r - p) \in P_{n_{0}}, 
+		\left\{
+		\begin{alignedat}{3}
+			&u_{tt} - \Delta u &=0 &\qquad \text{in $\mathbb{R}^3 \times (0,\infty)$} \\
+			&u = g, u_t &= h &\qquad \text{on $\mathbb{R}^3 \times \{t = 0\}$},
+		\end{alignedat}
+		\right.
 	\end{equation*}
-	one has that $q \in P_{n_{0}}$. Thus since any arbitrary polynomial in $P$ is contained in $P_{n_{0}}$, we are led to conclude that $P = P_{n_{0}}$. But this is impossible! Thus, by contradiction, $P$ cannot be complete under $\norm{\empspace}$. 
+	where $g, h$ are smooth and have compact support. Show there exists a constant $C$ such that 
+	\begin{equation*}
+		|u(x,t)| \leq C/t \qquad (x \in \mathbb{R}^3, t > 0). 
+	\end{equation*}
+\end{prb}
+Let $u$ be the solution to the initial value problem given above. We recall that $u$ is given by Kirchoff's formula, 
+\begin{equation*}
+	u(x,t) = \dashint_{\partial B(x,t)}th(y) + g(y) + Dg(y) \cdot (y - x)\;dS(y) \qquad (x \in \mathbb{R}^3, t > 0)
+\end{equation*}
+Let $R > 0$ be a fixed positive constant so that the support of $g$ and $h$ are both contained inside the ball $B(0,R)$. We can rewrite, 
+\begin{align*}
+	\begin{split}
+		|u(x,t)| &\leq \frac{1}{4\pi t^2}\left[\underbrace{\int_{\partial B(x,t)}t|h(y)|\;dS(y)}_{(a)} + \underbrace{\int_{\partial B(x,t)}|g(y)|\;dS(y)}_{(b)} + \underbrace{\int_{\partial B(x,t)}|Dg(y)\|y-x|\;dS(y)}_{(c)}\right]. 
+	\end{split}
+\end{align*}
+We will try bounding each term independently. 
+\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+	\item Let us denote $\Sigma_t = \partial B(x,t) \cap B(0,R)$. Then it follows that 
+	\begin{equation*}
+		\int_{\partial B(x,t)}t|h(y)|\;dS(y) = t\int_{\Sigma_t}|h(y)|\;dS(y) \leq tM\cdot 4\pi R^2, 
+	\end{equation*}
+	where $M > 0$ is a constant so that $|h|\leq M$, and we used the fact that the surface area of $\partial B(x,t) \cap B(0,R)$ cannot exceed the surface area of $4\pi R^2$.\footnote{\href{https://math.stackexchange.com/questions/1302682/2d-wave-equation-decay-estimate}{https://math.stackexchange.com/questions/1302682/2d-wave-equation-decay-estimate}} 
+	\item Now let $N > 0$ so that $|g|\leq N$. Then repeating the work from above shows that 
+	\begin{equation*}
+		\int_{\partial B(x,t)}|g(y)|\;dS(y) \leq N \cdot 4\pi R^2.
+	\end{equation*}
+	\item Now we note that for all $y \in \partial B(x,t)$, $|y - x| = t$. So taking $L > 0$ so that $|Dg| \leq L$, and repeating the work from (a), one has that 
+	\begin{equation*}
+		\int_{\partial B(x,t)}|Dg(y)\|y - x|\;dS(y) = t L \cdot 4\pi R^2. 
+	\end{equation*}
+\end{enumerate}
+Combining all of the pieces together, we find that 
+\begin{align*}
+	\begin{split}
+		|u(x,t)| &\leq \frac{1}{4\pi t^2} \cdot \left[4\pi R^2(M + L)t + 4\pi R^2N\right] \\
+		&\leq \frac{1}{t^2} \cdot C(1 + t) \leq \frac{C}{t}
+	\end{split}
+\end{align*}
+
+\begin{prb}{E-1-5}
+	(Stokes' Rule) Assume $u$ solves the initial-value problem 
+	\begin{equation*}
+		\left\{
+		\begin{alignedat}{3}
+			&u_{tt} - \Delta u &= 0 &\qquad \text{in $\mathbb{R}^n \times (0,\infty)$} \\
+			&u =0, u_t &=h &\qquad \text{on $\mathbb{R}^n \times \{t = 0\}$}.
+		\end{alignedat}
+		\right.
+	\end{equation*}
+	Show that $v \coloneqq u_t$ solves 
+	\begin{equation*}
+		\left\{
+		\begin{alignedat}{3}
+			&v_{tt} - \Delta v &= 0 &\qquad \text{in $\mathbb{R}^n \times (0,\infty)$} \\
+			&v =h, v_t &= 0 &\qquad \text{on $\mathbb{R}^n \times \{t = 0\}$}.
+		\end{alignedat}
+		\right.
+	\end{equation*}
+	This is \textit{Stokes' rule}. 
+\end{prb}
+Assume $u$ solves the given initial value problem, and set $v \coloneqq u_t$. The boundary value conditions for $v$ are immediately clear by the initial value problem for $u$. Thus, it suffices to show that $\Box v = 0$. Observe the following: 
+\begin{align*}
+	\begin{split}
+		v_{tt} &= u_{ttt}. \\
+		\Delta v &= \Delta (u_{t}) = \partial_{t}(\Delta u) = \partial_t (u_{tt}) = u_{ttt}. 
+	\end{split}
+\end{align*}
+This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof concludes. 
 	
 	\newpage 
 	\subsection{Distribution Theory}
@@ -3279,6 +3565,23 @@
 	\end{equation*}
 	where the limit comes out of the integral due to uniform on compacta convergence of the $f_{j}$, and holomorphicity of each $f_{j}$ implies $\oint_{\gamma}f_{j}(z)\;dz = 0$. Thus, we conclude by Morera's Theorem that $f$ is holomorphic in $U$. 
 	
+	
+	\begin{prb}{2018-J-II-4}
+		Let $\{f_{n}: n = 1, 2, 3, \ldots\}$ and $f$ denote holomorphic functions defined on an open domain $D$ in the complex plane. If the sequence $\{f_{n}\}$ converges uniformly on compact subsets of $D$ to $f$, then show that the sequence of derivatives $\{f'_n\}$ converges uniformly on compact subsets of $D$ to the derivative $f'$. 
+	\end{prb}
+	Assume the hypotheses given above. We will first show that for any $z_{0} \in D$, there exists a neighborhood of $z_{0}$ in $D$ so that $f'_{n} \to f'$ uniformly in each neighborhood. Then we will show that $f'_{n} \to f'$ uniformly on every compact subset of $D$. 
+	
+	Let $\epsilon > 0$. Fix $z_{0} \in D$. Let $r > 0$ so that $D_{z_{0}} \coloneqq \{\xi: |\xi - z_{0}| \leq r\} \subset D$, and let $0 < R < r$. By uniform convergence of $f_{n}$ to $f$ on all compact subsets of $D$, there exists some positive integer $N$ such that for all $n \geq N$, $|f_{n}(\xi) - f(\xi)| \leq (r - R)^2/r \cdot \epsilon$ for all $\xi \in \partial D_{z_{0}}$. By Cauchy's integral formula, for any $a \in \operatorname{Int}{B(z_{0}, R)}$ and all $n \geq N$, one has 
+	\begin{align*}
+		\begin{split}
+			|f'_{n}(a) - f'(a)| &\leq \frac{1}{2\pi}\int_{|\xi - z_{0}|= r}
+			\frac{|f_{n}(\xi) - f(\xi)|}{|\xi - a|^{2}}\;|d\xi| \\
+			&\leq \frac{1}{2\pi}\int_{0}^{2\pi}\frac{r}{|\xi - a|^2}\cdot \frac{(r - R)^2}{r}\epsilon\;d\theta \\
+			&\leq \frac{1}{2\pi}\int_{0}^{2\pi}\frac{r}{(r - R)^2} \cdot \frac{(r - R)^2}{r}\epsilon\;d\theta = \epsilon. 
+		\end{split}
+	\end{align*}
+	Thus, it follows that $f'_{n}$ converges uniformly to $f'$ on $D_{z_{0}}$. Now fix an arbitrary compact set $K \subset D$. By our work above, for each $z \in K$, there exists a neighborhood $B(z, R_{z})$ so that $f'_{n} \to f'$ uniformly on this neighborhood; the collection $\{B(z, R_z) \mid z \in K\}$ forms an open cover of $K$. Since $K$ is compact, there exists a finite open subcover $\{B(z_{j}, R_{z_{j}})\}_{j = 1}^{n}$. Let $\epsilon > 0$. Then for each ball $B(z_{j}, R_{z_{j}})$, there exists a positive integer $N_{j}(\epsilon)$ so that for all $z \in B(z_{j}, R_{z_{j}})$ and $n \geq N_{j}(\epsilon)$, $|f'_{n}(z) - f'(z)| < \epsilon$. Set $N = \max\{N_{j}\}$. Then it follows by construction, that for any $z \in K$ and all $n \geq N$, $|f'_{n}(z) - f'(z)| < \epsilon$, which concludes the proof that $f'_{n} \to f'$ uniformly on compacta in $D$. 
+	
 	\subsection{Rouch\'e's Theorem}
 	
 	\begin{prb}{2023-A-II-6}
@@ -3360,103 +3663,6 @@
 	Thus, by Rouch\'e's Theorem, $p(z)$ has the same number of zeros inside $|z| < 1$ as does $g(z)$ (which is 1). 
 	
 	Therefore, we conclude that $p(z)$ has only eight zeros inside the annulus. 
-	
-	
-	\newpage 
-	\section{Partial Differential Equations}
-	\subsection{Introduction}
-	\begin{prb}{E-1-1}
-		Classify each of the partial differential equations in \S 1.2 as follows: \vspace{-0.25cm}
-		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-			\item Is the PDE linear, semilinear, quasilinear or fully nonlinear?
-			\item What is the order of the PDE? 
-		\end{enumerate}
-	\end{prb}
-	\begin{table}[h!]
-		\centering
-		\begin{tabular}{|c|c|c|c|}
-			\hline 
-			Name & Equation & Classification & Order \\ \hline \hline 
-			Laplace's Equation & $\Delta u = 0$ & Linear & 2 \\ \hline 
-			Helmholt's (Eigenvalue) Equation) & $-\Delta u = \lambda u$ & Linear & 2 \\ \hline 
-			Linear Transport Equation & $\displaystyle u_{t} + \sum_{i = 1}^{n}b^{i}u_{x_{i}} = 0$ & Linear & 1 \\ \hline 
-			Liouville's Equation & $\displaystyle u_{t} - \sum_{i = 1}^{n}(b^{i}u)_{x_{i}} = 0$ & Linear & 1 \\ \hline 
-			Heat (or diffusion) Equation & $u_{t} - \Delta u = 0$ & Linear & 2 \\ \hline 
-			Schr\"odinger's Equation & $iu_{t} + \Delta u = 0$ & Linear & 2 \\\hline 
-			Kolmogorov's Equation & $\displaystyle u_{t} - \sum_{i,j = 1}^{n}a^{ij}u_{x_{i}x_{j}} + \sum_{i = 1}^{n}b^{i}u_{x_{i}} = 0$ & Linear & 2 \\ \hline 
-			Fokker-Planck Equation & $\displaystyle u_{t} - \sum_{i,j = 1}^{n}(a^{ij}u)_{x_{i}x_{j}} -\sum_{i = 1}^{n}(b^{i}u)_{x_{i}} = 0$ & Linear & 2 \\ \hline 
-			Wave Equation & $u_{tt} - \Delta u = 0$ & Linear & 2 \\\hline 
-			Klein-Gordon Equation & $u_{tt} - \Delta u + m^{2}u = 0$ & Linear & 2 \\\hline 
-			Telegraph Equation & $u_{tt} + 2du_{t} - u_{xx} = 0$ & Linear & 2 \\\hline 
-			General Wave Equation & $\displaystyle u_{tt} - \sum_{i,j = 1}^{n}a^{ij}u_{x_{i}x_{j}} + \sum_{i = 1}^{n}b^{i}u_{x_{i}} = 0$ & Linear & 2 \\\hline 
-			Airy's Equation & $u_{t} + u_{xxx} = 0$ & Linear & 3 \\\hline 
-			Beam Equation & $u_{tt} + u_{xxxx} = 0$ & Linear & 4 \\ \hline 
-		\end{tabular}
-	\end{table}
-	
-	\begin{table}[h!]
-		\centering
-		\begin{tabular}{|c|c|c|c|}
-			\hline 
-			Name & Equation & Classification & Order \\ \hline \hline 
-			Eikonal Equation & $|Du| = 1$ & Fully Nonlinear & 1 \\\hline 
-			Nonlinear Poisson Equation & $-\Delta u = f(u)$ & Semilinear & 2 \\\hline 
-			$p$-Laplacian Equation & $\operatorname{div}(|Du|^{p-2}Du) = 0$ & Quasilinear & 2 \\ \hline 
-			Minimal Surface Equation & $\displaystyle \div\left(\frac{Du}{(1 + |Du|^{2})^{1/2}}\right) = 0$ & Quasilinear & 2 \\\hline 
-			Monge-Amp\`ere Equation & $\det(D^2u) = f$ & Fully Nonlinear & 2 \\\hline 
-			Hamilton-Jacobi Equation & $u_{t} + H(Du, x) = 0$ & Quasilinear & 1 \\\hline 
-			Scalar Conservation Law & $u_{t} + \div \mathbf{F}(u) = 0$ & Fully Nonlinear & 1 \\\hline 
-			Inviscid Burger's Equation & $u_{t} + uu_{x} = 0$ & Quasilinear & 1 \\\hline 
-			Scalar Reaction-Diffusion Equation & $u_{t} - \Delta u = f(u)$ & Semilinear & 2 \\\hline 
-			Porous Medium Equation & $u_{t} - \Delta (u^{\gamma}) = 0$ & Quasilinear & 2 \\\hline 
-			Nonlinear Wave Equation & $u_{tt} - \Delta u + f(u) = 0$ & Semilinear & 2 \\\hline 
-			Korteweg-de Vries (KdV) Equation & $u_{t} + uu_{x} + u_{xxx} = 0$ & Semilinear & 3 \\\hline 
-			Nonlinear Schr\"odinger Equation & $iu_{t} + \Delta u = f(|u|^{2})u$ & Semilinear & 2 \\\hline 
-		\end{tabular}
-	\end{table}
-	
-	\begin{prb}{E-1-2}
-		Let $k$ be a positive integer. Show that a smooth function defined in $\mathbb{R}^{n}$ has in general 
-		\begin{equation*}
-			\binom{n + k - 1}{k} = \binom{n + k - 1}{n - 1}
-		\end{equation*}
-		distinct partial derivatives of order $k$. 
-		
-		(Hint: This is the number of ways of inserting $n-1$ dividers $\mid$ within a row of $k$ symbols $\circ$: for example $\circ \circ \mid \mid \circ \circ \circ \mid \circ \mid \circ \circ \circ \mid \mid \circ \circ \circ \circ \mid$. Explain why each such pattern corresponds to precisely one of the partial derivatives of order $k$.) 
-	\end{prb}
-	Let $k \geq 1$ be a positive integer, and let $u: \mathbb{R}^{n} \to \mathbb{R}$ be a smooth function. We want to compute the total number of distinct partial derivatives of $u$ of the form 
-	\begin{equation*}
-		\frac{\partial^{k}u}{\partial x_{i_{1}}\partial x_{i_{2}} \dotsm \partial x_{i_{k}}} \qquad (1 \leq i_{1}, \ldots, i_{k} \leq n). 
-	\end{equation*}
-	
-	
-	\begin{prb}{E-1-4}
-		Prove \textit{Leibniz's Formula:}
-		\begin{equation*}
-			D^{\alpha}(uv) = \sum_{\beta \leq \alpha}\binom{\alpha}{\beta}D^{\beta}uD^{\alpha - \beta}v, 
-		\end{equation*}
-		where $u, v: \mathbb{R}^{n} \to\mathbb{R}$ are smooth, $\binom{\alpha}{\beta} = \frac{\alpha!}{\beta!(\alpha - \beta)!}$, and $\beta \leq \alpha$ means $\beta_{i} \leq \alpha_{i}$ ($i= 1, \ldots, n$). 
-	\end{prb}
-	We can prove Leibniz's formula using induction. First, we consider the case where $|\alpha| = 1$, and assume that $D^{\alpha} = \partial_{x_{i}}$ for some positive integer $1 \leq i \leq n$ (i.e., $\alpha = (0, \ldots, 1, \ldots, 0)$ where the 1 is in the $i^{\text{th}}$ place). We note that 
-	\begin{equation*}
-		\mathcal{A} \coloneqq \{\beta \in \mathbb{N}^{n}: \beta \leq \alpha\} = \{(0,\ldots, 0), \alpha\}. 
-	\end{equation*}
-	Then by the usual product rule for one variable, one has 
-	\begin{equation*}
-		D^{\alpha}(uv) = \frac{\partial}{\partial x_{i}}(uv) = (u)\left(\frac{\partial v}{\partial x^{i}}\right) + \left(\frac{\partial u}{\partial x_{i}}\right)(v) = \sum_{\beta \in \mathcal{A}}\binom{\alpha}{\beta}D^{\beta}uD^{\alpha -\beta}v. 
-	\end{equation*}
-	Now assume that the result holds for all $|\alpha| = k$ for some $k \geq 1$. We now consider $D^{\alpha}$, where $|\alpha| = k + 1$. There exists a $(k + 1)$-tuple $(i_{1}, \ldots, i_{k + 1})$ so that $D^{\alpha} = \partial_{x_{i_{1}}}\dotsm \partial_{x_{i_{k}}}$. Let $\gamma$ be the $k$-tuple so that $D^{\gamma} = \partial_{x_{2}}\dotsm \partial_{x_{k + 1}}$. Then by the induction hypothesis, one has 
-	\begin{equation*}
-		D^{\gamma}(uv) = \sum_{\beta \leq \gamma}\binom{\gamma}{\beta}D^{\beta}u D^{\gamma - \beta}v, 
-	\end{equation*}
-	so that 
-	\begin{align*}
-		\begin{split}
-			D^{\alpha}(uv) &= \sum_{\beta \leq \gamma}\binom{\gamma}{\beta}\partial_{x_{i_{1}}}(D^{\beta}uD^{\gamma - \beta}v) \\
-			&= \sum_{\beta \leq \gamma}\binom{\gamma}{\beta}\left[\partial_{x_{i_{1}}}(D^{\beta}u) D^{\gamma - \beta} v + D^{\beta}u\partial_{x_{i_{1}}}(D^{\gamma-\beta}v)\right]. 
-		\end{split}
-	\end{align*}
-	Now we note that $\partial_{x_{i_{1}}}D^{\gamma-\beta}v = D^{\alpha - \beta}v$. On the other hand, we can write $\partial_{x_{i_{1}}}(D^{\beta}u)D^{\gamma - \beta}v$ as $$\partial_{x_{i_{1}}}(\partial^{\beta}u)D^{\gamma - \beta}v = D^{\beta + e_{i_{1}}}u \cdot D^{\alpha - (\beta + e_{i_{1}})}v.$$ 
 	
 	\newpage 
 	\section{Notes}
