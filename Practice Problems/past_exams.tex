@@ -54,6 +54,7 @@
 		\item Any problem that the format ``\verb|D&F-{ }-{ }|'' was taken from Dummit \& Foote's \textit{Abstract Algebra} (3rd ed.)
 		\item Any problem that has the format ``\verb|F-{ }-{ }-{ }|'' was taken from Folland's \textit{Real Analysis}.
 		\item Any problem that has the format ``\verb|SS-{ }-{ }|'' was taken from Stein and Shakarchi's \textit{Functional Analysis}.
+		\item Any problem that has the format ``\verb|E-{ }-{ }|'' was taken from Evans \textit{Partial Differential Equations} (2nd ed.)\footnote{The ordering of the problems may be off because I alternatively used a physical copy of the second edition, and a PDF copy of the first edition, which has fewer and different problems.}
 	\end{enumerate}
 	
 	Note that some problems may be repeated quite a few times; I've included repetitions because (1) I often revisited repeated problems a week apart to make sure I remembered the techniques, and (2) for sake of completeness. Often times, when writing up a proof the second or third time, I discovered a more efficient way. 
@@ -2573,6 +2574,68 @@
 	\end{equation*}
 	so that $g$ is $c$-Lipschitz. The proof concludes. 
 	
+	\begin{prb}{2023-A-I-4}
+		Suppose $f: [-1,1] \to \mathbb{R}$ is odd and $C^1$. Show 
+		\begin{equation*}
+			\int_{-1}^{1}|f(x)|^2\;dx \leq \int_{-1}^{1}|f'(x)|^2\;dx. 		
+		\end{equation*} 
+	\end{prb}
+	Let $f \in C^{1}([-1,1])$ be an odd function. Since the derivative of an odd function is always even, one has that $f' \in C([-1,1])$ is even. So it suffices to show that the following inequality is satisfied: 
+	\begin{equation*}
+		\int_{0}^{1}|f(x)|^2\;dx \leq \int_{0}^{1}|f'(x)|^{2}\;dx. 
+	\end{equation*}
+	By the fundamental theorem of calculus, for any $x \in [0,1]$, one has 
+	\begin{equation*}
+		f(x) = \int_{0}^{x}f'(t)\;dt
+	\end{equation*}
+	since $f(0) = 0$ (by oddness of $f$). Therefore, 
+	\begin{align*}
+		\begin{split}
+			\int_{0}^{1}|f(x)|^2\;dx &\leq \int_{0}^{1}\left(\int_{0}^{x}|f'(t)|\;dt\right)^{2}\;dx \\
+			&\leq \int_{0}^{1}\left(\int_{0}^{x}\;dt\right)\left(\int_{0}^{x}|f'(t)|^2\;dt\right)\;dx \\
+			&= \int_{0}^{1}x\cdot \left(\int_{0}^{x}|f'(t)|^2\;dt\right)\;dx.
+		\end{split}
+	\end{align*}
+	Since $x \leq 1$ and $|f'(t)|^2 \geq 0$, 
+	\begin{equation*}
+		x \cdot \left(\int_{0}^{x}|f'(t)|^2\;dt\right) \leq \int_{0}^{1}|f'(t)|^2\;dt. 
+	\end{equation*}
+	Thus it follows that 
+	\begin{equation*}
+		\int_{0}^{1}|f(x)|^2\;dx \leq \int_{0}^{1}\int_{0}^{1}|f'(t)|^2\;dt\;dx = \int_{0}^{1}|f'(t)|^2\;dt. 
+	\end{equation*}
+	Thus, this concludes the proof. 
+	
+	\begin{prb}{2007-J-II-6}
+		Let $f(x)$ be a real-valued $C^1$ function on the interval $[0,1]$. Prove that 
+		\begin{equation*}
+			|f(y)| \leq \left[\int_{0}^{1}|f(x)|^2\;dx\right]^{1/2} + \left[\int_{0}^{1}|f'(x)|^2\;dx\right]^{1/2}
+		\end{equation*}
+		for all $y \in[0,1]$. (Hint: Consider $g(x) = f(x) -a$, where $a = \int_{0}^{1}f(x)\;dx$.)
+	\end{prb}
+	Let $f(x)$ be a real-valued $C^1$ function on the interval $[0,1]$. Let $a = \int_{0}^{1}f(x)\;dx$, and define $g(x) = f(x) - a$. First we note that $g(x)$ is also a $C^1$ function on $[0,1]$, and that 
+	\begin{equation*}
+		\int_{0}^{1}g(x)\;dx = \int_{0}^{1}f(x)\;dx - a = 0. 
+	\end{equation*}
+	Therefore, by the mean value theorem for integrals, there exists a point $x_0 \in [0,1]$ so that $g(x_0) = 0 \implies f(x_0) = \int_{0}^{1}f(x)\;dx$. This means that for any $y \in [0,1]$, 
+	\begin{equation*}
+		f(y) = 
+		\left\{
+		\begin{alignedat}{3}
+			\int_{0}^{1}f(x)\;dx + \int_{x_{0}}^{y}f'(x)\;dx &\qquad y \in [x_0,1] \\
+			\int_{0}^{1}f(x)\;dx - \int_{y}^{x_{0}}f'(x)\;dx &\qquad y \in [0,x_0].
+		\end{alignedat} 
+		\right.
+	\end{equation*}
+	In either case, one has that 
+	\begin{align*}
+		\begin{split}
+			|f(y)| &\leq \int_{0}^{1}|f(x)|\;dx + \int_{0}^{1}|f'(x)|\;dx \\
+			&\leq \left[\int_{0}^{1}|f(x)|^2\;dx\right]^{1/2} + \left[\int_{0}^{1}|f'(x)|^2\;dx\right] \qquad (\text{by the Cauchy-Schwarz Inequality}), 
+		\end{split}
+	\end{align*}
+	so that the proof concludes. 
+	
 	\begin{prb}{2004-A-II-1}
 		Let $\{f_{n}\}$ be a sequence of real-valued absolutely continuous functions defined on $[0,1]$. Assume there exists constants $c_0, c_1$ such that 
 			\begin{equation*}
@@ -2954,6 +3017,50 @@ Thus, uniform convergence tells us that in the limit $j \to \infty$,
 	\int_{a}^{b}f(x)^2\;dx = 0. 
 \end{equation*}
 Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [a,b]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[a,b]$, there exists a nonempty open interval $U$ of $x_0$ in $[a,b]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[a,b]$. 
+
+\subsection{Baire Category Theorem}
+
+\begin{prb}{2025-J-II-5}
+	Let $V$ be a topological vector space whose topology is Hausdorff. Let $X_1$ and $X_2$ be two Banach spaces, and assume that there exist continuous linear bijections $F_1: X_1 \to V$ and $F_2: X_2 \to V$. Show that there is a continuous linear bijection $G: X_1 \to X_2$. 
+\end{prb}
+Let $V$ be a topological vector space whose topology is Hausdorff, and let $F_{1}: X_1 \to V$, $F_2: X_2 \to V$ be continuous linear bijections from the two Banach spaces $X_1, X_2$ onto $V$. Consider the map, $G = F_2^{-1} \circ F_1: X_1 \to X_2$. First, we will show that $G$ is linear. Let $\alpha, \beta \in \mathbb{C}$, and $x, y \in X_1$. Then 
+\begin{equation*}
+	G(\alpha x + \beta y) = F_{2}^{-1}(F(\alpha x + \beta y)) = F_{2}^{-1}(\alpha F(x) + \beta F(y)) = \alpha G(x) + \beta G(y), 
+\end{equation*}
+where we used the fact that $F_{1}, F_{2}^{-1}$ are both linear maps. Now we will show that $G$ is bijective: fix an arbitrary $x \in X_2$. By surjectivity of $F_2^{-1}$, there exists some $v \in V$ so that $F_{2}^{-1}(v) = x$. By surjectivity of $F_1$, there exists some $y \in X_1$ so that $F_1(y) = v$. But then, $G(y) = x$. Now we will show that $G$ is injective. Suppose $G(x) = G(y) \iff F_{2}^{-1}(F_{1}(x)) = F_{2}^{-1}(F_{1}(y))$ for $x, y \in X_1$. Since $F_{2}^{-1}$ is injective, $F_1(x) = F_{1}(y)$. Since $F_1$ is injective, $x = y$. Thus, $G$ is a linear bijection from $X_1$ to $X_2$. 
+
+It remains to be seen that $G$ is continuous; we will use the Closed Graph Theorem to show that $G$ is bounded. Let $\{x_{j}\} \subset X$ such that $x_{j} \to x \in X$. Further assume that $G(x_j) \to y$. By continuity of $F_{1}$, one has that $F_{1}(x_j) \to F_1(x)$. Now since $G(x_j) \to y$, one has by continuity of $F_2$ that $F_1(x_j) \to F_2(y)$. Since limits are unique in Hausdorff spaces, we must have $F_1(x) = F_2(y)$ so that $y = F_{2}^{-1}(F_1(x)) = G(x)$. Thus, the graph of $G$ is closed. By the Closed Graph Theorem, $G$ is a bounded linear bijection between Banach spaces, and thus must be a continuous linear bijection. 
+
+\begin{prb}{2024-J-II-5}
+	Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty, \infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: You may use the Baire Category Theorem. 
+\end{prb}
+
+Let $P$ be the vector space over $\mathbb{R}$ of finite-degree polynomials in the variable $x\in (-\infty, \infty)$. Assume to the contrary that $P$ is complete under some norm $\norm{\empspace}$. Let us write $P$ as the following countable union, 
+\begin{equation*}
+	P = \bigcup_{n \geq 0} P_{n}, 
+\end{equation*}
+where each $P_n$ denotes the subspace of all polynomials over $\mathbb{R}$ of degree at most $n$. By the Baire Category Theorem, there exists at least one $n_{0} \geq 0$ so that $P_{n_{0}}$ is not nowhere dense; i.e., $\overline{P}_{n_{0}}$ does not have empty interior. Since finite-dimensional subspaces of Banach spaces are closed, $P_{n_{0}}$ is closed so that $\overline{P}_{n_{0}} = P_{n_{0}}$. Let $p\in P_{n_{0}}$ be an arbitrary polynomial. Then it follows that there exists some $r > 0$ such that the ball $B(p,r)$ is contained inside $P_{n_{0}}$. Fix an arbitrary $q \in P$, and define 
+\begin{equation*}
+	\ti{q} \coloneqq p + \frac{r(q - p)}{2\norm{p - q}}. 
+\end{equation*}
+Then it follows that $\ti{q} \in B(p,r)$ since 
+\begin{equation*}
+	\norm{\ti{q} -p} = \norm{\frac{r(q - p)}{2\norm{p - q}}} = r/2 < r. 
+\end{equation*}
+But then, since 
+\begin{equation*}
+	q = 2\norm{q - p}\ti{q} + p(r - 2\norm{q - p}), 
+\end{equation*}
+it follows that $q \in P_{n_{0}}$. Since $P_{n_{0}} \subset P$ and we have now shown that $P \subset P_{n_{0}}$, we have $P = P_{n_{0}}$. But this is a contradiction since there exist polynomials with real coefficients of degree $> n_{0}$. Thus by contradiction, $P$ cannot be a Banach space with respect to any norm. 
+
+\begin{prb}{Fat Cantor Set}
+	\complete 
+\end{prb}
+
+\begin{prb}{1997-A-II-6}
+	Let $A, B$, and $C$ be Banach spaces, and let $j: B \to C$ be an injective, bounded linear operator. Suppose that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Prove that $f$ is bounded. 
+\end{prb}
+Let $A, B, C$ be Banach spaces, and let $j: B \to C$ be an injective bounded linear operator. Further assume that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Let $\{a_{j}\} \subset A$ so that $a_{j} \to a \in A$. Also assume that $f(a_{j}) \to b \in B$. Since $j$ is bounded (hence continuous), one has that $(j \circ f)(a_j) = j(f(a_j)) \to j(b)$. On the other hand, since $j \circ f$ is bounded (hence continuous), $(j \circ f)(a_{j}) \to(j \circ f)(a) = j(f(a))$. By injectivity of $j$, one has $f(a) = b$. Thus, it follows that the graph of $f$ is closed. By the Closed Graph Theorem, we conclude that $f$ is bounded. 
 
 \subsection{Partial Differential Equations}
 \begin{prb}{2004-J-II-6}
