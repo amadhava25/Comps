@@ -3054,8 +3054,26 @@ But then, since
 it follows that $q \in P_{n_{0}}$. Since $P_{n_{0}} \subset P$ and we have now shown that $P \subset P_{n_{0}}$, we have $P = P_{n_{0}}$. But this is a contradiction since there exist polynomials with real coefficients of degree $> n_{0}$. Thus by contradiction, $P$ cannot be a Banach space with respect to any norm. 
 
 \begin{prb}{Fat Cantor Set}
-	\complete 
+	There exists a closed nowhere dense subset $E \subset \mathbb{R}^n$ of positive Lebesgue measure. 
 \end{prb}
+We will show that such a set exists by explicitly constructing the \textbf{Fat Cantor set}. Start by considering the cube $[0,1]^{n} \subset \mathbb{R}^n$. Along each dimension, we will remove the middle $1/4$th (i.e., the open interval $(3/8,5/8)$). This leaves us the set 
+\begin{equation*}
+	\left(\left[0, \frac{3}{8}\right] \cup \left[\frac{5}{8}, 1\right]\right)^{n}. 
+\end{equation*}
+Now in each dimension, we remove the open middle $1/16$th from each of the remaining intervals, so that we obtain the set 
+\begin{equation*}
+	\left(\left[0, \frac{5}{32}\right] \cup \left[\frac{7}{32}, \frac{3}{8}\right] \cup \left[\frac{5}{8}, \frac{25}{32}\right] \cup \left[\frac{27}{32}, 1\right]\right)^{n}. 
+\end{equation*}
+In this way, we keep removing intervals of width $4^{-m}$ from each of the remaining $2^{m-1}$ intervals along each dimension in each step. Altogether, we remove from each dimension intervals of total length
+\begin{equation*}
+	\sum_{m = 0}^{\infty}\frac{2^{m}}{2^{2m + 2}} = \frac{1}{2}. 
+\end{equation*}
+This means that the total volume of the set $E$ obtained by repeating this procedure indefinitely has Lebesgue measure $1/2^n > 0$. Now it follows that $E$ is closed: each dimension of $E$ is obtained as follows: $[0,1]\setminus U$, where $U$ is the countable union of all the open intervals removed, and hence is open. Thus each dimension of $E$ is closed. Since the Cartesian product of closed sets is closed under the product topology, $E$ is closed. On the other hand, the fact that $E$ is nowhere dense follows immediately from the fact that the length of the remaining intervals along each dimension of $E$ shrink to zero. 
+
+\begin{prb}{2022-J-II-3}
+	Prove or give a counterexample: if $E \subset \mathbb{R}$ is a Lebesgue measurable subset of positive Lebesgue measure, then some countable union of translates of $E$ covers $\mathbb{R}$. 
+\end{prb}
+We will show this statement is false. Consider the fat Cantor set $E$ constructed above. We've shown that $E$ is a positive Lebesgue measurable subset of $\mathbb{R}$ that is nowhere dense. We also know that $\mathbb{R}$ is a complete metric space under the Euclidean metric. By Baire's Category Theorem, $\mathbb{R}$ cannot be the countable union of nowhere dense sets, and thus cannot be the countable union of translates of $E$. 
 
 \begin{prb}{1997-A-II-6}
 	Let $A, B$, and $C$ be Banach spaces, and let $j: B \to C$ be an injective, bounded linear operator. Suppose that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Prove that $f$ is bounded. 
