@@ -1,81 +1,47 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.7.8)  4 JUL 2026 17:07
- restricted system commands enabled.
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  6 JUL 2026 15:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **past_exams.tex
 (./past_exams.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
-Lua module: luaotfload 2024-02-14 3.28 Lua based OpenType font support
-Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
-Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
-ollection.
-luaotfload | conf : Root cache directory is "C:/texlive/2024/texmf-var/luatex-ca
-che/generic/names".
-luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
-olved path "c:/texlive/2024/texmf-dist/tex/luatex/luaotfload/fontloader-2023-12-
-28.lua".
-Lua-only attribute luaotfload@noligature = 1
-luaotfload | init : Context OpenType loader version 3.134
-Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
-Inserting `luaotfload.node_processor' in `hpack_filter'.
-Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
-Inserting `luaotfload.define_font' in `define_font'.
-Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "C:/texlive/2024/texmf-var/luatex-ca
-che/generic/names".
-Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
-Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
-Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
-Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
-Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
-Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
-Inserting `luaotfload.cleanup_files' in `wrapup_run'.
-Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
-Inserting `luaotfload.glyphinfo' in `glyph_info'.
-Lua-only attribute luaotfload.letterspace_done = 3
-Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
-Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
-Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
-Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
-Inserting `tracingstacklevels' in `input_level_string'. (c:/texlive/2024/texmf-
-dist/tex/latex/base/article.cls
+(c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2024/02/08 v1.4n Standard LaTeX document class
 (c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
-luaotfload | db : Font names database loaded from C:/texlive/2024/texmf-var/luat
-ex-cache/generic/names/luaotfload-names.luc.gz)
-\c@part=\count192
-\c@section=\count193
-\c@subsection=\count194
-\c@subsubsection=\count195
-\c@paragraph=\count196
-\c@subparagraph=\count197
-\c@figure=\count198
-\c@table=\count199
+)
+\c@part=\count190
+\c@section=\count191
+\c@subsection=\count192
+\c@subsubsection=\count193
+\c@paragraph=\count194
+\c@subparagraph=\count195
+\c@figure=\count196
+\c@table=\count197
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen140
+\bibindent=\dimen141
 ) (../header.sty
 (c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.sty
 (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-05-27 L3 programming layer (loader) 
 
-(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
-File: l3backend-luatex.def 2024-05-08 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count266
-Inserting `l3color' in `luaotfload.parse_color'.
+(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
+\g__graphics_track_int=\count198
 \l__pdf_internal_box=\box52
+\g__pdf_backend_annotation_int=\count199
+\g__pdf_backend_link_int=\count266
 ))
 Package: xparse 2024-05-08 L3 Experimental document command parser
 )
 Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2024/05/11 2.9e Font selection for XeLaTeX and LuaLaTeX
-(c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaT
-eX
+
+(c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
+X
 \l__fontspec_script_int=\count267
 \l__fontspec_language_int=\count268
 \l__fontspec_strnum_int=\count269
@@ -87,16 +53,14 @@ eX
 \l__fontspec_emdef_int=\count275
 \l__fontspec_strong_int=\count276
 \l__fontspec_strongdef_int=\count277
-\l__fontspec_tmpa_dim=\dimen141
-\l__fontspec_tmpb_dim=\dimen142
-\l__fontspec_tmpc_dim=\dimen143
+\l__fontspec_tmpa_dim=\dimen142
+\l__fontspec_tmpb_dim=\dimen143
+\l__fontspec_tmpc_dim=\dimen144
 
 (c:/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (c:/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
-luaotfload | cache : Lookup cache loaded from C:/texlive/2024/texmf-var/luatex-c
-ache/generic/names/luaotfload-lookup-cache.luc.
 
 Package fontspec Info: 
 (fontspec)             Font family 'NotoSerif(0)' created for font 'Noto
@@ -105,28 +69,29 @@ Package fontspec Info:
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Noto
-(fontspec)             Serif:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"name:Noto
-(fontspec)             Serif:mode=node;script=latn;language=dflt;+tlig;+smcp;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"name:Noto
-(fontspec)             Serif/B:mode=node;script=latn;language=dflt;+tlig;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"name:Noto
-(fontspec)             Serif/B:mode=node;script=latn;language=dflt;+tlig;+smcp;
-"
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"name:Noto
-(fontspec)             Serif/I:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Noto
+(fontspec)             Serif/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"Noto
+(fontspec)             Serif/OT:script=latn;language=dflt;+smcp;mapping=tex-tex
+t;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Noto
+(fontspec)             Serif/B/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"Noto
+(fontspec)             Serif/B/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Noto
+(fontspec)             Serif/I/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"name:Noto
-(fontspec)             Serif/I:mode=node;script=latn;language=dflt;+tlig;+smcp;
-"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"name:Noto
-(fontspec)             Serif/BI:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             <->"Noto
+(fontspec)             Serif/I/OT:script=latn;language=dflt;+smcp;mapping=tex-t
+ext;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Noto
+(fontspec)             Serif/BI/OT:script=latn;language=dflt;mapping=tex-text;"
+
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"name:Noto
-(fontspec)             Serif/BI:mode=node;script=latn;language=dflt;+tlig;+smcp
-;"
+(fontspec)             <->"Noto
+(fontspec)             Serif/BI/OT:script=latn;language=dflt;+smcp;mapping=tex-
+text;"
 
 
 (c:/texlive/2024/texmf-dist/tex/latex/notomath/notomath.sty
@@ -164,7 +129,7 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 (c:/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 )
-\notomath@dima=\dimen144
+\notomath@dima=\dimen145
 
 (c:/texlive/2024/texmf-dist/tex/latex/noto/noto-serif.sty
 Package: noto-serif 2022/09/11 (Bob Tennent) Supports NotoSerif fonts for all L
@@ -193,29 +158,29 @@ t
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Regular.ttf]:mode=node;script=latn;langua
-ge=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-Regular.ttf]/OT:script=latn;language=dflt
+;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Regular.ttf]:mode=node;script=latn;langua
-ge=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-Regular.ttf]/OT:script=latn;language=dflt
+;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Bold.ttf]:mode=node;script=latn;language=
-dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-Bold.ttf]/OT:script=latn;language=dflt;+t
+num;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Bold.ttf]:mode=node;script=latn;language=
-dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-Bold.ttf]/OT:script=latn;language=dflt;+t
+num;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Italic.ttf]:mode=node;script=latn;languag
-e=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-Italic.ttf]/OT:script=latn;language=dflt;
++tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Italic.ttf]:mode=node;script=latn;languag
-e=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-Italic.ttf]/OT:script=latn;language=dflt;
++tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-BoldItalic.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-BoldItalic.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-BoldItalic.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-BoldItalic.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;+smcp;mapping=tex-text;"
 
 
 Package fontspec Info: 
@@ -231,29 +196,29 @@ t
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Regular.ttf]:mode=node;script=latn;langua
-ge=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-Regular.ttf]/OT:script=latn;language=dflt
+;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Regular.ttf]:mode=node;script=latn;langua
-ge=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-Regular.ttf]/OT:script=latn;language=dflt
+;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Bold.ttf]:mode=node;script=latn;language=
-dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-Bold.ttf]/OT:script=latn;language=dflt;+t
+num;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Bold.ttf]:mode=node;script=latn;language=
-dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-Bold.ttf]/OT:script=latn;language=dflt;+t
+num;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Italic.ttf]:mode=node;script=latn;languag
-e=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-Italic.ttf]/OT:script=latn;language=dflt;
++tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-Italic.ttf]:mode=node;script=latn;languag
-e=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-Italic.ttf]/OT:script=latn;language=dflt;
++tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-BoldItalic.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->"[NotoSerif-BoldItalic.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->"[NotoSerif-BoldItalic.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->"[NotoSerif-BoldItalic.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;+smcp;mapping=tex-text;"
 
 )
 (c:/texlive/2024/texmf-dist/tex/latex/noto/noto-sans.sty
@@ -309,29 +274,29 @@ t
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]:mode=node;script=latn;
-language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]/OT:script=latn;languag
+e=dflt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]:mode=node;script=latn;
-language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]/OT:script=latn;languag
+e=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]:mode=node;script=latn;l
-anguage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]/OT:script=latn;language
+=dflt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]:mode=node;script=latn;l
-anguage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]/OT:script=latn;language
+=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]:mode=node;script=la
-tn;language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]/OT:script=latn;lang
+uage=dflt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]:mode=node;script=la
-tn;language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]/OT:script=latn;lang
+uage=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 
 
 Package fontspec Info: 
@@ -383,29 +348,29 @@ t
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]:mode=node;script=latn;
-language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]/OT:script=latn;languag
+e=dflt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]:mode=node;script=latn;
-language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-Regular.ttf]/OT:script=latn;languag
+e=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]:mode=node;script=latn;lan
-guage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-Bold.ttf]/OT:script=latn;language=d
+flt;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]:mode=node;script=latn;l
-anguage=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]/OT:script=latn;language
+=dflt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]:mode=node;script=latn;l
-anguage=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-Italic.ttf]/OT:script=latn;language
+=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]:mode=node;script=la
-tn;language=dflt;+tlig;+tnum;+lnum;"
+(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]/OT:script=latn;lang
+uage=dflt;+tnum;+lnum;mapping=tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]:mode=node;script=la
-tn;language=dflt;+tlig;+tnum;+lnum;+smcp;"
+(fontspec)             <->s*[0.9]"[NotoSans-BoldItalic.ttf]/OT:script=latn;lang
+uage=dflt;+tnum;+lnum;+smcp;mapping=tex-text;"
 
 LaTeX Info: Redefining \textsu on input line 146.
 )
@@ -424,17 +389,17 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
-\ex@=\dimen145
+\ex@=\dimen146
 ))
 (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen146
+\pmbraise@=\dimen147
 )
 (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count279
-LaTeX Info: Redefining \frac on input line 235.
+LaTeX Info: Redefining \frac on input line 233.
 \uproot@=\count280
 \leftroot@=\count281
 LaTeX Info: Redefining \overline on input line 398.
@@ -450,7 +415,7 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen147
+\big@size=\dimen148
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
 \macc@depth=\count284
@@ -468,12 +433,12 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \column@=\count289
 \maxfields@=\count290
 \andhelp@=\toks21
-\eqnshift@=\dimen148
-\alignsep@=\dimen149
-\tagshift@=\dimen150
-\tagwidth@=\dimen151
-\totwidth@=\dimen152
-\lineht@=\dimen153
+\eqnshift@=\dimen149
+\alignsep@=\dimen150
+\tagshift@=\dimen151
+\tagwidth@=\dimen152
+\totwidth@=\dimen153
+\lineht@=\dimen154
 \@envbody=\toks22
 \multlinegap=\skip52
 \multlinetaggap=\skip53
@@ -618,13 +583,13 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 (c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: luatex.def on input line 106.
+Package graphics Info: Driver file: xetex.def on input line 106.
 
-(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/luatex.def
-File: luatex.def 2024/04/13 v1.2e Graphics/color driver for luatex
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen154
-\Gin@req@width=\dimen155
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
 )
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -870,8 +835,8 @@ LaTeX Info: Redefining \textsquare on input line 427.
 (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks33
-\pgfutil@tempdima=\dimen156
-\pgfutil@tempdimb=\dimen157
+\pgfutil@tempdima=\dimen157
+\pgfutil@tempdimb=\dimen158
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box55
@@ -895,16 +860,16 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 de.tex
 \pgfkeys@tmptoks=\toks36
 ))
-\pgf@x=\dimen158
-\pgf@y=\dimen159
-\pgf@xa=\dimen160
-\pgf@ya=\dimen161
-\pgf@xb=\dimen162
-\pgf@yb=\dimen163
-\pgf@xc=\dimen164
-\pgf@yc=\dimen165
-\pgf@xd=\dimen166
-\pgf@yd=\dimen167
+\pgf@x=\dimen159
+\pgf@y=\dimen160
+\pgf@xa=\dimen161
+\pgf@ya=\dimen162
+\pgf@xb=\dimen163
+\pgf@yb=\dimen164
+\pgf@xc=\dimen165
+\pgf@yc=\dimen166
+\pgf@xd=\dimen167
+\pgf@yd=\dimen168
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
 \c@pgf@counta=\count295
@@ -918,18 +883,23 @@ de.tex
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
-Driver file for pgf: pgfsys-luatex.def
+Driver file for pgf: pgfsys-xetex.def
 
-(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
-File: pgfsys-luatex.def 2023-01-15 v3.1.10 (3.1.10)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count300
 )))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count300
-\pgfsyssoftpath@bigbuffer@items=\count301
+\pgfsyssoftpath@smallbuffer@items=\count301
+\pgfsyssoftpath@bigbuffer@items=\count302
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -939,11 +909,10 @@ Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
 (c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: luatex.def on input line 274.
+Package xcolor Info: Driver file: xetex.def on input line 274.
 
 (c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
@@ -958,8 +927,8 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen168
-\pgfmath@count=\count302
+\pgfmath@dimen=\dimen169
+\pgfmath@count=\count303
 \pgfmath@box=\box56
 \pgfmath@toks=\toks40
 \pgfmath@stack@operand=\toks41
@@ -984,56 +953,56 @@ x)
 etics.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count303
+\c@pgfmathroundto@lastzeros=\count304
 ))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen169
-\pgf@picmaxx=\dimen170
-\pgf@picminy=\dimen171
-\pgf@picmaxy=\dimen172
-\pgf@pathminx=\dimen173
-\pgf@pathmaxx=\dimen174
-\pgf@pathminy=\dimen175
-\pgf@pathmaxy=\dimen176
-\pgf@xx=\dimen177
-\pgf@xy=\dimen178
-\pgf@yx=\dimen179
-\pgf@yy=\dimen180
-\pgf@zx=\dimen181
-\pgf@zy=\dimen182
+\pgf@picminx=\dimen170
+\pgf@picmaxx=\dimen171
+\pgf@picminy=\dimen172
+\pgf@picmaxy=\dimen173
+\pgf@pathminx=\dimen174
+\pgf@pathmaxx=\dimen175
+\pgf@pathminy=\dimen176
+\pgf@pathmaxy=\dimen177
+\pgf@xx=\dimen178
+\pgf@xy=\dimen179
+\pgf@yx=\dimen180
+\pgf@yy=\dimen181
+\pgf@zx=\dimen182
+\pgf@zy=\dimen183
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
 e.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen183
-\pgf@path@lasty=\dimen184
+\pgf@path@lastx=\dimen184
+\pgf@path@lasty=\dimen185
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
 x
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen185
-\pgf@shorten@start@additional=\dimen186
+\pgf@shorten@end@additional=\dimen186
+\pgf@shorten@start@additional=\dimen187
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box57
 \pgf@hbox=\box58
 \pgf@layerbox@main=\box59
-\pgf@picture@serial@count=\count304
+\pgf@picture@serial@count=\count305
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen187
+\pgflinewidth=\dimen188
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
 ode.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen188
-\pgf@pt@y=\dimen189
-\pgf@pt@temp=\dimen190
+\pgf@pt@x=\dimen189
+\pgf@pt@y=\dimen190
+\pgf@pt@temp=\dimen191
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -1047,13 +1016,13 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen191
+\pgfarrowsep=\dimen192
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen192
-\pgf@sys@shading@range@num=\count305
-\pgf@shadingcount=\count306
+\pgf@max=\dimen193
+\pgf@sys@shading@range@num=\count306
+\pgf@shadingcount=\count307
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -1083,8 +1052,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
 y
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen193
-\pgf@nodesepend=\dimen194
+\pgf@nodesepstart=\dimen194
+\pgf@nodesepend=\dimen195
 )
 (c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
 y
@@ -1096,8 +1065,8 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen195
-\pgffor@skip=\dimen196
+\pgffor@iter=\dimen196
+\pgffor@skip=\dimen197
 \pgffor@stack=\toks43
 \pgffor@toks=\toks44
 ))
@@ -1107,33 +1076,33 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count307
-\pgfplotmarksize=\dimen197
+\pgf@plot@mark@count=\count308
+\pgfplotmarksize=\dimen198
 )
-\tikz@lastx=\dimen198
-\tikz@lasty=\dimen199
-\tikz@lastxsaved=\dimen256
-\tikz@lastysaved=\dimen257
-\tikz@lastmovetox=\dimen258
-\tikz@lastmovetoy=\dimen259
-\tikzleveldistance=\dimen260
-\tikzsiblingdistance=\dimen261
+\tikz@lastx=\dimen199
+\tikz@lasty=\dimen256
+\tikz@lastxsaved=\dimen257
+\tikz@lastysaved=\dimen258
+\tikz@lastmovetox=\dimen259
+\tikz@lastmovetoy=\dimen260
+\tikzleveldistance=\dimen261
+\tikzsiblingdistance=\dimen262
 \tikz@figbox=\box62
 \tikz@figbox@bg=\box63
 \tikz@tempbox=\box64
 \tikz@tempbox@bg=\box65
-\tikztreelevel=\count308
-\tikznumberofchildren=\count309
-\tikznumberofcurrentchild=\count310
-\tikz@fig@count=\count311
+\tikztreelevel=\count309
+\tikznumberofchildren=\count310
+\tikznumberofcurrentchild=\count311
+\tikz@fig@count=\count312
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count312
-\pgfmatrixcurrentcolumn=\count313
-\pgf@matrix@numberofcolumns=\count314
+\pgfmatrixcurrentrow=\count313
+\pgfmatrixcurrentcolumn=\count314
+\pgf@matrix@numberofcolumns=\count315
 )
-\tikz@expandcount=\count315
+\tikz@expandcount=\count316
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
@@ -1144,35 +1113,35 @@ Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
 
 (c:/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count316
-\calc@Bcount=\count317
-\calc@Adimen=\dimen262
-\calc@Bdimen=\dimen263
+\calc@Acount=\count317
+\calc@Bcount=\count318
+\calc@Adimen=\dimen263
+\calc@Bdimen=\dimen264
 \calc@Askip=\skip57
 \calc@Bskip=\skip58
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count318
+\calc@Ccount=\count319
 \calc@Cskip=\skip59
 )
 (c:/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count319
-\l_MT_multwidth_dim=\dimen264
+\g_MT_multlinerow_int=\count320
+\l_MT_multwidth_dim=\dimen265
 \origjot=\skip60
-\l_MT_shortvdotswithinadjustabove_dim=\dimen265
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen266
-\l_MT_above_intertext_sep=\dimen267
-\l_MT_below_intertext_sep=\dimen268
-\l_MT_above_shortintertext_sep=\dimen269
-\l_MT_below_shortintertext_sep=\dimen270
+\l_MT_shortvdotswithinadjustabove_dim=\dimen266
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen267
+\l_MT_above_intertext_sep=\dimen268
+\l_MT_below_intertext_sep=\dimen269
+\l_MT_above_shortintertext_sep=\dimen270
+\l_MT_below_shortintertext_sep=\dimen271
 \xmathstrut@box=\box66
-\xmathstrut@dim=\dimen271
+\xmathstrut@dim=\dimen272
 )
 (c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count320
+\c@float@type=\count321
 \float@exts=\toks45
 \float@box=\box67
 \@float@everytoks=\toks46
@@ -1186,11 +1155,11 @@ Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \enitkv@toks@=\toks48
 \labelindent=\skip61
-\enit@outerparindent=\dimen272
+\enit@outerparindent=\dimen273
 \enit@toks=\toks49
 \enit@inbox=\box69
-\enit@count@id=\count321
-\enitdp@description=\count322
+\enit@count@id=\count322
+\enitdp@description=\count323
 )
 (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -1198,17 +1167,17 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count323
-\Gm@cntv=\count324
-\c@Gm@tempcnt=\count325
-\Gm@bindingoffset=\dimen273
-\Gm@wd@mp=\dimen274
-\Gm@odd@mp=\dimen275
-\Gm@even@mp=\dimen276
-\Gm@layoutwidth=\dimen277
-\Gm@layoutheight=\dimen278
-\Gm@layouthoffset=\dimen279
-\Gm@layoutvoffset=\dimen280
+\Gm@cnth=\count324
+\Gm@cntv=\count325
+\c@Gm@tempcnt=\count326
+\Gm@bindingoffset=\dimen274
+\Gm@wd@mp=\dimen275
+\Gm@odd@mp=\dimen276
+\Gm@even@mp=\dimen277
+\Gm@layoutwidth=\dimen278
+\Gm@layoutheight=\dimen279
+\Gm@layouthoffset=\dimen280
+\Gm@layoutvoffset=\dimen281
 \Gm@dimlist=\toks50
 )
 (c:/texlive/2024/texmf-dist/tex/latex/imakeidx/imakeidx.sty
@@ -1217,24 +1186,24 @@ nous mode
 
 (c:/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
-\c@tracingmulticols=\count326
+\c@tracingmulticols=\count327
 \mult@box=\box70
-\multicol@leftmargin=\dimen281
-\c@unbalance=\count327
-\c@collectmore=\count328
-\doublecol@number=\count329
-\multicoltolerance=\count330
-\multicolpretolerance=\count331
-\full@width=\dimen282
-\page@free=\dimen283
-\premulticols=\dimen284
-\postmulticols=\dimen285
+\multicol@leftmargin=\dimen282
+\c@unbalance=\count328
+\c@collectmore=\count329
+\doublecol@number=\count330
+\multicoltolerance=\count331
+\multicolpretolerance=\count332
+\full@width=\dimen283
+\page@free=\dimen284
+\premulticols=\dimen285
+\postmulticols=\dimen286
 \multicolsep=\skip62
 \multicolbaselineskip=\skip63
 \partial@page=\box71
 \last@line=\box72
 \mc@boxedresult=\box73
-\maxbalancingoverflow=\dimen286
+\maxbalancingoverflow=\dimen287
 \mult@rightbox=\box74
 \mult@grightbox=\box75
 \mult@firstbox=\box76
@@ -1275,48 +1244,48 @@ Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
 \@tempa=\box111
 \@tempa=\box112
 \@tempa=\box113
-\c@minrows=\count332
-\c@columnbadness=\count333
-\c@finalcolumnbadness=\count334
-\last@try=\dimen287
-\multicolovershoot=\dimen288
-\multicolundershoot=\dimen289
+\c@minrows=\count333
+\c@columnbadness=\count334
+\c@finalcolumnbadness=\count335
+\last@try=\dimen288
+\multicolovershoot=\dimen289
+\multicolundershoot=\dimen290
 \mult@nat@firstbox=\box114
 \colbreak@box=\box115
-\mc@col@check@num=\count335
+\mc@col@check@num=\count336
 ))
 (c:/texlive/2024/texmf-dist/tex/latex/tasks/tasks.sty
 (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2024-05-08 L3 Experimental prototype document functions
 )
 Package: tasks 2022/01/08 v1.4a lists with columns filled horizontally
-\g__tasks_total_items_int=\count336
-\l__tasks_columns_int=\count337
-\g__tasks_rows_int=\count338
-\g__tasks_current_col_num_int=\count339
-\g__tasks_current_row_num_int=\count340
-\l__tasks_item_columns_int=\count341
-\g__tasks_env_int=\count342
-\l__tasks_start_int=\count343
-\l__tasks_item_indent_dim=\dimen290
-\l__tasks_item_default_indent_dim=\dimen291
-\l__tasks_item_width_dim=\dimen292
-\l__tasks_label_width_dim=\dimen293
-\l__tasks_label_default_width_dim=\dimen294
-\l__tasks_label_offset_dim=\dimen295
-\l__tasks_label_default_offset_dim=\dimen296
-\l__tasks_column_sep_dim=\dimen297
-\l__tasks_correction_dim=\dimen298
-\l__tasks_full_width_dim=\dimen299
+\g__tasks_total_items_int=\count337
+\l__tasks_columns_int=\count338
+\g__tasks_rows_int=\count339
+\g__tasks_current_col_num_int=\count340
+\g__tasks_current_row_num_int=\count341
+\l__tasks_item_columns_int=\count342
+\g__tasks_env_int=\count343
+\l__tasks_start_int=\count344
+\l__tasks_item_indent_dim=\dimen291
+\l__tasks_item_default_indent_dim=\dimen292
+\l__tasks_item_width_dim=\dimen293
+\l__tasks_label_width_dim=\dimen294
+\l__tasks_label_default_width_dim=\dimen295
+\l__tasks_label_offset_dim=\dimen296
+\l__tasks_label_default_offset_dim=\dimen297
+\l__tasks_column_sep_dim=\dimen298
+\l__tasks_correction_dim=\dimen299
+\l__tasks_full_width_dim=\dimen300
 \l__tasks_after_item_skip=\skip64
 \l__tasks_custom_after_item_skip=\skip65
 \l__tasks_before_list_skip=\skip66
 \l__tasks_after_list_skip=\skip67
 \l__tasks_item_coffin=\box116
 \l__tasks_label_coffin=\box117
-\c@task=\count344
-\l__tasks_tmpa_int=\count345
-\l__tasks_tmpb_int=\count346
+\c@task=\count345
+\l__tasks_tmpa_int=\count346
+\l__tasks_tmpb_int=\count347
 \l__tasks_tmpa_coffin=\box118
 \l__tasks_tmpa_box=\box119
 
@@ -1367,8 +1336,7 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks51
+Package pdftexcmds Info: \pdfdraftmode not found.
 )
 (c:/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
@@ -1380,14 +1348,14 @@ Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count347
+\c@abspage=\count348
 Package zref Info: New property: abspage on input line 67.
 )
 (c:/texlive/2024/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip77
-\c@mdf@globalstyle@cnt=\count348
+\c@mdf@globalstyle@cnt=\count349
 \mdf@skipabove@length=\skip78
 \mdf@skipbelow@length=\skip79
 \mdf@leftmargin@length=\skip80
@@ -1463,16 +1431,16 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip141
 \mdfsubtitleheight=\skip142
 \mdfsubsubtitleheight=\skip143
-\c@mdfcountframes=\count349
+\c@mdfcountframes=\count350
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count350
-\c@mdf@env@i=\count351
-\c@mdf@env@ii=\count352
-\c@mdf@zref@counter=\count353
+\mdf@envdepth=\count351
+\c@mdf@env@i=\count352
+\c@mdf@env@ii=\count353
+\c@mdf@zref@counter=\count354
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
@@ -1480,17 +1448,17 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 
 (c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
-\col@sep=\dimen300
+\col@sep=\dimen301
 \ar@mcellbox=\box125
-\extrarowheight=\dimen301
-\NC@list=\toks52
+\extrarowheight=\dimen302
+\NC@list=\toks51
 \extratabsurround=\skip144
 \backup@length=\skip145
 \ar@cellbox=\box126
 )
-\rotheadsize=\dimen302
-\c@nlinenum=\count354
-\TeXr@lab=\toks53
+\rotheadsize=\dimen303
+\c@nlinenum=\count355
+\TeXr@lab=\toks52
 )
 (c:/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
@@ -1500,31 +1468,31 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 )
 (c:/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2024/05/26 v1.0h Color table columns (DPC)
-\everycr=\toks54
+\everycr=\toks53
 \minrowclearance=\skip149
-\rownum=\count355
+\rownum=\count356
 )
 (c:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count356
+\lst@mode=\count357
 \lst@gtempboxa=\box127
-\lst@token=\toks55
-\lst@length=\count357
-\lst@currlwidth=\dimen303
-\lst@column=\count358
-\lst@pos=\count359
-\lst@lostspace=\dimen304
-\lst@width=\dimen305
-\lst@newlines=\count360
-\lst@lineno=\count361
-\lst@maxwidth=\dimen306
+\lst@token=\toks54
+\lst@length=\count358
+\lst@currlwidth=\dimen304
+\lst@column=\count359
+\lst@pos=\count360
+\lst@lostspace=\dimen305
+\lst@width=\dimen306
+\lst@newlines=\count361
+\lst@lineno=\count362
+\lst@maxwidth=\dimen307
 
 (c:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
 )
 (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
-\c@lstnumber=\count362
-\lst@skipnumbers=\count363
+\c@lstnumber=\count363
+\lst@skipnumbers=\count364
 \lst@framebox=\box128
 )
 (c:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
@@ -1537,27 +1505,27 @@ Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen307
-\captionmargin=\dimen308
-\caption@leftmargin=\dimen309
-\caption@rightmargin=\dimen310
-\caption@width=\dimen311
-\caption@indent=\dimen312
-\caption@parindent=\dimen313
-\caption@hangindent=\dimen314
+\caption@tempdima=\dimen308
+\captionmargin=\dimen309
+\caption@leftmargin=\dimen310
+\caption@rightmargin=\dimen311
+\caption@width=\dimen312
+\caption@indent=\dimen313
+\caption@parindent=\dimen314
+\caption@hangindent=\dimen315
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count364
-\c@continuedfloat=\count365
+\c@caption@flags=\count365
+\c@continuedfloat=\count366
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 )
 (c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count366
+\c@subfigure=\count367
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count367
+\c@subtable=\count368
 )
 (c:/texlive/2024/texmf-dist/tex/latex/braket/braket.sty)
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/euscript.sty
@@ -1575,13 +1543,13 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \UL@box=\box129
 \UL@hyphenbox=\box130
 \UL@skip=\skip153
-\UL@hook=\toks56
-\UL@height=\dimen315
-\UL@pe=\count368
-\UL@pixel=\dimen316
+\UL@hook=\toks55
+\UL@height=\dimen316
+\UL@pe=\count369
+\UL@pixel=\dimen317
 \ULC@box=\box131
 Package: ulem 2019/11/18
-\ULdepth=\dimen317
+\ULdepth=\dimen318
 )
 (c:/texlive/2024/texmf-dist/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
@@ -1595,21 +1563,21 @@ Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
 (c:/texlive/2024/texmf-dist/tex/latex/pict2e/pict2e.cfg
 File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
 )
-Package pict2e Info: Driver file: luatex.def on input line 112.
-Package pict2e Info: Driver file for pict2e: p2e-luatex.def on input line 114.
+Package pict2e Info: Driver file: xetex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-xetex.def on input line 114.
 
-(c:/texlive/2024/texmf-dist/tex/latex/pict2e/p2e-luatex.def
-File: p2e-luatex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+(c:/texlive/2024/texmf-dist/tex/latex/pict2e/p2e-xetex.def
+File: p2e-xetex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks57
-\@arclen=\dimen318
-\@arcrad=\dimen319
-\pIIe@tempdima=\dimen320
-\pIIe@tempdimb=\dimen321
-\pIIe@tempdimc=\dimen322
-\pIIe@tempdimd=\dimen323
-\pIIe@tempdime=\dimen324
-\pIIe@tempdimf=\dimen325
+\pIIe@GRAPH=\toks56
+\@arclen=\dimen319
+\@arcrad=\dimen320
+\pIIe@tempdima=\dimen321
+\pIIe@tempdimb=\dimen322
+\pIIe@tempdimc=\dimen323
+\pIIe@tempdimd=\dimen324
+\pIIe@tempdime=\dimen325
+\pIIe@tempdimf=\dimen326
 )
 \@HwM@arrowfill@skip=\skip154
 )
@@ -1619,7 +1587,7 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen326
+\arrowsize=\dimen327
 ))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryscopes.code.tex
@@ -1657,10 +1625,10 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
 e.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen327
-\pgfarrowlength=\dimen328
-\pgfarrowwidth=\dimen329
-\pgfarrowlinewidth=\dimen330
+\pgfarrowinset=\dimen328
+\pgfarrowlength=\dimen329
+\pgfarrowwidth=\dimen330
+\pgfarrowlinewidth=\dimen331
 ))) (c:/texlive/2024/texmf-dist/tex/latex/mnsymbol/MnSymbol.sty
 Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
 LaTeX Info: Redefining \dagger on input line 84.
@@ -1755,14 +1723,14 @@ brarydecorations.pathmorphing.code.tex
 brarydecorations.code.tex
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
 ex
-\pgfdecoratedcompleteddistance=\dimen331
-\pgfdecoratedremainingdistance=\dimen332
-\pgfdecoratedinputsegmentcompleteddistance=\dimen333
-\pgfdecoratedinputsegmentremainingdistance=\dimen334
-\pgf@decorate@distancetomove=\dimen335
-\pgf@decorate@repeatstate=\count369
-\pgfdecorationsegmentamplitude=\dimen336
-\pgfdecorationsegmentlength=\dimen337
+\pgfdecoratedcompleteddistance=\dimen332
+\pgfdecoratedremainingdistance=\dimen333
+\pgfdecoratedinputsegmentcompleteddistance=\dimen334
+\pgfdecoratedinputsegmentremainingdistance=\dimen335
+\pgf@decorate@distancetomove=\dimen336
+\pgf@decorate@repeatstate=\count370
+\pgfdecorationsegmentamplitude=\dimen337
+\pgfdecorationsegmentlength=\dimen338
 )
 \tikz@lib@dec@box=\box132
 )
@@ -1786,15 +1754,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (c:/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count370
+\c@section@level=\count371
 )
 (c:/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen338
-\Hy@linkcounter=\count371
-\Hy@pagecounter=\count372
+\@linkdim=\dimen339
+\Hy@linkcounter=\count372
+\Hy@pagecounter=\count373
 
 (c:/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-05-23 v7.01i Hyperref: PDFDocEncoding definition (HO)
@@ -1802,7 +1770,7 @@ File: pd1enc.def 2024-05-23 v7.01i Hyperref: PDFDocEncoding definition (HO)
 (c:/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count373
+\Hy@SavedSpaceFactor=\count374
 
 (c:/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-05-23 v7.01i Hyperref: PDF Unicode definition (HO)
@@ -1814,14 +1782,14 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count374
+\c@Hy@tempcnt=\count375
 
 (c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen339
+\XeTeXLinkMargin=\dimen340
 
 (c:/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1830,9 +1798,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count375
-\Field@Width=\dimen340
-\Fld@charsize=\dimen341
+\Fld@menulength=\count376
+\Field@Width=\dimen341
+\Fld@charsize=\dimen342
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1845,26 +1813,28 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count376
-\c@Item=\count377
-\c@Hfootnote=\count378
+\Hy@abspage=\count377
+\c@Item=\count378
+\c@Hfootnote=\count379
 )
-Package hyperref Info: Driver (autodetected): hluatex.
+Package hyperref Info: Driver (autodetected): hxetex.
 
-(c:/texlive/2024/texmf-dist/tex/latex/hyperref/hluatex.def
-File: hluatex.def 2024-05-23 v7.01i Hyperref driver for luaTeX
+(c:/texlive/2024/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2024-05-23 v7.01i Hyperref driver for XeTeX
+\pdfm@box=\box133
+\c@Hy@AnnotLevel=\count380
+\HyField@AnnotCount=\count381
+\Fld@listcount=\count382
+\c@bookmark@seq@number=\count383
+
+(c:/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 
 (c:/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count379
-\c@bookmark@seq@number=\count380
-
-(c:/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
-
 (c:/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -1874,27 +1844,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip155
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 90.
-\c@theorem=\count381
-\c@corollary=\count382
-\c@definition=\count383
-\c@remark=\count384
-\c@lemma=\count385
-\c@prop=\count386
-\c@claim=\count387
-\c@example=\count388
-\c@solution=\count389
-\c@innercustomthm=\count390
-\c@innercustomcor=\count391
-\c@innercustomlem=\count392
-\c@innercustomexc=\count393
-\c@innercustomdef=\count394
-\c@innercustomprop=\count395
-\c@innercustomprb=\count396
+\c@theorem=\count384
+\c@corollary=\count385
+\c@definition=\count386
+\c@remark=\count387
+\c@lemma=\count388
+\c@prop=\count389
+\c@claim=\count390
+\c@example=\count391
+\c@solution=\count392
+\c@innercustomthm=\count393
+\c@innercustomcor=\count394
+\c@innercustomlem=\count395
+\c@innercustomexc=\count396
+\c@innercustomdef=\count397
+\c@innercustomprop=\count398
+\c@innercustomprb=\count399
 
 (c:/texlive/2024/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen342
-\ESO@tempdimb=\dimen343
+\ESO@tempdima=\dimen343
+\ESO@tempdimb=\dimen344
 ))
 (c:/texlive/2024/texmf-dist/tex/latex/esint/esint.sty
 Package: esint 
@@ -1904,93 +1874,71 @@ Package: esint
 brarydecorations.markings.code.tex
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
 orations.markings.code.tex)) (./past_exams.aux)
-\openout1 = past_exams.aux
+\openout1 = `past_exams.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/notomi/m/it on input line 37.
+LaTeX Font Info:    Checking defaults for OML/notomi/m/it on input line 38.
 LaTeX Font Info:    Trying to load font information for OML+notomi on input lin
-e 37.
+e 38.
 
 (c:/texlive/2024/texmf-dist/tex/latex/notomath/omlnotomi.fd
 File: omlnotomi.fd 2014/04/14 Fontinst v1.933 font definitions for OML/notomi.
 )
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-7.
+8.
 
 (c:/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 38.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-37.
+38.
 
 (c:/texlive/2024/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 38.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 37.
+ 38.
 
 (c:/texlive/2024/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 38.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 37.
+e 38.
 
 (c:/texlive/2024/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-\c@mv@tabular=\count397
-\c@mv@boldtabular=\count398
-LaTeX Info: Command `\dddot' is already robust on input line 37.
-LaTeX Info: Command `\ddddot' is already robust on input line 37.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+\c@mv@tabular=\count400
+\c@mv@boldtabular=\count401
+LaTeX Info: Command `\dddot' is already robust on input line 38.
+LaTeX Info: Command `\ddddot' is already robust on input line 38.
 
-(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count399
-\scratchdimen=\dimen344
-\scratchbox=\box133
-\nofMPsegments=\count400
-\nofMParguments=\count401
-\everyMPshowfont=\toks58
-\MPscratchCnt=\count402
-\MPscratchDim=\dimen345
-\MPnumerator=\count403
-\makeMPintoPDFobject=\count404
-\everyMPtoPDFconversion=\toks59
-) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 *geometry* driver: auto-detecting
-*geometry* detected driver: luatex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: luatex
+* driver: xetex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -2021,90 +1969,90 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count405
+\c@lstlisting=\count402
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 37.
+Package hyperref Info: Link coloring ON on input line 38.
 (./past_exams.out) (./past_exams.out)
 \@outlinefile=\write4
+\openout4 = `past_exams.out'.
 
-\openout4 = past_exams.out
 LaTeX Font Info:    Trying to load font information for OT1+NotoSerif-TLF on in
-put line 39.
+put line 40.
 
 (c:/texlive/2024/texmf-dist/tex/latex/noto/OT1NotoSerif-TLF.fd
 File: OT1NotoSerif-TLF.fd 2021/09/07 (autoinst) Font definitions for OT1/NotoSe
 rif-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 39.
+(Font)              scaled to size 10.79993pt on input line 40.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 7.91994pt on input line 39.
+(Font)              scaled to size 7.91994pt on input line 40.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 5.93996pt on input line 39.
+(Font)              scaled to size 5.93996pt on input line 40.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 40.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 39.
+(Font)              scaled to size 8.8pt on input line 40.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 39.
+(Font)              scaled to size 6.6pt on input line 40.
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-39.
+40.
 
 (c:/texlive/2024/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 39.
+(Font)              scaled to size 8.8pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 39.
+(Font)              scaled to size 6.6pt on input line 40.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-39.
+40.
 
 (c:/texlive/2024/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 39.
+(Font)              scaled to size 8.8pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 39.
+(Font)              scaled to size 6.6pt on input line 40.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-39.
+40.
 
 (c:/texlive/2024/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8pt on input line 39.
+(Font)              scaled to size 8.8pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 39.
+(Font)              scaled to size 6.6pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8pt on input line 39.
+(Font)              scaled to size 8.8pt on input line 40.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(Font)              scaled to size 6.6pt on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
 
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+esint on input line 3
-9.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 4
+0.
 
 (c:/texlive/2024/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
@@ -2149,7 +2097,7 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 
 [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+]
 
 LaTeX Font Info:    Font shape `TU/NotoSerif(1)/m/sl' in size <10> not availabl
 e
@@ -2160,143 +2108,168 @@ ne 100.
 [3]
 
 [4]
-Overfull \hbox (1.26996pt too wide) detected at line 240
+Overfull \hbox (1.26997pt too wide) detected at line 240
  []\TU/NotoSerif(1)/m/n/10 100
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 241
+Overfull \hbox (1.26997pt too wide) detected at line 241
  []\TU/NotoSerif(1)/m/n/10 100
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 242
- []\TU/NotoSerif(1)/m/n/10 104
+Overfull \hbox (1.26997pt too wide) detected at line 242
+ []\TU/NotoSerif(1)/m/n/10 100
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 243
- []\TU/NotoSerif(1)/m/n/10 105
+Overfull \hbox (1.26997pt too wide) detected at line 243
+ []\TU/NotoSerif(1)/m/n/10 100
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 244
+Overfull \hbox (1.26997pt too wide) detected at line 244
+ []\TU/NotoSerif(1)/m/n/10 101
+ []
+
+
+Overfull \hbox (1.26997pt too wide) detected at line 246
+ []\TU/NotoSerif(1)/m/n/10 102
+ []
+
+
+Overfull \hbox (1.26997pt too wide) detected at line 247
+ []\TU/NotoSerif(1)/m/n/10 102
+ []
+
+
+Overfull \hbox (1.26997pt too wide) detected at line 248
  []\TU/NotoSerif(1)/m/n/10 106
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 245
+Overfull \hbox (1.26997pt too wide) detected at line 249
+ []\TU/NotoSerif(1)/m/n/10 107
+ []
+
+
+Overfull \hbox (1.26997pt too wide) detected at line 250
  []\TU/NotoSerif(1)/m/n/10 108
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 246
- []\TU/NotoSerif(1)/m/n/10 108
+Overfull \hbox (1.26997pt too wide) detected at line 251
+ []\TU/NotoSerif(1)/m/n/10 110
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 247
- []\TU/NotoSerif(1)/m/n/10 108
+Overfull \hbox (1.26997pt too wide) detected at line 252
+ []\TU/NotoSerif(1)/m/n/10 110
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 248
- []\TU/NotoSerif(1)/m/n/10 123
+Overfull \hbox (1.26997pt too wide) detected at line 253
+ []\TU/NotoSerif(1)/m/n/10 110
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 249
+Overfull \hbox (1.26997pt too wide) detected at line 254
  []\TU/NotoSerif(1)/m/n/10 125
  []
 
 
-Overfull \hbox (1.26996pt too wide) detected at line 250
- []\TU/NotoSerif(1)/m/n/10 126
+Overfull \hbox (1.26997pt too wide) detected at line 255
+ []\TU/NotoSerif(1)/m/n/10 127
+ []
+
+
+Overfull \hbox (1.26997pt too wide) detected at line 256
+ []\TU/NotoSerif(1)/m/n/10 128
  []
 
 )
 \tf@toc=\write5
+\openout5 = `past_exams.toc'.
 
-\openout5 = past_exams.toc
 
 
 [5]
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 57.
+(Font)              scaled to size 7.19995pt on input line 58.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 5.57996pt on input line 57.
+(Font)              scaled to size 5.57996pt on input line 58.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 58.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 6.2pt on input line 57.
+(Font)              scaled to size 6.2pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.2pt on input line 57.
+(Font)              scaled to size 6.2pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.2pt on input line 57.
+(Font)              scaled to size 6.2pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.2pt on input line 57.
+(Font)              scaled to size 6.2pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 57.
+(Font)              scaled to size 8.0pt on input line 58.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.2pt on input line 57.
+(Font)              scaled to size 6.2pt on input line 58.
 
 
 [6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 71.
+(mdframed)              on input line 72.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 93.
+(mdframed)              on input line 94.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 115.
+(mdframed)              on input line 116.
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
-(mdframed)              on input line 121.
+(mdframed)              on input line 122.
 
 
 [7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 140.
+(mdframed)              on input line 141.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 153.
+(mdframed)              on input line 154.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 174.
-Package mdframed Info: Not enough space on this page on input line 180.
+(mdframed)              on input line 175.
+Package mdframed Info: Not enough space on this page on input line 181.
 
 
 [8]
-Package mdframed Info: Not enough space on this page on input line 180.
+Package mdframed Info: Not enough space on this page on input line 181.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 207.
+(mdframed)              on input line 208.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 218.
-Package mdframed Info: Not enough space on this page on input line 224.
+(mdframed)              on input line 219.
+Package mdframed Info: Not enough space on this page on input line 225.
 
 
 [9]
-Package mdframed Info: Not enough space on this page on input line 224.
+Package mdframed Info: Not enough space on this page on input line 225.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 235.
+(mdframed)              on input line 236.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 251.
+(mdframed)              on input line 252.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 268.
+(mdframed)              on input line 269.
 
 
 [10]
@@ -2304,42 +2277,42 @@ Package mdframed Info: mdframed detected package amsthm
 [11]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 292.
+(mdframed)              on input line 293.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 305.
+(mdframed)              on input line 306.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 333.
+(mdframed)              on input line 334.
 
 
 [12]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 346.
+(mdframed)              on input line 347.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 359.
+(mdframed)              on input line 360.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 366.
+(mdframed)              on input line 367.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 374.
+(mdframed)              on input line 375.
 
 
 [13]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 387.
+(mdframed)              on input line 388.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 423.
+(mdframed)              on input line 424.
 
-Overfull \hbox (3.03351pt too wide) in paragraph at lines 427--428
-[]\TU/NotoSerif(1)/m/n/10 Let $\OML/notomi/m/it/10 M$ \TU/NotoSerif(1)/m/n/10 de
--note a com-pact ori-entable 2-dimensional man-i-fold with-out bound-ary, and le
-t $\OML/notomi/m/it/10 !$ \TU/NotoSerif(1)/m/n/10 be a nowhere
+Overfull \hbox (3.0334pt too wide) in paragraph at lines 428--429
+[]\TU/NotoSerif(1)/m/n/10 Let $\OML/notomi/m/it/10 M$ \TU/NotoSerif(1)/m/n/10 d
+enote a compact orientable 2-dimensional manifold without boundary, and let $\O
+ML/notomi/m/it/10 !$ \TU/NotoSerif(1)/m/n/10 be a nowhere
  []
 
 
@@ -2347,66 +2320,66 @@ t $\OML/notomi/m/it/10 !$ \TU/NotoSerif(1)/m/n/10 be a nowhere
 [14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 440.
+(mdframed)              on input line 441.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 445.
+(mdframed)              on input line 446.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 452.
+(mdframed)              on input line 453.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 461.
+(mdframed)              on input line 462.
 
 
 [15]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 473.
+(mdframed)              on input line 474.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 479.
+(mdframed)              on input line 480.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 491.
+(mdframed)              on input line 492.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 497.
+(mdframed)              on input line 498.
 
 
 [16]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 502.
+(mdframed)              on input line 503.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 507.
+(mdframed)              on input line 508.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 513.
+(mdframed)              on input line 514.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 523.
+(mdframed)              on input line 524.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 533.
-Package mdframed Info: Not enough space on this page on input line 535.
+(mdframed)              on input line 534.
+Package mdframed Info: Not enough space on this page on input line 536.
 
 
 [17]
-Package mdframed Info: Not enough space on this page on input line 535.
+Package mdframed Info: Not enough space on this page on input line 536.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 538.
+(mdframed)              on input line 539.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 548.
+(mdframed)              on input line 549.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 553.
+(mdframed)              on input line 554.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 558.
+(mdframed)              on input line 559.
 
 
 [18]
@@ -2414,226 +2387,221 @@ Package mdframed Info: mdframed detected package amsthm
 [19]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 568.
+(mdframed)              on input line 569.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 599.
+(mdframed)              on input line 600.
 
 
 [20]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 623.
+(mdframed)              on input line 624.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 628.
+(mdframed)              on input line 629.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 640.
+(mdframed)              on input line 641.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 645.
+(mdframed)              on input line 646.
 
 
 [21]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 662.
+(mdframed)              on input line 663.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 672.
+(mdframed)              on input line 673.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 690.
-Package mdframed Info: Not enough space on this page on input line 692.
+(mdframed)              on input line 691.
+Package mdframed Info: Not enough space on this page on input line 693.
 
 
 [22]
-Package mdframed Info: Not enough space on this page on input line 692.
+Package mdframed Info: Not enough space on this page on input line 693.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 707.
+(mdframed)              on input line 708.
 
 
 [23]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 728.
+(mdframed)              on input line 729.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 737.
+(mdframed)              on input line 738.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 742.
+(mdframed)              on input line 743.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 768.
+(mdframed)              on input line 769.
 
 
 [24]
-Package mdframed Info: Not enough space on this page on input line 770.
+Package mdframed Info: Not enough space on this page on input line 771.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 774.
+(mdframed)              on input line 775.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 799.
+(mdframed)              on input line 800.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 816.
-Package mdframed Info: Not enough space on this page on input line 822.
+(mdframed)              on input line 817.
+Package mdframed Info: Not enough space on this page on input line 823.
 
 
 [25]
-Package mdframed Info: Not enough space on this page on input line 822.
+Package mdframed Info: Not enough space on this page on input line 823.
 
 
 [26]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 830.
+(mdframed)              on input line 831.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 835.
+(mdframed)              on input line 836.
+File: ../Graphics/2022AI1.png Graphic file (type bmp)
+<../Graphics/2022AI1.png>
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 848.
+(mdframed)              on input line 849.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 862.
 
 
 [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 865.
+(mdframed)              on input line 879.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 870.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 875.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 880.
-
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 886.
-
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 886.
+(mdframed)              on input line 884.
 
 
 [28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 932.
+(mdframed)              on input line 889.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 937.
-
-
-[29]
+(mdframed)              on input line 894.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 946.
+
+
+[29]
+Package mdframed Info: Not enough space on this page on input line 948.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 951.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 960.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 15.55188pt on input line 967.
+(Font)              scaled to size 15.55188pt on input line 981.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 11.24992pt on input line 967.
+(Font)              scaled to size 11.24992pt on input line 981.
 LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/m/n' will be
-(Font)              scaled to size 8.45993pt on input line 967.
+(Font)              scaled to size 8.45993pt on input line 981.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 17.28pt on input line 967.
+(Font)              scaled to size 17.28pt on input line 981.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 12.5pt on input line 967.
+(Font)              scaled to size 12.5pt on input line 981.
 LaTeX Font Info:    Font shape `OML/notomi/m/it' will be
-(Font)              scaled to size 9.4pt on input line 967.
+(Font)              scaled to size 9.4pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 17.28pt on input line 967.
+(Font)              scaled to size 17.28pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.5pt on input line 967.
+(Font)              scaled to size 12.5pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.4pt on input line 967.
+(Font)              scaled to size 9.4pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 17.28pt on input line 967.
+(Font)              scaled to size 17.28pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.5pt on input line 967.
+(Font)              scaled to size 12.5pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.4pt on input line 967.
+(Font)              scaled to size 9.4pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 17.28pt on input line 967.
+(Font)              scaled to size 17.28pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.5pt on input line 967.
+(Font)              scaled to size 12.5pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.4pt on input line 967.
+(Font)              scaled to size 9.4pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 17.28pt on input line 967.
+(Font)              scaled to size 17.28pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.5pt on input line 967.
+(Font)              scaled to size 12.5pt on input line 981.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.4pt on input line 967.
+(Font)              scaled to size 9.4pt on input line 981.
 
 
 [30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 979.
+(mdframed)              on input line 993.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 988.
+(mdframed)              on input line 1002.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1007.
+(mdframed)              on input line 1021.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1016.
-Package mdframed Info: Not enough space on this page on input line 1018.
+(mdframed)              on input line 1030.
+Package mdframed Info: Not enough space on this page on input line 1032.
 
 
 [31]
-Package mdframed Info: Not enough space on this page on input line 1018.
+Package mdframed Info: Not enough space on this page on input line 1032.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1029.
+(mdframed)              on input line 1043.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1038.
+(mdframed)              on input line 1052.
 
 
 [32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1047.
+(mdframed)              on input line 1061.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1064.
+(mdframed)              on input line 1078.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1082.
+(mdframed)              on input line 1096.
 
 
 [33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1094.
+(mdframed)              on input line 1108.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1116.
+(mdframed)              on input line 1130.
 
 
 [34]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1132.
+(mdframed)              on input line 1146.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1137.
+(mdframed)              on input line 1151.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1142.
+(mdframed)              on input line 1156.
 
 
 [35]
@@ -2641,198 +2609,198 @@ Package mdframed Info: mdframed detected package amsthm
 [36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1161.
+(mdframed)              on input line 1175.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1186.
+(mdframed)              on input line 1200.
 
 
 [37]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1210.
+(mdframed)              on input line 1224.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1215.
+(mdframed)              on input line 1229.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1220.
+(mdframed)              on input line 1234.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1231.
+(mdframed)              on input line 1245.
 
 
 [38]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1252.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1256.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1261.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
 (mdframed)              on input line 1266.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1270.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1275.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1280.
 
 
 [39]
 LaTeX Font Info:    Trying to load font information for OT1+NotoSans(0) on inpu
-t line 1296.
-LaTeX Font Info:    No file OT1NotoSans(0).fd. on input line 1296.
+t line 1310.
+LaTeX Font Info:    No file OT1NotoSans(0).fd. on input line 1310.
 
 
 LaTeX Font Warning: Font shape `OT1/NotoSans(0)/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 1296.
+(Font)              using `OT1/cmr/m/n' instead on input line 1310.
 
 
 LaTeX Font Warning: Font shape `OT1/NotoSans(0)/m/n' in size <5.5> not availabl
 e
-(Font)              size <5> substituted on input line 1296.
+(Font)              size <5> substituted on input line 1310.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1298.
+(mdframed)              on input line 1312.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1304.
+(mdframed)              on input line 1318.
 
 
 [40]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1341.
+(mdframed)              on input line 1355.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1350.
+(mdframed)              on input line 1364.
 
 
 [41]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1373.
+(mdframed)              on input line 1387.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1378.
+(mdframed)              on input line 1392.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1401.
+(mdframed)              on input line 1415.
 
 
 [42]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1420.
+(mdframed)              on input line 1434.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1429.
+(mdframed)              on input line 1443.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1435.
+(mdframed)              on input line 1449.
 
 
 [43]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1489.
+(mdframed)              on input line 1503.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1499.
+(mdframed)              on input line 1513.
 
 
 [44]
-Package mdframed Info: Not enough space on this page on input line 1501.
+Package mdframed Info: Not enough space on this page on input line 1515.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1506.
+(mdframed)              on input line 1520.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1519.
+(mdframed)              on input line 1533.
 
 
 [45]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1531.
+(mdframed)              on input line 1545.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1540.
+(mdframed)              on input line 1554.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1564.
+(mdframed)              on input line 1578.
 
 
 [46]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1571.
+(mdframed)              on input line 1585.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1580.
+(mdframed)              on input line 1594.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1603.
+(mdframed)              on input line 1617.
 
 
 [47]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1612.
+(mdframed)              on input line 1626.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1618.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1628.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1637.
-Package mdframed Info: Not enough space on this page on input line 1639.
-
-
-[48]
-Package mdframed Info: Not enough space on this page on input line 1639.
+(mdframed)              on input line 1632.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1642.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1647.
+(mdframed)              on input line 1651.
+Package mdframed Info: Not enough space on this page on input line 1653.
+
+
+[48]
+Package mdframed Info: Not enough space on this page on input line 1653.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1652.
+(mdframed)              on input line 1656.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1662.
+(mdframed)              on input line 1661.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1666.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1676.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1680.
 
 
 [49]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1675.
+(mdframed)              on input line 1689.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1684.
+(mdframed)              on input line 1698.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1711.
+(mdframed)              on input line 1725.
 
 
 [50]
-Package mdframed Info: Not enough space on this page on input line 1713.
+Package mdframed Info: Not enough space on this page on input line 1727.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1718.
+(mdframed)              on input line 1732.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1727.
+(mdframed)              on input line 1741.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1733.
+(mdframed)              on input line 1747.
 
 
 [51]
@@ -2840,105 +2808,105 @@ Package mdframed Info: mdframed detected package amsthm
 [52]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1750.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1759.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
 (mdframed)              on input line 1764.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1773.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1778.
 
 
 [53]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1788.
+(mdframed)              on input line 1802.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1800.
+(mdframed)              on input line 1814.
 
 
 [54]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1818.
+(mdframed)              on input line 1832.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1831.
+(mdframed)              on input line 1845.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1836.
+(mdframed)              on input line 1850.
 
 
 [55]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1852.
+(mdframed)              on input line 1866.
 
 
 [56]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1869.
+(mdframed)              on input line 1883.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1874.
+(mdframed)              on input line 1888.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1887.
+(mdframed)              on input line 1901.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1902.
+(mdframed)              on input line 1916.
 
 
 [57]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1915.
+(mdframed)              on input line 1929.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1928.
+(mdframed)              on input line 1942.
 
 
 [58]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1953.
+(mdframed)              on input line 1967.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1973.
+(mdframed)              on input line 1987.
 
 
 [59]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1981.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
 (mdframed)              on input line 1995.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1998.
+(mdframed)              on input line 2009.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2012.
 
 
 [60]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2022.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
 (mdframed)              on input line 2036.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2058.
+(mdframed)              on input line 2050.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2072.
 
 
 [61]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2096.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 210
-6.
+(mdframed)              on input line 2110.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 212
+0.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
@@ -2946,19 +2914,19 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 [62]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2139.
+(mdframed)              on input line 2153.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2157.
+(mdframed)              on input line 2171.
 
-Overfull \hbox (5.44507pt too wide) in paragraph at lines 2166--2167
-[]\TU/NotoSerif(1)/m/n/10 De-scribe the finitely gen-er-ated abelian group $[][
-]\OMX/MnSymbolE/m/n/10 \U/ntxsym/m/n/10 Z\OMX/MnSymbolE/m/n/10 ~\OT1/NotoSeri
-f-TLF/m/n/10 9\U/ntxsym/m/n/10 Z\OML/notomi/m/it/10 ; \U/ntxsym/m/n/10 Z\OMX/Mn
-SymbolE/m/n/10 ~\OT1/NotoSerif-TLF/m/n/10 27\U/ntxsym/m/n/10 Z\OMX/MnSymbolE/m/
-n/10 $ \TU/NotoSerif(1)/m/n/10 in the ``stan-dard form'' $\U/ntxsym/m/n/10 Z\
-OMX/MnSymbolE/m/n/10 ~\OML/notomi/m/it/10 a[]\U/ntxsym/m/n/10 Z \U/MnSymbolC/m/
-n/10 
+Overfull \hbox (5.44493pt too wide) in paragraph at lines 2180--2181
+[]\TU/NotoSerif(1)/m/n/10 Describe the finitely generated abelian group $[][]\O
+MX/MnSymbolE/m/n/10 ^^88\U/ntxsym/m/n/10 Z\OMX/MnSymbolE/m/n/10 ~\OT1/NotoSerif
+-TLF/m/n/10 9\U/ntxsym/m/n/10 Z\OML/notomi/m/it/10 ; \U/ntxsym/m/n/10 Z\OMX/MnS
+ymbolE/m/n/10 ~\OT1/NotoSerif-TLF/m/n/10 27\U/ntxsym/m/n/10 Z\OMX/MnSymbolE/m/n
+/10 ^^8d$ \TU/NotoSerif(1)/m/n/10 in the “standard form” $\U/ntxsym/m/n/10 Z\OM
+X/MnSymbolE/m/n/10 ~\OML/notomi/m/it/10 a[]\U/ntxsym/m/n/10 Z \U/MnSymbolC/m/n/
+10 ^^U
  []
 
 
@@ -2966,18 +2934,18 @@ n/10 
 [63]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2223.
+(mdframed)              on input line 2237.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2235.
-Package mdframed Info: Not enough space on this page on input line 2237.
+(mdframed)              on input line 2249.
+Package mdframed Info: Not enough space on this page on input line 2251.
 
 
 [64]
-Package mdframed Info: Not enough space on this page on input line 2237.
+Package mdframed Info: Not enough space on this page on input line 2251.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2248.
+(mdframed)              on input line 2262.
 
 
 [65]
@@ -2985,352 +2953,389 @@ Package mdframed Info: mdframed detected package amsthm
 [66]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2303.
+(mdframed)              on input line 2317.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2321.
+(mdframed)              on input line 2335.
 
 
 [67]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2352.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
 (mdframed)              on input line 2366.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2384.
-Package mdframed Info: Not enough space on this page on input line 2386.
+(mdframed)              on input line 2380.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2398.
+Package mdframed Info: Not enough space on this page on input line 2400.
 
 
 [68]
-Package mdframed Info: Not enough space on this page on input line 2386.
+Package mdframed Info: Not enough space on this page on input line 2400.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2422.
+(mdframed)              on input line 2436.
 
 
 [69]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2466.
+(mdframed)              on input line 2480.
 
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 2476.
+(mdframed)                or something else on input line 2490.
 
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 2476.
+(mdframed)              on input line 2490.
 
 
 [70]
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 2476.
+(mdframed)                You have to change the settings on input line 2490.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2510.
+(mdframed)              on input line 2524.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2523.
-Package mdframed Info: Not enough space on this page on input line 2525.
+(mdframed)              on input line 2537.
+Package mdframed Info: Not enough space on this page on input line 2539.
 
 
 [71]
-Package mdframed Info: Not enough space on this page on input line 2525.
+Package mdframed Info: Not enough space on this page on input line 2539.
 
 
 [72]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2552.
+(mdframed)              on input line 2566.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2577.
+(mdframed)              on input line 2599.
 
 
 [73]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2609.
+(mdframed)              on input line 2617.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2639.
+(mdframed)              on input line 2633.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2638.
 
 
 [74]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2658.
+(mdframed)              on input line 2663.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2677.
+(mdframed)              on input line 2695.
 
 
 [75]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2698.
+(mdframed)              on input line 2725.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2707.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 2738.
-Package mdframed Info: Not enough space on this page on input line 2740.
+(mdframed)              on input line 2744.
 
 
 [76]
-Package mdframed Info: Not enough space on this page on input line 2740.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2750.
+(mdframed)              on input line 2763.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2766.
+(mdframed)              on input line 2784.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2790.
+(mdframed)              on input line 2793.
+Package mdframed Info: Not enough space on this page on input line 2799.
 
 
 [77]
-Package mdframed Info: Not enough space on this page on input line 2796.
+Package mdframed Info: Not enough space on this page on input line 2799.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2816.
+(mdframed)              on input line 2824.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2826.
-Package mdframed Info: Not enough space on this page on input line 2828.
+(mdframed)              on input line 2836.
 
 
 [78]
-Package mdframed Info: Not enough space on this page on input line 2828.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2853.
-
-Overfull \hbox (0.15851pt too wide) in paragraph at lines 2854--2855
-[][]\TU/NotoSerif(1)/b/n/10 Prob-lem 2015-J-II-5. []\TU/NotoSerif(1)/m/n/10 Let $\OML/notomi/m/it/10 E$ \TU/NotoSerif(1)/m/n/10 be a Lebesgue mea-sur-able sub-set of the real num-bers whose Lebesgue
- []
-
+(mdframed)              on input line 2852.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2863.
+(mdframed)              on input line 2876.
 
 
 [79]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2883.
+(mdframed)              on input line 2902.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2909.
+(mdframed)              on input line 2912.
 
 
 [80]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2926.
+(mdframed)              on input line 2939.
+
+Overfull \hbox (0.15842pt too wide) in paragraph at lines 2940--2941
+[][]\TU/NotoSerif(1)/b/n/10 Problem 2015-J-II-5. []\TU/NotoSerif(1)/m/n/10 Let 
+$\OML/notomi/m/it/10 E$ \TU/NotoSerif(1)/m/n/10 be a Lebesgue measurable subset
+ of the real numbers whose Lebesgue
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2949.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 2969.
+Package mdframed Info: Not enough space on this page on input line 2975.
 
 
 [81]
+Package mdframed Info: Not enough space on this page on input line 2975.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2962.
+(mdframed)              on input line 2995.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 2983.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3000.
-Package mdframed Info: Not enough space on this page on input line 3006.
+(mdframed)              on input line 3012.
 
 
 [82]
-Package mdframed Info: Not enough space on this page on input line 3006.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3023.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3034.
-Package mdframed Info: Not enough space on this page on input line 3036.
+(mdframed)              on input line 3048.
 
 
 [83]
-Package mdframed Info: Not enough space on this page on input line 3036.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3056.
+(mdframed)              on input line 3069.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3073.
-Package mdframed Info: Not enough space on this page on input line 3075.
+(mdframed)              on input line 3086.
 
 
 [84]
-Package mdframed Info: Not enough space on this page on input line 3075.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3078.
+(mdframed)              on input line 3109.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3084.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3129.
-Package mdframed Info: Not enough space on this page on input line 3140.
+(mdframed)              on input line 3120.
 
 
 [85]
-Package mdframed Info: Not enough space on this page on input line 3140.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3142.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3159.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3164.
 
 
 [86]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3201.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 3202.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 6.56995pt on input line 3202.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 4.94997pt on input line 3202.
+(mdframed)              on input line 3170.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3236.
+(mdframed)              on input line 3215.
 
 
 [87]
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3287.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 3288.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 6.56995pt on input line 3288.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 4.94997pt on input line 3288.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 3293.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 3293.
 
 
 [88]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 3293.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3307.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 3338.
-LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
-(Font)              scaled to size 5.57996pt on input line 3338.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3356.
-Package mdframed Info: Not enough space on this page on input line 3376.
+(mdframed)              on input line 3322.
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
 
 
 [89]
-Package mdframed Info: Not enough space on this page on input line 3376.
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3393.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 3407.
 
 
 [90]
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 3424.
+LaTeX Font Info:    Font shape `OT1/NotoSerif-TLF/b/n' will be
+(Font)              scaled to size 5.57996pt on input line 3424.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3388.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3414.
+(mdframed)              on input line 3442.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 3462.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 3462.
 
 
 [91]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3446.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3464.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 3462.
+
 
 
 [92]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3487.
+(mdframed)              on input line 3474.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3500.
 
 
 [93]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3505.
+(mdframed)              on input line 3532.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3550.
 
 
 [94]
-Overfull \hbox (10.07617pt too wide) in paragraph at lines 3566--3568
-\TU/NotoSerif(1)/m/n/10 We can sim-plify this ex-pres-sion fur-ther. Us-ing the fact that $[]\OMX/MnSymbolE/m/n/10 
-\OT1/NotoSerif-TLF/m/n/10 1\OMX/MnSymbolE/m/n/10 ~\OT1/NotoSerif-TLF/m/n/10
- 2\OMX/MnSymbolE/m/n/10  [][]\OML/notomi/m/it/10 x\OMX/MnSymbolE/m/n/10 
- \U/MnSymbolD/m/n/10 ^^@ []$\TU/NotoSerif(1)/m/n/10 ,
- []
-
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3572.
-
-Overfull \hbox (3.26892pt too wide) in paragraph at lines 3573--3574
-[][]\TU/NotoSerif(1)/b/n/10 Prob-lem 2014-J-I-4. []\TU/NotoSerif(1)/m/n/10 Use 
-the method of residues to com-pute the im-proper in-te-gral $[][] [] \OML/notom
-i/m/it/10 dx$\TU/NotoSerif(1)/m/n/10 . 
- []
-
+(mdframed)              on input line 3573.
 
 
 [95]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3625.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3676.
-Package mdframed Info: Not enough space on this page on input line 3678.
+(mdframed)              on input line 3591.
 
 
 [96]
-Package mdframed Info: Not enough space on this page on input line 3678.
+Overfull \hbox (10.07613pt too wide) in paragraph at lines 3652--3654
+\TU/NotoSerif(1)/m/n/10 We can simplify this expression further. Using the fact
+ that $[]\OMX/MnSymbolE/m/n/10 ^^88^^88\OT1/NotoSerif-TLF/m/n/10 1\OMX/MnSymbol
+E/m/n/10 ~\OT1/NotoSerif-TLF/m/n/10 2\OMX/MnSymbolE/m/n/10 ^^8d [][]^^88\OML/no
+tomi/m/it/10 x\OMX/MnSymbolE/m/n/10 ^^8d^^8d \U/MnSymbolD/m/n/10 ^^@ []$\TU/Not
+oSerif(1)/m/n/10 ,
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3694.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3712.
-Package mdframed Info: Not enough space on this page on input line 3714.
+(mdframed)              on input line 3658.
+
+Overfull \hbox (3.26877pt too wide) in paragraph at lines 3659--3660
+[][]\TU/NotoSerif(1)/b/n/10 Problem 2014-J-I-4. []\TU/NotoSerif(1)/m/n/10 Use t
+he method of residues to compute the improper integral $[][] [] \OML/notomi/m/i
+t/10 dx$\TU/NotoSerif(1)/m/n/10 . 
+ []
+
 
 
 [97]
-Package mdframed Info: Not enough space on this page on input line 3714.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3724.
+(mdframed)              on input line 3711.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3739.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3754.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3765.
+(mdframed)              on input line 3762.
+Package mdframed Info: Not enough space on this page on input line 3764.
 
 
 [98]
-Package mdframed Info: Not enough space on this page on input line 3767.
+Package mdframed Info: Not enough space on this page on input line 3764.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3780.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3798.
+Package mdframed Info: Not enough space on this page on input line 3800.
 
 
 [99]
-
-[100]
+Package mdframed Info: Not enough space on this page on input line 3800.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 3847.
+(mdframed)              on input line 3810.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3825.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3840.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 3851.
+
+
+[100]
+Package mdframed Info: Not enough space on this page on input line 3853.
 
 
 [101]
@@ -3342,71 +3347,75 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [103]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 3957.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 4001.
-
 
 [104]
-Package mdframed Info: Not enough space on this page on input line 4003.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4019.
 
 
 [105]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4055.
+(mdframed)              on input line 4043.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4087.
 
 
 [106]
+Package mdframed Info: Not enough space on this page on input line 4089.
+
 
 [107]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4141.
+
 
 [108]
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-Missing character: There is no ¤ (U+00A4) in font MnSymbolF10!
-
 
 [109]
-LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
-(Font)              scaled to size 10.0pt on input line 4224.
-LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
-(Font)              scaled to size 7.3pt on input line 4224.
-LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
-(Font)              scaled to size 5.5pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 10.0pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 7.3pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
-(Font)              scaled to size 5.5pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 10.0pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 7.3pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
-(Font)              scaled to size 5.5pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 10.0pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 7.3pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
-(Font)              scaled to size 5.5pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 10.0pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 7.3pt on input line 4224.
-LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
-(Font)              scaled to size 5.5pt on input line 4224.
-
 
 [110]
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+Missing character: There is no ¤ ("A4) in font MnSymbolF10!
+
 
 [111]
+LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
+(Font)              scaled to size 10.0pt on input line 4310.
+LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
+(Font)              scaled to size 7.3pt on input line 4310.
+LaTeX Font Info:    Font shape `OML/notomi/b/it' will be
+(Font)              scaled to size 5.5pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
+(Font)              scaled to size 10.0pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
+(Font)              scaled to size 7.3pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxmia/b/it' will be
+(Font)              scaled to size 5.5pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
+(Font)              scaled to size 10.0pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
+(Font)              scaled to size 7.3pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxsym/b/n' will be
+(Font)              scaled to size 5.5pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
+(Font)              scaled to size 10.0pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
+(Font)              scaled to size 7.3pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxsyc/b/n' will be
+(Font)              scaled to size 5.5pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
+(Font)              scaled to size 10.0pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
+(Font)              scaled to size 7.3pt on input line 4310.
+LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
+(Font)              scaled to size 5.5pt on input line 4310.
+
 
 [112]
 
@@ -3436,7 +3445,11 @@ LaTeX Font Info:    Font shape `U/ntxexa/b/n' will be
 
 [125]
 
-[126] (./past_exams.aux)
+[126]
+
+[127]
+
+[128] (./past_exams.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -3450,50 +3463,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `past_exams.out' has not changed.
-(rerunfilecheck)             Checksum: 74960238A35E1F6C46B8ED922E3906DE;39555.
-)
+(rerunfilecheck)             Checksum: C9365308E6D7C62715F146C479B0F0DE;40580.
+ ) 
+Here is how much of TeX's memory you used:
+ 38388 strings out of 474240
+ 766125 string characters out of 5745919
+ 1956560 words of memory out of 5000000
+ 60297 multiletter control sequences out of 15000+600000
+ 668563 words of font info for 388 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 101i,23n,150p,2044b,1336s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Here is how much of LuaTeX's memory you used:
- 40385 strings out of 475915
- 156439,1977958 words of node,token memory allocated
- 12998 words of node memory still in use:
-   36 hlist, 6 vlist, 5 rule, 12 math, 72 glue, 31 kern, 983 glyph, 1081 attribu
-te, 111 glue_spec, 1081 attribute_list, 2 write nodes
-   avail lists: 1:5,2:2418,3:1155,4:734,5:928,6:201,7:10391,8:102,9:1764,10:25,1
-1:641,12:1
- 60986 multiletter control sequences out of 65536+600000
- 490 fonts using 52253279 bytes
- 101i,23n,147p,2045b,1419s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{c:/texlive/2
-024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{c:/texlive/2024/texmf-dis
-t/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{c:/texlive/2024/texmf-dist/fonts/enc/d
-vips/noto/a_wcjgjy.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSy
-mbolA.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{c:
-/texlive/2024/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolB.enc}{c:/texlive/2024
-/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}<c:/texlive/2024/texmf-dist/f
-onts/truetype/google/noto/NotoSerif-BoldItalic.ttf><c:/texlive/2024/texmf-dist/f
-onts/opentype/public/lm/lmmono10-regular.otf><c:/texlive/2024/texmf-dist/fonts/t
-ruetype/google/noto/NotoSerif-Italic.ttf><c:/texlive/2024/texmf-dist/fonts/truet
-ype/google/noto/NotoSerif-Bold.ttf><c:/texlive/2024/texmf-dist/fonts/truetype/go
-ogle/noto/NotoSerif-Regular.ttf><c:/texlive/2024/texmf-dist/fonts/type1/public/m
-nsymbol/MnSymbol10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/mnsymbol/M
-nSymbol5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.p
-fb><c:/texlive/2024/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb><c:/tex
-live/2024/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb><c:/texlive/2024/
-texmf-dist/fonts/type1/public/notomath/NotoMathBMI.pfb><c:/texlive/2024/texmf-di
-st/fonts/type1/public/notomath/NotoMathMI.pfb><c:/texlive/2024/texmf-dist/fonts/
-type1/public/notomath/NotoMathRM.pfb><c:/texlive/2024/texmf-dist/fonts/type1/goo
-gle/noto/NotoSerif-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/google/noto/
-NotoSerif-Regular.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-c:/texlive/2024/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texliv
-e/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2024/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf
--dist/fonts/type1/public/newtx/txsym.pfb>
-Output written on past_exams.pdf (126 pages, 1107510 bytes).
-
-PDF statistics: 2431 PDF objects out of 2487 (max. 8388607)
- 2249 compressed objects within 23 object streams
- 804 named destinations out of 1000 (max. 131072)
- 2016 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+Output written on past_exams.pdf (128 pages).

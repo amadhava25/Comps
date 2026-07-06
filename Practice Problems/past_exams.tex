@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{../header}
 \usepackage{esint}
+
 \usetikzlibrary{decorations.markings}
 \def\Xint#1{\mathchoice
 	{\XXint\displaystyle\textstyle{#1}}%
@@ -13,7 +14,7 @@
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
 \rhead{Comps Mega Review}
-%om 
+%\om 
 \newcommand{\contract}{\mathbin{\vrule height 0.4pt width 8pt depth 0pt\vrule height 6pt width 0.4pt depth 0pt}}
 \setlength{\droptitle}{-3cm}
 \renewcommand{\div}{\text{div}}
@@ -405,14 +406,14 @@
 			0 < \int_{M}\omega_\theta = \int_{\partial M}\theta \wedge (d\theta \wedge \dotsm \wedge d\theta) = 0 \qquad (\text{since $\partial M= \varnothing$}), 
 		\end{equation*}
 		which is a contradiction! Thus by contradictio, $\omega_\theta$ must vanish somewhere on $M$. 
-		\item Now let $M = \mathbb{R}^{2n}$  We will explicitly construct a $\theta$ for which $\omega_\theta$ is nowhere vanishing. Let $(x_1, x_2, \ldots, x_{2n})$ be standard coordinates on $M$, and define the 1-form 
-			\begin{equation*}
-				\theta = x_1\;dx_2 + x_3\;dx_4 + \dotsm + x_{2n-1}\;dx_{2n}, 
-			\end{equation*}
+		\item Now let $M = \mathbb{R}^{2n}$  We will explicitly construct a $\theta$ for which $\omega_\theta$ is nowhere vanishing. Let $(x_1,\ldots, x_{2n})$ be standard coordinates on $M$, and define the 1-form 
+		\begin{equation*}
+			\theta = x_1\;dx_2 + x_3\;dx_4 + \dotsm + x_{2n-1}\;dx_{2n}, 
+		\end{equation*}
 		so that 
-			\begin{equation*}
-				d\theta = dx_1\wedge dx_2 + \dotsm + dx_{2n-1} \wedge dx_{2n}. 
-			\end{equation*}
+		\begin{equation*}
+			d\theta = dx_1\wedge dx_2 + \dotsm + dx_{2n-1} \wedge dx_{2n}. 
+		\end{equation*}
 		This implies that 
 		\begin{equation*}
 			\omega_\theta = n!(dx_1 \wedge dx_2 \wedge \dotsm \wedge dx_n), 
@@ -462,12 +463,12 @@
 		Suppose that $f: \Sigma_2 \to \Sigma_1$ is a continuous map between a genus 2 closed orientable surface $\Sigma_2$ and a torus $\Sigma_1$. Prove that $f$ is not a local homeomorphism. In other words, show that there exists a point $x \in \Sigma_2$ which does not have an open neighborhood $U \subset \Sigma_2$ on which the restriction $f|_U$ is a homeomorphism between $U$ and $f(U)$. 	
 	\end{prb}
 	Assume to the contrary that $f: \Sigma_2 \to \Sigma_1$ is a local homeomorphism. By the Comps Lemma, it follows that $f$ must be a finite $d$-sheeted covering map. Thus, we must have the relation $\chi_{\Sigma_2} = d \cdot \chi_{\Sigma_1}$. We compute, 
-		\begin{align*}
-			\begin{split}
-				\chi_{\Sigma_{2}} &= 2 - 2(2) = -2. \\
-				\chi_{\Sigma_{1}} &= 2 - 2(1) =0. 
-			\end{split} 
-		\end{align*}
+	\begin{align*}
+		\begin{split}
+			\chi_{\Sigma_{2}} &= 2 - 2(2) = -2. \\
+			\chi_{\Sigma_{1}} &= 2 - 2(1) =0. 
+		\end{split} 
+	\end{align*}
 	Since there exists no finite positive constant $d$ such that $-2 = d \cdot 0$, we have reached a contradiction. Thus by contradiction, $f$ cannot be a local homeomorphism. 
 	
 	\begin{prb}{2024-A-I-5}
@@ -800,17 +801,17 @@
 		Prove that if there exists a degree one map from $S^2$ to an orientable surface $M$, then $M$ must in fact be homeomorphic to $S^2$. [Here $M$ is connected, compact, and without boundary.]
 	\end{prb}
 	Suppose there exists a degree one map, $f: S^2 \to M$, where $M$ is a connected, compact, orientable smooth manifold without boundary. This means that for any 2-form $\omega$ on $M$, 
-		\begin{equation*}
-			\int_{S^2}f^\ast \omega = \int_{M}\omega. 
-		\end{equation*}
+	\begin{equation*}
+		\int_{S^2}f^\ast \omega = \int_{M}\omega. 
+	\end{equation*}
 	Suppose there exists a closed 1-form $\alpha$ on $M$ that is not exact (i.e., $[\alpha] \neq [0] \in H^1_{\text{dR}}(M)$). Then by Poincar\'e duality, there exists a closed 1-form $\beta$ on $M$ so that $\int_{M}(\alpha \wedge \beta) \neq 0$. This implies,
-		\begin{equation*}
-			0 \neq \int_{S^2}f^{\ast}(\alpha \wedge \beta) = \int_{S^2}f^\ast\alpha \wedge f^\ast \beta. 
-		\end{equation*}
+	\begin{equation*}
+		0 \neq \int_{S^2}f^{\ast}(\alpha \wedge \beta) = \int_{S^2}f^\ast\alpha \wedge f^\ast \beta. 
+	\end{equation*}
 	Since $\alpha, \beta$ are 1-forms and $H^1_\text{dR}(M) = 0$, $f^\ast\alpha = f^\ast\beta = 0$, so that $\int_{S^2}f^\ast\alpha \wedge f^\ast \beta = 0$, which is a contradiction! Thus, $H^1_{\text{dR}}(M) =0$. But now recall that if $g$ is the genus of $M$, then 
-		\begin{equation*}
-			2 - 2g = \chi(M) = \sum_{n = 0}^{2}(-1)^{k}\dim H^{i}_{\text{dR}}(M) = (-1)^0(1) + (-1)^1(0) + (-1)^2(1) = 2 \implies g =0. 
-		\end{equation*}
+	\begin{equation*}
+		2 - 2g = \chi(M) = \sum_{n = 0}^{2}(-1)^{k}\dim H^{i}_{\text{dR}}(M) = (-1)^0(1) + (-1)^1(0) + (-1)^2(1) = 2 \implies g =0. 
+	\end{equation*}
 	Thus by the classification of compact connected oriented manifolds of genus $0$, it follows that $M$ must be homeomorphic to $S^2$. 
 	
 	\begin{prb}{1997-A-II-2}
@@ -832,6 +833,19 @@
 	\end{prb}
 	Assume to the contrary that $f: S^{2} \times S^{2} \to M_{1} \times M_{2}\times M_{3}$ is a diffeomorphism. Since $\dim(M_{1} \times M_{2} \times M_{3}) = \sum \dim(M_{j}) = 4$, we have (up to relabeling of indices), $\dim{M_{1}}, \dim{M_{2}} = 1$, and $\dim{M_{3}} = 2$. Since $S^{2} \times S^{2}$ is a compact manifold, $f$ is continuous, and surjective, it follows that $M_{1} \times M_{2} \times M_{3}$ is compact. Thus, each $M_{j}$ is compact. By the classification of manifolds of dimension 1, there exists exactly one smooth compact 1-manifold (up to diffeomorphism), which is the unit circle $S^{1}$. Thus, $M_{1}, M_{2} \cong S^{1}$. This means that $\pi_{1}(M_{1} \times M_{2} \times M_{3}) \cong \mathbb{Z} \times \mathbb{Z}$ is nontrivial. But this is a contradiction: one has $\pi_{1}(S^{2} \times S^{2}) \cong \pi_{1}(S^{2}) \times \pi_{1}(S^{2}) \cong 0$, and $f_{\ast}: \pi_{1}(S^{2} \times S^{2}) \to \pi_{1}(M_{1} \times M_{2} \times M_{3})$ is an isomorphism since $f$ is a diffeomorphism implies that $0 \cong \mathbb{Z} \times \mathbb{Z}$. Thus, by contradiction, $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$.  
 	
+	\begin{prb}{2022-A-I-1}
+		Let $Y \subset \mathbb{R}^3$ be a surface of genus two. Let $Z$ be the closure of the bounded component of $\mathbb{R}^3\setminus Y$. (Thus $Z$ is the compact domain-with-boundary whose interior is the region \textit{inside} of $Y$.) Prove that the inclusion homomorphism $\pi_1(Y,\text{pt}) \to \pi_{1}(Z, \text{pt})$ is surjective. Then use this to show that the fundamental group $\pi_{1}(Y, \text{pt})$ of the surface $Y$ is nonabelian. 
+	\end{prb}
+	Consider the following diagram, 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.5\linewidth]{../Graphics/2022AI1.png}
+		\caption{Let $Y$ be the surface of genus 2, $Z$ the region bounded by $Y$ in $\mathbb{R}^3$, and $Z' \subset Y$ a loop that around each of handle of the handlebody.}
+		\label{fig:2022AI1}
+	\end{figure}
+	
+	We note that $Z$ deformation retracts onto $Z'$ (which can be seen by thinning out the handles of $Z$), and thus induces an isomorphism on fundamental groups; i.e., $\pi_{1}(Z, \text{pt}) \cong \pi_{1}(Z', \text{pt})$. On the other hand, since $Z' \subset Y$, $\pi_1(Z', \text{pt}) \subset \pi_{1}(Y, \text{pt})$. Thus, the inclusion homomorphism is surjective. Moreover, we now know that $\pi_{1}(Z, \text{pt}) \cong \mathbb{Z} \ast \mathbb{Z}$, which is a nonabelian group. Since the homomorphic image of an abelian group must necessarily be abelian, we conclude that $\pi_{1}(Y, \text{pt})$ must be nonabelian. 
+	
 	\begin{prb}{2022-A-I-4}
 		Find the fundamental group of the space of unordered pairs of distinct points of $S^n$. 
 	\end{prb}
@@ -849,9 +863,9 @@
 		Let $M$ be a smooth connected manifold. Show that $M$ has a 2-fold cover $\ti{M}$ which is an orientable smooth manifold. What can you say about $\pi_0(\ti{M})$ if $M$ is not orientable? 
 	\end{prb}
 	Let $M$ be a smooth connected manifold. Essentially, we have to construct the orientation cover for $M$, which we will do as follows. Define 
-		\begin{equation*}
-			\ti{M} = \{(p, \mathcal{O}_{p}): p \in M \text{ and } \mathcal{O}_{p} \text{ is an orientation of $T_pM$}\}. 
-		\end{equation*}
+	\begin{equation*}
+		\ti{M} = \{(p, \mathcal{O}_{p}): p \in M \text{ and } \mathcal{O}_{p} \text{ is an orientation of $T_pM$}\}. 
+	\end{equation*}
 	Define the projection map $\hat{\pi}: \ti{M} \to M$ which sends an orientation of $T_pM$ to the point $p$ itself (i.e., $\hat{\pi}(p,\mathcal{O}_{p}) = p$). Since each tangent space has exactly two orientations, each fiber of this map has cardinality exactly 2. We will now show that $\hat{\pi}$ is a generalized covering map. For each pair $(U, \mathcal{O})$, where $U$ is an open subset of $M$ and $\mathcal{O}$ is an orientation for $U$, define a subset $\hat{U}_{\mathcal{O}} \subset \ti{M}$  as follows: 
 	\begin{equation*}
 		\hat{U}_{\mathcal{O}} = \{(p, \mathcal{O}_{p}) \in \ti{M}: p \in U \text{ and $\mathcal{O}_{p}$ is the orientation of $T_pM$ determined by $\mathcal{O}$}\}. 
@@ -886,47 +900,47 @@
 	\end{prb}
 	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
 		\item Let $X$ denote the wedge sum $S^1 \vee S^1 \vee S^1$ of three distinct copies of the unit circle $S^1$ identified along a common point. Consider the following depiction of $X$, 
-			\begin{figure}[h!]
-				\centering 
-				\begin{tikzpicture}[scale=0.5]
-					% Coordinates
-					\coordinate (A) at (-4.00, 10.00);
-					\coordinate (B) at (-4.00, 10.00);
-					\coordinate (C) at (4.00, 10.00);
-					\coordinate (D) at (4.00, 10.00);
-					\coordinate (E) at (0.00, 4.00);
-					\coordinate (F) at (0.00, 4.00);
-					\coordinate (P) at (0.00, 8.00);
-					\coordinate (G) at (0.00, 6.00);
-					\coordinate (H) at (2.00, 10.00);
-					\coordinate (I) at (-2.00, 10.00);
-					\coordinate (J) at (-5.68, 11.30);
-					\coordinate (K) at (1.90, 2.36);
-					
-					% Drawing
-					\draw[blue, thick] (A) circle (2.00);
-					\draw[blue, thick] (C) circle (2.00);
-					\draw[red, thick] (E) circle (2.00);
-					\draw[thick, loosely dashed] (G) -- (P);
-					\draw[thick, loosely dashed] (P) -- (H);
-					\draw[thick, loosely dashed] (P) -- (I);
-					\draw[red, ultra thick, dashed] (-5.75, 9.00) arc (-150.3:76.0:2.02);
-					\draw (5.50, 8.75) arc (-39.8:-39.8:1.95);
-					\draw[red, very thick, dashed] (3.50, 12.00) arc (104.0:-45.0:2.06);
-					\draw (-2.00, 3.50) arc (-166.0:-166.0:2.06);
-					\draw[blue, very thick, dashed] (2.00, 4.25) arc (7.1:-174.3:2.02);
-					\node[above, text=blue, font=\large] at (J) {$U$};
-					\node[below, text=red, font=\large] at (K) {$V$};
-					\fill[black] (P) circle (5pt);
-				\end{tikzpicture}
-			\end{figure}
+		\begin{figure}[h!]
+			\centering 
+			\begin{tikzpicture}[scale=0.5]
+				% Coordinates
+				\coordinate (A) at (-4.00, 10.00);
+				\coordinate (B) at (-4.00, 10.00);
+				\coordinate (C) at (4.00, 10.00);
+				\coordinate (D) at (4.00, 10.00);
+				\coordinate (E) at (0.00, 4.00);
+				\coordinate (F) at (0.00, 4.00);
+				\coordinate (P) at (0.00, 8.00);
+				\coordinate (G) at (0.00, 6.00);
+				\coordinate (H) at (2.00, 10.00);
+				\coordinate (I) at (-2.00, 10.00);
+				\coordinate (J) at (-5.68, 11.30);
+				\coordinate (K) at (1.90, 2.36);
+				
+				% Drawing
+				\draw[blue, thick] (A) circle (2.00);
+				\draw[blue, thick] (C) circle (2.00);
+				\draw[red, thick] (E) circle (2.00);
+				\draw[thick, loosely dashed] (G) -- (P);
+				\draw[thick, loosely dashed] (P) -- (H);
+				\draw[thick, loosely dashed] (P) -- (I);
+				\draw[red, ultra thick, dashed] (-5.75, 9.00) arc (-150.3:76.0:2.02);
+				\draw (5.50, 8.75) arc (-39.8:-39.8:1.95);
+				\draw[red, very thick, dashed] (3.50, 12.00) arc (104.0:-45.0:2.06);
+				\draw (-2.00, 3.50) arc (-166.0:-166.0:2.06);
+				\draw[blue, very thick, dashed] (2.00, 4.25) arc (7.1:-174.3:2.02);
+				\node[above, text=blue, font=\large] at (J) {$U$};
+				\node[below, text=red, font=\large] at (K) {$V$};
+				\fill[black] (P) circle (5pt);
+			\end{tikzpicture}
+		\end{figure}
 		
 		Here, since $U \cap V$ is simply connected, by the Seifert-van Kampen Theorem, one has 
-			\begin{equation*}
-				\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0). 
-			\end{equation*}
+		\begin{equation*}
+			\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0). 
+		\end{equation*}
 		$V$ is homotopy equivalent to $S^1$, and thus, $\pi_1(V,x_0) \cong \mathbb{Z}$. On the other hand, $U$ is homotopy equivalent to the wedge sum $S^1 \vee S^1$ so that $\pi_1(U,x_0) \cong \mathbb{Z} \ast \mathbb{Z}$. Thus, we conclude that the fundamental group of $X$ is the free group on three generators. 
-		\item Let $f: \mathbb{RP}^2 \to X$ be an arbitrary continuous map. $f$ induces a group homomorphism $f_{\ast}: \pi_1(\mathbb{RP}^2, x_{0}) \to \pi_1(X, x_0)$. Since $\pi_1(\mathbb{RP}^2,x_0) \cong \mathbb{Z}/2\mathbb{Z}$ is a torsion group while we just showed $\pi_{1}(X,x_0)$ to be a free group, it follows that $f_\ast$ must be trivial. Let $\ti{X}$ be the universal cover of $X$ (which we know exists since $X$ is locally path connected and semilocally simply connected). Let $p: \ti{X} \to X$ be the covering map. Since $f_\ast$ is trivial, then $f_\ast(\pi_1(\mathbb{RP}^2,x_0)) \subset p_\ast(\pi_1(\ti{X}, x_0))$. So by the lifting criterion, there exists a lift $\ti{f}: \mathbb{RP}^2 \to \ti{X}$ of $f$. But since $\ti{X}$ is contractible, $\ti{f}$ must be nullhomotopic. Thus it follows that $f$ is also nullhomotopic. The proof concludes. 
+		\item Let $f: \mathbb{RP}^2 \to X$ be an arbitrary continuous map. $f$ induces a homomorphism $f_{\ast}: \pi_1(\mathbb{RP}^2, x_{0}) \to \pi_1(X, x_0)$. Since $\pi_1(\mathbb{RP}^2,x_0) \cong \mathbb{Z}/2\mathbb{Z}$ is a torsion group while we just showed $\pi_{1}(X,x_0)$ to be a free group, it follows that $f_\ast$ must be trivial. Let $\ti{X}$ be the universal cover of $X$ (which we know exists since $X$ is locally path connected and semilocally simply connected). Let $p: \ti{X} \to X$ be the covering map. Since $f_\ast$ is trivial, then $f_\ast(\pi_1(\mathbb{RP}^2,x_0)) \subset p_\ast(\pi_1(\ti{X}, x_0))$. So by the lifting criterion, there exists a lift $\ti{f}: \mathbb{RP}^2 \to \ti{X}$ of $f$. But since $\ti{X}$ is contractible, $\ti{f}$ must be nullhomotopic. Thus it follows that $f$ is also nullhomotopic. The proof concludes. 
 	\end{enumerate}
 	
 	\begin{prb}{2001-A-I-6}
@@ -938,41 +952,41 @@
 		Compute the fundamental group of the 2-torus $T$ using the Seifert-van Kampen Theorem. 
 	\end{prb} 
 	Let $T$ denote the 2-torus; we will think of $T$ as a square with identified sides $a$ and $b$. Let $p$ be a point at the center of the square, $V$ a small open neighborhood of $p$ in $T$, and $U = T \setminus \{p\}$. Then $V$ is simply connected, $U \cap V$ is homotopy equivalent to the circle $S^1$, and $U$ deformation retracts onto the wire frame. By the Seifert-van Kampen Theorem, $\pi_{1}(T, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0)/N$, where $N$ is the normal closure of the subgroup $\braket{i_1^\ast(g)i_2^\ast(g)^{-1}: g\in \pi_1(U \cap V,x_0)}$, $i_1, i_2$ are the inclusion maps of $U \cap V$ into $U$ and $V$, respectively, and $i_1^\ast, i_2^\ast$ are the respective induced maps on fundamental groups. Since $V$ is contractible, $\pi_1(V,x_0) \cong 1$. On the other hand, $\pi_1(U \cap V,x_0) \cong \pi_1(S^1,x_0) \cong \mathbb{Z}$. So let $[\gamma]$ be a generator of the former fundamental group. Since $U$ deformation retracts onto the wire frame, it is homotopy equivalent to the wedge of 2 circles, which has as its fundamental group the free group $\braket{[a],[b]}$ on two generators. Next, it follows that $i_1^\ast([\gamma]) = [\alpha\beta\alpha^{-1}\beta^{-1}] = [\alpha][\beta][\alpha^{-1}][\beta^{-1}]$. Thus one has by the Seifert-van Kampen Theorem that 
-		\begin{equation*}
-			\pi_1(X,x_0) \cong \braket{[\alpha],[beta] \mid [\alpha][\beta][\alpha]^{-1}[\beta]^{-1} = 1} \cong \mathbb{Z}^{2}. 
-		\end{equation*}
+	\begin{equation*}
+		\pi_1(X,x_0) \cong \braket{[\alpha],[beta] \mid [\alpha][\beta][\alpha]^{-1}[\beta]^{-1} = 1} \cong \mathbb{Z}^{2}. 
+	\end{equation*}
 	
 	
 	\begin{prb}{R-DGT-2}
 		Compute the fundamental group of $S^1 \vee S^1$ using the Seifert-van Kampen Theorem. 
 	\end{prb}
 	Let $X$ denote the wedge space $S^1 \vee S^1$. Consider the following depiction of $X$: 
-		\begin{figure}[h!]
-			\centering 
-			\begin{tikzpicture}[scale=0.5]
-				% Coordinates
-				\coordinate (A) at (0.00, 8.00);
-				\coordinate (B) at (0.00, 8.00);
-				\coordinate (C) at (4.00, 8.00);
-				\coordinate (D) at (4.00, 8.00);
-				\coordinate (E) at (-1.40, 9.52);
-				\coordinate (F) at (5.50, 9.50);
-				
-				% Drawing
-				\draw[blue, thick] (A) circle (2.00);
-				\draw[red, thick] (C) circle (2.00);
-				\draw[blue, very thick, dashed] (4.00, 10.00) arc (90.0:-90.0:2.00);
-				\draw[red, ultra thick, dashed] (2.00, 8.00) arc (0.0:90.0:2.00);
-				\draw[red, ultra thick, dashed] (0.00, 6.00) arc (-90.0:0.0:2.00);
-				\node[above, text=blue, font=\LARGE] at (E) {$U$};
-				\node[above, text=red, font=\LARGE] at (F) {$V$};
-			\end{tikzpicture}
-		\end{figure}
+	\begin{figure}[h!]
+		\centering 
+		\begin{tikzpicture}[scale=0.5]
+			% Coordinates
+			\coordinate (A) at (0.00, 8.00);
+			\coordinate (B) at (0.00, 8.00);
+			\coordinate (C) at (4.00, 8.00);
+			\coordinate (D) at (4.00, 8.00);
+			\coordinate (E) at (-1.40, 9.52);
+			\coordinate (F) at (5.50, 9.50);
+			
+			% Drawing
+			\draw[blue, thick] (A) circle (2.00);
+			\draw[red, thick] (C) circle (2.00);
+			\draw[blue, very thick, dashed] (4.00, 10.00) arc (90.0:-90.0:2.00);
+			\draw[red, ultra thick, dashed] (2.00, 8.00) arc (0.0:90.0:2.00);
+			\draw[red, ultra thick, dashed] (0.00, 6.00) arc (-90.0:0.0:2.00);
+			\node[above, text=blue, font=\LARGE] at (E) {$U$};
+			\node[above, text=red, font=\LARGE] at (F) {$V$};
+		\end{tikzpicture}
+	\end{figure}
 	Then we see that $U \cap V$ is homotopy equivalent to a point, and hence is simply connected, and $U, V$ are homotopy equivalent to the circle $S^1$ so that $\pi_1(U,x_0), \pi_1(V,x_0) \cong \mathbb{Z}$. Therefore, since $U \cap V$ is simply connected, by the Seifert-van Kampen Theorem, one has 
-		\begin{equation*}
-			\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0) \cong \mathbb{Z} \ast \mathbb{Z}. 
-		\end{equation*}
-		
+	\begin{equation*}
+		\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0) \cong \mathbb{Z} \ast \mathbb{Z}. 
+	\end{equation*}
+	
 	
 	\newpage 
 	\subsection{Vector Fields}
@@ -1030,9 +1044,9 @@
 		Show that if $M$ is a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover, then its fundamental group is either trivial or $\mathbb{Z}/2\mathbb{Z}$. 
 	\end{prb}
 	Let $M$ be a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover. Let $\Gamma$ be the group of deck transformations\footnote{Note that a \textbf{deck transformation} is a homeomorphism $f: \ti{M} \to \ti{M}$ such that $p \circ f = p$, where $p: \ti{M} \to M$ is the covering map. In particular, deck transformations have he uniqueness property that states that if two such transformations are equal at any point $x \in \ti{M}$, then the two transformations are identical. Moreover, the identity map on $\ti{M}$ is a deck transformation. Thus if the deck transformation $h$ has a fixed point, then it must be the identity map.} on $S^{2n}$ (note that this implies $\pi_1(X) \cong \Gamma$, and every nonidentity element of $G$ acts freely on $S^{2n}$). Suppose $h: S^{2n} \to S^{2n}$ is fixed-point free. Then the Lefschetz number, 
-		\begin{equation*}
-			0 =L(h) = 1 + \operatorname{deg}(h) =0. 
-		\end{equation*}
+	\begin{equation*}
+		0 =L(h) = 1 + \operatorname{deg}(h) =0. 
+	\end{equation*}
 	Hence, every nonidentity deck transformation must have degree $-1$. Let $g_1, g_2 \in G$ be two nonidentity elements. Then $\operatorname{deg}(g_1g_2) = 1$. A nonidentity deck transformation cannot have degree 1, since then the Lefschetz number would be 2, which implies the existence of a fixed point. Therefore, $g_1g_2 = \operatorname{id}$, so that $G$ has at most one nonidentity element. Therefore, either $G$ is trivial or $G \cong \mathbb{Z}/2\mathbb{Z}$. This concludes the proof. 
 	
 	\begin{prb}{2022-J-I-2}
@@ -1083,13 +1097,13 @@
 		Let $X = \mathbb{RP}^2 \times \mathbb{RP}^2$, where $\mathbb{RP}^2$ denotes the real projective plane. Find all possible connected covering spaces $\ti{X} \to X$ such that $\ti{X}$ is an orientable manifold. 
 	\end{prb}
 	Let $X$ denote the nonorientable, compact, connected space $\mathbb{RP}^2 \times \mathbb{RP}^2$, where $\mathbb{RP}^2$ is the real projective plane. By the Galois correspondence of covering spaces, the isomorphism classes of connected covering spaces of $X$ are in one-to-one correspondence with the conjugacy classes of subgroups of $\pi_1(X)$. Since $\pi_1(\mathbb{RP}^2) \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$, there are precisely five subgroups: 
-		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-			\item The entire group, $\braket{(0,1),(1,0)}$. If $\ti{X}$ is a connected covering space with fundamental group isomorphic to $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$, then the covering map corresponds to the identity map $\operatorname{id}_{X}: X \to X$ so that $\ti{X} = \mathbb{RP}^2 \times \mathbb{RP}^2$, which is a nonorientable cover. 
-			\item The trivial subgroup $\{(0,0)\}$, which corresponds to $S^2 \times S^2$, which is an orientable connected manifold. 
-			\item The subgroup $\{(0,1), (0,0)\} \cong \{0\} \times \mathbb{Z}/2\mathbb{Z}$, which corresponds to the covering space $S^2 \times \mathbb{RP}^2$, which is nonorientable. 
-			\item The subgroup $\{(1,0) \times (0,0)\} \cong \mathbb{Z}/2\mathbb{Z} \times \{0\}$, which corresponds to the covering space $\mathbb{RP}^2 \times S^2$, which is nonorientable. 
-			\item The subgroup $\{(0,0),(1,1)\}$. This corresponds with the orientation cover of $X$, and thus is a connected orientable space of $X$. 
-		\end{enumerate}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item The entire group, $\braket{(0,1),(1,0)}$. If $\ti{X}$ is a connected covering space with fundamental group isomorphic to $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$, then the covering map corresponds to the identity map $\operatorname{id}_{X}: X \to X$ so that $\ti{X} = \mathbb{RP}^2 \times \mathbb{RP}^2$, which is a nonorientable cover. 
+		\item The trivial subgroup $\{(0,0)\}$, which corresponds to $S^2 \times S^2$, which is an orientable connected manifold. 
+		\item The subgroup $\{(0,1), (0,0)\} \cong \{0\} \times \mathbb{Z}/2\mathbb{Z}$, which corresponds to the covering space $S^2 \times \mathbb{RP}^2$, which is nonorientable. 
+		\item The subgroup $\{(1,0) \times (0,0)\} \cong \mathbb{Z}/2\mathbb{Z} \times \{0\}$, which corresponds to the covering space $\mathbb{RP}^2 \times S^2$, which is nonorientable. 
+		\item The subgroup $\{(0,0),(1,1)\}$. This corresponds with the orientation cover of $X$, and thus is a connected orientable space of $X$. 
+	\end{enumerate}
 	
 	\begin{prb}{2013-J-II-5}
 		If $M$ and $N$ are compact 2-manifolds, their connected sum $M\#N$ is obtained by removing an open disk from each, and then identifying the resulting circle boundaries. It is a theorem that any smooth compact non-orientable surface without boundary is homeomorphic to an iterated connected sum
@@ -1138,7 +1152,7 @@
 		Give an example of a topological space admitting exactly 3 coverings up to equivalence (including the space itself). 
 	\end{prb}
 	The Galois correspondence of covering spaces tells us that the isomorphism classes of connected covering spaces are in one-to-one correspondence with the conjugacy classes of subgroups of the fundamental group of the base space. Thus, consider e.g. the lens space $L(4;q)$, where $q$ is any positive integer. Since $\pi_1(L(4;q)) \cong \mathbb{Z}/4\mathbb{Z}$, and $\mathbb{Z}/4\mathbb{Z}$ has precisely 3 subgroups ($\{e\}, \{0,2\}, \mathbb{Z}/4\mathbb{Z}$), by the Galois correspondence, $L(4;q)$ must have precisely 3 connected covering spaces up to isomorphism. 
-
+	
 	\begin{prb}{2004-A-I-5}
 		In this problem, the term ``surface'' means a compact orientable 2-manifold without boundary. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
@@ -1749,9 +1763,9 @@
 	
 	\begin{prb}{2025-A-I-5}
 		Let $p \neq q$ be prime numbers. Prove that every non-Abelian group $G$ of order $pq$ is a semidirect product of two proper, nontrivial cyclic subgroups, 
-			\begin{equation*}
-				G = \mathbb{Z}/p\mathbb{Z} \rtimes \mathbb{Z}/q\mathbb{Z}
-			\end{equation*}
+		\begin{equation*}
+			G = \mathbb{Z}/p\mathbb{Z} \rtimes \mathbb{Z}/q\mathbb{Z}
+		\end{equation*}
 		with $\mathbb{Z}/p\mathbb{Z}$ being normal. Moreover, $q$ must be a divisor of $p - 1$, and thus $q < p$. Hint: Consider the action of $G$ by conjugation on the space of subgroups of $G$. If you choose to use a result from Sylow theory, give a proof of it or its particular case needed for this problem. 
 	\end{prb}
 	Let $G$ be a nonabelian group of order $pq$, where $p,q$ are distinct primes. Assume without loss of generality that $p > q$. Let $n_p$ denote the number of $p$-subgroups of $G$. By Cauchy's theorem, since $G$ must contain at least one element of order $p$, it follows that $n_p \neq 0$. So let $H$ be a subgroup of $G$ of order $p$; this implies that $[G:p] = q$. But since any subgroup whose index is equal to the smallest prime divisor of $G$ is normal, one has that $H$ is normal in $G$. Moreover, since $|H| = p$, by the classification of groups of prime order, one has that $H \cong \mathbb{Z}/p \mathbb{Z}$. Next, by Cauchy's theorem, $G$ must have a subgroup $K$ of order $q$; consequently $K \cong \mathbb{Z}/q\mathbb{Z}$. Let $n_q$ denote the number of subgroups of $G$ of order $q$; we have already shown $n_q \geq 1$. 
@@ -2547,13 +2561,85 @@
 	\newpage 
 	\section{Real Analysis}
 	
+	\subsection{Lebesgue Density Theorem}
+	
+	\begin{prb}{(Steinhaus Theorem)}
+		Let $E$ be a Lebesgue measurable subset of $\mathbb{R}^{n}$ such that $m^{n}(E) > 0$, and let $v_{1}, \ldots, v_{N}$ be a finite collection of vectors in $\mathbb{R}^{n}$. Then there exists $R > 0$, depending on $E$, and $M = \max\{|v_{1}|, \ldots, |v_{N}|\}$ such that for all $0 < r < R$, there exists $p \in S$ so that the $(N + 1)$-points, $p, p + rv_{1}, \ldots, p + rv_{1} + \dotsm + rv_{N}\in E$. 
+	\end{prb}
+		Let $E$ be a measurable subset of $\mathbb{R}^{n}$ with positive Lebesgue measure. We recall that the Lebesgue measure is \textit{regular} (which means it is both \textit{inner} and \textit{outer} regular). By inner regularity, there exists a compact set $K_{1} \subset E$ such that $m^{n}(K_{1}) > 0$. Let $\beta < (2^{N} - 1)^{-1}$; by outer regularity, there exists an open set $U$ containing $K_{1}$ such that 
+		\begin{equation*}
+			m^{n}(U) \leq (1 + \beta)m^{n}(K_{1}). 
+		\end{equation*}
+		Since $K_{1}$ is compact, $d_{1} = d(K_{1}, U^{c}) > 0$. Let $R = d_{1}/M$, and choose an arbitrary $r$ such that $0 < r < R$. First, observe that the set $K_{1} + rv_{1}$ is contained in $U$, since otherwise, 
+		\begin{equation*}
+			d(K_{1}, U^{c}) \leq |rv_{1}| \leq rM < d_{1}. 
+		\end{equation*}
+		Therefore, $K_{1} \cup (K_{1} + rv_{1}) \subset U$, and so 
+		\begin{equation*}
+			m^{n}(U) \geq m^{n}(K_{1}\cup (K_{1} + rv_{1})) = m^{n}(K_{1}) + m^{n}(K_{1} + rv_{1}) - m^{n}(K_{1} \cap (K_{1} + rv_{1})). 
+		\end{equation*}
+		Since the Lebesgue measure is translation invariant, 
+		\begin{equation*}
+			m^{n}(K_{1} \cap (K_{1} + rv_{1})) \geq 2m^{n}(K_{1}) - m^{n}(U) \geq 2m^{n}(K_{1}) - m^{n}(K_{1}) - \beta m^{n}(K_{1}) = (1 - \beta)m^{n}(K_{1}). 
+		\end{equation*}
+		Since $\beta < 1$, it follows that $m^{n}(K_{1} \cap (K_{1} + rv_{1})) > 0$, and so $K_{1} \cap (K_{1} + rv_{1}) \neq \varnothing$. Now we proceed by induction. For each $i = 1, \ldots, N$, let $K_{i + 1} = K_{i} \cap (K_{i} + rv_{i})$. Each $K_{i} + rv_{i}$ must be contained in $U$ (by a generalization of the argument made above) and each $K_{i + 1} \subset K_{i} \subset U$. We claim that for each $i$, $m^{n}(K_{i + 1}) \geq (1- (2^{i} - 1)\beta)m^{n}(K_{1})$. We have already proven the base case $i = 1$. So assume the result holds for some $1 \leq m < N$. Then 
+		\begin{equation*}
+			m^{n}(U) \geq m^{n}(K_{i} \cup (K_{i} + rv_{i})) = m^{n}(K_{i}) + m^{n}(K_{i} + rv_{i}) - m^{n}(K_{i} \cap (K_{i} + rv_{i})). 
+		\end{equation*}
+		By translation invariance of the Lebesgue measure, 
+		\begin{align*}
+			\begin{split}
+				m^{n}(K_{i + 1}) = m^{n}(K_{i} \cap (K_{i} + rv_{i})) &\geq 2m^{n}(K_{i}) - m^{n}(U) \geq 2(1 - (2^{i} - 1)\beta)m^{n}(K_{1}) - (1 + \beta)m^{n}(K_{1}) \\
+				&= m^{n}(K_{1}) - 2^{i + 1}\beta m^{n}(K_{1}) + 2 \beta m^{n}(K_{1}) - \beta m^{n}(K_{1}) \\
+				&= (1 - (2^{i + 1} - 1)\beta)m^{n}(K_{1}). 
+			\end{split} 
+		\end{align*}
+		Hence, since $\beta < (2^{N} - 1)^{-1}$, we obtain a nested sequence of compact subsets $\varnothing \neq K_{N + 1} \subset K_{N} \subset \dotsm\subset K_{1} \subset U$. Let $q \in K_{N + 1}$ be arbitrary. Since $K_{N + 1} = K_{N} \cap (K_{N} + rv_{N})$, the point $q - rv_{N}$ is contained in $K_{N}$. Then since $K_{N} = K_{N - 1} \cap (K_{N - 1} \cap rv_{N - 1})$, $q - rv_{N} - rv_{N - 1} \in K_{N - 1}$. Proceeding inductively, we obtain the sequence $\{q, q - rv_{N}, q - rv_{N} - rv_{N - 1}, \ldots, q - rv_{N} - \dotsm -rv_{1}\} \subset K_{1} \subset E$; set $p= q - rv_{N} - \dotsm - rv_{1}$. Hence, the proof concludes. 
+		
+		\begin{prb}{2022-A-I-1}
+			Suppose $E\subset \mathbb{R}^2$ has positive Lebesgue area. Show that $E$ contains three points that form the vertices of an equilateral triangle. 
+		\end{prb}
+		Let $E \subset \mathbb{R}^2$ be a subset of positive Lebesgue measure. Let $0 < \beta < 3^{-1}$, and let $v_{1}, v_{2} \in \mathbb{R}^{2}$ so that $|v_{1}| = |v_{2}| = 1$ and $\arccos(|v_{1} \cdot v_{2}|) = 2\pi/3$. By regularity of the Lebesgue measure, there exist a compact set $K_{1} \subset E$ such that $m(K_1) > 0$ and an open set $U \supset K_{1}$ such that 
+		\begin{equation*}
+			m(U) \leq (1 + \beta)m(K_{1}). 
+		\end{equation*}
+		Since $K_1$ is compact, $d = d(K_1, U^c) > 0$. So let $R = d> 0$, and fix an arbitrary $0 < r < R$. We first claim that $K_1 + rv_1 \subset U$. If this were not the case, then $d(K_1, U^c) \leq |rv_1| = r < d_1$, which is a contradiction. Thus this implies that $K_1 \cup (K_1 + rv_1) \subset U$, and so 
+		\begin{align*}
+			\begin{split}
+				m(U) &\geq m(K_1 \cup (K_1 + rv_1)) = m(K_1) + m(K_1 + rv_1) - m(K_1 \cap (K_1 + rv_1)) \\
+				\implies m(K_1 \cap (K_1 + rv_1)) &\geq m(K_1) + m(K_1 + rv_1) - m(U) \\
+				&= 2m(K_1) - m(U) \qquad (\text{by translation invariance}) \\
+				&\geq (1 - \beta)m(K_1). 
+			\end{split}
+		\end{align*}
+		Since $\beta < 1$, it follows that $m(K_1 \cap (K_1 + rv_1)) > 0$, and so is not empty; let $K_{2} \coloneqq K_{1} \cap (K_1 + rv_1)$. Finally define $K_{3} \coloneqq K_2 \cap (K_2 + rv_2)$. By generalizing the argument from above, one has that $K_{3} \subset K_{2} \subset K_{1} \subset U$, and $m(K_3) \geq (1 - 3\beta)m(K_1) > 0$. Thus we have found a nested sequence of nonempty compact sets $K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $q \in K_3$. Then since $K_3 = K_2 \cap (K_2 + rv_2)$, the point $q - rv_2 \in K_2$. Likewise, the point $q - rv_2 - rv_1 \in K_1$. Let $p \coloneqq q - rv_2 - rv_1$, $s \coloneqq q - rv_2$ and $t \coloneqq q$. We note that $p,s,t \in E$ and, by construction, form the vertices of an equilateral triangle in $\mathbb{R}^2$. 
+		
+		\begin{prb}{2016-A-II-2}
+			Let $E \subset \mathbb{R}^2$ be a measurable set with positive Lebesgue measure. Show that $E$ contains all four corners of some rectangles in $\mathbb{R}^2$. Hint: Use Lebesgue density. 
+		\end{prb}
+		
+		Let $E \subset \mathbb{R}^2$ be a measurable set with positive Lebesgue measure. Let $0 < \beta < 7^{-1}$. By regularity of the Lebesgue measure, there exists a compact set $K_1 \subset E$ such that $m(K_1) > 0$, and an open set $U$ containing $K_1$ such that $m(U) \leq (1 + \beta)m(K_1)$. Pick arbitrary unit vectors $v_1, v_2, v_3 \in \mathbb{R}^2$ so that $\arccos(|v_1 \cdot v_2|) = \pi/2$ and $\arccos(|v_1 \cdot v_3|) = \pi$.  
+		
+		Since $K_1$ is compact, $d \coloneqq d(K_1, U^{c}) > 0$. So let $R = d > 0$, and fix some arbitrary $0 < r < R$. We begin by claiming that $K_1 + rv_1 \subset U$; suppose not; then one would have $d(K_1, U^c) \leq |rv_1| = r < d$, which is a contradiction. Thus this also implies that $K_1 \cap (K_1 + rv_1) \subset U$; let $K_2 = K_1 \cap (K_1 + rv_1) \subset K_1$. From this, we compute, 
+		\begin{align*}
+			\begin{split}
+				m(U) &\geq  m(K_1) + m(K_1 + rv_1) - m(K_2) \\
+				\implies 
+				m(K_2) &\geq 2m(K_1) - m(U) \geq (1 - \beta)m(K_1). 
+			\end{split}
+		\end{align*}
+		Since $0 < \beta < 1$, one has that $m(K_2) > 0$ so that it is nonempty. Now define $K_3 = K_2 \cap (K_2 + rv_2)$ and $K_4 = K_3 \cap (K_3 + rv_3)$. By generalizing the argument from above, one has that $K_4 \subset K_3 \subset K_2 \subset K_1 \subset E$ and $K_i \neq \varnothing$ for $i = 1, \ldots, 4$. Thus fix some point $v \in K_4$. Since $K_4 = K_3 \cap (K_3 + rv_3)$, $v - rv_3 \in K_3$. Likewise, $v - rv_3 - rv_2 \in K_2$ and $v - rv_3 - rv_2 - rv_1 \in K_1$. Define $p = v - rv_3 - rv_2 - rv_1$, $q = v - rv_3 - rv_2$, $s = v - rv_3$, and $t = v$. The points $\{p, q, s, t\} \subset E$ and form the vertices of a square (thus rectangle) of sides $r$. 
+		
+		\begin{prb}{2013-A-II-5}
+			
+		\end{prb}
 	\subsection{Generic Convergence Problems}
 	
 	\begin{prb}{2026-J-II-2}
 		Let $c$ be a positive real number, and let $\{f_{n}(x)\}_{x \in \mathbb{N}}$ be a sequence of integrable functions from $[0,1]$ to $[-c,c]$. For the following functions on $[0,1]$,
-			\begin{equation*}
-				g_{n}(x) \coloneqq \int_{0}^{x}f_{n}(t)\;dt, 
-			\end{equation*}
+		\begin{equation*}
+			g_{n}(x) \coloneqq \int_{0}^{x}f_{n}(t)\;dt, 
+		\end{equation*}
 		prove that some subsequence $\{g_{n_{m}}\}_{m \in \mathbb{N}}$ converges uniformly to a $c$-Lipschitz function. 
 	\end{prb}
 	Let $c$ be a positive real number, and let $\{f_{n}(x)\}_{x \in \mathbb{N}}$ be a sequence of integrable functions from $[0,1]$ to $[-c,c]$. Further for each $n \in \mathbb{N}$, define $g_{n}$ as given above. We begin by showing that $\{g_{n}\}_{n = 1}^{\infty}$ is uniformly bounded. For any $x \in [0,1]$, one has 
@@ -2638,9 +2724,9 @@
 	
 	\begin{prb}{2004-A-II-1}
 		Let $\{f_{n}\}$ be a sequence of real-valued absolutely continuous functions defined on $[0,1]$. Assume there exists constants $c_0, c_1$ such that 
-			\begin{equation*}
-				\sup_{0 \leq x \leq 1}|f_n(x)| \leq c_0 \quad \text{and} \quad \int_{0}^{1}|f'_n(x)|^2\;dx \leq c_1
-			\end{equation*}
+		\begin{equation*}
+			\sup_{0 \leq x \leq 1}|f_n(x)| \leq c_0 \quad \text{and} \quad \int_{0}^{1}|f'_n(x)|^2\;dx \leq c_1
+		\end{equation*}
 		for $n = 1, 2, 3,\ldots$. Prove that $\{f_n\}_{n=1}^\infty$ has a subsequence which converges uniformly on $[0,1]$. 
 	\end{prb}
 	Let $\{f_{n}\}_{n=1}^\infty$ be a sequence of absolutely continuous functions on $[0,1]$ with the above property. The first condition shows that the sequence is uniformly bounded. We will show that the sequence of functions is also uniformly equicontinuous. Fix $\epsilon > 0$ and $\delta = \epsilon^{2}/c_1$. Then for arbitrary $x, y \in [0,1]$ with $x > y$ and $|x - y| <\delta$, and for any $n \in \mathbb{N}$ be a fixed arbitrary positive integer, one has
@@ -2653,735 +2739,735 @@
 	\end{align*}
 	Thus since $\{f_{n}\}$ is uniformly bounded and uniformly equicontinuous, by the Arzel\`a-Ascoli theorem, there exists a subsequence $\{f_{n_{j}}\}_{j= 1}^{\infty}$ that converges uniformly on $[0,1]$. 
 	
-\subsection{\texorpdfstring{$L^p$}{Lp} Spaces}
-
-\begin{prb}{2025-A-II-4}
-	$ $\newline \vspace{-0.65cm}
-	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
-		\item Characterize $L^1$ functions $f: \mathbb{R} \to \mathbb{R}$ such that $f \ast f = f$. 
-		\item The same question for $L^2$-functions. 
-	\end{enumerate}
-\end{prb}
-\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
-	\item Let $f \in L^1(\mathbb{R})$ so that $f \ast f = f$. Then taking the Fourier transform of both sides, one has $\hat{f}^2 = \hat{f}$ so that $\hat{f}(\xi) \in \{0,1\}$ for every $\xi \in \mathbb{R}^n$. Thus, $\hat{f}$ is the characteristic function of some measurable subset $E \subseteq \mathbb{R}$. We also recall that the Fourier transform maps $L^1$ functions to $C_0(\mathbb{R})$ functions, so that $\hat{f}(\xi) \to 0$ as $|\xi| \to \infty$. Therefore, $E$ must be a proper bounded subset of $\mathbb{R}$. But then $\hat{f}$ must be discontinuous at every $x \in \partial E$, which contradicts the fact that $\hat{f}$ must be continuous on $\mathbb{R}$. Therefore, we see that $E = \varnothing$. Therefore, $\hat{f} \equiv 0$. By the Fourier Inversion theorem, we conclude that $f = 0$ a.e. 
-	\item Now let $f \in L^1 \cap L^2(\mathbb{R})$ such that $f \ast f = f$. As above, we must have $\hat{f} = \chi_E$ for some measurable subset $E \subseteq\mathbb{R}$. By Plancherel's theorem, $\hat{f} \in L^2(\mathbb{R})$, which means 
-	\begin{equation*}
-		\infty > \int_{\mathbb{R}}|\hat{f}|^2 = \int_{\mathbb{R}}\chi_E^2 = \int_{\mathbb{R}}\chi_E = m(E). 
-	\end{equation*}
-	Therefore, $\hat{f}$ is the characteristic function of a finitely measured subset of $\mathbb{R}$. By the Fourier Inversion theorem, we conclude that
-	\begin{equation*}
-		f = \int_{\mathbb{R}}\chi_E(\xi)e^{2\pi i (x \cdot \xi)}\;d\xi. 
-	\end{equation*}
-\end{enumerate}
-
-\begin{prb}{2025-J-I-2}
-	Let $\{f_n\}_{n \geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$. Suppose that 
-	\begin{equation*}
-		\int_0^1f_n^2\;dm \leq \frac{1}{n^2}
-	\end{equation*}
-	for all $n \geq 1$. Prove that $f_n$ converges to 0 a.e. on $[0,1]$. 
-\end{prb}
-Let $\{f_{n}\}_{n \geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$ so that for all $n \geq 1$, 
-\begin{equation*}
-	\int_0^1f_n^2\;dm \leq \frac{1}{n^2}. 
-\end{equation*}
-To show that $f_n \to 0$ a.e. on $[0,1]$, it suffices to show that $f_n^2 \to 0$ a.e., for which it suffices to show that the sum 
-\begin{equation*}
-	\sum_{1}^{\infty}f_n^2
-\end{equation*}
-converges a.e. on $[0,1]$. Since the sequence of partial sums $\{\sum_1^Nf_n^2\}_{N = 1}^{\infty}$ is a monotone increasing sequence of measurable functions on $[0,1]$, the monotone convergence theorem tells us that 
-\begin{equation*}
-	\int_{0}^{1}\sum_{1}^{\infty}f_n^2\;dm = \lim_{N \to \infty}\int_{0}^{1}\sum_{1}^{N}f_n^2\;dm = \lim_{N \to \infty}\sum_{1}^{N}\int_{0}^{1}f_n^2\;dm \leq \sum_1^\infty\frac{1}{n^2} < \infty. 
-\end{equation*}
-Thus, this means that $\sum_1^\infty f_n^2\;dm$ must be finite a.e., so that the sum converges. This forces the tail of the infinite sum to vanish a.e.; i.e., $\lim_{n \to \infty}f_n^2(x) = 0$ for a.e. $x \in [0,1]$. Therefore, $f_n \to 0$ a.e. on  $[0,1]$.
-
-\begin{prb}{2024-A-II-4}
-	Suppose $\{f_n\}$ and $f$ are in $L^\infty([0,1])$ and that $f_n \to f$ in the weak-$\ast$ topology. If $0 \leq f_n(x) < f(x) \leq 1$ almost everywhere for all $n$, prove that $f_n$ converges to $f$ in measure. 
-\end{prb}
-Suppose $\{f_n\}$ and $f$ are in $L^\infty([0,1])$ and that $f_n \to f$ in the weak$-\ast$ topology; i.e., assume that that for every $g \in L^1([0,1])$, $\int_{0}^{1}f_n(x)g(x)\;dx \to \int_{0}^{1}f(x)g(x)\;dx$. In particular, taking the function $g = \chi_{[0,1]} \in L^1([0,1])$, one has $\int_{0}^{1}f_n(x)\;dx \to \int_{0}^{1}f(x)\;dx$. Let $\epsilon > 0$, and define $E(\epsilon) = \{x \in [0,1]: |f(x) - f_n(x)|\geq \epsilon\}$. Then 
-\begin{equation*}
-	0 \xleftarrow{n \to \infty} \abs{\int_{0}^{1}f_{n}(x) - f(x)\;dx} = \int_{0}^{1}f(x)- f_{n}(x)\;dx \geq \int_{E(\epsilon)}\epsilon\;dx = \epsilon m(E(\epsilon)) \geq 0, 
-\end{equation*}
-where the first equality follows from the fact that $0 < f(x) - f_n(x) \leq 1$ a.e. Since $\epsilon > 0$, we must have $m(E(\epsilon)) \to 0$ as $n \to \infty$. Since $\epsilon > 0$ was arbitrary, we conclude that $f_n \to f$ in measure. 
-
-\begin{prb}{2024-J-I-6}
-	Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$. Define the convolution 
-	\begin{equation*}
-		(f \ast g)(x) = \int_{\mathbb{R}}f(x-y)g(y)\;dy
-	\end{equation*}
-	for all $x$ such that the integral exists. Prove that if $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$ with $p, q \in (1,\infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$, then $f \ast g$ is a bounded continuous function on $\mathbb{R}$. 
-\end{prb}
-Let $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$, and define the convolution $(f \ast g)(x)$ as defined above for all $x$ such that the integral exists. First, we note that for any $x$, one has 
-\begin{equation*}
-	\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}|f(x-y)||g(y)|\;dy \leq \norm{f}_{L^p}\norm{g}_{L^q}, 
-\end{equation*}
-where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
-\begin{align*}
-	\begin{split}
-		|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
-		&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
-	\end{split}
-\end{align*}
-Now we compute, 
-\begin{align*}
-	\begin{split}
-		\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
-		&= \norm{\tau_hf - f}_{L^p}. 
-	\end{split}
-\end{align*}
-Thus, one has that for all $x \in \mathbb{R}$, 
-\begin{equation*}
-	|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
-\end{equation*}
-by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
-
-\begin{prb}{2021-A-I-3}
-	Characterize all functions $f \in L^2(\mathbb{R}^n)$ such that $f \ast f= f$. Here $\ast$ means convolution. 
-\end{prb}
-Let $f \in L^1 \cap L^2(\mathbb{R}^n)$ such that $f \ast f = f$. As above, we must have $\hat{f} = \chi_E$ for some measurable subset $E \subseteq\mathbb{R}^n$. By Plancherel's theorem, $\hat{f} \in L^2(\mathbb{R}^n)$, which means 
-\begin{equation*}
-	\infty > \int_{\mathbb{R}^n}|\hat{f}|^2 = \int_{\mathbb{R}^n}\chi_E^2 = \int_{\mathbb{R}^n}\chi_E = m(E). 
-\end{equation*}
-Therefore, $\hat{f}$ is the characteristic function of a finitely measured subset of $\mathbb{R}^n$. By the Fourier Inversion theorem, we conclude that
-\begin{equation*}
-	f = \int_{\mathbb{R}^n}\chi_E(\xi)e^{2\pi i (x \cdot \xi)}\;d\xi. 
-\end{equation*}
-
-\begin{prb}{2020-J-I-3}
-	Let $p >1$ be a real number and set $q = \frac{p}{p - 1}$. Suppose that $f \in L^{p}(\mathbb{R})$ and that $g \in L^q(\mathbb{R})$. Prove that $\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;d\mu = 0$, where $\mu$ denotes Lebesgue measure on $\mathbb{R}$. 
-\end{prb}
-Let $p > 1$ be a real number, and set $q = \frac{p}{p - 1}$. Further assume that $f \in L^p(\mathbb{R})$ and that $g \in L^q(\mathbb{R})$. By H\"older's inequality, one has 
-\begin{equation*}
-	\abs{\int_{\mathbb{R}}f(x)g(nx)\;dx} \leq \int_{\mathbb{R}}|f(x)||g(nx)|\;dx \leq \norm{f}_{L^p} \cdot \left(\int_{\mathbb{R}}|g(nx)|^q\;dx\right)^{1/q}. 
-\end{equation*}
-For the latter integral, let $y = nx$ so that $dx = n^{-1}\;dy$. Then one has 
-\begin{equation*}
-	\abs{\int_{\mathbb{R}}f(x)g(nx)\;dx} \leq \frac{1}{n^q}\norm{f}_{L^p}\cdot \left(\int_{\mathbb{R}}|g(y)|^{q}\right)^{1/q} = \frac{1}{n^{1/q}}\norm{f}_{L^p}\norm{g}_{L^q}. 
-\end{equation*}
-But since $p > 1$, $1/q = (1 - 1/p) > 0$. Thus as $n \to \infty$, $1/n^{1/q} \to 0$. Since the right side tends to zero in the limit $n \to \infty$, we conclude that 
-\begin{equation*}
-	\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;dx = 0. 
-\end{equation*}
-
-\begin{prb}{2019-J-I-4}
-	Let $(X, \mu)$ be a measure space and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Show that $f \in L^q(X,\mu)$ for all $q > 1$, and 
-	\begin{equation*}
-		\norm{f}_{L^\infty} = \lim_{q \to \infty}\norm{f}_{L^q}. 
-	\end{equation*}
-\end{prb}
-Let $(X, \mu)$ be a measure space, and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Then one has, 
-\begin{equation*}
-	\norm{f}_{L^q} = \left(\int_{\mathbb{R}}|f|^q\right)^{1/q} = \left(\int_{\mathbb{R}}|f||f|^{q - 1}\right)^{1/q} \leq \left(\int_{\mathbb{R}}|f|\norm{f}_{L^\infty}^{q - 1}\right)^{1/q} = \norm{f}_{L^1}^{1/q}\norm{f}_{L^\infty}^{1 -(1/q)} < \infty. 
-\end{equation*}
-Thus, $f \in L^q$. Since $q > 1$ was arbitrary, the proof of the first statement concludes. From the above result, one has that 
-\begin{equation*}
-	\limsup_{q \to \infty}\norm{f}_{L^q} \leq \limsup_{q \to \infty}\norm{f}_{L^1}^{1/q}\norm{f}_{L^\infty}^{1 - (1/q)} = \norm{f}_{L^\infty}. 
-\end{equation*}
-Now let $\epsilon > 0$ and define $E(\epsilon) = \{x \in X: |f(x)| \geq \norm{f}_{L^\infty}- \epsilon\}$; by definition of the essential supremum, $E(\epsilon)$ must have positive measure. And since $f \in L^1$, $\mu(E(\epsilon)) < \infty$. Then for any $q > 1$, one has 
-\begin{equation*}
-	\norm{f}_{L^q} = \left(\int_{\mathbb{R}}|f|^q\right)^{1/q} \geq \left(\int_{E(\epsilon)}(\norm{f}_{L^\infty} - \epsilon)^q\right)^{1/q} =(\norm{f}_{L^\infty} - \epsilon)m(E(\epsilon))^{1/q}. 
-\end{equation*}
-Thus, one has 
-\begin{equation*}
-	\liminf_{q \to \infty}\norm{f}_{L^q} \geq \liminf_{q \to \infty}(\norm{f}_{L^\infty} - \epsilon)\mu(E(\epsilon))^{1/q} = \norm{f}_{L^\infty} - \epsilon. 
-\end{equation*}
-Since $\epsilon > 0$ was arbitrary, taking the limit $\epsilon \to 0$ gives $\liminf_{q \to \infty}\norm{f}_{L^q} \geq \norm{f}_{L^\infty}$. Thus, the proof concludes. 
-
-\begin{prb}{2017-J-I-2}
-	Recall that $L^2(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R} \to \mathbb{C}$ so that $|f|^2$ is integrable. Show that the linear map
-	\begin{equation*}
-		T: L^2(\mathbb{R})  \to L^2(\mathbb{R}), \qquad T(f)(x) \coloneqq f(x-1), \qquad \forall x \in \mathbb{R}, f \in L^2(\mathbb{R}). 
-	\end{equation*}
-	has no non-zero eigenvector.
-\end{prb}
-Let $T: L^2(\mathbb{R}) \to T^2(\mathbb{R})$ be the linear map described above, and assume to the contrary that $T$ has a non-zero eigenvector $f \in L^2(\mathbb{R})$, with eigenvector $\lambda \in \mathbb{C} \setminus \{0\}$. By definition of $T$, this means that for every $x \in \mathbb{R}$, $\lambda f(x) = f(x - 1)$. We will first two show two results, 
-\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-	\item ($|\lambda| = 1$): Since $\lambda f(x) = f(x - 1)$ for every $x\in \mathbb{R}$, one has 
-	\begin{equation*}
-		|\lambda|^2\norm{f}_{L^2(\mathbb{R})}^2 = |\lambda|^2\int_{\mathbb{R}}|f(x)|^2\;dx = \int_{\mathbb{R}}|f(x-1)|^2\;dx  = \norm{\tau_{1}f}_{L^2(\mathbb{R})}^2 = \norm{f}_{L^2(\mathbb{R})}^2, 
-	\end{equation*}
-	so that $|\lambda|^2 = 1 \implies |\lambda| = 1$ since $0 \neq \norm{f}^2_{L^2(\mathbb{R})} < \infty$. 
-	\item ($\norm{f}_{L^{2}([0,1])} \neq 0$): Assume to the contrary that $\norm{f}_{L^2([0,1])} = 0$ so that $f = 0$ a.e on $[0,1]$. Then by translation invariance of $f$, for every $n \in \mathbb{Z}$, $f = 0$ a.e. on $[n, n + 1]$. But this forces $f = 0$ a.e. on $\mathbb{R}$ which contradicts our hypothesis that $f$ is a non-zero eigenvector. 
-\end{enumerate}
-Now by induction, one can show that for any finite positive integer $n$, 
-\begin{equation*}
-	\int_{0}^{n}|f(x)|^2\;dx = n \cdot \norm{f}_{L^{2}([0,1])}^2. 
-\end{equation*}
-Since $|f(x)|^2\chi_{[0,n]}$ is a monotone increasing sequence of measurable functions, by the Monotone Convergence Theorem, one has that 
-\begin{equation*}
-	\infty > \norm{f}_{L^{2}(\mathbb{R})}^2 = \int_{\mathbb{R}}|f(x)|^2\;dx \geq \int_{\mathbb{R}_{+}}|f(x)|^2\;dx = \lim_{n \to \infty}\int_{0}^{n}|f(x)|^2\;dx = \lim_{n \to \infty}n \cdot \norm{f}_{L^2([0,1])}^2 = \infty, 
-\end{equation*}
-which is a contradiction! Therefore, $T$ cannot have a non-zero eigenvector. 
-
-\begin{prb}{2017-J-II-2}
-	Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^2([0,1])$ we have that $fg \in L^2([0,1])$. Show $f$ is in $L^\infty([0,1])$. 
-\end{prb}
-Suppose $f: [0,1] \to \mathbb{R}$ is a measurable function, and further assume that for all $g \in L^2([0,1])$, $fg \in L^2([0,1])$. Define the map $T: L^2([0,1]) \to \mathbb{R}$ by $Tg\coloneqq fg$;  it follows immediately that $T$ is a linear map. Now let $\{g_n\}_{n =1}^{\infty} \subset L^2([0,1])$ such that $g_n \to 0$ under the $L^2$-norm. Further assume that $\{Tg_n\}_{n = 1}^{\infty}$ converges to some $y \in L^2([0,1])$. First, we know that there exists some subsequence $\{g_{n_{j}}\}_{j = 1}^\infty$ so that $g_{n_{j}} \to 0$ pointwise a.e. But then $Tg_{n_{j}} \to y$ under the $L^2$-norm. This implies that there exists a further subsequence $g_{n_{j_{k}}}$ $Tg_{n_{j_{k}}}$ that converges to $y$ pointwise a.e. By construction, $g_{n_{j_{k}}} \to 0$ pointwise a.e., so that $Tg_{n_{j_{k}}} = f(x)g_{n_{j_{k}}}(x) \to 0$ pointwise a.e. Thus one has that $y = 0$ a.e. This implies that the graph of $T$ is closed. Thus by the Closed Graph theorem, $T$ is a bounded linear map. I.e., there exists some $C > 0$ so that forr every $g \in L^2([0,1])$, $\norm{fg}_{L^2([0,1])} \leq C\norm{g}_{L^2([0,1])}$. In particular, one has that $\norm{f}_{L^2([0,1])} \leq C$. Now for each $n \geq 1$, let $E_{n} = \{x \in [0,1]: |f(x)|\geq C + n^{-1}\}$. If $m(E_{n}) > 0$, then we have 
-\begin{equation*}
-	\left(C + \frac{1}{n}\right)m(E_n)^{1/2} \leq \norm{f\chi_{E_{n}}}_{L^{2}([0,1])} \leq Cm(E_n)^{1/2}, 
-\end{equation*}
-so that $(C + 1/n) \leq C$, which is a contradiction. Thus, $m(E_n) =0$ for all $n$, which means that $|f(x)| \leq C$ for a.e. $x$, and thus $f \in L^\infty([0,1])$. 
-
-
-\begin{prb}{2015-A-II-6}
-	Let $1 < p < \infty$ and let $q$ be its conjugate exponent, that is, let $q$ be defined by $\frac{1}{p} + \frac{1}{q} = 1$. Let $f \in L^p(\mathbb{R}^n)$ and $g \in L^q(\mathbb{R}^n)$, with respect to the Lebesgue measure. Show that the convolution $f \ast g$ is uniformly continuous on $\mathbb{R}^n$ and that $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$. 
-\end{prb}
-Let $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$, and define the convolution $(f \ast g)(x)$ as defined above for all $x$ such that the integral exists. First, we note that for any $x$, one has 
-\begin{equation*}
-	\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}|f(x-y)||g(y)|\;dy \leq \norm{f}_{L^p}\norm{g}_{L^q}, 
-\end{equation*}
-where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
-\begin{align*}
-	\begin{split}
-		|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
-		&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
-	\end{split}
-\end{align*}
-Now we compute, 
-\begin{align*}
-	\begin{split}
-		\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
-		&= \norm{\tau_hf - f}_{L^p}. 
-	\end{split}
-\end{align*}
-Thus, one has that for all $x \in \mathbb{R}$, 
-\begin{equation*}
-	|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
-\end{equation*}
-by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
-
-\begin{prb}{2015-J-II-5}
-	Let $E$ be a Lebesgue measurable subset of the real numbers whose Lebesgue measure is finite. Let $\chi_E: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$ (which equals $1$ on $E$, and $0$ otherwise). Show that $\chi_E(x-t)$ converges to $\chi_E(x)$ in $L^1$ as $t \to 0$. 
-\end{prb}
-Let $E$ be a Lebesgue measurable subset of the real numbers whose Lebesgue measure is finite, and let $\chi_{E}: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$. Since $E$ has finite measure, $\chi_{E} \in L^{1}(\mathbb{R})$. Fix an arbitrary $\epsilon > 0$. By the density of compactly supported continuous functions in $L^{1}(\mathbb{R})$, there exists some $\varphi \in C_{c}^{\infty}(\mathbb{R})$ so that $\norm{\chi_E - \varphi}_{L^1} < \epsilon/3$. By continuity of $\varphi$, there exists some $R > 0$ so that for all $|t|\leq R$, $\norm{\tau_{t}\varphi - \varphi}_{L^1} < \epsilon/3$. Thus for all $|t| \leq R$, 
-\begin{equation*}
-	\norm{\tau_{t}\chi_{E} - \chi_{E}}_{L^1} \leq \norm{\tau_{t}\chi_{E} - \tau_t\varphi}_{L^1} + \norm{\tau_{t}\varphi - \varphi}_{L^1} + \norm{\varphi - \chi_{E}}_{L^1} = \epsilon, 
-\end{equation*}
-where the first term on the right side is equal to the last term on the right side by translation invariance of the $L^1$ norm. Thus, we conclude that $\chi_{E}(x - t) \to \chi_{E}(x)$ in $L^1$ as $t \to 0$. 
-
-
-\begin{prb}{2009-A-I-2}
-	Let $(X,\mu)$ be a measure space, and let $f$ be a measurable function on $X$. If there is a real constant $C > 0$ such that 
-	\begin{equation*}
-		f \in L^p(X) \quad\text{and} \quad \norm{f}_{L^p} \leq C
-	\end{equation*}
-	for all real numbers $p \in (1,\infty)$, prove that 
-	\begin{equation*}
-		f \in L^\infty(X) \quad \text{and} \quad \norm{f}_{L^\infty} \leq C. 
-	\end{equation*}
-\end{prb}
-Let $f \in L^p(X)$ for all real numbers $p \in (1, \infty)$, and assume that there exists some $C > 0$ so that for all $p > 1$, one has $\norm{f}_{L^p} \leq C$. Assume to the contrary that $f \notin L^\infty(X)$. By definition, this means that for every $\epsilon > 0$, the set $A_{\epsilon} = \{x \in X: |f(x)| \geq C + \epsilon\}$ has positive measure (since $f\in L^p(X,\mu)$ for all $p > 1$, $\mu(A_{\epsilon}) < \infty$ for all $\epsilon > 0$). This implies the following: 
-\begin{equation*}
-	C \geq \left(\int_{X}|f|^p\;d\mu\right)^{1/p} \geq \left(\int_{A_{\epsilon}}(C + \epsilon)^p\;d\mu\right)^{1/p} = (C + \epsilon) \cdot \mu(A_{\epsilon})^{1/q}. 
-\end{equation*}
-Taking the limit $q \to \infty$, since $0 < \mu(A_{\epsilon}) < \infty$, one obtains $C \geq C + \epsilon$, which is a contradiction! Thus by contradiction, for every $\epsilon > 0$, $\mu(A_{\epsilon}) = 0$. This shows that $f$ is essentially bounded (so that $f \in L^\infty(X,\mu)$) and 
-\begin{equation*}
-	\norm{f}_{L^\infty} = \inf\brac*{M > 0: |f(x)| \leq M \text{ a.e.}} \leq C. 
-\end{equation*}
-
-
-\begin{prb}{2009-J-II-1}
-	$ $\newline\vspace{-0.65cm}
-	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-		\item Say $1 < p < \infty$. Exhibit, with proof, a function $f \in L^1(0,1)$ which is not in $L^p(0,1)$. 
-		\item Exhibit, with proof, a function $f \in L^1([0,1])$ which is not in $L^p(0,1)$ for any $p > 1$. (Hint: try to define $F$ piecewise, using the functions of (a)). 
-	\end{enumerate}
-\end{prb}
-\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-	\item Fix $1 <p < \infty$. Consider the function $f(x) = 1/x^{1/p}$ on $[0,1]$. $f \in L^1(0,1)$ since 
-	\begin{equation*}
-		\int_{0}^{1}|f(x)|\;dx = \int_{0}^{1}\frac{1}{x^{1/p}}\;dx =\frac{p}{p - 1} < \infty. 
-	\end{equation*}
-	On the other hand, $f \notin L^p(0,1)$, since $|f(x)|^p = 1/x$ is not integrable over $[0,1]$ ($\lim_{x \to 0}\ln(x) = \text{DNE}$). 
-	\item Now construct the following measurable function, 
-	\begin{equation*}
-		f(x)|_{[(n + 1)^{-1}, n^{-1}]} = \frac{1}{n^{3}\left(x - \frac{1}{n + 1}\right)^{1 - 1/n}}. 
-	\end{equation*}
-	Then it is straightforward to see that $f(x)$ is integrable: 
-	\begin{equation*}
-		\int_{0}^{1}|f(x)|\;dx = \sum_{n = 1}^{\infty}\int_{1/(n + 1)}^{1/n}\frac{1}{n^3(x - 1/(n + 1))^{1 - 1/n}}\;dx = \sum_{n = 1}^{\infty}\frac{(n^2 + n)^{-1/n}}{n^2} < \infty. 
-	\end{equation*}
-	On the other hand, $f$ does not belong to $L^p(0,1)$ for any $p > 1$ since $1 - (1/n) \to 1$ implies that the exponent $p \cdot (1 - 1/n)$ of a term eventually exceeds 1. 
-\end{enumerate}
-
-
-\subsection{Weierstrass Approximation}
-\begin{prb}{2021-A-II-6}
-	Suppose $\mu$ is a finite positive measure of compact support and 
-	\begin{equation*}
-		\int_\mathbb{R}x^n\;d\mu(x) = 0
-	\end{equation*}
-	for every $n \in \{0,1,2, \ldots\}$. Show that $\mu$ is the zero measure. 
-\end{prb}
-Let $\mu$ be a finite positive measure on $\mathbb{R}$ of compact support; let $[a, b] \subset \mathbb{R}$ be a compact set containing the support of $\mu$. Further assume $\int_{a}^{b}x^n\;d\mu(x) = \int_\mathbb{R}x^n\;d\mu(x) =0$ for all $n\in \{0, 1, 2, \ldots\}$. Fix an arbitrary continuous function $f \in C([a,b])$; by the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[a,b]$ so that $p_j \to f$ uniformly on $[a,b]$. By the given hypothesis, since $\int_{a}^{b}p_j\;d\mu(x) =0$ for every $j$, by uniform convergence, $\int_{a}^{b}f\;d\mu(x) = 0$. Since $f$ was arbitrary, it follows that $\int_{\mathbb{R}}f\;d\mu(x) = \int_{a}^{b}f\;d\mu(x) = 0$ for every continuous function $f$ on $[a,b]$. Now let $U$ be an open subset of $\mathbb{R}$ so that $[a,b] \Subset U$. Then by Urysohn's lemma, there exists a nonnegative continuous function $f$ on $U$ such that $f|_{[a,b]} = 1$ and $f|_{U^c} =0$. Moreover, we notice that $f \geq \chi_{[a,b]}$ everywhere. Therefore, 
-\begin{equation*}
-	0 \leq \mu([a,b]) = \int_{\mathbb{R}}\chi_{[a,b]}\;d\mu(x) \leq \int_{\mathbb{R}}f\;d\mu(x) = 0.  
-\end{equation*}
-Thus, $\mu([a,b]) = 0$. Since $[a,b]$ contains the support of $\mu$, we conclude that 
-\begin{equation*}
-	\mu(\mathbb{R}) = \mu(\mathbb{R}\setminus[a,b]) + \mu([a,b]) = 0 + 0 = 0. 
-\end{equation*}
-Thus $\mu$ is the zero measure. 
-
-\begin{prb}{2018-A-I-5}
-	If $\{\mu_{n}\}$ are positive finite measures on $[0,1]$ that converge in the weak-$\ast$ topology to $\mu$, prove $\{\mu_{n} \times \mu_{n}\}$ converges in the weak-$\ast$ topology. 
-\end{prb}
-Let $\{\mu_{n}\}$ be positive finite measures on $[0,1]$ that converge in the weak-$\ast$ topology to $\mu$. In particular, one has that $\{\mu_{n}([0,1])\}_{n=1}^{\infty}$ is a convergent sequence of real numbers. Since every convergent sequence of real numbers is bounded, there exists some finite $M > 0$ so that $\mu_{n}([0,1]) \leq M$ for all $n$, and hence, $\mu([0,1]) \leq M$. Let $f \in C([0,1]^{2})$. Fix some $\epsilon > 0$. By the Stone-Weierstrass theorem\footnote{\href{https://en.wikipedia.org/wiki/Stone\%E2\%80\%93Weierstrass\_theorem\#Applications\_2}{https://en.wikipedia.org/wiki/Stone\%E2\%80\%93Weierstrass\_theorem\#Applications\_2}}, there exist separate finite collections $\{f_{j}\}_{j = 1}^{k}$ and $\{g_{j}\}_{j = 1}^{k}$ of continuous functions in $[0,1]$ so that 
-\begin{equation*}
-	\sup_{(x, y) \in [0,1]^{2}}\abs{f - \sum_{1}^{k}f_{j}g_{j}} < \frac{\epsilon}{3M^{2}}. 
-\end{equation*}
-This means that, 
-\begin{align*}
-	\begin{split}
-		\int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu \times \mu) &< \int \frac{\epsilon}{3M^{2}}\;d(\mu\times\mu) \leq \frac{\epsilon}{3}. \\
-		\int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu_n \times \mu_n) & < \int \frac{\epsilon}{3M^2}\;d(\mu_n \times \mu_n) \leq \frac{\epsilon}{3}, \qquad \forall n \geq 1. 
-	\end{split}
-\end{align*}
-Next, since each $f_{j}, g_{j}$ is integrable on $[0,1]$ (with respect to every $\mu_n$ and $\mu$), by the Fubini-Tonelli theorem and our hypothesis on the $\mu_{n}$, 
-\begin{equation*}
-	\int f_{j}g_{j}\;d(\mu_n \times \mu_n) = \left(\int f_{j}\;d\mu_n\right)\left(\int g_{j}\;d\mu_n\right) \xrightarrow{n \to \infty}\left(\int f_j\;d\mu\right)\left(\int g_j\;d\mu\right) = \int f_jg_j\;d(\mu \times \mu). 
-\end{equation*}
-This means that given our choice of $\epsilon$, there exists some $N \in \mathbb{N}$ large enough so that for all $n\geq N$, one has 
-\begin{equation*}
-	\abs{\int f_{j}g_j\;d(\mu \times \mu) - \int f_jg_j\;d(\mu_n\times\mu_n)} \leq \frac{\epsilon}{3k}. 
-\end{equation*}
-
-So then we note that for all $n \geq N$, one has 
-\begin{align*}
-	\begin{split}
-		\abs{\int f\;d(\mu\times \mu) - \int f\;d(\mu_n \times \mu_n)}&\leq \int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu\times\mu) \\
-		&\qquad + \abs{\sum_{1}^{k}\left(\int f_{j}g_{j}\;d(\mu\times\mu) - \int f_{j}g_{j}\;d(\mu_n\times\mu_n)\right)} \\
-		&\qquad\qquad + \int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu_n\times\mu_n) \\
-		&\leq \int \abs{f - \sum_1^kf_jg_j\;d(\mu \times \mu)} + \int \abs{f - \sum_1^kf_jg_j}\;d(\mu_n\times\mu_n) \\
-		&\qquad \quad + \sum_1^k\abs{\int f_jg_j\;d(\mu\times\mu) - \int f_jg_j\;d(\mu_n\times\mu_n)} \\
-		&\leq \frac{2\epsilon}{3} + \sum_{1}^{k}\frac{\epsilon}{3k}  = \frac{2\epsilon}{3} + \frac{\epsilon}{3} = \epsilon. 
-	\end{split}
-\end{align*}
-Since $f\in C([0,1]^2)$ was arbitrary, we conclude that $\mu_n \times \mu_n \to \mu \times \mu$ in the weak-$\ast$ topology. 
-
-\begin{prb}{2017-A-II-1}
-	Suppose that $f \in C([0,1])$ is a continuous real-valued function on $[0,1]$ for which 
-	\begin{equation*}
-		\int_0^1x^nf(x)\;dx = 0
-	\end{equation*}
-	for all non-negative integers $n$. Does it follows that $f(x) = 0$ for all $x \in [0,1]$. 
-\end{prb}
-Let $f$ be a continuous real-valued function on $[0,1]$ such that for all non-negative integers $n$, 
-\begin{equation*}
-	\int_0^1x^nf(x)\;dx = 0. 
-\end{equation*}
-By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[0,1]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(x) = a^{(j)}_nx^n + a^{(j)}_{n-1}x^{n-1} + \dotsm + a^{(j)}_{1}x + a_{0}^{(j)}$, 
-\begin{equation*}
-	\int_{0}^{1}p_j(x)f(x)\;dx = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{0}^1x^{k}f(x)\;dx = 0. 
-\end{equation*}
-Thus, uniform convergence tells us that in the limit $j \to \infty$, 
-\begin{equation*}
-	\int_{0}^{1}f(x)^2\;dx = 0. 
-\end{equation*}
-Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [0,1]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $x_0$ in $[0,1]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[0,1]$. 
-
-\begin{prb}{2014-A-II-5}
-	Suppose $f$ is a continuous function on $[0,1]$ and $\int_0^1f(t)t^n\;dt = 0$ for every $n = 0,1,2\ldots$. Prove that $f$ is the zero function. 
-\end{prb}
-Let $f$ be a continuous real-valued function on $[0,1]$ such that for all non-negative integers $n$, 
-\begin{equation*}
-	\int_0^1t^nf(t)\;dt = 0. 
-\end{equation*}
-By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[0,1]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(t) = a^{(j)}_nt^n + a^{(j)}_{n-1}t^{n-1} + \dotsm + a^{(j)}_{1}t + a_{0}^{(j)}$, 
-\begin{equation*}
-	\int_{0}^{1}p_j(t)f(t)\;dt = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{0}^1t^{k}f(t)\;dt = 0. 
-\end{equation*}
-Thus, uniform convergence tells us that in the limit $j \to \infty$, 
-\begin{equation*}
-	\int_{0}^{1}f(t)^2\;dt = 0. 
-\end{equation*}
-Since $f^2 \geq 0$, we must have $f(t)^2 = 0$ a.e., which implies $f(t) =0$ a.e. Suppose there exists some $t_0 \in [0,1]$ such that $f(t_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $t_0$ in $[0,1]$ so that $f(t) \neq 0$ for any $t \in U$. But then $U$ has nonzero measure, contradicting our result that $f(t) =0 $ a.e. Thus by contradiction, $f(t) = 0$ everywhere on $[0,1]$. 
-
-\begin{prb}{1998-J-II-1}
-	Let $f$ be a measurable compactly supported function on $\mathbb{R}$ where 
-	\begin{equation*}
-		\int f(x)x^n\;dx = 0 
-	\end{equation*}
-	for all $n\geq 0$. Show that $f$ is zero almost everywhere. 
-\end{prb}
-Let $f$ be a measurable compactly supported function on $\mathbb{R}$ such that for all $n \geq 0$, 
-\begin{equation*}
-	\int f(x)x^n\;dx = 0. 
-\end{equation*}
-Let $K = [a,b]$ be a compact subset of $\mathbb{R}$ that contains the support of $f$. By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[a,b]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(x) = a^{(j)}_nx^n + a^{(j)}_{n-1}x^{n-1} + \dotsm + a^{(j)}_{1}x + a_{0}^{(j)}$, 
-\begin{equation*}
-	\int_{a}^{b}p_j(x)f(x)\;dx = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{a}^{b}x^{k}f(x)\;dx = 0. 
-\end{equation*}
-Thus, uniform convergence tells us that in the limit $j \to \infty$, 
-\begin{equation*}
-	\int_{a}^{b}f(x)^2\;dx = 0. 
-\end{equation*}
-Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [a,b]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[a,b]$, there exists a nonempty open interval $U$ of $x_0$ in $[a,b]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[a,b]$. 
-
-\subsection{Baire Category Theorem}
-
-\begin{prb}{2025-J-II-5}
-	Let $V$ be a topological vector space whose topology is Hausdorff. Let $X_1$ and $X_2$ be two Banach spaces, and assume that there exist continuous linear bijections $F_1: X_1 \to V$ and $F_2: X_2 \to V$. Show that there is a continuous linear bijection $G: X_1 \to X_2$. 
-\end{prb}
-Let $V$ be a topological vector space whose topology is Hausdorff, and let $F_{1}: X_1 \to V$, $F_2: X_2 \to V$ be continuous linear bijections from the two Banach spaces $X_1, X_2$ onto $V$. Consider the map, $G = F_2^{-1} \circ F_1: X_1 \to X_2$. First, we will show that $G$ is linear. Let $\alpha, \beta \in \mathbb{C}$, and $x, y \in X_1$. Then 
-\begin{equation*}
-	G(\alpha x + \beta y) = F_{2}^{-1}(F(\alpha x + \beta y)) = F_{2}^{-1}(\alpha F(x) + \beta F(y)) = \alpha G(x) + \beta G(y), 
-\end{equation*}
-where we used the fact that $F_{1}, F_{2}^{-1}$ are both linear maps. Now we will show that $G$ is bijective: fix an arbitrary $x \in X_2$. By surjectivity of $F_2^{-1}$, there exists some $v \in V$ so that $F_{2}^{-1}(v) = x$. By surjectivity of $F_1$, there exists some $y \in X_1$ so that $F_1(y) = v$. But then, $G(y) = x$. Now we will show that $G$ is injective. Suppose $G(x) = G(y) \iff F_{2}^{-1}(F_{1}(x)) = F_{2}^{-1}(F_{1}(y))$ for $x, y \in X_1$. Since $F_{2}^{-1}$ is injective, $F_1(x) = F_{1}(y)$. Since $F_1$ is injective, $x = y$. Thus, $G$ is a linear bijection from $X_1$ to $X_2$. 
-
-It remains to be seen that $G$ is continuous; we will use the Closed Graph Theorem to show that $G$ is bounded. Let $\{x_{j}\} \subset X$ such that $x_{j} \to x \in X$. Further assume that $G(x_j) \to y$. By continuity of $F_{1}$, one has that $F_{1}(x_j) \to F_1(x)$. Now since $G(x_j) \to y$, one has by continuity of $F_2$ that $F_1(x_j) \to F_2(y)$. Since limits are unique in Hausdorff spaces, we must have $F_1(x) = F_2(y)$ so that $y = F_{2}^{-1}(F_1(x)) = G(x)$. Thus, the graph of $G$ is closed. By the Closed Graph Theorem, $G$ is a bounded linear bijection between Banach spaces, and thus must be a continuous linear bijection. 
-
-\begin{prb}{2024-J-II-5}
-	Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty, \infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: You may use the Baire Category Theorem. 
-\end{prb}
-
-Let $P$ be the vector space over $\mathbb{R}$ of finite-degree polynomials in the variable $x\in (-\infty, \infty)$. Assume to the contrary that $P$ is complete under some norm $\norm{\empspace}$. Let us write $P$ as the following countable union, 
-\begin{equation*}
-	P = \bigcup_{n \geq 0} P_{n}, 
-\end{equation*}
-where each $P_n$ denotes the subspace of all polynomials over $\mathbb{R}$ of degree at most $n$. By the Baire Category Theorem, there exists at least one $n_{0} \geq 0$ so that $P_{n_{0}}$ is not nowhere dense; i.e., $\overline{P}_{n_{0}}$ does not have empty interior. Since finite-dimensional subspaces of Banach spaces are closed, $P_{n_{0}}$ is closed so that $\overline{P}_{n_{0}} = P_{n_{0}}$. Let $p\in P_{n_{0}}$ be an arbitrary polynomial. Then it follows that there exists some $r > 0$ such that the ball $B(p,r)$ is contained inside $P_{n_{0}}$. Fix an arbitrary $q \in P$, and define 
-\begin{equation*}
-	\ti{q} \coloneqq p + \frac{r(q - p)}{2\norm{p - q}}. 
-\end{equation*}
-Then it follows that $\ti{q} \in B(p,r)$ since 
-\begin{equation*}
-	\norm{\ti{q} -p} = \norm{\frac{r(q - p)}{2\norm{p - q}}} = r/2 < r. 
-\end{equation*}
-But then, since 
-\begin{equation*}
-	q = 2\norm{q - p}\ti{q} + p(r - 2\norm{q - p}), 
-\end{equation*}
-it follows that $q \in P_{n_{0}}$. Since $P_{n_{0}} \subset P$ and we have now shown that $P \subset P_{n_{0}}$, we have $P = P_{n_{0}}$. But this is a contradiction since there exist polynomials with real coefficients of degree $> n_{0}$. Thus by contradiction, $P$ cannot be a Banach space with respect to any norm. 
-
-\begin{prb}{Fat Cantor Set}
-	There exists a closed nowhere dense subset $E \subset \mathbb{R}^n$ of positive Lebesgue measure. 
-\end{prb}
-We will show that such a set exists by explicitly constructing the \textbf{Fat Cantor set}. Start by considering the cube $[0,1]^{n} \subset \mathbb{R}^n$. Along each dimension, we will remove the middle $1/4$th (i.e., the open interval $(3/8,5/8)$). This leaves us the set 
-\begin{equation*}
-	\left(\left[0, \frac{3}{8}\right] \cup \left[\frac{5}{8}, 1\right]\right)^{n}. 
-\end{equation*}
-Now in each dimension, we remove the open middle $1/16$th from each of the remaining intervals, so that we obtain the set 
-\begin{equation*}
-	\left(\left[0, \frac{5}{32}\right] \cup \left[\frac{7}{32}, \frac{3}{8}\right] \cup \left[\frac{5}{8}, \frac{25}{32}\right] \cup \left[\frac{27}{32}, 1\right]\right)^{n}. 
-\end{equation*}
-In this way, we keep removing intervals of width $4^{-m}$ from each of the remaining $2^{m-1}$ intervals along each dimension in each step. Altogether, we remove from each dimension intervals of total length
-\begin{equation*}
-	\sum_{m = 0}^{\infty}\frac{2^{m}}{2^{2m + 2}} = \frac{1}{2}. 
-\end{equation*}
-This means that the total volume of the set $E$ obtained by repeating this procedure indefinitely has Lebesgue measure $1/2^n > 0$. Now it follows that $E$ is closed: each dimension of $E$ is obtained as follows: $[0,1]\setminus U$, where $U$ is the countable union of all the open intervals removed, and hence is open. Thus each dimension of $E$ is closed. Since the Cartesian product of closed sets is closed under the product topology, $E$ is closed. On the other hand, the fact that $E$ is nowhere dense follows immediately from the fact that the length of the remaining intervals along each dimension of $E$ shrink to zero. 
-
-\begin{prb}{2022-J-II-3}
-	Prove or give a counterexample: if $E \subset \mathbb{R}$ is a Lebesgue measurable subset of positive Lebesgue measure, then some countable union of translates of $E$ covers $\mathbb{R}$. 
-\end{prb}
-We will show this statement is false. Consider the fat Cantor set $E$ constructed above. We've shown that $E$ is a positive Lebesgue measurable subset of $\mathbb{R}$ that is nowhere dense. We also know that $\mathbb{R}$ is a complete metric space under the Euclidean metric. By Baire's Category Theorem, $\mathbb{R}$ cannot be the countable union of nowhere dense sets, and thus cannot be the countable union of translates of $E$. 
-
-\begin{prb}{1997-A-II-6}
-	Let $A, B$, and $C$ be Banach spaces, and let $j: B \to C$ be an injective, bounded linear operator. Suppose that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Prove that $f$ is bounded. 
-\end{prb}
-Let $A, B, C$ be Banach spaces, and let $j: B \to C$ be an injective bounded linear operator. Further assume that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Let $\{a_{j}\} \subset A$ so that $a_{j} \to a \in A$. Also assume that $f(a_{j}) \to b \in B$. Since $j$ is bounded (hence continuous), one has that $(j \circ f)(a_j) = j(f(a_j)) \to j(b)$. On the other hand, since $j \circ f$ is bounded (hence continuous), $(j \circ f)(a_{j}) \to(j \circ f)(a) = j(f(a))$. By injectivity of $j$, one has $f(a) = b$. Thus, it follows that the graph of $f$ is closed. By the Closed Graph Theorem, we conclude that $f$ is bounded. 
-
-\subsection{Partial Differential Equations}
-\begin{prb}{2004-J-II-6}
-	Let $\varphi(x)$ be the characteristic function of the interval $1 \leq x \leq 3$. Find the value $u(1,3)$, where $u(x,t)$ denotes the solution to 
-	\begin{equation*}
-		\left\{
-		\begin{alignedat}{3}
-			&u_{tt} - u_{xx} &=0, &\qquad \text{ in $\mathbb{R}_+ \times (0,\infty)$} \\
-			&u(x,0) = &\varphi(x), &\qquad \text{ in $\mathbb{R}_+$} \\
-			&u_t(x,0)= &0, &\qquad \text{ in $\mathbb{R}_+$} \\
-			&u(0,t) = &0, &\qquad \text{ in $t \geq 0$}. 
-		\end{alignedat}
-		\right.
-	\end{equation*}
-\end{prb}
-This is the Cauchy initial value problem for the wave equation on the half-line. To solve this problem, we will use the method of odd reflection to obtain the Cauchy wave problem on the real line. Define $\ti{u}(x, t)$ and $\ti{\varphi}(x)$ such that 
-\begin{align*}
-	\begin{split}
-		\ti{u}(x, t) &= 
-		\begin{cases}
-			u(x, t), & x \geq 0 \\
-			-u(-x,t), & x < 0
-		\end{cases} \\
-		\ti{\varphi}(x) &= 
-		\begin{cases}
-			\varphi(x), & x \geq 0 \\
-			-\varphi(-x), & x < 0.
-		\end{cases}
-	\end{split}
-\end{align*}
-Then since $\ti{u}$ satisfies the wave equation on $\mathbb{R}$, d'Alembert's formula gives us the general solution, 
-\begin{equation*}
-	\ti{u}(x,t) = \frac{1}{2}[\ti{\varphi}(x + t) + \ti{\varphi}(x - t)]. 
-\end{equation*}
-In particular, one has 
-\begin{equation*}
-	u(x, t) = 
-	\begin{cases}
-		\displaystyle \frac{1}{2}[\varphi(x + t) + \varphi(x - t)], &\qquad x \geq t \geq 0 \\
-		\displaystyle \frac{1}{2}[\varphi(x + t) - \varphi(t - x)], &\qquad 0 \leq x < t. 
-	\end{cases}
-\end{equation*}
-Therefore, we find 
-\begin{equation*}
-	u(1,3) = \frac{1}{2}[\varphi(4) - \varphi(2)] = -\frac{1}{2}\varphi(2) = -\frac{1}{2}. 
-\end{equation*}
-
-\begin{prb}{E-1-1}
-	$ $\newline \vspace{-0.25cm}
-	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-		\item Show the general solution of the PDE $u_{xy} = 0$ is 
-		\begin{equation*}
-			u(x, y) = F(x) + G(y) 
-		\end{equation*}
-		for arbitrary functions $F, G$. 
-		\item Using the change of variables $\xi = x + t$, $\eta = x - t$, show $u_{tt} - u_{xx} = 0$ if and only if $u_{\xi\eta} = 0$. 
-		\item Use (a) and (b) to rederive d'Alembert's formula. 
-	\end{enumerate}
-\end{prb}
-\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-	\item Consider the PDE $u_{xy} =0$. Let $v(x,y) = u_{x}$. Then $v$ satisfies the differential equation $v_{y} = 0$. Thus since $v$ is independent of $y$, one has $u_{x}(x,y) = v(x,y) = f(x)$ for some arbitrary function $f$. But then integrating both sides with respect to $x$, and supposing that $F(x)$ is the antiderivative of $f(x)$, 
-	\begin{equation*}
-		u(x,y) = F(x) + G(y), 
-	\end{equation*}
-	where $G$ is some arbitrary function of $y$. 
-	\item Define $\xi = x + t$ and $\eta = x -t$ so that $x = (\xi + \eta)/2$ and $t = (\xi - \eta)/2$. Then, 
-	\begin{align*}
-		\begin{split}
-			u_{\xi} &= u_{x}\frac{\partial x}{\partial \xi} + u_{t}\frac{\partial t}{\partial \xi} \\
-			&= \frac{1}{2}u_{x} + \frac{1}{2}u_{t}. \\
-			u_{\xi\eta} &= \frac{1}{2}\left[u_{xx}\frac{\partial x}{\partial \eta} + u_{xt}\frac{\partial t}{\partial \eta}\right] + \frac{1}{2}\left[u_{tx}\frac{\partial x}{\partial \eta} + u_{tt}\frac{\partial t}{\partial \eta}\right] \\
-			&= \frac{1}{2}[u_{xx} -u_{xt}] + \frac{1}{2}[u_{tx} - u_{tt}] =  \frac{1}{2}[u_{tt} - u_{xx}], 
-		\end{split}
-	\end{align*}
-	where we used the fact that $u_{xt} = u_{tx}$. Thus, the proof concludes. 
-	\item Consider the initial value problem, 
-	\begin{equation*}
-		\left\{
-		\begin{alignedat}{3}
-			&u_{tt} -u_{xx} &= 0 \qquad &(\text{in $\mathbb{R} \times (0,\infty)$}) \\
-			&u = g, u_{t} &= h \qquad &(\text{on $\mathbb{R} \times \{t = 0\}$}).
-		\end{alignedat}
-		\right.
-	\end{equation*}
-	Define the change of variables $\xi = x + t$ and $\eta = x - t$ as above. By (b), $u_{tt} - u_{xx} = 0$ if and only if $u_{\xi\eta} =0$. By (a), it follows that $u$ must be of the form, 
-	\begin{equation*}
-		u(\xi, \eta) = F(\xi) + G(\eta). 
-	\end{equation*}
-	Thus, $u(x,t) = F(x + t) + G(x - t)$. Now we must match the initial conditions. At $t = 0$, 
-	\begin{align*}
-		\begin{split}
-			u(x, 0) &= F(x) + G(x) = g(x). \\
-			u_{t}(x, 0) &= F'(x) - G'(x) = h(x). 
-		\end{split}
-	\end{align*}
-	Differentiating the first equation, one first obtains the system 
-	\begin{equation*}
-		\left\{
-		\begin{alignedat}{2}
-			&F'(x) + G'(x) &= g'(x) \\
-			&F'(x) - G'(x) &= h(x). 
-		\end{alignedat}
-		\right. 
-	\end{equation*} 
-	Thus, we get 
-	\begin{equation*}
-		F'(x) = \frac{1}{2}(g'(x) +h(x)) \implies F(x + t) = \frac{1}{2}[g(x+ t) - g(0)] + \frac{1}{2}\int_{0}^{x + t}h(y)\;dy + F(0). 
-	\end{equation*}
-	Likewise, we get 
-	\begin{equation*}
-		G(x-t) = \frac{1}{2}[g(x - t) - g(0)] -\int_{0}^{x - t}h(y)\;dy + G(0). 
-	\end{equation*}
-	Adding the two equations, and using the fact that $F(0) + G(0) = g(0)$, we conclude that 
-	\begin{equation*}
-		u(x,t) = \frac{1}{2}[g(x - t) + g(x + t)] + \frac{1}{2}\int_{x - t}^{x + t}h(y)\;dy, 
-	\end{equation*}
-	which is precisely d'Alembert's formula. 
-\end{enumerate}
-
-\begin{prb}{E-1-2}
-	Assume $\mathbf{E} = (E^{1}, E^{2}, E^{3})$ and $\mathbf{B} = (B^{1}, B^{2}, B^{3})$ solve Maxwell's equations. Show 
-	\begin{equation*}
-		u_{tt} - \Delta u= 0
-	\end{equation*}
-	where $u = E^{i}$ or $B^{i}$ ($i = 1, 2, 3$). 
-\end{prb}
-Recall that Maxwell's equations are given by the following system, 
-\begin{equation*}
-	\left\{
-	\begin{alignedat}{1}
-		&\mathbf{E}_{t} = \nabla \times \mathbf{B} \\
-		&\mathbf{B}_{t} = -\nabla \times \mathbf{E} \\
-		&\mathbf{\nabla} \cdot \mathbf{B}= \nabla \cdot \mathbf{E} =0. 
-	\end{alignedat}
-	\right.
-\end{equation*}
-Assume $\mathbf{E} = (E^{1}, E^{2}, E^{3})$ and $\mathbf{B} = (B^{1}, B^{2}, B^{3})$ solve Maxwell's equations. Then differentiating the first equation and using the fact that time derivatives commute with spatial derivatives, one obtains 
-\begin{equation*}
-	\mathbf{E}_{tt} = \nabla \times \mathbf{B}_{t} = -\nabla \times (\nabla \times E) = -\nabla (\nabla \cdot \mathbf{E}) + \Delta \mathbf{E} = \Delta \mathbf{E}, 
-\end{equation*}
-where the final equality follows from the fact that $\nabla \cdot \mathbf{E} = 0$. Thus, we have 
-\begin{equation*}
-	\mathbf{E}_{tt} - \Delta \mathbf{E} = 0 \iff (E^{1}_{tt} - \Delta E^{1}, \ldots, E^{3}_{tt} - \Delta E^{3}) = \mathbf{0}. 
-\end{equation*}
-Hence, each $E^{i}$ satisfies the wave equation. Now differentiate the second equation. We get 
-\begin{equation*}
-	\mathbf{B}_{tt} =-\nabla \times \mathbf{E}_{t} = -\nabla \times (\nabla \times \mathbf{B}) = -\nabla (\nabla \cdot \mathbf{B}) + \Delta \mathbf{B} = \Delta \mathbf{B}. 
-\end{equation*}
-Thus we have, 
-\begin{equation*}
-	\mathbf{B}_{tt} - \Delta \mathbf{B} = 0 \iff (B^{1}_{tt} - \Delta B^{1}, \ldots, B^{3}_{tt} - \Delta B^{3}) = \mathbf{0}. 
-\end{equation*}
-Therefore, each $B^{i}$ satisfies the wave equation. 
-
-\begin{prb}{E-1-3}
-	(Equipartition of Energy). Let $u \in C^{2}(\mathbb{R} \times [0,\infty))$ solve the initial-value problem for the wave equation in one-dimension: 
-	\begin{equation*}
-		\left\{
-		\begin{alignedat}{3}
-			&u_{tt} - u_{xx} &=0 \qquad &(\text{in } \mathbb{R} \times (0,\infty)) \\
-			&u=g, u_t &= h \qquad &(\text{on } \mathbb{R} \times \{t = 0\}).
-		\end{alignedat}
-		\right. 
-	\end{equation*} 
-	Suppose $g,h$ have compact support. The \textit{kinetic energy} is $k(t) \coloneqq \frac{1}{2}\int_{-\infty}^{\infty}u_t^2(x,t)\;dx$ and the \textit{potential energy} is $p(t) \coloneqq \frac{1}{2}\int_{-\infty}^{\infty}u_x^2(x,t)\;dx$. Prove \vspace{-0.25cm}
+	\subsection{\texorpdfstring{$L^p$}{Lp} Spaces}
+	
+	\begin{prb}{2025-A-II-4}
+		$ $\newline \vspace{-0.65cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Characterize $L^1$ functions $f: \mathbb{R} \to \mathbb{R}$ such that $f \ast f = f$. 
+			\item The same question for $L^2$-functions. 
+		\end{enumerate}
+	\end{prb}
 	\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
-		\item $k(t) + p(t)$ is constant in $t$, 
-		\item $k(t) = p(t)$ for all large enough times $t$. 
+		\item Let $f \in L^1(\mathbb{R})$ so that $f \ast f = f$. Then taking the Fourier transform of both sides, one has $\hat{f}^2 = \hat{f}$ so that $\hat{f}(\xi) \in \{0,1\}$ for every $\xi \in \mathbb{R}^n$. Thus, $\hat{f}$ is the characteristic function of some measurable subset $E \subseteq \mathbb{R}$. We also recall that the Fourier transform maps $L^1$ functions to $C_0(\mathbb{R})$ functions, so that $\hat{f}(\xi) \to 0$ as $|\xi| \to \infty$. Therefore, $E$ must be a proper bounded subset of $\mathbb{R}$. But then $\hat{f}$ must be discontinuous at every $x \in \partial E$, which contradicts the fact that $\hat{f}$ must be continuous on $\mathbb{R}$. Therefore, we see that $E = \varnothing$. Therefore, $\hat{f} \equiv 0$. By the Fourier Inversion theorem, we conclude that $f = 0$ a.e. 
+		\item Now let $f \in L^1 \cap L^2(\mathbb{R})$ such that $f \ast f = f$. As above, we must have $\hat{f} = \chi_E$ for some measurable subset $E \subseteq\mathbb{R}$. By Plancherel's theorem, $\hat{f} \in L^2(\mathbb{R})$, which means 
+		\begin{equation*}
+			\infty > \int_{\mathbb{R}}|\hat{f}|^2 = \int_{\mathbb{R}}\chi_E^2 = \int_{\mathbb{R}}\chi_E = m(E). 
+		\end{equation*}
+		Therefore, $\hat{f}$ is the characteristic function of a finitely measured subset of $\mathbb{R}$. By the Fourier Inversion theorem, we conclude that
+		\begin{equation*}
+			f = \int_{\mathbb{R}}\chi_E(\xi)e^{2\pi i (x \cdot \xi)}\;d\xi. 
+		\end{equation*}
 	\end{enumerate}
-\end{prb}
-\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
-	\item Let us define the kinetic and potential energy, $k(t)$ and $p(t)$ as given above. We wish to show that the total energy 
+	
+	\begin{prb}{2025-J-I-2}
+		Let $\{f_n\}_{n \geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$. Suppose that 
+		\begin{equation*}
+			\int_0^1f_n^2\;dm \leq \frac{1}{n^2}
+		\end{equation*}
+		for all $n \geq 1$. Prove that $f_n$ converges to 0 a.e. on $[0,1]$. 
+	\end{prb}
+	Let $\{f_{n}\}_{n \geq 1}$ be a sequence of Lebesgue-measurable functions on $[0,1]$ so that for all $n \geq 1$, 
 	\begin{equation*}
-		e(t) = k(t) + p(t) = \frac{1}{2}\int_{-\infty}^{\infty}u_t^2 + u_x^2\;dx
+		\int_0^1f_n^2\;dm \leq \frac{1}{n^2}. 
 	\end{equation*}
-	is conserved, where $u$ is given by d'Alembert's formula, 
+	To show that $f_n \to 0$ a.e. on $[0,1]$, it suffices to show that $f_n^2 \to 0$ a.e., for which it suffices to show that the sum 
 	\begin{equation*}
-		u(x, t) = \frac{1}{2}[g(x + t) + g(x - t)] + \frac{1}{2}\int_{x - t}^{x + t}h(y)\;dy. 
+		\sum_{1}^{\infty}f_n^2
 	\end{equation*}
-	so that 
+	converges a.e. on $[0,1]$. Since the sequence of partial sums $\{\sum_1^Nf_n^2\}_{N = 1}^{\infty}$ is a monotone increasing sequence of measurable functions on $[0,1]$, the monotone convergence theorem tells us that 
+	\begin{equation*}
+		\int_{0}^{1}\sum_{1}^{\infty}f_n^2\;dm = \lim_{N \to \infty}\int_{0}^{1}\sum_{1}^{N}f_n^2\;dm = \lim_{N \to \infty}\sum_{1}^{N}\int_{0}^{1}f_n^2\;dm \leq \sum_1^\infty\frac{1}{n^2} < \infty. 
+	\end{equation*}
+	Thus, this means that $\sum_1^\infty f_n^2\;dm$ must be finite a.e., so that the sum converges. This forces the tail of the infinite sum to vanish a.e.; i.e., $\lim_{n \to \infty}f_n^2(x) = 0$ for a.e. $x \in [0,1]$. Therefore, $f_n \to 0$ a.e. on  $[0,1]$.
+	
+	\begin{prb}{2024-A-II-4}
+		Suppose $\{f_n\}$ and $f$ are in $L^\infty([0,1])$ and that $f_n \to f$ in the weak-$\ast$ topology. If $0 \leq f_n(x) < f(x) \leq 1$ almost everywhere for all $n$, prove that $f_n$ converges to $f$ in measure. 
+	\end{prb}
+	Suppose $\{f_n\}$ and $f$ are in $L^\infty([0,1])$ and that $f_n \to f$ in the weak$-\ast$ topology; i.e., assume that that for every $g \in L^1([0,1])$, $\int_{0}^{1}f_n(x)g(x)\;dx \to \int_{0}^{1}f(x)g(x)\;dx$. In particular, taking the function $g = \chi_{[0,1]} \in L^1([0,1])$, one has $\int_{0}^{1}f_n(x)\;dx \to \int_{0}^{1}f(x)\;dx$. Let $\epsilon > 0$, and define $E(\epsilon) = \{x \in [0,1]: |f(x) - f_n(x)|\geq \epsilon\}$. Then 
+	\begin{equation*}
+		0 \xleftarrow{n \to \infty} \abs{\int_{0}^{1}f_{n}(x) - f(x)\;dx} = \int_{0}^{1}f(x)- f_{n}(x)\;dx \geq \int_{E(\epsilon)}\epsilon\;dx = \epsilon m(E(\epsilon)) \geq 0, 
+	\end{equation*}
+	where the first equality follows from the fact that $0 < f(x) - f_n(x) \leq 1$ a.e. Since $\epsilon > 0$, we must have $m(E(\epsilon)) \to 0$ as $n \to \infty$. Since $\epsilon > 0$ was arbitrary, we conclude that $f_n \to f$ in measure. 
+	
+	\begin{prb}{2024-J-I-6}
+		Let $f$ and $g$ be Lebesgue-measurable functions on $\mathbb{R}$. Define the convolution 
+		\begin{equation*}
+			(f \ast g)(x) = \int_{\mathbb{R}}f(x-y)g(y)\;dy
+		\end{equation*}
+		for all $x$ such that the integral exists. Prove that if $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$ with $p, q \in (1,\infty)$ satisfying $\frac{1}{p} + \frac{1}{q} = 1$, then $f \ast g$ is a bounded continuous function on $\mathbb{R}$. 
+	\end{prb}
+	Let $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$, and define the convolution $(f \ast g)(x)$ as defined above for all $x$ such that the integral exists. First, we note that for any $x$, one has 
+	\begin{equation*}
+		\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}|f(x-y)||g(y)|\;dy \leq \norm{f}_{L^p}\norm{g}_{L^q}, 
+	\end{equation*}
+	where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
 	\begin{align*}
 		\begin{split}
-			u_t(x,t) &= \frac{1}{2}[g'(x + t) - g'(x - t) + h(x + t) + h(x - t)]. \\
-			u_x(x, t) &= \frac{1}{2}[g'(x + t) + g'(x - t) + h(x + t) - h(x - t)]. 
+			|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
+			&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
 		\end{split}
 	\end{align*}
-	Let $T > 0$, and let $K \subset \mathbb{R}$ be a compact set large enough so that $\operatorname{supp}{g}, \operatorname{supp}{h}$ are both contained in $K$. Then it follows that $u_t^2$ and $u_x^2$ are both supported in $K_{T} \coloneqq K + [-T,T]$ for all $0 \leq t \leq T$. Since $u_t^2$ and $u_x^2$ are continuous on $\mathbb{R}$ (and thus on $K_T$) for all $0 \leq t \leq T$, by the extreme value theorem, there exist finite constants $M$ and $N$ so that for all $x \in K$ and $0 \leq t \leq T$, $|u_t|^2 \leq M\chi_{K_T}$ and $|u_x^2| \leq N\chi_{K_T}$, where both dominating functions are integrable since $K_{T}$ is compact. Thus using the Dominated Convergence Theorem, taking the derivative of $e(t)$ gives us, 
+	Now we compute, 
 	\begin{align*}
 		\begin{split}
-			\dot{e}(t) &= \frac{1}{2}\frac{\partial}{\partial t}\int_{-\infty}^{\infty}u_t^2 + u_x^2\;dx = \frac{1}{2}\frac{\partial}{\partial t}\int_{K_T}u_t^2 + u_x^2\;dx \\
-			&= \frac{1}{2}\int_{K_T}\partial_t(u_t^2 + u_x^2)\;dx \\
-			&= \int_{K_T}u_tu_{tt} + u_x \cdot \partial_x u_t\;dx \\
-			&= \int_{K_T}u_t(u_{tt} - u_{xx})\;dx \qquad (\text{by integration by parts}) \\
-			&= 0, 
-		\end{split}
-	\end{align*}	
-	where there is no boundary term since $u_x, u_t$ are supported inside $K_T$. So we have shown that $\dot{e}(t) = 0$ for all $0 \leq t \leq T$. Since $T > 0$ was chosen arbitrarily, it follows that $\dot{e}(t)\equiv 0$. Therefore, the total energy is constant in $t$. 
-	\item What we wish is that in the limit $t \to \infty$, 
-	\begin{equation*}
-		\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} \to 0. 
-	\end{equation*}
-	First, we compute 
-	\begin{equation*}
-		u_t^2 - u_x^2 = h(x + t)h(x - t) - h(x + t)g'(x - t) + h(x - t)g'(x + t) - g'(x - t)g'(x + t). 
-	\end{equation*}
-	Then 
-	\begin{align*}
-		\begin{split}
-			\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} &\leq \int_{-\infty}^{\infty}|h(y)h(y - 2t)|\;dy + \int_{-\infty}^{\infty}|h(y)g'(y - 2t)|\;dy \\
-			&\quad+ \int_{-\infty}^{\infty}|h(y - 2t)g'(y)|\;dy + \int_{-\infty}^{\infty}|g'(y - 2t)g'(y)|\;dy.
+			\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
+			&= \norm{\tau_hf - f}_{L^p}. 
 		\end{split}
 	\end{align*}
-	Let $K \subset \mathbb{R}$ be a compact set large enough that contains the support of both $g$ and $h$. Then we may write, 
+	Thus, one has that for all $x \in \mathbb{R}$, 
+	\begin{equation*}
+		|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
+	\end{equation*}
+	by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
+	
+	\begin{prb}{2021-A-I-3}
+		Characterize all functions $f \in L^2(\mathbb{R}^n)$ such that $f \ast f= f$. Here $\ast$ means convolution. 
+	\end{prb}
+	Let $f \in L^1 \cap L^2(\mathbb{R}^n)$ such that $f \ast f = f$. As above, we must have $\hat{f} = \chi_E$ for some measurable subset $E \subseteq\mathbb{R}^n$. By Plancherel's theorem, $\hat{f} \in L^2(\mathbb{R}^n)$, which means 
+	\begin{equation*}
+		\infty > \int_{\mathbb{R}^n}|\hat{f}|^2 = \int_{\mathbb{R}^n}\chi_E^2 = \int_{\mathbb{R}^n}\chi_E = m(E). 
+	\end{equation*}
+	Therefore, $\hat{f}$ is the characteristic function of a finitely measured subset of $\mathbb{R}^n$. By the Fourier Inversion theorem, we conclude that
+	\begin{equation*}
+		f = \int_{\mathbb{R}^n}\chi_E(\xi)e^{2\pi i (x \cdot \xi)}\;d\xi. 
+	\end{equation*}
+	
+	\begin{prb}{2020-J-I-3}
+		Let $p >1$ be a real number and set $q = \frac{p}{p - 1}$. Suppose that $f \in L^{p}(\mathbb{R})$ and that $g \in L^q(\mathbb{R})$. Prove that $\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;d\mu = 0$, where $\mu$ denotes Lebesgue measure on $\mathbb{R}$. 
+	\end{prb}
+	Let $p > 1$ be a real number, and set $q = \frac{p}{p - 1}$. Further assume that $f \in L^p(\mathbb{R})$ and that $g \in L^q(\mathbb{R})$. By H\"older's inequality, one has 
+	\begin{equation*}
+		\abs{\int_{\mathbb{R}}f(x)g(nx)\;dx} \leq \int_{\mathbb{R}}|f(x)||g(nx)|\;dx \leq \norm{f}_{L^p} \cdot \left(\int_{\mathbb{R}}|g(nx)|^q\;dx\right)^{1/q}. 
+	\end{equation*}
+	For the latter integral, let $y = nx$ so that $dx = n^{-1}\;dy$. Then one has 
+	\begin{equation*}
+		\abs{\int_{\mathbb{R}}f(x)g(nx)\;dx} \leq \frac{1}{n^q}\norm{f}_{L^p}\cdot \left(\int_{\mathbb{R}}|g(y)|^{q}\right)^{1/q} = \frac{1}{n^{1/q}}\norm{f}_{L^p}\norm{g}_{L^q}. 
+	\end{equation*}
+	But since $p > 1$, $1/q = (1 - 1/p) > 0$. Thus as $n \to \infty$, $1/n^{1/q} \to 0$. Since the right side tends to zero in the limit $n \to \infty$, we conclude that 
+	\begin{equation*}
+		\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;dx = 0. 
+	\end{equation*}
+	
+	\begin{prb}{2019-J-I-4}
+		Let $(X, \mu)$ be a measure space and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Show that $f \in L^q(X,\mu)$ for all $q > 1$, and 
+		\begin{equation*}
+			\norm{f}_{L^\infty} = \lim_{q \to \infty}\norm{f}_{L^q}. 
+		\end{equation*}
+	\end{prb}
+	Let $(X, \mu)$ be a measure space, and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Then one has, 
+	\begin{equation*}
+		\norm{f}_{L^q} = \left(\int_{\mathbb{R}}|f|^q\right)^{1/q} = \left(\int_{\mathbb{R}}|f||f|^{q - 1}\right)^{1/q} \leq \left(\int_{\mathbb{R}}|f|\norm{f}_{L^\infty}^{q - 1}\right)^{1/q} = \norm{f}_{L^1}^{1/q}\norm{f}_{L^\infty}^{1 -(1/q)} < \infty. 
+	\end{equation*}
+	Thus, $f \in L^q$. Since $q > 1$ was arbitrary, the proof of the first statement concludes. From the above result, one has that 
+	\begin{equation*}
+		\limsup_{q \to \infty}\norm{f}_{L^q} \leq \limsup_{q \to \infty}\norm{f}_{L^1}^{1/q}\norm{f}_{L^\infty}^{1 - (1/q)} = \norm{f}_{L^\infty}. 
+	\end{equation*}
+	Now let $\epsilon > 0$ and define $E(\epsilon) = \{x \in X: |f(x)| \geq \norm{f}_{L^\infty}- \epsilon\}$; by definition of the essential supremum, $E(\epsilon)$ must have positive measure. And since $f \in L^1$, $\mu(E(\epsilon)) < \infty$. Then for any $q > 1$, one has 
+	\begin{equation*}
+		\norm{f}_{L^q} = \left(\int_{\mathbb{R}}|f|^q\right)^{1/q} \geq \left(\int_{E(\epsilon)}(\norm{f}_{L^\infty} - \epsilon)^q\right)^{1/q} =(\norm{f}_{L^\infty} - \epsilon)m(E(\epsilon))^{1/q}. 
+	\end{equation*}
+	Thus, one has 
+	\begin{equation*}
+		\liminf_{q \to \infty}\norm{f}_{L^q} \geq \liminf_{q \to \infty}(\norm{f}_{L^\infty} - \epsilon)\mu(E(\epsilon))^{1/q} = \norm{f}_{L^\infty} - \epsilon. 
+	\end{equation*}
+	Since $\epsilon > 0$ was arbitrary, taking the limit $\epsilon \to 0$ gives $\liminf_{q \to \infty}\norm{f}_{L^q} \geq \norm{f}_{L^\infty}$. Thus, the proof concludes. 
+	
+	\begin{prb}{2017-J-I-2}
+		Recall that $L^2(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R} \to \mathbb{C}$ so that $|f|^2$ is integrable. Show that the linear map
+		\begin{equation*}
+			T: L^2(\mathbb{R})  \to L^2(\mathbb{R}), \qquad T(f)(x) \coloneqq f(x-1), \qquad \forall x \in \mathbb{R}, f \in L^2(\mathbb{R}). 
+		\end{equation*}
+		has no non-zero eigenvector.
+	\end{prb}
+	Let $T: L^2(\mathbb{R}) \to T^2(\mathbb{R})$ be the linear map described above, and assume to the contrary that $T$ has a non-zero eigenvector $f \in L^2(\mathbb{R})$, with eigenvector $\lambda \in \mathbb{C} \setminus \{0\}$. By definition of $T$, this means that for every $x \in \mathbb{R}$, $\lambda f(x) = f(x - 1)$. We will first two show two results, 
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item ($|\lambda| = 1$): Since $\lambda f(x) = f(x - 1)$ for every $x\in \mathbb{R}$, one has 
+		\begin{equation*}
+			|\lambda|^2\norm{f}_{L^2(\mathbb{R})}^2 = |\lambda|^2\int_{\mathbb{R}}|f(x)|^2\;dx = \int_{\mathbb{R}}|f(x-1)|^2\;dx  = \norm{\tau_{1}f}_{L^2(\mathbb{R})}^2 = \norm{f}_{L^2(\mathbb{R})}^2, 
+		\end{equation*}
+		so that $|\lambda|^2 = 1 \implies |\lambda| = 1$ since $0 \neq \norm{f}^2_{L^2(\mathbb{R})} < \infty$. 
+		\item ($\norm{f}_{L^{2}([0,1])} \neq 0$): Assume to the contrary that $\norm{f}_{L^2([0,1])} = 0$ so that $f = 0$ a.e on $[0,1]$. Then by translation invariance of $f$, for every $n \in \mathbb{Z}$, $f = 0$ a.e. on $[n, n + 1]$. But this forces $f = 0$ a.e. on $\mathbb{R}$ which contradicts our hypothesis that $f$ is a non-zero eigenvector. 
+	\end{enumerate}
+	Now by induction, one can show that for any finite positive integer $n$, 
+	\begin{equation*}
+		\int_{0}^{n}|f(x)|^2\;dx = n \cdot \norm{f}_{L^{2}([0,1])}^2. 
+	\end{equation*}
+	Since $|f(x)|^2\chi_{[0,n]}$ is a monotone increasing sequence of measurable functions, by the Monotone Convergence Theorem, one has that 
+	\begin{equation*}
+		\infty > \norm{f}_{L^{2}(\mathbb{R})}^2 = \int_{\mathbb{R}}|f(x)|^2\;dx \geq \int_{\mathbb{R}_{+}}|f(x)|^2\;dx = \lim_{n \to \infty}\int_{0}^{n}|f(x)|^2\;dx = \lim_{n \to \infty}n \cdot \norm{f}_{L^2([0,1])}^2 = \infty, 
+	\end{equation*}
+	which is a contradiction! Therefore, $T$ cannot have a non-zero eigenvector. 
+	
+	\begin{prb}{2017-J-II-2}
+		Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^2([0,1])$ we have that $fg \in L^2([0,1])$. Show $f$ is in $L^\infty([0,1])$. 
+	\end{prb}
+	Suppose $f: [0,1] \to \mathbb{R}$ is a measurable function, and further assume that for all $g \in L^2([0,1])$, $fg \in L^2([0,1])$. Define the map $T: L^2([0,1]) \to \mathbb{R}$ by $Tg\coloneqq fg$;  it follows immediately that $T$ is a linear map. Now let $\{g_n\}_{n =1}^{\infty} \subset L^2([0,1])$ such that $g_n \to 0$ under the $L^2$-norm. Further assume that $\{Tg_n\}_{n = 1}^{\infty}$ converges to some $y \in L^2([0,1])$. First, we know that there exists some subsequence $\{g_{n_{j}}\}_{j = 1}^\infty$ so that $g_{n_{j}} \to 0$ pointwise a.e. But then $Tg_{n_{j}} \to y$ under the $L^2$-norm. This implies that there exists a further subsequence $g_{n_{j_{k}}}$ $Tg_{n_{j_{k}}}$ that converges to $y$ pointwise a.e. By construction, $g_{n_{j_{k}}} \to 0$ pointwise a.e., so that $Tg_{n_{j_{k}}} = f(x)g_{n_{j_{k}}}(x) \to 0$ pointwise a.e. Thus one has that $y = 0$ a.e. This implies that the graph of $T$ is closed. Thus by the Closed Graph theorem, $T$ is a bounded linear map. I.e., there exists some $C > 0$ so that forr every $g \in L^2([0,1])$, $\norm{fg}_{L^2([0,1])} \leq C\norm{g}_{L^2([0,1])}$. In particular, one has that $\norm{f}_{L^2([0,1])} \leq C$. Now for each $n \geq 1$, let $E_{n} = \{x \in [0,1]: |f(x)|\geq C + n^{-1}\}$. If $m(E_{n}) > 0$, then we have 
+	\begin{equation*}
+		\left(C + \frac{1}{n}\right)m(E_n)^{1/2} \leq \norm{f\chi_{E_{n}}}_{L^{2}([0,1])} \leq Cm(E_n)^{1/2}, 
+	\end{equation*}
+	so that $(C + 1/n) \leq C$, which is a contradiction. Thus, $m(E_n) =0$ for all $n$, which means that $|f(x)| \leq C$ for a.e. $x$, and thus $f \in L^\infty([0,1])$. 
+	
+	
+	\begin{prb}{2015-A-II-6}
+		Let $1 < p < \infty$ and let $q$ be its conjugate exponent, that is, let $q$ be defined by $\frac{1}{p} + \frac{1}{q} = 1$. Let $f \in L^p(\mathbb{R}^n)$ and $g \in L^q(\mathbb{R}^n)$, with respect to the Lebesgue measure. Show that the convolution $f \ast g$ is uniformly continuous on $\mathbb{R}^n$ and that $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$. 
+	\end{prb}
+	Let $f \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$, and define the convolution $(f \ast g)(x)$ as defined above for all $x$ such that the integral exists. First, we note that for any $x$, one has 
+	\begin{equation*}
+		\abs{(f \ast g)(x)} \leq \int_{\mathbb{R}}|f(x-y)||g(y)|\;dy \leq \norm{f}_{L^p}\norm{g}_{L^q}, 
+	\end{equation*}
+	where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
 	\begin{align*}
 		\begin{split}
-			\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} &\leq \int_{K}|h(y)h(y - 2t)|\;dy + \int_{K}|h(y)g'(y - 2t)|\;dy \\
-			&\quad+ \int_{K}|h(y - 2t)g'(y)|\;dy + \int_{K}|g'(y - 2t)g'(y)|\;dy.
+			|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
+			&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
 		\end{split}
 	\end{align*}
-	We will only show that the first term on the right vanishes since the work for the remaining terms is identical. Since $h(u) \to 0$ as $|u| \to \infty$ (by compact support of $h$), we know that pointwise $|h(y)h(y - 2t)| \to 0$ as $t \to \infty$. Next since $h$ is continuous, there exists some finite $M > 0$ so that $|h(y)|, |h(y - 2t)| \leq M$ for all $y \in K$. Thus, $|h(y)h(y-2t)| \leq M^2\chi_{K} \in L^1(\mathbb{R})$ since $K$ is compact. Hence, by the Dominated Convergence Theorem, one has that the first term vanishes as $t \to \infty$. As we stated before, the remaining three terms also vanish as $t \to \infty$. Thus, we conclude that as $t \to \infty$,
+	Now we compute, 
+	\begin{align*}
+		\begin{split}
+			\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
+			&= \norm{\tau_hf - f}_{L^p}. 
+		\end{split}
+	\end{align*}
+	Thus, one has that for all $x \in \mathbb{R}$, 
 	\begin{equation*}
-		\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} \to 0. 
+		|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
 	\end{equation*}
-\end{enumerate}
-
-\begin{prb}{E-1-4}
-	Let $u$ solve 
+	by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
+	
+	\begin{prb}{2015-J-II-5}
+		Let $E$ be a Lebesgue measurable subset of the real numbers whose Lebesgue measure is finite. Let $\chi_E: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$ (which equals $1$ on $E$, and $0$ otherwise). Show that $\chi_E(x-t)$ converges to $\chi_E(x)$ in $L^1$ as $t \to 0$. 
+	\end{prb}
+	Let $E$ be a Lebesgue measurable subset of the real numbers whose Lebesgue measure is finite, and let $\chi_{E}: \mathbb{R} \to \{0,1\}$ be the characteristic function of $E$. Since $E$ has finite measure, $\chi_{E} \in L^{1}(\mathbb{R})$. Fix an arbitrary $\epsilon > 0$. By the density of compactly supported continuous functions in $L^{1}(\mathbb{R})$, there exists some $\varphi \in C_{c}^{\infty}(\mathbb{R})$ so that $\norm{\chi_E - \varphi}_{L^1} < \epsilon/3$. By continuity of $\varphi$, there exists some $R > 0$ so that for all $|t|\leq R$, $\norm{\tau_{t}\varphi - \varphi}_{L^1} < \epsilon/3$. Thus for all $|t| \leq R$, 
+	\begin{equation*}
+		\norm{\tau_{t}\chi_{E} - \chi_{E}}_{L^1} \leq \norm{\tau_{t}\chi_{E} - \tau_t\varphi}_{L^1} + \norm{\tau_{t}\varphi - \varphi}_{L^1} + \norm{\varphi - \chi_{E}}_{L^1} = \epsilon, 
+	\end{equation*}
+	where the first term on the right side is equal to the last term on the right side by translation invariance of the $L^1$ norm. Thus, we conclude that $\chi_{E}(x - t) \to \chi_{E}(x)$ in $L^1$ as $t \to 0$. 
+	
+	
+	\begin{prb}{2009-A-I-2}
+		Let $(X,\mu)$ be a measure space, and let $f$ be a measurable function on $X$. If there is a real constant $C > 0$ such that 
+		\begin{equation*}
+			f \in L^p(X) \quad\text{and} \quad \norm{f}_{L^p} \leq C
+		\end{equation*}
+		for all real numbers $p \in (1,\infty)$, prove that 
+		\begin{equation*}
+			f \in L^\infty(X) \quad \text{and} \quad \norm{f}_{L^\infty} \leq C. 
+		\end{equation*}
+	\end{prb}
+	Let $f \in L^p(X)$ for all real numbers $p \in (1, \infty)$, and assume that there exists some $C > 0$ so that for all $p > 1$, one has $\norm{f}_{L^p} \leq C$. Assume to the contrary that $f \notin L^\infty(X)$. By definition, this means that for every $\epsilon > 0$, the set $A_{\epsilon} = \{x \in X: |f(x)| \geq C + \epsilon\}$ has positive measure (since $f\in L^p(X,\mu)$ for all $p > 1$, $\mu(A_{\epsilon}) < \infty$ for all $\epsilon > 0$). This implies the following: 
+	\begin{equation*}
+		C \geq \left(\int_{X}|f|^p\;d\mu\right)^{1/p} \geq \left(\int_{A_{\epsilon}}(C + \epsilon)^p\;d\mu\right)^{1/p} = (C + \epsilon) \cdot \mu(A_{\epsilon})^{1/q}. 
+	\end{equation*}
+	Taking the limit $q \to \infty$, since $0 < \mu(A_{\epsilon}) < \infty$, one obtains $C \geq C + \epsilon$, which is a contradiction! Thus by contradiction, for every $\epsilon > 0$, $\mu(A_{\epsilon}) = 0$. This shows that $f$ is essentially bounded (so that $f \in L^\infty(X,\mu)$) and 
+	\begin{equation*}
+		\norm{f}_{L^\infty} = \inf\brac*{M > 0: |f(x)| \leq M \text{ a.e.}} \leq C. 
+	\end{equation*}
+	
+	
+	\begin{prb}{2009-J-II-1}
+		$ $\newline\vspace{-0.65cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Say $1 < p < \infty$. Exhibit, with proof, a function $f \in L^1(0,1)$ which is not in $L^p(0,1)$. 
+			\item Exhibit, with proof, a function $f \in L^1([0,1])$ which is not in $L^p(0,1)$ for any $p > 1$. (Hint: try to define $F$ piecewise, using the functions of (a)). 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Fix $1 <p < \infty$. Consider the function $f(x) = 1/x^{1/p}$ on $[0,1]$. $f \in L^1(0,1)$ since 
+		\begin{equation*}
+			\int_{0}^{1}|f(x)|\;dx = \int_{0}^{1}\frac{1}{x^{1/p}}\;dx =\frac{p}{p - 1} < \infty. 
+		\end{equation*}
+		On the other hand, $f \notin L^p(0,1)$, since $|f(x)|^p = 1/x$ is not integrable over $[0,1]$ ($\lim_{x \to 0}\ln(x) = \text{DNE}$). 
+		\item Now construct the following measurable function, 
+		\begin{equation*}
+			f(x)|_{[(n + 1)^{-1}, n^{-1}]} = \frac{1}{n^{3}\left(x - \frac{1}{n + 1}\right)^{1 - 1/n}}. 
+		\end{equation*}
+		Then it is straightforward to see that $f(x)$ is integrable: 
+		\begin{equation*}
+			\int_{0}^{1}|f(x)|\;dx = \sum_{n = 1}^{\infty}\int_{1/(n + 1)}^{1/n}\frac{1}{n^3(x - 1/(n + 1))^{1 - 1/n}}\;dx = \sum_{n = 1}^{\infty}\frac{(n^2 + n)^{-1/n}}{n^2} < \infty. 
+		\end{equation*}
+		On the other hand, $f$ does not belong to $L^p(0,1)$ for any $p > 1$ since $1 - (1/n) \to 1$ implies that the exponent $p \cdot (1 - 1/n)$ of a term eventually exceeds 1. 
+	\end{enumerate}
+	
+	
+	\subsection{Weierstrass Approximation}
+	\begin{prb}{2021-A-II-6}
+		Suppose $\mu$ is a finite positive measure of compact support and 
+		\begin{equation*}
+			\int_\mathbb{R}x^n\;d\mu(x) = 0
+		\end{equation*}
+		for every $n \in \{0,1,2, \ldots\}$. Show that $\mu$ is the zero measure. 
+	\end{prb}
+	Let $\mu$ be a finite positive measure on $\mathbb{R}$ of compact support; let $[a, b] \subset \mathbb{R}$ be a compact set containing the support of $\mu$. Further assume $\int_{a}^{b}x^n\;d\mu(x) = \int_\mathbb{R}x^n\;d\mu(x) =0$ for all $n\in \{0, 1, 2, \ldots\}$. Fix an arbitrary continuous function $f \in C([a,b])$; by the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[a,b]$ so that $p_j \to f$ uniformly on $[a,b]$. By the given hypothesis, since $\int_{a}^{b}p_j\;d\mu(x) =0$ for every $j$, by uniform convergence, $\int_{a}^{b}f\;d\mu(x) = 0$. Since $f$ was arbitrary, it follows that $\int_{\mathbb{R}}f\;d\mu(x) = \int_{a}^{b}f\;d\mu(x) = 0$ for every continuous function $f$ on $[a,b]$. Now let $U$ be an open subset of $\mathbb{R}$ so that $[a,b] \Subset U$. Then by Urysohn's lemma, there exists a nonnegative continuous function $f$ on $U$ such that $f|_{[a,b]} = 1$ and $f|_{U^c} =0$. Moreover, we notice that $f \geq \chi_{[a,b]}$ everywhere. Therefore, 
+	\begin{equation*}
+		0 \leq \mu([a,b]) = \int_{\mathbb{R}}\chi_{[a,b]}\;d\mu(x) \leq \int_{\mathbb{R}}f\;d\mu(x) = 0.  
+	\end{equation*}
+	Thus, $\mu([a,b]) = 0$. Since $[a,b]$ contains the support of $\mu$, we conclude that 
+	\begin{equation*}
+		\mu(\mathbb{R}) = \mu(\mathbb{R}\setminus[a,b]) + \mu([a,b]) = 0 + 0 = 0. 
+	\end{equation*}
+	Thus $\mu$ is the zero measure. 
+	
+	\begin{prb}{2018-A-I-5}
+		If $\{\mu_{n}\}$ are positive finite measures on $[0,1]$ that converge in the weak-$\ast$ topology to $\mu$, prove $\{\mu_{n} \times \mu_{n}\}$ converges in the weak-$\ast$ topology. 
+	\end{prb}
+	Let $\{\mu_{n}\}$ be positive finite measures on $[0,1]$ that converge in the weak-$\ast$ topology to $\mu$. In particular, one has that $\{\mu_{n}([0,1])\}_{n=1}^{\infty}$ is a convergent sequence of real numbers. Since every convergent sequence of real numbers is bounded, there exists some finite $M > 0$ so that $\mu_{n}([0,1]) \leq M$ for all $n$, and hence, $\mu([0,1]) \leq M$. Let $f \in C([0,1]^{2})$. Fix some $\epsilon > 0$. By the Stone-Weierstrass theorem\footnote{\href{https://en.wikipedia.org/wiki/Stone\%E2\%80\%93Weierstrass\_theorem\#Applications\_2}{https://en.wikipedia.org/wiki/Stone\%E2\%80\%93Weierstrass\_theorem\#Applications\_2}}, there exist separate finite collections $\{f_{j}\}_{j = 1}^{k}$ and $\{g_{j}\}_{j = 1}^{k}$ of continuous functions in $[0,1]$ so that 
+	\begin{equation*}
+		\sup_{(x, y) \in [0,1]^{2}}\abs{f - \sum_{1}^{k}f_{j}g_{j}} < \frac{\epsilon}{3M^{2}}. 
+	\end{equation*}
+	This means that, 
+	\begin{align*}
+		\begin{split}
+			\int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu \times \mu) &< \int \frac{\epsilon}{3M^{2}}\;d(\mu\times\mu) \leq \frac{\epsilon}{3}. \\
+			\int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu_n \times \mu_n) & < \int \frac{\epsilon}{3M^2}\;d(\mu_n \times \mu_n) \leq \frac{\epsilon}{3}, \qquad \forall n \geq 1. 
+		\end{split}
+	\end{align*}
+	Next, since each $f_{j}, g_{j}$ is integrable on $[0,1]$ (with respect to every $\mu_n$ and $\mu$), by the Fubini-Tonelli theorem and our hypothesis on the $\mu_{n}$, 
+	\begin{equation*}
+		\int f_{j}g_{j}\;d(\mu_n \times \mu_n) = \left(\int f_{j}\;d\mu_n\right)\left(\int g_{j}\;d\mu_n\right) \xrightarrow{n \to \infty}\left(\int f_j\;d\mu\right)\left(\int g_j\;d\mu\right) = \int f_jg_j\;d(\mu \times \mu). 
+	\end{equation*}
+	This means that given our choice of $\epsilon$, there exists some $N \in \mathbb{N}$ large enough so that for all $n\geq N$, one has 
+	\begin{equation*}
+		\abs{\int f_{j}g_j\;d(\mu \times \mu) - \int f_jg_j\;d(\mu_n\times\mu_n)} \leq \frac{\epsilon}{3k}. 
+	\end{equation*}
+	
+	So then we note that for all $n \geq N$, one has 
+	\begin{align*}
+		\begin{split}
+			\abs{\int f\;d(\mu\times \mu) - \int f\;d(\mu_n \times \mu_n)}&\leq \int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu\times\mu) \\
+			&\qquad + \abs{\sum_{1}^{k}\left(\int f_{j}g_{j}\;d(\mu\times\mu) - \int f_{j}g_{j}\;d(\mu_n\times\mu_n)\right)} \\
+			&\qquad\qquad + \int \abs{f - \sum_{1}^{k}f_{j}g_{j}}\;d(\mu_n\times\mu_n) \\
+			&\leq \int \abs{f - \sum_1^kf_jg_j\;d(\mu \times \mu)} + \int \abs{f - \sum_1^kf_jg_j}\;d(\mu_n\times\mu_n) \\
+			&\qquad \quad + \sum_1^k\abs{\int f_jg_j\;d(\mu\times\mu) - \int f_jg_j\;d(\mu_n\times\mu_n)} \\
+			&\leq \frac{2\epsilon}{3} + \sum_{1}^{k}\frac{\epsilon}{3k}  = \frac{2\epsilon}{3} + \frac{\epsilon}{3} = \epsilon. 
+		\end{split}
+	\end{align*}
+	Since $f\in C([0,1]^2)$ was arbitrary, we conclude that $\mu_n \times \mu_n \to \mu \times \mu$ in the weak-$\ast$ topology. 
+	
+	\begin{prb}{2017-A-II-1}
+		Suppose that $f \in C([0,1])$ is a continuous real-valued function on $[0,1]$ for which 
+		\begin{equation*}
+			\int_0^1x^nf(x)\;dx = 0
+		\end{equation*}
+		for all non-negative integers $n$. Does it follows that $f(x) = 0$ for all $x \in [0,1]$. 
+	\end{prb}
+	Let $f$ be a continuous real-valued function on $[0,1]$ such that for all non-negative integers $n$, 
+	\begin{equation*}
+		\int_0^1x^nf(x)\;dx = 0. 
+	\end{equation*}
+	By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[0,1]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(x) = a^{(j)}_nx^n + a^{(j)}_{n-1}x^{n-1} + \dotsm + a^{(j)}_{1}x + a_{0}^{(j)}$, 
+	\begin{equation*}
+		\int_{0}^{1}p_j(x)f(x)\;dx = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{0}^1x^{k}f(x)\;dx = 0. 
+	\end{equation*}
+	Thus, uniform convergence tells us that in the limit $j \to \infty$, 
+	\begin{equation*}
+		\int_{0}^{1}f(x)^2\;dx = 0. 
+	\end{equation*}
+	Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [0,1]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $x_0$ in $[0,1]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[0,1]$. 
+	
+	\begin{prb}{2014-A-II-5}
+		Suppose $f$ is a continuous function on $[0,1]$ and $\int_0^1f(t)t^n\;dt = 0$ for every $n = 0,1,2\ldots$. Prove that $f$ is the zero function. 
+	\end{prb}
+	Let $f$ be a continuous real-valued function on $[0,1]$ such that for all non-negative integers $n$, 
+	\begin{equation*}
+		\int_0^1t^nf(t)\;dt = 0. 
+	\end{equation*}
+	By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[0,1]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(t) = a^{(j)}_nt^n + a^{(j)}_{n-1}t^{n-1} + \dotsm + a^{(j)}_{1}t + a_{0}^{(j)}$, 
+	\begin{equation*}
+		\int_{0}^{1}p_j(t)f(t)\;dt = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{0}^1t^{k}f(t)\;dt = 0. 
+	\end{equation*}
+	Thus, uniform convergence tells us that in the limit $j \to \infty$, 
+	\begin{equation*}
+		\int_{0}^{1}f(t)^2\;dt = 0. 
+	\end{equation*}
+	Since $f^2 \geq 0$, we must have $f(t)^2 = 0$ a.e., which implies $f(t) =0$ a.e. Suppose there exists some $t_0 \in [0,1]$ such that $f(t_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $t_0$ in $[0,1]$ so that $f(t) \neq 0$ for any $t \in U$. But then $U$ has nonzero measure, contradicting our result that $f(t) =0 $ a.e. Thus by contradiction, $f(t) = 0$ everywhere on $[0,1]$. 
+	
+	\begin{prb}{1998-J-II-1}
+		Let $f$ be a measurable compactly supported function on $\mathbb{R}$ where 
+		\begin{equation*}
+			\int f(x)x^n\;dx = 0 
+		\end{equation*}
+		for all $n\geq 0$. Show that $f$ is zero almost everywhere. 
+	\end{prb}
+	Let $f$ be a measurable compactly supported function on $\mathbb{R}$ such that for all $n \geq 0$, 
+	\begin{equation*}
+		\int f(x)x^n\;dx = 0. 
+	\end{equation*}
+	Let $K = [a,b]$ be a compact subset of $\mathbb{R}$ that contains the support of $f$. By the Stone-Weierstrass Theorem, there exists a sequence $\{p_j\}_{j = 1}^{\infty}$ of polynomials on $[a,b]$ such that $p_j \to f$ uniformly. By additivity of the Lebesgue integral, for each $p_j(x) = a^{(j)}_nx^n + a^{(j)}_{n-1}x^{n-1} + \dotsm + a^{(j)}_{1}x + a_{0}^{(j)}$, 
+	\begin{equation*}
+		\int_{a}^{b}p_j(x)f(x)\;dx = \sum_{k  = 0}^{n}a_{k}^{(j)}\int_{a}^{b}x^{k}f(x)\;dx = 0. 
+	\end{equation*}
+	Thus, uniform convergence tells us that in the limit $j \to \infty$, 
+	\begin{equation*}
+		\int_{a}^{b}f(x)^2\;dx = 0. 
+	\end{equation*}
+	Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [a,b]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[a,b]$, there exists a nonempty open interval $U$ of $x_0$ in $[a,b]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[a,b]$. 
+	
+	\subsection{Baire Category Theorem}
+	
+	\begin{prb}{2025-J-II-5}
+		Let $V$ be a topological vector space whose topology is Hausdorff. Let $X_1$ and $X_2$ be two Banach spaces, and assume that there exist continuous linear bijections $F_1: X_1 \to V$ and $F_2: X_2 \to V$. Show that there is a continuous linear bijection $G: X_1 \to X_2$. 
+	\end{prb}
+	Let $V$ be a topological vector space whose topology is Hausdorff, and let $F_{1}: X_1 \to V$, $F_2: X_2 \to V$ be continuous linear bijections from the two Banach spaces $X_1, X_2$ onto $V$. Consider the map, $G = F_2^{-1} \circ F_1: X_1 \to X_2$. First, we will show that $G$ is linear. Let $\alpha, \beta \in \mathbb{C}$, and $x, y \in X_1$. Then 
+	\begin{equation*}
+		G(\alpha x + \beta y) = F_{2}^{-1}(F(\alpha x + \beta y)) = F_{2}^{-1}(\alpha F(x) + \beta F(y)) = \alpha G(x) + \beta G(y), 
+	\end{equation*}
+	where we used the fact that $F_{1}, F_{2}^{-1}$ are both linear maps. Now we will show that $G$ is bijective: fix an arbitrary $x \in X_2$. By surjectivity of $F_2^{-1}$, there exists some $v \in V$ so that $F_{2}^{-1}(v) = x$. By surjectivity of $F_1$, there exists some $y \in X_1$ so that $F_1(y) = v$. But then, $G(y) = x$. Now we will show that $G$ is injective. Suppose $G(x) = G(y) \iff F_{2}^{-1}(F_{1}(x)) = F_{2}^{-1}(F_{1}(y))$ for $x, y \in X_1$. Since $F_{2}^{-1}$ is injective, $F_1(x) = F_{1}(y)$. Since $F_1$ is injective, $x = y$. Thus, $G$ is a linear bijection from $X_1$ to $X_2$. 
+	
+	It remains to be seen that $G$ is continuous; we will use the Closed Graph Theorem to show that $G$ is bounded. Let $\{x_{j}\} \subset X$ such that $x_{j} \to x \in X$. Further assume that $G(x_j) \to y$. By continuity of $F_{1}$, one has that $F_{1}(x_j) \to F_1(x)$. Now since $G(x_j) \to y$, one has by continuity of $F_2$ that $F_1(x_j) \to F_2(y)$. Since limits are unique in Hausdorff spaces, we must have $F_1(x) = F_2(y)$ so that $y = F_{2}^{-1}(F_1(x)) = G(x)$. Thus, the graph of $G$ is closed. By the Closed Graph Theorem, $G$ is a bounded linear bijection between Banach spaces, and thus must be a continuous linear bijection. 
+	
+	\begin{prb}{2024-J-II-5}
+		Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty, \infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: You may use the Baire Category Theorem. 
+	\end{prb}
+	
+	Let $P$ be the vector space over $\mathbb{R}$ of finite-degree polynomials in the variable $x\in (-\infty, \infty)$. Assume to the contrary that $P$ is complete under some norm $\norm{\empspace}$. Let us write $P$ as the following countable union, 
+	\begin{equation*}
+		P = \bigcup_{n \geq 0} P_{n}, 
+	\end{equation*}
+	where each $P_n$ denotes the subspace of all polynomials over $\mathbb{R}$ of degree at most $n$. By the Baire Category Theorem, there exists at least one $n_{0} \geq 0$ so that $P_{n_{0}}$ is not nowhere dense; i.e., $\overline{P}_{n_{0}}$ does not have empty interior. Since finite-dimensional subspaces of Banach spaces are closed, $P_{n_{0}}$ is closed so that $\overline{P}_{n_{0}} = P_{n_{0}}$. Let $p\in P_{n_{0}}$ be an arbitrary polynomial. Then it follows that there exists some $r > 0$ such that the ball $B(p,r)$ is contained inside $P_{n_{0}}$. Fix an arbitrary $q \in P$, and define 
+	\begin{equation*}
+		\ti{q} \coloneqq p + \frac{r(q - p)}{2\norm{p - q}}. 
+	\end{equation*}
+	Then it follows that $\ti{q} \in B(p,r)$ since 
+	\begin{equation*}
+		\norm{\ti{q} -p} = \norm{\frac{r(q - p)}{2\norm{p - q}}} = r/2 < r. 
+	\end{equation*}
+	But then, since 
+	\begin{equation*}
+		q = 2\norm{q - p}\ti{q} + p(r - 2\norm{q - p}), 
+	\end{equation*}
+	it follows that $q \in P_{n_{0}}$. Since $P_{n_{0}} \subset P$ and we have now shown that $P \subset P_{n_{0}}$, we have $P = P_{n_{0}}$. But this is a contradiction since there exist polynomials with real coefficients of degree $> n_{0}$. Thus by contradiction, $P$ cannot be a Banach space with respect to any norm. 
+	
+	\begin{prb}{Fat Cantor Set}
+		There exists a closed nowhere dense subset $E \subset \mathbb{R}^n$ of positive Lebesgue measure. 
+	\end{prb}
+	We will show that such a set exists by explicitly constructing the \textbf{Fat Cantor set}. Start by considering the cube $[0,1]^{n} \subset \mathbb{R}^n$. Along each dimension, we will remove the middle $1/4$th (i.e., the open interval $(3/8,5/8)$). This leaves us the set 
+	\begin{equation*}
+		\left(\left[0, \frac{3}{8}\right] \cup \left[\frac{5}{8}, 1\right]\right)^{n}. 
+	\end{equation*}
+	Now in each dimension, we remove the open middle $1/16$th from each of the remaining intervals, so that we obtain the set 
+	\begin{equation*}
+		\left(\left[0, \frac{5}{32}\right] \cup \left[\frac{7}{32}, \frac{3}{8}\right] \cup \left[\frac{5}{8}, \frac{25}{32}\right] \cup \left[\frac{27}{32}, 1\right]\right)^{n}. 
+	\end{equation*}
+	In this way, we keep removing intervals of width $4^{-m}$ from each of the remaining $2^{m-1}$ intervals along each dimension in each step. Altogether, we remove from each dimension intervals of total length
+	\begin{equation*}
+		\sum_{m = 0}^{\infty}\frac{2^{m}}{2^{2m + 2}} = \frac{1}{2}. 
+	\end{equation*}
+	This means that the total volume of the set $E$ obtained by repeating this procedure indefinitely has Lebesgue measure $1/2^n > 0$. Now it follows that $E$ is closed: each dimension of $E$ is obtained as follows: $[0,1]\setminus U$, where $U$ is the countable union of all the open intervals removed, and hence is open. Thus each dimension of $E$ is closed. Since the Cartesian product of closed sets is closed under the product topology, $E$ is closed. On the other hand, the fact that $E$ is nowhere dense follows immediately from the fact that the length of the remaining intervals along each dimension of $E$ shrink to zero. 
+	
+	\begin{prb}{2022-J-II-3}
+		Prove or give a counterexample: if $E \subset \mathbb{R}$ is a Lebesgue measurable subset of positive Lebesgue measure, then some countable union of translates of $E$ covers $\mathbb{R}$. 
+	\end{prb}
+	We will show this statement is false. Consider the fat Cantor set $E$ constructed above. We've shown that $E$ is a positive Lebesgue measurable subset of $\mathbb{R}$ that is nowhere dense. We also know that $\mathbb{R}$ is a complete metric space under the Euclidean metric. By Baire's Category Theorem, $\mathbb{R}$ cannot be the countable union of nowhere dense sets, and thus cannot be the countable union of translates of $E$. 
+	
+	\begin{prb}{1997-A-II-6}
+		Let $A, B$, and $C$ be Banach spaces, and let $j: B \to C$ be an injective, bounded linear operator. Suppose that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Prove that $f$ is bounded. 
+	\end{prb}
+	Let $A, B, C$ be Banach spaces, and let $j: B \to C$ be an injective bounded linear operator. Further assume that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Let $\{a_{j}\} \subset A$ so that $a_{j} \to a \in A$. Also assume that $f(a_{j}) \to b \in B$. Since $j$ is bounded (hence continuous), one has that $(j \circ f)(a_j) = j(f(a_j)) \to j(b)$. On the other hand, since $j \circ f$ is bounded (hence continuous), $(j \circ f)(a_{j}) \to(j \circ f)(a) = j(f(a))$. By injectivity of $j$, one has $f(a) = b$. Thus, it follows that the graph of $f$ is closed. By the Closed Graph Theorem, we conclude that $f$ is bounded. 
+	
+	\subsection{Partial Differential Equations}
+	\begin{prb}{2004-J-II-6}
+		Let $\varphi(x)$ be the characteristic function of the interval $1 \leq x \leq 3$. Find the value $u(1,3)$, where $u(x,t)$ denotes the solution to 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{3}
+				&u_{tt} - u_{xx} &=0, &\qquad \text{ in $\mathbb{R}_+ \times (0,\infty)$} \\
+				&u(x,0) = &\varphi(x), &\qquad \text{ in $\mathbb{R}_+$} \\
+				&u_t(x,0)= &0, &\qquad \text{ in $\mathbb{R}_+$} \\
+				&u(0,t) = &0, &\qquad \text{ in $t \geq 0$}. 
+			\end{alignedat}
+			\right.
+		\end{equation*}
+	\end{prb}
+	This is the Cauchy initial value problem for the wave equation on the half-line. To solve this problem, we will use the method of odd reflection to obtain the Cauchy wave problem on the real line. Define $\ti{u}(x, t)$ and $\ti{\varphi}(x)$ such that 
+	\begin{align*}
+		\begin{split}
+			\ti{u}(x, t) &= 
+			\begin{cases}
+				u(x, t), & x \geq 0 \\
+				-u(-x,t), & x < 0
+			\end{cases} \\
+			\ti{\varphi}(x) &= 
+			\begin{cases}
+				\varphi(x), & x \geq 0 \\
+				-\varphi(-x), & x < 0.
+			\end{cases}
+		\end{split}
+	\end{align*}
+	Then since $\ti{u}$ satisfies the wave equation on $\mathbb{R}$, d'Alembert's formula gives us the general solution, 
+	\begin{equation*}
+		\ti{u}(x,t) = \frac{1}{2}[\ti{\varphi}(x + t) + \ti{\varphi}(x - t)]. 
+	\end{equation*}
+	In particular, one has 
+	\begin{equation*}
+		u(x, t) = 
+		\begin{cases}
+			\displaystyle \frac{1}{2}[\varphi(x + t) + \varphi(x - t)], &\qquad x \geq t \geq 0 \\
+			\displaystyle \frac{1}{2}[\varphi(x + t) - \varphi(t - x)], &\qquad 0 \leq x < t. 
+		\end{cases}
+	\end{equation*}
+	Therefore, we find 
+	\begin{equation*}
+		u(1,3) = \frac{1}{2}[\varphi(4) - \varphi(2)] = -\frac{1}{2}\varphi(2) = -\frac{1}{2}. 
+	\end{equation*}
+	
+	\begin{prb}{E-1-1}
+		$ $\newline \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show the general solution of the PDE $u_{xy} = 0$ is 
+			\begin{equation*}
+				u(x, y) = F(x) + G(y) 
+			\end{equation*}
+			for arbitrary functions $F, G$. 
+			\item Using the change of variables $\xi = x + t$, $\eta = x - t$, show $u_{tt} - u_{xx} = 0$ if and only if $u_{\xi\eta} = 0$. 
+			\item Use (a) and (b) to rederive d'Alembert's formula. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Consider the PDE $u_{xy} =0$. Let $v(x,y) = u_{x}$. Then $v$ satisfies the differential equation $v_{y} = 0$. Thus since $v$ is independent of $y$, one has $u_{x}(x,y) = v(x,y) = f(x)$ for some arbitrary function $f$. But then integrating both sides with respect to $x$, and supposing that $F(x)$ is the antiderivative of $f(x)$, 
+		\begin{equation*}
+			u(x,y) = F(x) + G(y), 
+		\end{equation*}
+		where $G$ is some arbitrary function of $y$. 
+		\item Define $\xi = x + t$ and $\eta = x -t$ so that $x = (\xi + \eta)/2$ and $t = (\xi - \eta)/2$. Then, 
+		\begin{align*}
+			\begin{split}
+				u_{\xi} &= u_{x}\frac{\partial x}{\partial \xi} + u_{t}\frac{\partial t}{\partial \xi} \\
+				&= \frac{1}{2}u_{x} + \frac{1}{2}u_{t}. \\
+				u_{\xi\eta} &= \frac{1}{2}\left[u_{xx}\frac{\partial x}{\partial \eta} + u_{xt}\frac{\partial t}{\partial \eta}\right] + \frac{1}{2}\left[u_{tx}\frac{\partial x}{\partial \eta} + u_{tt}\frac{\partial t}{\partial \eta}\right] \\
+				&= \frac{1}{2}[u_{xx} -u_{xt}] + \frac{1}{2}[u_{tx} - u_{tt}] =  \frac{1}{2}[u_{tt} - u_{xx}], 
+			\end{split}
+		\end{align*}
+		where we used the fact that $u_{xt} = u_{tx}$. Thus, the proof concludes. 
+		\item Consider the initial value problem, 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{3}
+				&u_{tt} -u_{xx} &= 0 \qquad &(\text{in $\mathbb{R} \times (0,\infty)$}) \\
+				&u = g, u_{t} &= h \qquad &(\text{on $\mathbb{R} \times \{t = 0\}$}).
+			\end{alignedat}
+			\right.
+		\end{equation*}
+		Define the change of variables $\xi = x + t$ and $\eta = x - t$ as above. By (b), $u_{tt} - u_{xx} = 0$ if and only if $u_{\xi\eta} =0$. By (a), it follows that $u$ must be of the form, 
+		\begin{equation*}
+			u(\xi, \eta) = F(\xi) + G(\eta). 
+		\end{equation*}
+		Thus, $u(x,t) = F(x + t) + G(x - t)$. Now we must match the initial conditions. At $t = 0$, 
+		\begin{align*}
+			\begin{split}
+				u(x, 0) &= F(x) + G(x) = g(x). \\
+				u_{t}(x, 0) &= F'(x) - G'(x) = h(x). 
+			\end{split}
+		\end{align*}
+		Differentiating the first equation, one first obtains the system 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{2}
+				&F'(x) + G'(x) &= g'(x) \\
+				&F'(x) - G'(x) &= h(x). 
+			\end{alignedat}
+			\right. 
+		\end{equation*} 
+		Thus, we get 
+		\begin{equation*}
+			F'(x) = \frac{1}{2}(g'(x) +h(x)) \implies F(x + t) = \frac{1}{2}[g(x+ t) - g(0)] + \frac{1}{2}\int_{0}^{x + t}h(y)\;dy + F(0). 
+		\end{equation*}
+		Likewise, we get 
+		\begin{equation*}
+			G(x-t) = \frac{1}{2}[g(x - t) - g(0)] -\int_{0}^{x - t}h(y)\;dy + G(0). 
+		\end{equation*}
+		Adding the two equations, and using the fact that $F(0) + G(0) = g(0)$, we conclude that 
+		\begin{equation*}
+			u(x,t) = \frac{1}{2}[g(x - t) + g(x + t)] + \frac{1}{2}\int_{x - t}^{x + t}h(y)\;dy, 
+		\end{equation*}
+		which is precisely d'Alembert's formula. 
+	\end{enumerate}
+	
+	\begin{prb}{E-1-2}
+		Assume $\mathbf{E} = (E^{1}, E^{2}, E^{3})$ and $\mathbf{B} = (B^{1}, B^{2}, B^{3})$ solve Maxwell's equations. Show 
+		\begin{equation*}
+			u_{tt} - \Delta u= 0
+		\end{equation*}
+		where $u = E^{i}$ or $B^{i}$ ($i = 1, 2, 3$). 
+	\end{prb}
+	Recall that Maxwell's equations are given by the following system, 
 	\begin{equation*}
 		\left\{
-		\begin{alignedat}{3}
-			&u_{tt} - \Delta u &=0 &\qquad \text{in $\mathbb{R}^3 \times (0,\infty)$} \\
-			&u = g, u_t &= h &\qquad \text{on $\mathbb{R}^3 \times \{t = 0\}$},
+		\begin{alignedat}{1}
+			&\mathbf{E}_{t} = \nabla \times \mathbf{B} \\
+			&\mathbf{B}_{t} = -\nabla \times \mathbf{E} \\
+			&\mathbf{\nabla} \cdot \mathbf{B}= \nabla \cdot \mathbf{E} =0. 
 		\end{alignedat}
 		\right.
 	\end{equation*}
-	where $g, h$ are smooth and have compact support. Show there exists a constant $C$ such that 
+	Assume $\mathbf{E} = (E^{1}, E^{2}, E^{3})$ and $\mathbf{B} = (B^{1}, B^{2}, B^{3})$ solve Maxwell's equations. Then differentiating the first equation and using the fact that time derivatives commute with spatial derivatives, one obtains 
 	\begin{equation*}
-		|u(x,t)| \leq C/t \qquad (x \in \mathbb{R}^3, t > 0). 
+		\mathbf{E}_{tt} = \nabla \times \mathbf{B}_{t} = -\nabla \times (\nabla \times E) = -\nabla (\nabla \cdot \mathbf{E}) + \Delta \mathbf{E} = \Delta \mathbf{E}, 
 	\end{equation*}
-\end{prb}
-Let $u$ be the solution to the initial value problem given above. We recall that $u$ is given by Kirchoff's formula, 
-\begin{equation*}
-	u(x,t) = \dashint_{\partial B(x,t)}th(y) + g(y) + Dg(y) \cdot (y - x)\;dS(y) \qquad (x \in \mathbb{R}^3, t > 0)
-\end{equation*}
-Let $R > 0$ be a fixed positive constant so that the support of $g$ and $h$ are both contained inside the ball $B(0,R)$. We can rewrite, 
-\begin{align*}
-	\begin{split}
-		|u(x,t)| &\leq \frac{1}{4\pi t^2}\left[\underbrace{\int_{\partial B(x,t)}t|h(y)|\;dS(y)}_{(a)} + \underbrace{\int_{\partial B(x,t)}|g(y)|\;dS(y)}_{(b)} + \underbrace{\int_{\partial B(x,t)}|Dg(y)\|y-x|\;dS(y)}_{(c)}\right]. 
-	\end{split}
-\end{align*}
-We will try bounding each term independently. 
-\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
-	\item Let us denote $\Sigma_t = \partial B(x,t) \cap B(0,R)$. Then it follows that 
+	where the final equality follows from the fact that $\nabla \cdot \mathbf{E} = 0$. Thus, we have 
 	\begin{equation*}
-		\int_{\partial B(x,t)}t|h(y)|\;dS(y) = t\int_{\Sigma_t}|h(y)|\;dS(y) \leq tM\cdot 4\pi R^2, 
+		\mathbf{E}_{tt} - \Delta \mathbf{E} = 0 \iff (E^{1}_{tt} - \Delta E^{1}, \ldots, E^{3}_{tt} - \Delta E^{3}) = \mathbf{0}. 
 	\end{equation*}
-	where $M > 0$ is a constant so that $|h|\leq M$, and we used the fact that the surface area of $\partial B(x,t) \cap B(0,R)$ cannot exceed the surface area of $4\pi R^2$.\footnote{\href{https://math.stackexchange.com/questions/1302682/2d-wave-equation-decay-estimate}{https://math.stackexchange.com/questions/1302682/2d-wave-equation-decay-estimate}} 
-	\item Now let $N > 0$ so that $|g|\leq N$. Then repeating the work from above shows that 
+	Hence, each $E^{i}$ satisfies the wave equation. Now differentiate the second equation. We get 
 	\begin{equation*}
-		\int_{\partial B(x,t)}|g(y)|\;dS(y) \leq N \cdot 4\pi R^2.
+		\mathbf{B}_{tt} =-\nabla \times \mathbf{E}_{t} = -\nabla \times (\nabla \times \mathbf{B}) = -\nabla (\nabla \cdot \mathbf{B}) + \Delta \mathbf{B} = \Delta \mathbf{B}. 
 	\end{equation*}
-	\item Now we note that for all $y \in \partial B(x,t)$, $|y - x| = t$. So taking $L > 0$ so that $|Dg| \leq L$, and repeating the work from (a), one has that 
+	Thus we have, 
 	\begin{equation*}
-		\int_{\partial B(x,t)}|Dg(y)\|y - x|\;dS(y) = t L \cdot 4\pi R^2. 
+		\mathbf{B}_{tt} - \Delta \mathbf{B} = 0 \iff (B^{1}_{tt} - \Delta B^{1}, \ldots, B^{3}_{tt} - \Delta B^{3}) = \mathbf{0}. 
 	\end{equation*}
-\end{enumerate}
-Combining all of the pieces together, we find that 
-\begin{align*}
-	\begin{split}
-		|u(x,t)| &\leq \frac{1}{4\pi t^2} \cdot \left[4\pi R^2(M + L)t + 4\pi R^2N\right] \\
-		&\leq \frac{1}{t^2} \cdot C(1 + t) \leq \frac{C}{t}
-	\end{split}
-\end{align*}
-
-\begin{prb}{E-1-5}
-	(Stokes' Rule) Assume $u$ solves the initial-value problem 
+	Therefore, each $B^{i}$ satisfies the wave equation. 
+	
+	\begin{prb}{E-1-3}
+		(Equipartition of Energy). Let $u \in C^{2}(\mathbb{R} \times [0,\infty))$ solve the initial-value problem for the wave equation in one-dimension: 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{3}
+				&u_{tt} - u_{xx} &=0 \qquad &(\text{in } \mathbb{R} \times (0,\infty)) \\
+				&u=g, u_t &= h \qquad &(\text{on } \mathbb{R} \times \{t = 0\}).
+			\end{alignedat}
+			\right. 
+		\end{equation*} 
+		Suppose $g,h$ have compact support. The \textit{kinetic energy} is $k(t) \coloneqq \frac{1}{2}\int_{-\infty}^{\infty}u_t^2(x,t)\;dx$ and the \textit{potential energy} is $p(t) \coloneqq \frac{1}{2}\int_{-\infty}^{\infty}u_x^2(x,t)\;dx$. Prove \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label =(\roman{*})]
+			\item $k(t) + p(t)$ is constant in $t$, 
+			\item $k(t) = p(t)$ for all large enough times $t$. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let us define the kinetic and potential energy, $k(t)$ and $p(t)$ as given above. We wish to show that the total energy 
+		\begin{equation*}
+			e(t) = k(t) + p(t) = \frac{1}{2}\int_{-\infty}^{\infty}u_t^2 + u_x^2\;dx
+		\end{equation*}
+		is conserved, where $u$ is given by d'Alembert's formula, 
+		\begin{equation*}
+			u(x, t) = \frac{1}{2}[g(x + t) + g(x - t)] + \frac{1}{2}\int_{x - t}^{x + t}h(y)\;dy. 
+		\end{equation*}
+		so that 
+		\begin{align*}
+			\begin{split}
+				u_t(x,t) &= \frac{1}{2}[g'(x + t) - g'(x - t) + h(x + t) + h(x - t)]. \\
+				u_x(x, t) &= \frac{1}{2}[g'(x + t) + g'(x - t) + h(x + t) - h(x - t)]. 
+			\end{split}
+		\end{align*}
+		Let $T > 0$, and let $K \subset \mathbb{R}$ be a compact set large enough so that $\operatorname{supp}{g}, \operatorname{supp}{h}$ are both contained in $K$. Then it follows that $u_t^2$ and $u_x^2$ are both supported in $K_{T} \coloneqq K + [-T,T]$ for all $0 \leq t \leq T$. Since $u_t^2$ and $u_x^2$ are continuous on $\mathbb{R}$ (and thus on $K_T$) for all $0 \leq t \leq T$, by the extreme value theorem, there exist finite constants $M$ and $N$ so that for all $x \in K$ and $0 \leq t \leq T$, $|u_t|^2 \leq M\chi_{K_T}$ and $|u_x^2| \leq N\chi_{K_T}$, where both dominating functions are integrable since $K_{T}$ is compact. Thus using the Dominated Convergence Theorem, taking the derivative of $e(t)$ gives us, 
+		\begin{align*}
+			\begin{split}
+				\dot{e}(t) &= \frac{1}{2}\frac{\partial}{\partial t}\int_{-\infty}^{\infty}u_t^2 + u_x^2\;dx = \frac{1}{2}\frac{\partial}{\partial t}\int_{K_T}u_t^2 + u_x^2\;dx \\
+				&= \frac{1}{2}\int_{K_T}\partial_t(u_t^2 + u_x^2)\;dx \\
+				&= \int_{K_T}u_tu_{tt} + u_x \cdot \partial_x u_t\;dx \\
+				&= \int_{K_T}u_t(u_{tt} - u_{xx})\;dx \qquad (\text{by integration by parts}) \\
+				&= 0, 
+			\end{split}
+		\end{align*}	
+		where there is no boundary term since $u_x, u_t$ are supported inside $K_T$. So we have shown that $\dot{e}(t) = 0$ for all $0 \leq t \leq T$. Since $T > 0$ was chosen arbitrarily, it follows that $\dot{e}(t)\equiv 0$. Therefore, the total energy is constant in $t$. 
+		\item What we wish is that in the limit $t \to \infty$, 
+		\begin{equation*}
+			\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} \to 0. 
+		\end{equation*}
+		First, we compute 
+		\begin{equation*}
+			u_t^2 - u_x^2 = h(x + t)h(x - t) - h(x + t)g'(x - t) + h(x - t)g'(x + t) - g'(x - t)g'(x + t). 
+		\end{equation*}
+		Then 
+		\begin{align*}
+			\begin{split}
+				\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} &\leq \int_{-\infty}^{\infty}|h(y)h(y - 2t)|\;dy + \int_{-\infty}^{\infty}|h(y)g'(y - 2t)|\;dy \\
+				&\quad+ \int_{-\infty}^{\infty}|h(y - 2t)g'(y)|\;dy + \int_{-\infty}^{\infty}|g'(y - 2t)g'(y)|\;dy.
+			\end{split}
+		\end{align*}
+		Let $K \subset \mathbb{R}$ be a compact set large enough that contains the support of both $g$ and $h$. Then we may write, 
+		\begin{align*}
+			\begin{split}
+				\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} &\leq \int_{K}|h(y)h(y - 2t)|\;dy + \int_{K}|h(y)g'(y - 2t)|\;dy \\
+				&\quad+ \int_{K}|h(y - 2t)g'(y)|\;dy + \int_{K}|g'(y - 2t)g'(y)|\;dy.
+			\end{split}
+		\end{align*}
+		We will only show that the first term on the right vanishes since the work for the remaining terms is identical. Since $h(u) \to 0$ as $|u| \to \infty$ (by compact support of $h$), we know that pointwise $|h(y)h(y - 2t)| \to 0$ as $t \to \infty$. Next since $h$ is continuous, there exists some finite $M > 0$ so that $|h(y)|, |h(y - 2t)| \leq M$ for all $y \in K$. Thus, $|h(y)h(y-2t)| \leq M^2\chi_{K} \in L^1(\mathbb{R})$ since $K$ is compact. Hence, by the Dominated Convergence Theorem, one has that the first term vanishes as $t \to \infty$. As we stated before, the remaining three terms also vanish as $t \to \infty$. Thus, we conclude that as $t \to \infty$,
+		\begin{equation*}
+			\abs{\int_{\mathbb{R}}u_t^2 - u_x^2\;dx} \to 0. 
+		\end{equation*}
+	\end{enumerate}
+	
+	\begin{prb}{E-1-4}
+		Let $u$ solve 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{3}
+				&u_{tt} - \Delta u &=0 &\qquad \text{in $\mathbb{R}^3 \times (0,\infty)$} \\
+				&u = g, u_t &= h &\qquad \text{on $\mathbb{R}^3 \times \{t = 0\}$},
+			\end{alignedat}
+			\right.
+		\end{equation*}
+		where $g, h$ are smooth and have compact support. Show there exists a constant $C$ such that 
+		\begin{equation*}
+			|u(x,t)| \leq C/t \qquad (x \in \mathbb{R}^3, t > 0). 
+		\end{equation*}
+	\end{prb}
+	Let $u$ be the solution to the initial value problem given above. We recall that $u$ is given by Kirchoff's formula, 
 	\begin{equation*}
-		\left\{
-		\begin{alignedat}{3}
-			&u_{tt} - \Delta u &= 0 &\qquad \text{in $\mathbb{R}^n \times (0,\infty)$} \\
-			&u =0, u_t &=h &\qquad \text{on $\mathbb{R}^n \times \{t = 0\}$}.
-		\end{alignedat}
-		\right.
+		u(x,t) = \dashint_{\partial B(x,t)}th(y) + g(y) + Dg(y) \cdot (y - x)\;dS(y) \qquad (x \in \mathbb{R}^3, t > 0)
 	\end{equation*}
-	Show that $v \coloneqq u_t$ solves 
-	\begin{equation*}
-		\left\{
-		\begin{alignedat}{3}
-			&v_{tt} - \Delta v &= 0 &\qquad \text{in $\mathbb{R}^n \times (0,\infty)$} \\
-			&v =h, v_t &= 0 &\qquad \text{on $\mathbb{R}^n \times \{t = 0\}$}.
-		\end{alignedat}
-		\right.
-	\end{equation*}
-	This is \textit{Stokes' rule}. 
-\end{prb}
-Assume $u$ solves the given initial value problem, and set $v \coloneqq u_t$. The boundary value conditions for $v$ are immediately clear by the initial value problem for $u$. Thus, it suffices to show that $\Box v = 0$. Observe the following: 
-\begin{align*}
-	\begin{split}
-		v_{tt} &= u_{ttt}. \\
-		\Delta v &= \Delta (u_{t}) = \partial_{t}(\Delta u) = \partial_t (u_{tt}) = u_{ttt}. 
-	\end{split}
-\end{align*}
-This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof concludes. 
+	Let $R > 0$ be a fixed positive constant so that the support of $g$ and $h$ are both contained inside the ball $B(0,R)$. We can rewrite, 
+	\begin{align*}
+		\begin{split}
+			|u(x,t)| &\leq \frac{1}{4\pi t^2}\left[\underbrace{\int_{\partial B(x,t)}t|h(y)|\;dS(y)}_{(a)} + \underbrace{\int_{\partial B(x,t)}|g(y)|\;dS(y)}_{(b)} + \underbrace{\int_{\partial B(x,t)}|Dg(y)\|y-x|\;dS(y)}_{(c)}\right]. 
+		\end{split}
+	\end{align*}
+	We will try bounding each term independently. 
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let us denote $\Sigma_t = \partial B(x,t) \cap B(0,R)$. Then it follows that 
+		\begin{equation*}
+			\int_{\partial B(x,t)}t|h(y)|\;dS(y) = t\int_{\Sigma_t}|h(y)|\;dS(y) \leq tM\cdot 4\pi R^2, 
+		\end{equation*}
+		where $M > 0$ is a constant so that $|h|\leq M$, and we used the fact that the surface area of $\partial B(x,t) \cap B(0,R)$ cannot exceed the surface area of $4\pi R^2$.\footnote{\href{https://math.stackexchange.com/questions/1302682/2d-wave-equation-decay-estimate}{https://math.stackexchange.com/questions/1302682/2d-wave-equation-decay-estimate}} 
+		\item Now let $N > 0$ so that $|g|\leq N$. Then repeating the work from above shows that 
+		\begin{equation*}
+			\int_{\partial B(x,t)}|g(y)|\;dS(y) \leq N \cdot 4\pi R^2.
+		\end{equation*}
+		\item Now we note that for all $y \in \partial B(x,t)$, $|y - x| = t$. So taking $L > 0$ so that $|Dg| \leq L$, and repeating the work from (a), one has that 
+		\begin{equation*}
+			\int_{\partial B(x,t)}|Dg(y)\|y - x|\;dS(y) = t L \cdot 4\pi R^2. 
+		\end{equation*}
+	\end{enumerate}
+	Combining all of the pieces together, we find that 
+	\begin{align*}
+		\begin{split}
+			|u(x,t)| &\leq \frac{1}{4\pi t^2} \cdot \left[4\pi R^2(M + L)t + 4\pi R^2N\right] \\
+			&\leq \frac{1}{t^2} \cdot C(1 + t) \leq \frac{C}{t}
+		\end{split}
+	\end{align*}
+	
+	\begin{prb}{E-1-5}
+		(Stokes' Rule) Assume $u$ solves the initial-value problem 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{3}
+				&u_{tt} - \Delta u &= 0 &\qquad \text{in $\mathbb{R}^n \times (0,\infty)$} \\
+				&u =0, u_t &=h &\qquad \text{on $\mathbb{R}^n \times \{t = 0\}$}.
+			\end{alignedat}
+			\right.
+		\end{equation*}
+		Show that $v \coloneqq u_t$ solves 
+		\begin{equation*}
+			\left\{
+			\begin{alignedat}{3}
+				&v_{tt} - \Delta v &= 0 &\qquad \text{in $\mathbb{R}^n \times (0,\infty)$} \\
+				&v =h, v_t &= 0 &\qquad \text{on $\mathbb{R}^n \times \{t = 0\}$}.
+			\end{alignedat}
+			\right.
+		\end{equation*}
+		This is \textit{Stokes' rule}. 
+	\end{prb}
+	Assume $u$ solves the given initial value problem, and set $v \coloneqq u_t$. The boundary value conditions for $v$ are immediately clear by the initial value problem for $u$. Thus, it suffices to show that $\Box v = 0$. Observe the following: 
+	\begin{align*}
+		\begin{split}
+			v_{tt} &= u_{ttt}. \\
+			\Delta v &= \Delta (u_{t}) = \partial_{t}(\Delta u) = \partial_t (u_{tt}) = u_{ttt}. 
+		\end{split}
+	\end{align*}
+	This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof concludes. 
 	
 	\newpage 
 	\subsection{Distribution Theory}
@@ -3417,15 +3503,15 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 	Let $U \subseteq \mathbb{R}^{n}$ be an open domain, $\ell \in \mathcal{D}'(U)$, and fix arbitrary $f, \phi \in C_{c}^{\infty}(U) = \mathcal{D}(U)$. We will solve this problem in two steps. 
 	
 	(\textbf{Step 1}): Let $|\alpha| = 1$; there exists some $i \in \{1, 2, \ldots, n\}$ so that $D^{\alpha} = \partial_{i}$. In particular, we must have 
-	\begin{align}
+	\begin{align*}
 		\begin{split}
 			\braket{\partial_{i}(f\ell), \phi} &= -\braket{f\ell, \partial_{i}\phi} = -\braket{\ell, f\partial_{i}\phi} = -\braket{\ell, \partial_{i}(f\phi)} + \braket{\ell, \partial_{i}(f)\phi} \\
 			&= \braket{f\partial_{i}\ell, \phi} + \braket{\partial_{i}(f)\ell, \phi} = \braket{f\;\partial_{i}\ell + \partial_{i}f\;\ell, \phi}. 
 		\end{split}
-	\end{align}
+	\end{align*}
 	
 	(\textbf{Step 2}): So now consider the case when $|\alpha| = m$ for some $m > 1$. Then there exist indices $\{i_{j}\}_{j = 1}^{m} \subset \{1, \ldots, n\}$ so that $D^{\alpha} = \partial_{i_{1}}\dotsm \partial_{i_{m}}$. Then, 
-	\begin{align}
+	\begin{align*}
 		\begin{split}
 			\braket{\partial_{i_{1}}\dotsm \partial_{i_{m}}(f\ell), \phi} &= (-1)^{m}\braket{f\ell, \partial_{i_{1}}\dotsm \partial_{i_{m}}\phi} \\
 			&= (-1)^{m}\braket{\ell, f\partial_{i_{1}}\dotsm \partial_{i_{m}}\phi} \\
@@ -3437,7 +3523,7 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 			&\hspace{6pt}\vdots  \\
 			&= \sum_{|\beta| \leq m}\binom{\alpha}{\beta}\braket{D^{\beta}(f)D^{\alpha-\beta}\ell, \phi}, 
 		\end{split}
-	\end{align}
+	\end{align*}
 	where $\varPhi \coloneqq \partial_{i_{4}}\dotsm \partial_{i_{m}}\phi$, and we repeated the same types of calculation to get to the last line. Hence, since $\phi$ was arbitrary, we conclude that 
 	\begin{equation*}
 		D^{\alpha}(f\ell) = \sum_{|\beta| \leq m}\binom{\alpha}{\beta}(D^{\beta}f)(D^{\alpha - \beta}\ell)
@@ -3447,7 +3533,7 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 		On $\mathbb{R}$, if $\psi \in C^{\infty}$ then $\psi \delta^{(k)} = \sum_{0}^{k}(-1)^{j}\binom{k}{j}\psi^{(j)}(0)\delta^{(k - j)}$, where the superscripts denote derivatives. 
 	\end{prb}
 	Let $\psi \in C^{\infty}(\mathbb{R})$, and let $\delta \coloneqq \delta_{0} \in \mathcal{D}'(\mathbb{R})$ be the Dirac delta function. Let us fix arbitrary $\phi \in C_{c}^{\infty}(\mathbb{R})$. For some $k \geq 1$, we compute 
-	\begin{align}
+	\begin{align*}
 		\begin{split}
 			\braket{\psi \partial^{k}\delta,\phi} 
 			&= (-1)^{k}\braket{\phi, \sum_{j = 0}^{k}\binom{k}{j}\psi^{(j)}\phi^{(k`-j)}} \\
@@ -3455,7 +3541,7 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 			&= \sum_{j = 0}^{k}\binom{k}{j}\psi^{(j)}(0)(-1)^{k}(-1)^{k -j}\braket{\delta^{(k-j)},\phi} \\
 			&= \sum_{j = 0}^{k}(-1)^{j}\binom{k}{j}\psi^{(j)}(0)\braket{\delta^{(k-j)},\phi}. 
 		\end{split}
-	\end{align}
+	\end{align*}
 	Since $\phi$ was arbitrary, we conclude that 
 	\begin{equation*}
 		\psi \delta^{(k)} = \sum_{j = 0}^{k}(-1)^{j}\binom{k}{j}\psi^{(j)}(0)\delta^{(k - j)}.
@@ -3504,9 +3590,9 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 	
 	\begin{prb}{2018-J-I-2}
 		Use the method of residues to compute the improper integral 
-			\begin{equation*}
-				\int_{-\infty}^{\infty}\frac{x + 1}{x^{4} + 2x^{2} + 5}\;dx. 
-			\end{equation*}
+		\begin{equation*}
+			\int_{-\infty}^{\infty}\frac{x + 1}{x^{4} + 2x^{2} + 5}\;dx. 
+		\end{equation*}
 	\end{prb}
 	Let us consider the meromorphic function 
 	\begin{equation*}
@@ -3573,13 +3659,13 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 		Use the method of residues to compute the improper integral $\int_{0}^{\infty}\frac{x^{2}}{x^{6} + x^{4} + x^{2} + 1}\;dx$. 
 	\end{prb}
 	Let us consider the meromorphic function 
-		\begin{equation*}
-			f(z) = \frac{z^2}{z^6 + z^4 + z^2 + 1}, 
-		\end{equation*}
+	\begin{equation*}
+		f(z) = \frac{z^2}{z^6 + z^4 + z^2 + 1}, 
+	\end{equation*}
 	which has simple poles at the points 
-		\begin{equation*}
-			z = \pm i, \frac{\sqrt{2}}{2}(1 \pm i), \frac{\sqrt{2}}{2}(-1 \pm i). 
-		\end{equation*}
+	\begin{equation*}
+		z = \pm i, \frac{\sqrt{2}}{2}(1 \pm i), \frac{\sqrt{2}}{2}(-1 \pm i). 
+	\end{equation*}
 	We will consider the integral of $f(z)$ over the following contour ($\gamma$): 
 	\begin{figure}[h!]
 		\centering 
@@ -3656,22 +3742,22 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 		\abs{\int_{S_{R}}\frac{1}{z^{4} + 1}\;dz} \leq \pi R \cdot \frac{1}{R^4 -  1} \xrightarrow{R \to \infty} 0. 
 	\end{equation*}
 	On the other hand, the integral of $f(z)$ over the segment of the contour on the real line tends to the desired real integral. It now suffices for us to compute the residue of $f(z)$ at the two poles in the upper half plane. We compute, 
-		\begin{align*}
-			\begin{split}
-				\operatorname{Res}_{z = (\sqrt{2}/2)(1 + i)}(f) &= -\frac{i + 1}{4\sqrt{2}}. \\
-				\operatorname{Res}_{z = (\sqrt{2}/2)(-1 + i)}(f) &= \frac{1 -i}{4\sqrt{2}}. 
-			\end{split}
-		\end{align*}
+	\begin{align*}
+		\begin{split}
+			\operatorname{Res}_{z = (\sqrt{2}/2)(1 + i)}(f) &= -\frac{i + 1}{4\sqrt{2}}. \\
+			\operatorname{Res}_{z = (\sqrt{2}/2)(-1 + i)}(f) &= \frac{1 -i}{4\sqrt{2}}. 
+		\end{split}
+	\end{align*}
 	This means that 
-		\begin{equation*}
-			\oint_{\gamma} \frac{1}{z^4 + 1}\;dz = 2\pi i \cdot \left(\frac{1 - i}{4\sqrt{2}} - \frac{i + 1}{4\sqrt{2}}\right) = 2\pi i \cdot \left(-\frac{i}{2\sqrt{2}}\right) = \frac{\pi}{\sqrt{2}}. 
-		\end{equation*}
+	\begin{equation*}
+		\oint_{\gamma} \frac{1}{z^4 + 1}\;dz = 2\pi i \cdot \left(\frac{1 - i}{4\sqrt{2}} - \frac{i + 1}{4\sqrt{2}}\right) = 2\pi i \cdot \left(-\frac{i}{2\sqrt{2}}\right) = \frac{\pi}{\sqrt{2}}. 
+	\end{equation*}
 	Thus we conclude that 
-		\begin{equation*}
-			\int_{-\infty}^{\infty}\frac{1}{x^4 + 1}\;dx= \frac{\pi}{\sqrt{2}}. 
-		\end{equation*}
+	\begin{equation*}
+		\int_{-\infty}^{\infty}\frac{1}{x^4 + 1}\;dx= \frac{\pi}{\sqrt{2}}. 
+	\end{equation*}
 	
-
+	
 	\subsection{Holomorphic Functions}
 	\begin{prb}{2026-J-II-4}
 		Let $U$ be an open subset of $\mathbb{C}$. Let $(f_{j}(z))$ be a collection of holomorphic functions on $U$ that converges uniformly on every compact subset. Carefully prove that the pointwise limit is holomorphic. 
@@ -4949,18 +5035,18 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 	\subsection{Seifert-van Kampen Theorem and Fundamental Groups}
 	\begin{itemize}
 		\item \textbf{Thm. (Seifert-van Kampen I)} Let $X = U \cup V$, where $U$ and $V$ are open in $X$; assume $U$, $V$, and $U \cap V$ are path connected; let $x_0 \in U \cap V$. Let $H$ be a group, and let 
-			\begin{equation*}
-				\phi_1: \pi_1(U,x_{0}) \to H \qquad \text{ and } \qquad \phi_2 : \pi_1(V, x_0) \to H
-			\end{equation*}
+		\begin{equation*}
+			\phi_1: \pi_1(U,x_{0}) \to H \qquad \text{ and } \qquad \phi_2 : \pi_1(V, x_0) \to H
+		\end{equation*}
 		be homomorphisms. Let $i_1, i_2, j_1, j_2$ be the homomorphisms induced by the following inclusions: 
-			\begin{figure}[h!]
-				\centering 
-				\begin{tikzcd}
-					& \pi_1(U,x_0) \arrow[dr,"\phi_1"] \arrow[hookrightarrow, d, "j_1"] & \\ 
-					\pi_1(U \cap V) \arrow[hookrightarrow, ur, "i_1"] \arrow[hookrightarrow, dr, "i_2"]\arrow[r] & \pi_1(X,x_0) \arrow[dashed,r,"\phi"] & H \\
-					& \pi_1(V,x_0) \arrow[hookrightarrow, u,"j_2"] \arrow[ur,"\phi_2"] & 
-				\end{tikzcd}
-			\end{figure}
+		\begin{figure}[h!]
+			\centering 
+			\begin{tikzcd}
+				& \pi_1(U,x_0) \arrow[dr,"\phi_1"] \arrow[hookrightarrow, d, "j_1"] & \\ 
+				\pi_1(U \cap V) \arrow[hookrightarrow, ur, "i_1"] \arrow[hookrightarrow, dr, "i_2"]\arrow[r] & \pi_1(X,x_0) \arrow[dashed,r,"\phi"] & H \\
+				& \pi_1(V,x_0) \arrow[hookrightarrow, u,"j_2"] \arrow[ur,"\phi_2"] & 
+			\end{tikzcd}
+		\end{figure}
 		
 		If $\phi_1 \circ i_1 = \phi_2 \circ i_2$, then there is a unique homomorphism $\phi: \pi_1(X,x_0) \to H$ so that $\phi_1 = \phi \circ j_1$ and $\phi_2 = \phi \circ j_2$. 
 		
@@ -4981,17 +5067,17 @@ This implies that $v_{tt} - \Delta v = u_{ttt} - u_{ttt} =0$. Thus the proof con
 		Let $j: \pi_1(U,x_0) \ast \pi_1(V,x_0) \to \pi_1(X,x_0)$ be the homomorphism of the free product that extends the homomorphisms $j_1$ and $j_2$ induced by inclusion. Then $j$ is surjective, and its kernel is  generated by all elements of the free product of the form $i_1(g)^-1i_2(g)$ and their conjugates. 
 		
 		\item \textbf{Cor. (Isomorphisms given by SvK)} Assume the hypothesis of the Seifert-van Kampen theorem. Then \vspace{-0.25cm}
-			\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
-				\item If $U \cap V$ is simply connected, then there is an isomorphism 
-					\begin{equation*}
-						k: \pi_1(U,x_0) \ast \pi_1(V,x_0) \to \pi_1(X,x_0). 
-					\end{equation*}
-				\item If $V$ is simply connected, there is an isomorphism 
-					\begin{equation*}
-						k: \pi_1(U,x_0)/N \to \pi_1(X,x_0), 
-					\end{equation*}
-				where $N$ is the least normal subgroup of $\pi_1(U,x_0)$ containing the image of the homomorphism $i_1:\pi_1(U \cap V,x_0) \to \pi_1(U,x_0)$. 
-			\end{enumerate}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item If $U \cap V$ is simply connected, then there is an isomorphism 
+			\begin{equation*}
+				k: \pi_1(U,x_0) \ast \pi_1(V,x_0) \to \pi_1(X,x_0). 
+			\end{equation*}
+			\item If $V$ is simply connected, there is an isomorphism 
+			\begin{equation*}
+				k: \pi_1(U,x_0)/N \to \pi_1(X,x_0), 
+			\end{equation*}
+			where $N$ is the least normal subgroup of $\pi_1(U,x_0)$ containing the image of the homomorphism $i_1:\pi_1(U \cap V,x_0) \to \pi_1(U,x_0)$. 
+		\end{enumerate}
 	\end{itemize}
 	
 \end{document}
