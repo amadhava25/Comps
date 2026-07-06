@@ -14,7 +14,7 @@
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
 \rhead{Comps Mega Review}
-%\om 
+\om 
 \newcommand{\contract}{\mathbin{\vrule height 0.4pt width 8pt depth 0pt\vrule height 6pt width 0.4pt depth 0pt}}
 \setlength{\droptitle}{-3cm}
 \renewcommand{\div}{\text{div}}
@@ -2614,6 +2614,12 @@
 		\end{align*}
 		Since $\beta < 1$, it follows that $m(K_1 \cap (K_1 + rv_1)) > 0$, and so is not empty; let $K_{2} \coloneqq K_{1} \cap (K_1 + rv_1)$. Finally define $K_{3} \coloneqq K_2 \cap (K_2 + rv_2)$. By generalizing the argument from above, one has that $K_{3} \subset K_{2} \subset K_{1} \subset U$, and $m(K_3) \geq (1 - 3\beta)m(K_1) > 0$. Thus we have found a nested sequence of nonempty compact sets $K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $q \in K_3$. Then since $K_3 = K_2 \cap (K_2 + rv_2)$, the point $q - rv_2 \in K_2$. Likewise, the point $q - rv_2 - rv_1 \in K_1$. Let $p \coloneqq q - rv_2 - rv_1$, $s \coloneqq q - rv_2$ and $t \coloneqq q$. We note that $p,s,t \in E$ and, by construction, form the vertices of an equilateral triangle in $\mathbb{R}^2$. 
 		
+		\begin{prb}{2018-A-II-3}
+			Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. Prove that $E + F = \{x + y: x \in E, y \in F\}$ contains an interval. 
+		\end{prb}
+		
+		Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. We will complete this problem using two different techniques. In the first technique, we will use convolutions; in the second, we will use the Lebesgue density theorem. 
+		
 		\begin{prb}{2016-A-II-2}
 			Let $E \subset \mathbb{R}^2$ be a measurable set with positive Lebesgue measure. Show that $E$ contains all four corners of some rectangles in $\mathbb{R}^2$. Hint: Use Lebesgue density. 
 		\end{prb}
@@ -2631,8 +2637,17 @@
 		Since $0 < \beta < 1$, one has that $m(K_2) > 0$ so that it is nonempty. Now define $K_3 = K_2 \cap (K_2 + rv_2)$ and $K_4 = K_3 \cap (K_3 + rv_3)$. By generalizing the argument from above, one has that $K_4 \subset K_3 \subset K_2 \subset K_1 \subset E$ and $K_i \neq \varnothing$ for $i = 1, \ldots, 4$. Thus fix some point $v \in K_4$. Since $K_4 = K_3 \cap (K_3 + rv_3)$, $v - rv_3 \in K_3$. Likewise, $v - rv_3 - rv_2 \in K_2$ and $v - rv_3 - rv_2 - rv_1 \in K_1$. Define $p = v - rv_3 - rv_2 - rv_1$, $q = v - rv_3 - rv_2$, $s = v - rv_3$, and $t = v$. The points $\{p, q, s, t\} \subset E$ and form the vertices of a square (thus rectangle) of sides $r$. 
 		
 		\begin{prb}{2013-A-II-5}
-			
+			Let $E \subset [0,1]$ be a measurable set. Assume $E$ has positive Lebesgue measure. Show that there are $\alpha$ and $\beta$ such that all three numbers $\alpha, \alpha + \beta, \alpha + 2\beta \in E$. 
 		\end{prb}
+		Let $E \subset [0,1]$ be a measurable set, and assume that $E$ has positive Lebesgue measure. Set $0 < \delta < 3^{-1}$. By regularity of the Lebesgue measure, there exists a compact set $K_1 \subset E$ such that $m(K_1) > 0$, and there exists an open set $U$ in $[0,1]$ containing $K_1$ so that $m(U) \leq (1 + \beta)m(K_1)$. Since $K_1$ is compact, $d = d(K_1, U^c) > 0$. So set $R = d > 0$, and fix some arbitrary $0 < \beta < R$. We first claim that the set $K_1 + \beta$ is contained in $U$; if not, then $d(K_1, U^c) \leq \beta < d$, which is a contradiction. Thus, we have that $K_1 \cup (K_1 + \beta) \subset U$; let $K_2 \coloneqq K_1 \cap (K_1 + \beta)$. Then one has 
+		\begin{align*}
+			\begin{split}
+				m(U) &\geq m(K_1 \cup (K_1 + \beta)) = m(K_1) + m(K_1 + \beta) - m(K_2) \\
+				\implies 
+				m(K_2) \geq 2m(K_1) - m(U) \geq (1 - \delta)m(K_1) > 0, 
+			\end{split}
+		\end{align*}
+		where the final inequality follows from the fact that $\delta < 1$. Thus $K_2$ is nonempty. Now define $K_3 \coloneqq K_2 \cap (K_2 + \beta) \subset K_2 \subset K_1 \subset E$. As before, we can show that $m(K_3) > 0$ so that it is nonempty. Thus we have a nested sequence of nonempty subsets $K_{3} \subset K_2 \subset K_1 \subset E$. Pick an arbitrary point $\gamma \in K_3$. Since $K_3  = K_2 \cap (K_2 + \beta)$, $\gamma - \beta \in K_2$. And likewise, $\gamma - 2\beta \in K_1$. Define $\alpha \coloneqq \gamma - 2\beta$. Then we have proven that $\alpha, \alpha + \beta, \alpha + 2\beta \in E$. 
 	\subsection{Generic Convergence Problems}
 	
 	\begin{prb}{2026-J-II-2}
