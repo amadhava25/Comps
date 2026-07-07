@@ -1,17 +1,36 @@
-\RequirePackage{fontspec}
-\setmainfont{Noto Serif}
-\usepackage{notomath}
+\RequirePackage[no-math]{fontspec}
+%\setmainfont{Noto Serif}
+%\usepackage{notomath}
 \let\Bbbk\relax
 \let\openbox\relax
 %\RequirePackage{noto}
 %\newfontfamily\kannadafont{Noto Sans Kannada}
-%\RequirePackage{polyglossia}
-%\setmainlanguage{english}
-%\setotherlanguage{kannada}
-%\newfontfamily{\kannadafont}{Kannada_Regular.ttf}[
-%Path = ../Fonts/.
-%Extension = .ttf
-%]
+\RequirePackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{kannada}
+\newfontfamily{\kannadafont}{script}[
+Extension = .ttf
+]
+\newcommand{\om}{
+	\AddToShipoutPictureBG{%
+		\AtPageUpperLeft{%
+			\raisebox{-30pt}{%
+				\ifodd\value{page}
+				% Odd pages → right edge
+				\hspace{\paperwidth}%
+				\makebox[-40pt][r]{%
+					{\color{black}\kannadafont ಓಂ}%
+				}%
+				\else
+				% Even pages → left edge
+				\makebox[2cm][r]{%
+					{\color{black}\kannadafont ಓಂ}%
+				}%
+				\fi
+			}%
+		}%
+	}
+}
 %\RequirePackage[utf8]{inputenc}
 \RequirePackage{graphicx} % Required for inserting images
 \RequirePackage{amsfonts, amsmath, amssymb, amsthm, tikz}

@@ -1075,6 +1075,12 @@
 	\end{equation*}
 	I.e., $\ti{M}$ must be a surface of genus $2k + 1$. Therefore, we conclude that the only connected finite $k$-sheeted covering spaces of a sphere with three handles are the surfaces $\Sigma_{2k + 1}$, $k \geq 1$. 
 	
+	
+	\begin{prb}{2019-J-II-1}
+		Let $p: E \to B$ be a covering map such that $B$ is connected and compact, and $p^{-1}(b)$ is finite for some $b \in B$. Show that $E$ is compact. 
+	\end{prb}
+	Let $p: E \to B$ be a covering map such that $B$ is connected ad compact, and assume that $p^{-1}(b)$ is finite for some $b \in B$. 
+	
 	\begin{prb}{2016-J-I-2}
 		Let $X = S^{1} \times S^{1}$ be the 2-torus, and let $Y = X \setminus \{p\}$ be the complement of one point in the 2-torus. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
@@ -3698,7 +3704,7 @@
 	\begin{quote}
 		\textbf{Lemma.} (Riesz) Let $Y$ be a closed proper vector subspace of a normed space $(X, \norm{\empspace})$, and let $\alpha$ be any real number satisfying $0 < \alpha < 1$. Then there exists a vector $u$ in $X$ of unit norm $\norm{u} = 1$ such that $\norm{u - y} \geq \alpha$ for all $y \in Y$. 
 	\end{quote}
-	We will now construct an explicit sequence of unit vectors in $X$ that has no convergent subsequence. 
+	We will now construct an explicit sequence of unit vectors in $X$ that has no convergent subsequence. Fix $\alpha = 0.999$, and fix some $x_{1} \in B$. Since the span of $\{x_{1}\}$ is a strictly 1-dimensional linear subspace of $X$, by Riesz's lemma, we can find some $x_{2} \in B \setminus \{x_{1}\}$ such that $\norm{x_{2} - x_{1}} \geq \alpha$; let $Y_{2} = \{x_{1}, x_{2}\}$. Then since $X$ is infinite-dimensional, by Riesz's lemma, we can find some $x_{3} \in B \setminus \operatorname{span}{Y_{2}}$ so that $d(x_{3}, \operatorname{span}{Y_{2}}) \coloneqq \inf_{y \in \operatorname{span}{Y_{2}}}\norm{x_{3} - y} \geq \alpha$; let $Y_{3} = \{x_{1} ,x_{2}, x_{3}\}$. Now assume that we have constructed a finite collection $Y_{n} \coloneqq \{x_{1}, \ldots, x_{n}\}$. Using the fact that $X$ is infinite dimensional, and using Riesz's lemma, we can find some $x_{n + 1} \in B \setminus \operatorname{span}{Y_{n}}$ so that $d(x_{n + 1}, \operatorname{span}{Y_{n}}) \geq \alpha$; we can then define $Y_{n + 1} = Y_{n} \cup \{x_{n + 1}\}$. In this way, we can construct a sequence $\{x_{j}\}_{j = 1}^{\infty} \subset B$ so that for any $j \neq k$, $\norm{x_{j} - x_{k}} \geq \alpha$. This means that the sequence $\{x_{j}\}$ cannot have a convergent subsequence, which implies that $B$ is not sequentially compact. Since $X$ is a metric space (under the metric induced by the norm $\norm{\empspace}$), and sequential compactness is equivalent to compactness in metric spaces, it follows that $B$ is not compact in $X$. 
 	
 	\newpage 
 	\section{Complex Analysis}
