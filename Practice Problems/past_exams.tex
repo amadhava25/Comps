@@ -2614,11 +2614,64 @@
 		\end{align*}
 		Since $\beta < 1$, it follows that $m(K_1 \cap (K_1 + rv_1)) > 0$, and so is not empty; let $K_{2} \coloneqq K_{1} \cap (K_1 + rv_1)$. Finally define $K_{3} \coloneqq K_2 \cap (K_2 + rv_2)$. By generalizing the argument from above, one has that $K_{3} \subset K_{2} \subset K_{1} \subset U$, and $m(K_3) \geq (1 - 3\beta)m(K_1) > 0$. Thus we have found a nested sequence of nonempty compact sets $K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $q \in K_3$. Then since $K_3 = K_2 \cap (K_2 + rv_2)$, the point $q - rv_2 \in K_2$. Likewise, the point $q - rv_2 - rv_1 \in K_1$. Let $p \coloneqq q - rv_2 - rv_1$, $s \coloneqq q - rv_2$ and $t \coloneqq q$. We note that $p,s,t \in E$ and, by construction, form the vertices of an equilateral triangle in $\mathbb{R}^2$. 
 		
+		\begin{prb}{2020-J-I-6}
+			Let $E \subset \mathbb{R}^n$ be a measurable set of positive Lebesgue measure, and let $S^{n-1}$ denote the unit sphere $\{w \in \mathbb{R}^n: \norm{w} = 1\}$. Given any $w \in S^{n-1}$, prove there exist distinct points $x, y \in E$ such that 
+			\begin{equation*}
+				w = \frac{x - y}{\norm{x - y}}. 
+			\end{equation*}
+		\end{prb}
+		Let $E \subset \mathbb{R}^n$ be a measurable set of positive Lebesgue measure, and fix an arbitrary point $w \in S^{n-1}$ (i.e., so that $\norm{w} = 1$). Let $0 < \beta < 1$. By regularity of the Lebesgue measure, there exists some compact set $K_{1}$ contained in $E$ such that $m(K_1) > 0$, and there exists an open set $U$ containing $K_1$ such that $m(U) \leq (1 + \beta)m(K_1)$. Since $K_1$ is compact, $d = d(K_1, U^c) > 0$; let $0 < r < d$ be arbitrary. We claim that the set $K_1 + rw \subset U$; if this were not the case, then $d(K_1, U^c) \leq \norm{rw} = r < d$, which is a contradiction. Thus we also know that the set $K_1 \cup (K_1 + rw) \subset U$. Let $K_{2} \coloneqq K_1 \cap (K_1 + rw)$. In particular, one has 
+		\begin{align*}
+			m(U) &\geq m(K_1) + m(K_1 + rw) - m(K_2) \\
+			\implies 
+			m(K_2) &\geq m(K_1) + m(K_1 + rw) - m(U) = 2m(K_1) -m(U) \geq (1 - \beta)m(K_1) > 0. 
+		\end{align*}
+		Thus $K_2$ must be nonempty. Therefore, we have the nested sequence $\varnothing \neq K_2 \subset K_1 \subset E$. Let $x \in K_2 \subset E$. By definition of $K_2$, $x -rw \in K_1 \subset E$; let $y = x - rw$. Then one has 
+		\begin{equation*}
+			\frac{x - y}{\norm{x - y}} = \frac{x - (x - rw)}{\norm{x - (x - rw)}} = \frac{rw}{r\norm{w}} = w. 
+		\end{equation*} 
+		Thus the proof concludes. 
+		
 		\begin{prb}{2018-A-II-3}
 			Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. Prove that $E + F = \{x + y: x \in E, y \in F\}$ contains an interval. 
 		\end{prb}
 		
-		Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. We will complete this problem using two different techniques. In the first technique, we will use convolutions; in the second, we will use the Lebesgue density theorem. 
+		Suppose $E, F$ are two measurable subsets of the real numbers that both have positive measure. We will use convolutions.
+		
+		We begin by assuming that both $E$ and $F$ have finite measure. So define the function 
+			\begin{equation*}
+				c(x) \coloneqq \chi_{E}(x) \ast \chi_{F}(x) = \int_{\mathbb{R}}\chi_{E}(x - t)\chi_{F}(t)\;dt. 
+			\end{equation*}
+			Fix $\epsilon > 0$. Since $E$ has finite measure, $\chi_{E} \in L^2(\mathbb{R})$. By the density of compactly supported continuous functions in $L^2(\mathbb{R})$, there exists some $g \in C_c^\infty(\mathbb{R})$ so that $\norm{\chi_E - g}_{L^2} \leq \epsilon/(3\sqrt{m(F)})$. By continuity of $g$, there exists a $\delta = \delta(\epsilon) > 0$ so that for all $|h| \leq \delta$, $\norm{g(x + h - \cdot) - g(x - \cdot)}_{L^2} < \epsilon/(3\sqrt{m(F)})$.\footnote{
+				One can write, 
+				\begin{equation*}
+					\norm{g(x + h - \cdot) - g(x - \cdot)}_{L^2}^2 = \int_{\mathbb{R}}|g(x + h -t) - g(x - t)|^2\;dt = \int_{\mathbb{R}}|g(u + h) - g(u)|^2\;du. 
+				\end{equation*}
+				By continuity of $g$, the integrand converges to $0$ a.e. as $h \to 0$. Now assume wlog that $|h| \leq 1$. Then $|g(u + h) - g(u)|^2 \leq 4M^2\chi_{K + B_{1}(0)} \in L^{1}(\mathbb{R})$, where we use the fact that $g$ is compactly supported. Thus by the Dominated Convergence Theorem, the norm must converge to zero. 
+			}
+			Thus, for all $|h| \leq \delta$, one has 
+			\begin{align*}
+				\begin{split}
+					|c(x + h) - c(x)| &\leq \int_{\mathbb{R}}|\chi_{E}(x + h - t) - \chi_{E}(x - t)||\chi_{F}(t)|\;dt \\
+					&\leq \norm{\chi_{E}(x + h - \cdot) - \chi_{E}(x -\cdot)}_{L^2}\cdot \sqrt{m(F)} \qquad (\text{by H\"older's inequality}) \\
+					&\leq \sqrt{m(F)} \cdot \left[\norm{\chi_{E}(x + h - \cdot) - \chi_{E}(x + h - \cdot)}_{L^2} + \norm{g(x + h - \cdot) - g(x - \cdot)}_{L^2} \right. \\
+					&\qquad\qquad\quad \left.+ \norm{\chi_{E}(x - \cdot) - g(x - \cdot)}_{L^2}\right] \\
+					&\leq \epsilon. 
+				\end{split} 
+			\end{align*}
+			Thus, it follows that $c$ is continuous. Now we compute, 
+			\begin{align*}
+				\begin{split}
+					\int_{\mathbb{R}} c(x)\;dx &= \int_{\mathbb{R}}\int_{\mathbb{R}}\chi_{E}(x - t)\chi_{F}(t)\;dtdx \\
+					&= \left(\int_{\mathbb{R}}\chi_{E}(x - t)\;dx\right)\left(\int_{\mathbb{R}}\chi_{F}(t)\;dt\right) \qquad (\text{by Fubini/Tonelli}) \\
+					&= m(E)m(F) > 0. 
+				\end{split}
+			\end{align*}
+			By continuity of $c$, this means that there exists some nonempty open set $U \subseteq \mathbb{R}$ such that for all $x \in U$, $c(x) > 0$. And in particular, $U$ contains a nonempty open interval $I$. Now note that $c(x) > 0$ if and only if 
+			\begin{equation*}
+				\int_{F}\chi_{E}(x - t)\;dt = \int_{\mathbb{R}}\chi_{E}(x - t)\chi_{E}(t)\;dt > 0, 
+			\end{equation*}
+			which is true iff there exists at least one $t \in F$ such that $x - t \in E$, which implies $x \in E + t \subset E + F$. Therefore, one has that $I \subset E + F$, and the proof concludes. If either of $E$ or $F$ (or both) has infinite measure, then we can write $E = \bigcup_{n = 1}^{\infty}E_{n}$ and $F = \bigcup_{n = 1}^{\infty}F_{n}$, where for each $n$, $E_{n} = E \cap [-n,n]$ and $F_{n} = F \cap [-n,n]$. There exists at least one pair, $(n_{0}, n_{1}) \in \mathbb{N}^2$ such that $0 < m(E_{n_{0}}) < \infty$ and $0 < m(F_{n_{1}}) < \infty$. Then we apply the above result to $E_{n_{0}} + F_{n_{1}} \subset E + F$.  
 		
 		\begin{prb}{2016-A-II-2}
 			Let $E \subset \mathbb{R}^2$ be a measurable set with positive Lebesgue measure. Show that $E$ contains all four corners of some rectangles in $\mathbb{R}^2$. Hint: Use Lebesgue density. 
@@ -2864,6 +2917,22 @@
 		\lim_{n \to \infty}\int_{\mathbb{R}}f(x)g(nx)\;dx = 0. 
 	\end{equation*}
 	
+	\begin{prb}{2020-J-II-1}
+		Let $f: \mathbb{R}^n \to \mathbb{R}$ be a harmonic function. If $\int_{\mathbb{R}^n}|f(z)|^{p}\;d\mu < \infty$ for some real number $p \geq 1$, prove that $f$ is identically zero. (Here $\mu$ denotes $n$-dimensional Lebesgue measure on $\mathbb{R}$.)
+	\end{prb}
+	Let $f: \mathbb{R}^n \to \mathbb{R}$ be a harmonic function, and assume that for some $p \geq 1$, $\int_{\mathbb{R}^n}|f(z)|^{p}\;d\mu < \infty$. Let $q$ be the conjugate exponent of $p$ (i.e., let $q \geq 1$ so that $p^{-1} + q^{-1} = 1$). Then one has that by the mean-value property of harmonic functions, for any $x \in \mathbb{R}^n$ and $R > 0$, 
+	\begin{align*}
+		\begin{split}
+			|f(x)| &= \abs{\frac{1}{m(B_{R}(x))} \int_{B_{R}(x)}f(z)\;dz} \leq \frac{1}{m(B_{R}(x))}\norm{f}_{L^1(B_{R}(x))}. 
+		\end{split}
+	\end{align*}
+	But by H\"older's inequality, one has $\norm{f}_{L^1(B_{R}(x))} \leq \norm{f}_{L^p(B_{R}(x))} \cdot m(B_{R}(x))^{1/q}$. Thus, 
+	\begin{align*}
+		\begin{split}
+			|f(x)| \leq \frac{1}{m(B_{R}(x))^{1/p}}\norm{f}_{L^{p}(B_{R}(x))} \leq \frac{1}{m(B_{R}(x))^{1/p}}\norm{f}_{L^{p}(\mathbb{R}^n)}. 
+		\end{split} 
+	\end{align*}
+	Thus since $\norm{f}_{L^p(\mathbb{R}^n)}$, taking the limit $R \to \infty$, one gets that $f(x) = 0$ for all $x \in \mathbb{R}^n$. Thus, $f(x)$ is identically zero. 
 	\begin{prb}{2019-J-I-4}
 		Let $(X, \mu)$ be a measure space and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Show that $f \in L^q(X,\mu)$ for all $q > 1$, and 
 		\begin{equation*}
@@ -3005,6 +3074,29 @@
 		On the other hand, $f$ does not belong to $L^p(0,1)$ for any $p > 1$ since $1 - (1/n) \to 1$ implies that the exponent $p \cdot (1 - 1/n)$ of a term eventually exceeds 1. 
 	\end{enumerate}
 	
+	\begin{prb}{1997-J-I-6}
+		Let $(X, \mu)$ be a $\sigma$-finite measure space. Suppose that $K: X \times X \to \mathbb{C}$ is measurable with respect to the product measure on $X \times X$, and let $f: X \to \mathbb{C}$ be a measurable function. Suppose that $\int_{X}|K(x,y)|\;d\mu(x)$ exists and is less than or equal to 1 for all $y$. Finally, suppose that $\int_{X}|K(x,y)f(y)|\;d\mu(y)$ exists and is finite for all $x$. For $x \in X$, let 
+		\begin{equation*}
+			g(x) = \int_{X}K(x,y)f(y)\;d\mu(y). 
+		\end{equation*}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item If $f \in L^1(X)$, show that $g: X \to \mathbb{C}$ is in $L^1(X)$, and so is measurable. 
+			\item If instead $f \in L^p(X)$ for some $p > 1$, show that $g$ must still be measurable. (Hint: use (a), and the fact that ($X, \mu$) is $\sigma$-finite.)
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $(X, \mu)$ be a $\sigma$-finite measure space, define $K(x,y): X \times X \to \mathbb{C}$ to be the map with the properties given above, and let $f \in L^1(X)$. Then one has that 
+		\begin{align*}
+			\begin{split}
+				\norm{g}_{L^1(X)} = \int_{X}|g(x)|\;d\mu(x) &= \int_{X}\abs{\int_{X}K(x,y)f(y)\;d\mu(y)}\;d\mu(x) \\
+				&\leq \int_{X}\int_{X}|K(x,y)||f(y)|\;d\mu(y)d\mu(x) \\
+				&= \int_{X}\left(\int_{X}|K(x,y)|\;d\mu(x)\right)\cdot |f(y)|\;d\mu(y) \qquad (\text{by Fubini-Tonelli}) \\
+				&\leq \int_{X}|f(y)|\;d\mu(y) = \norm{f}_{L^1(X)} < \infty. 
+			\end{split} 
+		\end{align*}
+		Therefore, $g \in L^{1}(X)$. 
+		\item Now assume $f \in L^p(X)$ for some $p > 1$. Since $(X, \mu)$ is $\sigma$-finite, there exists a countable collection of subsets $\{A_{j}\}_{j = 1}^{\infty}$ of $X$ so that $X = \bigcup_{j = 1}^{\infty}A_{j}$ and $\mu(A_{j}) < \infty$ for each $j$. \complete 
+	\end{enumerate}
 	
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
@@ -3597,6 +3689,16 @@
 		\braket{f', \phi} = -\braket{f, \phi'} = \left\langle \frac{df}{dx}, \phi\right\rangle, 
 	\end{equation*}
 	whence $f' = df/dx$ a.e.
+	
+	\subsection{Compactness}
+	\begin{prb}{2013-A-I-5}
+		Prove that the closed unit ball of an infinite dimensional normed space is not compact. 
+	\end{prb}
+	Let $(X, \norm{\empspace})$ denote an infinite-dimensional normed space, and let $B$ be the closed unit ball in $X$.\textbf{Riesz's Lemma}, which states the following: 
+	\begin{quote}
+		\textbf{Lemma.} (Riesz) Let $Y$ be a closed proper vector subspace of a normed space $(X, \norm{\empspace})$, and let $\alpha$ be any real number satisfying $0 < \alpha < 1$. Then there exists a vector $u$ in $X$ of unit norm $\norm{u} = 1$ such that $\norm{u - y} \geq \alpha$ for all $y \in Y$. 
+	\end{quote}
+	We will now construct an explicit sequence of unit vectors in $X$ that has no convergent subsequence. 
 	
 	\newpage 
 	\section{Complex Analysis}
