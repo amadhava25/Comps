@@ -246,7 +246,13 @@
 			[X, Y] &= \left(\frac{\partial}{\partial z}\right) - \left(x\frac{\partial}{\partial y}\right) = \frac{\partial}{\partial z} - x\frac{\partial}{\partial y}. 
 		\end{split}
 	\end{align*}
-	\complete
+	Next, we compute, 
+	\begin{align*}
+		\begin{split}
+			[X,[X,Y]] &= -2\frac{\partial}{\partial y}. 
+		\end{split}
+	\end{align*}
+	Thus since we must have $[X,[X,Y]]f = 0$, we must have $\partial f/\partial y = 0$ so that $f(x, y,z,t) = f(x,z,t)$. Then since $[X,Y] = 0$, one has that $\partial f/\partial z = 0$ so that $f(x,z,t) = f(x,t)$. Then since $Yf = 0$, one has $\partial f/\partial t = 0$ so that $f(x,t) = f(x)$. Since $Xf = 0$, this concludes the proof that $f$ is a constant. 
 	
 	
 	\begin{prb}{2010-J-I-2}
@@ -1224,10 +1230,99 @@
 		\item Now let $M$ denote a surface of genus 2. As above, it suffices to check if there exists a finitely-sheeted covering space of $M$ with genus 3. By looking at the Euler characteristics, \textit{if} $M$ has a finitely-sheeted covering space of genus 3, then it must be a 2-sheeted covering space. But by replicating the work from Problem \ref{prb:2021-A-I-6}, we see that by Galois correspondence of covering spaces, $M$ must have a $2$-sheeted covering space. Thus, we conclude that $M$ has a covering space which is homeomorphic to a surface of genus 2. 
 	\end{enumerate}
 	
+	\subsection{Degree Theory}
+	
+	\begin{prb}{2020-J-I-2}
+		Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary. Suppose that $\pi_1(M)$ is finite, but that $\pi_1(N)$ is infinite. Prove that every smooth map $\Psi: M \to N$ has degree 0. 
+	\end{prb}
+	Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary, and assume that $\pi_1(M)$ is finite, but $\pi_{1}(N)$ is infinite. Let $\Psi: M \to N$ be a smooth map, and assume to the contrary that $\Psi$ has nonzero degree. Then $\Psi_{\ast}(\pi_1(M))$ is a finite-index subgroup of $\pi_1(N)$, and by Lagrange's theorem, this index must divide $\deg{\Psi}$. But since $\pi_{1}(M)$ is finite, $|\Psi_{\ast}(\pi_1(M))|$ is finite, and thus has infinite index in $\pi_1(N)$ (since $|\psi_1(N)|$ is infinite). But this contradicts our hypothesis that $\deg{\Psi} \neq 0$. Thus by contradiction, the proof concludes. 
+	
+	\begin{prb}{2017-A-II-4}
+		Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $\Phi: M\to M$ be a smooth map that is smoothly homotopic to the identity. (In other words, suppose there is a smooth map $F: M \times [0,1] \to M$ such that $F(x,0) = \Phi(x)$ and $F(x,1) = x$ for every $x \in M$.) Show that $\Phi$ must be surjective. 
+	\end{prb}
+	We will consider two cases for this problem: (1) $M$ is orientable; (2) $M$ is nonorientable. Let $\hat{p}: \hat{M} \to M$ be the orientation cover of $M$. 
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item Let $M$ be a smooth compact connected oriented $n$-manifold (without boundary), and let $\Phi: M \to M$ be a smooth map that is smoothly homotopic to the identity. Since the degree of the identity map is $1$, and the degree is homotopy invariant, one has that $\deg{\Phi} = 1$. Now we will appeal to the following lemma. 
+		\begin{quote}
+			\textbf{Lemma.} (Surjectivity and Degree of Smooth Maps) Let $M$ be a smooth compact connected oriented $n$-manifold (without boundary). If $\Phi: M \to M$ is a smooth map with nonzero degree, then $\Phi$ is surjective. \vspace{-0.25cm}
+			
+			\begin{proof}
+				Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $\Phi: M \to M$ be a smooth map with nonzero degree. Assume to the contrary that $\Phi$ is not surjective. Since $M$ is compact, $\Phi$ must be a proper map, so that $\Phi(M)$ is closed is $M$. Thus, $M \setminus \Phi(M)$ is open. In particular, if $q \notin \Phi(M)$, then there exists an open neighborhood $\ti{U}$ of $q$ in $M$ so that $\ti{U} \subset M \setminus \Phi(M)$. Let $\omega$ be an $n$-form supported in $\ti{U}$ so that $\int_{M}\omega = 1$. Then since $\Phi^{\ast}\omega = 0$ by construction, 
+				\begin{equation*}
+					\int_{M}\Phi^{\ast}\omega = 0 = 0 \cdot \int_{M}\omega. 
+				\end{equation*}
+				Since the degree of $\Phi$ is independent of $\omega \in \Omega^{n}(M)$, we conclude that $\deg{\Phi} = 0$, which is a contradiction! Thus, $\Phi$ must be surjective. 
+			\end{proof}
+		\end{quote}
+		So since we have shown that $\Phi$ is a smooth map of degree 1, it follows by the above lemma that $\Phi$ must be surjective. 
+		
+		\item Let $M$ be a smooth compact connected nonoriented $n$-manifold; by extension, the orientation cover $\hat{M}$ is a smooth compact connected oriented $n$-manifold. Since $\hat{p}$ is a covering map, the smooth homotopy $F: M \times [0,1] \to M$ between $\Phi$ and $\operatorname{id}_{M}$ lifts to a homotopy $\hat{F}: \hat{M} \times [0,1] \to \hat{M}$ between $\hat{\Phi}$ and $\operatorname{id}_{\hat{M}}$, where $\hat{\Phi}(\hat{x}) \coloneqq \hat{F}(\hat{x}, 0)$. By the above lemma in the orientable case, since $\hat{M}$ is orientable, it follows that $\hat{\Phi}: \hat{M} \to \hat{M}$ is surjective. Now fix any $y \in M$, and let $\hat{y} \in \hat{p}^{-1}(y) \subset \hat{M}$. Since $\hat{\Phi}$ is surjective, there exists some $\hat{x} \in \hat{M}$ so that $\hat{\Phi}(\hat{x}) = \hat{y}$. Now recall that $\hat{p} \circ \hat{\Phi} = \Phi \circ \hat{p}$. Thus projecting down the above result to $M$ via $\hat{p}$ gets us 
+		\begin{equation*}
+			\Phi(\hat{p}(\hat{x})) = \hat{p}(\hat{\Phi}(\hat{x})) = y. 
+		\end{equation*}
+		Setting $x = \hat{p}(\hat{x}) \in M$, we conclude that there exists some $x \in M$ so that $\Phi(x) = y$. Thus $\Phi$ is surjective. 
+	\end{enumerate}
+	
+	\begin{prb}{2001-J-II-1}
+		Let $f: M \to N$ be a smooth map between connected smooth compact oriented $n$-manifolds. The degree of $f$ is the number $\deg{f}$ defined by 
+		\begin{equation*}
+			\int_{M} f^{\ast}\varphi = (\deg{f}) \cdot \int_{N}\varphi, 
+		\end{equation*}
+		where $\varphi$ is an $n$-form on $N$ whose integral does not vanish. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show that $\deg{f}$ is independent of the choice of $\varphi$, and so depends only on the smooth map $f$. 
+			\item Let $X$ and $Y$ be smooth compact oriented manifolds of dimensions $p > 0$ and $q > 0$, respectively, and set $n = p + q$. Show that any map $f: S^{n} \to X \times Y$ has degree 0. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $f: M \to N$ be a smooth map between connected smooth compact oriented $n$-manifolds, and assume that for each $\varphi \in \Omega^{n}(N)$ whose integral does not vanish, there exists some real number $k_{\varphi}$ (that depends on $f$ and possibly on $\varphi$) such that 
+			\begin{equation*}
+				\int_{M}f^{\ast}\varphi = k_{\varphi} \int_{N}\varphi. 
+			\end{equation*}
+		Fix an arbitrary $\varphi, \ti{\varphi} \in \Omega^{n}(N)$ with non-vanishing integrals on $N$, and define the scaled $n$-form 
+		\begin{equation*}
+			\ti{\varphi}' = \frac{\int_{N}\varphi}{\int_{N}\ti\varphi}\ti{\varphi}. 
+		\end{equation*}
+		Then one notices that $\int_{N}\ti{\varphi}' = \int_{N}\varphi$. But by linearity of the pullback map, one has that 
+		\begin{equation*}
+			k_{\ti\varphi'}\int_{N}\varphi = k_{\ti{\varphi}'}\int_{N}\ti{\varphi'} = \int_{M}f^{\ast}\ti{\varphi}' = k_{\ti\varphi}\int_{N}\varphi. 
+		\end{equation*}
+		Thus one has that $k_{\ti\varphi'} = k_{\ti\varphi}$. Now since $\int_{N}\varphi = \int_{N}\ti{\varphi}'$, one has that $\int_{N}(\varphi - \ti{\varphi}') = 0$. Since $N$ is a compact connected smooth oriented $n$-manifold, this is possible iff $\varphi$ and $\ti{\varphi}'$ are cohomologous: $\varphi = \ti{\varphi} + d\eta$. But then using Stokes' theorem, since $M$ is without boundary, one gets $\int_{N}f^{\ast}\varphi = \int_{N}f^{\ast}\ti{\varphi}'$. Thus, one gets $k_{\varphi} = k_{\ti\varphi'}$. This forces $k_{\varphi} = k_{\ti{\varphi}}$ so that the proof concludes. 
+		\item Now let $X$ and $Y$ be smooth compact oriented manifolds of dimensions $p > 0$ and $q > 0$, respectively, and set $n = p + q$. Let $f: S^{n} \to  X \times Y$ be a smooth map. The top class of $X \times Y$ is a cup product $a \smile b$, where $a \in H^p_{\text{dR}}(X)$ and $b \in H^q_{\text{dR}}(Y)$. Pulling back to $S^n$ the factors land in $H^{p}_{\text{dR}}(S^n)$ and $H^{q}_{\text{dR}}(S^n)$, respectively, But both of these de Rham cohomology groups are zero since $0 < p, q < n$. This means that the pullback of the top class is zero so that the degree of $f$ is also zero. 
+	\end{enumerate}
+	
+	\begin{prb}{2012-A-II-5}
+		For a smooth map $f: M \to N$ between smooth, compact, oriented $n$-manifolds, the degree of $f$ is the unique integer $k$ such that 
+			\begin{equation*}
+				\int_{M}f^{\ast}\omega = k\int_{N}\omega
+			\end{equation*}
+		for every smooth $n$-form $\omega$ on $N$. Prove or disprove each of the following. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item There exists a degree-1 smooth map $S^5 \to S^2 \times S^3$. 
+			\item There exists a degree-1 smooth map $S^2 \times S^3 \to S^5$. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item We claim that this statement is false; let $f: S^{5} \to S^2 \times S^3$ be an arbitrary smooth map. Since $S^2 \times S^3$ is a smooth compact, oriented $n$-manifold, the top de Rham cohomology group $H^{5}_{\text{dR}}(S^2 \times S^3) \cong \mathbb{R}$, and thus the top class is generated by a cup product $\alpha \smile \beta$, where $\alpha \in H^{2}_{\text{dR}}(S^2)$ and $\beta \in H^{3}_{\text{dR}}(S^3)$. Under the pullback map $f^{\ast}$, each of these factors are pulled back to $H^{2}_{\text{dR}}(S^5)$ and $H^{3}_{\text{dR}}(S^{5})$, respectively, both of which are zero. Thus since the pullback of the top class is zero, the degree of $f$ must be zero as well. Since $f$ was arbitrary, the proof concludes. 
+		\item This statement is true; see the proof from Problem \ref{prb:2000JI5} for a solution. 
+	\end{enumerate}
+	
+	\begin{prb}{2000-J-I-5}
+		If $M$ is any smooth, compact, oriented $n$-manifold, show that there is a smooth map $f: M \to S^n$ with degree 1.
+		\label{prb:2000JI5}
+	\end{prb}
+	Let $M$ be a smooth, connected, compact oriented $n$-manifold, and let $B \subset M$ be a coordinate ball whose orientation agrees with the standard orientation of the unit ball in $\mathbb{R}^n$. Let $\phi: U \to \mathbb{R}^n$ be the corresponding orientation-preserving coordinate chart containing $\overline{B}$ such that $\phi(B) = B_1(0)$, the open unit ball. Let $q: M \to M / (M \setminus B) \cong S^n$ be the natural continuous quotient map that collapses the closed complement $M \setminus B$ to a single basepoint $\infty \in S^n$. This quotient map restricts to a homeomorphism from $B$ onto $S^n \setminus \{\infty\}$. Let $\psi: B_1(0) \to S^n \setminus \{\infty\}$ be a smooth, orientation-preserving diffeomorphism from the unit ball to the punctured sphere. We define an initial continuous map $f_0: M \to S^n$ by setting $f_0(x) = \psi(\phi(x))$ for $x \in B$ and $f_0(x) = \infty$ for $x \in M \setminus B$. To smooth this map, let $\rho: [0, 1] \to [0, 1]$ be a smooth, non-decreasing cut-off function such that $\rho(r) = r$ for $0 \leq r \leq 1/2$ and $\rho(r) = 1$ for $3/4 \leq r \leq 1$. In terms of the radial coordinate $r = \|\phi(x)\|$ on $B$, we define the modified smooth map $f: M \to S^n$ by $f(x) = \infty$ for $x \in M \setminus B$ or for $x \in B$ with $\|\phi(x)\| \geq 3/4$, and $f(x) = \psi\left(\rho(\|\phi(x)\|) \frac{\phi(x)}{\|\phi(x)\|}\right)$ for $x \in B$ with $\|\phi(x)\| < 3/4$. This map $f$ is smooth globally because it is locally constant and equal to $\infty$ on a neighborhood of $M \setminus B$. Now choose a point $y \in S^n \setminus \{\infty\}$ corresponding to a regular value in the image of the inner region where $\|\phi(x)\| < 1/2$. By construction, the preimage $f^{-1}(y)$ consists of exactly one point $x_0 \in B$. Since both $\phi$ and $\psi$ are orientation-preserving and $\rho(r)=r$ on this neighborhood, the differential $df_{x_0}: T_{x_0}M \to T_y S^n$ is a linear isomorphism that preserves orientation. Thus, the local degree at $x_0$ is $+1$. Computing the degree of $f$ by summing the local degrees over the fiber of this regular value yields $\deg(f) = \sum_{x \in f^{-1}(y)} \text{sgn}(\det df_x) = \text{sgn}(\det df_{x_0}) = 1$, completing the proof.
 	
 	
 	\newpage
 	\section{Algebra}
+	
+	\subsection{Ring Theory}
+	
+	\begin{prb}{2024-J-I-4}
+		For each field $K$, prove that the polynomial ring $K[x,y]$ in two variables is not a principal ideal domain. 
+	\end{prb}
+	Let $K$ be an arbitrary field, and consider the polynomial ring $K[x,y]$ in two variables. It suffices to show that there exists an ideal of $K[x,y]$ that is not principal. Consider the ideal $(x, y)$. First, we claim that $(x,y)$ is not proper. Every polynomial in $(x,y)$ is of the form $a(x,y)\cdot x + b(x,y) \cdot y$. In particular, at the origin $(x,y) = (0,0)$, one has that every polynomial in the ideal vanishes. But this means that the constant polynomial $1$ cannot be a part of $(x,y)$. Now assume to the contrary that $(x, y)$ is principal: $(c) = (x, y)$. Since $c$ must be a divisor of both $x$ and $y$, and $x, y$ are coprime, $c$ must be a unit. But this implies that $(c) = K[x,y]$ so that $(x,y)$ is the whole polynomial ring; we explicitly showed that this was not the case. Thus by contradiction, it follows that $(x,y)$ is not principle, and so $K[x,y]$ is not a principal ideal domain. 
 	
 	\subsection{Linear Algebra}
 	
@@ -1367,6 +1462,11 @@
 		\end{array}.
 	\end{equation*}
 	Thus, we conclude that $\operatorname{Gal}(K/\mathbb{Q}) \cong \sf{V}_{4}$, the Klein-4 group. 
+	
+	\begin{prb}{2023-A-II-1}
+		A field extension $K/L$ is called algebraic if every element in $K$ satisfies a polynomial equation with coefficients in $L$. Let $F$, $K$, and $L$ be fields such that $F \supset K \supset L$, and $F/K$ and $K/L$ are algebraic extensions. Prove that $F/L$ is also an algebraic extension. 
+	\end{prb}
+	Let $F, K, L$ be fields with $F \supset K \supset L$, and so that $F/K$ and $K/L$ are algebraic extensions. We must show that every $x \in F$ is the root of a polynomial equation with coefficients in $L$. So fix some $g \in F$. Since $F/K$ is algebraic, there exists some polynomial $p(x) = k_{n}x^n + \dotsm + k_1x + k_0 \in K[x]$ so that $p(g) =0$. Consider the finite field extension $L[k_0, \ldots, k_n]$. Since $g$ is algebraic over this field extension, $[L[k_0, \ldots, k_n, g]: L[k_0, \ldots, k_n]]$ must be a finite field extension. On the other hand, $[L[k_0, \ldots, k_n]: L]$ is immediately seen to be a finite field extension. Thus, $[L[k_0, \ldots, k_n,g]:L]$ must be a finite field extension, and thus an algebraic extension; i.e., $g$ is algebraic over $L$. Since $g \in F$ was arbitrary, we conclude that $F/L$ is an algebraic extension. 
 	
 	\begin{prb}{2023-A-II-3}
 		Let $K/\mathbb{Q}$ be a Galois extension whose Galois group is the quaternion group $Q_{8}$. (Recall that $Q_{8}$ is the group $\pm 1, \pm i, \pm j, \pm k$ with $i^{2} = j^{2} =k^{2} = ijk = -1$.) Show that $K$ is not the splitting field of a quartic polynomial in $\mathbb{Q}[x]$. 
@@ -1881,8 +1981,7 @@
 			\braket{x, y \mid  x^{7} = x^{4} = 1, yxy^{-1} = x^{-1}}. 
 		\end{equation*}
 		
-		\textbf{(Case 2)} Suppose $K \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2}$, with the two generators $(0,1)$ and $(1,0)$. Each of these have order 2 in $K$. Thus any automorphism $\varphi: K \to \mathbb{Z}/6\mathbb{Z}$ is uniquely determined by $\varphi((0,1))$ and $\varphi((1,0))$ with the caveat that the images of these generators divide $2$. Hence, $\varphi((0,1)), \varphi((0,1)) \in \{0,3\}$. If $\varphi_{0}$ maps both genertors to $0$, then $\varphi_{0}$ is the trivial homomorphism and corresponds to the abelian direct product $\mathbb{Z}_{2}\times \mathbb{Z}_{2} \times \mathbb{Z}_{7} \cong \mathbb{Z}_{2} \times \mathbb{Z}_{14}$ (by the Chinese Remainder Theorem). On the other hand, since $\operatorname{Aut}(\mathbb{Z}_{2} \times \mathbb{Z}_{2}) \cong \operatorname{GL}_{2}(\mathbb{F}_{2})$ acts transitively on the nonzero elements of $K$, all three of the remaining (nontrivial) homomorphisms differ by only a precomposition by an automorphism of $K$, and thus the nonabelian semidirect product groups corresponding to these homomorphisms are all isomorphic, and has the group presentation 
-		\begin{equation*}
+		\textbf{(Case 2)} Suppose $K \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2}$, with the two generators $(0,1)$ and $(1,0)$. Each of these have order 2 in $K$. Thus any automorphism $\varphi: K \to \mathbb{Z}/6\mathbb{Z}$ is uniquely determined by $\varphi((0,1))$ and $\varphi((1,0))$ with the caveat that the images of these generators divide $2$. Hence, $\varphi((0,1)), \varphi((0,1)) \in \{0,3\}$. If $\varphi_{0}$ maps both genertors to $0$, then $\varphi_{0}$ is the trivial homomorphism and corresponds to the abelian direct product $\mathbb{Z}_{2}\times \mathbb{Z}_{2} \times \mathbb{Z}_{7} \cong \mathbb{Z}_{2} \times \mathbb{Z}_{14}$ (by the Chinese Remainder Theorem). On the other hand, since $\operatorname{Aut}(\mathbb{Z}_{2} \times \mathbb{Z}_{2}) \cong \operatorname{GL}_{2}(\mathbb{F}_{2})$ acts transitively on the nonzero elements of $K$, all three of the remaining (nontrivial) homomorphisms differ by only a precomposition by an automorphism of $K$, and thus the nonabelian semidirect product groups corresponding to these homomorphisms are all isomorphic, and has the group presentation 		\begin{equation*}
 			\braket{x, y, z \mid x^{7} = y^{2} = z^{2} = 1, yz = zy, yxy^{-1} = x^{-1}, zyz^{-1} = z}. 
 		\end{equation*}
 	\end{quote}
@@ -3759,6 +3858,29 @@
 	\end{quote}
 	We will now construct an explicit sequence of unit vectors in $X$ that has no convergent subsequence. Fix $\alpha = 0.999$, and fix some $x_{1} \in B$. Since the span of $\{x_{1}\}$ is a strictly 1-dimensional linear subspace of $X$, by Riesz's lemma, we can find some $x_{2} \in B \setminus \{x_{1}\}$ such that $\norm{x_{2} - x_{1}} \geq \alpha$; let $Y_{2} = \{x_{1}, x_{2}\}$. Then since $X$ is infinite-dimensional, by Riesz's lemma, we can find some $x_{3} \in B \setminus \operatorname{span}{Y_{2}}$ so that $d(x_{3}, \operatorname{span}{Y_{2}}) \coloneqq \inf_{y \in \operatorname{span}{Y_{2}}}\norm{x_{3} - y} \geq \alpha$; let $Y_{3} = \{x_{1} ,x_{2}, x_{3}\}$. Now assume that we have constructed a finite collection $Y_{n} \coloneqq \{x_{1}, \ldots, x_{n}\}$. Using the fact that $X$ is infinite dimensional, and using Riesz's lemma, we can find some $x_{n + 1} \in B \setminus \operatorname{span}{Y_{n}}$ so that $d(x_{n + 1}, \operatorname{span}{Y_{n}}) \geq \alpha$; we can then define $Y_{n + 1} = Y_{n} \cup \{x_{n + 1}\}$. In this way, we can construct a sequence $\{x_{j}\}_{j = 1}^{\infty} \subset B$ so that for any $j \neq k$, $\norm{x_{j} - x_{k}} \geq \alpha$. This means that the sequence $\{x_{j}\}$ cannot have a convergent subsequence, which implies that $B$ is not sequentially compact. Since $X$ is a metric space (under the metric induced by the norm $\norm{\empspace}$), and sequential compactness is equivalent to compactness in metric spaces, it follows that $B$ is not compact in $X$. 
 	
+	\subsection{Random}
+	
+	\begin{prb}{2024-A-I-4}
+		Let $p(x) = \prod_{k = 1}^{n}(x - x_{k})$ be a polynomial of strictly positive degree $n$ with only real roots. Prove that $(p')^2 \geq p \cdot p''$ on $\mathbb{R}$. (Hint: show $p'/p$ is decreasing wherever it is defined.)
+	\end{prb}
+	Let $p(x) = \prod_{k= 1}^{n}(x - x_{k})$ be a polynomial of strictly positive degree $n$ with only real roots. On $\mathbb{R}\setminus \{x_{1}, \ldots, x_{n}\}$, we consider the function $\log|p(x)|$. Taking the log derivative, one has that 
+	\begin{equation*}
+		\log|p(x)| =\sum_{1}^{n}\log|x - x_{k}| \implies \frac{p'}{p} = \sum_{1}^{n}\frac{1}{|x - x_{k}|}. 
+	\end{equation*}
+	Differentiating once again, 
+	\begin{equation*}
+		\frac{p''}{p} - \frac{(p')^{2}}{p^2} = -\sum_{1}^{n}\frac{1}{(x - x_k)^2} \leq 0
+	\end{equation*} 
+	for all $x \in \mathbb{R}\setminus \{x_1, \ldots, x_n\}$. Thus, one gets $(p')^2 \geq p \cdot p''$ for all of these points. On the other hand, at each $x_k$, $p(x_k) \cdot p''(x_k) = 0$ and $(p'(x_k))^2 \geq 0$ so that the inequality holds trivially. 
+	
+	\begin{prb}{2023-J-II-2}
+		Suppose that $f$ is continuous on $[0,1]$ and $\int_{0}^{1}f(x)x^k\;dx =0$ for $k = 0, \ldots, n$. Prove that either $f$ is identically zero, or $f$ must change sign at least $n + 1$ times. We say that $f$ changes sign $n$ times if there are points $x_1 < \dotsm < x_{n + 1}$ so that $f(x_j) f(x_{j +1}) < 0$ for $j = 1, \ldots, n$. 
+	\end{prb}
+	Suppose that $f$ is continuous on $[0,1]$ and $\int_{0}^{1}f(x)x^{k}\;dx = 0$ for $k =0, \ldots, n$. If $f$ is identically zero, then we are done, so assume that $f$ changes signs at most $n$ times. Then there exist $l$ points ($l \leq n$) $0 < c_1 < \dotsm < c_l < 1$ so that $f$ has a constant sign on each consecutive interval. Consider the polynomial $p(x) = c \cdot \prod_{1}^{l}(x - c_{j})$, where $c \in \{\pm 1\}$; choose $c$ to be the sign of $f$ on the interval $[0, c_{1}]$. This means that $f(x)p(x) \geq 0$ for all $x \in [0,1]$. Moreover, since $p$ is a polynomial of degree $l \leq n$, one has by the continuity of $f(x)p(x)$, and the linearity of the integral that 
+	\begin{equation*}
+		\int_{0}^{1}f(x)p(x)\;dx > 0, 
+	\end{equation*}
+	which contradicts the fact the hypothesis. Thus by contradiction, $f(x)$ must change signs at least $n + 1$ times. 
 	\newpage 
 	\section{Complex Analysis}
 	
@@ -3952,6 +4074,26 @@
 	\end{equation*}
 	where the limit comes out of the integral due to uniform on compacta convergence of the $f_{j}$, and holomorphicity of each $f_{j}$ implies $\oint_{\gamma}f_{j}(z)\;dz = 0$. Thus, we conclude by Morera's Theorem that $f$ is holomorphic in $U$. 
 	
+	\begin{prb}{2023-A-I-6}
+		Let $\mathbb{D}\subset \mathbb{C}$ be the open unit disk. Is there a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$? If so, give a formula. If not, prove that it cannot exist. 
+	\end{prb}
+	Let $\mathbb{D} \subset \mathbb{C}$ be the open unit disk, and assume to the contrary that there exists a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$. The Schwarz-Pick Lemma tells us the following: 
+	\begin{quote}
+		\textbf{Lemma.} (Schwarz-Pick) Let $f$ be analytic on the unit disk, and assume that \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item $|f(z)|\leq 1$ for all $z$, and 
+			\item $f(a) = b$ for some $a, b \in D(0,1)$, the unit disk. 
+		\end{enumerate}
+		Then 
+		\begin{equation*}
+			|f'(a)| \leq \frac{1 - |b|^2}{1 - |a|^2}. 
+		\end{equation*}
+	\end{quote}
+	Thus, applying the Schwarz-Pick Lemma to our function $f$, we must have 
+	\begin{equation*}
+		|f'(0)| \leq \frac{1 - |2/3|^2}{1 - 0} = 1 - (4/9) = 5/9 < 2/3, 
+	\end{equation*}
+	which is a contradiction! Thus by contradiction, such a holomorphic function $f$ cannot exist. 
 	
 	\begin{prb}{2018-J-II-4}
 		Let $\{f_{n}: n = 1, 2, 3, \ldots\}$ and $f$ denote holomorphic functions defined on an open domain $D$ in the complex plane. If the sequence $\{f_{n}\}$ converges uniformly on compact subsets of $D$ to $f$, then show that the sequence of derivatives $\{f'_n\}$ converges uniformly on compact subsets of $D$ to the derivative $f'$. 
