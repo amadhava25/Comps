@@ -893,6 +893,19 @@
 	
 	\newpage 
 	\subsection{Fundamental Groups}
+	
+	\begin{prb}{2025-A-II-1}
+		For $n \geq 2$: 
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Calculate the fundamental group of the real $n$-dimensional projective plane $\mathbb{RP}^{n}$. 
+			\item Show that any continuous map $f: \mathbb{RP}^{n} \to \mathbb{T}^{n}$ from $\mathbb{RP}^{n}$ to the $n$-dimensional torus is homotopic to a constant map. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Let $n \geq 2$, and let $\mathbb{RP}^{n}$ denote the $n$-dimensional projective plane. We recall that for $n \geq 2$, $\mathbb{RP}^{n}$ has the sphere $S^{n}$ as its universal cover, and $\mathbb{RP}^{n} \cong S^{n}/\Gamma$, where $\Gamma \cong \mathbb{Z}/2\mathbb{Z}$ is the group of deck transformations on $S^{n}$. Since for $n\geq 2$, $S^{n}$ is simply connected, we conclude that $\pi_{1}(\mathbb{RP}^{n}) \cong \mathbb{Z}/2\mathbb{Z}$ for $n \geq 2$. 
+		\item Let $f: \mathbb{RP}^{n} \to \mathbb{T}^{n}$ be a continuous map, and let $\hat{p}: \mathbb{R}^{n} \to \mathbb{T}^{n}$ be the (universal) covering map of the torus. We note that since $\mathbb{T}^{n} \cong \underbrace{S^{1} \times \dotsm \times S^{n}}_{n \text{ times}}$, $\pi_{1}(\mathbb{T}^{n}, \text{pt}) \cong \mathbb{Z}^{n}$, a torsion-free group. On the other hand, we showed in (i) that $\pi_{1}(\mathbb{RP}^{n})$ is a torsion group. Thus, the induced group homomorphism, $f_{\ast}: \pi_{1}(\mathbb{RP}^{n}) \to \pi_{1}(\mathbb{T}^{n})$ must be the zero map. Next, since $\mathbb{R}^{n}$ is simply connected (and even contractible), one has that $\pi_{1}(\mathbb{R}^{n})$ is the trivial group so that $\hat{p}_{\ast}(\pi_{1}(\mathbb{R}^n))$ is also trivial. Therefore, since $f_{\ast}(\pi_{1}(\mathbb{RP}^n)) \subset \hat{p}_{\ast}(\pi_{1}(\mathbb{T}^n))$, there exists a lift of $f$ to a map $\ti{f}: \mathbb{RP}^{n} \to \mathbb{R}^{n}$. But since $\mathbb{R}^{n}$ is contractible, we conclude that $\ti{f}$ must be nullhomotopic. Thus, the homotopy descends to $f$ so that $f$ is nulhomotopic (i.e., homotopic to a constant map). 
+	\end{enumerate}
+	
 	\begin{prb}{2023-J-II-4}
 		Prove that $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$, where $M_{1}, M_{2}, M_{3}$ are smooth manifolds of nonzero dimension. 
 	\end{prb}
@@ -1104,6 +1117,21 @@
 		\item The trivial subgroup, $\{(0,0)\}$
 	\end{enumerate}
 	Since $\pi_1(X)$ is abelian, every subgroup is normal, which means that each of the above subgroups belongs to its own conjugacy class. The trivial subgroup corresponds to the covering space $S^2 \times S^2$, which is path connected since $S^2$ is path connected. The whole group itself corresponds to the covering space $\mathbb{RP}^2 \times \mathbb{RP}^2$, which is path-connected since each $\mathbb{RP}^2$ is a path-connected space. The subgroups $\{(0,0), (0,1)\}, \{(0,0),(1,0)\}$ correspond to the path-connected spaces $S^2 \times \mathbb{RP}^2$ and $\mathbb{RP}^2 \times S^2$. Now we know that every manifold $M$ has an orientable orientation cover (which corresponds with an index 2 subgroup of $\pi_1(M)$). Since neither $\{(0,0), (0,1)\}$ nor $\{(0,0), (1,0)\}$ (which are the only other index 2 subgroups) correspond to orientable covering spaces, it follows that $\{(0,0), (1,1)\}$ must correspond to the orientation cover of $X$. Thus since $X$ is non-orientable (since each factor is nonorientable), the orientation cover of $X$ must necessarily be path-connected. Thus up to isomorphism, $X$ has precisely 5 path-connected covering spaces, 2 of which are orientable. 
+	
+	\begin{prb}{2024-A-I-3}
+		Let $\gamma$ be a closed curve in $\mathbb{C}\setminus \{0\}$ with winding number $1$ around the origin. Show that the curve $\gamma$ contains two points that are negatives of each other in $\mathbb{C}$. 
+	\end{prb}
+	Let $\gamma$ be a closed curve in $\mathbb{C}\setminus \{0\}$ with winding number $1$ around the origin, and define the normalized curve $\gamma': [0,1] \to S^1 \coloneqq \{z \in \mathbb{C}\setminus \{0\}: \norm{z} = 1\}$ defined by $\gamma'(t) = \gamma(t)/\norm{\gamma(t)}$. It is straightforward to see that $\gamma'(t)$ is well-defined and continuous. Since the universal cover of $S^1$ is $\mathbb{R}$ and $[0,1]$ is simply connected, it follows that $\gamma'$ lifts to a continuous map $\ti{\gamma}: [0,1] \to \mathbb{R}$, such that $\gamma' = p \circ \ti{\gamma}$, where $p: \mathbb{R}\twoheadrightarrow \mathbb{R}$ is the map defined by, 
+	\begin{equation*}
+		p(\theta) \coloneqq e^{2\pi i \theta}. 
+	\end{equation*}
+	Note that 
+	\begin{align*}
+		\begin{split}
+			\gamma'(t_{1}) = -\gamma'(t_2) &\iff e^{2\pi i \ti{\gamma}(t_{1})} = -e^{2\pi i \ti{\gamma}(t_2)} \\
+			&\iff e^{2\pi i (\ti{\gamma}(t_1) - \ti{\gamma}(t_2))} = -1
+		\end{split}
+	\end{align*}
 	
 	\begin{prb}{2023-J-I-3}
 		Show that if $M$ is a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover, then its fundamental group is either trivial or $\mathbb{Z}/2\mathbb{Z}$. 
@@ -1390,7 +1418,6 @@
 		\label{prb:2000JI5}
 	\end{prb}
 	Let $M$ be a smooth, connected, compact oriented $n$-manifold, and let $B \subset M$ be a coordinate ball whose orientation agrees with the standard orientation of the unit ball in $\mathbb{R}^n$. Let $\phi: U \to \mathbb{R}^n$ be the corresponding orientation-preserving coordinate chart containing $\overline{B}$ such that $\phi(B) = B_1(0)$, the open unit ball. Let $q: M \to M / (M \setminus B) \cong S^n$ be the natural continuous quotient map that collapses the closed complement $M \setminus B$ to a single basepoint $\infty \in S^n$. This quotient map restricts to a homeomorphism from $B$ onto $S^n \setminus \{\infty\}$. Let $\psi: B_1(0) \to S^n \setminus \{\infty\}$ be a smooth, orientation-preserving diffeomorphism from the unit ball to the punctured sphere. We define an initial continuous map $f_0: M \to S^n$ by setting $f_0(x) = \psi(\phi(x))$ for $x \in B$ and $f_0(x) = \infty$ for $x \in M \setminus B$. To smooth this map, let $\rho: [0, 1] \to [0, 1]$ be a smooth, non-decreasing cut-off function such that $\rho(r) = r$ for $0 \leq r \leq 1/2$ and $\rho(r) = 1$ for $3/4 \leq r \leq 1$. In terms of the radial coordinate $r = \|\phi(x)\|$ on $B$, we define the modified smooth map $f: M \to S^n$ by $f(x) = \infty$ for $x \in M \setminus B$ or for $x \in B$ with $\|\phi(x)\| \geq 3/4$, and $f(x) = \psi\left(\rho(\|\phi(x)\|) \frac{\phi(x)}{\|\phi(x)\|}\right)$ for $x \in B$ with $\|\phi(x)\| < 3/4$. This map $f$ is smooth globally because it is locally constant and equal to $\infty$ on a neighborhood of $M \setminus B$. Now choose a point $y \in S^n \setminus \{\infty\}$ corresponding to a regular value in the image of the inner region where $\|\phi(x)\| < 1/2$. By construction, the preimage $f^{-1}(y)$ consists of exactly one point $x_0 \in B$. Since both $\phi$ and $\psi$ are orientation-preserving and $\rho(r)=r$ on this neighborhood, the differential $df_{x_0}: T_{x_0}M \to T_y S^n$ is a linear isomorphism that preserves orientation. Thus, the local degree at $x_0$ is $+1$. Computing the degree of $f$ by summing the local degrees over the fiber of this regular value yields $\deg(f) = \sum_{x \in f^{-1}(y)} \text{sgn}(\det df_x) = \text{sgn}(\det df_{x_0}) = 1$, completing the proof.
-	
 	
 	\newpage
 	\section{Algebra}
@@ -2161,6 +2188,8 @@
 		\frac{a}{b} \otimes_{R} \frac{c}{d} = d\left(\frac{a}{db} \otimes_{R} \frac{c}{d}\right) = \frac{a}{db} \otimes_{R}c. 
 	\end{equation*}
 	But since $c \in R$, its representative class in $Q/R$ is the zero class. Thus, $(a/db) \otimes c= 0$. Since every such simple tensor is identically zero, we conclude that every tensor in $Q/R \otimes_{R} Q/R$ is identically zero so that $Q/R \otimes_{R} Q/R = 0$. 
+	
+
 	
 	\begin{prb}{2005-J-II-4}
 		Let $A: \mathbb{R}^{4} \to \mathbb{R}^{4}$ be a linear map such that the characteristic polynomial of $A$ is $\chi_{A}(t) = t^{4} + 1$. How many $A$-invariant subspaces are there in $\mathbb{R}^{4}$? (A subspace $W$ is called $A$-invariant if $AW \subset W$.) 
