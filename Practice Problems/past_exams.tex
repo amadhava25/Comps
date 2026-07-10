@@ -254,6 +254,28 @@
 	\end{align*}
 	Thus since we must have $[X,[X,Y]]f = 0$, we must have $\partial f/\partial y = 0$ so that $f(x, y,z,t) = f(x,z,t)$. Then since $[X,Y] = 0$, one has that $\partial f/\partial z = 0$ so that $f(x,z,t) = f(x,t)$. Then since $Yf = 0$, one has $\partial f/\partial t = 0$ so that $f(x,t) = f(x)$. Since $Xf = 0$, this concludes the proof that $f$ is a constant. 
 	
+	\begin{prb}{2011-J-I-6}
+		Let $M$ be an orientable smooth manifold, and $\Omega$ a volume form on $M$, i.e. a nowhere-zero differentiable form of degree equal to the dimension of $M$. Let $X$ be a smooth vector field on $M$. The $\Omega$-divergence of $X$ is the function $\operatorname{div}_{\Omega}(X)$ defined by 
+		\begin{equation*}
+			\operatorname{div}_{\Omega}(X)\Omega \coloneqq \frac{d}{dt}\bigg|_{t = 0}(\Phi^{t}_{X})^{\ast}(\Omega), 
+		\end{equation*}
+		where $\Phi^{t}_{X}$ is the time-$t$ map of the flow of $X$. Prove that if $X$ and $Y$ are $C^{\infty}$ vector fields on $M$ such that $\operatorname{div}_{\Omega}(X) = \operatorname{div}_{\Omega}(Y) = 0$, then 
+		\begin{equation*}
+			\operatorname{div}_{\Omega}(X + Y) = 0 \qquad \text{and}\qquad \operatorname{div}_{\Omega}([X,Y]) = 0, 
+		\end{equation*}
+		where $[X,Y]$ denotes the Lie bracket of $X$ and $Y$. 
+	\end{prb}
+	Let $M$ be an orientable smooth manifold, and $\Omega$ a volume form on $M$. Let $\operatorname{div}_{\Omega}(X)$ be the $\Omega$-divergence of $X$ defined above. We note that the $\Omega$-divergence is simply the Lie derivative of $\Omega$ with respect to a given vector field. Thus, we compute, 
+	\begin{align*}
+		\begin{split}
+			\operatorname{div}_{\Omega}(X + Y)\Omega &= \mathcal{L}_{X + Y}\Omega = \mathcal{L}_{X}\Omega + \mathcal{L}_{Y}\Omega \qquad (\text{by linearity of the Lie derivative})\\
+			&= \operatorname{div}_{\Omega}(X)\Omega + \operatorname{div}_{\Omega}(Y)\Omega = 0 + 0 = 0.  \\
+			\operatorname{div}_{\Omega}([X,Y])\Omega &= \mathcal{L}_{[X,Y]}\Omega \\
+			&= \mathcal{L}_{X}\mathcal{L}_{Y}\Omega - \mathcal{L}_{Y}\mathcal{L}_{X}\Omega \\
+			&= \mathcal{L}_{X}(0) - \mathcal{L}_{Y}(0) =0 - 0 = 0. 
+		\end{split}
+	\end{align*}
+	Thus, we conclude that $\operatorname{div}_{\Omega}(X + Y), \operatorname{div}_{\Omega}([X,Y]) =0$. 
 	
 	\begin{prb}{2010-J-I-2}
 		Consider the differential 1-form $\varphi = dx^{1} + x^{2}\;dx^{3}$ on $\mathbb{R}^{3}$. Is it possible to find a smooth coordinate system $(y^{1}, y^{2}, y^{3})$ on a neighborhood of the origin such that $\varphi = f\;dy^{1}$ in these new coordinates, for some smooth function $f(y^{1}, y^{2}, y^{3})$? Support your answer with a proof. 
@@ -642,6 +664,43 @@
 	Let $\alpha$ be a closed 1-form on $\mathbb{RP}^{n}$, $n > 1$, and let $f: [0,1] \to \mathbb{RP}^{n}$ be a smooth function so that $f(0) = f(1)$. To calculate the integral $\int_{[0,1]}f^{\ast}\alpha$, we need to know the de Rham cohomology groups of $\mathbb{RP}^{n}$; in particular, we must know the first de Rham cohomology group of $\mathbb{RP}^{n}$. \textcolor{orange}{[!! Show explicit computation of the cohomology groups !!]} Since $H^{1}_{\text{dR}}(\mathbb{RP}^{n}) = 0$, $\alpha$ must also be an exact 1-form on $\mathbb{RP}^{n}$. I.e., there exists a smooth function $\beta: \mathbb{RP}^{n} \to \mathbb{R}$ so that $\alpha = d\beta$. Then one has 
 	\begin{equation*}
 		\int_{[0,1]}f^{\ast}\alpha = \int_{[0,1]}f^{\ast}d\beta = \beta(f(1)) - \beta(f(0)) = \beta(f(0)) - \beta(f(0)) =0. 
+	\end{equation*}
+	
+	\begin{prb}{2022-A-II-2}
+		Compute the de Rham cohomology of $\mathbb{R}^{4} \setminus (W_{1} \cup W_{2})$, where $W_{1}$ and $W_{2}$ are 2-dimensional linear subspaces that intersect only at the origin. 
+	\end{prb}
+	Let $W_{1}, W_{2}$ be 2-dimensional linear subspaces of $\mathbb{R}^{4}$ that intersect only at the origin, and define $X = \mathbb{R}^{4} \setminus (W_{1} \cup W_{2})$. Since $X$ is connected, $H^{0}_{\text{dR}}(X) \cong \mathbb{R}$. On the other hand, since $X$ is a connected, noncompact smooth manifold without boundary, $H^{0}_{\text{dR}}(X) = 0$. Now consider the open subsets $U = \mathbb{R}^{4}\setminus W_{1}$ and $V = \mathbb{R}^{4}\setminus W_{2}$. Then $U \cap V = X$ and $U \cup V = \mathbb{R}^{4} \setminus \{0\} \cong S^{3}$. Moreover, $U, V \cong S^{1}$. Thus, by the Mayer-Vietoris long exact sequence for the de Rham cohomology, we have the exact sequence 
+	\begin{equation*}
+		0 \xrightarrow{k^{\ast} \oplus l^{\ast}} H^{1}_{\text{dR}}(U) \oplus H^{1}_{\text{dR}}(V) \xrightarrow{i^{\ast} - j^{\ast}} H^{1}_{\text{dR}}(U \cap V) \xrightarrow{\delta} H^{2}_{\text{dR}}(U \cup V) \xrightarrow{k^{\ast} \oplus l^{\ast}} \dotsm.  
+	\end{equation*}
+	Since $U, V \cong S^{1}$, $H^{1}_{\text{dR}}(U) \oplus H^{1}_{\text{dR}}(V) \cong \mathbb{R}^{2}$. On the other hand, since $U \cup V \cong S^{3}$, $H^{2}_{\text{dR}}(U \cup V) \cong 0$. Thus we have the exact sequence 
+	\begin{equation*}
+		0 \to \mathbb{R}^{2} \to H^{1}_{\text{dR}}(X) \to 0,
+	\end{equation*}
+	so that $H^{1}_{\text{dR}}(X) \cong \mathbb{R}^{2}$. Likewise, we have the long exact sequence,
+	\begin{equation*}
+		H^{2}_{\text{dR}}(U \cup V) \xrightarrow{k^{\ast} \oplus l^{\ast}} H^{2}_{\text{dR}}(U) \oplus H^{2}_{\text{dR}}(V) \xrightarrow{i^{\ast} - j^{\ast}} H^{2}_{\text{dR}}(X) \xrightarrow{\delta} H^{3}_{\text{dR}}(U \cup V) \xrightarrow{k^{\ast} \oplus l^{\ast}} H^{3}_{\text{dR}}(U) \oplus H^{3}_{\text{dR}}(V) \xrightarrow{i^\ast - j^\ast} \dotsm , 
+	\end{equation*}
+	which then becomes the exact sequence 
+	\begin{equation*}
+		0 \to 0 \to H^{2}_{\text{dR}}(X) \to \mathbb{R} \to 0 \to \dotsm, 
+	\end{equation*}
+	so that $H^{2}_{\text{dR}}(X) \cong \mathbb{R}$. Finally, we have the exact sequence 
+	\begin{equation*}
+		H^{3}_{\text{dR}}(U) \oplus H^{3}_{\text{dR}}(V) \xrightarrow{i^\ast - j^\ast} H^{3}_{\text{dR}}(X) \xrightarrow{\delta} H^{4}_{\text{dR}}(U \cup V) \xrightarrow{k^\ast + l^\ast} \dotsm, 
+	\end{equation*} 
+	which becomes the exact sequence 
+	\begin{equation*}
+		\mathbb{R}\to 0 \to H^{3}_{\text{dR}}(X) \to 0 \to 0, 
+	\end{equation*}
+	so that $H^{3}_{\text{dR}}(X) = 0$. Thus, we conclude the following: 
+	\begin{equation*}
+		H^{k}_{\text{dR}}(\mathbb{R}^{4}\setminus (W_1 \cup W_2)) = 
+		\begin{cases}
+			0, & k \geq 3 \\
+			\mathbb{R}, & k = 0, 2 \\
+			\mathbb{R}^2, & k = 1. 
+		\end{cases}
 	\end{equation*}
 	
 	\begin{prb}{2021-A-II-1}
@@ -1228,6 +1287,25 @@
 	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
 		\item Let $M$ denote a surface of genus 1. We claim that there is no covering space of $M$ that is homeomorphic to a surface of genus 2. Assume to the contrary that there exists a space $\ti{M}$ homeomorphic to a surface of genus 2 that is a $k$-sheeted covering space of $M$ for some finite $k$. Then we must have $\chi_{\ti{M}} = k \cdot \chi_{M}$, where $\chi_{\cdot}$ denotes the Euler characteristic. Since $\chi_{M} = 2- 2(1) = 0$, $\chi_{\ti{M}} = 2 - 2(2) = -2$, and there exists no finite positive integer $k$ so that $-2 = k \cdot 0$, we conclude that $M$ has no finitely-sheeted covering spaces homeomorphic to a surface 2 genus surface. On the other hand, any infinitely-sheeted covering space of $M$ has to be noncompact, and thus cannot be homeomorphic to a (compact) surface of genus 2. 
 		\item Now let $M$ denote a surface of genus 2. As above, it suffices to check if there exists a finitely-sheeted covering space of $M$ with genus 3. By looking at the Euler characteristics, \textit{if} $M$ has a finitely-sheeted covering space of genus 3, then it must be a 2-sheeted covering space. But by replicating the work from Problem \ref{prb:2021-A-I-6}, we see that by Galois correspondence of covering spaces, $M$ must have a $2$-sheeted covering space. Thus, we conclude that $M$ has a covering space which is homeomorphic to a surface of genus 2. 
+	\end{enumerate}
+	
+	\begin{prb}{2003-J-II-6}
+		Let $M$ be a smooth connected $n$-manifold whose universal cover is diffeomorphic to the $n$-sphere $S^{n}$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Prove the following statement: if $\psi: S^{n} \to S^{n}$ is any diffeomorphism without fixed points, then it is homotopic to the antipodal map. 
+			\item Show that if $n$ is odd, then $M$ is orientable. 
+			\item Show that if $n$ is even, then $|\pi_{1}(M)| \leq 2$.
+		\end{enumerate}
+	\end{prb}
+	Let $M$ be a smooth connected $n$-manifold whose universal cover is diffeomorphic to the $n$-sphere $S^n$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $\psi: S^n \to S^n$ be any diffeomorphism without fixed point (i.e., $\psi(x) - x \neq 0$ for any $x \in S^n$). Then construct the map $H: S^n \times [0,1] \to S^n$ as follows: 
+		\begin{equation*}
+			H(x,t) = \frac{(1 - t)\psi(x) - tx}{\norm{(1 - t)\psi(x) - tx}}. 
+		\end{equation*}
+		By calculus arguments, it is clear that $H$ is a homotopy of maps, in particular, a homotopy between $\psi(x)$ and the antipodal map $x \mapsto -x$. 
+		\item Suppose $n$ is odd. Since $S^n$ is the universal cover of $M$, one can write $M$ as the quotient $S^n/\Gamma$, where $\Gamma$ is the group of deck transformations on $M$. We note that $M$ is orientable if and only if every deck transformation on $S^n$ is orientation preserving. By (a), every fixed-point free (i.e., nonidentity) deck transformation is homotopic to the antipodal map, $\alpha: S^n \to S^n$. Since the antipodal map has degree $(-1)^{n + 1} = 1$ (since $n + 1$ is even), and the degree is homotopy invariant, one has that every deck transformation is orientation preserving. Thus, we conclude that $M$ is orientable. 
+		\item Now assume that $n$ is even. This means that the antipodal map, which has degree $(-1)^{n + 1} = -1$ (since $n + 1$ is odd), is orientation reversing. By (a), every nonidentity deck transformation in $\Gamma$ must be homotopic to the antipodal map, and thus, be orientation reversing. In particular, we notice that for every $\varphi \in \Gamma$, one must have $\varphi^2 = \text{id}$. Thus, one possibility is that $\Gamma = \{e\}$ is the trivial group. But in this case, $M \cong S^{n}$. And since $n$ is even (i.e., $n \geq 2$), $\pi_{1}(M) \cong \pi_{1}(S^{n}) = 0$ since the $n$-sphere, for $n\geq 2$, is simply connected. On the other hand, suppose that $\Gamma$ is not the trivial group. Suppose $\varphi_{1}, \varphi_{2} \in \Gamma$ are nonidentity deck transformations. Then one has $\varphi_1^2 = \text{id} \implies \varphi_{1} = \varphi_{1}^{-1}$ and $\varphi_{1}\circ \varphi_{2} = \text{id} \implies \varphi_{1} = \varphi_{2}^{-1}$. This implies that $\varphi_{2}^{-1} = \varphi_{1}^{-1} \implies \varphi_{1} = \varphi_{2}$. Thus $\Gamma$ contains only one nonidentity element so that $\Gamma \cong \mathbb{Z}/2\mathbb{Z}$. Since $S^{n}$ is simply connected for even $n$ (i.e., $n \geq 2$), it follows that $\pi_{1}(M) \cong \Gamma \cong \mathbb{Z}/2\mathbb{Z}$ so that $|\pi_{1}(M)| = 2$. 
 	\end{enumerate}
 	
 	\subsection{Degree Theory}
@@ -3382,6 +3460,20 @@
 	
 	It remains to be seen that $G$ is continuous; we will use the Closed Graph Theorem to show that $G$ is bounded. Let $\{x_{j}\} \subset X$ such that $x_{j} \to x \in X$. Further assume that $G(x_j) \to y$. By continuity of $F_{1}$, one has that $F_{1}(x_j) \to F_1(x)$. Now since $G(x_j) \to y$, one has by continuity of $F_2$ that $F_1(x_j) \to F_2(y)$. Since limits are unique in Hausdorff spaces, we must have $F_1(x) = F_2(y)$ so that $y = F_{2}^{-1}(F_1(x)) = G(x)$. Thus, the graph of $G$ is closed. By the Closed Graph Theorem, $G$ is a bounded linear bijection between Banach spaces, and thus must be a continuous linear bijection. 
 	
+	\begin{prb}{2024-A-II-3}
+		Suppose $H$ is a Hilbert space and $T,T^\ast$ are both linear operators from $H$ to $H$ so that $\braket{Tu, v} = \braket{u, T^\ast v}$ for all $u, v \in H$. Show that $T$ must be a bounded operator. 
+	\end{prb}
+	Let $H$ be a Hilbert space, and $T, T^{\ast}$ be linear operators from $H$ to $H$ so that $\braket{Tu, v} = \braket{u, T^{\ast}v}$ for all $u, v \in H$ (i.e., assume that $T, T^{\ast}$ are adjoints). By the Closed Graph Theorem, to show that $G$ is bounded, it suffices to show that the graph of $T$ is closed. Let $\{x_{n}\}_{n = 1}^{\infty}$ so that $x_{n} \to x \in H$ and assume that $Tx_{n} \to y \in H$. We wish to show that $Tx = y$. Fix an arbitrary $v \in H$. Then one has that 
+	\begin{equation*}
+		\lim_{n \to \infty}\braket{Tx_{n}, v} = \braket{y, v}. 
+	\end{equation*}
+	On the other hand, one also has that for every $n \geq 1$, 
+	\begin{equation*}
+		\braket{Tx_{n}, v} = \braket{x_{n}, T^{\ast}v} \implies \lim_{n \to \infty}\braket{Tx_{n}, v} = \braket{x, T^{\ast}v} = \braket{Tx, v}. 
+	\end{equation*} 
+	By uniqueness of limits, we have $\braket{y, v} = \braket{Tx, v} \implies \braket{y - Tx, v} = 0$. We recall that $v \in H$ was arbitrary, so let $v = y - Tx$. Then one has that $\braket{y - Tx, y - Tx} =0 \iff y - Tx = 0 \iff y = Tx$. Thus since the graph of $T$ is closed, by the Closed Graph Theorem, $T$ must be a bounded linear operator. 
+	
+	
 	\begin{prb}{2024-J-II-5}
 		Let $P$ be the vector space over $\mathbb{R}$ of (finite degree) polynomials in the variable $x \in (-\infty, \infty)$. Show that $P$ cannot be a Banach space with respect to any norm, that is, if $\norm{\empspace}$ is some norm on $P$, then $P$ is not complete under this norm. Hint: You may use the Baire Category Theorem. 
 	\end{prb}
@@ -3425,6 +3517,49 @@
 		Prove or give a counterexample: if $E \subset \mathbb{R}$ is a Lebesgue measurable subset of positive Lebesgue measure, then some countable union of translates of $E$ covers $\mathbb{R}$. 
 	\end{prb}
 	We will show this statement is false. Consider the fat Cantor set $E$ constructed above. We've shown that $E$ is a positive Lebesgue measurable subset of $\mathbb{R}$ that is nowhere dense. We also know that $\mathbb{R}$ is a complete metric space under the Euclidean metric. By Baire's Category Theorem, $\mathbb{R}$ cannot be the countable union of nowhere dense sets, and thus cannot be the countable union of translates of $E$. 
+	
+	\begin{prb}{2016-J-II-6}
+		Let $\mathcal{M}$ be a closed linear subspace of $L^{2}([0,1];\mathbb{R})$ that is contained in $C([0,1];\mathbb{R})$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Prove that there exists $A > 0$ such that 
+				\begin{equation*}
+					\norm{f}_{L^\infty} \leq A \norm{f}_{L^2}, 
+				\end{equation*}
+			for all $f \in \mathcal{M}$. Here $\norm{\empspace}_{L^\infty}$ is the uniform norm. 
+			\item Prove that $\dim{\mathcal{M}} \leq A^2$. (Hint: Show that if $\{f_j\}$ is an orthonormal basis of $\mathcal{M}$, then $\sum |f_j(x)|^2\leq A^2$ for all $x \in [0,1]$.) 
+		\end{enumerate}
+	\end{prb}
+	Let $\mathcal{M}$ be a closed linear subspace of $L^{2}([0,1]; \mathbb{R})$ that is contained in $C([0,1]; \mathbb{R})$; let $C([0,1]; \mathbb{R})$ be equipped with the uniform norm $\norm{\empspace}_{L^{\infty}}$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $\iota: \mathcal{M} \hookrightarrow C([0,1]; \mathbb{R})$ denote the standard inclusion map it is straightforward to see that $\iota$ is linear. Let $\{f_{n}\}_{n= 1}^{\infty} \subset \mathcal{M}$ so that $f_{n} \to f \in \mathcal{M}$ under the $L^2$ norm, and assume also that $\iota(f_{n}) \to g \in C([0,1]; \mathbb{R})$ under the uniform norm; in other words, $f_{n} \to g$ uniformly on $[0,1]$. This means that for every $\epsilon > 0$, there exists $N \geq 1$ such that for all $n \geq N$, $|f_{n}(x) - g(x)| \leq \epsilon$ for all $x \in [0,1]$. Therefore, for all $n \geq N$, 
+		\begin{equation*}
+			\norm{f_{n} - g}_{L^2} = \left(\int_{0}^{1}|f_{n}(x) - g(x)|^2\;dx\right)^{1/2} \leq \left(\int_{0}^{1}\epsilon^{2}\;dx\right)^{1/2} = \epsilon, 
+		\end{equation*} 
+		so that $f_{n} \to g$ under the $L^2$-norm. By uniqueness of limits under the $L^p$ norms, one has that $f = g$ a.e. Thus $\iota(f) = g$ a.e. This shows that the graph of $\iota$ is closed; by the Closed Graph Theorem, we conclude that $\iota$ must be a bounded linear operator. I.e., there exists some constant $A > 0$ such that for all $f \in \mathcal{M}$, 
+		\begin{equation*}
+			\norm{f}_{L^\infty} = \norm{\iota(f)}_{L^\infty} \leq A \norm{f}_{L^2}. 
+		\end{equation*}
+		\item Since $[0,1]$ is a $\sigma$-finite measure space, $L^{2}([0,1]; \mathbb{R})$ is separable. Thus it is possible to find a countable orthonormal basis $\{f_{j}\}_{j = 1}^{d}$, where $d \coloneqq \dim{\mathcal{M}}$ is possibly infinite. For each fixed $x \in [0,1]$, construct the function 
+		\begin{equation*}
+			g(y) = \sum_{j = 1}^{d}f_{j}(x)f_{j}(y) \implies |g(x)| = \sum_{j = 1}^{d}|f_{j}(x)|^2. 
+		\end{equation*}
+		In particular, we compute, 
+		\begin{align*}
+			\begin{split}
+				\norm{g}_{L^2} &= \left(\int_{0}^{1}\left(\sum_{j = 1}^{d}f_{j}(x)f_{j}(y)\right)^{2}\;dy\right)^{1/2} \\
+				&= \left(\int_{0}^{1}\sum_{j = 1}^{d}|f_{j}(x)|^2|f_{j}(y)|^2\;dy\right)^{1/2} \qquad (\text{since the $f_{j}$ are orthonormal}) \\
+				&= \left(\sum_{j = 1}^{d}|f_{j}(x)|^2\right)^{1/2}. 
+			\end{split}
+		\end{align*}
+		By construction, $g \in \mathcal{M}$. Thus by the first part of the problem, one has that 
+		\begin{equation*}
+			\sum_{j= 1}^{d}|f_{j}(x)|^2 = |g(x)| \leq \norm{g}_{L^\infty} \leq A \cdot \left(\sum_{j = 1}^{d}|f_{j}(x)|^2\right)^{1/2} \implies \sum_{j = 1}^{d}|f_{j}(x)|^2 \leq A^2, 
+		\end{equation*}
+		as the hint suggests. Now integrating both sides of the inequality, and using the monotone convergence theorem, one gets that 
+		\begin{equation*}
+			\sum_{j = 1}^{d}1 \leq A^{2} \implies \dim{\mathcal{M}} = d \leq A^2. 
+		\end{equation*}
+	\end{enumerate}
 	
 	\begin{prb}{1997-A-II-6}
 		Let $A, B$, and $C$ be Banach spaces, and let $j: B \to C$ be an injective, bounded linear operator. Suppose that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Prove that $f$ is bounded. 
@@ -3881,6 +4016,99 @@
 		\int_{0}^{1}f(x)p(x)\;dx > 0, 
 	\end{equation*}
 	which contradicts the fact the hypothesis. Thus by contradiction, $f(x)$ must change signs at least $n + 1$ times. 
+	
+	\begin{prb}{2022-A-II-5}
+		If $f: [-1,2] \to \mathbb{R}$ is continuous and increasing, show that the set of $x \in [0,1]$ where 
+		\begin{equation*}
+			\int_{0}^{1}\frac{f(x + t) - f(x - t)}{t}\;dt = \infty 
+		\end{equation*}
+		has Lebesgue measure zero. 
+	\end{prb}
+	Let $f: [-1,2] \to \mathbb{R}$ be continuous and increasing. Consider the integral 
+	\begin{equation*}
+		A \coloneqq \int_{0}^{1}\int_{0}^{1}\frac{f(x + t) - f(x - t)}{t}\;dt dx. 
+	\end{equation*}
+	By the increasing condition, the integrand is nonnegative everywhere, and is measurable. Thus by Tonelli's theorem, one has that 
+	\begin{equation*}
+		A = \int_{0}^{1}\int_{0}^{1}\frac{f(x + t) - f(x - t)}{t}\;dx dt. 
+	\end{equation*}
+	Let $u = x + t$. Then the inner integral becomes, 
+	\begin{equation*}
+		\int_{t}^{t + 1}\frac{f(u) - f(u - 2t)}{t}\;du. 
+	\end{equation*}
+	But since $f$ is increasing, one has that 
+	\begin{equation*}
+		\int_{t}^{t + 1}f(u) - f(u - 2t)\;du = \int_{t}^{t + 1}f(u)\;du - \int_{t}^{t + 1}f(u - 2t)\;du = \int_{t}^{t + 1}f(u)\;du - \int_{-t}^{1 - t}f(u)\;du = \int_{1 - t}^{1 + t}f(u)\;du - \int_{-t}^{t}f(u)\;du. 
+	\end{equation*}
+	Let $\infty > M > 0$ so that $|f(x)| \leq M$ for all $x \in [-1,2]$ (such $M$ exists by the extreme value theorem). Then 
+	\begin{align*}
+		\begin{split}
+		|A| &\leq \int_{0}^{1}\frac{1}{t}\cdot \abs{\int_{1 - t}^{1 + t}f(u)\;du - \int_{-t}^{t}f(u)\;du}\;dt \\
+		&\leq \int_{0}^{1}\frac{1}{t}\cdot \left[\int_{1 - t}^{1 + t}|f(u)|\;du + \int_{-t}^{t}|f(u)|\;du\right]\;dt \\
+		&\leq \int_{0}^{1}\frac{1}{t}\cdot[4Mt]\;dt = 4M < \infty. 
+	\end{split}
+	\end{align*}
+	This since $A$ is finite, the integrand must be finite a.e., which means that the set of all $x \in [0,1]$ for which $\int_{0}^{1}(f(x + t) - f(x - t))/t\;dt = \infty$ must have Lebesgue measure zero. 
+	
+	\begin{prb}{2005-J-I-1}
+		Suppose that $\{f_n\}$ is a sequence of orthogonal functions on $[0,1]$ with \newline $\int_{0}^{1}|f_n(x)|^2\;dx \leq 1$ for all $n$ (orthogonal means $\int f_{k}f_{j}\;dx = 0$ whenever $j \neq k$). Let $S_n = \sum_{k = 1}^{n}f_{k}$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show that $\int|S_{n}|^2\;dx \leq n$. 
+			\item Show that $\lim_{n \to \infty}\frac{1}{n^2}S_{n^2} = 0$ Lebesgue almost everywhere. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $\{f_{k}\}$ be a sequence of orthogonal functions on $[0,1]$ with the above properties. We note that 
+		\begin{equation*}
+			\abs{S_{n}}^{2} = \abs{\sum_{1}^{n}f_{k}}^{2} = \sum_{1}^{n}|f_{k}|^{2} + (\text{finitely many cross terms}). 
+		\end{equation*}
+		But using the fact that these functions are orthogonal, one has that 
+		\begin{align*}
+			\begin{split}
+				\int_{0}^{1}|S_{n}|^2\;dx &= \int_{0}^{1}\sum_{1}^{n}|f_{k}|^{2}\;dx + \int_{0}^{1}(\text{finitely many cross terms})\;dx \\
+				&= \sum_{1}^{n}\int_{0}^{1}|f_{k}|^{2}\;dx \leq \sum_{1}^{n}1 = n. 
+			\end{split}
+		\end{align*}
+		\item To show that $\frac{1}{n^2}\sum_{1}^{n^2}f_{k} \to 0$ a.e., it suffices to show that $\frac{1}{n^4}|S_{n^2}|^2 \to 0$ a.e., for which it suffices to show that the infinite sum 
+		\begin{equation*}
+			\sum_{n = 1}^{\infty}\frac{1}{n^{4}}\left(\sum_{1}^{n^{2}}f_{k}\right)^{2}
+		\end{equation*}
+		converges a.e. on $[0,1]$. The following sequence 
+		\begin{equation*}
+			\left\{\sum_{1}^{N}\frac{1}{n^{4}}|S_{n^{2}}|^{2}\right\}_{N = 1}^{\infty}
+		\end{equation*}
+		is a monotone increasing sequence of measurable functions on $[0,1]$. Thus by the Monotone Convergence Theorem, one has that 
+		\begin{align*}
+			\begin{split}
+				\int_{0}^{1}\sum_{1}^{\infty}\frac{1}{n^{4}}|S_{n^{2}}|^{2}\;dx &= \lim_{N \to \infty}\sum_{1}^{N}\int_{0}^{1}\frac{1}{n^{4}}|S_{n^{2}}|^2\;dx \\
+				&= \lim_{N \to \infty}\sum_{1}^{N}\frac{1}{n^{4}}\int_{0}^{1}|S_{n^2}|^2\;dx \\
+				&= \lim_{N \to\infty}\sum_{1}^{N}\frac{1}{n^{4}}\sum_{1}^{n^{2}}\int_{0}^{1}|f_{k}|^{2}\;dx \\
+				&\leq \lim_{N\to\infty}\sum_{1}^{N}\frac{1}{n^{4}} \cdot n^{2} = \sum_{1}^{\infty}\frac{1}{n^{2}} < \infty. 
+			\end{split}
+		\end{align*}
+		Thus since the integral is finite, the integrand (i.e., the infinite sum) must be finite a.e., and thus the infinite sum converges a.e. on $[0,1]$. But this means that the tail of the infinite sum tends to zero a.e.; i.e., 
+		\begin{equation*}
+			\lim_{n \to \infty}\abs{\frac{1}{n^{2}}S_{n^{2}}}^{2} = \lim_{n \to \infty}\frac{1}{n^{4}}|S_{n^{2}}|^{2} = 0 \text{ a.e.}
+		\end{equation*}
+		Thus, we conclude that $(1/n^2)S_{n^{2}} \to 0$ a.e. 
+	\end{enumerate}
+	
+	\begin{prb}{1997-J-II-6}
+		Let $(X, \mu)$ be a measure space with $\mu(X) < \infty$, and let $\{\varphi_{j}\}_{j =1}^{\infty}$ be an orthonormal basis for $L^2(X)$. Show that $\{\varphi_{j}(x)\varphi_{k}(y)\}$ is an orthonormal basis for $L^2(X \times X)$. 
+	\end{prb}
+	Let $(X, \mu)$ be a measure space with $\mu(X) < \infty$, and let $\{\varphi_{j}\}_{j = 1}^{\infty}$ be an orthonormal basis for $L^2(X)$. Since every finite measure space is $\sigma$-finite, and each $\varphi_{j}$ is measurable on $X$ (so that $\varphi_{j}\varphi_{k}$ for each $j, k$ is measurable on $X \times X$), Fubini's theorem holds. Then 
+	\begin{align*}
+		\begin{split}
+			\int_{X}\int_{X}\varphi_{j}(x)\varphi_{k}(y)\varphi_{l}(x)\varphi_{m}(y)\;dy dx &= \left(\int_{X}\varphi_{j}(x)\varphi_{l}(x)\;dx\right)\left(\int_{X}\varphi_{k}(y)\varphi_{m}(y)\;dy\right) \\
+			&=  
+			\begin{cases}
+				1 \cdot 1 = 1, & \qquad \text{iff $j = l$ and $k = m$} \\
+				\left.
+				\substack{\displaystyle 0 \cdot 1 \\ \displaystyle 0 \cdot 1 \\ \displaystyle 0 \cdot 0}\right\} = 0 & \qquad \text{if $j \neq l$ or $k \neq m$}
+			\end{cases}
+		\end{split}
+	\end{align*}
+	Completeness of the basis follows from similar computations. Thus, the proof concludes; $\{\varphi_j(x)\varphi_{k}(y)\}$ is indeed an orthonormal basis for $L^{2}(X \times X)$. 
 	\newpage 
 	\section{Complex Analysis}
 	
