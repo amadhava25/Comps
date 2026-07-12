@@ -5759,7 +5759,16 @@
 	
 	\begin{itemize}
 		\item If $A \in \operatorname{GL}(n, V)$ and $m_{A}(t)$ denotes the minimal polynomial of $A$, then $\deg{m_A} \leq n$. Note that $m_{A}$ is not necessarily an irreducible polynomial. However, it is nonconstant and monic. 
-		\item If $p(t)$ annihilates a linear operator, $A \in \operatorname{GL}(n, V)$, then $m_{A}(t) \mid p(t)$, where $m_{A}(t)$ is the minimal polynomial of $A$ over $V$. 
+		\item If $p(t)$ annihilates a linear operator, $A \in \operatorname{GL}(n, V)$, then $m_{A}(t) \mid p(t)$, where $m_{A}(t)$ is the minimal polynomial of $A$ over $V$.
+		\item Let $R$ be a principal ideal domain, and $M$ a \textit{finitely generated $R$-module}. Then there exists a \textit{unique} invariant factor decomposition, 
+		\begin{equation*}
+			M \cong R^{r} \oplus \bigoplus_{i = 1}^{n}R/(d_i), 
+		\end{equation*} 
+		where $r$ is the free rank of $M$, and $(d_{1}) \supseteq (d_2) \supseteq \dotsm \supseteq (d_n)$. 
+		\item A field extension $K/F$ is \textit{normal} iff every irreducible polynomial over $F$ having a root in $K$ splits completely over $K$. 
+		\item A field extension $K/F$ is \textit{algebraic} iff every element $\alpha \in K$ satisfies a nonzero polynomial $p(x) \in F[x]$. 
+		\item A field extension $K/F$ is \textit{separable} iff it is algebraic, and for every $\alpha \in K$, the minimal polynomial of $\alpha$ over $K$ has no repeated roots in $K$ (i.e., is a separable polynomial). Equivalently iff the minimal polynomial is coprime to its formal derivative. 
+		\item A field extension $K/F$ is \textit{Galois} iff it is algebraic, normal, and separable. 
 	\end{itemize}
 	
 	\subsubsection{Geometry/Topology}
@@ -5768,7 +5777,11 @@
 		\item Let $M$ be a smooth $n$-manifold. Then the orientation double cover, $\hat{p}: \hat{M} \to M$ is a 2-sheeted covering space of $M$, such that $\hat{M}$ is always orientable. $M$ is orientable \textit{if and only if} the orientation double cover $\hat{M}$ is disconnected. 
 		\item If $M$ is a connected smooth $n$-manifold, and $M$ is not oriented, then $p_{\ast}(\pi_{1}(\hat{M}, \text{pt}))$ is an index-2 subgroup of $\pi_1(M, p(\text{pt}))$. Consequently, if $\pi_{1}(M)$ is trivial or has odd cardinality, then $M$ is orientable. 
 		\item Iff $X$ is connected, locally pathwise connected, and semilocally simply connected, $X$ admits a universal covering space $\ti{p}: \ti{X} \to X$. The universal covering space $\ti{X}$ is unique and simply connected. If $X$ is simply connected, then it is its own universal cover. 
-		\item If $M$ admits a universal cover $\ti{M}$, then $M \cong \ti{M}/\Gamma$; $\Gamma$ is the group of deck transformations on $\ti{M}$. 
+		\item If $M$ admits a universal cover $\ti{M}$, then $M \cong \ti{M}/\Gamma$; $\Gamma$ is the group of deck transformations on $\ti{M}$. $M$ is orientable iff every deck transformation is orientation-preserving. If $\ti{M}$ is simply connected, then $\pi_{1}(M) \cong \Gamma$. 
+		\item The universal covering space of $T^{2}$ is $\mathbb{R}^2$; of $S^1$ is $\mathbb{R}$, of $S^{n}$ is itself for $n \geq 2$. For all $n\geq 1$, the universal cover of $\mathbb{RP}^n$ is $S^1$. 
+		\item Every continuous fixed-point free map $\varphi: S^{n} \to S^{n}$ is homotopic to the antipodal map, which has degree $(-1)^{n + 1}$. 
+		\item Every continuous map $f: X \to Y$, where $Y$ is contractible (i.e., homotopy equivalent to a point), is nulhomotopic. 
+		\item Iff $f: X \to Y$ is a continuous map (where $X$ is connected and locally path connected), $\bar{p}: \bar{Y} \to Y$ is a covering space, and $f_{\ast}(\pi_\ast(X)) \subset\bar{p}_\ast(\pi_{1}(\bar{Y}))$, there exists a lift of $f$ to a map $\ti{f}: X \to \bar{Y}$ such that $f = \bar{p} \circ \ti{f}$. 
 	\end{itemize}
 	
 \end{document}
