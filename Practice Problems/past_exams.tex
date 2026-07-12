@@ -1121,26 +1121,23 @@
 	\begin{prb}{2024-A-I-3}
 		Let $\gamma$ be a closed curve in $\mathbb{C}\setminus \{0\}$ with winding number $1$ around the origin. Show that the curve $\gamma$ contains two points that are negatives of each other in $\mathbb{C}$. 
 	\end{prb}
-	Let $\gamma$ be a closed curve in $\mathbb{C}\setminus \{0\}$ with winding number $1$ around the origin, and define the normalized curve $\gamma': [0,1] \to S^1 \coloneqq \{z \in \mathbb{C}\setminus \{0\}: \norm{z} = 1\}$ defined by $\gamma'(t) = \gamma(t)/\norm{\gamma(t)}$. It is straightforward to see that $\gamma'(t)$ is well-defined and continuous. Since the universal cover of $S^1$ is $\mathbb{R}$ and $[0,1]$ is simply connected, it follows that $\gamma'$ lifts to a continuous map $\ti{\gamma}: [0,1] \to \mathbb{R}$, such that $\gamma' = p \circ \ti{\gamma}$, where $p: \mathbb{R}\twoheadrightarrow \mathbb{R}$ is the map defined by, 
-	\begin{equation*}
-		p(\theta) \coloneqq e^{2\pi i \theta}. 
-	\end{equation*}
-	Note that 
-	\begin{align*}
-		\begin{split}
-			\gamma'(t_{1}) = -\gamma'(t_2) &\iff e^{2\pi i \ti{\gamma}(t_{1})} = -e^{2\pi i \ti{\gamma}(t_2)} \\
-			&\iff e^{2\pi i (\ti{\gamma}(t_1) - \ti{\gamma}(t_2))} = -1
-		\end{split}
-	\end{align*}
+	Suppose to the contrary that $\gamma$ contains no antipodal points. Then the function $f(z) = z^2$ must be injective on $\gamma$ so that $f(\gamma)$ is a Jordan curve.\footnote{A Jordan curve is a simple closed curve that is homeomorphic to the unit circle $S^1$.} Since $0 \notin \gamma$, $0 \notin f(\gamma)$. Moreover, since $f(\gamma)$ is a Jordan curve, its winding number must be $-1$, $0$, or $1$. But since $z^2$ wraps $\gamma$ (which has winding number 1 by the hypothesis) twice, it follows that $f(\gamma)$ must have winding number 2, which is a contradiction. Thus by contradiction, $\gamma$ must contain antipodal points. 
 	
 	\begin{prb}{2023-J-I-3}
 		Show that if $M$ is a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover, then its fundamental group is either trivial or $\mathbb{Z}/2\mathbb{Z}$. 
 	\end{prb}
-	Let $M$ be a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover. Let $\Gamma$ be the group of deck transformations\footnote{Note that a \textbf{deck transformation} is a homeomorphism $f: \ti{M} \to \ti{M}$ such that $p \circ f = p$, where $p: \ti{M} \to M$ is the covering map. In particular, deck transformations have the uniqueness property that states that if two such transformations are equal at any point $x \in \ti{M}$, then the two transformations are identical. Moreover, the identity map on $\ti{M}$ is a deck transformation. Thus if the deck transformation $h$ has a fixed point, then it must be the identity map.} on $S^{2n}$ (note that this implies $\pi_1(X) \cong \Gamma$, and every nonidentity element of $G$ acts freely on $S^{2n}$). Suppose $h: S^{2n} \to S^{2n}$ is fixed-point free. Then the Lefschetz number, 
+	Let $M$ be a closed manifold that has an even dimensional sphere $S^{2n}$ as its universal cover. Let $\Gamma$ be the group of deck transformations\footnote{Note that a \textbf{deck transformation} is a homeomorphism $f: \ti{M} \to \ti{M}$ such that $p \circ f = p$, where $p: \ti{M} \to M$ is the covering map. In particular, deck transformations have the uniqueness property that states that if two such transformations are equal at any point $x \in \ti{M}$, then the two transformations are identical. Moreover, the identity map on $\ti{M}$ is a deck transformation. Thus if the deck transformation $h$ has a fixed point, then it must be the identity map.} on $S^{2n}$ (note that this implies $\pi_1(X) \cong \Gamma$, and every nonidentity element of $\Gamma$ acts freely on $S^{2n}$). Suppose $h: S^{2n} \to S^{2n}$ is fixed-point free. Then since every nontrivial deck transformation must be homotopic to the antipodal map on $S^2n$, and the antipodal map on $S^{2n}$ has degree $(-1)^{2n + 1} = -1$, every nonidentity deck transformation must have degree $-1$. This means that for every $g \in \Gamma$, $\deg{g_1^2} = \deg{g}\cdot \deg{g} = 1$ so that $g^2 = \operatorname{id}$. Thus one possibility is that every $\Gamma$ contains only the trivial element. On the other hand, if one assumes that $\Gamma$ has two nonidentity elements, then since 
 	\begin{equation*}
-		0 =L(h) = 1 + \operatorname{deg}(h) =0. 
+		\operatorname{id} = g_1g_2 \implies g_1 = g_2^{-1}, 
 	\end{equation*}
-	Hence, every nonidentity deck transformation must have degree $-1$. Let $g_1, g_2 \in G$ be two nonidentity elements. Then $\operatorname{deg}(g_1g_2) = 1$. A nonidentity deck transformation cannot have degree 1, since then the Lefschetz number would be 2, which implies the existence of a fixed point. Therefore, $g_1g_2 = \operatorname{id}$, so that $G$ has at most one nonidentity element. Therefore, either $G$ is trivial or $G \cong \mathbb{Z}/2\mathbb{Z}$. This concludes the proof. 
+	and inverses are unique, one has that $g_{1}^{-1} = g_{2}^{-1}$ so that $g_1 = g_2$. Thus, $\Gamma$ can contain at most one nontrivial element. This means that either $\Gamma = \{e\}$ or $\Gamma \cong \mathbb{Z}/2\mathbb{Z}$. Since $S^{2n}$ is simply connected for every $n \geq 1$, we conclude that 
+	\begin{equation*}
+		\pi_{1}(M) \cong \Gamma \cong 
+		\begin{cases}
+			\{e\} \\
+			\mathbb{Z}/2\mathbb{Z}. 
+		\end{cases}
+	\end{equation*}
 	
 	\begin{prb}{2022-J-I-2}
 		Let $\mathbb{T}^{2} = \mathbb{R}^2/\mathbb{Z}^2$, where $\mathbb{Z}^2 \subset \mathbb{R}^2$ is the standard integer lattice. Is it true that (a) every continuous map $f: S^2 \to \mathbb{T}^2$ is nullhomotopic? (b) every continuous map $g: \mathbb{T}^2 \to S^{2}$?
@@ -1431,6 +1428,58 @@
 	
 	\subsection{Linear Algebra}
 	
+	\begin{prb}{2023-A-I-1}
+		Let $V$ be a $n$-dimensional vector space over a field $F$. An element $A \in \operatorname{End}{V}$ is called \textit{nilpotent}, if $A^k = 0$ for some $k > 1$. Prove that $A$ is nilpotent if and only if 
+		\begin{equation*}
+			\operatorname{Tr}(\Lambda^{i} A) = 0, \qquad i= 1, \ldots, n
+		\end{equation*}
+		where $\Lambda^{i}A$ denotes the induced action of $A$ acting on the wedge product $\Lambda^{i}V$ for each $i$. 
+	\end{prb}
+	Let $V$ be an $n$-dimensional vector space over a field $F$, and fix an element $A \in \operatorname{End}(V)$. First assume that for every $i = 1, \ldots, n$, $\operatorname{Tr}(\Lambda^{i}A) = 0$. Let $p_{A}(t)$ denote the characteristic polynomial of $A$. Then we recall that 
+	\begin{equation*}
+		p_{A}(t) = t^{n} - \operatorname{Tr}(A)t^{n-1} + \operatorname{Tr}(\Lambda^{2}A)t^{n-2} - \dotsm + (-1)^{n}\operatorname{Tr}(\Lambda^{n}A). 
+	\end{equation*}
+	Using the hypothesis, one has that the characteristic polynomial of $A$ must be $p_A(t) = t^{n}$. Since $A$ satisfies its own characteristic polynomial by the Cayley-Hamilton theorem, we conclude that $A^{n} = 0$ so that $A$ is nilpotent. Now suppose that $A$ is nilpotent; i.e., let $k > 1$ be a positive integer such that $A^{k} =0$. In particular, if $(\lambda, v)$ is an eigenvalue-eigenvector pair for $A$, then one must have that $0 = A^{k}v = \lambda^{k}v$ so that $\lambda^{k} = 0$. Since $F$ is a field, we conclude that $\lambda = 0$. But then, since for each $i = 1, \ldots, n$, 
+	\begin{equation*}
+		\operatorname{Tr}(\Lambda^{i}A) = \sum_{j_1 < \dotsm < j_n}\lambda_{j_1}\dotsm \lambda_{j_i} = 0, \qquad (i = 1,\ldots,  n)
+	\end{equation*}
+	where the expression on the right side is the $i$th elementary symmetric polynomial. Thus the proof concludes. 
+	
+	\begin{prb}{2023-A-I-3}
+		Let $A$ be a square matrix with integer entries. Suppose that for some odd prime number $p$, all eigenvalues of $A$ are $p$th roots of unity, and that $A$ is congruent to the identity matrix modulo $p$. Show that all eigenvalues of $A$ are equal to 1. 
+	\end{prb}
+	Let $A$ be a square matrix with integer entries, and assume that for some fixed odd prime number $p$, all eigenvalues of $A$ are $p$th roots of unity, and that $A$ is congruent to the identity matrix modulo $p$. Let $B$ be a square matrix with integer entries such that $A = I + pB$. We note that since the eigenvalues of are $p$th roots of unity, and the eigevalues of $A$ are the roots of the characteristic polynomial $p_A(t)$, one has that $p_A(t) \mid (t^p - 1) \implies p_{A}(t) \mid (t - 1)\Phi_p(t)$. We wish to show that $\Phi_{p}(A) \neq 0$. For each $0 \leq k \leq p - 1$, one computes, 
+	\begin{equation*}
+		A^{k} = (1 + pB)^{k} \equiv 1 + pkB\pmod{p^2}. 
+	\end{equation*}
+	This means that 
+	\begin{equation*}
+		\Phi_{p}(A) = \sum_{k = 0}^{p - 1}A^{k} = pI + \frac{p(p - 1)}{2}pB \equiv pI\pmod{p^2}, 
+	\end{equation*}
+	so that $\Phi_{p}(A) \not\equiv 0 \pmod{p^2}$. But this means that $\Phi_{p}(A) \neq 0$. Thus, since $\Phi_{p}(t)$ cannot divide $p_A(t)$, we must have $p_{A}(t) = x - 1$. Thus $A = I$ so that the eigenvalues of $A$ are $1$. 
+	
+	\begin{prb}{2023-J-I-6}
+		Let $V$ be a real vector space of finite dimension $d > 2$. Let $T: V \to V$ be a finite order automorphism. Prove that the associated linear operator 
+		\begin{equation*}
+			\bigwedge^{2}T: \bigwedge^{2}V \to \bigwedge^{2}V, \qquad v_1 \wedge v_2 \mapsto T(v_1) \wedge T(v_2)
+		\end{equation*}
+		fixes a nonzero vector. 
+	\end{prb}
+	Let $V$ be a real vector space of finite dimension $d > 2$, and let $T: V \to V$ be a finite order automorphism. Since $T$ has finite order, it must be diagonalizable over $\mathbb{C}$ and its eigenvalues must be roots of unity. Suppose $T$ has a complex-valued eigenvalue $\lambda$, then we know that its complex conjugate $\bar{\lambda}$ must also be an eigenvalue of $T$. Let $v$ be an eigenvector corresponding to $\lambda$ and $\bar{v}$ be an eigenvalue corresponding to $\bar{\lambda}$. Then one computes, 
+	\begin{equation*}
+		\Lambda^{2}T(v \wedge \bar{v}) = \lambda \bar{\lambda}v \wedge \bar{v} = v \wedge \bar{v}. 
+	\end{equation*}
+	If we take the real and imaginary parts of the eigenvectors, then one obtains a nonzero real fixed vector. Now suppose that all of the eigenvalues are real. Since these eigenvalues must be roots of unity, each eigenvalue is $\pm 1$. Since $\dim{V} = d > 2$, there must be at least two distinct eigenvectors that have the same eigenvalue. Suppose $Tv_{1,2} = \lambda v_{1,2}$ for $\lambda \in \{\pm1\}$. Then 
+	\begin{equation*}
+		\bigwedge^{2}T(v_1 \wedge v_2) = \lambda^2 (v_1 \wedge v_2) = v_1 \wedge v_2. 
+	\end{equation*}
+	Thus, $\wedge^2 T$ fixes the nonzero real vector $v_1 \wedge v_2$. 
+	
+	\begin{prb}{2023-J-II-5}
+		Let $\operatorname{GL}(n, \mathbb{Q})$ denote the group of invertible $n \times n$ matrices with entries in the rational numbers. Let $p$ be a prime satisfying $p > n + 1$. Show that if $A \in \operatorname{GL}(n,\mathbb{Q})$ satisfies $A^p = I$, then $A = I$, where $I$ is the $n \times n$ identity matrix. 
+	\end{prb}
+	Let $p > n + 1$ be a fixed prime number, and $A \in \operatorname{GL}(n, \mathbb{Q})$ so that $A^p = I$. I.e., we have that the polynomial $t^{p} - 1$ annihilates $A$. So if $m_{A}(t)$ denotes the minimal polynomial of $A$, then $m_{A}(t) \mid t^{p} -1$, which implies $m_{A}(t) \mid (t -1)\Phi_{p}(t)$, where $\Phi_{p}(t)$ is the $p$th cyclotomic polynomial. Since both $(t - 1)$ and $\Phi_{p}(t)$ are nonconstant irreducible polynomials, and $\mathbb{Q}[t]$ is a UFD, $m_{A}(t)$ must be one of the following: (1) $t - 1$, (2) $\Phi_{p}(t)$, (3) $(t - 1)\Phi_{p}(t)$. But $m_{A}(t)$ cannot be $\Phi_{p}(t)$ or $(t - 1)\Phi_{p}(t)$: the degree of $\Phi_{p}(t)$ is $p -1 > n$, while we know that the degree of the minimal polynomial of $A$ must be at most $n$. Thus, we conclude that $m_{A}(t) = t - 1$ so that $0 = m_{A}(A) = A - I \implies A = I$, where $I$ is the $n\times n$ identity matrix. 
+	
 	\begin{prb}{2022-A-I-6}
 		Denote by $\operatorname{Mat}(m, \mathbb{C})$ and $\operatorname{Mat}(n, m, \mathbb{C})$ the space of $m \times m$ and $n \times m$ matrices with complex coefficients. Let $A \in \operatorname{Mat}(n, \mathbb{C}), B \in \operatorname{Mat}(m, \mathbb{C})$ be given and suppose $A$ and $B$ have no common eigenvalues. Show that the only solution of 
 		\begin{equation*}
@@ -1534,7 +1583,7 @@
 	\begin{prb}{2024-A-II-5}
 		Let $\alpha \in \mathbb{C}$ be a complex number such that the field $\mathbb{Q}(\alpha)$ is a finite Galois extension of the field $\mathbb{Q}$. Let $L \supset \mathbb{Q}$ be an arbitrary finite extension. Show that $L(\alpha) \supset L$ is also a finite Galois extension. 
 	\end{prb}
-	Let $\alpha \in \mathbb{C}$ be a complex number such that $\mathbb{Q}(\alpha)$ is a finite Galois extension of the field $\mathbb{Q}$, and let $L \supset \mathbb{Q}$ be an arbitrary finite extension. \complete
+	Let $\alpha \in \mathbb{C}$ be a complex number such that the field $\mathbb{Q}(\alpha)$ is a finite Galois extension of the field $\mathbb{Q}$, and let $L \supset \mathbb{Q}$ be an arbitrary finite extension. Let $m_{\alpha}(x) \in \mathbb{Q}[x]$ denote the minimal polynomial of $\alpha$ over $\mathbb{Q}$. Since $\mathbb{Q}(\alpha)$ is finite and Galois, the minimal polynomial of $\alpha$ over $L$ must divide $m_\alpha$ in $L[x]$, so that it is also separable and all of its roots lie in $L(\alpha)$ since the roots already lie in $\mathbb{Q}(\alpha) \subset L(\alpha)$. Thus, $L(\alpha)$ is finite, normal, and separable, and hence finite Galois over $L$. 
 	
 	\begin{prb}{2024-J-II-4}
 		Let $\alpha = \sqrt{2 + \sqrt{3}} \in \mathbb{C}$. Let $K$ be the smallest Galois extension of $\mathbb{Q}$ which contains $\alpha$. Describe the Galois group $\operatorname{Gal}(K/\mathbb{Q})$. 
@@ -2173,8 +2222,53 @@
 	\begin{equation*}
 		n = \dim{V} = \sum_{i = 1}^{N}\deg{\alpha_{i}(x)}, 
 	\end{equation*}
-	and the degree of each direct summand is even, we conclude that $n$ is even. 
+	and the degree of each direct summand is even, we conclude that $n$ is even.
 	
+	\begin{prb}{2024-A-I-6}
+		Let $V$ be a module over a commutative ring $R$, and let $T: V \to V$ be an $R$-linear transformation such that $T^2 = T$. Show that $V = \operatorname{im}{T}\oplus \operatorname{ker}{T}$ is the direct sum of the range of $T$ and the kernel of $T$. 
+	\end{prb} 
+	Let $V$ be a module over a commutative ring, and let $T: V \to V$ be an $R$-linear transformation such that $T^2 = T$. Fix an arbitrary $v \in V$. Then we start by writing, 
+	\begin{equation*}
+		v = T(v) + (v - T(v)). 
+	\end{equation*}
+	$T(v) \in \operatorname{im}{T}$ and 
+	\begin{equation*}
+		T(v - T(v)) = T(v) - T^{2}(v) = T(v) - T(v) =0, 
+	\end{equation*}
+	so that $v - T(v) \in \operatorname{ker}{T}$. Thus we have shown that $V = \operatorname{im}{T} + \operatorname{ker}{T}$. To show that $V$ is actually the direct sum, we must show that the two submodules intersect trivially. Suppose $w \in \operatorname{im}{T} \cap \ker{T}$. This means that there exists some $v \in V$ such that $w = T(v)$ and $T(w) = 0$. But then, we compute, 
+	\begin{equation*}
+		0 = T(w) = T^2(v) = T(v) = w, 
+	\end{equation*}
+	so that $w = 0$. Thus, we conclude that since the two submodules intersect trivially, $V = \operatorname{im} \oplus \ker{T}$. 
+	
+	\begin{prb}{2024-A-II-6}
+		Let $M$ and $N$ be finitely generated modules over a PID $R$ (principal ideal domain). Prove that the $R$-modules $M$ and $N$ are isomorphic if and only if the $R$-modules $M \oplus M$ and $N \oplus N$ are isomorphic. 
+	\end{prb}
+	Let $M$ and $N$ be finitely generated modules over a PID $R$. By the Structure Theorem for Finitely Generated Modules over Principal Ideal Domains, one has that 
+	\begin{align*}
+		\begin{split}
+			M &\cong R^{r} \oplus R/(d_1) \oplus \dotsm \oplus R/(d_m), \\
+			N &\cong R^{s} \oplus R/(f_1) \oplus \dotsm \oplus R/(f_n), 
+		\end{split}
+	\end{align*}
+	where $r, s \in \mathbb{Z}_{\geq 0}$ are the free ranks of $M$ and $N$ respectively, and $(d_1) \supseteq \dotsm \supseteq (d_m)$ and $(f_1) \supseteq \dotsm \supseteq (f_n)$. First assume that $M \cong N$ as $R$-modules. Since the invariant factor decompositions of any finitely generated $R$-module is unique up to isomorphism of each direct summand, one must have that $r = s$, $m = n$, and for each $j = 1, \ldots, m$, $R/(d_j) \cong R/(f_j)$. Thus, this implies that 
+	\begin{align*}
+		\begin{split}
+			M \oplus M &\cong R^{2r} \oplus (R/(d_1))^2 \oplus \dotsm \oplus (R/(d_m))^2 \\
+			&\cong R^{2s} \oplus (R/(f_1))^2 \oplus \dotsm \oplus (R/(f_m))^2 \\
+			&\cong N \oplus N. 
+		\end{split}
+	\end{align*}
+	On the other hand, now suppose that $M \oplus M \cong N \oplus N$ so that 
+	\begin{equation*}
+		R^{2r} \oplus (R/(d_1))^2 \oplus \dotsm \oplus (R/(d_m))^2
+		\cong R^{2s} \oplus (R/(f_1))^2 \oplus \dotsm \oplus (R/(f_n))^2
+	\end{equation*}
+	By the uniqueness property of the invariant factor decompositions of any finitely generated $R$-module, we conclude that $r = s$, and $m = n$. So writing the above isomorphism in a more suggestive manner: 
+	\begin{equation*}
+		R^{2r} \oplus R/(d_1) \oplus R/(d_1) \oplus \dotsm \oplus R/(d_m) \oplus R/(d_m) \cong R^{2r} \oplus R/(f_1) \oplus R/(f_1) \oplus \dotsm \oplus R/(f_m) \oplus R/(f_m). 
+	\end{equation*}
+	Thus by uniqueness, we see that each corresponding direct summand is isomorphic so that for each $j = 1, \ldots, m$, $R/(d_i) \cong R/(f_i)$. Thus we conclude that $M \cong N$. 
 	
 	\begin{prb}{2021-A-I-5}
 		Let $R$ be an integral domain with field of fractions $Q$. Show that $Q/R \otimes_{R} Q/R = 0$. 
@@ -5657,6 +5751,24 @@
 			\end{equation*}
 			where $N$ is the least normal subgroup of $\pi_1(U,x_0)$ containing the image of the homomorphism $i_1:\pi_1(U \cap V,x_0) \to \pi_1(U,x_0)$. 
 		\end{enumerate}
+	\end{itemize}
+	
+	\newpage 
+	\subsection{Random Quick Facts To Recall}
+	\subsubsection{Algebra}
+	
+	\begin{itemize}
+		\item If $A \in \operatorname{GL}(n, V)$ and $m_{A}(t)$ denotes the minimal polynomial of $A$, then $\deg{m_A} \leq n$. Note that $m_{A}$ is not necessarily an irreducible polynomial. However, it is nonconstant and monic. 
+		\item If $p(t)$ annihilates a linear operator, $A \in \operatorname{GL}(n, V)$, then $m_{A}(t) \mid p(t)$, where $m_{A}(t)$ is the minimal polynomial of $A$ over $V$. 
+	\end{itemize}
+	
+	\subsubsection{Geometry/Topology}
+	
+	\begin{itemize}
+		\item Let $M$ be a smooth $n$-manifold. Then the orientation double cover, $\hat{p}: \hat{M} \to M$ is a 2-sheeted covering space of $M$, such that $\hat{M}$ is always orientable. $M$ is orientable \textit{if and only if} the orientation double cover $\hat{M}$ is disconnected. 
+		\item If $M$ is a connected smooth $n$-manifold, and $M$ is not oriented, then $p_{\ast}(\pi_{1}(\hat{M}, \text{pt}))$ is an index-2 subgroup of $\pi_1(M, p(\text{pt}))$. Consequently, if $\pi_{1}(M)$ is trivial or has odd cardinality, then $M$ is orientable. 
+		\item Iff $X$ is connected, locally pathwise connected, and semilocally simply connected, $X$ admits a universal covering space $\ti{p}: \ti{X} \to X$. The universal covering space $\ti{X}$ is unique and simply connected. If $X$ is simply connected, then it is its own universal cover. 
+		\item If $M$ admits a universal cover $\ti{M}$, then $M \cong \ti{M}/\Gamma$; $\Gamma$ is the group of deck transformations on $\ti{M}$. 
 	\end{itemize}
 	
 \end{document}
