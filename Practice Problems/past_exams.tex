@@ -1552,6 +1552,33 @@
 	\end{prb}
 	Let $V$ be a finite-dimensional $\mathbb{Q}$-vector space of dimension $n \geq 2$, and let $T: V \to V$ be a $\mathbb{Q}$-linear operator so that for each induced action, $T_{m}$, of $T$ on the wedge product $\bigwedge^{m}V$ ($m = 1, \ldots, n - 1$), $T_{m}$ has no eigenvalue in $\mathbb{Q}$. Let $p_A(t)$ be the characteristic polynomial. Assume to the contrary that $p_{A}(t)$ is reducible over $\mathbb{Q}$, so that $p_{A}(t) = f(t)g(t)$ for some monic polynomials $f(t), g(t) \in \mathbb{Q}[t]$, such that $0 < \deg{f} \leq n - 1$. Since the roots of $p_A(t)$ are precisely the eigenvalues, $\lambda_{1}, \ldots, \lambda_{n}$ of $T$ and $f(t)$ is a polynomial that divides $p_{A}(t)$, $f(t)$ has as its roots, some finite subset $\{\lambda_{j_1}, \ldots, \lambda_{j_{\deg{f}}}\}$. Since $f(t)$ is a monic polynomial of degree at least one, its constant term must be the product $(-1)^{\deg{f}}\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$. Since $f \in \mathbb{Q}[t]$, it follows that $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}} \in \mathbb{Q}$. But $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$ is an eigenvalue of $T_{\deg{f}}$, and thus cannot be rational, which is a contradiction! Therefore, $p_{A}(t)$ must be irreducible over $\mathbb{Q}$. 
 	
+	\begin{prb}{2007-J-I-3}
+		Let $A$ and $B$ be $n \times n$ invertible matrices with complex entries such  that 
+		\begin{equation*}
+			AB = \lambda BA
+		\end{equation*}
+		for some scalar $\lambda$. Prove that $\lambda$ is an $n^{\text{th}}$ root of unity. If $\lambda$ is a primitive $n^{\text{th}}$ root of unity, prove that the characteristic polynomials of $A$ and $B$ both have the form $\chi(t) = t^{n} + \text{constant}$. 
+	\end{prb}
+	Let $A$ and $B$ be $n\times n$ invertible matrices with complex entries such that $AB = \lambda BA$ for some scalar $\lambda$. We note that since $A, B$ are invertible, $\det{A}, \det{B} \neq 0$. Thus 
+	\begin{align*}
+		\begin{split}
+			\det(AB) &= \det(\lambda BA) \\
+			\implies 
+			\det{A}\det{B} &= \lambda^{n}\det{B}\det{A} \\
+			\implies 
+			\lambda^{n} &= 1. 
+		\end{split}
+	\end{align*}
+	Therefore, we conclude that $\lambda$ must be an $n^{\text{th}}$ root of unity. Now assume that $\lambda$ is a primitive $n^{\text{th}}$ root of unity, which means that, in particular, $\sum_{j = 0}^{n-1}\lambda^{j} = 0$ (denote this fact by $(\star)$). We observe that if $\mu$ is an eigenvalue of $A$, then  
+	\begin{equation*}
+		A(Bv) = \lambda \mu (Bv), 
+	\end{equation*}
+	so that $\lambda \mu$ is also an eigenvalue of $A$. Since $A$ has dimension $n \times n$, $A$ must have $n$ eigenvalues in $\mathbb{C}$.If $\mu$ is a nonzero eigenvalue of $A$ (which we know exists since $A$ is invertible), then since $\lambda$ is a primitive $n^{\text{th}}$ root of unity, each $\{\mu, \lambda \mu, \ldots, \lambda^{n-1}\mu\}$ is an eigenvalue of $A$. Thus, one has that 
+	\begin{equation*}
+		\chi_{A}(t) = \prod_{k = 0}^{n-1}(t - \lambda^{k}\mu) = \mu^{n} \cdot \prod_{k = 0}^{n - 1}\left(\left(\frac{t}{\mu}\right) - \lambda^{k}\right) = \mu^{n} \cdot \left(\left(\frac{t}{\mu}\right)^{n} - 1\right) = t^{n} - \mu^{n}. 
+	\end{equation*} 
+	The proof concludes for $A$. Now we turn to the characteristic polynomial of $B$. Since $\lambda \neq 0$, one has $BA = \lambda^{-1}AB \eqqcolon \zeta AB$. Since the multiplicative inverse of a primitive $n^{\text{th}}$ root of unity is a primitive $n^{\text{th}}$ root of unity, $\zeta$ must be a primitive $n^{\text{th}}$ root of unity. Thus replicating the proof for the case of $A$, we conclude that the characteristic polynomial for $B$ is of the form $t^{n} - \nu^{n}$, where $\nu$ is a nonzero eigenvalue of $B$. 
+	
 	\newpage
 	\subsection{Abelian Groups}
 	
