@@ -1550,6 +1550,7 @@
 		\end{equation*}
 		has no eigenvalue in $\mathbb{Q}$ for each $m = 1, \ldots, n - 1$. Prove that the characteristic polynomial of $T$ is an irreducible polynomial over $\mathbb{Q}$. 
 	\end{prb}
+	Let $V$ be a finite-dimensional $\mathbb{Q}$-vector space of dimension $n \geq 2$, and let $T: V \to V$ be a $\mathbb{Q}$-linear operator so that for each induced action, $T_{m}$, of $T$ on the wedge product $\bigwedge^{m}V$ ($m = 1, \ldots, n - 1$), $T_{m}$ has no eigenvalue in $\mathbb{Q}$. Let $p_A(t)$ be the characteristic polynomial. Assume to the contrary that $p_{A}(t)$ is reducible over $\mathbb{Q}$, so that $p_{A}(t) = f(t)g(t)$ for some monic polynomials $f(t), g(t) \in \mathbb{Q}[t]$, such that $0 < \deg{f} \leq n - 1$. Since the roots of $p_A(t)$ are precisely the eigenvalues, $\lambda_{1}, \ldots, \lambda_{n}$ of $T$ and $f(t)$ is a polynomial that divides $p_{A}(t)$, $f(t)$ has as its roots, some finite subset $\{\lambda_{j_1}, \ldots, \lambda_{j_{\deg{f}}}\}$. Since $f(t)$ is a monic polynomial of degree at least one, its constant term must be the product $(-1)^{\deg{f}}\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$. Since $f \in \mathbb{Q}[t]$, it follows that $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}} \in \mathbb{Q}$. But $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$ is an eigenvalue of $T_{\deg{f}}$, and thus cannot be rational, which is a contradiction! Therefore, $p_{A}(t)$ must be irreducible over $\mathbb{Q}$. 
 	
 	\newpage
 	\subsection{Abelian Groups}
@@ -1768,6 +1769,14 @@
 	\end{equation*}
 	Writing out the multiplication table, we deduce that the Galois group is isomorphic to $\sf{V}_{4}$. 
 	
+	\begin{prb}{2018-A-I-6}
+		Let $b$ be a rational number such that $x^{5} - b$ has no rational roots. Prove that the splitting field over $\mathbb{Q}$ is a Galois extension of order 20 whose Galois group is a semidirect product of $\mathbb{Z}/5\mathbb{Z}$ and $\mathbb{Z}/4\mathbb{Z}$. 	
+	\end{prb}
+	Let $b$ be a rational number such that $p(x) = x^{5} - b$ has no rational roots. We find that the roots of $p(x)$ are $\zeta_{5}^{a}\sqrt[b]{5}$, $a = 0, \ldots, 4$, where $\zeta_{5}$ is the primitive 5th root of unity. Thus if $K$ is the splitting field of $p(x)$ over $\mathbb{Q}$, $K$ must contain all five roots, and thus the field $\mathbb{Q}(\sqrt[5]{b}, \zeta_{5})$. On the other hand, $\mathbb{Q}(\sqrt[5]{b}, \zeta_{5})$ already contains all five roots, and thus the splitting field $K$. Hence, we conclude that $K = \mathbb{Q}(\sqrt[5]{b}, \zeta_{5})$. Since $x^{5} - b$ has prime degree, and no rational roots, it follows that $x^{5} - b$ is irreducible over $\mathbb{Q}$ so that $[\mathbb{Q}(\sqrt[b]{5}):\mathbb{Q}] = 5$. On the other hand, we know that the $[\mathbb{Q}(\zeta_5): \mathbb{Q}] = 4$. Since $\gcd(4,5) = 1$, we conclude that $[\mathbb{Q}(\sqrt[b]{5},\zeta_5): \mathbb{Q}] = 20$. Thus since $\mathbb{Q}(\sqrt[5]{b},\zeta_5)$ is the splitting field of some irreducible polynomial over $\mathbb{Q}$, it must be a Galois extension; the Galois group $G$ has cardinality $20 = 2^{2} \cdot 5$. By Sylow's theorems, $G$ must contain a unique (hence normal) Sylow 5-subgroup, which we denote by $H$. Let $K$ be a Sylow-2 subgroup (which has order 4). Since by Lagrange's theorem, $H \cap K = \{e\}$ and $HK = G$, we must have that $G \cong H \rtimes_{\varphi} K$ for some group homomorphism $\varphi: K \to \operatorname{Aut}{H}$. Since $K$ is a group of order 4, either $K \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2}$ or $K \cong \mathbb{Z}_{4}$. To select the correct isomorphism, we turn to the Galois group $G$. $G$ consists of the automorphisms on $K$ that preserve the base field $\mathbb{Q}$ and permute the roots of $p(x)$. In particular, one has the group automorphism $\sigma_{2}: \sqrt[5]{b} \mapsto \sqrt[5]{b}$ and $\zeta_{5} \mapsto \zeta_{5}^{2}$. Then it is straightforward to check that $\sigma_{2}$ has order 4. Thus since $G$ contains an element of order 4, and elements whose order is a power of 2 must be contained in $K$, we conclude that $K \cong \mathbb{Z}/4\mathbb{Z}$. Hence, 
+	\begin{equation*}
+		G \cong \mathbb{Z}/4\mathbb{Z} \rtimes_{\varphi} \mathbb{Z}/5\mathbb{Z}. 
+	\end{equation*}
+	
 	\begin{prb}{2017-A-II-3}
 		Let $K$ denote the splitting field of $f(x) = x^{4} + x^{2} + 1$ over $\mathbb{Q}$. Compute the Galois group of $\operatorname{Gal}(K/\mathbb{Q})$. 
 	\end{prb}
@@ -1963,6 +1972,11 @@
 		(ab)^{p^{m + n}} = a^{p^{m}}b^{p^{n}} = 1, 
 	\end{equation*}
 	so that $S$ is a normal subgroup of $G$. By construction, every $p$-subgroup of $G$ must be contained in $S$. Conversely, since every element of $S$ has prime $p$ power order, $S$ itself must be a Sylow $p$-subgroup. Thus by maximality of the Sylow $p$-subgroup amongst $p$-subgroups, and by Sylow's theorems, $S$ must be the (unique) normal Sylow $p$-subgroup of $G$. 
+	
+	\begin{prb}{2019-A-I-1}
+		Let $G$ denote a finite group, and let $C(G)$ denote its center. Suppose that the quotient $G/C(G)$ is abelian and that the order of the quotient $G/C(G)$ is an integer that is not divisible by any square. Prove that $G$ is abelian. 
+	\end{prb}
+	Let $G$ denote a finite group, and let $C(G)$ denote its center. Further assume that $G/C(G)$ is abelian and that the order, $n$, of the quotient $G/C(G)$ is an integer that is not divisible by any square. This means that either $n = 1$ (in which case $G = C(G)$ so that $G$ is abelian), or $n$ is the product $p_{1}\dotsm p_{m}$ ($m \geq 1$) of distinct primes. Assume to the contrary that $G/C(G)$ is an abelian group whose order is the product of distinct primes, and thus must be isomorphic to the cyclic group $\mathbb{Z}/(p_1 \dotsm p_{m})\mathbb{Z}$. We recall that if $G/C(G)$ is cyclic, then $G$ must necessarily be abelian (which contradicts our hypothesis that $n \neq 1$). Thus, we conclude that $G$ must be abelian. 
 	
 	\begin{prb}{2019-J-II-5}
 		Let $G$ be a finite group, and let $H$ be a non-normal subgroup of $G$ of index $n$. Show that if $|H|$ is divisible by a prime $p \geq n$, then $G$ is not simple. 
@@ -5844,6 +5858,11 @@
 			\ker{\varphi} = \bigcap_{g \in G}gHg^{-1} \trianglelefteq G. 
 		\end{equation*}
 		If $\ker{\varphi} = \{e\}$ is trivial, then $G$ embeds in $S_{n}$ (i.e., $G$ is isomorphic to a subgroup of $S_n$) and $|G| \mid |S_{n}|$. 
+		\item Let $V$ be a finitely generated vector space over a field $F$, and let $A: V \to V$ be a linear map with characteristic polynomial $\chi_{A}(t)$. Then $V$ can be represented as a finitely generated module over $F[t]$, where $t$ acts via the linear operator $A$. By the Structure Theorem for Finitely Generated Modules over PIDs, we must have the decomposition 
+		\begin{equation*}
+			V \cong \bigoplus_{i = 1}^{N}\frac{F[t]}{(\alpha_{i}(t))}, 
+		\end{equation*}
+		where each $\alpha_{i}(t)$ is an invariant factor of $A$, $\alpha_{1}(t) \mid \alpha_{2}(t) \mid \dotsm \mid \alpha_{N}(t)$, and $\alpha_{1}(t)\alpha_{2}(t)\dotsm \alpha_{N}(t) = \chi_{A}(t)$. Each $A$-invariant subspace of $V$ corresponds to an $F[t]$-submodule of this direct sum. When the invariant factors $\alpha_i(t)$ are pairwise coprime, every such submodule is a direct sum of submodules from each individual component. However, if any invariant factors are repeated or share common factors, there can also exist 'diagonal' $A$-invariant subspaces that span across multiple components. 
 	\end{itemize}
 	
 	\subsubsection{Geometry/Topology}
