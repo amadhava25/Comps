@@ -1543,6 +1543,19 @@
 	\end{align*}
 	Repeating this procedure inductively, one finally obtains $A^{n}B = \lambda^{n}BA^{n}$. But we showed above that $\lambda^{n} = 1$. Thus, one gets $A^{n}B = BA^{n}$, which concludes the proof that $A^{n}$ and $B$ commute. 
 	
+	\begin{prb}{2016-J-II-5}
+		Let $M_{n}$ be the vector space of $n \times n$ complex matrices. For $A \in M_{n}$, define the linear transformation $T_{A}$ on $M_{n}$ by $T_{A}(X) \coloneqq AX - XA$. Prove that the rank of $T_{A}$ is at most $n^{2} - n$. 
+	\end{prb}
+	By the rank-nullity theorem, one has that 
+	\begin{equation*}
+		\operatorname{rank}{T_{A}} = \dim{M_{n}} - \operatorname{nullity}{T_{A}} = n^{2} - \operatorname{nullity}{T_{A}}. 
+	\end{equation*}
+	Thus it suffices to show that $\operatorname{nullity}{T_{A}} \geq n$. Note that 
+	\begin{equation*}
+		\ker{T_{A}} \eqqcolon \brac*{X \in M_{n}: AX = XA} = C_{M_{n}}(A). 
+	\end{equation*}
+	Let $J$ be the Jordan Canonical Form of $A$. Then there exists an invertible matrix $P \in M_n$ such that $A = PJP^{-1}$, where $J$ is a block diagonal matrix composed of $k$ Jordan blocks:$$J = \operatorname{diag}(J_{m_1}(\lambda_1), J_{m_2}(\lambda_2), \dots, J_{m_k}(\lambda_k))$$Since $J \in M_n$, the sizes of the blocks must satisfy $\sum_{i=1}^k m_i = n$. Because similarity transformations preserve the dimension of the centralizer, we have $\dim(\ker(T_A)) = \dim(\ker(T_J))$. We will now bound $\dim(\ker(T_J))$ from below by constructing a specific subspace of matrices that commute with $J$.Consider the subspace $V \subseteq M_n$ consisting of block-diagonal matrices $X$ whose block structure matches that of $J$:$$X = \operatorname{diag}(X_1, X_2, \dots, X_k)$$where each $X_i$ is an $m_i \times m_i$ matrix. For $X$ to commute with $J$, it is sufficient that each block commutes locally: $X_i J_{m_i}(\lambda_i) = J_{m_i}(\lambda_i) X_i$ for all $1 \leq i \leq k$.Each Jordan block can be decomposed into a scalar matrix and a nilpotent matrix: $J_{m_i}(\lambda_i) = \lambda_i I_{m_i} + N_i$, where $N_i$ is the standard $m_i \times m_i$ nilpotent matrix with $1$s on the superdiagonal. Since $\lambda_i I_{m_i}$ commutes with all matrices, $X_i$ commutes with $J_{m_i}(\lambda_i)$ if and only if it commutes with $N_i$:$$X_i(\lambda_i I_{m_i} + N_i) = (\lambda_i I_{m_i} + N_i)X_i \iff X_i N_i = N_i X_i$$For each block, we restrict our choice of $X_i$ to the space of polynomials in $N_i$ of degree less than $m_i$:$$X_i \in \operatorname{span}\left(\{I_{m_i}, N_i, N_i^2, \dots, N_i^{m_i-1}\}\right)$$Since $N_i$ trivially commutes with its own powers, every matrix in this span commutes with $N_i$, and hence with $J_{m_i}(\lambda_i)$. Furthermore, because $N_i$ is an $m_i \times m_i$ standard nilpotent matrix, the set of powers $\{I_{m_i}, N_i, \dots, N_i^{m_i-1}\}$ is linearly independent, meaning this local choice contributes exactly $m_i$ dimensions.Because each block diagonal component $X_i$ can be chosen independently of the others, the total dimension of our constructed subspace $V$ is given by the sum of the dimensions of the individual blocks:$$\dim(V) = \sum_{i=1}^k \dim\left(\operatorname{span}\left(\{I_{m_i}, N_i, \dots, N_i^{m_i-1}\}\right)\right) = \sum_{i=1}^k m_i = n$$Since $V$ is a valid subspace of $\ker(T_J)$, it follows that:$$\dim(\ker(T_A)) = \dim(\ker(T_J)) \geq \dim(V) = n$$Substituting this inequality back into our rank-nullity equation yields:$$\operatorname{rank}(T_A) = n^2 - \dim(\ker(T_A)) \leq n^2 - n$$
+	
 	\begin{prb}{2015-J-I-6}
 		Let $V$ be a finite-dimensional $\mathbb{Q}$-vector space of dimension $n\geq 2$, and let $T: V \to V$ be a $\mathbb{Q}$-linear operator. Assume that the associated $\mathbb{Q}$-linear operator 
 		\begin{equation*}
@@ -1551,6 +1564,11 @@
 		has no eigenvalue in $\mathbb{Q}$ for each $m = 1, \ldots, n - 1$. Prove that the characteristic polynomial of $T$ is an irreducible polynomial over $\mathbb{Q}$. 
 	\end{prb}
 	Let $V$ be a finite-dimensional $\mathbb{Q}$-vector space of dimension $n \geq 2$, and let $T: V \to V$ be a $\mathbb{Q}$-linear operator so that for each induced action, $T_{m}$, of $T$ on the wedge product $\bigwedge^{m}V$ ($m = 1, \ldots, n - 1$), $T_{m}$ has no eigenvalue in $\mathbb{Q}$. Let $p_A(t)$ be the characteristic polynomial. Assume to the contrary that $p_{A}(t)$ is reducible over $\mathbb{Q}$, so that $p_{A}(t) = f(t)g(t)$ for some monic polynomials $f(t), g(t) \in \mathbb{Q}[t]$, such that $0 < \deg{f} \leq n - 1$. Since the roots of $p_A(t)$ are precisely the eigenvalues, $\lambda_{1}, \ldots, \lambda_{n}$ of $T$ and $f(t)$ is a polynomial that divides $p_{A}(t)$, $f(t)$ has as its roots, some finite subset $\{\lambda_{j_1}, \ldots, \lambda_{j_{\deg{f}}}\}$. Since $f(t)$ is a monic polynomial of degree at least one, its constant term must be the product $(-1)^{\deg{f}}\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$. Since $f \in \mathbb{Q}[t]$, it follows that $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}} \in \mathbb{Q}$. But $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$ is an eigenvalue of $T_{\deg{f}}$, and thus cannot be rational, which is a contradiction! Therefore, $p_{A}(t)$ must be irreducible over $\mathbb{Q}$. 
+	
+	\begin{prb}{2010-J-I-6}
+		Let $m$ and $n$ be positive integers. Let $A$ and $B$ be real $n \times n$ matrices. Assume that $B$ is symmetric and positive definite. If $A$ commutes with $B^{m}$, prove that $A$ commutes with $B$. 
+	\end{prb}
+	Fix positive integers $m, n$ so that $A, B$ are real $n \times n$ matrices, with $B$ symmetric and positive definite, and $AB^{m} = B^{m}A$. 
 	
 	\begin{prb}{2007-J-I-3}
 		Let $A$ and $B$ be $n \times n$ invertible matrices with complex entries such  that 
@@ -1619,6 +1637,24 @@
 		b^{n} + b_{n-1}b^{n-1}c + \dotsm + b_{1}bc^{n-1} + b_{0}c^{n} = 0 \implies b^{n} = -c(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}),
 	\end{equation*}
 	where $(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}) \in R$. Thus, it follows that $c \mid b^{n}$. Since $\gcd(b, c) = 1$, $\gcd(b^{n}, c) = 1$ since raising $b$ to the $n$th power does not add any new prime divisors. Thus since $c \mid b^{n}$ and $\gcd(b^{n}, c) = 1$, $c = \pm 1$. This implies that $a = \pm b \in R$. Hence, the proof concludes. 
+	
+	\begin{prb}{2016-J-I-6}
+		Prove that the ring $\mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$ is not a UFD. 
+	\end{prb}
+	Let $R \coloneqq \mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$, and let bars denote the classes in $R$. Consider the class $q = \bar{z}^2 - \bar{x}^2\bar{y}$. Then one computes in $R$, 
+	\begin{equation*}
+		\bar{x}q = \bar{x}\bar{z}^2 - \bar{x}^3\bar{y} = \bar{x}\bar{z}^{2} - \bar{y}^{2}\bar{z} = \bar{y}^{2}\bar{z} - \bar{y}^{2}\bar{z} = 0. 
+	\end{equation*}
+	We claim that neither of these classes are zero. The class $\bar{x}$ is nonzero since the point $(1,1,1)$ satisfies both of the modded relations but $x(1,1,1) = 1$. Likewise, $q$ is nonzero since the point $(0,0,1)$ satisfies the modded relations, but $q(0,0,1) = 1$. Thus since $R$ has nonzero zero divisors, it cannot be an integral domain, and hence, surely not a UFD. 
+	
+	\begin{prb}{2015-J-II-1}
+		Prove that ring $\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}$ is not a unique factorization domain. 
+	\end{prb}
+	Let $R \coloneqq \mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}$, and let bars denote the classes in $R$. One has that the class $\bar{y}$ is irreducible. Since in a UFD, ideals are prime iff they are reducible, $\braket{y}$ is prime. Thus, 
+	\begin{equation*}
+		\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}/\braket{y} \cong \mathbb{Z}[x,y]/\braket{x^{5}} 
+	\end{equation*}
+	must be an integral domain. But this is a contradiction since the two classes $\bar{x}^{4} \cdot \bar{x} = 0$ and neither of these classes are nonzero. 
 	
 	
 	
@@ -1831,6 +1867,19 @@
 		p(\alpha + 1) = (\alpha + 1)^{p} - (\alpha + 1) - a = (\alpha^{p} - \alpha -a) + (1 -1) = 0 + 0 =0. 
 	\end{equation*}
 	Then by induction, we can show that $\alpha + j$ is a root of $p(x)$ for all $j \in \mathbb{F}_{p}$. Thus since $\deg{p(x)} = p$, and there are precisely $p$ elements in $\mathbb{F}_{p}$, these must be all of the roots of $p(x)$. \complete
+	
+	\begin{prb}{2016-A-I-1}
+		For $p(x) = x^{5} + 1$ over the field $\mathbb{F}_{19}$, find the splitting field $K$, find the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
+	\end{prb}
+	Let $p(x) = x^{5} + 1 \in \mathbb{F}_{19}[x]$. We begin by finding the roots of $p(x)$ in $\mathbb{F}_{19}$. Indeed, we find $x = 18$ is a root of $p(x)$, and thus, 
+	\begin{equation*}
+		p(x) = (x + 1)(x^{4} + 18x^{3} + x^{2} + 18x + 1) \in \mathbb{F}_{19}[x]. 
+	\end{equation*}
+	As $p(x)$ has no further roots, it suffices to check if the quadratic factor can reduce as the product of irreducible quadratics over $\mathbb{F}_{19}$. Doing so, we find that $p(x)$ splits further as the product: 
+	\begin{equation*}
+		p(x) = (x + 1)(x^{2} + 4x + 1)(x^{2} + 14x + 1). 
+	\end{equation*}
+	The roots of each of the quadratic factors over $\mathbb{C}$ are $x \equiv -2 \pm \sqrt{3}$ and $-7 \pm 4\sqrt{3}$, respectively. Let $K$ denote the splitting field of $p(x)$ over $\mathbb{F}_{19}$. Then $K$ must contain all of the roots of $p(x)$, and hence must contain the field $\mathbb{F}_{19}(\sqrt{3})$. On the other hand, the field $\mathbb{F}_{19}(\sqrt{3})$ already contains all five roots of $p(x)$, and thus must contain $K$. Therefore, we conclude that $K = \mathbb{F}_{19}(\sqrt{3})$. Now since $(\sqrt{3})^2 + 16$ annihilates $\sqrt{3}$ in $\mathbb{F}_{19}$, and the polynomial $x^2 + 16$ is irreducible over $\mathbb{F}_{19}$, $\mathbb{F}_{19}(\sqrt{3})$ must be a degree 2 extension over $\mathbb{F}_{19}$. Thus the Galois group $\operatorname{Gal}(\mathbb{F}_{19}(\sqrt{3})/\mathbb{F}_{19})$ has degree 2, and is isomorphic to $\mathbb{Z}/2\mathbb{Z}$. If we instead denote the roots of $p(x)$ as $r_{j} = -\zeta^{j}$ ($j = 0, \ldots, 4$), and let $\sigma(a) = a^{19}$ be the generator of the Galois group, then we note that te Galois group action fixes $r_{0}$, and swaps $r_{1} \leftrightarrow r_{4}$, $r_{2} \leftrightarrow r_{3}$. 
 	
 	\begin{prb}{2016-J-II-2}
 		Find the Galois group of the polynomial $p(x) = x^{3} - 2$ over the field $\mathbb{Z}_{11} \coloneqq \mathbb{Z}/11\mathbb{Z}$. 
@@ -3044,6 +3093,23 @@
 		\end{align*}
 		Hence, since $\beta < (2^{N} - 1)^{-1}$, we obtain a nested sequence of compact subsets $\varnothing \neq K_{N + 1} \subset K_{N} \subset \dotsm\subset K_{1} \subset U$. Let $q \in K_{N + 1}$ be arbitrary. Since $K_{N + 1} = K_{N} \cap (K_{N} + rv_{N})$, the point $q - rv_{N}$ is contained in $K_{N}$. Then since $K_{N} = K_{N - 1} \cap (K_{N - 1} \cap rv_{N - 1})$, $q - rv_{N} - rv_{N - 1} \in K_{N - 1}$. Proceeding inductively, we obtain the sequence $\{q, q - rv_{N}, q - rv_{N} - rv_{N - 1}, \ldots, q - rv_{N} - \dotsm -rv_{1}\} \subset K_{1} \subset E$; set $p= q - rv_{N} - \dotsm - rv_{1}$. Hence, the proof concludes. 
 		
+	\begin{prb}{2024-J-II-2}
+		Suppose $E \subset \mathbb{R}^{2}$ is a set of positive Lebesgue measure. Show that there are points $a, b, c \in E$ such that their connecting segments form a right angle; i.e., $a - b$ is perpendicular to $c - b$ (as vectors in $\mathbb{R}^{2}$). 
+	\end{prb}
+	Let $E \subset \mathbb{R}^{2}$ be a set of positive Lebesgue measure, and let $0 < \beta < 3^{-1}$ be an arbitrary real number. By regularity of the Lebesgue measure, there exists a compact set $K_{1} \subset E$ such that $m(K_1) > 0$ and an open set $U$ containing $K_{1}$ such that $m(U) \leq (1 + \beta)m(K_{1})$. Fix arbitrary unit vectors $v_{1}, v_{2} \in \mathbb{R}^{2}$ such that $v_{1} \cdot v_{2} = 0$. Since $K_{1}$ is a compact set, $R \coloneqq d(K_{1}, U^{c}) > 0$. Fix an arbitrary $0 < r < R$, and consider the set $K_{1} + rv_{1}$; we claim that this set is contained in $U$: if $K_{1} + rv_{1}$ was not contained in $U$, then $d(K_{1}, U^{c}) \leq |rv_{1}| = r$, which is a contradiction. Thus we must also have $K_{1} \cup (K_{1} + rv_{1})$ and $K_{2} \coloneqq K_{1}\cap (K_{1} + rv_{1})$ contained in $U$. This implies, 
+	\begin{align*}
+		\begin{split}
+			m(U) &\geq m(K_{1} \cup (K_{1} + rv_{1})) = m(K_{1}) + m(K_{1} + rv_{1}) - m(K_{2}) \\
+			\implies 
+			m(K_{2}) &\geq 2m(K_{1}) - m(U) \geq (1 - \beta)m(K_{1}) > 0, 
+		\end{split} 
+	\end{align*}
+	so that $K_{2}$ is nonempty. Now set $K_{3} \coloneqq K_{2} \cap (K_{2} + rv_{2})$. Generalizing the same argument from above, one has that $m(K_{3})> 0$ so that it is nonempty. Thus, we have a nested sequence of nonempty sets $K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $c \in K_{3}$. By definition, the point $b \coloneqq c - rv_{2} \in K_{2}$, and the point $a \coloneqq b - rv_{1} \in K_{1}$. We compute, $a - b = -rv_{1}$ and $v - b = rv_{2}$. Since $v_{1}, v_{2}$ were chosen to be perpendicular, one computes, 
+	\begin{equation*}
+		(a - b) \cdot (c - b) = -r^{2} v_{1} \cdot v_{2} =0. 
+	\end{equation*}
+	Thus the proof concludes. 
+		
 		\begin{prb}{2022-A-I-1}
 			Suppose $E\subset \mathbb{R}^2$ has positive Lebesgue area. Show that $E$ contains three points that form the vertices of an equilateral triangle. 
 		\end{prb}
@@ -4220,6 +4286,27 @@
 	\end{equation*} 
 	for all $x \in \mathbb{R}\setminus \{x_1, \ldots, x_n\}$. Thus, one gets $(p')^2 \geq p \cdot p''$ for all of these points. On the other hand, at each $x_k$, $p(x_k) \cdot p''(x_k) = 0$ and $(p'(x_k))^2 \geq 0$ so that the inequality holds trivially. 
 	
+	\begin{prb}{2023-J-II-1}
+		Suppose that $f: \mathbb{R} \to \mathbb{R}$ is continuous. Show that $f^{-1}(y) = \{x \in \mathbb{R}: f(x) = y\}$ has Lebesgue measure zero for Lebesgue almost all $y$. 
+	\end{prb}
+	Let $f: \mathbb{R} \to \mathbb{R}$ be a continuous function. Let us define the following sets:
+	\begin{align*}
+		\begin{split}
+			E &= \{(x, y) \in \mathbb{R}^{2}: f(x) = y\}. \\
+			E^{y} &= \{x \in \mathbb{R}: (x, y) \in E\} = \{x \in \mathbb{R}: f(x) = y\}. \\
+			E_{x} &= \{y \in \mathbb{R}: (x, y) \in E\} = \{f(x)\}. 
+		\end{split}
+	\end{align*}
+	Let $m, m^{2}$ denote the Lebesgue measure on $\mathbb{R}, \mathbb{R}^2$, respectively. By Fubini's Theorem, one has that 
+	\begin{equation*}
+		m^{2}(E) = \int m(E_{x})\;dx = \int m(E^{y})\;dy. 
+	\end{equation*}
+	Since each $E_{x}$ is a singleton, $m(E_{x}) = 0$ so that 
+	\begin{equation*}
+		0 = \int m(E^{y})\;dy = \int m(\{x \in \mathbb{R}: f(x) = y\})\;dy. 
+	\end{equation*}
+	Since the Lebesgue measure on $\mathbb{R}$ is nonnegative, it follows that the integrand must be 0 a.e. I.e., $m(f^{-1}(y)) = m(\{x \in \mathbb{R}: f(x) = y\}) = 0$ for a.e. $y \in \mathbb{R}$. 
+	
 	\begin{prb}{2023-J-II-2}
 		Suppose that $f$ is continuous on $[0,1]$ and $\int_{0}^{1}f(x)x^k\;dx =0$ for $k = 0, \ldots, n$. Prove that either $f$ is identically zero, or $f$ must change sign at least $n + 1$ times. We say that $f$ changes sign $n$ times if there are points $x_1 < \dotsm < x_{n + 1}$ so that $f(x_j) f(x_{j +1}) < 0$ for $j = 1, \ldots, n$. 
 	\end{prb}
@@ -4262,6 +4349,26 @@
 	\end{align*}
 	This since $A$ is finite, the integrand must be finite a.e., which means that the set of all $x \in [0,1]$ for which $\int_{0}^{1}(f(x + t) - f(x - t))/t\;dt = \infty$ must have Lebesgue measure zero. 
 	
+	\begin{prb}{2021-J-I-3}
+		If $E \subset \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is Lipschitz, then show that $f(E)$ is also Lebesgue measurable. 
+	\end{prb}
+	Let $f: \mathbb{R} \to \mathbb{R}$ be a Lipschitz continuous function, and assume that $E \subset \mathbb{R}$ is Lebesgue measurable. Since $E$ is measurable, there exists an $F_{\sigma}$ set $F \subset E$ so that $m(E \setminus F) = 0$. Let us write, 
+	\begin{equation*}
+		F = \bigcup_{m = 1}^{\infty}F_{m}, 
+	\end{equation*}
+	where for each $m \geq 1$, $F_{m} \coloneqq F \cap [-m,m]$. Letting $N$ be the null set $E \setminus F$, one has 
+	\begin{equation*}
+		E = \bigcup_{m = 1}^{\infty}F_{m} \cup N \implies f(E) = \bigcup_{m = 1}^{\infty}f(F_{m}) \cup f(N). 
+	\end{equation*}
+	Since $f$ is continuous, and each $F_{m}$ is compact, $f(F_{m})$ is compact, and thus Borel. Since the countable union of Borel sets is Borel, the first term is Borel, and hence Lebesgue measurable. Now let $\{I_{k}\}_{k = 1}^{\infty}$ be an open cover of $N$ by intervals in $\mathbb{R}$. Note that $\{f(I_{k})\}_{k =1 }^{\infty}$ is a cover of $f(N)$ by intervals. Since $f$ is Lipschitz (e.g., with constant $C> 0$), then one has $m(f(I_{k})) \leq C m(I_{k})$ for each $k \geq 1$ so that 
+	\begin{equation*}
+		m^{\ast}(f(N)) \leq \sum_{k = 1}^{\infty}m(f(I_{k})) \leq C \cdot \sum_{m = 1}^{\infty}m(I_{k}), 
+	\end{equation*}
+	where $m^{\ast}$ denotes the Lebesgue outer measure. Taking the infimum over all such covers of $N$, we obtain: 
+	\begin{equation*}
+		m^{\ast}(f(N)) \leq C \cdot m^{\ast}(N) = 0, 
+	\end{equation*}
+	so that $f(N)$ is Lebesgue measurable and is a Lebesgue null set. Thus, since $f(E)$ is the union of Lebesgue measurable sets, $f(E)$ must be Lebesgue measurable. This concludes the proof. 
 	\begin{prb}{2005-J-I-1}
 		Suppose that $\{f_n\}$ is a sequence of orthogonal functions on $[0,1]$ with \newline $\int_{0}^{1}|f_n(x)|^2\;dx \leq 1$ for all $n$ (orthogonal means $\int f_{k}f_{j}\;dx = 0$ whenever $j \neq k$). Let $S_n = \sum_{k = 1}^{n}f_{k}$. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
@@ -5890,6 +5997,10 @@
 			V \cong \bigoplus_{i = 1}^{N}\frac{F[t]}{(\alpha_{i}(t))}, 
 		\end{equation*}
 		where each $\alpha_{i}(t)$ is an invariant factor of $A$, $\alpha_{1}(t) \mid \alpha_{2}(t) \mid \dotsm \mid \alpha_{N}(t)$, and $\alpha_{1}(t)\alpha_{2}(t)\dotsm \alpha_{N}(t) = \chi_{A}(t)$. Each $A$-invariant subspace of $V$ corresponds to an $F[t]$-submodule of this direct sum. When the invariant factors $\alpha_i(t)$ are pairwise coprime, every such submodule is a direct sum of submodules from each individual component. However, if any invariant factors are repeated or share common factors, there can also exist 'diagonal' $A$-invariant subspaces that span across multiple components. 
+		\item If $\lambda$ is a primitive $n^{\text{th}}$ root of unity, then 
+		\begin{equation*}
+			\sum_{j = 0}^{n - 1}\lambda^{j} = 0. 
+		\end{equation*}
 	\end{itemize}
 	
 	\subsubsection{Geometry/Topology}
