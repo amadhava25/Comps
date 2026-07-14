@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  13 JUL 2026 19:35
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  13 JUL 2026 22:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2628,31 +2628,39 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 4624.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4645.
+(mdframed)              on input line 4629.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4649.
+(mdframed)              on input line 4633.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4654.
+Package mdframed Info: Not enough space on this page on input line 4656.
 
 
 [119]
+Package mdframed Info: Not enough space on this page on input line 4656.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4667.
+(mdframed)              on input line 4658.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4679.
+(mdframed)              on input line 4676.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4694.
+(mdframed)              on input line 4688.
 
 
 [120]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4709.
+(mdframed)              on input line 4703.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4720.
+(mdframed)              on input line 4718.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4729.
 
 
 [121]
@@ -2660,7 +2668,7 @@ Package mdframed Info: mdframed detected package amsthm
 [122]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4802.
+(mdframed)              on input line 4811.
 
 
 [123]
@@ -2668,27 +2676,27 @@ Package mdframed Info: mdframed detected package amsthm
 [124]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4888.
+(mdframed)              on input line 4897.
 
 
 [125]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4912.
+(mdframed)              on input line 4921.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 4956.
-Package mdframed Info: Not enough space on this page on input line 4958.
+(mdframed)              on input line 4965.
+Package mdframed Info: Not enough space on this page on input line 4967.
 
 
 [126]
-Package mdframed Info: Not enough space on this page on input line 4958.
+Package mdframed Info: Not enough space on this page on input line 4967.
 
 
 [127]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 5010.
+(mdframed)              on input line 5019.
 
 
 [128]
@@ -2742,8 +2750,15 @@ Package mdframed Info: mdframed detected package amsthm
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-Package rerunfilecheck Info: File `past_exams.out' has not changed.
-(rerunfilecheck)             Checksum: 81DD34575AE3FCA7E1A54A2EC1C9DCA4;49681.
+
+
+Package rerunfilecheck Warning: File `past_exams.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `past_exams.out':
+(rerunfilecheck)             Before: 65A702A15BA3EA6110B4CA0DED8922B5;50125
+(rerunfilecheck)             After:  C49A40566674B8F8A3BFC0D8D404B795;50285.
  ) 
 Here is how much of TeX's memory you used:
  36158 strings out of 474240

@@ -290,21 +290,23 @@
 \contentsline {subsubsection}{Problem 2008-J-II-3}{118}{section*.263}%
 \contentsline {subsection}{\numberline {5.2}Holomorphic Functions}{118}{subsection.5.2}%
 \contentsline {subsubsection}{Problem 2026-J-II-4}{119}{section*.265}%
-\contentsline {subsubsection}{Problem 2023-A-I-6}{119}{section*.266}%
-\contentsline {subsubsection}{Problem 2023-J-I-2}{119}{section*.267}%
-\contentsline {subsubsection}{Problem 2018-J-II-4}{119}{section*.268}%
+\contentsline {subsubsection}{Problem 2025-J-I-4}{119}{section*.266}%
+\contentsline {subsubsection}{Problem 2025-J-II-1}{119}{section*.267}%
+\contentsline {subsubsection}{Problem 2023-A-I-6}{119}{section*.268}%
+\contentsline {subsubsection}{Problem 2023-J-I-2}{120}{section*.269}%
+\contentsline {subsubsection}{Problem 2018-J-II-4}{120}{section*.270}%
 \contentsline {subsection}{\numberline {5.3}Rouch\'e's Theorem}{120}{subsection.5.3}%
-\contentsline {subsubsection}{Problem 2023-A-II-6}{120}{section*.269}%
-\contentsline {subsubsection}{Problem 2020-A-II-1}{120}{section*.270}%
-\contentsline {subsubsection}{Problem 2018-A-I-3}{120}{section*.271}%
-\contentsline {subsubsection}{Problem 2015-A-I-3}{121}{section*.272}%
-\contentsline {subsubsection}{Problem 2012-A-I-4}{121}{section*.273}%
+\contentsline {subsubsection}{Problem 2023-A-II-6}{120}{section*.271}%
+\contentsline {subsubsection}{Problem 2020-A-II-1}{120}{section*.272}%
+\contentsline {subsubsection}{Problem 2018-A-I-3}{121}{section*.273}%
+\contentsline {subsubsection}{Problem 2015-A-I-3}{121}{section*.274}%
+\contentsline {subsubsection}{Problem 2012-A-I-4}{121}{section*.275}%
 \contentsline {section}{\numberline {6}Notes}{122}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Differential Geometry and Topology}{122}{subsection.6.1}%
 \contentsline {subsubsection}{\numberline {6.1.1}De Rham Cohomology}{122}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{Problem LSM-17-5}{126}{section*.274}%
-\contentsline {subsubsection}{Problem LSM-17-6}{127}{section*.275}%
-\contentsline {subsubsection}{Problem LSM-17-7}{128}{section*.276}%
+\contentsline {subsubsection}{Problem LSM-17-5}{126}{section*.276}%
+\contentsline {subsubsection}{Problem LSM-17-6}{127}{section*.277}%
+\contentsline {subsubsection}{Problem LSM-17-7}{128}{section*.278}%
 \contentsline {subsection}{\numberline {6.2}Partial Differential Equations}{130}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Introduction}{130}{subsubsection.6.2.1}%
 \contentsline {subsubsection}{\numberline {6.2.2}Four Important Linear Partial Differential Equations}{130}{subsubsection.6.2.2}%
@@ -314,3 +316,5 @@
 \contentsline {subsection}{\numberline {6.5}Random Quick Facts To Recall}{149}{subsection.6.5}%
 \contentsline {subsubsection}{\numberline {6.5.1}Algebra}{149}{subsubsection.6.5.1}%
 \contentsline {subsubsection}{\numberline {6.5.2}Geometry/Topology}{150}{subsubsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.3}Real Analysis}{151}{subsubsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.4}Complex Analysis}{151}{subsubsection.6.5.4}%

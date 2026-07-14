@@ -4621,6 +4621,15 @@
 	\end{equation*}
 	where the limit comes out of the integral due to uniform on compacta convergence of the $f_{j}$, and holomorphicity of each $f_{j}$ implies $\oint_{\gamma}f_{j}(z)\;dz = 0$. Thus, we conclude by Morera's Theorem that $f$ is holomorphic in $U$. 
 	
+	\begin{prb}{2025-J-I-4}
+		Find all entire functions $f$ and $g$ satisfying the equation $e^{f} + e^{g} = 4$. 
+	\end{prb}
+	Let $f, g: \mathbb{C}\to \mathbb{C}$ be entire functions so that $e^{f} + e^{g} = 4$. In particular, we note that $e^{f} = 4 - e^{g}$, where $e^{f}$ must be entire since it is the composition of two entire functions. Therefore, since $e^{f}$ misses precisely two values (namely $0, 4$), by the Little Picard Theorem, $e^{f}$ must be a constant, which implies $f(z) = a \in \mathbb{Z}$ is a constant. Likewise, we conclude that $g(z) = b \in \mathbb{Z}$ must also be a constant. Thus the set of all pairs of entire functions $(f, g)$ that satisfies the equation is $\{(a, b) \in \mathbb{C}^{2}: e^{a} + e^{b} = 4\}$. 
+	
+	\begin{prb}{2025-J-II-1}
+		
+	\end{prb}
+	
 	\begin{prb}{2023-A-I-6}
 		Let $\mathbb{D}\subset \mathbb{C}$ be the open unit disk. Is there a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$? If so, give a formula. If not, prove that it cannot exist. 
 	\end{prb}
@@ -6020,6 +6029,28 @@
 		\end{equation*}
 		Consequently, $f$ has a fixed point if $\Lambda_{f} \neq 0$ (Lefschetz fixed-point theorem). The converse is not necessarily true. 
 		\item Let $M$ be path connected, locally path-connected, and semilocally simply connected. Then by the \textit{Galois correspondence of covering spaces}, the isomorphism classes of $k$-sheeted \textit{connected} covering spaces of $M$ are in one-to-one correspondence with the conjugacy classes of subgroups of $\pi_{1}(M)$. 
+		\item Every surjective proper map is a covering map. 
 	\end{itemize}
 	
+	\subsubsection{Real Analysis}
+	
+	\begin{itemize}
+		\item If $E \subset \mathbb{R}$ is a Lebesgue measurable subset, then there exists a $F_{\sigma}$ (i.e., a countable union of closed sets) set $F$ such that $F \subset E$ and $E\setminus F$ is a null set. 
+		\item (Carath\'eodory's Criterion) Let $\mu^{\ast}$ be an outer measure. Then $M$ is said to be \textit{measurable} if and only if for every subset $S$ of the space, $\mu^{\ast}(S) = \mu^{\ast}(S \cap M) + \mu^{\ast}(S \cap M^{c})$. 
+		\item Let $(X, \tau)$ denote a topological space, $\mathcal{M}$ a $\sigma$-algebra on $X$, and $\mu$ a measure on $(X, \mathcal{M})$. A measurable subset $A \subseteq X$ is \textit{inner regular} if 
+		\begin{equation*}
+			\mu(A) = \sup\{\mu(F): F \subseteq A, F \text{ compact and measurable}\}.
+		\end{equation*}
+		\item Let $(X, \tau)$ denote a topological space, $\mathcal{M}$ a $\sigma$-algebra on $X$, and $\mu$ a measure on $(X, \mathcal{M})$. A measurable subset $A \subseteq X$ is \textit{outer regular} if 
+		\begin{equation*}
+			\mu(A) = \inf\{\mu(U): U \supseteq A, F \text{ open and measurable}\}.
+		\end{equation*}
+		\item The Lebesgue measure, $\mu$, on $\mathbb{R}^{n}$ is a regular measure (i.e., inner and outer regular). 
+	\end{itemize}
+	
+	\subsubsection{Complex Analysis}
+	\begin{itemize}
+		\item (Little Picard Theorem) Let $f: \mathbb{C}\to \mathbb{C}$ be entire and non-constant. Then either $\operatorname{im}{f} = \mathbb{C}$ or $\mathbb{C}\setminus \{z_0\}$ for a single point. 
+		\item (Great Picard Theorem) Let $f$ be an analytic function that has an essential singularity at some point $z_{0}$. Then on any punctured neighborhood of $z_{0}$, $f(z)$ takes on all possible complex values, with at most a single exception, infinitely often. 
+	\end{itemize}
 \end{document}
