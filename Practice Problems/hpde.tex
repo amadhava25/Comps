@@ -35,6 +35,7 @@
 	{\large\begin{enumerate}[label = \arabic{*}.]
 			\item \textit{Partial Differential Equations} (2nd Ed.), Lawrence C. Evans
 			\item \textit{Introduction to Nonlinear Wave Equations}, Jonathan Luk
+			\item \textit{Nonlinear Wave Equations}, Gustav Holzegel
 		\end{enumerate}
 	}
 	
@@ -500,12 +501,6 @@
 		\end{align*}
 		Note that there is no boundary term since $w = 0$, which means $w_t = 0$, on $\partial U \times [0, T]$. Therefore, for all $0 \leq t \leq T$, $e(t) = e(0) =0$, so that $w_t, Dw \equiv 0$ within $U_T$. Since $w \equiv 0$ on $U \times \{t = 0\}$, we conclude that $w = u - \ti{u} \equiv 0$ in $U_T$. The proof concludes. 
 	\end{proof}
-	\begin{figure}[t!]
-		\centering
-		\includegraphics[width=0.5\linewidth]{Graphics/evans_domdependence.png}
-		\caption{Depiction of the domain of dependence for a point $(x_0, t_0)$. I.e., the value of $u$ depends only on the points contained inside this cone.}
-		\label{fig:dom_dependence}
-	\end{figure}
 	
 	Now we will use the energy method to prove another distinct property of hPDE, the \textit{finite propagation speed}. First, we define what we mean by the \textbf{domain of dependence}. 
 	
@@ -519,6 +514,12 @@
 			C \coloneqq \brac{(x, t) \mid 0 \leq t \leq t_0, |x - x_0| \leq t_0 - t}. 
 		\end{equation}
 	\end{definition}
+	\begin{figure}[htp!]
+		\centering
+		\includegraphics[width=0.5\linewidth]{Graphics/evans_domdependence.png}
+		\caption{Depiction of the domain of dependence for a point $(x_0, t_0)$. I.e., the value of $u$ depends only on the points contained inside this cone.}
+		\label{fig:dom_dependence}
+	\end{figure}
 	
 	In some sense, we have already seen this explicitly in the representation formulas for solutions to the wave equation. However, we will now use energy methods. We have the following theorem. 
 	
@@ -785,15 +786,13 @@
 		\begin{align*}
 			\begin{split}
 				\int_{B(x,t)}\frac{t|g(y)|}{(t^2 - |y - x|^2)^{1/2}}\;dy &= \int_{B(x, t) \cap B(0,R)}\frac{t|g(y)|}{(t^2 - |y - x|^2)^{1/2}}\;dy  \\
-				&\leq \int_{B(x,t) \cap B(0,R)}\frac{tM}{(t + |y - x|)^{1/2}(t - |y - x|)^{1/2}}\;dy. 
+				&\leq \int_{B(x,t) \cap B(0,R)}\frac{tM}{(t + |y - x|)^{1/2}(t - |y - x|)^{1/2}}\;dy \\
+				&\leq \int_{B(x,t) \cap B(0,R)}\frac{t^{1/2}M}{(t - |y - x|)^{1/2}}\;dy \\
+				&\leq \int_{B(0,R)}\frac{t^{1/2}M}{(t - |y - x|)^{1/2}}\;dy \eqqcolon (\star). 
 			\end{split}
 		\end{align*}
-		where $M > 0$ is chosen such that $|g(y)| \leq M$ for all $y \in B(0,R)$. Now let us switch to polar coordinates: 
-		\begin{align*}
-			\begin{split}
-				
-			\end{split}
-		\end{align*}
+		where $M > 0$ is chosen such that $|g(y)| \leq M$ for all $y \in B(0,R)$. By the triangle inequality, one has $|y - x| \leq R + |x|$ so that 
+		\textcolor{red}{[!! Complete Later !!]}
 	\end{enumerate}
 	
 	\begin{prb}{1-5}
@@ -828,204 +827,299 @@
 	
 	\newpage 
 	\section{General Analytic Techniques}
-	In this section, we will revisit the linear wave equation. This time, however, we will be doing so from the lens of Fourier/harmonic analysis, and functional analysis. We will begin with a review of essential Fourier Theory. 
+	In this section, we will revisit the linear wave equation. This time, however, we will be doing so from the lens of Fourier/harmonic analysis, and functional analysis. 
 	
-	\subsection{Fourier Theory and the Linear Wave Equation}
-	\subsubsection{The Fourier Transform}
-	In this section, we will be using the following function spaces extensively, 
-	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-		\item Let $U \subseteq \mathbb{R}^{n}$ be an open subset. Then we define the space $C^{\infty}(U)$ to be the space of all smooth functions. We define $C_{c}^{\infty}(U)$ to be the space of all smooth functions in $U$ whose support is compact. 
-		\item We define the \textbf{Schwartz space} on $\mathbb{R}^{n}$ to be the space, 
-		\begin{equation}
-			\mathcal{S}(\mathbb{R}^n) \coloneqq \brac*{f \in C^{\infty}(\mathbb{R}^n): \sup_x|x^\alpha\partial^\beta_xf| \leq C_{\alpha,\beta} \text{ for all multiindices $\alpha,\beta$}}. 
-		\end{equation}
-		I.e., the Schwartz space is comprised of smooth function that ``decay faster than polynomials.'' 
-		\item The function space, $L^p(\mathbb{R}^n)$, $1 \leq p < \infty$, is the completion of $\mathcal{S}(\mathbb{R}^n)$ under the $L^p$-norm. 
-	\end{enumerate}
-	Given these spaces, we define the \textbf{Fourier transform} of an integrable function as follows. 
-	\begin{definition}[Fourier Transform of an Integrable Function]
-		Let $f \in L^1(\mathbb{R}^n)$. Then its \textbf{Fourier transform} is the function, 
-		\begin{equation}
-			\hat{f}(\xi) \coloneqq \int_{\mathbb{R}^n}f(x)e^{-2\pi i x \cdot \xi}\;dx. 
-		\end{equation}
-		Note that since $f \in L^1$, so is its Fourier transform $\hat{f}$. 
+	\subsection{H\"older Spaces}
+	\begin{definition}{H\"older Continuous Function with Exponent $\gamma$} A function $u$ on $U$ is said to be \textbf{H\"older continuous with exponent $0 <  \gamma \leq 1$} and a constant $C$ if for any $x, y \in U$, $|u(x) - u(y)| \leq C|x - y|^{\gamma}$. 
 	\end{definition}
 	
-	Conversely, given a function $\hat{f}(\xi) \in L^1(\mathbb{R}^n)$, we can define its \textbf{inverse Fourier transform} as follows. 
-	\begin{definition}[Inverse Fourier Transform]
-		Given $g \in L^{1}(\mathbb{R}^n)$, its inverse Fourier transform is the function 
-		\begin{equation*}
-			\check{g}(x) = \int_{\mathbb{R}^n}g(x)e^{2\pi i x \dot \xi}\;d\xi. 
-		\end{equation*}
-	\end{definition}
-	This prompts the following theorem (see Appendix for the proof). 
-	\begin{theorem}[Basic Properties of the Fourier Transform]
+	\begin{definition}[H\"older Norms]
 		$ $\newline \vspace{-0.65cm}
-		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-			\item (Fourier Inversion Formula) For $f$ such that $f, \hat{f} \in L^1(\mathbb{R}^n)$, we have $(\hat{f})^{\check{}} = f$ almost everywhere. 
-			\item The Fourier transform maps the Schwartz space onto itself. 
-			\item (Plancherel's Theorem) Let $f \in L^1 \cap L^2(\mathbb{R}^n)$. Then 
-			\begin{equation}
-				\|\hat{f}\|_{L^2(\mathbb{R}^n)} = \norm{f}_{L^2(\mathbb{R}^n)}. 
-			\end{equation}
-			As a consequence, the Fourier transform extends (by density) to an isometric isomorphism $L^2(\mathbb{R}^n) \to L^2(\mathbb{R}^n)$. 
-			\item For any $\phi \in C^\infty(\mathbb{R}^n)$, 
-			\begin{equation}
-				\mathcal{F}(\partial_i\phi)(\xi) = 2\pi i \xi_i\hat{\phi}(\xi). 
-			\end{equation}
-			I.e., the Fourier transformation turns differentiation in a variable to multiplication in the conjugate variable. 
-		\end{enumerate}
-		\label{thm:prop_four_transform}
-	\end{theorem}
-	
-	\subsubsection{Solution to the Wave Equation in Fourier Space}
-	We will now explicitly construct a solution to the wave equation by using Fourier transforms. Consider the wave equation, $\phi_{tt} - \Delta \phi = 0$, where we assume at least that $\phi \in L^1(\mathbb{R}^n)$. Then taking the Fourier transform of both sides, one has 
-	\begin{equation*}
-		-\partial_{t}^2\hat{\phi}(\xi) - 4\pi |\xi|^{2}\hat{\phi}(\xi) = 0, 
-	\end{equation*}
-	which is an ordinary differential equation (ODE). Solving this ODE, one obtains the general solution, 
-	\begin{equation*}
-		\hat{\phi}(t, \xi) = A(\xi)\sin(2\pi t|\xi|) + B(\xi)\cos(2\pi t|\xi|). 
-	\end{equation*}
-	Suppose we are also given the initial conditions, $(\phi_{0}, \phi_1) \in C_{c}^{\infty}(\mathbb{R}^n) \times C_{c}^{\infty}(\mathbb{R}^n) \subset \mathcal{S}(\mathbb{R}^n) \times \mathcal{S}(\mathbb{R}^n)$. Then matching initial conditions gives us, 
-	\begin{equation}
-		\hat{\phi}(t, \xi) = \frac{\hat{\phi}_{1}(\xi)}{2\pi |\xi|}\sin(2\pi t |\xi|) + \hat{\phi}_{0}(\xi)\cos(2\pi t|\xi|). 
-	\end{equation}
-	Thus under these assumptions, we have shown the existence of a solution to the wave equation (again, this is not a new result as we have already derived explicit representation formulas). Likewise, we have the following proof that the energy is conserved (cf. Problem 3 in the Exercises section above). 
-	
-	\begin{prop}[Conservation of Energy]
-		For $(\phi_0, \phi_1) \in C_c^{\infty}(\mathbb{R}^n) \times C_c^{\infty}(\mathbb{R}^n)$ and $\phi$ the unique solution to the initial value problem for the linear wave equation, one has that the energy, 
-		\begin{equation*}
-			e(t) \coloneqq \frac{1}{2}\int_{\mathbb{R}^n}\phi_t^2 + \Delta\phi\;dx
-		\end{equation*}
-		is independent of $t$. 
-	\end{prop}
-	\begin{proof}
-		Since $C_{c}^{\infty}(\mathbb{R}^n) \subset L^2(\mathbb{R}^n)$, one has by Plancherel's theorem that 
-		\begin{equation*}
-			e(t) = \frac{1}{2}\int_{\mathbb{R}^n}\hat{\phi}_t^2 + \sum_1^n(2\pi \xi_i\hat{\phi})^2\;d\xi. 
-		\end{equation*}
-		We will show that the integrand is independent of time. First, we compute the following, 
-		\begin{align*}
-			\begin{split}
-				|\hat{\phi}_t|^2 &= (\hat{\phi}_1\cos(2\pi t|\xi|) - \hat{\phi}_0 \cdot 2\pi |\xi|\sin(2\pi t|\xi|))^2. \\
-				\sum_1^n(2\pi \xi_i\hat{\phi})^2 &= |\hat{\phi}_1(\xi)|^2\sin^2(2\pi|\xi|t) \\
-				&\qquad + 4\pi^2|\xi|^2|\hat{\phi}_0(\xi)|^2\cos^2(2\pi |\xi|t) + 4\pi |\xi|\hat{\phi}_0(\xi)\hat{\phi}_1(\xi)\sin(2\pi t |\xi|)\cos(2\pi t|\xi|). \\
-				|\hat{\phi}_t|^2 + \sum_1^n(2\pi \xi_i\hat{\phi})^2 &= |\hat{\phi}_1(\xi)|^2 + 4\pi^2|\xi|^2|\hat{\phi}_0(\xi)|^2, 
-			\end{split}
-		\end{align*}
-		which is independent of time. Thus, $e(t)$ is independent of time. Note that this proof is much shorter than the proof given in Problem 3. 
-	\end{proof}
-	
-	The following propositions, however, are much more foundational. For $n \geq 2$, the solutions to the wave equation on $\mathbb{R}^n$ \textit{decay} as $t \to \infty$ (see Figure \ref{fig:dispersionn2}). The following propositions give simple decay rates for these solutions. 
-	
-	\begin{prop}[Decay Rate I]
-		Fix any $R > 0$. For $(\phi_0, \phi_1) \in C_c^\infty(\mathbb{R}^n) \times C_c^\infty(\mathbb{R}^n)$, and $\phi$ the unique solution to the initial value problem for the linear wave equation ($n \geq 2$), there exists $C = C(\phi_0,\phi_1,R) > 0$ such that 
-		\begin{equation}
-			\sup_{\{|x| \leq R\}}|\phi(t,x)| \leq \frac{C}{(1 + t)^{n-1}} \qquad \forall t \geq 0. 
-		\end{equation}
-	\end{prop}
-	
-	\begin{figure}[t!]
-		\centering
-		\includegraphics[width=\linewidth]{Graphics/dispersion_n2.pdf}
-		\caption{Dispersion in the solution for the wave equation ($n = 2$).}
-		\label{fig:dispersionn2}
-	\end{figure}
-	\begin{proof}
-		Before proceeding with the proof, we rewrite the solution $\hat{\phi}$ as follows: 
-		\begin{equation}
-			\hat{\phi}(\xi,t) = e^{2\pi i |t|\xi}\left(\frac{\hat{\phi}_0(\xi)}{2} + \frac{\hat{\phi}_1(\xi)}{2\pi i |\xi|}\right) + e^{-2\pi i t|\xi|}\left(\frac{\hat{\phi}_0(\xi)}{2} - \frac{\hat{\phi}_1(\xi)}{2\pi i |\xi|}\right). 
-		\end{equation}
-		In this proof, we only consider the case $n = 3$, and the integral 
-		\begin{equation*}
-			I = \int_{\mathbb{R}^3}e^{2\pi i (t |\xi| + x \cdot \xi)} \frac{\hat{\phi}_1(\xi)}{2\pi i |\xi|}\;d\xi. 
-		\end{equation*}
-		Furthermore, we will only consider the case $t \geq 1$. We begin by writing $\xi$ using the polar coordinates $(|\xi|, \xi_\theta, \xi_\varphi)$, defined as follows:
-		\begin{equation*}
-			|\xi|^2 = \xi_1^2 + \dotsm + \xi_3^2, \quad \xi_3 = |\xi|\cos{\xi_\theta}, \quad \xi_3 = |\xi|\sin{\xi_\theta}\cos{\xi_\varphi}. 
-		\end{equation*}
-		In this coordinate system, the volume form is $d\xi = |\xi|^2\sin{\xi_\theta}\;d|\xi|d\xi_\theta d\xi_\varphi$. Quickly note that for any nonnegative integer $N$, 
-		\begin{equation*}
-			\left(\frac{1}{2\pi it}\frac{\partial}{\partial |\xi|}\right)^Ne^{2\pi i t|\xi|} = e^{2\pi i t|\xi|}. 
-		\end{equation*}
-		Now using integration by parts, 
-		\begin{align*}
-			\begin{split}
-				I &= \int_0^{2\pi}\int_0^\pi\int_0^\infty e^{2\pi i t|\xi|} e^{2\pi i (x \cdot \xi)} \frac{\hat{\phi}_1(\xi)}{2\pi i}|\xi|\sin(\xi_\theta)\;d|\xi|d\xi_\theta d\xi_\varphi \\
-				&= \left[ \frac{1}{(2\pi i)^2 t}\int_0^{\pi}\int_0^{2\pi}e^{2\pi i t |\xi|}e^{2\pi i (x \cdot \xi)}\hat{\phi}_1(\xi) |\xi| \sin(\xi_\theta)\;d\xi_\varphi d\xi_\theta \right]^{R \to \infty}_{|\xi| = 0} \\
-				&\qquad - \int_0^{2\pi}\int_0^\pi\int_0^\infty \frac{1}{2\pi i t} e^{2\pi i t|\xi|} \frac{\partial}{\partial |\xi|}\left(e^{2\pi i x \cdot \xi}\frac{\hat{\phi}_1(\xi)}{2\pi i}|\xi|\right)\sin(\xi_\theta)\;d|\xi| d\xi_\theta d\xi_\varphi
-			\end{split}
-		\end{align*}
-		We claim that the first term is identically zero. To prove this, we first note that 
-		\begin{equation*}
-			\lim_{|\xi|\to \infty}\abs{^{2\pi i t |\xi|}e^{2\pi i (x \cdot \xi)}\hat{\phi}_1(\xi) |\xi| \sin(\xi_\theta)} = \lim_{|\xi| \to \infty}|\hat{\phi}_1(\xi)||\xi| = 0, 
-		\end{equation*}
-		since $\hat{\phi}_1(\xi) \in \mathcal{S}(\mathbb{R}^3)$. On the other hand, the integrand vanishes identically at $|\xi| = 0$. Now, we see that one application of integration by parts gave us a power of $t$. To get another power of $t$, we will use integration by parts on the second term. This time, after dealing with a boundary term at $|\xi| = 0$, we get 
-		\begin{equation*}
-			I = -\int_{\mathbb{R}^3}e^{2\pi i t|\xi|}\frac{1}{8\pi^3it^2}\left(\dotsm\right)\sin(\xi_\theta)\;d|\xi|d\xi_\theta d\theta_\varphi + \frac{1}{2\pi^2 i t^2}\hat{\phi}_1(\xi = 0). 
-		\end{equation*}
-		The boundary term does not allow us to use integration by parts again. Thus bounding each of the term and using the fact that $\hat{\phi}_1 \in \mathcal{S}$, one obtains 
-		\begin{equation*}
-			|I| \leq \frac{C(1 + R^2)}{t^2}. 
-		\end{equation*}
-		Note that this decay bound is not uniform for all $x \in \mathbb{R}^n$. 
-	\end{proof}
-	
-	However, we can get a \textit{weaker uniform} decay rate. 
-	
-	\begin{theorem}[Uniform Decay Rate]
-		For $(\phi_0, \phi_1) \in C_c^{\infty}(\mathbb{R}^n) \times C_c^{\infty}(\mathbb{R}^n)$, and $\phi$ the unique solution to the homogeneous initial value problem, there exists $C = C(\phi_0, \phi_1) > 0$ so that
-		\begin{equation*}
-			\sup_{x \in \mathbb{R}^n}|\phi(t,x)| \leq \frac{C}{(1 + t)^{\frac{n-1}{2}}}
-		\end{equation*}
-		for $t\geq 0$. 
-	\end{theorem}
-	
-	\subsection{Distribution Theory and the Linear Wave Equation}
-	\subsubsection{A Short Introduction to Distribution Theory}
-	In this section, we will quickly introduce a few key ideas of distribution theory, and then use these ideas to obtain the \textbf{fundamental solution} to the equation $\Box E = \delta_0$. We will use this fundamental solution to construct the solution to the wave equation in physical space. We begin with a couple of definitions. 
-	
-	\begin{definition}[Distributions]
-		Let $U \subseteq \mathbb{R}^n$ be an open subset. \vspace{-0.25cm}
-		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-			\item A \textbf{distribution} in an open set $U \subseteq \mathbb{R}^n$ is a linear map $u: C_c^\infty(U) \to \mathbb{R}$ such that for \textit{every} compact set $K \subseteq U$, there exists $C > 0$ and $k \in \mathbb{N} \cup \{0\}$ such that 
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item If $u: U \to \mathbb{R}$ is bounded and continuous, we write  
 			\begin{equation*}
-				|u(\varphi)| \leq C \sum_{|\alpha|\leq k}\sup_{x \in K}|\partial^\alpha \varphi(x)|, 
+				\norm{u}_{C(\bar{U})} \coloneqq \sup_{x \in U}|u(x)|. 
 			\end{equation*}
-			for all $\varphi \in C_c^\infty(K)$. We will denote $\braket{u,\varphi} \coloneqq u(\varphi)$, and we will denote the space of all distributions on $U$ by $\mathcal{D}'(U)$. 
-			\item Let $V \subseteq U \subseteq \mathbb{R}^n$ and $u \in \mathcal{D}'(U)$. We define the \textbf{restriction of $u$ to $V$}, denoted $u_V$ by $\braket{u_V, \varphi} \coloneqq \braket{u,\varphi}$ for all $\varphi \in C_c^\infty(V)$. 
-			\item Let $U \subseteq \mathbb{R}^n$ be open and $u \in \mathcal{D}'(U)$. The \textbf{support of $u$}, denoted $\operatorname{supp}{u}$, is defined to be the set of all points in $U$ having no open neighborhood to which the restriction of $u$ is 0. 
-			\item Let $U \subseteq \mathbb{R}^n$ be open and $u \in \mathcal{D}'(U)$. The \textbf{distributional derivative} of $u$, denoted $\partial^\alpha u$ is defined to be the distribution such that $\braket{\partial^\alpha u,\varphi} = (-1)^{|\alpha|}\braket{u,\partial^\alpha \varphi}$ for all test functions $\varphi$ on $U$. 
+			\item We define the $\gamma$th-H\"older seminorm of $u: U \to \mathbb{R}$ to be the following 
+			\begin{equation*}
+				[u]_{C^{0,\gamma}(\bar{U})} \coloneqq \sup_{\substack{x, y \in U \\ x \neq y}}\left\{\frac{|u(x) - u(y)|}{|x - y|^{\gamma}}\right\}, 
+			\end{equation*}
+			and the $\gamma$th-H\"older norm to be 
+			\begin{equation*}
+				\norm{u}_{C^{0,\gamma}(\bar{U})} \coloneqq \norm{u}_{C(\bar{U})} + [u]_{C^{0,\gamma}(\bar{U})}. 
+			\end{equation*}
 		\end{enumerate}
 	\end{definition}
 	
-	We have the following essential facts about distributions (see, e.g., Folland \textit{Real Analysis} for proofs). 
-	\begin{prop}[Basic Properties of Distributions]
-		Let $U \subseteq \mathbb{R}^n$ be an open subset, and $u \in \mathcal{D}'(U)$. \vspace{-0.25cm}
-		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-			\item (Approximation by $C^\infty$ Functions) If $U \subseteq \mathbb{R}^n$ is open and $u \in \mathcal{D}'(U)$, then there exists a sequence $u_j \in C_c^\infty(U)$ such that $u_j \to u$ in $\mathcal{D}'(u)$; i.e., for every $\varphi \in C_c^\infty(U)$, $\int_U u_j\varphi \to \braket{u,\varphi}$. 
-			\item (Composition with Smooth Maps) Let $U \subseteq \mathbb{R}^n$ and let $f: U \to \mathbb{R}$ be a smooth map such that $df \neq 0$. Then there exists a continuous map $f^\ast: \mathcal{D}'(\mathbb{R}) \to \mathcal{D}'(U)$ such that $f^\ast u = u \circ f$ whenever $u$ is a continuous function. Given a distribution $u \in \mathcal{D}'(\mathbb{R})$, this can be defined as the limit of $u_j \circ f$, where $u_j \to u$ and $u_j \in C_c^\infty(\mathbb{R})$. 
-			\item (Chain Rule) Let $u \in \mathcal{D}'(\mathbb{R})$, $U \subseteq \mathbb{R}^n$, and $f: U \to \mathbb{R}$ be a smooth map such that $df \neq 0$. Then the distributional derivative satisfies the chain rule $\partial(u \circ f) = (\partial f)(u' \circ f)$. 
-		\end{enumerate}
-	\end{prop}
-	Now we need a notion of the convolution of distributions. We make the following definition, 
-	\begin{definition}[Convolution of Distributions with Test Functions]
-		Let $u \in \mathcal{D}'(\mathbb{R}^n)$ and $\varphi \in C_c^\infty(\mathbb{R}^n)$. Define $(u \ast \varphi)(x) \coloneqq \braket{u, \varphi(x - \cdot)}$. 
+	This allows to define the H\"older space, $C^{k,\gamma}(\bar{U})$ as the following. 
+	\begin{definition}[H\"older Space]
+		The \textbf{H\"older space} $C^{k,\gamma}(\bar{U})$ consists of all functions $u \in C^k(\bar{U})$ for which the norm 
+		\begin{equation*}
+			\norm{u}_{C^{k,\gamma}(\bar{U})} \coloneqq \sum_{|\alpha|\leq k}\norm{D^\alpha u}_{C(\bar{U})} + \sum_{|\alpha| = k}[D^k\alpha]_{C^{0,\gamma}(\bar{U})} < \infty. 
+		\end{equation*}
+		In particular, $\norm{\empspace}_{C^{k,\gamma}(\bar{U})}$ forms a norm on $C^{k,\gamma}(\bar{U})$, and $C^{k,\gamma}(\bar{U})$ is a Banach space under this norm. 
 	\end{definition}
-	This gives us the convolution of a distribution with a test function. How can we define the convolution of two \textit{distributions}? Recall that with functions, the convolution $u_j \ast u_k$ of two functions was the (unique) distribution such that $(u_j \ast u_k) \ast \varphi = u_j \ast (u_k \ast \varphi)$ for all test functions $\varphi$. We wish to make an analogous definition for distributions. However, such definitions are only well-defined under specific conditions which are presented in the following lemma. 
 	
-	\begin{lemma}[Convolution of Distributions]
-		$ $\newline \vspace{-0.65cm}
-		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
-			\item Let $u \in \mathcal{D}'(\mathbb{R}^n)$ and $\varphi \in C_c^\infty(\mathbb{R}^n)$. Then $u \ast \varphi \in C^\infty(\mathbb{R}^n)$ with $\partial(u \ast \varphi) = (\partial u)\ast \varphi = u \ast (\partial \varphi)$ and $\operatorname{supp}(u \ast \varphi) \subseteq \supp{u} + \operatorname{supp}{\varphi}$. 
-			\item Let $U: C_c^\infty(\mathbb{R}^n) \to C^\infty(\mathbb{R}^n)$ be a linear map such that for every $\varphi_j \to 0$, we have $U(\varphi_j) \to 0$. Assume moreover that $U$ commutes with all translations, i.e., for every $h \in \mathbb{R}^n$ and every 
-		\end{enumerate}
+	\subsection{Sobolev Spaces}
+	While the classes of H\"older functions on $U$ are nice function spaces, often times, we cannot make strong enough analytic estimates on solutions obtained for PDE to prove that they belong to such spaces; by our definitions above, we require a certain degree of regularity. Therefore, we now seek to replace these spaces with function spaces that have some, but not a lot, of smoothness properties. We start by defining the notion of a \textit{weak derivative}. 
+	
+	\begin{definition}[Space of Test Functions]
+		Let $U$ be an open subset of $\mathbb{R}^n$. Then we define the space $C_{c}^{\infty}(U)$ to be the space of infinitely differentiable (i.e., smooth) functions $\phi: U \to \mathbb{R}$ with compact support in $U$. We call such functions \textbf{test functions}. 
+	\end{definition}
+	
+	\begin{definition}[Weak Derivative]
+		Suppose $u, v \in L^{1}_{\text{loc}}(U)$ (recall that $L^{1}_{\text{loc}}(U)$ denotes the space of locally integrable functions on $U$). Then for any multiindex $\alpha$, we say that $v$ is the $\alpha\textsuperscript{th}$ \textbf{weak partial derivative of $u$}, denoted $D^\alpha u = v$, provided that 
+		\begin{equation}
+			\int_{U}uD^\alpha \phi\;dx = (-1)^{|\alpha|}\int_{U}v\phi\;dx, \qquad \forall \phi \in C_{c}^{\infty}(U). 
+		\end{equation}
+	\end{definition}
+	
+	The motivation behind weak derivatives comes from the integration by parts formula. Suppose $u \in C^1(U)$. Then by integration by parts, for any $\phi \in C^\infty_{c}(U)$, one has 
+	\begin{equation*}
+		\int_{U}u\phi_{x_{i}}\;dx = -\int_{U}u_{x_{i}}\phi\;dx \qquad (i = 1, 2, \ldots, n), 
+	\end{equation*}
+	where there are no boundary terms since $\phi$ hs compact support in $U$. More generally, if $u \in C^k(U)$, and $\alpha = (\alpha_1, \ldots,\alpha_n)$ is a multiindex of order $|\alpha| = \alpha_{1} + \dotsm + \alpha_{n} = k$, then 
+	\begin{equation*}
+		\int_{U}uD^\alpha\phi\;dx = -\int_{U}D^\alpha u \phi\;dx. 
+	\end{equation*}
+	If $u$ is not $k$-times continuously differentiable, then the left side is still well-defined so long as $u$ is locally integrable in $U$. But the right side is generally not defined. Thus, we instead look for locally integrable functions $v$ so that the above formula holds, with $v$ taking on the role of $D^\alpha u$. 
+	
+	
+	\begin{example}[Example of a Function with a Weak Derivative]
+		Let $n = 1$, $U = (0,2)$, and 
+		\begin{equation*}
+			u(x) = 
+			\begin{cases}
+				x & \quad \text{if $0 < x \leq 1$} \\
+				1 &\quad \text{if $1 \leq x < 2$}. 
+			\end{cases}
+		\end{equation*}
+		Define 
+		\begin{equation*}
+			v(x) = 
+			\begin{cases}
+				1 &\quad \text{if $0 < x \leq 1$} \\
+				0 &\quad \text{if $1 < x < 2$}. 
+			\end{cases}
+		\end{equation*}
+		We claim that $v$ is the weak partial derivative of $u$. Indeed, let $\phi$ be any compactly supported smooth function in $U$. Then 
+		\begin{align*}
+			\begin{split}
+				\int_{0}^{2}u\phi'\;dx &= \int_{0}^{1}x\phi'\;dx + \int_{1}^{2}\phi'\;dx \\
+				&= -\int_{0}^{1}\phi(x)\;dx + \phi(1) - \phi(1) = -\int_{0}^{2}v\phi\;dx. 
+			\end{split}
+		\end{align*}
+		\label{ex:example_2.1}
+	\end{example}
+	
+	\begin{example}[Example of a Function without Weak Derivative] 
+		Let $n = 1$, $U = (0,2)$, and 
+		\begin{equation*}
+			u(x) = 
+			\begin{cases}
+				x & \quad \text{if $0 < x \leq 1$} \\
+				2 &\quad \text{if $1 \leq x < 2$}. 
+			\end{cases}
+		\end{equation*}
+		Assume to the contrary that there exists some locally integrable function $v \in L^{1}_{\text{loc}}(U)$ such that 
+		\begin{equation*}
+			\int_{0}^{2}u\phi'\;dx = -\int_{0}^{2}v\phi\;dx
+		\end{equation*}
+		for all test functions $\phi$. Then some quick computations give us, 
+		\begin{align*}
+			\begin{split}
+				-\int_{0}^{2}v\phi\;dx &= \int_{0}^{2}u\phi'\;dx \\
+				&= \int_{0}^{1}x\phi'\;dx + \int_{1}^{2}2\phi'(x)\;dx \\
+				&= \phi(1) - \int_{0}^{1}\phi\;dx -2\phi(1) = -\int_{0}^{1}\phi\;dx - \phi(1). 
+			\end{split}
+		\end{align*}
+		Now choose a sequence $\{\phi_{m}\}_{m = 1}^{\infty}$ of smooth functions satisfying 
+		\begin{equation*}
+			0 \leq \phi_{m} \leq 1, \quad \phi_{m}(1) = 1, \quad \phi_m(x)\to 0 \text{ for all $x \neq 1$}. 
+		\end{equation*}
+		By the above computations, one has 
+		\begin{equation*}
+			1 = \phi_{m}(1) = \int_{0}^{2}v\phi_{m}\;dx -\int_{0}^{1}\phi\;dx. 
+		\end{equation*}
+		Thus taking the limit $m \to \infty$, one has 
+		\begin{equation*}
+			1 = \lim_{m \to \infty}\phi_{m}(1) = \lim_{m \to \infty}\left[\int_{0}^{2}v\phi_{m}\;dx - \int_{0}^{1}\phi_{m}\;dx\right] = 0, 
+		\end{equation*}
+		which is a contradiction. Thus $u$ has no weak partial derivatives.
+	\end{example}
+	
+	More fundamentally, if a locally integrable function has a weak partial derivative, then it must be unique as the following lemma asserts. 
+	\begin{lemma}[Uniqueness of Weak Derivatives]
+		Assume $v, \ti{v} \in L^{1}_{\text{loc}}(U)$ are weak partial derivatives of $u \in L^{1}_{\text{loc}}(U)$. Then for any $\phi \in C_{c}^{\infty}(U)$, 
+		\begin{align*}
+			\begin{split}
+				\int_{U}(v - \ti{v})\phi\;dx &= \int_{U}v\phi\;dx - \int_{U}\ti{v}\phi\;dx \\
+				&= (-1)^{|\alpha|}\int_{U}uD^\alpha \phi\;dx - (-1)^{|\alpha|}\int_{U}uD^\alpha \phi\;dx = 0. 
+			\end{split}
+		\end{align*}
+		Thus, $v = \ti{v}$ a.e. 
 	\end{lemma}
+	
+	\subsubsection{Definition and Basic Properties of Sobolev Spaces}
+	Keeping the notion of weak partial derivatives in mind, we now make the following definition of \textbf{Sobolev spaces}
+	\begin{definition}[The Sobolev Space $W^{k,p}(U)$]
+		The \textbf{Sobolev space} $W^{k,p}(U)$ consists of all locally integrable functions $u: U \to \mathbb{R}$ such that for each multiindex $\alpha$ with $|\alpha|\leq k$, $D^\alpha u$ exists in the weak sense and belongs to $L^p(U)$. 
+	\end{definition}
+	
+	As a function space, two functions in $W^{k,p}(U)$ are said to be the ``same'' if they agree a.e (which is precisely how we view functions in the $L^p$ spaces). Moreover, in the case that $p = 2$, since $L^2$ is a Hilbert space, we denote $H^k(U) \coloneqq W^{k,2}(U)$. Now we introduce a norm on our Sobolev spaces. 
+	
+	\begin{definition}[Sobolev Norm]
+		If $u \in W^{k,p}(U)$, we define its norm to be 
+		\begin{equation}
+			\norm{u}_{W^{k,p}} \coloneqq
+			\begin{cases}
+				\displaystyle\left(\sum_{|\alpha|\leq k}\int_{U}|D^\alpha u|^{p}\;dx\right)^{1/p} &\qquad (1 \leq p < \infty) \\
+				\sum_{|\alpha|\leq k}\norm{D^\alpha u}_{L^\infty(U)} &\qquad (p = \infty)
+			\end{cases}
+		\end{equation}  
+	\end{definition}
+	
+	Notice the resemblance to the $L^p$-norms. In particular, we define convergence in the Sobolev spaces as follows: 
+	\begin{definition}[Convergence in the Sobolev Spaces]
+		$ $\newline \vspace{-0.65cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item Let $\{u_{m}\}_{m = 1}^{\infty}, u \in W^{k,p}(U)$. We say that $u_{m}$ converges to $u$ in $W^{k,p}$ provided 
+			\begin{equation}
+				\lim_{m \to \infty}\norm{u_{m} - u}_{W^{k,p}(U)} = 0. 
+			\end{equation}
+			\item We say that $u_{m}\to u$ in $W^{k,p}_{\text{loc}}(U)$ iff $\lim_{m \to \infty}\norm{u_{m} - u}_{W^{k,p}(V)} = 0$ for all $V \Subset U$. 
+			\item (Closure of Test Functions) We denote by $W_{0}^{k,p}(U)$ the closure of the space of test functions, $C_{c}^{\infty}(U)$ in $W^{k,p}(U)$. 
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{example}[Verifying a Function is in a Sobolev Space]
+		Let $U = B^{0}(0,1)$ denote the open unit ball in $\mathbb{R}^n$, and let $u(x) = |x|^{-\alpha}$, where $x \in U \setminus \{0\}$. We will calculate the values of $\alpha$, $n$, and $p$ for which $u \in W^{1,p}(U)$. The ``problematic region'' is at $x = 0$, where $u$ is not differentiable in the classical sense. Therefore, we will isolate this problem to a small $\epsilon$-ball. Indeed, since $u$ is differentiable on $U\setminus B(0,\epsilon)$, one has that for any fixed $\phi \in C_c^\infty(U)$ and fixed $\epsilon > 0$, 
+		\begin{equation*}
+			\int_{U\setminus B(0,\epsilon)}u\phi_{x_{i}}\;dx = -\int_{U \setminus B(0,\epsilon)}u_{x_{i}}\phi\;dx + \int_{\partial B(0, \epsilon)}u\phi \nu^{i}\;dS, 
+		\end{equation*}
+		where $\nu = (\nu^{1}, \ldots, \nu^{n})$ denotes the inward pointing normal on $\partial B(0,\epsilon)$. Note that 
+		\begin{equation*}
+			|Du(x)| = \frac{|\alpha|}{|x|^{\alpha + 1}} \qquad (x \neq 0).
+		\end{equation*}
+		If $\alpha + 1 < n$, then $|Du(x)| \in L^1(U)$. We will now use this to force $\epsilon \to 0$. Indeed, one first has 
+		\begin{multline*}
+			\abs{\int_{\partial B(0,\epsilon)}u\phi \nu^{i}\;dS} \leq \int_{\partial B(0,\epsilon)}|u\|\phi|\;dS = \int_{\partial B(0,\epsilon)}\epsilon^{-\alpha}|\phi|\;dS \leq \norm{\phi}_{L^\infty(\partial B(0,\epsilon))}\int_{\partial B(0,\epsilon)}\epsilon^{-\alpha}\;dS \\ \leq C\epsilon^{n-1 -\alpha}\xrightarrow{\epsilon \to 0}0. 
+		\end{multline*}
+		In going to the final inequality, we used the fact that since $\partial B(0, \epsilon) \subset U$ for sufficiently small $\epsilon$, $\norm{\phi}_{L^\infty(\partial B(0,\epsilon))} \leq \norm{\phi}_{L^{\infty}(U)}$, which is a constant. Thus we get 
+		\begin{equation*}
+			\int_{U}u\phi_{x_{i}}\;dx = -\int_{U}u_{x_{i}}\phi\;dx
+		\end{equation*}
+		for all $\phi \in C_{c}^{\infty}(U)$ provided $0 \leq \alpha \leq n - 1$. Furthermore, since $|Du(x)| \in L^{p}(U)$ if and only if $(\alpha + 1)p < n$, we conclude that $u \in W^{1,p}(U)$ if and only if $a < \frac{n-p}{p}$. In particular, $u \notin W^{1,p}(U)$ for each $p\geq n$. 
+	\end{example}
+	
+	\subsection{Fourier Theory}
+	We start by considering the \textit{Schwartz class of functions} on $\mathbb{R}^{n}$. 
+	\begin{definition}[Schwartz Class of Functions]
+		By $\mathcal{S}(\mathbb{R}^{n})$, we denote the Schwarz class of functions, 
+		\begin{equation}
+			\mathcal{S}(\mathbb{R}^{n}) \coloneqq \brac*{f \in C^{\infty}(\mathbb{R}^{n}) \mid \forall \alpha, \beta \in \mathbb{N}_{0}^{n}, \sup_{x \in \mathbb{R}^n}|x^{\alpha}\partial^{\beta}f(x)| < \infty}. 
+		\end{equation}
+	\end{definition}
+	I.e., the Schwartz class of functions consists of all the smooth functions on $\mathbb{R}^{n}$ that decay faster than any polynomial near $\infty$. We introduce the seminorms, 
+	\begin{equation*}
+		\norm{f}_{\alpha,\beta} \coloneqq \sup_{x \in \mathbb{R}^{n}}|x^{\alpha}\partial^{\beta}f(x)|
+	\end{equation*}
+	on this space, and we say that a sequence $\{u_n\} \subset \mathcal{S}(\mathbb{R}^n)$ converges to $u \in\mathcal{S}(\mathbb{R}^n)$ if and only if for all $\alpha, \beta$, $\norm{u_{n} - u}_{\alpha,\beta} \xrightarrow{n \to \infty} 0$. In particular, $\mathcal{S}(\mathbb{R}^{n})$ is a dense subspace of $L^{p}(\mathbb{R}^{n})$ for all $p \geq 1$. Thus we define the Fourier transform as follows. 
+	
+	\begin{definition}[(Inverse) Fourier Transform]
+		Given a function $f \in \mathcal{S}(\mathbb{R}^{n})$, define its \textit{Fourier transform} by the formula 
+		\begin{equation}
+			\hat{f}(\xi) \coloneqq \int_{\mathbb{R}^{n}}f(x)e^{-2\pi i (x, \xi)}\;dx. 
+		\end{equation}
+		Conversely, we define the \textit{inverse Fourier transform} by the formula, 
+		\begin{equation}
+			\check{f}(x) \coloneqq \int_{\mathbb{R}^{n}}f(x)e^{2\pi i (x, \xi)}\;d\xi. 
+		\end{equation}
+	\end{definition}
+	
+	The Fourier transform has the following properties: 
+	
+	\begin{theorem}[Properties of the Fourier Transform]
+		\label{thm:prop_four_transform} $ $\newline \vspace{-0.65cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item The Fourier transform maps the Schwartz space into the Schwartz space. 
+			\item (\textsc{Plancherel's Theorem}) For $f \in \mathcal{S}(\mathbb{R}^{n})$, $\norm{f}_{L^{2}(\mathbb{R}^{n})} = \norm{f}_{L^{2}(\mathbb{R}^{n})}$. As a consequence, the Fourier transform extends to an isometric automorphism on $L^{2}(\mathbb{R}^{n})$. (See Appendix \ref{app:prop_four_transform} for a proof of this statement.)
+		\end{enumerate}
+	\end{theorem}
+	
+	As we will see now, the Fourier transform is a powerful tool in PDE. 
+	
+	\subsubsection{Solving the Wave Equation using Fourier Transforms}
+	Consider the initial value problem again: 
+	\begin{equation*}
+		\left\{
+		\begin{alignedat}{3}
+			&\phi_{tt} - \Delta \phi &= 0 &\qquad \text{in $\mathbb{R}^{n} \times (0,\infty)$}\\
+			&\phi =f, \phi_{t} &= g &\qquad \text{on $\mathbb{R}^{n} \times \{t = 0\}$}
+		\end{alignedat}
+		\right. 
+	\end{equation*}
+	where $f, g \in \mathcal{S}(\mathbb{R}^{n})$. Using the basic properties of the Fourier transform, applying the Fourier transform to the wave equation yields, 
+	\begin{equation*}
+		-\partial_{t}^{2}\hat{\phi}(t,\xi) -4\pi^{2}|\xi|^{2}\hat{\phi}(t,\xi) = 0, 
+	\end{equation*}
+	which is an ODE. Solving this ODE, and using the initial value conditions, one obtains the solution 
+	\begin{equation*}
+		\hat{\phi}(\xi, t) = \frac{\hat{g}(\xi)}{2\pi |\xi|}\sin(2\pi t|\xi|) + \hat{f}(\xi)\cos(2\pi t |\xi|). 
+	\end{equation*}
+	In particular, the solution is unique and Schwartz in $\xi$. Therefore, taking the inverse Fourier transform, and using the fact that the inverse Fourier transform is unique up to null sets, we obtain the unique smooth representation formula, 
+	\begin{equation}
+		\boxed{\phi(t, x) =\int_{\mathbb{R}^{n}}\left[\frac{\hat{g}(\xi)}{2\pi |\xi|}\sin(2\pi t|\xi|) + \hat{f}(\xi)\cos(2\pi t |\xi|)\right]e^{2\pi i (x, \xi)}\;d\xi}. 
+	\end{equation}
+	Thus we have the following result. 
+	\begin{theorem}[Unique Smooth Solution to the Cauchy Problem]
+		Given $f, g \in \mathcal{S}(\mathbb{R}^{n})$, there exists a unique solution $\phi \in C^{\infty}(\mathbb{R}, \mathbb{R}^{n})$ of the Cauchy problem, where $\phi$ is Schwarz in $\xi$. 
+	\end{theorem}
+	
+	
+	While it is difficult to see the domain of dependence from the above representation formula, we can obtain a conservation law. 
+	
+	\begin{prop}[Conservation Law for Solutions to the Cauchy Problem]
+		Let $\phi$ be the unique smooth solution to the Cauchy wave problem with appropriate initial data. Then 
+		\begin{equation*}
+			\norm{\phi_{t}}_{H^{s - 1}} + \norm{\nabla \phi}_{H^{s - 1}} = \norm{g}_{H^{s - 1}} + \norm{\nabla f}_{H^{s- 1}}. 
+		\end{equation*}
+	\end{prop}
+	
+	\begin{proof}
+		We start with the representation formula for $\phi$ in the frequency domain, 
+		\begin{equation*}
+			\hat{\phi}(\xi, t) = \frac{\hat{g}(\xi)}{2\pi |\xi|}\sin(2\pi t |\xi|) + \hat{f}(\xi)\cos(2\pi t |\xi|). 
+		\end{equation*}
+		Differentiating both sides, one obtains 
+		\begin{equation*}
+			\hat{\phi}_{t} = \hat{g}(\xi)\cos(2\pi t |\xi|) - 2\pi |\xi|\hat{f}(\xi)\sin(2\pi t |\xi|), 
+		\end{equation*}
+		so that 
+		\begin{align*}
+			\begin{split}
+				|\hat{\phi}_{t}|^{2} &= |\hat{g}(\xi)|^{2}\cos^{2}(2\pi t|\xi|) -4\pi |\xi|\hat{g}(\xi)\hat{f}(\xi)\cos(2\pi t|\xi|)\sin(2\pi t|\xi|) + 4\pi^{2}|\xi|^{2}|\hat{f}(\xi)|^{2}\sin^{2}(2\pi t |\xi|). \\
+				4\pi^{2}|\xi|^{2}|\hat{\phi}|^{2} &= |\hat{g}(\xi)|^{2}\sin^{2}(2\pi t|\xi|) + 4\pi|\xi|\hat{g}(\xi)\hat{f}(\xi)\sin(2\pi t|\xi|) \cos(2\pi t|\xi|) + 4\pi^{2}|\xi|^{2}|\hat{f}(\xi)|^{2}\cos^{2}(2\pi t |\xi|). 
+			\end{split}
+		\end{align*}
+		Adding these expressions, one obtains 
+		\begin{equation*}
+			|\hat{\phi}_{t}|^{2} + 4\pi^{2}|\xi|^{2}|\hat{\phi}|^{2} = |\hat{g}(\xi)|^{2} + 4\pi^{2}|\xi|^{2}|\hat{f}(\xi)|^{2}. 
+		\end{equation*}
+		Multiplying both sides by $(1 + |\xi|^{2})^{s - 1}$, integrating, and using the definition of the Sobolev norms (in the frequency domain), one obtains: 
+		\begin{equation*}
+			\norm{\hat{\phi}_{t}}_{H^{s - 1}} + \norm{4\pi^{2}|\xi|^{2}\hat{\phi}}_{H^{s - 1}} = \norm{\hat{g}}_{H^{s - 1}} + \norm{4\pi^{2}|\xi|^{2}\hat{f}}_{H^{s - 1}}. 
+		\end{equation*}
+		Using Plancherel's theorem, we conclude that 
+		\begin{equation*}
+			\norm{\phi_{t}}_{H^{s- 1}} + \norm{\nabla \phi}_{H^{s - 1}} = \norm{g}_{H^{s - 1}} + \norm{\nabla f}_{H^{s - 1}}. 
+		\end{equation*}
+	\end{proof}
 	
 	\newpage 
 	\appendix 
 	\section{Proof of Theorem \ref{thm:prop_four_transform}}
+	\label{app:prop_four_transform}
 	\begin{proof}
 		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
 			\item First assume that $f, \wh{f}, g, \wh{g} \in L^{1}(\mathbb{R}^{n})$. Then 

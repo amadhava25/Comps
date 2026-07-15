@@ -1699,6 +1699,20 @@
 	\end{equation*}
 	where $(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}) \in R$. Thus, it follows that $c \mid b^{n}$. Since $\gcd(b, c) = 1$, $\gcd(b^{n}, c) = 1$ since raising $b$ to the $n$th power does not add any new prime divisors. Thus since $c \mid b^{n}$ and $\gcd(b^{n}, c) = 1$, $c = \pm 1$. This implies that $a = \pm b \in R$. Hence, the proof concludes. 
 	
+	\begin{prb}{2019-J-II-2}
+		Does there exist an integral domain with exactly 2019 prime ideals? 
+	\end{prb}
+	We claim that there does exist an integral domain with exactly 2019 prime ideals. Consider the polynomial ring $\mathbb{Q}[x]$. Since $\mathbb{Q}$ is a field (and hence, an integral domain), one has that $\mathbb{Q}[x]$ is an integral domain; $\mathbb{Q}[x]$ already has at least one prime ideal (namely the zero ideal $(0)$). Pick 2018 irreducible elements from $\mathbb{Q}[x]$; e.g., let $p_{j}(x) = (x - j) \in \mathbb{Q}[x]$ for $j = 1, 2, \ldots, 2018$. Now define 
+	\begin{equation*}
+		R \coloneqq 
+		\brac*{\frac{f(x)}{g(x)} : f(x), g(x)\in \mathbb{Q}[x], p_{j}(x) \nmid g(x) \quad \forall 1 \leq j \leq 2018}. 
+	\end{equation*}
+	It is straightforward to see that $R$ is nonempty (e.g., $R$ contains the constant polynomial $1 \in \mathbb{Q}[x]$). Next, one has that for any $f(x)/g(x), h(x)/k(x) \in R$, 
+	\begin{equation*}
+		\frac{f(x)}{g(x)} - \frac{h(x)}{k(x)} = \frac{f(x)k(x) - h(x)g(x)}{g(x)k(x)} \in R
+	\end{equation*}
+	because $p_{j}(x) \nmid g(x), k(x)$ for any $1 \leq j \leq 2018$ implies $p_{j}(x) \nmid g(x)k(x)$ for any $j$, and the numerator is immediately seen to be in $\mathbb{Q}[x]$. Likewise, we can show that $R$ is closed under multiplication. Hence, $R$ is a subring of $\mathbb{Q}[x]$. In particular, $R$ must be an integral domain as $\mathbb{Q}[x]$ is an integral domain. Consider the ideals $(p_{j}(x))$ for each $j = 1, \ldots, 2018$. Let $f(x)/g(x), h(x)/k(x) \in R$ be arbitrary elements, and assume that for some $j \in \{1, \ldots, 2018\}$, $p_{j}(x) \mid (f(x)h(x))/(g(x)k(x))$. In particular, it follows that $p_{j}(x) \mid f(x)h(x)$. But since $\mathbb{Q}[x]$ is a principal ideal domain (since $\mathbb{Q}$ is a field), it follows that $p_{j}(x)$ divides $f(x)$ or $h(x)$, and thus divides $f(x)/g(x)$ or $h(x)/k(x)$. This shows that $(p_{j}(x))$ is a prime ideal for each $1 \leq j \leq 2018$. This shows that $R$ has at least 2019 prime ideals. Assume to the contrary that there exists a nonzero prime ideal $P$ that is not one of the prime ideals we stated above. Then $P$ contains some nonzero element $f(x)/g(x)$. In particular, $g(x)$ is a unit in $R$, which implies $f(x) \in P$. Factor $f(x)$ into a product of irreducible polynomials, $f(x) = c \cdot q_{1}(x) \cdot \dotsm q_{N}(x)$. Since $P$ is prime, there exists some $q_{i_{0}}(x)$ so that $q_{i_{0}}(x) \in I$. If $q_{i_{0}}(x)$ is not one of the above mentioned irreducible elements, then it follows that $q_{i_{0}}(x)$ is a unit in $R$. But then $P$ contains a unit, and thus must be the whole ring (contradicting our hypothesis that $P$ is proper). Thus $P$ cannot be a prime ideal, and $R$ has exactly 2019 prime ideals. 
+	
 	\begin{prb}{2016-J-I-6}
 		Prove that the ring $\mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$ is not a UFD. 
 	\end{prb}
@@ -3513,6 +3527,8 @@
 		\end{split} 
 	\end{align*}
 	Thus since $\norm{f}_{L^p(\mathbb{R}^n)}$, taking the limit $R \to \infty$, one gets that $f(x) = 0$ for all $x \in \mathbb{R}^n$. Thus, $f(x)$ is identically zero. 
+
+	
 	\begin{prb}{2019-J-I-4}
 		Let $(X, \mu)$ be a measure space and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Show that $f \in L^q(X,\mu)$ for all $q > 1$, and 
 		\begin{equation*}
@@ -3536,6 +3552,23 @@
 		\liminf_{q \to \infty}\norm{f}_{L^q} \geq \liminf_{q \to \infty}(\norm{f}_{L^\infty} - \epsilon)\mu(E(\epsilon))^{1/q} = \norm{f}_{L^\infty} - \epsilon. 
 	\end{equation*}
 	Since $\epsilon > 0$ was arbitrary, taking the limit $\epsilon \to 0$ gives $\liminf_{q \to \infty}\norm{f}_{L^q} \geq \norm{f}_{L^\infty}$. Thus, the proof concludes. 
+	
+	\begin{prb}{2019-J-II-4}
+		Suppose that $f \in L^{1}(\mathbb{R}) \cap C^{1}(\mathbb{R})$ and $f' \in L^{1}(\mathbb{R})$. Let $\hat{f}$ be the Fourier transform of $f$. Prove that $\hat{f} \in L^{2}(\mathbb{R})$. 
+	\end{prb}
+	By Plancherel's theorem, $\hat{f} \in L^{2}(\mathbb{R})$ if and only if $f \in L^{2}(\mathbb{R})$. Since $f \in C^{1}(\mathbb{R})$, we start by noting that for any $x \in \mathbb{R}$, 
+	\begin{equation*}
+		f(x) = \int_{0}^{x}f'(t)\;dt - f(0) \implies |f(x)| \leq \abs{\int_{0}^{x}f'(t)\;dt} + |f(0)|. 
+	\end{equation*}
+	For any $x \geq 0$, $\abs{\int_{0}^{x}f'(t)\;dt} \leq \int_{0}^{x}|f'(t)|\;dt \leq \int_{\mathbb{R}}|f'(t)|\;dt$. On the other hand, for any $x < 0$, $\abs{\int_{0}^{x}f'(t)\;dt} = \abs{-\int_{x}^{0}f'(t)\;dt} \leq \int_{x}^{0}|f'(t)|\;dt \leq \int_{\mathbb{R}}|f'(t)|\;dt$. Thus in any case, one has that for all $x \in \mathbb{R}$,
+	\begin{equation*}
+		|f(x)| \leq \norm{f'}_{L^{1}(\mathbb{R})} + |f(0)| < \infty, 
+	\end{equation*} 
+	where $f(0)$ is finite since $f$ is continuous on the whole real line. Thus in fact, $f \in L^{\infty}(\mathbb{R})$. In particular, this implies that 
+	\begin{equation*}
+		\int_{\mathbb{R}}|f(x)|^2\;dx \leq \norm{f}_{L^{\infty}(\mathbb{R})}\int_{\mathbb{R}}|f(x)|\;dx = \norm{f}_{L^{\infty}(\mathbb{R})}\norm{f}_{L^{1}(\mathbb{R})} < \infty, 
+	\end{equation*}
+	so that $f \in L^{2}(\mathbb{R})$. Thus we conclude by Plancherel's theorem that $\hat{f} \in L^{2}(\mathbb{R})$. 
 	
 	\begin{prb}{2017-J-I-2}
 		Recall that $L^2(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R} \to \mathbb{C}$ so that $|f|^2$ is integrable. Show that the linear map
@@ -4722,9 +4755,45 @@
 	\end{equation*}
 	which is a contradiction! Thus by contradiction, such a holomorphic function $f$ cannot exist. 
 	
-	\begin{prb}{2023-J-I-2}
-		Set $\mathbb{D} = \{z \in \mathbb{C}: |z| < 1\}$. 
-	\end{prb}
+	\begin{prb}{2019-J-II-3}
+		Denote by $D_{\rho}$ the disk of radius $\rho$ with center at $0$ on the complex plane $\mathbb{C}$. For each $R > 0$ and each $p \in D_{R}$, let 
+		\begin{equation*}
+			S_{R}(p) = \sup\{r > 0: \exists f: D_{r} \to D_{R}\text{ holomorphic}, f(0) = p, |f'(0)| = 1\}. 
+		\end{equation*}
+		Find $S_{R}(p)$. 
+	\end{prb} 
+	Fix an arbitrary $R > 0$ and some $p \in D_{R}$, where $D_{R}$ denotes the disk of radius $R$ with center $0$ on the complex plane. Consider the map $\phi: D_{1} \to D_{1}$ defined by 
+	\begin{equation*}
+		\phi(w) = \frac{w + \frac{p}{R}}{1 + \frac{\bar{p}}{R}w}. 
+	\end{equation*}
+	In particular, since $\phi$ is a M\"obius transformation (on the unit disk), it is holomorphic. We note that $\phi(0) = p/R$ and 
+	\begin{equation*}
+		\phi'(w) = \frac{1}{1 + \frac{\bar{p}}{R}w} - \frac{w + \frac{p}{R}}{(1 + \frac{\bar{p}}{R}w)^{2}} \cdot \frac{\bar{p}}{R} = \frac{1}{(1 + \frac{\bar{p}}{R}w)^{2}} \cdot \left[1 + \frac{\bar{p}}{R}w - \frac{\bar{p}}{R}w - \frac{|p|^{2}}{R^{2}}\right], 
+	\end{equation*}
+	so that $\phi'(0) = 1 - |p|^{2}/R^{2}$. So now define the holomorphic function $f: D_{r} \to D_{R}$, where $r = (R^{2} - |p|^{2})/R$,
+	\begin{equation*}
+		f(z) = R \cdot \phi\left(\frac{z}{r}\right). 
+	\end{equation*}
+	We compute, 
+	\begin{align*}
+		\begin{split}
+			f(0) &= R \cdot \phi(0) = p. \\
+			f'(z) &= \frac{R}{r}\cdot \phi'(\frac{z}{r}) \implies f'(0) = \frac{R}{r} \cdot \left(1 - \frac{|p|^{2}}{R^{2}}\right)  = \frac{R}{r} \cdot \left(\frac{R^{2} - |p|^{2}}{R^{2}}\right) = 1. 
+		\end{split}
+	\end{align*}
+	Thus, $S_{R}(p)$ is at least $(R^{2} - |p|^{2})/R$. Now suppose $f: D_{r} \to D_{R}$, for some $r > 0$, is an arbitrary holomorphic function that satisfies the given conditions. Let $\phi: D_{1} \to D_{1}$ be the holomorphic map defined by 
+	\begin{equation*}
+		\phi(w) = \frac{1}{R}f(rw). 
+	\end{equation*}
+	Then one has 
+	\begin{equation*}
+		\phi(0) = \frac{p}{R} \qquad \text{ and } \qquad \phi'(w) = \frac{r}{R}f'(rw) \implies \phi'(0) = \frac{r}{R}. 
+	\end{equation*}
+	By the Schwarz-Pick Lemma, one must have that 
+	\begin{equation*}
+		\frac{r}{R} = |\phi'(0)| \leq 1 - \frac{|p|^{2}}{R^{2}} \implies r \leq \frac{R^{2} - |p|^{2}}{R^{2}}. 
+	\end{equation*}
+	This means that $S_{r}(p)$ must be at most $R^{2} - |p|^{2}{R^{2}}$. Thus, we conclude that $S_{R}(p) = (R^{2} - |p|^{2})/R^{2}$. 
 	
 	\begin{prb}{2018-J-II-4}
 		Let $\{f_{n}: n = 1, 2, 3, \ldots\}$ and $f$ denote holomorphic functions defined on an open domain $D$ in the complex plane. If the sequence $\{f_{n}\}$ converges uniformly on compact subsets of $D$ to $f$, then show that the sequence of derivatives $\{f'_n\}$ converges uniformly on compact subsets of $D$ to the derivative $f'$. 
@@ -6081,6 +6150,18 @@
 		\begin{equation*}
 			\sum_{j = 0}^{n - 1}\lambda^{j} = 0. 
 		\end{equation*}
+		\item Let $R$ be a ring. A \textit{left ideal} is a subset $I$ of $R$ that is a subgroup of the additive group of $R$, and is closed under left multiplication by elements of $R$. I.e., if $R$ is seen as a left module over itself, a left ideal is a left submodule of $R$. 
+		\item Let $R$ be a ring, and $I$ an ideal of $R$. If $I$ is both a left and right ideal, then $R/I$ is a ring, and $R \to R/I$ is a surjective ring homomorphism that has $I$ as its kernel. 
+		\item Let $R$ be a ring, and $I$ a \textit{proper} ideal of $R$. $I$ is a \textit{prime ideal} of $R$ if $ab \in I$ (for $a, b \in R$) implies $a \in I$ or $b \in I$. 
+		\item Let $R$ be a commutative ring with identity, and $I$ a proper ideal of $R$. $R/I$ is an integral domain, if and only if $I$ is a prime ideal. $R/I$ is a field if and only if $I$ is a maximal ideal. The converse of each statement also hold. 
+		\item If $R$ is a principal ideal domain, then every prime ideal $I$ is also maximal. 
+		\item (Krull's Theorem) Every nonzero ring $R$ contains at least one maximal proper ideal. Consequently, if $R$ is a commutative ring with identity, then there exists a maximal proper ideal $I$, which is then prime. Thus, every commutative ring with identity contains at least one prime ideal. 
+		\item A polynomial ring $F[x]$ is a principal ideal domain if and only if $F$ is a field. A polynomial ring in two or more variables is never a principal ideal domain. 
+		\item A polynomial ring $R[x]$ is a unique factorization domain if and only if $R$ is a unique factorization domain. This result extends to a polynomial ring in two or more variables. 
+		\item The following inclusions hold: 
+		\begin{equation*}
+			\text{Fields} \subsetneq \substack{\displaystyle \text{Euclidean} \\ \displaystyle \text{Domains}} \subsetneq \text{PID} \subsetneq \text{UFD} \subsetneq \substack{\displaystyle \text{Integral} \\ \displaystyle \text{Domains}}
+		\end{equation*}
 	\end{itemize}
 	
 	\subsubsection{Geometry/Topology}
@@ -6126,6 +6207,11 @@
 		\item (Argument Principle) If $f(z)$ is meromorphic in a region $R$ enclosed by a contour $\gamma$, let $N$ be the number of complex roots of $f(z)$ in $\gamma$ (counted to multiplicity), and $P$ be the number of poles in $\gamma$ (counted to order). Then 
 		\begin{equation*}
 			N - P = \frac{1}{2\pi i}\int_{\gamma}\frac{f'(z)}{f(z)}\;dz. 
+		\end{equation*}
+		\item (Schwarz Theorem) Let $\mathbb{D} = \{z: |z| < 1\}$ be the open unit disk in $\mathbb{C}$ centered at the origin, and let $f: \mathbb{D} \to \mathbb{C}$ be a holomorphic map such that $f(0) = 0$ and $|f(z)|\leq 1$ on $\mathbb{D}$. Then $|f(z)| \leq |z|$ for all $z \in \mathbb{D}$, and $|f'(0)| = 1$. Moreover, if $|f(z)| = |z|$ for some non-zero $z$ or $|f'(0)| = 1$, then $f(z) = az$ for some $a \in \mathbb{C}$ with $|a| = 1$. 
+		\item (Schwarz-Pick Lemma) Let $f$ be analytic on the unit disk $\mathbb{D}$ centered at the origin, such that $|f(z)| \leq 1$ for all $z$ and $f(a) = b$ for some $a, b$ in the unit disk. Then 
+		\begin{equation*}
+			|f'(a)| \leq \frac{1 - |b|^{2}}{1 - |a|^{2}}. 
 		\end{equation*}
 	\end{itemize}
 \end{document}
