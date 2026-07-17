@@ -25,4 +25,7 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Definition and Basic Properties of Sobolev Spaces}{19}{subsubsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.3}Fourier Theory}{20}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Solving the Wave Equation using Fourier Transforms}{21}{subsubsection.2.3.1}%
-\contentsline {section}{\numberline {A}Proof of Theorem \ref {thm:prop_four_transform}}{22}{appendix.A}%
+\contentsline {subsubsection}{\numberline {2.3.2}Sobolev Regularity and Generalized Solutions}{23}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Existence and Uniqueness for Linear Wave Equations}{23}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Returning to the Energy Estimate}{24}{subsubsection.2.4.1}%
+\contentsline {section}{\numberline {A}Proof of Theorem \ref {thm:prop_four_transform}}{28}{appendix.A}%

@@ -658,6 +658,7 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 			\item $k(t) + p(t)$ is constant in $t$, 
 			\item $k(t) = p(t)$ for all large enough times $t$. 
 		\end{enumerate}
+		\label{prb:equipartition_of_energy}
 	\end{prb}
 	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
 		\item Let us define the kinetic and potential energy, $k(t)$ and $p(t)$ as given above. We wish to show that the total energy 
@@ -1092,7 +1093,9 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 			\norm{\phi_{t}}_{H^{s - 1}} + \norm{\nabla \phi}_{H^{s - 1}} = \norm{g}_{H^{s - 1}} + \norm{\nabla f}_{H^{s- 1}}. 
 		\end{equation*}
 	\end{prop}
-	
+	\begin{remark}
+		Note that the right side of the expression denotes the original energy of the solution, while the left side denotes the energy at some time $t > 0$. Thus the above relation tells us that the energy of $\phi$ is conserved. (cf. Problem \ref{prb:equipartition_of_energy}.)
+	\end{remark}
 	\begin{proof}
 		We start with the representation formula for $\phi$ in the frequency domain, 
 		\begin{equation*}
@@ -1117,7 +1120,7 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 		\begin{equation*}
 			\norm{\hat{\phi}_{t}}_{H^{s - 1}} + \norm{4\pi^{2}|\xi|^{2}\hat{\phi}}_{H^{s - 1}} = \norm{\hat{g}}_{H^{s - 1}} + \norm{4\pi^{2}|\xi|^{2}\hat{f}}_{H^{s - 1}}. 
 		\end{equation*}
-		Using Plancherel's theorem, we conclude that \todo{What is the significance of this conservation law? Should connect back to energy, but how?}
+		Using Plancherel's theorem, we conclude that
 		\begin{equation*}
 			\norm{\phi_{t}}_{H^{s- 1}} + \norm{\nabla \phi}_{H^{s - 1}} = \norm{g}_{H^{s - 1}} + \norm{\nabla f}_{H^{s - 1}}. 
 		\end{equation*}
@@ -1214,6 +1217,7 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 			\partial_{t}\phi(0,x) &= g(x),
 		\end{aligned}
 		\right.
+		\label{eq:gen_lin_we}
 	\end{align}
 	where $a^{\alpha\beta}$ are the components of a $(n + 1)\times (n + 1)$ symmetric matrix on $\mathbb{I} \times \mathbb{R}^{n}$ so that 
 	\todo{What does this mean, and why can we make this assumption?}
@@ -1227,7 +1231,7 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 	\begin{equation}
 		|\partial \phi|^{2} \coloneqq  (\partial_{t}\phi)^{2} + \sum_{i = 1}^{n}(\partial_{i}\phi)^{2}. 
 	\end{equation}
-	Moreover, we present \textbf{Gronwall's lemma}. 
+	Moreover, we present \textbf{Gr\"onwall's lemma}. 
 	\begin{lemma}[Gr\"onwall's Lemma]
 		Let $f: \mathbb{R} \to \mathbb{R}$ be a nonnegative continuous function and $g: \mathbb{R} \to \mathbb{R}$ be a nonnegative integrable function such that 
 		\begin{equation*}
@@ -1239,6 +1243,142 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 		\end{equation*}
 		for every $t \in [0,T]$. 
 	\end{lemma}
+	\begin{proof}
+		$ $\newline \vspace{-0.65cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item (Standard Proof): The proof follows by showing that the result holds for any $A > 0$, and then passing to the limit $A \to 0$. First, we compute 
+			\begin{equation*}
+				\frac{d}{dt}\left(A + \int_{0}^{t}f(s)g(s)\;ds\right) = f(t)g(t) \leq g(t)\left(A + \int_{0}^{t}f(s)g(s)\;ds\right). 
+			\end{equation*}
+			In particular, this implies that 
+			\begin{equation*}
+				\frac{d}{dr}\log\left[A + \int_{0}^{t}f(s)g(s)\;ds\right] \leq g(r), 
+			\end{equation*}
+			so that integrating, 
+			\begin{equation*}
+				\log\left[A + \int_{0}^{t}f(s)g(s)\;ds\right] \leq \int_{0}^{t}g(r)\;dr + \log{A}. 
+			\end{equation*}
+			Thus, we conclude that 
+			\begin{equation*}
+				f(t) \leq A + \int_{0}^{t}f(s)g(s)\;ds \leq A\exp\left(\int_{0}^{t}g(r)\;dr\right). 
+			\end{equation*}
+			\item (Bootstrap Method): Now we will prove the same result again, using the \textbf{bootstrap} method. For each $\epsilon > 0$, consider the following condition: 
+			\begin{equation*}
+				f(t) \leq (1 + \epsilon)A\exp\left((1 + \epsilon)\int_{0}^{t}g(s)\;ds\right), 
+				\tag{$\star$}
+			\end{equation*}
+			and define the subset $B \subseteq [0,T]$ by 
+			\begin{equation*}
+				B \coloneqq \{t \in [0,T]: (\star) \text{ holds for all $s \in [0,t]$}\}. 
+			\end{equation*}
+			It follows immediately that $B$ is nonempty as it at least contains the point $0 \in B$. Likewise, by continuity of $f$, it follows that $B$ is closed. By continuity of $f$, if we can show that $f$ satisfies a \textit{better} estimate for $t \in B$, then it must follow that $f$ satisfies the above bound in some small neighborhood of $t$, which would show that $B$ is open in $[0,T]$. Indeed, let $t \in B$. Then combining the hypothesis, one has that 
+			\begin{align*}
+				\begin{split}
+					f(t) &\leq A + \int_{0}^{t}g(s)\;ds \leq A + (1 + \epsilon)A\int_{0}^{t}g(s)\exp\left((1 + \epsilon)\int_{0}^{s}g(r)\;dr\right)\;ds \\
+					&\leq A\left(1 + \left(\exp\left((1 + \epsilon)\int_{0}^{t}g(s)\;ds\right)-1\right)\right) \qquad (\text{by integration by parts}) \\
+					&= A\exp\left((1 + \epsilon)\int_{0}^{t}g(s)\;ds\right). 
+				\end{split}
+			\end{align*}
+			Thus, this shows that $B$ must be open. Since $[0,T]$ is connected, one must have $B = [0,T]$. Hence the modified condition holds for all $t \in [0,T]$ and $\epsilon > 0$ so that passing to the limit $\epsilon \to 0$ yields the desired estimate. 
+		\end{enumerate}
+	\end{proof}
+	
+	Now we will use Gr\"onwall's lemma to derive an energy estimate for the Cauchy wave problem. 
+	\begin{prop}[Energy Estimates for Classical Solutions to Cauchy Problem]
+		Given a classical solution $\phi$ to the Cauchy wave problem, \ref{eq:gen_lin_we}, there exists a constant $C = C(n) > 0$ such that the following energy estimate holds. 
+		\begin{equation}
+			\sup_{t \in [0,T]}\norm{\partial\phi}_{L^{2}(\mathbb{R}^{n})}(t) \leq C\left(\norm{\nabla f}_{L^{2}(\mathbb{R}^{n})} + \norm{g}_{L^{2}(\mathbb{R}^{n})} + \int_{0}^{T}\norm{F}_{L^{2}(\mathbb{R}^{n})}\right)\exp\left(C\int_{0}^{T}\norm{\partial a}_{L^{\infty}(\mathbb{R}^{\infty})}(t)\;dt\right). 
+		\end{equation}
+	\end{prop}
+	\begin{remark}
+		Note that the quantity $\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}(t)$ denotes the total energy of the solution at some time $t \in [0,T]$. The terms, 
+		\begin{equation*}
+			\norm{\nabla f}_{L^{2}(\mathbb{R}^{n})} + \norm{g}_{L^{2}(\mathbb{R}^{n})} + \int_{0}^{T}\norm{F}_{L^{2}(\mathbb{R}^{n})}
+		\end{equation*}
+		denote the total initial energy, as well as the energy introduced into the system by the forcing term $F$. The term 
+		\begin{equation*}
+			\exp\left(C\int_{0}^{T}\norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\;dt\right)
+		\end{equation*}
+		denotes the energy introduced into the system due to a possibly dynamic background (e.g., if the background is static so that $\partial a \equiv 0$ for all $t$, then the exponential term is identically one). 
+	\end{remark}
+	
+	\begin{proof}
+		For the sake of this proof, we will be assuming that $\phi$ is compactly supported so that we can ignore the spatial boundary terms in the integration. The fundamental idea behind the techniques in this proof is to bound the energy of the solution on the time interval $[0,T]$ by looking at the total energy at some fixed time, and then summing these contributions. In other words, we wish to integrate the first term of the quantity, $\partial_{t}\phi(\partial_{\alpha}(a^{\alpha\beta}\partial_{\beta}\phi) - F)$ by parts. Before doing so, we make the following observations. 
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item Suppose first that $\alpha = \beta = 0$. Then one has that 
+			\begin{align*}
+				\begin{split}
+					\partial_{t}\phi(\partial_{\alpha}(a^{\alpha\beta}\partial_{\beta}\phi)) &= (\partial_{t}\phi)(\partial_{t}(a^{tt}\partial_{t}\phi)) \\
+					&= (\partial_{t}\phi)((\partial_{t}a^{tt})(\partial_{t}\phi)) + a^{tt}(\partial_{t}\phi)(\partial_{tt}\phi) \\
+					&= (\partial_{t}a^{tt})(\partial_{t}\phi)^{2} + \frac{1}{2}a^{tt}\partial_{t}(\partial_{t}\phi)^{2}, 
+				\end{split}
+			\end{align*}
+			so that 
+			\begin{align*}
+				\begin{split}
+					\int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{t}\phi)(\partial_{t}(a^{tt}\partial_{t}\phi))\;dxdt &= \int_{0}^{T}\int_{\mathbb{R}^{n}} (\partial_{t}a^{tt})(\partial_{t}\phi)^{2} + \frac{1}{2}a^{tt}\partial_{t}(\partial_{t}\phi)^{2}\;dx dt \\
+					&= \frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{tt}(\partial_{t}\phi)^{2}\;dx - \frac{1}{2}\int_{\{0\} \times \mathbb{R}^{n}}a^{tt}(\partial_{t}\phi)^{2}\;dx \\
+					&\qquad + \frac{1}{2}\int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{t}a^{tt})(\partial_{t}\phi)^{2}\;dxdt, 
+				\end{split}
+			\end{align*}
+			where the second line follows from Fubini/Tonelli, and the fundamental theorem of calculus. 
+			
+			\item Now assume that one of the indices is $t$, while the other index runs from $j = 1, \ldots, n$. Then one has that 
+			\begin{align*}
+				\begin{split}
+					\partial_{t}\phi(\partial_{\alpha}(a^{\alpha\beta}\partial_{\beta}\phi)) &= (\partial_{t}\phi) \cdot \left[\partial_{j}(a^{jt}\partial_{t}\phi) + \partial_{t}(a^{tj}\partial_{j}\phi)\right] \\
+					&= (\partial_{t}\phi) \cdot \left[(\partial_{j}a^{jt})(\partial_{t}\phi) + a^{jt}\partial_{j}(\partial_{t}\phi) + \partial_{t}(a^{jt})(\partial_{j}\phi) + a^{jt}\partial_{j}(\partial_{t}\phi)\right] \\
+					&= (\partial_{j}a^{jt})(\partial_{t}\phi)^{2} + a^{jt}\partial_{j}(\partial_{t}\phi)^{2} + (\partial_{t}a^{jt})(\partial_{t}\phi)(\partial_{j}\phi). 
+				\end{split}
+			\end{align*}
+			Observe that $a^{jt} = a^{tj}$ by symmetry of $a$. We first consider the integral of the middle term. Integration by parts tells us that 
+			\begin{align*}
+				\begin{split}
+					\int_{0}^{T}\int_{\mathbb{R}^{n}}a^{jt}\partial_{j}(\partial_{t}\phi)^{2}\;dx dt &= \int_{0}^{T} \left[a^{jt}(\partial_{t}\phi)^{2}|_{\text{bdr.}} - \int_{\mathbb{R}^{n}}(\partial_{j}a^{jt})(\partial_{t}\phi)^{2}\;dx\right]\;dt \\
+					&= -\int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{j}a^{jt})(\partial_{t}\phi)^{2}\;dxdt, 
+				\end{split}
+			\end{align*}
+			where the boundary terms vanish because of our assumption that $\phi$ is compactly supported. Thus in fact, 
+			\begin{equation*}
+				\int_{0}^{T}\int_{\mathbb{R}^{n}}\partial_{t}\phi(\partial_{\alpha}(a^{\alpha\beta}\partial_{\beta}\phi))\;dxdt = \int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{j}a^{jt})(\partial_{t}\phi)^{2} - (\partial_{j}a^{jt})(\partial_{t}\phi)^{2} + (\partial_{t}a^{jt})(\partial_{t}\phi)(\partial_{j}\phi)\;dx dt. 
+			\end{equation*}
+			\item Now assume that both indices run over $i, j = 1, \ldots, n$. Then one has that  
+			\begin{align*}
+				\begin{split}
+					\int_{0}^{T}\int_{\mathbb{R}^{n}}\partial_{t}\phi (\partial_{i}(a^{ij}\partial_{j}\phi))\;dxdt &= (\partial_{t}\phi)(a^{ij}\partial_{j}\phi)\bigg|_{\text{bdr.}} - \int_{0}^{T}\int_{\mathbb{R}^{n}}\partial_{t}\partial_{i}\phi a^{ij}\partial_{j}\phi\;dx dt \\
+					&= -\frac{1}{2}\int_{0}^{T}\int_{\mathbb{R}^{n}}a^{ij}\partial_{t}(\partial_{i}\phi\partial_{j}\phi)\;dxdt  \\
+					&= -\frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{ij}\partial_{i}\phi \partial_{j}\phi\;dx + \frac{1}{2}\int_{\{0\} \times \mathbb{R}^{n}}a^{ij}\partial_{i}\phi\partial_{j}\phi \;dx  \\ &\qquad\quad + \frac{1}{2}\int_{0}^{T}\int_{\mathbb{R}^n}(\partial_{t}a^{ij}(\partial_{i}\phi)(\partial_{j}\phi)\;dxdt, 
+				\end{split}
+			\end{align*}
+			where the final line follows from the fact that 
+			\begin{equation*}
+				\partial_{t}(a^{ij}\partial_{i}\phi\partial_{j}\phi) - (\partial_{t}a^{ij})(\partial_{i}\phi)(\partial_{j}\phi) = a^{ij}\partial_{t}(\partial_{i}\phi\partial_{j}\phi), 
+			\end{equation*}
+			we used the fundamental theorem of calculus after using the above fact, and the boundary terms in the first line vanish since $\phi$ has compact support. 
+		\end{enumerate}
+		Now we obtain the following result: 
+		\begin{align*}
+			\begin{split}
+				\int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{t}\phi)(\partial_{\alpha}(a^{\alpha\beta}\partial_{\beta}\phi)) &= \int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{t}\phi)F \\
+				\implies 
+				\frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{tt}(\partial_{t}\phi)^{2}\;dx -\frac{1}{2}\int_{\{T\}\times \mathbb{R}^{n}}a^{ij}\partial_{i}\phi\partial_{j}\phi\;dx &= \frac{1}{2}\int_{\{0\} \times \mathbb{R}^{n}}a^{tt}(\partial_{t}\phi)^{2}\;dx  -\frac{1}{2}\int_{\{0\} \times \mathbb{R}^{n}}a^{ij}\partial_{i}\phi\partial_{j}\phi\;dx \\
+				&\hspace{5pt}+\int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{t}\phi)F - \frac{1}{2}(\partial_{t}a^{tt})(\partial_{t}\phi)^{2} - (\partial_{j}a^{jt})(\partial_{t}\phi)^{2} \\
+				&\qquad\qquad\hspace{2pt}+(\partial_{j}a^{jt})(\partial_{t}\phi)^{2} - (\partial_{t}a^{jt})(\partial_{t}\phi)(\partial_{j}\phi)\;dxdt
+			\end{split}
+		\end{align*}
+		Now, one has that 
+		\begin{multline*}
+			\abs{\int_{0}^{T}\int_{\mathbb{R}^{n}}(\partial_{t}\phi)F - \frac{1}{2}(\partial_{t}a^{tt})(\partial_{t}\phi)^{2} - (\partial_{j}a^{jt})(\partial_{t}\phi)^{2}+(\partial_{j}a^{jt})(\partial_{t}\phi)^{2} - (\partial_{t}a^{jt})(\partial_{t}\phi)(\partial_{j}\phi)\;dxdt} \\
+			\leq 
+			C'\int_{0}^{T}\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t) + \norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\norm{\partial \phi}^{2}_{L^{2}(\mathbb{R}^{n})}(t)\;dt, 
+		\end{multline*}
+		where we used H\"older's inequality to obtain the first term, and assumed $\partial a \in L^{\infty}(\mathbb{R}^{n})$. 
+		On the other hand, by our hypothesis on $a^{\alpha\beta}$, there exists some constant $K > 0$ large enough so that (taking $C = \min\{C',K\}$),
+		\begin{equation*}
+			\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}(T) \leq C\abs{\frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{tt}(\partial_{t}\phi)^{2}\;dx - \frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{ij}\partial_{i}\phi\partial_{j}\phi\;dx}. 
+		\end{equation*}
+		Thus this implies that 
+	\end{proof}
 	
 	\newpage 
 	\appendix 

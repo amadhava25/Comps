@@ -2550,6 +2550,42 @@
 	\end{equation*}
 	But since $c \in R$, its representative class in $Q/R$ is the zero class. Thus, $(a/db) \otimes c= 0$. Since every such simple tensor is identically zero, we conclude that every tensor in $Q/R \otimes_{R} Q/R$ is identically zero so that $Q/R \otimes_{R} Q/R = 0$. 
 	
+	\begin{prb}{2017-A-I-3}
+		If $V$ is a vector space over a field $\mathbb{K}$, and if $T: V \to V$ is an endomorphism, recall that $V$ then becomes a $\mathbb{K}[x]$-module, denoted by $V_{T}$, via the rule 
+		\begin{equation*}
+			p(x) \cdot v = p(T)(v). 
+		\end{equation*}
+		Now let $V = \mathbb{R}^{2}$, and let $S, T: V \to V$ be the linear transformations given by the matrices 
+		\begin{equation*}
+			S = 
+			\begin{pmatrix}
+				0 & 1 \\ -1 & 0
+			\end{pmatrix}, 
+			\qquad 
+			T = 
+			\begin{pmatrix}
+				0 & 1 \\ 0 & 0 
+			\end{pmatrix}. 
+		\end{equation*}
+		Express that $\mathbb{R}[x]$-modules $V_{S}$ and $V_{T}$ as direct sums of cyclic modules, and prove that $V_{S} \otimes_{\mathbb{R}[x]} V_{T} \cong 0$. 
+	\end{prb}
+	Let $V = \mathbb{R}^{2}$ be a finitely-generated vector space over the field $\mathbb{R}$, and let $S: V \to V$ be the linear transformation given above. Since $\mathbb{R}$ is a field, $\mathbb{R}[x]$ is a PID, so that by the Structure Thereom for Finitely Generated Modules over PIDs, $V_{S}$ is of the form 
+	\begin{equation*}
+		V_{T} \cong \bigoplus_{i = 1}^{n}\frac{\mathbb{R}[x]}{(p_{i}(x))}, 
+	\end{equation*}
+	where the sequence $(p_{1}(x)) \supseteq (p_{2}(x)) \supseteq \dotsm \supseteq (p_{n}(x))$ is the unique decreasing sequence of proper ideals, and $p_{1}(x)p_{2}(x)\dotsm p_{n}(x)$ is the characteristic polynomial of $S$. Given the matrix form of $S$, we compute, $\chi_{S}(x) = x^{2} + 1$, which is irreducible over $\mathbb{R}$. Therefore, we conclude that 
+	\begin{equation*}
+		V_{s} \cong \frac{\mathbb{R}[x]}{(x^{2} + 1)}. 
+	\end{equation*}
+	On the other hand, the characteristic polynomial of $T$ is $x^{2}$, so that 
+	\begin{equation*}
+		V_{T} \cong \frac{\mathbb{R}[x]}{(x^{2})}
+	\end{equation*}
+	We cannot decompose $V_{T}$ further as the sum $(\mathbb{R}[x]/(x))^{2}$ since if this were the case, then since $x \cdot 1= 0$ in $\mathbb{R}[x]/(x)$, multiplying any element of $V$ by $x$ would instantly ``kill'' the term, thus forcing $T$ to be the zero operator, which is a contradiction! Now it suffices to show that an arbitrary simple tensor in $V_{S} \otimes_{\mathbb{R}[x]} V_{T}$ is zero. So let $a(x) \otimes b(x) \in V_{S}\otimes_{\mathbb{R}[x]} V_{T}$. Then one has that 
+	\begin{equation*}
+		-a(x) \otimes b(x) = (x^{2}a) \otimes b = a \otimes (x^{2}b) = a \otimes 0 =0, 
+	\end{equation*}
+	since $x^{2} \equiv -1$ in $V_{S}$ and $x^{2} \equiv 0$ in $V_{T}$. Thus since every simple tensor is identically zero, we conclude that $V_{S} \otimes_{\mathbb{R}[x]} V_{T} \cong 0$. 
 	\begin{prb}{2017-J-II-3}
 	Let $\mathbb{F}_{3}$ be the field with three elements and define $R \coloneqq \mathbb{F}_{3}[x]$. How many $R$-modules are there up to isomorphism with exactly 27 elements? 
 	\end{prb}
@@ -3884,7 +3920,7 @@
 	\begin{equation*}
 		\lim_{n \to \infty}\frac{1}{n}\sum_{k = 1}^{n}e^{ikm\alpha} \leq \lim_{n \to \infty} \frac{CK}{n} = 0. 
 	\end{equation*}
-	Since the sum and the integral are additive, the result holds for our dense subset. Fix an arbitrary $f \in C(\mathbb{T})$, and some $\epsilon > 0$. Then by the density of $\mathcal{A}$, there exists some $g \in \mathcal{A}$ so that for any $x \in \mathbb{T}$, $|f(x) - g(x)| < \epsilon$. 
+	Since the sum and the integral are additive, the result holds for our dense subset. Fix an arbitrary $f \in C(\mathbb{T})$, and some $\epsilon > 0$. Then by the density of $\mathcal{A}$, there exists some $g \in \mathcal{A}$ so that for any $x \in \mathbb{T}$, $|f(x) - g(x)| < \epsilon$. \complete 
 	
 	\begin{prb}{2017-A-II-1}
 		Suppose that $f \in C([0,1])$ is a continuous real-valued function on $[0,1]$ for which 
