@@ -539,6 +539,23 @@
 	
 	Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Then $F$ necessarily has a critical point. Recall that a point $p \in M$ is said to be a \textbf{\textit{regular point}} of $F$ if and only if $dF_{p}: T_{p}M \to T_{F(p)}N$ is surjective, and \textbf{\textit{critical}} otherwise. Let $F = (f_{1}, \ldots, f_{n})$, where for each $1 \leq j \leq n$, $f_{j}: M \to \mathbb{R}^{n}$ is a smooth function. Since $M$ is compact, by the extreme value theorem, each $f_{j}$ has an extrema at some point $p_{j} \in M$, which means that $df_{j}|_{p_{j}} = 0$. But this means that $dF_{p_{j}}$ (which can be represented by a square $n \times n$ matrix) does not always have full rank $n$, and therefore, is not surjective. Thus, each $p_{j}$ is a critical point of $F$. 
 	
+	\begin{prb}{2017-A-I-5}
+		On $\mathbb{R}^{4}$ with standard coordinates $(x,y,z,t)$, consider the 1-form 
+		\begin{equation*}
+			\theta = x\;dy - y\;dx + z\;dt - t\;dz. 
+		\end{equation*}
+		Is there a smooth immersion $j: \mathbb{R}^{3} \looparrowright \mathbb{R}^{4}$ such that $j^{\ast}\theta = 0$ everywhere? 
+	\end{prb}
+	Let $\theta$ be the given 1-form on $\mathbb{R}^{4}$, and assume to the contrary that there exists an immersion $j: \mathbb{R}^{3} \looparrowright \mathbb{R}^{4}$ such that $j^{\ast}\theta = 0$ everywhere. Since $\theta$ is a smooth 1-form, it defines a smooth rank 3 distribution $D$ on $\mathbb{R}^{4}\setminus \{0\}$, defined locally by $D_{p} = \ker{\theta_{p}}$ for each $p \in \mathbb{R}^{4}$. We first note that since, 
+	\begin{align*}
+		\begin{split}
+			d\theta \wedge \theta &= (dx\wedge dy - dy\wedge dx + dz\wedge dt - dt\wedge dz) \wedge \theta \\
+			&= 2(dx\wedge dy + dz \wedge dt) \wedge (x\;dy - y\;dx + z\;dt - t\;dz) \\
+			&= 2 \cdot \left[z\;dx \wedge dy \wedge dt - t\;dx \wedge dy \wedge dz - y\;dz \wedge dt \wedge dx + \dotsm\right] \neq 0, 
+		\end{split}
+	\end{align*}
+	so that $D$ is not involutive, and thus, not integrable. On the other hand, since for every $x \in \mathbb{R}^{3}$, $0 = (j^{\ast}\theta)_{x} = \theta_{j(x)} \circ dj_{x}$ and $j$ is an immersion, the image of $dj_{x} \subset T_{j(x)}\mathbb{R}^{4}$ is 3-dimensional and contained entirely in $D_{j(x)}$. And since $D_{j(x)}$ is also 3-dimensional, the image of $dj_{x}$ must be all of $D_{j(x)}$. Then since $j$ is an immersion, for every open neighborhood $U$ of $0 \in \mathbb{R}^{3}$ where $j$ is injective, $j(U) \subset \mathbb{R}^{4}$ must be an integral manifold of $D$. But this is a contradiction since we showed that $D$ is not integrable. Thus by contradiction, no such immersion $j$ can exist. 
+	
 	\begin{prb}{2017-J-I-1}
 		Let $\Sigma_{1}$ be a torus and let $\Sigma_{2}$ be a genus 2 surface. Show that there is no submersion from $\Sigma_{2}$ to $\Sigma_{1}$. 
 	\end{prb}
@@ -1235,6 +1252,29 @@
 	\end{align*}
 	Thus, since an arbitary open subcover of $E$ admits a finite open subcover, we conclude that $E$ is compact. 
 	
+	\begin{prb}{2017-J-II-4}
+		Let $X = \mathbb{RP}^{2} \vee \mathbb{RP}^{2}$ be the ``wedge'' of two real projective planes, meaning the quotient space obtained from the disjoint union $\mathbb{RP}^{2} \sqcup \mathbb{RP}^{2}$ by identifying a single point $p$ in one copy of $\mathbb{RP}^{2}$ with a single point $\check{p}$ in the other: 
+		\begin{center}
+			\includegraphics[scale=0.3]{../Graphics/2017JII4}
+		\end{center}
+		\begin{enumerate}[itemsep =-2pt,label =(\arabic{*})]
+			\item What is the fundamental group of $X$? 
+			\item Give a concrete description of the universal cover $\ti{X}$ of $X$, accompanied by a drawing of $\ti{X}$. 
+		\end{enumerate}
+	\end{prb}
+	Let $X = \mathbb{RP}^{2} \vee \mathbb{RP}^{2}$ denote the wedge of two real projective planes. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item Let $U$ be the open subset obtained by taking the union of the left copy of $\mathbb{RP}^{2}$ with a small neighborhood $\ti{U}$ of $p$ contained in the right copy of $\mathbb{RP}^{2}$. Likewise, let $V$ be the open subset of $X$ obtained by taking the union of the right copy of $\mathbb{RP}^{2}$ with a small neighborhood $\ti{V}$ of $p$ contained in the left copy of $\mathbb{RP}^{2}$. We see that both $U$ and $V$ are path connected (since $\mathbb{RP}^{2}$ is path connected), and deformation retract onto the respective copies of $\mathbb{RP}^{2}$ so that $\pi_{1}(U), \pi_{1}(V) \cong \pi_{1}(\mathbb{RP}^{2})$. Moreover, $U \cap V$ deformation retracts onto the identified points so that $\pi_{1}(U \cap V)$ is the trivial subgroup. Therefore, by the Seifert-van Kampen theorem, since $\pi_{1}(\mathbb{RP}^{2}) \cong \mathbb{Z}/2\mathbb{Z}$, we conclude that 
+		\begin{equation*}
+			\pi_{1}(X) \cong \pi_{1}(U) \ast_{\pi_{1}(U \cap V)} \pi_{1}(V) \cong \mathbb{Z}/2\mathbb{Z} \ast \mathbb{Z}/2\mathbb{Z}. 
+		\end{equation*}
+		\item We recall that the universal cover of $\mathbb{RP}^{2}$ is $S^{2}$, which is a 2-sheeted covering space (since the covering map is the quotient map that identifies antipodal points on $S^{2}$ so that each point on $\mathbb{RP}^{2}$ corresponds to two (antipodal) points on $S^{2}$). To construct the universal cover $\ti{X}$, we start with a copy of $S^{2}$. To each lift $\bar{p}$ of $p$, we attach a copy of $S^{2}$ by identifying that $\bar{p}$ to some lift $\bar{\check{p}}$ of $\check{p}$. To each unidentified lift $\bar{\check{p}}$, we attach another copy of $S^{2}$ by identifying that $\bar{\check{p}}$ to some lift of $p$. We repeat this procedure indefinitely. Thus the universal cover $\ti{X}$ resembles an infinite chain of spheres $S^{2}$. 
+		\begin{figure}[h!]
+			\centering 
+			\includegraphics[scale = 0.4]{../Graphics/2017JII4_uc.jpg}
+		\end{figure}
+	\end{enumerate}
+	
 	\begin{prb}{2016-A-II-1}
 		Let $X$ be the topological space obtained by making a 2-sphere and a 2-torus touch at a single point: 
 		\begin{center}
@@ -1585,6 +1625,15 @@
 		\end{split}
 	\end{align*}
 	Repeating this procedure inductively, one finally obtains $A^{n}B = \lambda^{n}BA^{n}$. But we showed above that $\lambda^{n} = 1$. Thus, one gets $A^{n}B = BA^{n}$, which concludes the proof that $A^{n}$ and $B$ commute.
+	
+	\begin{prb}{2017-J-I-5}
+		Is the ring of holomorphic functions on $\mathbb{C}$ a unique factorization domain? Justify your answer. 
+	\end{prb}
+	Let $R$ denote the ring of holomorphic functions on $\mathbb{C}$. We claim that $R$ is not a unique factorization domain. First, recall that the subset of units in $R$ consist of the entire nowhere vanishing functions on $\mathbb{C}$. $f \in R$ is irreducible iff it is a nonunit and cannot be factored into the product of two nonunits. In particular, this implies that $f$ is irreducible iff it has exactly one zero (counted with multiplicity). This means that every irreducible in $R$ must be of the form $u(z)(z - a)$, for some $a \in \mathbb{C}$, and where $u \in R$ is a unit. Thus a finite product of irreducibles is of the form, 
+	\begin{equation*}
+		f(z) = u(z) \cdot \prod_{1}^{n}(z - z_{j}), 
+	\end{equation*}
+	where $u(z)$ is a unit in $R$. This means that $f$ must have finitely many zeros. As a result, functions like $\sin(z)$ that have infinitely many zeros cannot be expressed as the product of finitely many irreducible functions, and thus, $R$ cannot be a UFD. 
 	
 	\begin{prb}{2016-A-II-3}
 		Let $p$ be a prime number and let $G \coloneqq \operatorname{GL}_{3}(\mathbb{Z}/p\mathbb{Z})$ be the group of invertible $3 \times 3$ matrices with entries in $\mathbb{Z}/p\mathbb{Z}$. Prove that every element whose order equals a power of $p$ is conjugate in $G$ to an element that is an upper triangular matrix with all diagonal entries equal to $1$. 
@@ -1937,11 +1986,15 @@
 	\begin{prb}{2017-J-I-3}
 		Let $\mathbb{F}_{p}$ be a prime field of order $p$ and let $a \in \mathbb{F}_{p} \setminus \{0\}$. Show that the Galois group of $x^{p} - x - a$ is cyclic of order $p$ and construct an explicit Galois automorphism generating this group. 
 	\end{prb}
-	Let $\mathbb{F}_{p}$ be a prime field of order $p$ and let $a \in \mathbb{F}_{p}\setminus \{0\}$. Let $p(x) = x^{p} - x- a$. First, we note that $p(x)$ has no roots in $\mathbb{F}_{p}$: assume to the contrary that $b$ was a root. Then since $t^{p} = t$ for all $t \in \mathbb{F}_{p}$, one has, $p(b) = b^{p} - b - a = -a \neq 0$ -- a contradiction. In particular, this means that $x^{p} - x - a$, \textit{if} reducible, cannot split into a product containing a linear factor. We will now show that $p(x)$ is indeed irreducible. Suppose $\alpha$ is some root of $p(x)$, and let $1 \in \mathbb{F}_{p}$. Then 
+	Let $p(x) = x^p - x - a \in \mathbb{F}_p[x]$. First, $p(x)$ has no roots in $\mathbb{F}_p$ because Fermat's Little Theorem implies $b^p - b - a = -a \neq 0$ for all $b \in \mathbb{F}_p$. If $\alpha$ is a root of $p(x)$ in its splitting field $K$, then for any $j \in \mathbb{F}_p$, we have:
 	\begin{equation*}
-		p(\alpha + 1) = (\alpha + 1)^{p} - (\alpha + 1) - a = (\alpha^{p} - \alpha -a) + (1 -1) = 0 + 0 =0. 
+		p(\alpha + j) = (\alpha + j)^p - (\alpha + j) - a = (\alpha^p - \alpha - a) + (j^p - j) = 0 + 0 = 0.
 	\end{equation*}
-	Then by induction, we can show that $\alpha + j$ is a root of $p(x)$ for all $j \in \mathbb{F}_{p}$. Thus since $\deg{p(x)} = p$, and there are precisely $p$ elements in $\mathbb{F}_{p}$, these must be all of the roots of $p(x)$. \complete
+	Thus, the $p$ distinct elements $\{\alpha + j \mid j \in \mathbb{F}_p\}$ are precisely the roots of $p(x)$, meaning the splitting field is $K = \mathbb{F}_p(\alpha)$. To show $p(x)$ is irreducible, let $g(x) \in \mathbb{F}_p[x]$ be a monic, irreducible factor of degree $1 \leq d \leq p$. The roots of $g(x)$ are a subset $\{\alpha + j_1, \dots, \alpha + j_d\}$ for some $j_k \in \mathbb{F}_p$. The second-leading coefficient of $g(x)$ is:
+	\begin{equation*}
+		c = -\sum_{k=1}^d (\alpha + j_k) = -d\alpha - \sum_{k=1}^d j_k.
+	\end{equation*}
+	Since $g(x) \in \mathbb{F}_p[x]$, we must have $c \in \mathbb{F}_p$. If $d < p$, then $d$ is invertible in $\mathbb{F}_p$, which forces $\alpha = -d^{-1}\left(c + \sum j_k\right) \in \mathbb{F}_p$, a contradiction. Thus, $\deg g(x) = p$, proving $p(x)$ is irreducible over $\mathbb{F}_p$. Consequently, the extension $K/\mathbb{F}_p$ has degree $[K:\mathbb{F}_p] = p$. Because $K$ is the splitting field of a separable polynomial, $K/\mathbb{F}_p$ is a Galois extension, and its Galois group $G = \text{Gal}(K/\mathbb{F}_p)$ has order $p$. Since any group of prime order is cyclic, $G \cong \mathbb{Z}/p\mathbb{Z}$. An explicit generator $\sigma \in G$ is uniquely defined by setting $\sigma(\alpha) = \alpha + 1$. This map is a valid automorphism because it sends the root $\alpha$ to another root of $p(x)$. Since its $k$-th iterate satisfies $\sigma^k(\alpha) = \alpha + k \pmod p$, the smallest positive integer $k$ for which $\sigma^k = \text{id}$ is $p$. Thus, $\sigma$ generates the cyclic group $G = \langle \sigma \rangle \cong \mathbb{Z}/p\mathbb{Z}$.
 	
 	\begin{prb}{2016-A-I-1}
 		For $p(x) = x^{5} + 1$ over the field $\mathbb{F}_{19}$, find the splitting field $K$, find the Galois group $\operatorname{Aut}(K)$, and find the action of $\operatorname{Aut}(K)$ on the 5 roots (up to labeling of the roots). 
@@ -2482,6 +2535,7 @@
 		R^{2r} \oplus R/(d_1) \oplus R/(d_1) \oplus \dotsm \oplus R/(d_m) \oplus R/(d_m) \cong R^{2r} \oplus R/(f_1) \oplus R/(f_1) \oplus \dotsm \oplus R/(f_m) \oplus R/(f_m). 
 	\end{equation*}
 	Thus by uniqueness, we see that each corresponding direct summand is isomorphic so that for each $j = 1, \ldots, m$, $R/(d_i) \cong R/(f_i)$. Thus we conclude that $M \cong N$. 
+
 	
 	\begin{prb}{2021-A-I-5}
 		Let $R$ be an integral domain with field of fractions $Q$. Show that $Q/R \otimes_{R} Q/R = 0$. 
@@ -2496,6 +2550,20 @@
 	\end{equation*}
 	But since $c \in R$, its representative class in $Q/R$ is the zero class. Thus, $(a/db) \otimes c= 0$. Since every such simple tensor is identically zero, we conclude that every tensor in $Q/R \otimes_{R} Q/R$ is identically zero so that $Q/R \otimes_{R} Q/R = 0$. 
 	
+	\begin{prb}{2017-J-II-3}
+	Let $\mathbb{F}_{3}$ be the field with three elements and define $R \coloneqq \mathbb{F}_{3}[x]$. How many $R$-modules are there up to isomorphism with exactly 27 elements? 
+	\end{prb}
+	Let $\mathbb{F}_{3}$ be the field with three elements, and define $R \coloneqq \mathbb{F}_{3}[x]$. Since $\mathbb{F}_{3}$ is a field, $R$ is a PID. So if $M$ is such a module over $R$, by the Structure Theorem for Finitely Generated Modules over PIDs, $M$ must be of the form, 
+	\begin{equation*}
+		M \cong \bigoplus_{i = 1}^{n}\frac{R}{(p_{i})}, 
+	\end{equation*}
+	where $(p_{1}) \supset (p_{2}) \supset \dotsm \supset (p_{n})$ is a decreasing sequence of nonzero proper ideals. Since these ideals are proper, for each $i = 1, \ldots, n$, $\deg{p_{i}} \geq 1$. Since the dimension of $M$ as a vector space over $R$ must be 3, we must have $\sum_{1}^{n}\deg{p_{i}} = 3$. First, this implies $n \leq 3$. Next, we look at the possible different ways of adding to $3$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item ($n = 3$): If $n = 3$, then each $p_{i}$ must be a degree 1 polynomial. There are precisely 3 degree-1 irreducible polynomials in $R$, namely $x, x + 1$, and $x + 2$. Since none of these polynomials divide the other, this leaves us a total of 3 possible choices for $M$; $M$ must be one of $(R/(x))^3, (R/(x + 1))^3, (R/(x + 2))^3$. 
+		\item ($n = 2$): If $n = 2$, then $p_{2}$ must be of degree-2, and $p_{1}$ must be of degree $1$. As before, we have three choices for $p_{1}$. Thus, for each choice of $p_{1}$, there are a further 3 choices for $p_{2}$ (obtained by $p_{2} = p_{1}p$, where each $p$ is a monic polynomial). Thus, we have 9 choices for $M$ in this case. 
+		\item ($n = 1$): If $n = 1$, then $p_{1}$ must be a degree-3 polynomial. Then there are 27 possible choices for $p_1$.  
+	\end{enumerate}
+	Thus altogether, there are, up to isomorphism, $3 + 9 + 27 = 39$ different $R$-modules with exactly 27 elements. 
 
 	
 	\begin{prb}{2005-J-II-4}
@@ -3527,7 +3595,11 @@
 		\end{split} 
 	\end{align*}
 	Thus since $\norm{f}_{L^p(\mathbb{R}^n)}$, taking the limit $R \to \infty$, one gets that $f(x) = 0$ for all $x \in \mathbb{R}^n$. Thus, $f(x)$ is identically zero. 
-
+	
+	\begin{prb}{2019-A-II-3}
+		Suppose $f \in L^{1}(\mathbb{R}) \cap C^{2}(\mathbb{R})$ and that the second derivative, $f'' \in L^{1}(\mathbb{R})$. Show that $\hat{f} \in L^{1}(\mathbb{R})$. 
+	\end{prb}
+	Suppose $f \in L^{1}(\mathbb{R}) \cap C^{2}(\mathbb{R})$ and that the second derivative $f'' \in L^{1}(\mathbb{R})$. 
 	
 	\begin{prb}{2019-J-I-4}
 		Let $(X, \mu)$ be a measure space and let $f \in L^1(X,\mu) \cap L^\infty(X,\mu)$. Show that $f \in L^q(X,\mu)$ for all $q > 1$, and 
@@ -3569,6 +3641,27 @@
 		\int_{\mathbb{R}}|f(x)|^2\;dx \leq \norm{f}_{L^{\infty}(\mathbb{R})}\int_{\mathbb{R}}|f(x)|\;dx = \norm{f}_{L^{\infty}(\mathbb{R})}\norm{f}_{L^{1}(\mathbb{R})} < \infty, 
 	\end{equation*}
 	so that $f \in L^{2}(\mathbb{R})$. Thus we conclude by Plancherel's theorem that $\hat{f} \in L^{2}(\mathbb{R})$. 
+	
+	\begin{prb}{2017-A-I-6}
+		Let $D \subset \mathbb{C}$ denote the open unit disk, and let $f: D \to \mathbb{R}$ be a harmonic function which belongs to $L^{2}(D)$. Prove that there is a positive constant $K$ such that 
+		\begin{equation*}
+			|f(z)| < \frac{K}{1 - |z|}
+		\end{equation*}
+		for all $z \in D$. 
+	\end{prb}
+	Let $D \subset \mathbb{C}$ denote the open unit disk, and let $f: D \to \mathbb{R}$ be a harmonic function which belongs to $L^{2}(D)$.  If $f$ is identically zero, then the inequality follows trivially. So assume $f \not\equiv 0$. Fix an arbitrary $z \in D$, and let $r = 1 - |z|$. Then by the mean-value property for harmonic functions, one has 
+	\begin{equation*}
+		f(z) = \frac{1}{\pi r^{2}}\iint_{B_{r}(z)}f(y)\;dA(y). 
+	\end{equation*}
+	In particular, one has that 
+	\begin{align*}
+		\begin{split}
+			|f(z)| &\leq \frac{1}{\pi r^{2}}\iint_{B_{r}(z)}|f(y)|\;dA(y) \\
+			&\leq \frac{1}{\pi r^{2}}\left[\iint_{B_{r}(z)}|f(y)|^{2}\;dA(y)\right]^{1/2}\cdot \left[\iint_{B_{r}(z)}\;dA(y)\right]^{1/2} \qquad (\text{by Cauchy-Schwarz}) \\
+			&= \frac{1}{\pi^{1/2}r} \cdot \norm{f}_{L^{2}(D)} \eqqcolon \frac{K}{1 - |z|},  
+		\end{split}
+	\end{align*}
+	where we define $K = \pi^{-1/2} \cdot \norm{f}_{L^{2}(D)} > 0$. 
 	
 	\begin{prb}{2017-J-I-2}
 		Recall that $L^2(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R} \to \mathbb{C}$ so that $|f|^2$ is integrable. Show that the linear map
@@ -3764,6 +3857,34 @@
 		\end{split}
 	\end{align*}
 	Since $f\in C([0,1]^2)$ was arbitrary, we conclude that $\mu_n \times \mu_n \to \mu \times \mu$ in the weak-$\ast$ topology. 
+	
+	\begin{prb}{2017-A-I-2}
+		Set $\mathbb{T} = \mathbb{R}/2\pi \mathbb{Z}$, and let $\alpha \in \mathbb{R}\setminus 2\pi \mathbb{Q}$. For any continuous function $f: \mathbb{T} \to \mathbb{C}$, prove that 
+		\begin{equation*}
+			\lim_{n \to \infty}\frac{1}{n}\sum_{k = 1}^{n}f(k\alpha) = \frac{1}{2\pi}\int_{0}^{2\pi}f(x)\;dx. 
+		\end{equation*}
+		Hint: what happens if $f = e^{imx}$? 
+	\end{prb}
+	Let $\mathbb{T} \coloneqq \mathbb{R}/2\pi \mathbb{Z}$, and let $\alpha \in \mathbb{R}\setminus 2\pi \mathbb{Q}$. It follows immediately that the collection $\mathcal{A} = \operatorname{span}\{e^{imx}\}_{m \in \mathbb{Z}}$ is a subalgebra of $C(\mathbb{T})$ that vanishes nowhere and separates points, so that by the Stone-Weierstrass theorem, $\mathcal{A}$ is a dense subset of $C(\mathbb{T})$. So we start by showing that the result holds for each $e^{imx}$; the result holds trivially for $m= 0$. On the right side, one has, 
+	\begin{equation*}
+		\frac{1}{2\pi}\int_{0}^{2\pi}e^{imx}\;dx = -\frac{i}{2\pi m}e^{imx}\bigg|_{0}^{2\pi} = -\frac{i}{2\pi m} + \frac{i}{2\pi m} = 0. 
+	\end{equation*}
+	On the left hand side, one has that 
+	\begin{align*}
+		\begin{split}
+			\frac{1}{n}\sum_{k = 1}^{n}f(k\alpha) &= \frac{1}{n}\sum_{k = 1}^{n}e^{ikm\alpha} \\
+			&= \frac{e^{im\alpha}(-1 + e^{imn\alpha})}{(-1 + e^{im\alpha})n}. 
+		\end{split}
+	\end{align*}
+	Since $\alpha \in \mathbb{R} \setminus 2\pi \mathbb{Q}$ (i.e., $\alpha$ is not a rational multiple of $2\pi$), $e^{im\alpha}/(-1 + e^{im\alpha})$ is a well-defined finite constant, $C$. On the other hand, 
+	\begin{equation*}
+		|-1 + e^{imn\alpha}| \leq 1 + 1 = 2, 
+	\end{equation*}
+	so that $(-1 + e^{imn\alpha})$ is bounded above by some constant $K$. Thus taking the limit $n \to \infty$, 
+	\begin{equation*}
+		\lim_{n \to \infty}\frac{1}{n}\sum_{k = 1}^{n}e^{ikm\alpha} \leq \lim_{n \to \infty} \frac{CK}{n} = 0. 
+	\end{equation*}
+	Since the sum and the integral are additive, the result holds for our dense subset. Fix an arbitrary $f \in C(\mathbb{T})$, and some $\epsilon > 0$. Then by the density of $\mathcal{A}$, there exists some $g \in \mathcal{A}$ so that for any $x \in \mathbb{T}$, $|f(x) - g(x)| < \epsilon$. 
 	
 	\begin{prb}{2017-A-II-1}
 		Suppose that $f \in C([0,1])$ is a continuous real-valued function on $[0,1]$ for which 
@@ -4447,6 +4568,31 @@
 	\end{split}
 	\end{align*}
 	This since $A$ is finite, the integrand must be finite a.e., which means that the set of all $x \in [0,1]$ for which $\int_{0}^{1}(f(x + t) - f(x - t))/t\;dt = \infty$ must have Lebesgue measure zero. 
+	
+	\begin{prb}{2021-A-II-2}
+		Suppose $X$ is a compact metric space and $\rho: C(X) \to \mathbb{C}$ is an algebra homomorphism ($\rho$ respects addition and multiplication of functions). Prove that $\rho$ satisfies $|\rho(f)|\leq \norm{f}$. ($C(X)$ is the Banach space of continuous complex-valued functions and has its usual supremum norm.)
+	\end{prb}
+	Let $X$ be a compact metric space, and let $\rho: C(X) \to \mathbb{C}$ is an algebra homomorphism. Assume to the contrary that there exists some $f_{0} \in C(X)$ so that $|\rho(f_{0})| > \norm{f_{0}}$. In particular, this implies that 
+	\begin{equation*}
+		\abs{\rho\left(\frac{f_{0}}{\norm{f_{0}}}\right)} > 1. 
+	\end{equation*}
+	Let $n \geq 1$, and let $N > 1$ so that 
+	\begin{equation*}
+		\rho\left(\frac{f_{0}^{n}}{\norm{f_{0}^{n}}}\right) = N. 
+	\end{equation*}
+	Now, since $\rho$ is an algebra homomorphism, one has $\rho(1)^{2} = \rho(1)$ so that either $\rho(1) = 0$ (in which case, the inequality follows trivially) or $\rho(1) = 0$. Consider the nonvanishing function 
+	\begin{equation*}
+		N - \frac{f_{0}^{n}}{\norm{f_{0}^{n}}}. 
+	\end{equation*}
+	Then, one has that 
+	\begin{equation*}
+		\rho\left(N - \frac{f_{0}^{n}}{\norm{f_{0}^{n}}}\right) = \rho(N) - \rho\left(\frac{f_{0}^{n}}{\norm{f_{0}^{n}}}\right) =0. 
+	\end{equation*}
+	But since $N - f_{0}^{n}/\norm{f_{0}^{n}}$ is nonvanishing, if $f'$ denotes its inverse, then since $(N - f_{0}^{n}/\norm{f_{0}^{n}})f' = 1$, one has that 
+	\begin{equation*}
+		\rho\left(N - \frac{f_{0}^{n}}{\norm{f_{0}^{n}}}\right) = \frac{1}{\rho(f')} \neq 0, 
+	\end{equation*}
+	which is a contradiction! Thus, we conclude that $|\rho(f)| \leq \norm{f}$ for all $f \in C(X)$. \complete 
 	
 	\begin{prb}{2021-J-I-3}
 		If $E \subset \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is Lipschitz, then show that $f(E)$ is also Lebesgue measurable. 
