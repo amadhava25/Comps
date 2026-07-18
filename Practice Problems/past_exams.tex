@@ -1466,6 +1466,29 @@
 		Setting $x = \hat{p}(\hat{x}) \in M$, we conclude that there exists some $x \in M$ so that $\Phi(x) = y$. Thus $\Phi$ is surjective. 
 	\end{enumerate}
 	
+	\begin{prb}{2013-A-I-4}
+		Two smooth self-maps $f_{0}, f_{1}: S^{n} \to S^{n}$ of the $n$-sphere are said to be smoothly homotopic if there is a smooth map $F: S^{n} \times [0,1] \to S^{n}$ such that $f_{j} = F|_{S^{n}\times \{j\}}$, $j =0, 1$. For which values of $n$ is the antipodal map $\vec{x} \mapsto - \vec{x}$ smoothly homotopic to the identity map of $S^{n}$. Justify your answer with appropriate proofs. 
+	\end{prb}
+	Let $\alpha: S^{n} \to S^{n}$ denote the antipodal map, $\vec{x} \mapsto -\vec{x}$, and let $i: S^{n} \to S^{n}$ be the antipodal map. We start by noting that the identity map has degree 1 since for any smooth $n$-form on $S^{n}$, 
+	\begin{equation*}
+		\int_{S^{n}}i^{\ast}\omega = \int_{S}^{n}\omega. 
+	\end{equation*}
+	On the other hand, we recall that the antipodal map $\alpha$ can be thought of as the composition of $(n + 1)$-reflections; each reflection $(x_{1}, \ldots, x_{i}, \ldots, x_{n + 1}) \mapsto (x_{1}, \ldots, -x_{i}, \ldots, x_{n + 1})$ is an orientation-reversing diffeomorphism, and thus has degree $(-1)$. Since the degree of a composition is the product of the degrees, the antipodal map $\alpha$ has degree $(-1)^{n + 1}$. If $\alpha$ is homotopic to the identity map, then one must have $(-1)^{n + 1} = 1$, so that $n$ is odd. Conversely, suppose $n$ is odd. Let $\{e_{1}, \ldots, e_{n + 1}\}$ be the standard coordinates on $\mathbb{R}^{n}$. We define the following map, $H: S^{n} \times [0,1] \to S^{n}$: 
+	\begin{equation*}
+		H(x, t) = 
+		\begin{pmatrix}
+			R(\pi t) & 0 & 0 & \dotsm & 0 & 0\\
+			0 & R(\pi t) & 0 & \dotsm & 0  & \vdots \\
+			0 & 0 & R(\pi t) & 0 & \dotsm & \vdots \\
+			0 & 0 & 0 &  \ddots & 0 & \vdots 
+		\end{pmatrix}
+		\cdot \begin{pmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n + 1} \end{pmatrix}.
+	\end{equation*}
+	where for each $(x, t) \in S^{n} \times [0,1]$, $H(x,t)$ is an $n \times n$ matrix, and each block entry is the rotation matrix, 
+	\begin{equation*}
+		R(\pi t) \coloneqq \begin{pmatrix} \cos(\pi t) & -\sin(\pi t) \\ \sin(\pi t) & \cos(\pi t) \end{pmatrix}. 
+	\end{equation*}
+	Since each of the entries of $R(\pi t)$ is smooth, $H$ is a smooth homotopy between the identity map and the antipodal map. Thus the proof concludes. Alternatively, we could have used the Hopf theorem. 
 	\begin{prb}{2001-J-II-1}
 		Let $f: M \to N$ be a smooth map between connected smooth compact oriented $n$-manifolds. The degree of $f$ is the number $\deg{f}$ defined by 
 		\begin{equation*}
@@ -3699,6 +3722,21 @@
 	\end{align*}
 	where we define $K = \pi^{-1/2} \cdot \norm{f}_{L^{2}(D)} > 0$. 
 	
+	\begin{prb}{2017-A-II-6}
+		Suppose that $f \in L^{2}(\mathbb{R}) \cap C^{2}(\mathbb{R})$ has second derivative $f'' \in L^{1}(\mathbb{R})$. Show that the Fourier transform $\hat{f}$ of $f$ belongs to $L^{1}(\mathbb{R})$. 
+	\end{prb}
+	Suppose that $f \in L^{2}(\mathbb{R}) \cap C^{2}(\mathbb{R})$ has second derivative $f'' \in L^{1}(\mathbb{R})$. By Plancherel's theorem, we also know that $\hat{f} \in L^{2}(\mathbb{R})$. On the other hand, by the properties of the Fourier transform, one has that\footnote{As a moral, whenever we wish to say anything about the integrability of a function with a singularity at some point, we should try splitting the integral into two components: on the first, we limit the domain of integration to some neighborhood of the singularity (where we can take advantage of the compact domain); on the second, we restrict to a large, but nice subset of our integration space, where we can easily place limits on our integral.}
+	\begin{equation*}
+		(f'')^{\hat{}}(\xi) = 2\pi i \xi (f')^{\hat{}}(\xi) = -4\pi^{2}|\xi|^{2}\hat{f}(\xi). 
+	\end{equation*}
+	Since $\hat{f} \in L^{2}$, it follows that $(f'')^{\hat{}}/(4\pi^{2}|\xi|^{2}) \in L^{2}(\mathbb{R})$ (and thus, $\in L^{2}([-1,1]) \subset L^{1}([-1,1])$). This means that 
+	\begin{align*}
+		\begin{split}
+			\int_{\mathbb{R}} |\hat{f}(\xi)|\;d\xi &= \int_{|\xi| \leq 1}\frac{|(f'')^{\hat{}}|}{4\pi^2|\xi|^{2}}\;d\xi + \int_{|\xi| > 1}\frac{|(f'')^{\hat{}}|}{4\pi^{2}|\xi|^{2}}\;d\xi \\
+			&= M + \int_{|\xi|> 1}\frac{|(f'')^{\hat{\hspace{2pt}}}|}{4\pi^2|\xi|^{2}}\;d\xi. 
+		\end{split}
+	\end{align*}
+	Since $f'' \in L^{1}(\mathbb{R})$, $(f'')^{\hat{}} \in C_{0}(\mathbb{R})$, and thus is bounded a.e. by some finite constant $N > 0$. Then since $N/4\pi^{2}|\xi|^{2}$ is integrable over $\mathbb{R}$, we conclude that the right hand side of the above inequalities is finite. Thus, we conclude that $\hat{f} \in L^{1}(\mathbb{R})$. 
 	\begin{prb}{2017-J-I-2}
 		Recall that $L^2(\mathbb{R})$ is the space of Lebesgue measurable functions $f: \mathbb{R} \to \mathbb{C}$ so that $|f|^2$ is integrable. Show that the linear map
 		\begin{equation*}
@@ -4992,6 +5030,11 @@
 		\end{split}
 	\end{align*}
 	Thus, it follows that $f'_{n}$ converges uniformly to $f'$ on $D_{z_{0}}$. Now fix an arbitrary compact set $K \subset D$. By our work above, for each $z \in K$, there exists a neighborhood $B(z, R_{z})$ so that $f'_{n} \to f'$ uniformly on this neighborhood; the collection $\{B(z, R_z) \mid z \in K\}$ forms an open cover of $K$. Since $K$ is compact, there exists a finite open subcover $\{B(z_{j}, R_{z_{j}})\}_{j = 1}^{n}$. Let $\epsilon > 0$. Then for each ball $B(z_{j}, R_{z_{j}})$, there exists a positive integer $N_{j}(\epsilon)$ so that for all $z \in B(z_{j}, R_{z_{j}})$ and $n \geq N_{j}(\epsilon)$, $|f'_{n}(z) - f'(z)| < \epsilon$. Set $N = \max\{N_{j}\}$. Then it follows by construction, that for any $z \in K$ and all $n \geq N$, $|f'_{n}(z) - f'(z)| < \epsilon$, which concludes the proof that $f'_{n} \to f'$ uniformly on compacta in $D$. 
+	
+	\begin{prb}{2013-A-I-3}
+		Suppose $f: D(0,1) \to \overline{D(0,1)}$ is a holomorphic map from the open unit disk into the closed unit disk. Can the image of $f$ contain both the points $0$ and $1$. 
+	\end{prb}
+	Let $f: D(0,1) \to \overline{D(0,1)}$ be a holomorphic map from the open unit disk into the closed unit disk. We claim that that the image of $f$ cannot contain both the points $0$ and $1$. Suppose that the image of $f$ contains the point $1$; i.e., assume there exists some $z_{0} \in D(0,1)$ such that $|f(z_{0})| = 1$. Then since $f$ maps into the closed unit disk, for any $z$ contained in some neighborhood of $z_{0}$ in $D(0,1)$, $|f(z)| \leq |f(z_{0})|$. Then by the Maximum Modulus Principle, one has that $f$ is constant on $D(0,1)$; i.e., $f \equiv 1$ on $D(0,1)$, and thus cannot contain the point $0$. 
 	
 	\subsection{Rouch\'e's Theorem}
 	
