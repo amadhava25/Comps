@@ -19,8 +19,9 @@ colorinlistoftodos,
 textsize=small,          % Sets the text to the smallest LaTeX font size
 textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 ]{todonotes}
-
+\newcommand{\complete}{\textcolor{red}{[!! Complete Later !!]}}
 \setcounter{tocdepth}{4}
+\numberwithin{equation}{section}
 
 
 \title{Hyperbolic Partial Differential Equations}
@@ -868,7 +869,7 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 		In particular, $\norm{\empspace}_{C^{k,\gamma}(\bar{U})}$ forms a norm on $C^{k,\gamma}(\bar{U})$, and $C^{k,\gamma}(\bar{U})$ is a Banach space under this norm. 
 	\end{definition}
 	
-	\subsection{Sobolev Spaces}
+	\subsection{Sobolev Spaces} \label{subsec:sobolev_spaces}
 	While the classes of H\"older functions on $U$ are nice function spaces, often times, we cannot make strong enough analytic estimates on solutions obtained for PDE to prove that they belong to such spaces; by our definitions above, we require a certain degree of regularity. Therefore, we now seek to replace these spaces with function spaces that have some, but not a lot, of smoothness properties. We start by defining the notion of a \textit{weak derivative}. 
 	
 	\begin{definition}[Space of Test Functions]
@@ -1373,12 +1374,87 @@ textwidth=0.7in        % Sets note width slightly smaller than the 1-inch margin
 			C'\int_{0}^{T}\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t) + \norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\norm{\partial \phi}^{2}_{L^{2}(\mathbb{R}^{n})}(t)\;dt, 
 		\end{multline*}
 		where we used H\"older's inequality to obtain the first term, and assumed $\partial a \in L^{\infty}(\mathbb{R}^{n})$. 
-		On the other hand, by our hypothesis on $a^{\alpha\beta}$, there exists some constant $K > 0$ large enough so that (taking $C = \min\{C',K\}$),
+		On the other hand, by our hypothesis on $a^{\alpha\beta}$, there exists some constant $K > 0$ large enough so that (taking $C = \min\{C',K\}$)\todo{Explain how?},
 		\begin{equation*}
 			\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}(T) \leq C\abs{\frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{tt}(\partial_{t}\phi)^{2}\;dx - \frac{1}{2}\int_{\{T\} \times \mathbb{R}^{n}}a^{ij}\partial_{i}\phi\partial_{j}\phi\;dx}. 
 		\end{equation*}
 		Thus this implies that 
+		\begin{multline*}
+			\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}(T) \leq C\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}^{2}(0) + C\int_{0}^{T}\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t) + \norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\norm{\partial \phi}^{2}_{L^{2}(\mathbb{R}^{n})}(t)\;dt. 
+		\end{multline*}
+		Since one can repeat this argument for any smaller interval $[0, T']$, where $0 < T' < T$, one obtains 
+		\begin{multline*}
+			\sup_{t \in [0,T]}\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}(t) \leq C\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}^{2}(0) + C\int_{0}^{T}\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t) + \norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\norm{\partial \phi}^{2}_{L^{2}(\mathbb{R}^{n})}(t)\;dt. 
+		\end{multline*}
+		For the first term inside the integral, one has that 
+		\begin{align*}
+			\begin{split}
+				\int_{0}^{T}\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t)\;dt &\leq \sup_{t \in [0,T]}\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})} \cdot \left(\int_{0}^{T}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t)\;dt\right)\\
+				&\leq \delta\norm{\partial_{t}\phi}_{L^{2}(\mathbb{R}^{n})}^{2} + \frac{1}{4\delta}\left(\int_{0}^{T}\norm{F}_{L^{2}(\mathbb{R}^{n})}(t)\;dt\right)^{2}. 
+			\end{split}
+		\end{align*}
+		where the second line follows from Young's inequality with $\epsilon$\footnote{For any $a, b \geq 0$ and any $\epsilon > 0$, $$ab \leq \frac{\epsilon^{p}a^{p}}{p} + \frac{1}{e^{q}q}b^{q}$$, where $p$, $q$ are conjugate exponents.}. If we fix $\delta > 0$ small enough so that the first term can be combined with the left side of the above inequality (and absorbing $\delta$ into the constant $C$), one has that 
+		\begin{align*}
+			\begin{split}
+				\sup_{t \in [0,T]}\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}(t) \leq C\norm{\partial \phi}_{L^{2}(\mathbb{R}^{n})}^{2}(0) + C\left(\int_{0}^{T}\norm{F}_{L^{2}(\mathbb{R}^{n})}^{2}(t)\;dt\right)^{2} + C\int_{0}^{T}\norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\norm{\partial \phi}^{2}_{L^{2}(\mathbb{R}^{n})}(t)\;dt.
+			\end{split}
+		\end{align*}
+		Thus using Gr\"onwall's lemma concludes the proof. 
 	\end{proof}
+	We have the following corollary. 
+	\begin{corollary}[Uniqueness of Classical Solutions to General Linear Wave Equation]
+		Any classical solution of the general Cauchy wave problem, \ref{eq:gen_lin_we}, is unique. 
+	\end{corollary}
+	\begin{proof}
+		Let $\phi_{1}, \phi_{2}$ be two solutions to the general Cauchy wave problem \ref{eq:gen_lin_we}. Then their difference $\psi \coloneqq \phi_{1} - \phi_{2}$ satisfies the Cauchy wave problem 
+		\begin{align*}
+			\left\{
+			\begin{aligned}
+				\partial_{\alpha}(a^{\alpha\beta}\partial_{\beta}\psi) &= 0 \\
+				\psi(0,x) &= 0 \\
+				\partial_{t}\psi(0,x) &= 0,
+			\end{aligned}
+			\right.
+			\label{eq:gen_lin_we}
+		\end{align*}
+		Thus using the energy estimate we derived above, one has that for any fixed $T > 0$, 
+		\begin{align*}
+			\begin{split}
+				\sup_{t \in [0,T]}\norm{\partial \psi}_{L^{2}(\mathbb{R}^{n})}(t) = 0, 
+			\end{split}
+		\end{align*}
+		so that the energy of $\psi$ is always zero. This must mean that $\psi_{t}, \nabla \psi = 0$ a.e. within $[0,T] \times \mathbb{R}^{n}$. But since $\psi \equiv 0$ on $\{t = 0\} \times \mathbb{R}^{n}$, we conclude that $\psi =0 \iff \phi_{1} = \phi_{2}$ a.e. on $[0,T] \times \mathbb{R}^{n}$. Since $T$ was arbitrary, the proof concludes. 
+	\end{proof}
+	Now we will derive some higher order energy estimates. In particular, we will show that the higher order $H^{k}$ norms are also propagated. 
+	
+	\begin{prop}[Higher Order Energy Estimate I]
+		Let $\phi$ be a smooth solution to the Cauchy wave problem \ref{eq:gen_wave_eqn}, and let $k$ be a positive integer. Then for some constant $C = C(n,k) > 0$, the following energy estimates holds: 
+		\begin{multline}
+			\sup_{t\in[0,T]}\norm{\phi}_{H^{k}(\mathbb{R}^{n})}(t) + \sup_{t \in [0,T]}\norm{\partial_{t}\phi}_{H^{k -1}(\mathbb{R}^{n})}(t) \\ \leq C(1 + T)\exp\left(C\int_{0}^{T}\norm{\partial a}_{L^{\infty}(\mathbb{R}^{n})}(t)\;dt\right)\left(\norm{f}_{H^{k}(\mathbb{R}^{n})} 
+			+ \norm{g}_{H^{k - 1}(\mathbb{R}^{n})} + \int_{0}^{T}\norm{F}_{H^{k - 1}(\mathbb{R}^{n})}(t)\;dt\right.\\ + \left. C\int_{0}^{T}\sum_{|\alpha| + |\beta| \leq k - 1}\norm{\partial\partial_{x}^{\alpha}a\partial\partial_{x}^{\beta}\phi}_{L^{2}(\mathbb{R}^{n})}(t) + \sum_{|\alpha| + |\beta| \leq k- 1}\norm{\partial_{x}^{\alpha}a\partial\partial_{x}^{\beta}\phi}_{L^{2}(\mathbb{R}^{n})}(t)\;dt\right). 
+		\end{multline}
+	\end{prop}
+	\begin{remark}
+		Notice that in this bound, we are using the Sobolev space, $H^{k}(\mathbb{R}^{n})$, norms. As we discussed in Section \ref{subsec:sobolev_spaces}, these norms measures the ``$L^{2}$ size'' of $\phi$, $\partial_{t}\phi$ and their spatial derivatives up to order $k$ and $k - 1$, respectively. Therefore, the above estimate tells us something about the higher-frequency energy of the solution. Another interesting feature is the difference in regularity that our estimate has for each term (notably, we only require $k - 1$-regularity on our source, but $k$ regularity for $\phi$ and the initial data $f$). 
+	\end{remark}
+	\begin{proof}
+		\complete
+	\end{proof}
+	
+	\subsubsection{Existence of Solutions}
+	In the section above, we \textit{assumed} that the Cauchy wave problem had a classical solution, and deduced various energy estimates such a solution must satisfy. In particular, we showed that \textit{if} a classical solution exists, then it must be unique. But we are yet to show the existence of a solution. In this section, we will use elements of functional analysis to prove the following existence theorem. 
+	\begin{theorem}[Existence of Unique Solution to General Cauchy Wave Problem]
+		Let $k$ be a fixed positive integer. Given $(f, g) \in H^{k}(\mathbb{R}^{n}) \times H^{k - 1}(\mathbb{R}^{n})$, and $F \in L^{1}([0,T], H^{k - 1}(\mathbb{R}^{n}))$, there exists a \textit{unique} solution 
+		\begin{equation*}
+			\phi \in C^{0}([0,T], H^{k}(\mathbb{R}^{n})) \cap C^{1}([0,T], H^{k - 1}(\mathbb{R}^{n}))
+		\end{equation*}
+		to the general Cauchy wave problem \ref{eq:gen_lin_we}. 
+	\end{theorem}
+	
+	The main tools we will use to prove this result are the \textbf{Hahn-Banach theorem} (which we will state below), the energy estimates from the previous section, and the \textbf{Sobolev embedding theorem}. 
+	\begin{theorem}[Hahn-Banach]
+		Let $\phi$ be a bounded linear functional 
+	\end{theorem}
 	
 	\newpage 
 	\appendix 

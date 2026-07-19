@@ -28,4 +28,5 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Sobolev Regularity and Generalized Solutions}{23}{subsubsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.4}Existence and Uniqueness for Linear Wave Equations}{23}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Returning to the Energy Estimate}{24}{subsubsection.2.4.1}%
-\contentsline {section}{\numberline {A}Proof of Theorem \ref {thm:prop_four_transform}}{28}{appendix.A}%
+\contentsline {subsubsection}{\numberline {2.4.2}Existence of Solutions}{28}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {A}Proof of Theorem \ref {thm:prop_four_transform}}{29}{appendix.A}%

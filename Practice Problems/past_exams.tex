@@ -2122,6 +2122,15 @@
 	\end{equation*}
 	so that the polynomial $m_{1}(x) = x^{2} - 2$ annihilates $\sqrt{7}$ over $\mathbb{Z}_{5}$. This quadratic is irreducible as it has no roots in the field, which means that $\mathbb{Z}_{5}(\sqrt{7})$ is a degree 2 field extension. On the other hand, $i$ is annihilated by the polynomial $x^{2} + 1$ in $\mathbb{Z}_{5}$; this quadratic is reducible since $2$ and $3$ are roots. Therefore, $[\mathbb{Z}_{5}(i, \sqrt{7}):\mathbb{Z}_{5}(\sqrt{7})] = 1$ and the splitting field of $p(x)$ is actually just $\mathbb{Z}_{5}(\sqrt{7})$. Therefore, since $\mathbb{Z}_{5}(\sqrt{7})$ is Galois of order 2, we conclude that the Galois group of $p(x)$ over $\mathbb{Z}_{5}$ is simply $\mathbb{Z}/2\mathbb{Z}$. 
 	
+	\begin{prb}{2011-A-I-1}
+		Prove that $\mathbb{Q}(\sqrt{2} + \sqrt{3}) = \mathbb{Q}(\sqrt{2}, \sqrt{3})$. 
+	\end{prb}
+	Since both $\sqrt{2}$ and $\sqrt{3}$ are algebraic over $\mathbb{Q}$ with minimal polynomials $x^{2} - 2$ and $x^{2} - 3$, elements in $\mathbb{Q}(\sqrt{2}, \sqrt{3})$ are of the form $\alpha + \beta \sqrt{2} + \gamma \sqrt{3} + \delta \sqrt{6}$, where $\alpha, \beta, \gamma, \delta \in \mathbb{Q}$. On the other hand, since the minimal polynomial of $\sqrt{2} + \sqrt{3}$ is a degree-4 polynomial, elements in $\mathbb{Q}(\sqrt{2} + \sqrt{3})$ are of the form $$\alpha + \beta (\sqrt{2} + \sqrt{3}) + \gamma (\sqrt{2} + \sqrt{3})^{2} + \delta (\sqrt{2} + \sqrt{3})^{3} = (\alpha + 5\gamma) + (\beta + 11\delta)\sqrt{2} + (\beta + 9\delta)\sqrt{3} + 2\gamma\sqrt{6},$$ 
+	so that $\mathbb{Q}(\sqrt{2} + \sqrt{3}) \subseteq \mathbb{Q}(\sqrt{2}, \sqrt{3})$. Thus it suffices to show that the reverse inclusion holds. To show that this claim holds, we can simply use the degree of the field extensions. Since the minimal polynomial of $\sqrt{2} + \sqrt{3}$ over $\mathbb{Q}$ has degree 4, we must have: 
+	\begin{equation*}
+		[\mathbb{Q}(\sqrt{2} + \sqrt{3}): \mathbb{Q}] = 4. 
+	\end{equation*}
+	On the other hand, we also know that $[\mathbb{Q}(\sqrt{2}, \sqrt{3}):\mathbb{Q}] = 4$. Thus since $\mathbb{Q}(\sqrt{2} + \sqrt{3}) \subseteq \mathbb{Q}(\sqrt{2}, \sqrt{3})$, it follows that $\mathbb{Q}(\sqrt{2} + \sqrt{3}) = \mathbb{Q}(\sqrt{2}, \sqrt{3})$. 
 	\begin{prb}{2011-A-II-1}
 		Determine the Galois group of $x^{4} - 25$ over $\mathbb{Q}$. 
 	\end{prb}
@@ -2623,6 +2632,15 @@
 		\item ($n = 1$): If $n = 1$, then $p_{1}$ must be a degree-3 polynomial. Then there are 27 possible choices for $p_1$.  
 	\end{enumerate}
 	Thus altogether, there are, up to isomorphism, $3 + 9 + 27 = 39$ different $R$-modules with exactly 27 elements. 
+	
+	\begin{prb}{2011-A-I-2}
+		Let $A$ be an $8 \times 8$ real matrix such that $A^{21} = 1$. Prove that $\mathbb{R}^{8}$ can be written as a direct sum $\mathbb{V}_{1} \oplus \mathbb{V}_{2} \oplus \mathbb{V}_{3} \oplus \mathbb{V}_{4}$ of 2-dimensional vector subspaces such that $A(\mathbb{V}_{j}) \subset \mathbb{V}_{j}$, $j = 1, 2, 3, 4$. 
+	\end{prb}
+	Let $A$ be a $8 \times 8$ real matrix such that $A^{21} = 1$. Since the polynomial $p(t) = t^{21} - 1$ annihilates $A$, the minimal polynomial $m_{A}(t)$ must divide $p(t)$ so that the set of eigenvalues of $A$ are a subset of the set of 21st roots of unity. Since $A$ is a real matrix, its characteristic polynomial must have real coefficients so that any complex eigenvalue of $A$ comes in a conjugate pair (i.e., if $\lambda$ is a complex-valued eigenvalue of $A$, then $\bar{\lambda}$ is an eigenvalue of $A$). Suppose first that $A$ only has complex-valued eigenvalues. Then since each eigenvalue comes in conjugate pair, each irreducible factor of the minimal polynomial of $A$ must be an irreducible quadratic. By the Structure Theorem for Finitely Generated Modules over PIDs, by viewing $\mathbb{R}^{8}$ as a finitely generated module over the PID $\mathbb{R}[t]$ via the rule $p(t) \cdot v = p(T) \cdot v$, since the characteristic polynomial of $A$ has degree 8, and each irreducible factor has degree 2, $A$ has precisely 4 irreducible quadratic factors $q_{1}(t), \ldots, q_{4}(t)$ so that
+	\begin{equation*}
+		\mathbb{R}^{8} \cong \frac{\mathbb{R}[t]}{(q_{1}(t))} \oplus \dotsm \oplus \frac{\mathbb{R}[t]}{(q_{4}(t))}.
+	\end{equation*}
+	Since each $q_{i}(t)$ has degree 2, each $A$-invariant subspace above has dimension 2. Thus the result holds under this assumption. Now assume that $A$ has a real root; since the only real root of $t^{21} - 1$ is $1$, the only real eigenvalue of $A$ is $1$, which means that the characteristic polynomial of $A$ has the linear factor $(t -1)$. If $A$ has only real eigenvalues, then since $\mathbb{R}[x]/(t -1)$ corresponds to a 1-dimensional $A$-invariant subspace, and the sum of the dimensions of the $A$-invariant subspaces must equal $8$, $\mathbb{R}^{8}$ must be the form $\mathbb{W}_{1} \oplus \dotsm \oplus \mathbb{W}_{8}$, where each subspace has dimension 1. Define $\mathbb{V}_{1} = \mathbb{W}_{1} \oplus \mathbb{W}_{2}$, $\mathbb{V}_{2} = \mathbb{W}_{3} \oplus \mathbb{W}_{4}, \ldots,$ $\mathbb{V}_{4} = \mathbb{W}_{7} \oplus \mathbb{W}_{8}$. Then it is straightforward to see that $\dim{\mathbb{V}_{i}} = 2$ for each $i = 1, \ldots, 4$, and by $A$-invariance of each $\mathbb{W}_{i}$, each $\mathbb{V}_{i}$ is $A$-invariant. In the final case, if $A$ has both complex and real eigenvalues, then as before, the 1-dimensional $A$-invariant subspaces of $A$ must come in pairs (which can then be combined to form a 2-dimensional invariant subspace), so that we can express $A$ the direct sum of four 2-dimensional $A$-invariant vector subspaces. 
 
 	
 	\begin{prb}{2005-J-II-4}
@@ -3809,6 +3827,38 @@
 	\end{equation*}
 	where the first term on the right side is equal to the last term on the right side by translation invariance of the $L^1$ norm. Thus, we conclude that $\chi_{E}(x - t) \to \chi_{E}(x)$ in $L^1$ as $t \to 0$. 
 	
+	\begin{prb}{2011-A-I-4}
+		Let 
+		\begin{equation*}
+			f_{n}(x) = \frac{1}{n}\sum_{k = 1}^{n^{2}}e^{ikx}. 
+		\end{equation*}
+		Prove that the sequence $\{f_{n}(x)\}_{n = 1}^{\infty}$ converges weakly to zero in $L^{2}([-\pi, \pi])$. 
+	\end{prb}
+	Define the sequence $\{f_{n}(x)\}_{n = 1}^{\infty} \subset L^{2}([-\pi, \pi])$ by 
+	\begin{equation*}
+		f_{n}(x) = \frac{1}{n}\sum_{k = 1}^{n^{2}}e^{ikx}, \qquad \forall n \in \mathbb{N}. 
+	\end{equation*}
+	Fix an arbitrary $g \in L^{2}([-\pi,\pi]) \subset L^{1}([-\pi, \pi])$. We wish to show that $\int_{-\pi}^{\pi}f_{n}(x)\overline{g(x)}\;dx \xrightarrow{n \to \infty} 0$. For each $n$, we note that 
+	\begin{equation*}
+		\int_{-\pi}^{\pi}f_{n}(x)\overline{g(x)}\;dx = \frac{1}{n}\sum_{k = 1}^{n^{2}}\int_{-\pi}^{\pi}e^{ikx}\overline{g}(x)\;dx =
+		\frac{1}{n}\sum_{k = 1}^{n} \overline{\int_{-\pi}^{\pi}e^{-ikx}g(x)\;dx} \eqqcolon \frac{2\pi}{n}\sum_{k = 1}^{n^{2}}\bar{c_{k}}, 
+	\end{equation*}
+	where we can think of each $\bar{c_{k}}$ as the Fourier coefficients of $\overline{g}$ (note that since $g$ is integrable, $|\overline{c_{k}}| < \infty$). By Parseval's identity for Fourier coefficients, one has that 
+	\begin{equation*}
+		\infty > \norm{g}_{L^{2}([-\pi,\pi])}^{2} = \norm{\overline{g}}_{L^{2}([-\pi,\pi])} = \sum_{k =-\infty}^{\infty}|\bar{c_{k}}|^{2} \geq \sum_{k = 1}^{\infty}|\bar{c_{k}}|^{2}. 
+	\end{equation*}
+	Having fixed some positive integer $n > 1$, fix some positive integer $1 < M < n^{2}$, so that 
+	\begin{equation*}
+		\sum_{k=1}^{n^{2}}\bar{c_{k}} = \sum_{k = 1}^{M}\bar{c_{k}} + \sum_{k = M + 1}^{n^{2}}\bar{c_{k}} \leq \sum_{k = 1}^{M}\bar{c_{k}} + \sqrt{n^{2} - M} \cdot \sum_{k = M + 1}^{n^{2}}|\bar{c_{k}}|^{2}, 
+	\end{equation*}
+	where the inequality follows from the Cauchy-Schwarz inequality. Thus, one has that 
+	\begin{align*}
+		\begin{split}
+			0 \leq \abs{\int_{-\pi}^{\pi}f_{n}(x)\overline{g(x)}\;dx} &\leq \frac{2\pi}{n}\sum_{k = 1}^{M}|\bar{c_{k}}| + \frac{2\pi\cdot \sqrt{n^{2} - M}}{n}\cdot \sum_{k = M + 1}^{n^{2}}|\bar{c_{k}}|^{2} \leq \frac{2\pi}{n}\sum_{k = 1}^{M}\bar{c_{k}} + \frac{2\pi\cdot \sqrt{n^{2} - M}}{n}\cdot \sum_{k = 1
+			}^{\infty}|\bar{c_{k}}|^{2}. 
+		\end{split}
+	\end{align*}
+	Thus, taking the limsup $n \to \infty$ shows that the right side converges to 0. This means that $\int_{-\pi}^{\pi}f_{n}(x)\overline{g(x)}\;dx \to 0$ as $n \to \infty$. Since $g \in L^{2}([-\pi,\pi])$ was arbitrary, we conclude that $f_{n} \to 0$ weakly in $L^{2}([-\pi, \pi])$. 
 	
 	\begin{prb}{2009-A-I-2}
 		Let $(X,\mu)$ be a measure space, and let $f$ be a measurable function on $X$. If there is a real constant $C > 0$ such that 
@@ -3877,6 +3927,24 @@
 		Therefore, $g \in L^{1}(X)$. 
 		\item Now assume $f \in L^p(X)$ for some $p > 1$. Since $(X, \mu)$ is $\sigma$-finite, there exists a countable collection of subsets $\{A_{j}\}_{j = 1}^{\infty}$ of $X$ so that $X = \bigcup_{j = 1}^{\infty}A_{j}$ and $\mu(A_{j}) < \infty$ for each $j$. \complete 
 	\end{enumerate}
+	
+	\begin{prb}{B-16-1}
+		Find the Fourier transform of $\chi_{[a,b]}$ and in particular, find the Fourier transform of $\chi_{[-n,n]}$. 
+	\end{prb}
+	We just compute, 
+	\begin{align*}
+		(\chi_{[a,b]})^{\hat{}} &= \int_{a}^{b}e^{-2\pi i x \xi}\;dx = \frac{i}{2\pi \xi}\left[e^{-2\pi i b\xi} - e^{-2\pi i a \xi}\right] \\
+		&= \frac{1}{2\pi \xi}\left[\sin(2\pi b\xi) - \sin(2\pi a\xi) + i\left(\cos(2\pi b\xi) - \cos(2\pi a \xi)\right)\right]. 
+	\end{align*}
+	In particular, if $a = -n$ and $b = n$, by evenness of the cosine, the imaginary term vanishes. Therefore, 
+	\begin{equation*}
+		(\chi_{[-n,n]})^{\hat{}} = \frac{\sin(2\pi \xi)}{\pi \xi}. 
+	\end{equation*}
+	
+	\begin{prb}{B-16-2}
+		Find a real-valued function $f \in L^1$ such that $\hat{f} \notin L^1$. 
+	\end{prb}
+	\complete 
 	
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
@@ -5035,6 +5103,15 @@
 		Suppose $f: D(0,1) \to \overline{D(0,1)}$ is a holomorphic map from the open unit disk into the closed unit disk. Can the image of $f$ contain both the points $0$ and $1$. 
 	\end{prb}
 	Let $f: D(0,1) \to \overline{D(0,1)}$ be a holomorphic map from the open unit disk into the closed unit disk. We claim that that the image of $f$ cannot contain both the points $0$ and $1$. Suppose that the image of $f$ contains the point $1$; i.e., assume there exists some $z_{0} \in D(0,1)$ such that $|f(z_{0})| = 1$. Then since $f$ maps into the closed unit disk, for any $z$ contained in some neighborhood of $z_{0}$ in $D(0,1)$, $|f(z)| \leq |f(z_{0})|$. Then by the Maximum Modulus Principle, one has that $f$ is constant on $D(0,1)$; i.e., $f \equiv 1$ on $D(0,1)$, and thus cannot contain the point $0$. 
+	
+	\begin{prb}{2011-A-I-3}
+		Let $\Omega \subset \mathbb{C}$ be a convex open set, and let $f: \Omega \to \mathbb{C}$ be a holomorphic function such that $\operatorname{Re}{f'(z)} > 0$ for all $z \in \Omega$. Prove that $f$ is injective. 
+	\end{prb}
+	Let $\Omega \subset \mathbb{C}$ be a convex open set, and let $f: \Omega \to \mathbb{C}$ be a holomorphic function such that $\operatorname{Re}{f'(z)} > 0$ for all $z \in \Omega$. Fix arbitrary distinct points $z_{1}, z_{2} \in \Omega$, and let $\gamma: [0,1] \to \Omega$ be the straight line segment $z(t) = \gamma(t) =  z_{1} + (z_{2} - z_{1})t$ between $z_{1}$ and $z_{2}$; we know the image of this segment lies entirely inside $\Omega$ since $\Omega$ is convex. Then, one has that 
+	\begin{equation*}
+		f(z_{2}) - f(z_{1}) = (z_{2} - z_{1}) \cdot \int_{0}^{1}f'(\gamma(t))\;dt = (z_{2} - z_{1}) \cdot \left\{\int_{0}^{1}\operatorname{Re}{f'(\gamma(t))}\;dt + i\int_{0}^{1}\operatorname{Im}{f'(\gamma(t))}\;dt\right\}. 
+	\end{equation*}
+	Since $z_{1}, z_{2}$ are distinct, $(z_{2} - z_{1}) \neq 0$. Likewise, since $\operatorname{Re}{f'(z)} > 0$ for all $z \in \Omega$, the term inside the brackets is nonzero. Since $\mathbb{C}$ is a field and has no zero divisors, we conclude that $f(z_{2}) - f(z_{1}) \neq 0$ so that $f(z_{2}) \neq f(z_{1})$. Thus, we conclude that $f$ is injective. 
 	
 	\subsection{Rouch\'e's Theorem}
 	

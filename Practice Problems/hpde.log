@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  17 JUL 2026 14:29
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  18 JUL 2026 13:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1280,35 +1280,38 @@ brarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 \c@@todonotes@numberoftodonotes=\count397
-) (./hpde.aux)
+) (./hpde.aux
+
+LaTeX Warning: Label `eq:gen_lin_we' multiply defined.
+
+)
 \openout1 = `hpde.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-0.
-
-(c:/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+1.
+ (c:/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1348,21 +1351,21 @@ LaTeX Font Info:    ... okay on input line 30.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 30.
+Package hyperref Info: Link coloring ON on input line 31.
 (./hpde.out) (./hpde.out)
 \@outlinefile=\write4
 \openout4 = `hpde.out'.
 
-LaTeX Info: Redefining \rmfamily on input line 30.
-LaTeX Info: Redefining \sffamily on input line 30.
-LaTeX Info: Redefining \ttfamily on input line 30.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+LaTeX Info: Redefining \rmfamily on input line 31.
+LaTeX Info: Redefining \sffamily on input line 31.
+LaTeX Info: Redefining \ttfamily on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1403,41 +1406,41 @@ File: Graphics/evans_domdependence.png Graphic file (type bmp)
 [10]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 539.
+(mdframed)              on input line 540.
 
 
 [11]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 611.
+(mdframed)              on input line 612.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 646.
-Package mdframed Info: Not enough space on this page on input line 662.
+(mdframed)              on input line 647.
+Package mdframed Info: Not enough space on this page on input line 663.
 
 
 [12]
-Package mdframed Info: Not enough space on this page on input line 662.
+Package mdframed Info: Not enough space on this page on input line 663.
 
 
 [13]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 718.
+(mdframed)              on input line 719.
 
 
 [14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 767.
+(mdframed)              on input line 768.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 806.
-Package mdframed Info: Not enough space on this page on input line 826.
+(mdframed)              on input line 807.
+Package mdframed Info: Not enough space on this page on input line 827.
 
 
 [15]
-Package mdframed Info: Not enough space on this page on input line 826.
+Package mdframed Info: Not enough space on this page on input line 827.
 
 
 [16]
@@ -1445,7 +1448,7 @@ Package mdframed Info: Not enough space on this page on input line 826.
 [17]
 
 [18]
-Overfull \hbox (1.77002pt too wide) in paragraph at lines 1015--1017
+Overfull \hbox (1.77002pt too wide) in paragraph at lines 1016--1018
 \TU/lmr/m/it/10 In going to the final inequality, we used the fact that since $
 \OML/cmm/m/it/10 @B\OMX/MnSymbolE/m/n/10 ^^88\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 
 ; "\OMX/MnSymbolE/m/n/10 ^^8d \U/MnSymbolD/m/n/10 ` \OML/cmm/m/it/10 U$ \TU/lmr
@@ -1458,68 +1461,73 @@ MnSymbolD/m/n/10 B
 [19]
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 1054.
+(Font)              using `TU/lmr/m/scsl' instead on input line 1055.
 
 
 
 [20]
 
-LaTeX Warning: Reference `prb:equipartition_of_energy' on page 21 undefined on 
-input line 1097.
-
-
-
 [21]
 
 [22]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 1223.
+ine 1224.
 
 
 [23]
 
 [24]
 
-LaTeX Warning: Reference `eq:gen_lin_we' on page 25 undefined on input line 128
-8.
-
-
-
 [25]
 
 [26]
+Overfull \hbox (12.65767pt too wide) detected at line 1388
+ []$[]   [] [][] \OMX/MnSymbolE/m/n/10 ^^88\OML/cmm/m/it/10 t\OMX/MnSymbolE/m/n
+/10 ^^8d \U/MnSymbolD/m/n/10 B \OML/cmm/m/it/10 C [][] \OMX/MnSymbolE/m/n/10 ^^
+88\OT1/cmr/m/n/10 0\OMX/MnSymbolE/m/n/10 ^^8d \U/MnSymbolC/m/n/10 ^^T \OML/cmm/
+m/it/10 C [][] [][] [][] \OMX/MnSymbolE/m/n/10 ^^88\OML/cmm/m/it/10 t\OMX/MnSym
+bolE/m/n/10 ^^8d \U/MnSymbolC/m/n/10 ^^T [][] \OMX/MnSymbolE/m/n/10 ^^88\OML/cm
+m/m/it/10 t\OMX/MnSymbolE/m/n/10 ^^8d [][] ^^88\OML/cmm/m/it/10 t\OMX/MnSymbolE
+/m/n/10 ^^8d \OML/cmm/m/it/10 dt:  $ 
+ []
 
-[27]
-Overfull \hbox (6.6418pt too wide) detected at line 1429
+
+Overfull \hbox (3.49002pt too wide) detected at line 1401
 []
  []
 
 
 
-[28]
+[27]
 
-[29] (./hpde.aux)
+[28]
+Overfull \hbox (6.6418pt too wide) detected at line 1505
+[]
+ []
+
+
+
+[29]
+
+[30] (./hpde.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `hpde.out' has not changed.
-(rerunfilecheck)             Checksum: EB66F9B4EF857D4D81B5F1E7CD1B3DFD;7013.
+(rerunfilecheck)             Checksum: 4735F6AEDE53B32BE707B78B32C037A7;7197.
  ) 
 Here is how much of TeX's memory you used:
- 35862 strings out of 474240
- 726930 string characters out of 5745919
+ 35874 strings out of 474240
+ 727195 string characters out of 5745919
  1950560 words of memory out of 5000000
- 57868 multiletter control sequences out of 15000+600000
- 579977 words of font info for 136 fonts, out of 8000000 for 9000
+ 57878 multiletter control sequences out of 15000+600000
+ 580327 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,25n,131p,1102b,1028s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,25n,131p,1102b,1115s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on hpde.pdf (29 pages).
+Output written on hpde.pdf (30 pages).
