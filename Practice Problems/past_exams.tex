@@ -55,6 +55,7 @@
 		\item Any problem that the format ``\verb|D&F-{ }-{ }|'' was taken from Dummit \& Foote's \textit{Abstract Algebra} (3rd ed.)
 		\item Any problem that has the format ``\verb|F-{ }-{ }-{ }|'' was taken from Folland's \textit{Real Analysis}.
 		\item Any problem that has the format ``\verb|SS-{ }-{ }|'' was taken from Stein and Shakarchi's \textit{Functional Analysis}.
+		\item Any problem that has the format ``\verb|B-{ }-{ }|'' was taken from Bass's \textit{Real Analysis for Graduate Students}. 
 		\item Any problem that has the format ``\verb|E-{ }-{ }|'' was taken from Evans \textit{Partial Differential Equations} (2nd ed.)\footnote{The ordering of the problems may be off because I alternatively used a physical copy of the second edition, and a PDF copy of the first edition, which has fewer and different problems.}
 	\end{enumerate}
 	
@@ -847,6 +848,31 @@
 	\end{equation*}
 	directly contradicting our result from above. Thus by contradiction, we conclude that $H^{1}_{\text{dR}}(M) \neq 0$. 
 	
+	\begin{prb}{2012-J-II-5}
+		The double of a manifold-with-boundary $X$ is the manifold obtained from the disjoint union of two copies of $X$ by identifying the two copies of the boundary $\partial X$ via the identity map. Let $Y$ be the 3-manifold-with-boundary obtained from $S^2 \times S^1$ by removing a closed 3-ball $B,$ and let $M$ be the double of $Y.$ (You may assume that there is a coordinate system on $S^2 \times S^1$ which carries $B$ to the unit ball in $\mathbb{R}^3$.) Compute the ranks of the cohomologies $H_{\text{dR}}^0, H_{\text{dR}}^1, H_{\text{dR}}^2$ and $H_{\text{dR}}^3.$
+	\end{prb}
+	Let $Y$ be the 3-manifold-with-boundary obtained from $S^2 \times S^1$ y removing a closed 3-ball $B$, and let $M$ be the double of $Y$; i.e., $M$ is the autosum of the manifold $S^{2} \times S^{1}$, and thus is homeomorphic to the connected sum $(S^{2} \times S^{1}) \# (S^{2} \times S^{1})$. Since each factor of the connected sum is connected, $H^{0}_{\text{dR}}(M) \cong \mathbb{R}$ has rank one. For $k = 1, 2$, since $S^{2} \times S^{1}$ is connected and oriented, one has that 
+	\begin{equation*}
+		H^{k}_{\text{dR}}(M) \cong H^{k}_{\text{dR}}(S^{2} \times S^{1}) \oplus H^{k}_{\text{dR}}(S^{2} \times S^{1}). 
+	\end{equation*}
+	Using K\"unneth's formula, one has that 
+	\begin{align*}
+		\begin{split}
+			H^{1}_{\text{dR}}(S^{2} \times S^{1}) &\cong H^{0}_{\text{dR}}(S^{2}) \otimes H^{1}_{\text{dR}}(S^{1}) \oplus H^{1}_{\text{dR}}(S^{2}) \otimes H^{0}_{\text{dR}}(S^{1}) \\
+			&\cong (\mathbb{R} \otimes \mathbb{R}) \oplus (0 \otimes \mathbb{R}) \cong \mathbb{R}. \\
+			H^{2}_{\text{dR}}(S^{2} \times S^{1}) &\cong H^{0}_{\text{dR}}(S^{2}) \otimes H^{2}_{\text{dR}}(S^{1}) \oplus H^{1}_{\text{dR}}(S^{2}) \otimes H^{1}_{\text{dR}}(S^{1}) \oplus H^{2}_{\text{dR}}(S^{2}) \otimes H^{0}_{\text{dR}}(S^{1}) \\
+			&\cong (\mathbb{R} \otimes 0) \oplus (0 \times \mathbb{R}) \oplus (\mathbb{R} \otimes \mathbb{R}) \cong \mathbb{R}. 
+		\end{split}
+	\end{align*}
+	Thus, this implies that $H^{k}_{\text{dR}}(M) \cong \mathbb{R}^{2}$ for $k = 1, 2$. Finally, since $S^{2} \times S^{1}$ is oriented and compact, and the connected sum of oriented manifolds is oriented and compact, $M$ is oriented and compact. Therefore, $H^{3}_{\text{dR}}(M) \cong \mathbb{R}$. Therefore, 
+	\begin{equation*}
+		\operatorname{rank}{H^{k}_{\text{dR}}(M)} = 
+		\begin{cases}
+			1, & k = 0, 3 \\
+			2, & k = 1, 2.
+		\end{cases}
+	\end{equation*} 
+	
 	\begin{prb}{2002-J-II-5}
 		Let $\theta$ be a closed 1-form on a compact manifold $M$ without boundary. Further suppose that $\theta \neq 0$ at each point of $M$. Prove that $H^{1}_{\text{dR}}(M) \neq 0$. 
 	\end{prb}
@@ -1005,6 +1031,30 @@
 		Prove that every smooth, connected manifold whose fundamental group has finite, odd order is an orientable manifold. 
 	\end{prb}
 	Let $M$ be a smooth, connected manifold whose fundamental group has finite, odd order. Let $\hat{M}$ denote the orientation cover on $M$, and let $p: \hat{M} \to M$ denote the covering map. Since $p$ is a covering map, one has that $p_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ is injective, and thus $p_\ast(\pi_1(\hat{M}, x_0)) \leq \pi_1(M, p(x_0))$. If $M$ is \textit{not} orientable (i.e., $\hat{M}$ is a connected space), then since $p$ is a 2-sheeted covering space, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M,p(x_0))$. By Lagrange's theorem, it follows that $2$ is a divisor of the order of the fundamental group of $M$, so that it has even order. This is a contradiction! Thus by contradiction, $M$ must be orientable. 
+	
+	\begin{prb}{2011-A-I-5}
+		A map $f: X \to Y$ between two topological spaces is said to be proper if $f^{-1}(K) \subset X$ is compact whenever $K \subset Y$ is compact. Let $M$ be a connected manifold, and $p: \ti{M} \to M$ be its universal cover. Show that $p$ is a proper map if and only if $M$ has finite fundamental group. 
+	\end{prb}
+	Let $M$ be a connected manifold, and $p: \ti{M} \to M$ be its universal cover. 
+	
+	($\Longleftarrow$) We start by assuming that $M$ has finite fundamental group. This means that $p_{\ast}(\pi_{1}(\ti{M}, x_0)) \subseteq \pi_1(M, p(x_0))$ must be a finite subgroup. Thus, $p$ must be a finite $k$-sheeted covering map. Let $K \subseteq M$ be an arbitrary compact subset of $M$, and let $\{W_{\alpha}\}$ be an arbitrary open cover of $p^{-1}(K)$. Fix an arbitrary $q \in K$, and assume that $p^{-1}(q) = \{e_1, \ldots, e_k\}$. Then since the $W_\alpha$ cover $p^{-1}(K)$, there exist $W_{\alpha_1}, \ldots, W_{\alpha_k}$ such that for each $j = 1, \ldots, k$, $e_j \in W_{\alpha_j}$. We also know by the definition of a covering space that there exists an evenly covered neighborhood $W_q$ of $q$ in $M$. Let $p^{-1}(W_q) = \bigsqcup_{1}^{k}V_{j}$, where each $V_j$ is an open subset of $\ti{M}$ and $p: V_j \to W_q$ is a homeomorphism. In particular, $p(V_j \cap W_{\alpha_j})$ is an open neighborhood of $q$ in $M$ for each $j$. So now define, 
+	\begin{equation*}
+		\ti{U}_{q} \coloneqq \bigcap_{1}^{k}p(V_j \cap W_{\alpha_j}), 
+	\end{equation*}
+	which is an open neighborhood of $q$ in $M$. Consider the collection $\{\ti{U}_{q}\}_{q\in K}$, where for each $q \in K$, $\ti{U}_q$ is defined above; this collection is an open cover of $K$. Thus there exists a finite subcover $\{\ti{U}_{q_j}\}_{j = 1}^{n}$ of $K$. For each $j$, one has 
+	\begin{equation*}
+		p^{-1}(\ti{U}_{q_{j}}) = \bigsqcup_{l = 1}^{k}V_{j,l}, 
+	\end{equation*}
+	where $V_{j,l} \coloneqq V_l \cap p^{-1}(\ti{U}_{q_j})$. By construction of $\ti{U}_{q_j}$, we have $V_{j,l} \subset W_{\alpha_l}^j$. Thus we have a finite subcollection (of $nk$) open subsets $\{W_{\alpha_l}^{j}: j = 1, \ldots, n, l = 1, \ldots, k\}$, and 
+	\begin{align*}
+		\begin{split}
+			p^{-1}(K) &= p^{-1}\left(\bigcup_{j = 1}^{n}\ti{U}_{q_{j}}\right) = \bigcup_{j = 1}^{n}p^{-1}(\ti{U}_{q_j}) \\
+			&= \bigcup_{j = 1}^{n}\left(\bigsqcup_{l = 1}^{k}V_{j,l}\right) \subset \bigcup_{j = 1}^{n}\bigcup_{l = 1}^{k}W_{\alpha_{l}}^{j}. 
+		\end{split}
+	\end{align*}
+	Thus since an arbitrary open cover of $p^{-1}(K)$ admits a finite open subcover, $p^{-1}(K)$ is compact. Since $K$ was arbitrary, we conclude that $p$ is proper. 
+	
+	($\Longrightarrow$) Now assume that $p$ is a proper map. Then since for each $p \in M$, $\{p\}$ is compact, $p^{-1}(\{q\})$ is discrete (since $q$ has an evenly covered neighborhood) and is compact. Thus since $\ti{M}$ is Hausdorff, $p^{-1}(q)$ is finite. Since this is true for every $q \in M$, $p$ is a finite-sheeted covering space. Now since $M$ admits a universal covering space, $\pi_{1}(M) \cong \Gamma$, where $\Gamma$ is the group of deck transformations. In particular, since the cardinality of the group of deck transformations is equal to the number of sheets, $|\pi_1(M)| = |p^{-1}(q)| < \infty$. Thus the proof concludes.
 	
 	\begin{prb}{2009-A-I-4}
 		Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. If $\pi_1(M)$ is a simple group, prove that $M$ is an orientable manifold. 
@@ -1212,7 +1262,7 @@
 	\end{equation*}
 	I.e., $\ti{M}$ must be a surface of genus $2k + 1$. Therefore, we conclude that the only connected finite $k$-sheeted covering spaces of a sphere with three handles are the surfaces $\Sigma_{2k + 1}$, $k \geq 1$. 
 	
-	\begin{prb}{2020-J-I-2}
+	\begin{prb}{2020-J-II-6}
 		Let $\Phi: S^2 \to S^2$ be a smooth self-map of the 2-sphere which has non-zero degree. Prove that there exists an $\vec{x} \in S^2$ such that $\Phi(-\vec{x}) =-\Phi(\vec{x})$. 
 	\end{prb}
 	Let $\Phi: S^2 \to S^2$ be a smooth self-map of the 2-sphere which has non-zero degree. Assume to the contrary that there exists no $\vec{x} \in S^2$ such that $\Phi(-\vec{x}) = -\Phi(\vec{x})$. Consider the map $H: S^2 \times [0,1] \to S^2$ defined as follows: 
@@ -2641,6 +2691,38 @@
 		\mathbb{R}^{8} \cong \frac{\mathbb{R}[t]}{(q_{1}(t))} \oplus \dotsm \oplus \frac{\mathbb{R}[t]}{(q_{4}(t))}.
 	\end{equation*}
 	Since each $q_{i}(t)$ has degree 2, each $A$-invariant subspace above has dimension 2. Thus the result holds under this assumption. Now assume that $A$ has a real root; since the only real root of $t^{21} - 1$ is $1$, the only real eigenvalue of $A$ is $1$, which means that the characteristic polynomial of $A$ has the linear factor $(t -1)$. If $A$ has only real eigenvalues, then since $\mathbb{R}[x]/(t -1)$ corresponds to a 1-dimensional $A$-invariant subspace, and the sum of the dimensions of the $A$-invariant subspaces must equal $8$, $\mathbb{R}^{8}$ must be the form $\mathbb{W}_{1} \oplus \dotsm \oplus \mathbb{W}_{8}$, where each subspace has dimension 1. Define $\mathbb{V}_{1} = \mathbb{W}_{1} \oplus \mathbb{W}_{2}$, $\mathbb{V}_{2} = \mathbb{W}_{3} \oplus \mathbb{W}_{4}, \ldots,$ $\mathbb{V}_{4} = \mathbb{W}_{7} \oplus \mathbb{W}_{8}$. Then it is straightforward to see that $\dim{\mathbb{V}_{i}} = 2$ for each $i = 1, \ldots, 4$, and by $A$-invariance of each $\mathbb{W}_{i}$, each $\mathbb{V}_{i}$ is $A$-invariant. In the final case, if $A$ has both complex and real eigenvalues, then as before, the 1-dimensional $A$-invariant subspaces of $A$ must come in pairs (which can then be combined to form a 2-dimensional invariant subspace), so that we can express $A$ the direct sum of four 2-dimensional $A$-invariant vector subspaces. 
+	
+	\begin{prb}{2011-J-I-2}
+		Let $R = \mathbb{F}_{2}[x]$. List all $R$-modules (up to isomorphism) having exactly $8$ elements. 
+	\end{prb}
+	Let $R$ be the PID $\mathbb{F}_{2}[x]$ ($R$ is a PID since $\mathbb{F}_{2}$ is a field), and let $M$ be an $R$-module with exactly 8 elements; this means that $M$ is a finitely generated $R$-module so that by the Structure Theorem for Finitely Generated Modules over PIDs, $M$ must be of the form 
+	\begin{equation*}
+		M \cong \bigoplus_{i = 1}^{n}\frac{\mathbb{F}_{2}[t]}{(q_{i})},
+	\end{equation*}
+	where $(q_{1}) \supset (q_2) \supset \dotsm \supset (q_n)$ is a decreasing sequence of nonzero proper ideals. Since the dimension of $M$ over $\mathbb{F}_{2}$ is $3$ ($2^{3} = 8$), we must have $\sum_{1}^{n}\deg{q_i} = 3$. In particular, we have $1 \leq n \leq 3$. Therefore, we will identify each possible option for $M$ as subcases for the different values of $n$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item ($n = 3$): When $n = 3$, each $q_i$ must be a degree 1 polynomial. Since there are precisely 2 degree-1 polynomials, $t$ and $t + 1$, we have two possible options for $M$, namely, $(\mathbb{F}_{2}[t]/(t))^3, (\mathbb{F}_{2}[t]/(t + 1))^{3}$.
+		\item ($n = 2$): When $n = 2$, $q_1$ must be a degree-1 polynomial, $q_2$ must be a degree-2 polynomial. First suppose $q_1 = t$. Then $q_2$ can be $t^2, t^2 + t$. Likewise, if $q_2 = t + 1$, then $q_2$ can be $t^2 + t$ or $t^{2} + 1$. Thus we have four choices for $M$, namely,\vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item $\mathbb{F}_{2}[t]/(t) \oplus \mathbb{F}_{2}[t]/(t^2)$
+			\item $\mathbb{F}_{2}[t]/(t) \oplus \mathbb{F}_{2}[t]/(t^2 + t)$
+			\item $\mathbb{F}_{2}[t]/(t + 1) \oplus \mathbb{F}_{2}[t]/(t^2 + t)$
+			\item $\mathbb{F}_{2}[t]/(t + 1) \oplus \mathbb{F}_{2}[t]/(t^2 + 1)$. 
+		\end{enumerate}
+		Each of these options must be pairwise nonisomorphic since we recall that the invariant factors are unique up to units. 
+		\item ($n = 1$): When $n = 1$, $q_3$ must be a degree-3 polynomial. Thus we have 8 options. This means that $M$ is isomorphic to one of the following
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item $\mathbb{F}_{2}[t]/(t^3)$
+			\item $\mathbb{F}_{2}[t]/(t^3 + t^2)$ 
+			\item $\mathbb{F}_{2}[t]/(t^3 + t)$ 
+			\item $\mathbb{F}_{2}[t]/(t^3 + 1)$ 
+			\item $\mathbb{F}_{2}[t]/(t^3 + t^2 + t)$ 
+			\item $\mathbb{F}_{2}[t]/(t^3 + t^2 + 1)$ 
+			\item $\mathbb{F}_{2}[t]/(t^3 + t + 1)$ 
+			\item $\mathbb{F}_{2}[t]/(t^3 + t^2 + t + 1)$. 
+		\end{enumerate}
+	\end{enumerate}
+	Therefore, up to isomorphism, there are precisely 14 options for $M$. 
 
 	
 	\begin{prb}{2005-J-II-4}
@@ -3273,8 +3355,15 @@
 	\end{equation*}
 	This concludes the proof that localization commutes with Tor. 
 	
-	
-	
+	\subsection{Pure Group Theory}
+	\begin{prb}{2011-J-II-5}
+		Let $G$ be an infinite group, and $H \leq G$ a subgroup of finite index. Prove that $G$ has a normal subgroup $K \triangleleft H$ of finite index, with $K \leq H$. 
+	\end{prb}
+	Let $G$ be an infinite group, and $H \leq G$ be a subgroup of finite index $k$. Let $G$ act on the set of left cosets of $H$ by left conjugation; this group action induces a group homomorphism $\varphi: G \to S_{k}$. Let $K \coloneqq \ker{\varphi}$, which is a normal subgroup of $G$. We recall that $K$ is given by, 
+	\begin{equation*}
+		K = \bigcap_{g \in G}gHg^{-1}, 
+	\end{equation*}
+	since any element in $K$ must be contained in the stabilizer of every left coset of $H$. In particular, since $\bigcap_{g \in G}gHg^{-1} \subseteq eHe^{-1} = H$, we have that $K \subseteq H$. On the other hand, by the subgroup criterion, it follows immediately that $K$ is a subgroup of $H$. We also know that since $\varphi$ is a group homomorphism, $[G:K] = |\operatorname{im}{\varphi}|$. Since $\operatorname{im}{\varphi} \subseteq S_{k}$ and $S_{k}$ is a finite group (of order $k!$), the image of $\varphi$ has finite cardinality. Therefore, the index of $K$ in $G$ is finite. Thus the proof concludes. 
 	\newpage 
 	\section{Real Analysis}
 	
@@ -3944,8 +4033,83 @@
 	\begin{prb}{B-16-2}
 		Find a real-valued function $f \in L^1$ such that $\hat{f} \notin L^1$. 
 	\end{prb}
-	\complete 
+	Consider the function $f: \mathbb{R} \to \mathbb{R}$ defined as follows: 
+	\begin{equation*}
+		f(x) = 
+		\begin{cases}
+			x + 1 & x \in [-1,0] \\
+			0 & x\in [-1,0]^{c}. 
+		\end{cases}
+	\end{equation*}
+	First, we will show that $f$ is absolutely integrable. We compute, 
+	\begin{equation*}
+		\int_{\mathbb{R}}f(x)\;dx = \int_{-1}^{0}x + 1\;dx = \left(\frac{1}{2}x^{2} + x\right)\bigg|_{-1}^{0} = -\left(\frac{1}{2} - 1\right) = \frac{1}{2} < \infty. 
+	\end{equation*}
+	Now we compute, 
+	\begin{align*}
+		\begin{split}
+			\hat{f}(\xi) &= \int_{\mathbb{R}}f(x)e^{-2\pi i x \xi}\;dx \\
+			&= \int_{-1}^{0}xe^{-2\pi i x \xi}\;dx + \int_{-1}^{0}e^{-2\pi i x \xi}\;dx \\
+			&= \frac{1 + e^{2\pi i \xi}(-1 + 2\pi i \xi)}{4\pi^2 |\xi|^2} + \frac{2\pi i \xi - 2\pi i \xi e^{2\pi i \xi}}{4\pi^2 |\xi|^2} \\
+			&= \frac{1 -e^{2\pi i \xi} + 2\pi i \xi}{4\pi^2|\xi|^2}
+		\end{split}
+	\end{align*}
+	In particular, one has that 
+	\begin{equation*}
+		|\hat{f}(\xi)| \geq \frac{2\pi |\xi| - 2}{4\pi^2|\xi|^{2}} = \frac{1}{2\pi  |\xi|} - \frac{1}{2\pi^2|\xi|^{2}}. 
+	\end{equation*}
+	But neither of the terms on the right side are integrable over $\mathbb{R}$, and thus $\hat{f}$ is not integrable. 
 	
+	\begin{prb}{B-16-3}
+		Show that if $f \in L^1$ and $f$ is everywhere strictly positive, then $|\hat{f}(y)| < \hat{f}(0)$ for $y \neq 0$. 
+	\end{prb}
+	Let $f \in L^1$ and assume that $f$ is everywhere strictly positive. We first compute, 
+	\begin{equation*}
+		\hat{f}(0) = \int_{\mathbb{R}^{n}}f(x)\;dx = \int_{\mathbb{R}^{n}}|f(x)|\;dx \eqqcolon \norm{f}_{L^{1}(\mathbb{R}^{n})} < \infty. 
+	\end{equation*}
+	On the other hand, for any $y \in \mathbb{R}^{n}\setminus \{0\}$, one has that 
+	\begin{align*}
+		\begin{split}
+			|\hat{f}(y)| &= \abs{\int_{\mathbb{R}^{n}}f(x)e^{-2\pi i x y}\;dx} \\
+			&\leq \int_{\mathbb{R}^{n}}|f(x)|\;dx = \norm{f}_{L^{1}(\mathbb{R}^{n})} = \hat{f}(0). 
+		\end{split}
+	\end{align*}
+	This only gives us a weak inequality; we want a stronger bound. Assume to the contrary that there exists some $y \in \mathbb{R}^{n}\setminus \{0\}$ for which we have equality For a complex-valued integrand, equality holds in the integral triangle inequality if and only if the integrand shares a constant directional phase almost everywhere. Since $\hat{f}(0) > 0$, there must exist a constant $\theta \in \mathbb{R}$ such that:
+	\begin{equation*}
+		f(x)e^{-2\pi i x y} = e^{i\theta} |f(x)e^{-2\pi i x y}| = e^{i\theta} f(x) \quad \text{a.e. on } \mathbb{R}^n.
+	\end{equation*}
+	Since $f(x)$ is everywhere strictly positive, we can divide both sides by $f(x)$ to obtain:
+	\begin{equation*}
+		e^{-2\pi i x y} = e^{i\theta} \quad \text{a.e. on } \mathbb{R}^n.
+	\end{equation*}
+	However, for any fixed $y \neq 0$, the continuous function $x \mapsto e^{-2\pi i x y}$ is non-constant on any open set, meaning it cannot equal a constant almost everywhere. This yields a contradiction. Thus, we must actually have $\vert{}\hat{f}(y)\vert{} < \hat{f}(0)$ for all $y \neq 0$.
+	
+	\begin{prb}{B-16-4}
+		If $f$ is integrable, real-valued, and all the partial derivatives $f_j = \partial f/\partial x_j$ are integrable, prove that the Fourier transform of $f_j$ is given by $\hat{f_{j}}(u) = -iu_j\hat{f}(u)$. 
+	\end{prb}
+	Assume $f$ is integrable, real-valued, and all the partial derivatives $f_j = \partial f/\partial x_j$ are integrable. Note that in our work, our notation will be slightly different from what the problem uses, but will conceptually be the same answer (we are using the standard notation for the Fourier transform as given in Folland and on the SBU comprehensive exams). We have, 
+	\begin{align*}
+		\begin{split}
+			\hat{f_{j}}(\xi) &= \int_{\mathbb{R}^{n}}\frac{\partial f}{\partial x_{j}}e^{-2\pi i x \xi}\;dx 
+		\end{split}
+	\end{align*}
+	We start by assuming that $f \in C_{0}(\mathbb{R}^{n})$. Then in this case, for each $j = 1,\ldots, n$, one has that 
+	\begin{equation*}
+		\wh{\partial_{j}f}(\xi) = \int_{\mathbb{R}^{n}}\partial_{j}f(x)e^{-2\pi i x \cdot \xi}\;dx = f(x)e^{-2\pi i x \cdot \xi} + 2\pi i \xi_{j} \cdot \int_{\mathbb{R}^{n}} f(x)e^{-2\pi i x \cdot \xi}\;dx = 2\pi i \xi_{j} \cdot \hat{f}(\xi). 
+	\end{equation*}
+	Now we assume that $f$ is some integrable function whose first-order partial derivatives exist and are integrable. Since $C_{c}^{\infty}(\mathbb{R}^{n}) \subset L^1(\mathbb{R}^{n})$ is dense, let $\{\varphi_{k}\}_{k = 1}^{\infty}$ be a sequence of test functions that converges to $f$ under the $L^1$ norm; in particular, for each $j = 1, \ldots,n$, one must have $\partial_{j}\varphi_{k} \to f_{j}$ under the $L^1$-norm. But we also know that for any $g \in L^1$, $\norm{\hat{g}}_{L^\infty} \leq \norm{g}_{L^1}$. Thus in fact, $\partial_{j}\varphi_{k} \to f_{j}$ uniformly. This means that 
+	\begin{equation*}
+		\wh{\partial_{j}\varphi_{k}}(\xi) = 2\pi i \xi_{j} \cdot \hat{\varphi_{k}}(\xi) \iff \int_{\mathbb{R}^{n}}\partial_{j}\varphi_{k}(x)e^{-2\pi i x \xi}\;dx = 2\pi i \xi_{j}  \cdot \int_{\mathbb{R}^{n}}\varphi_{k}(x)e^{-2\pi i x \xi}\;dx \xrightarrow{k \to \infty} \wh{\partial_{j}f}(\xi) = 2\pi i \xi_{j} \cdot \wh{f}(\xi), 
+	\end{equation*}
+	where by uniform convergence, the limit can pass inside the integral. Thus the proof concludes. 
+	
+	\begin{prb}{B-16-7}
+		If $f$ is real-valued and continuously differentiable on $\mathbb{R}$, prove that 
+		\begin{equation*}
+			\left(\int |f|^{2}\;dx\right)^{2} \leq 4\left(\int |xf(x)|^2\;dx\right)\left(\int |f'|^2\;dx\right). 
+		\end{equation*}
+	\end{prb}
+	\complete 
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
 		Suppose $\mu$ is a finite positive measure of compact support and 
