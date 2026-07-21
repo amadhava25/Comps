@@ -1027,6 +1027,52 @@
 	
 	Now we will show that $\ti{M}$ is orientable. Let $\hat{p} = (p, \mathcal{O}_{p})$ be a point in $\ti{M}$. By definition, $\mathcal{O}_{p}$ is an orientation of $T_p M$, so that we can give $T_{\hat{p}}\ti{M}$ the unique orientation $\hat{\mathcal{O}}_{\hat{p}}$ such that $d\hat{\pi}_{\hat{p}}: T_{\hat{p}}\ti{M} \to T_p M$is orientation-preserving. This defines a pointwise orientation on $\ti{M}$. On each basis open subset $\hat{U}_{\mathcal{O}}$, the orientation $\hat{\mathcal{O}}$ agrees with the pullback orientation induced from $(U, \mathcal{O})$ by $\hat{\pi}$, so it is continuous. Thus, we have shown that $M$ has a 2-fold cover $\ti{M}$ which is an orientable smooth manifold. Now note that $|\pi_0(\ti{M})|$ is equivalent to the number of connected components of $\ti{M}$. If $M$ is not orientable, then we claim that $\ti{M}$ is connected. If $\ti{M}$ were not connected, a connected component would map diffeomorphically onto $M$ and thus choose a global orientation on $M$. Therefore, since $\ti{M}$ is connected, we conclude that $\pi_0(\ti{M})$ is trivial. 
 	
+	\begin{prb}{2022-J-II-5}
+		Let $X \subset \mathbb{R}^{3}$ be the subspace consisting of the unit sphere $S^2$ and 5 parallel lines passing through the sphere (each intersecting the sphere at two points). Compute the fundamental group of $X$. 
+	\end{prb}
+	(Intuitive): Let $X$ subset $\mathbb{R}^{3}$ be the subspace consisting of the unit sphere $S^2$ and 5 parallel lines passing through the sphere (each intersecting the sphere at two points). The unbounded components of these lines deformation retract onto $S^2$ so that $X$ is homotopy equivalent to the space consisting of $S^2$ and five chords on $S^2$. We can homotope each of the intersection points to obtain the space that is the wedge sum of $S^2$ with $5$ loops; i.e., $X$ is homotopy equivalent to $S^{2} \vee S^1 \vee S^1 \vee S^1 \dotsm \vee S^1$. This means that 
+	\begin{equation*}
+		\pi_1(X) \cong \pi_{1}(S^{2}) \ast \underbrace{\pi_{1}(S^1) \ast \dotsm \ast \pi_{1}(S^1)}_{5 \text{ times}} \cong 0 \ast F_5 \cong F_5, 
+	\end{equation*}
+	where $F_5$ is the free group on 5 generators. 
+	
+	(Rigorous): Let $L_1, \dots, L_5 \subset \mathbb{R}^3$ be 5 distinct parallel lines intersecting $S^2$ at pairs of points $\{p_i, q_i\}$ for $i = 1, \dots, 5$, and let $X = S^2 \cup \left(\bigcup_{i=1}^5 L_i\right) \subset \mathbb{R}^3$.
+	
+	Each line $L_i$ is partitioned by $\{p_i, q_i\}$ into two unbounded rays $R_{i,1}, R_{i,2}$ and one bounded closed interval (chord) $I_i \cong [0, 1]$. Define $Y = S^2 \cup \left(\bigcup_{i=1}^5 I_i\right)$. Each ray $R_{i,j}$ is homeomorphic to $[0, \infty)$ anchored at $S^2$, so contracting each ray along its length to its endpoint defines a global deformation retraction of $X$ onto $Y$. Thus, the inclusion map $Y \hookrightarrow X$ is a homotopy equivalence, so $X \simeq Y$.
+	
+	Equip $S^2$ with its standard CW-structure. Attaching the 1-cells $I_i$ along their boundaries $\partial I_i = \{p_i, q_i\}$ yields a finite CW-complex structure on $Y$. Let $A = \bigcup_{i=1}^5 I_i$. Since each chord $I_i$ is a contractible 1-cell subcomplex, the pair $(Y, A)$ is a good pair (in the sense that $A$ is a closed subcomplex of the CW-complex $Y$). By the quotient theorem for good pairs with contractible components, the natural quotient map
+	
+	$$q: Y \longrightarrow Y / A$$
+	
+	is a homotopy equivalence, so $Y \simeq Y / A$.
+	
+	The quotient space $Y / A$ collapses each chord $I_i$ to a point, identifying the endpoints $p_i \sim q_i$ on $S^2$ for each $i = 1, \dots, 5$. Identifying $n$ pairs of distinct points on $S^2$ is homotopy equivalent to wedging $n$ copies of $S^1$ onto $S^2$. Therefore,
+	
+	$$Y / A = S^2 / \{p_1 \sim q_1, \dots, p_5 \sim q_5\} \ \simeq \ S^2 \vee \bigvee_{i=1}^5 S^1$$
+	
+	Since homotopy equivalences preserve fundamental groups, we have
+	
+	$$\pi_1(X) \cong \pi_1(Y) \cong \pi_1(Y / A) \cong \pi_1\left(S^2 \vee \bigvee_{i=1}^5 S^1\right)$$
+	
+	Thus, we conclude that
+	
+	$$\pi_1(X) \cong \pi_1(S^2) * \underbrace{\pi_1(S^1) * \dots * \pi_1(S^1)}_{5 \text{ times}} \cong \{e\} * \underbrace{\mathbb{Z} * \dots * \mathbb{Z}}_{5 \text{ times}} \cong F_5$$
+	
+	where $F_5$ is the free group on 5 generators.
+	
+	\begin{prb}{2022-J-II-5 (Modified)}
+		Let $X \subset \mathbb{R}^{3}$ be the subspace consisting of the 2-torus $T$ and a line passing through $T$ (intersecting the torus at $n > 1$ points). Compute the fundamental group of $X$. 
+	\end{prb}
+	There are three possible cases: $n = 2, 3$, or $4$ as indicated in Figure \ref{fig:2022JII5}.
+	\begin{figure}[h!]
+		\centering 
+		\includegraphics[scale =0.4]{../Graphics/2022JII5.jpg}
+		\caption{Top view of $T$ with intersecting lines. From bottom to top: case 1 to case 3.}
+		\label{fig:2022JII5}
+	\end{figure}
+	\complete 
+	
+	
 	\begin{prb}{2012-A-II-3}
 		Prove that every smooth, connected manifold whose fundamental group has finite, odd order is an orientable manifold. 
 	\end{prb}
@@ -4963,6 +5009,32 @@
 		Thus, we conclude that $(1/n^2)S_{n^{2}} \to 0$ a.e. 
 	\end{enumerate}
 	
+	\begin{prb}{2020-A-I-3}
+		If $E \subset \mathbb{R}$ has Lebesgue measure zero, show that $E^2 = \{x^2: x \in E\}$ also has measure zero. 
+	\end{prb}
+	Let $E \subset \mathbb{R}$ be a subset of zero Lebesgue measure. We begin with a quick lemma. 
+	\begin{lemma}[Lipschitz Maps Preserve Null Sets]
+		Let $f: \mathbb{R} \to \mathbb{R}$ be Lipschitz continuous with Lipschitz constant $m$. Then if $E \subset R$ is a subset of Lebesgue measure zero, then $f(E)$ has measure zero. 
+ 	\end{lemma}
+ 	\begin{proof}
+ 		Let $f: \mathbb{R} \to \mathbb{R}$ be Lipschitz continuous with Lipschitz constant $m$. Since $E$ has Lebesgue measure zero, for every $\epsilon > 0$, there exists a cover $\{I_{k}\}_{k = 1}^{\infty}$ of $E$ such that $\sum_{1}^{\infty}|I_{k}| < \epsilon/m$. Then it follows that $\{f(I_{k})\}_{k =1}^{\infty}$ is a cover of $f(E)$ since 
+ 		\begin{equation*}
+ 			f(E) \subseteq f\left(\bigcup_{k = 1}^{\infty}I_{k}\right) = \bigcup_{k = 1}^{\infty}f(I_{k}). 
+ 		\end{equation*}
+ 		For each $k$, and for each $x, y \in I_{k}$, one has that $|f(x) - f(y)| \leq m |x - y| = m|I_{k}|$, so that $\operatorname{diam}(f(I_{k})) \leq m \cdot |I_{k}|$. Let $J_{k} = [\inf f(I_{k}), \sup f(I_{k})]$ be an interval covering $f(I_{k})$; by the previous line, $|J_{k}| \leq m|I_{k}|$. This means that 
+ 		\begin{equation*}
+ 			\mu(f(E)) \leq \sum_{1}^{\infty}|J_k| \leq m \cdot \sum_{1}^{\infty}|I_{k}| < \epsilon. 
+ 		\end{equation*}
+ 		Thus taking the limit $\epsilon \to 0$, $\mu(f(E)) = 0$. 
+ 	\end{proof}
+ 	Now let $E \subseteq \mathbb{R}$ be an arbitrary subset of Lebesgue measure, and let us write 
+ 	\begin{equation*}
+ 		E = \bigcup_{m = 1}^{\infty}E_{m}, 
+ 	\end{equation*}	
+ 	where for each $m \geq 1$, $E_{m} = E \cap [-m,m]$. Since $E$ has measure zero and $E_{m} \subseteq E$, each $E_{m}$ has Lebesgue measure zero. For each $m \geq 1$, and for each $x, y\in [-m,m]$, $|f(x) - f(y)| = |x - y||x + y| \leq 2m|x -y|$ so that $\operatorname{diam}{f([-m,m])} \leq 2m\cdot |[-m,m]|$. So since $f$ is $2m$-Lischitz on $[-m,m]$, and $E_{m} \subset [-m,m]$ and each $E_{m}$ is a null set, by the lemma, $f(E_m)$ is a null set. Thus by countable subadditivity, one has that 
+ 	\begin{equation*}
+ 		\mu(E^2) = \mu(f(E)) \leq \sum_{m = 1}^{\infty}\mu(f(E_{m})) = 0. 
+ 	\end{equation*}
 	\begin{prb}{1997-J-II-6}
 		Let $(X, \mu)$ be a measure space with $\mu(X) < \infty$, and let $\{\varphi_{j}\}_{j =1}^{\infty}$ be an orthonormal basis for $L^2(X)$. Show that $\{\varphi_{j}(x)\varphi_{k}(y)\}$ is an orthonormal basis for $L^2(X \times X)$. 
 	\end{prb}
@@ -6628,6 +6700,7 @@
 		\begin{equation*}
 			\text{Fields} \subsetneq \substack{\displaystyle \text{Euclidean} \\ \displaystyle \text{Domains}} \subsetneq \text{PID} \subsetneq \text{UFD} \subsetneq \substack{\displaystyle \text{Integral} \\ \displaystyle \text{Domains}}
 		\end{equation*}
+		\item Let $V$ be a vector space over a field $K$, and let $A: V \to V$ be an endomorphism. Then $A$ is diagonalizable if and only the minimal polynomial of $A$, $m_{A}(t)$ splits into distinct linear factors over the field. 
 	\end{itemize}
 	
 	\subsubsection{Geometry/Topology}
