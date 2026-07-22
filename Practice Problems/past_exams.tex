@@ -1070,7 +1070,20 @@
 		\caption{Top view of $T$ with intersecting lines. From bottom to top: case 1 to case 3.}
 		\label{fig:2022JII5}
 	\end{figure}
-	\complete 
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item ($n = 2$): Let $L \subset \mathbb{R}^{3}$ denote the line that passes through $T$ at exactly 2 points $p$ and $q$; set $X = T \cup L$. We note that $L$ has three components: (1) two unbounded rays $R_1$ and $R_2$ that are each homeomorphic to $[0,\infty)$, and (2) one closed bounded interval $I_1 \simeq [0,1]$; set $Y = T \cup I_1$. We note that each ray deformation retracts onto its endpoints so that $X \simeq Y$. Now assign $T$ its standard CW structure (composed of one 0-cell, two 1-cells, and one 2-cell), and attach the 1-cell $I_1$ to its boundary $\partial I_1 = \{p, q\}$. This gives $Y$ a finite CW complex structure. Since $I_1$ is a contractible 1-cell subcomplex, the pair $(Y, I_1)$ is a good pair in the sense that $I_1$ is a closed subcomplex of the CW-complex $Y$. Therefore, one has that $Y\simeq Y/I_1$. The quotient space $Y/I_1$ collapses $I_1$ to a point, identifying the endpoints $p \sim q$ on $T$. Since identifying a pair on $T$ is homotopy equivalent to wedging a copy of $S^1$ onto $S^2$, one has that $Y \simeq T \vee S^1$. Therefore, we conclude that 
+		\begin{equation*}
+			\pi_1(X) \cong \pi_1(Y) \cong \pi_{1}(T \vee S^1) \cong \pi_1(T) \ast \pi_1(S^1) \cong (\mathbb{Z} \times \mathbb{Z}) \ast \mathbb{Z} = \braket{a, b, c\mid aba^{-1}b^{-1} = 1}. 
+		\end{equation*}
+		\item ($n = 2$): Let $L \subset \mathbb{R}^3$ denote the line that passes through $T$ at exactly 3 points $p, q$, and $r$; set $X = T \cup L$. We note that $L$ has four components: (1) two unbounded rays $R_1, R_2$, each homeomorphic to $[0,\infty)$, and (2) two closed bounded intervals $I_1$ and $I_2$, each homeomorphic to $[0,1]$. Set $Y = T \cup I_1 \cup I_2$. We note that the unbounded rays $R_1$ and $R_2$ deformation retract onto their endpoints so that $X \simeq Y$. Set $A = I_1 \cup I_2$. Give $T$ its standard CW structure (i.e., one 0-cell, two 1-cells, and one 2-cell), and attach the 2 1-cells $I_1, I_2$ to their respective boundaries ($\{p, q\}$ and $\{q, r\}$). This gives $Y$ a finite CW complex structure. Since $A$ is a contractible 1-cell subcomplex, $(Y, A)$ forms a good pair so that $Y \simeq Y/A$. The quotient space $Y/A$ collapses each cord into a single point, thus identifying the endpoints $p \sim q \sim r$ on $T$. This is homotopy equivalent to wedging two copies of $S^1$ onto $T$; i.e., $Y \simeq T \vee S^1 \vee S^1$. Therefore, we conclude that 
+		\begin{equation*}
+			\pi_1(T) \cong (\mathbb{Z} \times \mathbb{Z}) \ast F_2 \cong \braket{a, b, c, d \mid aba^{-1}b^{-1} = 1}. 
+		\end{equation*}
+		\item ($n = 4$) Generalizing the two arguments from above, one concludes that 
+		\begin{equation*}
+			\pi_1(X) \cong (\mathbb{Z} \times \mathbb{Z}) \ast F_{3} \cong \braket{a, b, c, d, f \mid aba^{-1}b^{-1} = 1}. 
+		\end{equation*}
+	\end{enumerate}
 	
 	
 	\begin{prb}{2012-A-II-3}
@@ -1102,11 +1115,62 @@
 	
 	($\Longrightarrow$) Now assume that $p$ is a proper map. Then since for each $p \in M$, $\{p\}$ is compact, $p^{-1}(\{q\})$ is discrete (since $q$ has an evenly covered neighborhood) and is compact. Thus since $\ti{M}$ is Hausdorff, $p^{-1}(q)$ is finite. Since this is true for every $q \in M$, $p$ is a finite-sheeted covering space. Now since $M$ admits a universal covering space, $\pi_{1}(M) \cong \Gamma$, where $\Gamma$ is the group of deck transformations. In particular, since the cardinality of the group of deck transformations is equal to the number of sheets, $|\pi_1(M)| = |p^{-1}(q)| < \infty$. Thus the proof concludes.
 	
+	\begin{prb}{2010-A-I-3}
+		Let $X$ be the topological subspace of $\mathbb{R}^3$ consisting of the unit sphere $S^2$ and $5$ parallel lines passing through the sphere (each intersecting $S^2$ at 2 points.) Compute $\pi_1(X)$. 
+	\end{prb}
+	Let $L_1, \dots, L_5 \subset \mathbb{R}^3$ be 5 distinct parallel lines intersecting $S^2$ at pairs of points $\{p_i, q_i\}$ for $i = 1, \dots, 5$, and let $X = S^2 \cup \left(\bigcup_{i=1}^5 L_i\right) \subset \mathbb{R}^3$.
+	
+	Each line $L_i$ is partitioned by $\{p_i, q_i\}$ into two unbounded rays $R_{i,1}, R_{i,2}$ and one bounded closed interval (chord) $I_i \cong [0, 1]$. Define $Y = S^2 \cup \left(\bigcup_{i=1}^5 I_i\right)$. Each ray $R_{i,j}$ is homeomorphic to $[0, \infty)$ anchored at $S^2$, so contracting each ray along its length to its endpoint defines a global deformation retraction of $X$ onto $Y$. Thus, the inclusion map $Y \hookrightarrow X$ is a homotopy equivalence, so $X \simeq Y$.
+	
+	Equip $S^2$ with its standard CW-structure. Attaching the 1-cells $I_i$ along their boundaries $\partial I_i = \{p_i, q_i\}$ yields a finite CW-complex structure on $Y$. Let $A = \bigcup_{i=1}^5 I_i$. Since each chord $I_i$ is a contractible 1-cell subcomplex, the pair $(Y, A)$ is a good pair (in the sense that $A$ is a closed subcomplex of the CW-complex $Y$). By the quotient theorem for good pairs with contractible components, the natural quotient map
+	
+	$$q: Y \longrightarrow Y / A$$
+	
+	is a homotopy equivalence, so $Y \simeq Y / A$.
+	
+	The quotient space $Y / A$ collapses each chord $I_i$ to a point, identifying the endpoints $p_i \sim q_i$ on $S^2$ for each $i = 1, \dots, 5$. Identifying $n$ pairs of distinct points on $S^2$ is homotopy equivalent to wedging $n$ copies of $S^1$ onto $S^2$. Therefore,
+	
+	$$Y / A = S^2 / \{p_1 \sim q_1, \dots, p_5 \sim q_5\} \ \simeq \ S^2 \vee \bigvee_{i=1}^5 S^1$$
+	
+	Since homotopy equivalences preserve fundamental groups, we have
+	
+	$$\pi_1(X) \cong \pi_1(Y) \cong \pi_1(Y / A) \cong \pi_1\left(S^2 \vee \bigvee_{i=1}^5 S^1\right)$$
+	
+	Thus, we conclude that
+	
+	$$\pi_1(X) \cong \pi_1(S^2) * \underbrace{\pi_1(S^1) * \dots * \pi_1(S^1)}_{5 \text{ times}} \cong \{e\} * \underbrace{\mathbb{Z} * \dots * \mathbb{Z}}_{5 \text{ times}} \cong F_5$$
+	
 	\begin{prb}{2009-A-I-4}
 		Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. If $\pi_1(M)$ is a simple group, prove that $M$ is an orientable manifold. 
 	\end{prb}
 	Let $M$ be a smooth, connected manifold whose fundamental group contains at least three distinct elements. Further assume that $\pi_1(M)$ is a simple group. Let $\hat{M}$ be the orientation cover of $M$, and let $\hat{p}: \hat{M} \to M$ denote the covering map; $\hat{p}_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ must be an injective map. Assume to the contrary that $M$ is non-orientable. Then since $\hat{p}$ is a 2-sheeted covering map, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M, p(x_0))$. Since any subgroup of index 2 is normal, $p_\ast(\pi_1(\hat{M}, x_0))$ is a normal subgroup of $\pi_1(M, p(x_0))$. Since this subgroup has index 2, it cannot be the entire group. On the other hand, it cannot be the trivial subgroup either (the index of the trivial subgroup is precisely $|\pi_1(M, p(x_0))| \geq 3$). Therefore, we have shown that $\pi_1(M, x_0)$ has a proper nontrivial normal subgroup, which contradicts our hypothesis that it is a simple group. Thus by contradiction, $M$ must be an orientable manifold. 
 	
+	\begin{prb}{2006-A-II-6}
+		Let $X$ be the topological subspace of $\mathbb{R}^3$ consisting of the unit sphere $S^2$ and $5$ parallel lines passing through the sphere (each intersecting $S^2$ at 2 points.) Compute $\pi_1(X)$. 
+	\end{prb}
+	Let $L_1, \dots, L_5 \subset \mathbb{R}^3$ be 5 distinct parallel lines intersecting $S^2$ at pairs of points $\{p_i, q_i\}$ for $i = 1, \dots, 5$, and let $X = S^2 \cup \left(\bigcup_{i=1}^5 L_i\right) \subset \mathbb{R}^3$.
+	
+	Each line $L_i$ is partitioned by $\{p_i, q_i\}$ into two unbounded rays $R_{i,1}, R_{i,2}$ and one bounded closed interval (chord) $I_i \cong [0, 1]$. Define $Y = S^2 \cup \left(\bigcup_{i=1}^5 I_i\right)$. Each ray $R_{i,j}$ is homeomorphic to $[0, \infty)$ anchored at $S^2$, so contracting each ray along its length to its endpoint defines a global deformation retraction of $X$ onto $Y$. Thus, the inclusion map $Y \hookrightarrow X$ is a homotopy equivalence, so $X \simeq Y$.
+	
+	Equip $S^2$ with its standard CW-structure. Attaching the 1-cells $I_i$ along their boundaries $\partial I_i = \{p_i, q_i\}$ yields a finite CW-complex structure on $Y$. Let $A = \bigcup_{i=1}^5 I_i$. Since each chord $I_i$ is a contractible 1-cell subcomplex, the pair $(Y, A)$ is a good pair (in the sense that $A$ is a closed subcomplex of the CW-complex $Y$). By the quotient theorem for good pairs with contractible components, the natural quotient map
+	
+	$$q: Y \longrightarrow Y / A$$
+	
+	is a homotopy equivalence, so $Y \simeq Y / A$.
+	
+	The quotient space $Y / A$ collapses each chord $I_i$ to a point, identifying the endpoints $p_i \sim q_i$ on $S^2$ for each $i = 1, \dots, 5$. Identifying $n$ pairs of distinct points on $S^2$ is homotopy equivalent to wedging $n$ copies of $S^1$ onto $S^2$. Therefore,
+	
+	$$Y / A = S^2 / \{p_1 \sim q_1, \dots, p_5 \sim q_5\} \ \simeq \ S^2 \vee \bigvee_{i=1}^5 S^1$$
+	
+	Since homotopy equivalences preserve fundamental groups, we have
+	
+	$$\pi_1(X) \cong \pi_1(Y) \cong \pi_1(Y / A) \cong \pi_1\left(S^2 \vee \bigvee_{i=1}^5 S^1\right)$$
+	
+	Thus, we conclude that
+	
+	$$\pi_1(X) \cong \pi_1(S^2) * \underbrace{\pi_1(S^1) * \dots * \pi_1(S^1)}_{5 \text{ times}} \cong \{e\} * \underbrace{\mathbb{Z} * \dots * \mathbb{Z}}_{5 \text{ times}} \cong F_5.$$
+	
+	where $F_5$ is the free group on 5 generators.
 	\begin{prb}{2003-J-II-5}
 		Is the unit sphere $\mathbb{S}^{3}$ diffeomorphic to the product of two other smooth manifolds of dimension $> 0$? 
 	\end{prb}
@@ -1208,6 +1272,26 @@
 		\pi_1(X, x_0) \cong \pi_1(U,x_0) \ast \pi_1(V,x_0) \cong \mathbb{Z} \ast \mathbb{Z}. 
 	\end{equation*}
 	
+	\begin{prb}{R-DGT-3}
+		Compute the fundamental group of the M\"obius strip. 
+	\end{prb}
+	Consider the constructions in Figure \ref{fig:RDGT3}.  
+	\begin{figure}[h!]
+		\centering 
+		\includegraphics[width = \textwidth]{../Graphics/RDTG3_1.jpg}
+		\label{fig:RDGT3}
+	\end{figure}
+	
+	Since the M\"obius strip is homotopy equivalent to $S^1$, and homotopy equivalences, we conclude that $\pi_{1}(M) \cong \pi_1(S^1) \cong \mathbb{Z}$.  
+	
+	\begin{prb}{R-DGT-4}
+		Compute the fundamental group of the 2-torus $T$ using the theory of CW complices. 
+	\end{prb}
+	Give the 2-torus its standard CW structure (1 0-cell, two 1-cells, and 1 2-cell). The fundamental group of the 1-skeleton (the wire frame) is the free group on two generators $\braket{a,b}$. When we attach the 2-cell along its boundary, the boundary path of the 2-cell traces the product of these edges, defining the attaching map $\partial e^2 = aba^{-1}b^{-1}$. Thus since adding a 2-cell introduces a single relation to the fundamental group of the 1-skeleton, one has that the fundamental group of the torus is 
+	\begin{equation*}
+		\pi_1(T) \cong \braket{a,b \mid aba^{-1}b^{-1} = 1} \cong \mathbb{Z} \times \mathbb{Z}, 
+	\end{equation*}
+	exactly as we found above. 
 	
 	\newpage 
 	\subsection{Vector Fields}
@@ -3757,11 +3841,30 @@
 		|(f \ast g)(x + h) - (f \ast g)(x)| \leq \norm{\tau_hf - f}_{L^p}\norm{g}_{L^q} \xrightarrow{h \to 0} 0, 
 	\end{equation*}
 	by continuity of the translation operator. Thus it follows that $f \ast g$ is (uniformly) continuous on $\mathbb{R}$. 
+
 	
 	\begin{prb}{2023-J-I-1}
 		Give (with proof) an example of a Banach space $X$ and a norm closed set $E \subset X$ that is not weakly closed. 
 	\end{prb}
-	Let $X = L^{2}(\mathbb{R}^{n})$, and let $E = \{f_{j}\}_{j = 1}^{\infty}$ be an infinite orthonormal set in $X$. Since the ``distance'' between any two distinct elements is at least 1, it follows (vacuously) that any convergence sequence converges in $X$. On the other hand, for any $y \in X$, the sequence $a_{n} = \braket{y, f_{n}}$ is square summable , so that $a_{n} \to 0$. This implies $f_{n}$ converges weakly to zero, which is not an orthonormal element. Thus by contradiction, $E$ cannot be weakly closed. 
+	Let $X = L^{2}(\mathbb{R}^{n})$, and let $E = \{f_{j}\}_{j = 1}^{\infty}$ be an infinite orthonormal set in $X$. Since the ``distance'' between any two distinct elements is at least 1, it follows (vacuously) that any convergence sequence converges in $X$. On the other hand, for any $y \in X$, the sequence $a_{n} = \braket{y, f_{n}}$ is square summable , so that $a_{n} \to 0$. This implies $f_{n}$ converges weakly to zero, which is not an orthonormal element. Thus by contradiction, $E$ cannot be weakly closed.
+	
+	\begin{prb}{2022-J-I-6}
+		Let $f \in L^{1}(\mathbb{R}) \cap L^2(\mathbb{R})$. Let $\hat{f}$ be the Fourier transform of $f$. Suppose $\hat{f} > 0$ almost everywhere. Show that the span of the collection $\{x \mapsto f(x - y)\}_{y \in \mathbb{R}}$ is dense in $L^2(\mathbb{R})$. 
+	\end{prb} 
+	Let $f \in L^1(\mathbb{R}) \cap L^{2}(\mathbb{R})$, and assume that $\hat{f} > 0$ a.e. on $\mathbb{R}$. Let $S = \{x \mapsto f(x - y)\}$. We recall that $L^{2}(\mathbb{R})$, and in a Hilbert space, a nonempty subspace $M$ is dense in the space iff its orthocomplement, $M^{\perp}$ consists of only the zero vector. Thus we wish to show that $S^{\perp}$ is $\{0\}$. Suppose $g \in S^{\perp}$. This means that 
+	\begin{equation*}
+		\int_{\mathbb{R}}g(x)\overline{f(x -y)}\;dx = 0. 
+	\end{equation*}
+	Define $\ti{f}(x) = \overline{f(-x)}$. Then the above result reads: 
+	\begin{equation*}
+		(\ti{f} \ast g)(y) \coloneqq \int_{\mathbb{R}}g(x)\ti{f}(y -x)\;dx = 0. 
+	\end{equation*}
+	Thus taking the Fourier transform of both sides, one has 
+	\begin{equation*}
+		\wh{\ti{f}} \cdot \hat{g} = 0. 
+	\end{equation*}
+	But since $|\wh{\ti{f}}| = |\hat{f}|$, and $|\hat{f}| > 0$ a.e., it follows that $\hat{g} = 0$ a.e. Thus by Plancherel's Theorem, $g = 0$ a.e. Hence, we conclude that $S^{\perp} = \{0\}$ so that $S$ is dense in $L^2(\mathbb{R})$. 
+	
 	
 	\begin{prb}{2021-A-I-3}
 		Characterize all functions $f \in L^2(\mathbb{R}^n)$ such that $f \ast f= f$. Here $\ast$ means convolution. 
@@ -3961,6 +4064,31 @@
 		\norm{\tau_{t}\chi_{E} - \chi_{E}}_{L^1} \leq \norm{\tau_{t}\chi_{E} - \tau_t\varphi}_{L^1} + \norm{\tau_{t}\varphi - \varphi}_{L^1} + \norm{\varphi - \chi_{E}}_{L^1} = \epsilon, 
 	\end{equation*}
 	where the first term on the right side is equal to the last term on the right side by translation invariance of the $L^1$ norm. Thus, we conclude that $\chi_{E}(x - t) \to \chi_{E}(x)$ in $L^1$ as $t \to 0$. 
+	
+	\begin{prb}{2013-A-II-2}
+		Let $S = \{f \in L^1(\mathbb{R}): \int f\;dx = 0\}$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item Show that $S$ is closed in the $L^1$ topology. 
+			\item Show that $S \cap L^2(\mathbb{R})$ is dense in $L^2(\mathbb{R})$. 	
+		\end{enumerate}
+	\end{prb}
+	\vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item Let $\epsilon > 0$. Then since $f_{n} \to f$ under the $L^{1}$-norm, there exists a positive integer $N$ such that for all $n \geq N$, $\norm{f - f_{n}}_{L^{1}(\mathbb{R})} < \epsilon$. Then for all such $n$, 
+		\begin{equation*}
+			0 \leq \abs{\int f\;dx} = \abs{\int f - f_{n}\;dx} \leq \int |f - f_{n}|\;dx = \norm{f - f_{n}}_{L^{1}(\mathbb{R})} < \epsilon, 
+		\end{equation*}
+		where we used the fact that for each $n$, $\int f_{n}\;dx = 0$. Thus taking the limit $\epsilon \to 0$ shows that $\abs{\int f\;dx} = 0$, and therefore, $\int f\;dx = 0$. This means $f \in S$ so that $S$ is closed in the $L^1$ topology. 
+		\item Now we recall that $M \coloneqq S \cap L^2(\mathbb{R})$ is dense in $L^2(\mathbb{R})$ (which is a Hilbert space) if and only if $M^{\perp} = \{0\}$. Suppose $g \in M^{\perp}$, which means that for every $f \in M$, $\int g(x)\overline{f(x)}\;dx = 0$. Let $E$ and $F$ be arbitrary subsets of $\mathbb{R}$ of equal finite measure. Then $f = \frac{1}{\mu(E)}\chi_{E} - \frac{1}{\mu(F)}\chi_{F} \in M$ so that by the hypothesis, 
+		\begin{equation*}
+			0 = \int_{\mathbb{R}}g(x)\overline{f(x)}\;dx = \frac{1}{\mu(E)}\int_{E}g(x)\;dx - \frac{1}{\mu(F)}\int_{F}g(x)\;dx. 
+		\end{equation*}
+		I.e., the average of $g$ over $E$ is equal to the average of $g$ over any other finite measured subset with the same measure. Since we can write 
+		\begin{equation*}
+			\mathbb{R} = \bigcup_{k \in \mathbb{Z}}[k, k + 1), 
+		\end{equation*}
+		where each interval has measure $1$, the average of $g$ over each interval is the same. In particular, this implies that for every measurable set $E \subset \mathbb{R}$ with measure $\mu(E) = r > 0$, one has that the average of $g$ over $E$ is some constant $C$. Thus by the Lebesgue differentiation theorem, one concludes that $g(x) = C$ a.e. Since $g \in L^2(\mathbb{R})$, this constant has to be zero. So since $g = 0$ a.e. on $\mathbb{R}$, we conclude that $M^{\perp} = \{0\}$ so that $M$ is dense in $L^2(\mathbb{R})$. 
+	\end{enumerate}
 	
 	\begin{prb}{2011-A-I-4}
 		Let 
@@ -4258,6 +4386,10 @@
 		\int_{0}^{1}f(x)^2\;dx = 0. 
 	\end{equation*}
 	Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [0,1]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[0,1]$, there exists a nonempty open interval $U$ of $x_0$ in $[0,1]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[0,1]$. 
+	
+	\begin{prb}{2016-J-II-3}
+		
+	\end{prb}
 	
 	\begin{prb}{2014-A-II-5}
 		Suppose $f$ is a continuous function on $[0,1]$ and $\int_0^1f(t)t^n\;dt = 0$ for every $n = 0,1,2\ldots$. Prove that $f$ is the zero function. 
@@ -4858,6 +4990,28 @@
 	\end{equation*} 
 	for all $x \in \mathbb{R}\setminus \{x_1, \ldots, x_n\}$. Thus, one gets $(p')^2 \geq p \cdot p''$ for all of these points. On the other hand, at each $x_k$, $p(x_k) \cdot p''(x_k) = 0$ and $(p'(x_k))^2 \geq 0$ so that the inequality holds trivially. 
 	
+	\begin{prb}{2023-A-II-4}
+		Let $\mu$ be a (positive) Borel probability measure on $[0,1]$ such that for all $t \in [0,1]$, we have $\mu(\{t\}) = 0$. Let $\mu_n$ be a (positive) Borel probability measure on $[0,1]$ for $n = 1, 2, \ldots$. Suppose $\mu_n \to \mu$ in the weak-$\ast$ topology. Let $F(t) = \mu([0,t])$ and $F_n(t) = \mu_n([0,t])$. Prove that $F_n \to F$ uniformly. 
+	\end{prb}
+	Let $\mu$ be a positive Borel probability measure on $[0,1]$ such that for all $t \in [0,1]$, $\mu(\{t\}) = 0$. Also assume that $\mu_n \to \mu$ in the weak-$\ast$ topology on $[0,1]$, where each $\mu_n$ is also a positive Borel measure on $[0,1]$. Define the functions $F_n$ and $F$ as given above. We begin by showing that $F$ must be continuous. Fix an arbitrary $t \in [0,1]$, and let $\{t^{(u)}_{n}\}_{n = 1}^{\infty}$ and $\{t_{n}^{(l)}\}_{n = 1}^{\infty}$ be sequences that converge to $t$ from above and from below, respectively. Then by continuity of the Borel measure, one has that 
+	\begin{enumerate}[itemsep =-2pt,label  =(\arabic{*})]
+		\item $\lim_{t_{n}^{(u)} \searrow t}F(t_n^{(u)}) = \lim_{t_{n}^{(u)}\searrow t}\mu([0,t_{n}]) = \mu([0,t])$. 
+		\item $\lim_{t_{n}^{(l)} \nearrow t}F(t_n^{(l)})  = \lim_{t_{n}^{(l)} \nearrow t}\mu([0,t_n]) = \mu([0,t)) = \mu([0,t]) - \mu(\{t\}) = \mu([0,t])$.
+	\end{enumerate}
+	Therefore, $F$ is continuous (hence, uniformly continuous) on $[0,1]$. Thus, fix some $\epsilon > 0$, and choose a partion $0 = x_0 < x_1 < \dotsm < x_{N} = 1$ of $[0,1]$ so that for each $k = 0, \ldots, N - 1$, $F(x_{k + 1}) - F(x_k) < \epsilon$. Now we will show that $F_{n} \to F$ pointwise on $[0,1]$. As before, we fix an arbitrary $t \in [0,1]$ and some $\epsilon > 0$. By the continuity of the Borel measure, there exists some $\delta > 0$ such that $\mu((t - \delta, t]) < \epsilon$ and $\mu((t, t + \delta]) < \epsilon$. So consider continuous functions $g$ and $h$ such that $g$ is equal to 1 on $[0,t - \delta]$ and decreases to 0 over $[t - \delta, t]$, and $h$ is equal to 1 on $[0,t]$ and decreases to zero on $[t, t + \delta]$. In particular, one has that $g \leq \chi_{[0,n]}(t)$. Thus integrating, one has 
+	\begin{equation*}
+		\int g\;d\mu_n \leq F_{n}(t) \leq \int h\;d\mu_{n}. 
+	\end{equation*}
+	Using weak-$\ast$ convergence, one has that 
+	\begin{equation*}
+		F(t) - \epsilon \leq F(t) - \mu([t- \delta, t]) \leq \int g\;d\mu \leq \liminf_{n \to \infty}F_{n}(t) \leq \limsup_{n \to \infty}F_{n}(t) \leq \int h\;d\mu \leq F(t) + \mu([t, t + \delta]) \leq F(t) + \epsilon. 
+	\end{equation*}
+	Thus taking the limit $\epsilon \to 0$, one has that $F_{n}(t) \to F(t)$ pointwise on $[0,1]$. In particular, one can choose some positive integer $N$ large enough so that for all $k$, $|F_{n}(x_k) - F(x_k)| < \epsilon$. Thus if $x \in [x_k, x_{k + 1}]$, by monotonicity, one has that $|F_{n}(x) - F(x)| \leq 2\epsilon$. This implies that 
+	\begin{equation*}
+		\sup_{x \in [0,1]}|F_{n}(x) - F(x)| = 0, 
+	\end{equation*}
+	so that $F_{n} \to F$ uniformly. 
+	
 	\begin{prb}{2023-J-II-1}
 		Suppose that $f: \mathbb{R} \to \mathbb{R}$ is continuous. Show that $f^{-1}(y) = \{x \in \mathbb{R}: f(x) = y\}$ has Lebesgue measure zero for Lebesgue almost all $y$. 
 	\end{prb}
@@ -4945,6 +5099,30 @@
 		\rho\left(N - \frac{f_{0}^{n}}{\norm{f_{0}^{n}}}\right) = \frac{1}{\rho(f')} \neq 0, 
 	\end{equation*}
 	which is a contradiction! Thus, we conclude that $|\rho(f)| \leq \norm{f}$ for all $f \in C(X)$. \complete 
+	
+	\begin{prb}{2020-A-II-6}
+		Let $g: \mathbb{R} \to \mathbb{R}$ be a strictly decreasing function. \vspace{-0.35cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Prove there is no continuous function $f: \mathbb{R} \to \mathbb{R}$ such that 
+			\begin{equation*}
+				f(f(x)) = g(x), \qquad \text{ for all $x \in \mathbb{R}$}. 
+			\end{equation*}
+			\item Show that there exists a function $f: [-1,1] \to [-1,1]$ with finitely many points of discontinuity such that $$f(f(x)) =-x \qquad \text{ for all $x \in [-1,1]$}.$$
+		\end{enumerate}
+	\end{prb}
+		\vspace{-0.65cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Let $g: \mathbb{R}$ be a strictly decreasing function, and assume to the contrary that there exists a continuous function $f: \mathbb{R} \to \mathbb{R}$ such that $f(f(x)) = g(x)$ for all $x \in \mathbb{R}$. Then $f(f(x))$ must be strictly decreasing as well. Suppose $f$ is strictly decreasing. Then for any $x_{1} < x_{2}$, $f(x_{1}) > f(x_{2}) \implies f(f(x_{1})) < f(f(x_{2}))$ so that $f \circ f$ is strictly increasing. Suppose $f$ is strictly increasing. Then for any $x_{1} < x_{2}$, $f(x_{1}) < f(x_{2})$ so that $f(f(x_{1})) < f(f(x_{2}))$, so that $f$ is again strictly increasing. Hence, we run into a contradiction, which means that such a continuous function $f$ cannot exist. 
+			\item We explicitly construct such a function: 
+			\begin{equation}
+				f(x) = 
+				\begin{cases}
+					x - 0.5, & x \in [-0.5, 0] \cup [0.5,1] \\
+					x + 0.5, & x \in [-1,-0.5] \cup [0,0.5]. 
+				\end{cases}
+			\end{equation}
+			It is easily checked that this function satisfies the desired properties.
+		\end{enumerate}
 	
 	\begin{prb}{2021-J-I-3}
 		If $E \subset \mathbb{R}$ is Lebesgue measurable and $f: \mathbb{R} \to \mathbb{R}$ is Lipschitz, then show that $f(E)$ is also Lebesgue measurable. 
