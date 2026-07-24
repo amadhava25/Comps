@@ -1724,6 +1724,24 @@
 	
 	\subsection{Ring Theory}
 	
+	\begin{prb}{2025-J-I-1}
+		Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. Let 
+		\begin{equation*}
+			p(x) = x^{n} + b_{n-1}x^{n - 1} + \dotsm + b_{0} \in F[x]
+		\end{equation*}
+		be a monic polynomial with coefficients in $R$ admitting a root $a \in F$. Prove that $a \in R$. 
+	\end{prb}
+	Let $R$ be a UFD, and let $F$ denote its quotient field. Let $p(x)$ be the aforementioned monic polynomial in $F[x]$. Furthermore, assume $a = b/c$, with $b, c \in R$, $c \neq 0$, and $\gcd(b, c) = 1$ (the last assumption is well-defined since (1) for any two elements in a UFD, the greatest common divisor is defined, and (2) if $\gcd(b, c) \neq 1$, then we can reduce the quotient repeatedly until this property is satisfied). Then plugging in $a = b/c$ into $p(x)$, one obtains: 
+	\begin{equation*}
+		\frac{b^{n}}{c^{n}} + b_{n-1}\frac{b^{n-1}}{c^{n-1}} + \dotsm + b_{1}\frac{b}{c} + b_{0} = 0, 
+	\end{equation*}
+	which then implies that 
+	\begin{equation*}
+		b^{n} + b_{n-1}b^{n-1}c + \dotsm + b_{1}bc^{n-1} + b_{0}c^{n} = 0 \implies b^{n} = -c(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}),
+	\end{equation*}
+	where $(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}) \in R$. Thus, it follows that $c \mid b^{n}$. Since $\gcd(b, c) = 1$, $\gcd(b^{n}, c) = 1$ since raising $b$ to the $n$th power does not add any new prime divisors. Thus since $c \mid b^{n}$ and $\gcd(b^{n}, c) = 1$, $c = \pm 1$. This implies that $a = \pm b \in R$. Hence, the proof concludes. 
+	
+	
 	\begin{prb}{2024-J-I-4}
 		For each field $K$, prove that the polynomial ring $K[x,y]$ in two variables is not a principal ideal domain. 
 	\end{prb}
@@ -1732,7 +1750,82 @@
 	\begin{prb}{2021-J-II-1}
 		Let $R$ denote the product of countably many copies of the field $\mathbb{F}_{2}$ with two elements. $R$ is a commutative ring in which addition and multiplication are defined coordinatewise. If $P \subset R$ is a prime ideal, then verify that the quotient ring $R/P$ is a field, and find the cardinality of this field. 
 	\end{prb}
-	Let $R$ denote the product of countably many copies of the field $\mathbb{F}_{2}$. Note that for any $x \in \mathbb{F}_{2}$, $x^{2} = x$. Since multiplication is defined pointwise on 
+	Let $R$ denote the product of countably many copies of the field $\mathbb{F}_{2}$. Note that for any $x \in \mathbb{F}_{2}$, $x^{2} = x$. Since multiplication is defined pointwise in $R$, for any $a \in R$, $a^{2} = a$. Thus assume $a + P \in R/P$. Then, one has that 
+	\begin{equation*}
+		(a + P)^{2} = a^{2} + P = a + P \implies a(a - 1) + P = P. 
+	\end{equation*}
+	Thus one has that $a(a - 1) \in P$. Since $P$ is a prime ideal, either $a \in P$ (in which case $a + P = 0 + P$ or $a - 1 \in P$ so that $a + P = 1 + P$). Thus since $R/P$ is an integral domain (because $P$ is prime) that contains only two elements, and $R/P$ inherits the additive and multiplicative properties of a field by virtue of being a quotient ring, we conclude that $R/P$ is a field. Consequently, the cardinality is 2. 
+	
+	\begin{prb}{2020-J-I-5}
+		Let $\mathbb{K}$ be a field, and let $\mathbb{K}[x]$ be the ring of polynomials in $\mathbb{K}$. Let $\mathscr{I} \subsetneq \mathbb{K}[x]$ be a maximal ideal. Show there is some irreducible polynomial $p(x) \in \mathbb{K}[x]$ such that $\mathscr{I} = \{q(x)p(x): q(x) \in \mathbb{K}[x]\}$. 
+	\end{prb}
+	Let $\mathbb{K}[x]$ be a field, and let $\mathbb{K}[x]$ be the ring of polynomials in $\mathbb{K}$. Since $\mathbb{K}$ is a field, it follows that the polynomial ring is a principal ideal domain (PID), so that there exists some $p(x) \in \mathbb{K}[x]$ such that $\mathscr{I} = (p(x)) = \{q(x)p(x): q(x) \in \mathbb{K}[x]\}$. Assume to the contrary that $p(x)$ is reducible over $\mathbb{K}$, and let $p_{1}(x) \dotsm p_{n}(x)$ be a factorization of $p(x)$ into irreducible factors. Up to relabeling of the indices, assume that $p_{1}(x)$ is the lowest-degree nonconstant irreducible divisor of $p(x)$. Since $p_{1}(x)$ is a nonconstant polynomial, $(p_{1}(x))$ is a proper ideal of $\mathbb{K}[x]$. By definition, this means $(p_{1}(x)) \supset \mathscr{I}$. On the other hand, since $p(x) \nmid p_{1}(x)$ (because $\deg{p_{1}(x)} < \deg{p(x)}$) $(p_{1}(x)) \not \subset \mathscr{I}$. This contradicts maximality of $\mathscr{I}$. Thus by contradiction, $p(x)$ must be irreducible. The proof concludes. 
+	
+	\begin{prb}{2019-A-II-6}
+		Let $R$ be a commutative ring with identity. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Let $P$ be a prime ideal of $R$. Suppose $I_{1}$ and $I_{2}$ are two other ideals of $R$. If $I_{1} \cap I_{2} \subset P$, show that either $I_{1} \subset P$ or $I_{2} \subset P$. 
+			\item Suppose that $R$ satisfies the condition that for any decreasing sequence $I_{1} \supset I_{2} \supset I_{3} \supset \dotsm$ of ideals in $R$, there exists an $N$ such that $I_{n}=   I_{N}$ for all $n\geq N$. Show that $R$ has only finitely many maximal ideals. 
+		\end{enumerate}
+	\end{prb}
+	Let $R$ be a commutative ring with identity, $P$ a prime ideal of $R$, and $I_{1,2}$ any two other ideals of $R$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Assume to the contrary that neither $I_{1} \subset P$ nor $I_{2} \subset P$. Then we can find elements $g \in I_{1} \setminus P$ and $h \in I_2 \setminus P$. Since ideals are closed under multiplication by elements in $R$, $gh \in I_{1} \cap I_{2} \subset P$. But since $P$ is a prime ideal, one must have that $g \in P$ or $h \in P$, which is a contradiction! Thus by contradiction, at least one of $I_{1}, I_{2}$ must be entirely contained in $P$. 
+		\item Suppose now that $R$ satisfies the descending chain condition for ideals; i.e., assume that for any decreasing sequence $I_{1} \supset I_{2} \supset I_{3} \supset \dotsm$ of ideals in $R$, there exists an $N$ such that $I_{n}= I_{N}$ for all $n \geq N$. Assume to the contrary that $R$ contains infinitely many distinct maximal ideals $\{M_{j}\}_{j = 1}^{\infty}$. For each $n \in \mathbb{N}$, define the ideal 
+f2		\begin{equation*}
+			I_{n} = \bigcap_{j = 1}^{n}M_{j} \subset R. 
+		\end{equation*}
+		This gives us a decreasing sequence of ideals $\{I_{n}\}_{n = 1}^{\infty}$ in $R$. By the hypothesis on $R$, there exists some $N > 0$ such that for all $n \geq N$, $I_{n} = I_{N}$. In particular, one has that 
+		\begin{equation*}
+			I_{N} = M_{1} \cap M_{2} \cap \dotsm \cap M_{N} = I_{N + 1} \subseteq M_{N + 1}. 
+		\end{equation*}
+		Since every maximal ideal is prime (by definition), using the result of (a) shows that at least one of $M_{1}, M_{2}, \ldots, M_{N}$ is contained in $M_{N + 1}$. But this contradicts our hypothesis that the $\{M_{j}\}_{j = 1}^{\infty}$ were distinct \textit{maximal} ideals. Thus by contradiction, $R$ can only have finitely many distinct maximal ideals. 
+	\end{enumerate}
+	
+	\begin{prb}{2019-J-II-2}
+		Does there exist an integral domain with exactly 2019 prime ideals? 
+	\end{prb}
+	We claim that there does exist an integral domain with exactly 2019 prime ideals. Consider the polynomial ring $\mathbb{Q}[x]$. Since $\mathbb{Q}$ is a field (and hence, an integral domain), one has that $\mathbb{Q}[x]$ is an integral domain; $\mathbb{Q}[x]$ already has at least one prime ideal (namely the zero ideal $(0)$). Pick 2018 irreducible elements from $\mathbb{Q}[x]$; e.g., let $p_{j}(x) = (x - j) \in \mathbb{Q}[x]$ for $j = 1, 2, \ldots, 2018$. Now define 
+	\begin{equation*}
+		R \coloneqq 
+		\brac*{\frac{f(x)}{g(x)} : f(x), g(x)\in \mathbb{Q}[x], p_{j}(x) \nmid g(x) \quad \forall 1 \leq j \leq 2018}. 
+	\end{equation*}
+	It is straightforward to see that $R$ is nonempty (e.g., $R$ contains the constant polynomial $1 \in \mathbb{Q}[x]$). Next, one has that for any $f(x)/g(x), h(x)/k(x) \in R$, 
+	\begin{equation*}
+		\frac{f(x)}{g(x)} - \frac{h(x)}{k(x)} = \frac{f(x)k(x) - h(x)g(x)}{g(x)k(x)} \in R
+	\end{equation*}
+	because $p_{j}(x) \nmid g(x), k(x)$ for any $1 \leq j \leq 2018$ implies $p_{j}(x) \nmid g(x)k(x)$ for any $j$, and the numerator is immediately seen to be in $\mathbb{Q}[x]$. Likewise, we can show that $R$ is closed under multiplication. Hence, $R$ is a subring of $\mathbb{Q}[x]$. In particular, $R$ must be an integral domain as $\mathbb{Q}[x]$ is an integral domain. Consider the ideals $(p_{j}(x))$ for each $j = 1, \ldots, 2018$. Let $f(x)/g(x), h(x)/k(x) \in R$ be arbitrary elements, and assume that for some $j \in \{1, \ldots, 2018\}$, $p_{j}(x) \mid (f(x)h(x))/(g(x)k(x))$. In particular, it follows that $p_{j}(x) \mid f(x)h(x)$. But since $\mathbb{Q}[x]$ is a principal ideal domain (since $\mathbb{Q}$ is a field), it follows that $p_{j}(x)$ divides $f(x)$ or $h(x)$, and thus divides $f(x)/g(x)$ or $h(x)/k(x)$. This shows that $(p_{j}(x))$ is a prime ideal for each $1 \leq j \leq 2018$. This shows that $R$ has at least 2019 prime ideals. Assume to the contrary that there exists a nonzero prime ideal $P$ that is not one of the prime ideals we stated above. Then $P$ contains some nonzero element $f(x)/g(x)$. In particular, $g(x)$ is a unit in $R$, which implies $f(x) \in P$. Factor $f(x)$ into a product of irreducible polynomials, $f(x) = c \cdot q_{1}(x) \cdot \dotsm q_{N}(x)$. Since $P$ is prime, there exists some $q_{i_{0}}(x)$ so that $q_{i_{0}}(x) \in I$. If $q_{i_{0}}(x)$ is not one of the above mentioned irreducible elements, then it follows that $q_{i_{0}}(x)$ is a unit in $R$. But then $P$ contains a unit, and thus must be the whole ring (contradicting our hypothesis that $P$ is proper). Thus $P$ cannot be a prime ideal, and $R$ has exactly 2019 prime ideals.
+	
+	\begin{prb}{2018-A-I-1}
+		For which primes $p \in\mathbb{Z}_{+}$ is $\braket{x^{2} -x + 1, p}$ a prime ideal of $\mathbb{Z}[x]$. 
+	\end{prb}
+	We recall that if $R$ is a commutative ring with identity, $R/I$ is an integral domain if and only if $I$ is a prime ideal in $R$. Thus the problem reduces to finding all such primes $p \geq 2$ for which $\mathbb{Z}[x]/\braket{x^{2} - x + 1, p}$ is an integral domain. We begin by noticing that 
+	\begin{equation*}
+		\mathbb{Z}[x]/\braket{x^{2} - x + 1, p} \cong \mathbb{F}_{p}[x]/\braket{x^{2} - x + 1}, 
+	\end{equation*}
+	where $\mathbb{F}_{p}$ denotes the finite field with $p$ elements. Consequently, $\mathbb{F}_{p}[x]$ is a PID. Since in a PID a nonzero principal ideal is prime if and only if the generator of the ideal is irreducible, our task further reduces to finding those values of prime $p$ such that $p(x) = x^{2} - x + 1$ is irreducible over $\mathbb{F}_{p}$. One notices immediately that $p(x)$ is irreducible over $\mathbb{F}_{2}$ as it has no roots. Now suppose $p > 2$. Consider the polynomial $q(x) = x^{3} + 1 = (x^{2} -x + 1)(x + 1)$. If $p(x)$ has a root, then $q(x)$ must also have a root in $\mathbb{F}_{p}[x]$. Notice that a root of $p(x)$ must therefore satisfy the relation $x^{3} = -1 \pmod{p}$. In particular, since $6$ is the smallest positive exponent of a root of $p(x)$ so that the power yields the identity, every root of $p(x)$ has order 6 in $\mathbb{F}_{p}^{\times}$. But since $\mathbb{F}_{p}^{\times}$ has order $p - 1$, by Lagrange's theorem, one requires $6 \mid (p - 1)$, or $p - 1 = (2k) \cdot 3 = m \cdot 3$ for some $m \in \mathbb{Z}$. Thus $p \equiv 1 \pmod{3}$. Consequently, if $p$ is any prime such that $p \equiv 2 \pmod{3}$, then $p(x)$ is irreducible over $\mathbb{F}_{p}$. Therefore, we conclude that $\braket{x^{2} - x + 1, p}$ is a prime ideal of $\mathbb{Z}[x]$ iff $p$ is a positive prime integer satisfying $p \equiv 2 \pmod{3}$. 
+	
+	\begin{prb}{2016-J-I-6}
+		Prove that the ring $\mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$ is not a UFD. 
+	\end{prb}
+	Let $R \coloneqq \mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$, and let bars denote the classes in $R$. Consider the class $q = \bar{z}^2 - \bar{x}^2\bar{y}$. Then one computes in $R$, 
+	\begin{equation*}
+		\bar{x}q = \bar{x}\bar{z}^2 - \bar{x}^3\bar{y} = \bar{x}\bar{z}^{2} - \bar{y}^{2}\bar{z} = \bar{y}^{2}\bar{z} - \bar{y}^{2}\bar{z} = 0. 
+	\end{equation*}
+	We claim that neither of these classes are zero. The class $\bar{x}$ is nonzero since the point $(1,1,1)$ satisfies both of the modded relations but $x(1,1,1) = 1$. Likewise, $q$ is nonzero since the point $(0,0,1)$ satisfies the modded relations, but $q(0,0,1) = 1$. Thus since $R$ has nonzero zero divisors, it cannot be an integral domain, and hence, surely not a UFD. 
+	
+	\begin{prb}{2015-J-II-1}
+		Prove that ring $\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}$ is not a unique factorization domain. 
+	\end{prb}
+	Let $R \coloneqq \mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}$, and let bars denote the classes in $R$. One has that the class $\bar{y}$ is irreducible. Since in a UFD, ideals are prime iff they are irreducible, $\braket{y}$ is prime. Thus, 
+	\begin{equation*}
+		\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}/\braket{y} \cong \mathbb{Z}[x,y]/\braket{x^{5}} 
+	\end{equation*}
+	must be an integral domain. But this is a contradiction since the two classes $\bar{x}^{4} \cdot \bar{x} = 0$ and neither of these classes are nonzero. 
+	
+	\begin{prb}{2014-J-I-2}
+		$R$ is a ring with $1 \neq 0$ and no zero divisors. Suppose that every descending sequence $I_{1} \supset I_{2} \supset \dotsm$ of left ideals in $R$ is eventually constant: that is, $I_{j} = I_{i}$ whenever $i, j$ are sufficiently large. Prove that $R$ is a division ring. 
+	\end{prb}
 	
 	\subsection{Linear Algebra}
 	
@@ -1936,57 +2029,6 @@
 		|Z(G)| \in \{1, 3, 5, 7, 9,15, 21, 35, 45, 63, 105, 315\} \cap \{0 \bmod{9}\}, 
 	\end{equation*}
 	where the second set follows from the fact that $Z(G)$ contains a subgroup of order 9. Thus we have narrowed down our choices to $|Z(G)| \in \{9, 45, 63 315\}$. If $|Z(G)| = 315$, we are done since $G = Z(G)$. If $|Z(G)| = 63$, then $|G/Z(G)| = |G|/|Z(G)| = 5$ so that $G/Z(G) \cong \mathbb{Z}/5\mathbb{Z}$ is cyclic. But this implies that $G$ is abelian, contradicting the fact that $|Z(G)| \lneq 315$. Likewise, $|Z(G)| \neq 45$, since if not, then $|G/Z(G)| = 7$ so that $G/Z(G) \cong \mathbb{Z}/7\mathbb{Z}$ is cyclic and $G$ is abelian. Suppose now that $|Z(G)| = 9$ so that $|G/Z(G)| = 35$. By Sylow's Theorems, $G/Z(G)$ must contain a normal Sylow 7-subgroup $K$ and a normal Sylow 5-subgroup $N$, and these subgroups intersect trivially (by Lagrange's Theorem). Thus since $K$ contains precisely 6 nonidentity elements of order 7 and $N$ contains precisely $4$ nonidentity elements of order 5, there are $35 - (1 + 6 + 4) = 24$ elements whose order is not $1, 5$, or $7$. By Lagrange's Theorem, this elements must have order 35. Thus since $G/Z(G)$ contains an element of order $|G/Z(G)|$, $G$ must be abelian (so that $|Z(G)| = 315$), which is a contradiction. Thus, we conclude that $G = Z(G)$ so that $G$ is abelian. 
-	
-	
-	\subsection{Ring Theory}
-	\begin{prb}{2025-J-I-1}
-		Let $R$ be a UFD (unique factorization domain). Let $F$ be its quotient field. Let 
-		\begin{equation*}
-			p(x) = x^{n} + b_{n-1}x^{n - 1} + \dotsm + b_{0} \in F[x]
-		\end{equation*}
-		be a monic polynomial with coefficients in $R$ admitting a root $a \in F$. Prove that $a \in R$. 
-	\end{prb}
-	Let $R$ be a UFD, and let $F$ denote its quotient field. Let $p(x)$ be the aforementioned monic polynomial in $F[x]$. Furthermore, assume $a = b/c$, with $b, c \in R$, $c \neq 0$, and $\gcd(b, c) = 1$ (the last assumption is well-defined since (1) for any two elements in a UFD, the greatest common divisor is defined, and (2) if $\gcd(b, c) \neq 1$, then we can reduce the quotient repeatedly until this property is satisfied). Then plugging in $a = b/c$ into $p(x)$, one obtains: 
-	\begin{equation*}
-		\frac{b^{n}}{c^{n}} + b_{n-1}\frac{b^{n-1}}{c^{n-1}} + \dotsm + b_{1}\frac{b}{c} + b_{0} = 0, 
-	\end{equation*}
-	which then implies that 
-	\begin{equation*}
-		b^{n} + b_{n-1}b^{n-1}c + \dotsm + b_{1}bc^{n-1} + b_{0}c^{n} = 0 \implies b^{n} = -c(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}),
-	\end{equation*}
-	where $(b_{n-1}b^{n-1} + b_{n-2}b^{n-2}c^{2} + \dotsm + b_{0}c^{n-1}) \in R$. Thus, it follows that $c \mid b^{n}$. Since $\gcd(b, c) = 1$, $\gcd(b^{n}, c) = 1$ since raising $b$ to the $n$th power does not add any new prime divisors. Thus since $c \mid b^{n}$ and $\gcd(b^{n}, c) = 1$, $c = \pm 1$. This implies that $a = \pm b \in R$. Hence, the proof concludes. 
-	
-	\begin{prb}{2019-J-II-2}
-		Does there exist an integral domain with exactly 2019 prime ideals? 
-	\end{prb}
-	We claim that there does exist an integral domain with exactly 2019 prime ideals. Consider the polynomial ring $\mathbb{Q}[x]$. Since $\mathbb{Q}$ is a field (and hence, an integral domain), one has that $\mathbb{Q}[x]$ is an integral domain; $\mathbb{Q}[x]$ already has at least one prime ideal (namely the zero ideal $(0)$). Pick 2018 irreducible elements from $\mathbb{Q}[x]$; e.g., let $p_{j}(x) = (x - j) \in \mathbb{Q}[x]$ for $j = 1, 2, \ldots, 2018$. Now define 
-	\begin{equation*}
-		R \coloneqq 
-		\brac*{\frac{f(x)}{g(x)} : f(x), g(x)\in \mathbb{Q}[x], p_{j}(x) \nmid g(x) \quad \forall 1 \leq j \leq 2018}. 
-	\end{equation*}
-	It is straightforward to see that $R$ is nonempty (e.g., $R$ contains the constant polynomial $1 \in \mathbb{Q}[x]$). Next, one has that for any $f(x)/g(x), h(x)/k(x) \in R$, 
-	\begin{equation*}
-		\frac{f(x)}{g(x)} - \frac{h(x)}{k(x)} = \frac{f(x)k(x) - h(x)g(x)}{g(x)k(x)} \in R
-	\end{equation*}
-	because $p_{j}(x) \nmid g(x), k(x)$ for any $1 \leq j \leq 2018$ implies $p_{j}(x) \nmid g(x)k(x)$ for any $j$, and the numerator is immediately seen to be in $\mathbb{Q}[x]$. Likewise, we can show that $R$ is closed under multiplication. Hence, $R$ is a subring of $\mathbb{Q}[x]$. In particular, $R$ must be an integral domain as $\mathbb{Q}[x]$ is an integral domain. Consider the ideals $(p_{j}(x))$ for each $j = 1, \ldots, 2018$. Let $f(x)/g(x), h(x)/k(x) \in R$ be arbitrary elements, and assume that for some $j \in \{1, \ldots, 2018\}$, $p_{j}(x) \mid (f(x)h(x))/(g(x)k(x))$. In particular, it follows that $p_{j}(x) \mid f(x)h(x)$. But since $\mathbb{Q}[x]$ is a principal ideal domain (since $\mathbb{Q}$ is a field), it follows that $p_{j}(x)$ divides $f(x)$ or $h(x)$, and thus divides $f(x)/g(x)$ or $h(x)/k(x)$. This shows that $(p_{j}(x))$ is a prime ideal for each $1 \leq j \leq 2018$. This shows that $R$ has at least 2019 prime ideals. Assume to the contrary that there exists a nonzero prime ideal $P$ that is not one of the prime ideals we stated above. Then $P$ contains some nonzero element $f(x)/g(x)$. In particular, $g(x)$ is a unit in $R$, which implies $f(x) \in P$. Factor $f(x)$ into a product of irreducible polynomials, $f(x) = c \cdot q_{1}(x) \cdot \dotsm q_{N}(x)$. Since $P$ is prime, there exists some $q_{i_{0}}(x)$ so that $q_{i_{0}}(x) \in I$. If $q_{i_{0}}(x)$ is not one of the above mentioned irreducible elements, then it follows that $q_{i_{0}}(x)$ is a unit in $R$. But then $P$ contains a unit, and thus must be the whole ring (contradicting our hypothesis that $P$ is proper). Thus $P$ cannot be a prime ideal, and $R$ has exactly 2019 prime ideals. 
-	
-	\begin{prb}{2016-J-I-6}
-		Prove that the ring $\mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$ is not a UFD. 
-	\end{prb}
-	Let $R \coloneqq \mathbb{C}[x,y,z]/\braket{y^{2} - xz, x^{3} - yz}$, and let bars denote the classes in $R$. Consider the class $q = \bar{z}^2 - \bar{x}^2\bar{y}$. Then one computes in $R$, 
-	\begin{equation*}
-		\bar{x}q = \bar{x}\bar{z}^2 - \bar{x}^3\bar{y} = \bar{x}\bar{z}^{2} - \bar{y}^{2}\bar{z} = \bar{y}^{2}\bar{z} - \bar{y}^{2}\bar{z} = 0. 
-	\end{equation*}
-	We claim that neither of these classes are zero. The class $\bar{x}$ is nonzero since the point $(1,1,1)$ satisfies both of the modded relations but $x(1,1,1) = 1$. Likewise, $q$ is nonzero since the point $(0,0,1)$ satisfies the modded relations, but $q(0,0,1) = 1$. Thus since $R$ has nonzero zero divisors, it cannot be an integral domain, and hence, surely not a UFD. 
-	
-	\begin{prb}{2015-J-II-1}
-		Prove that ring $\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}$ is not a unique factorization domain. 
-	\end{prb}
-	Let $R \coloneqq \mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}$, and let bars denote the classes in $R$. One has that the class $\bar{y}$ is irreducible. Since in a UFD, ideals are prime iff they are reducible, $\braket{y}$ is prime. Thus, 
-	\begin{equation*}
-		\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}/\braket{y} \cong \mathbb{Z}[x,y]/\braket{x^{5}} 
-	\end{equation*}
-	must be an integral domain. But this is a contradiction since the two classes $\bar{x}^{4} \cdot \bar{x} = 0$ and neither of these classes are nonzero. 
 	
 	
 	
