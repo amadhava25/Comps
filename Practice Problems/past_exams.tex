@@ -1821,11 +1821,42 @@ f2		\begin{equation*}
 	\begin{equation*}
 		\mathbb{Z}[x,y]/\braket{x^{5} - y^{3}}/\braket{y} \cong \mathbb{Z}[x,y]/\braket{x^{5}} 
 	\end{equation*}
-	must be an integral domain. But this is a contradiction since the two classes $\bar{x}^{4} \cdot \bar{x} = 0$ and neither of these classes are nonzero. 
+	must be an integral domain. But this is a contradiction since the two classes $\bar{x}^{4} \cdot \bar{x} = 0$ and neither of these classes are nonzero.
+	
+	\begin{prb}{2014-A-I-4}
+		Prove that the tensor product $\mathbb{C} \otimes_{R} \mathbb{C}$ is not an integral domain. 
+	\end{prb} 
+	We will tackle this problem in two ways. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item (\textsc{Explicit Construction}) Consider the tensors $r = (1 \otimes 1) - (i \otimes i)$ and $s = (1 \otimes 1) + (i \otimes i)$. Then one has that 
+		\begin{align*}
+			\begin{split}
+				rs &= \left[(1 \otimes 1) - (i \otimes i)] \cdot [(1 \otimes 1) + (i \otimes i)\right] \\
+				&= (1 \otimes 1) + (i \otimes i) - (i \otimes i) - (1 \otimes 1) \\
+				&= (0 \otimes 0)= 0. 
+			\end{split}
+		\end{align*}
+		Since neither $r$ nor $s$ are zero tensors, we conclude that $\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C}$ is not an integral domain as it contains zero divisors. 
+		\item (\textsc{Abstract Methodology}) Recall that $\mathbb{C} \cong \mathbb{R}[x]/(x^{2} + 1)$. Thus 
+		\begin{equation*}
+			\mathbb{C} \otimes_{\mathbb{R}}\mathbb{C} \cong \mathbb{C} \otimes_{\mathbb{R}}\frac{\mathbb{R}[x]}{(x^{2}  + 1)} \cong \frac{\mathbb{C}[x]}{(x^{2} + 1)} \cong \mathbb{C} \times \mathbb{C}. 
+		\end{equation*}
+		The latter is not an integral domain, as it contains nonzero elements $(1,0)$ and $(0,1)$ such that their product is identically zero. 
+	\end{enumerate}
 	
 	\begin{prb}{2014-J-I-2}
 		$R$ is a ring with $1 \neq 0$ and no zero divisors. Suppose that every descending sequence $I_{1} \supset I_{2} \supset \dotsm$ of left ideals in $R$ is eventually constant: that is, $I_{j} = I_{i}$ whenever $i, j$ are sufficiently large. Prove that $R$ is a division ring. 
 	\end{prb}
+	Let $R$ be a ring with $1 \neq 0$, and no zero divisors. Further assume that $R$ satisfies the descending chain condition for left ideals. Assume to the contrary that $R$ is not a division ring; i.e., assume there exists a nonzero element $a \in R$ such that $a$ has no multiplicative inverses (i.e., is a nonunit). Consider the ideal $Ra$ in $R$. Since $a \in R$, the element $a^2 \in Ra$ such that $Ra^2 \subseteq Ra$. In this way, for each $n \in \mathbb{N}$, define $I_{n}= Ra^{n}$. This gives us a sequence $\{I_{n}\}_{n = 1}^{\infty}$ of decreasing ideals in $R$. By the decreasing chain condition on left ideals in $R$, there exists some $N > 0$ such that for all $n \geq N$, $I_{n} = I_{N}$. In particular, one has that $I_{N} = I_{N + 1} \iff Ra^{N} = Ra^{N + 1}$. This means there exists some $r \in R$ such that $a^{N} = ra^{N + 1} = (ra)a^{N}$. Subtracting, one has $(1 - ra)a^{N} = 0$. Since $R$ has no zero divisors, $a^{N} \neq 0$. Thus, one must have that $1 - ra = 0 \iff ra = 1$; i.e., $a$ must have a left inverse. Now we note that 
+	\begin{equation*}
+		(ar - 1)a = a(ra) - a = a - a = 0. 
+	\end{equation*}
+	And since $a \neq 0$ and $R$ has no zero divisors, one must have $ar = 1$. Thus $r$ is a multiplicative inverse of $a$, which contradicts our hypothesis that $a$ is not a unit. Thus it follows that every nonzero element in $R$ has a multiplicative inverse so that $R$ is a division ring. If $R$ were commutative, then $R$ would be a field. 
+	
+	\begin{prb}{2005-A-II-3}
+		Let $R$ be a unique factorization domain, $d \in R$, $d \neq 0$. Show that there are finitely many distinct principal ideals containing the ideal $(d)$. 
+	\end{prb}
+	Let $R$ be a unique factorization domain (UFD), and fix some $d \in \mathbb{R} \setminus \{0\}$. By definition, if a principal ideal $(c)$ contains the ideal $(d)$, then $c \mid d$ in $R$. Thus, it suffices to show that $d$ has finitely many divisors in $R$. Since $R$ is a UFD, there exists a unique finite collection $\{p_{j}\}_{j = 1}^{n}\subset R$ of irreducible elements of $R$, and a corresponding collection of finite positive integers $\{e_{j}\}_{j = 1}^{n}$ such that $d = u \cdot p_{1}^{e_{1}}p_{2}^{e_{2}}\dotsm p_{n}^{e_{n}}$. But this means that $d$ has only $(e_{1} + 1)(e_{2} + 1)\dotsm(e_{n} + 1)$ distinct divisors. Thus, we conclude that thee are finitely many principal ideals in $R$ that contain the ideal $(d)$. 
 	
 	\subsection{Linear Algebra}
 	
@@ -1927,6 +1958,30 @@ f2		\begin{equation*}
 	\end{align*}
 	Repeating this procedure inductively, one finally obtains $A^{n}B = \lambda^{n}BA^{n}$. But we showed above that $\lambda^{n} = 1$. Thus, one gets $A^{n}B = BA^{n}$, which concludes the proof that $A^{n}$ and $B$ commute.
 	
+	\begin{prb}{2018-J-II-2}
+		Let $L: V \to V$ denote a linear operator defined on the finite dimensional complex inner product space $V$. Suppose $\det(L) \neq 0$ and $L^{\ast} = L^{5}$, where $L^{\ast}$ denotes the adjoint of $L$. Show that $L$ is an isometry of $V$. 
+	\end{prb}
+	Let $L: V \to V$ denote a linear operator defined on the finite dimensional complex inner product space $V$, and further assume that $\det(L) \neq 0$ and that $L^{\ast} = L^{5}$. We begin by observing that 
+	\begin{equation*}
+		L^{\ast}L = L^{5}L = L^{6} = LL^{5} = LL^{\ast}, 
+	\end{equation*}
+	so that $L$ is a normal operator. Every normal operator is unitary diagonalizable; i.e., there exists an unitary operator $P$, and a diagonal operator $D$ such that $L = PDP^{\dagger}$. Moreover, since $L$ is diagonalizable, $L$ has a full set of eigenvalues that can be used to form an orthonormal basis for $V$. Let $v$ be a normalized eigenvector of $L$ and $\lambda$ its eigenvalue. Then one has the following: 
+	\begin{align*}
+		\begin{split}
+			\braket{Lv, Lv} &= \braket{\lambda, v, \overline{\lambda}v} = |\lambda|^{2}. \\
+			\braket{Lv,Lv} &= \braket{v, L^{\ast}Lv} = \braket{v, L^{6}v} \\
+			&= \overline{\lambda}^{6}. 
+		\end{split}
+	\end{align*}
+	Therefore, we obtain $\overline{\lambda}^{6} = |\lambda|^{2}$ whence $|\lambda|^{6} = |\lambda|^{2}$. Since $\det{L}\neq 0$, none of its eigenvalues are zero. Thus one has that $|\lambda| = 1$. This implies that $\overline{\lambda}^{6} = 1$ so that $\overline{\lambda}$ (and hence $\lambda$) is a 6th root of unity. Since the diagonal entries of $D$ are precisely the eigenvalues of $L$, one has that $D^{6} = I$. But then, 
+	\begin{equation*}
+		L^{6} = PD^{6}P^{\dagger} = PP^{\dagger} = I, 
+	\end{equation*}
+	by definition of unitary operators. Therefore, for any $x, y \in V$, 
+	\begin{equation*}
+		\braket{Lx, Ly} = \braket{x, L^{\ast}Ly} = \braket{x, L^{6}y} = \braket{x, y}. 
+	\end{equation*}	
+	This concludes the proof that $L$ is an isometry on $V$. 
 	\begin{prb}{2017-J-I-5}
 		Is the ring of holomorphic functions on $\mathbb{C}$ a unique factorization domain? Justify your answer. 
 	\end{prb}
@@ -1953,6 +2008,27 @@ f2		\begin{equation*}
 	\end{equation*}
 	We note that the largest $p$ order dividing $|G|$ is $p^{3}$. Thus $P$ must be a Sylow $p$-subgroup of $G$. Now let $x \in G$ so that $|x| = p$, and consider the cyclic subgroup $\braket{x}$, which has order $p$. By Sylow's theorem, $\braket{x}$ must be contained in some Sylow $p$-subgroup. Since every Sylow $p$-subgroup of $G$ is conjugate to each other, $\braket{x}$ is contained in $gPg^{-1}$ for some $g \in G$. In particular, one has that $x = ghg^{-1}$ for some $h \in P$, and so $h$ is conjugate to an upper triangular matrix with all diagonal entries equal to $1$. Since $x$ was an arbitrary element of $G$ with order $p$, the proof concludes. 
 	
+	\begin{prb}{2016-A-II-6}
+		Let $V$ be a vector space of dimension $2k$. Suppose that $\omega \in \bigwedge^{2}V$ satisfies $\omega^{k} \neq 0$. Show that the map 
+		\begin{equation*}
+			\alpha: V \to V^{\ast}, \qquad \alpha(v)(w) = \omega(v, w), \quad \forall v, w \in V
+		\end{equation*}
+		is an isomorphism. 
+	\end{prb}
+	Let $V$ be a vector space of dimension $2k$, and suppose that $\omega \in \Lambda^2 V$ satisfies $\omega^{k} \neq 0$. Define the map $\alpha: V \to V^{\ast}$ as given above. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item (\textsc{Homomorphism}) Let $v_{1}, v_{2} \in V$ be arbitrary vectors. Then 
+		\begin{align*}
+			\begin{split}
+				\alpha(v_{1} + v_{2})(w) &= \omega(v_{1} + v_{2}, w) = \omega(v_{1}, w) + \omega(v_{2}, w) \\
+				&= \alpha(v_{1})(w) + \alpha(v_{2})(w), 
+			\end{split}
+		\end{align*}
+		where we used bilinearity of $\omega$. Scalar linearity follows immediately. Thus $\alpha$ is a homomorphism. 
+		\item (\textsc{Injectivity}) Assume to the contrary that $\ker{\alpha}$ is not trivial; i.e., assume there exists some $v \in V\setminus \{0\}$ such that $\alpha(v)(w) = 0$ for all $w \in V$. This means that $\omega$ must be a degenerate 2-form, whence $\operatorname{nullity}{\omega} \neq 0$. If $m$ is some positive integer such that $\operatorname{rank}{\omega} = 2m$, we observe that by the rank-nullity theorem, $2m < 2k$, so that $m < k$. But this implies that the highest nonzero power of $\omega$ is $\omega^{m}$, which contradicts our hypothesis that $\omega^{k} \neq 0$. Thus, $\alpha$ must be injective. 
+		\item (\textsc{Surjectivity}) Since $V, V^{\ast}$ are finite-dimension vector spaces of equal dimensions, and we showed $\alpha$ to be a linear injective map, $\alpha$ must also be surjective. 
+	\end{enumerate}
+	Thus altogether, we conclude that $\alpha: V \to V^{\ast}$ is an isomorphism. 
 	
 	\begin{prb}{2016-J-II-5}
 		Let $M_{n}$ be the vector space of $n \times n$ complex matrices. For $A \in M_{n}$, define the linear transformation $T_{A}$ on $M_{n}$ by $T_{A}(X) \coloneqq AX - XA$. Prove that the rank of $T_{A}$ is at most $n^{2} - n$. 
@@ -1975,6 +2051,15 @@ f2		\begin{equation*}
 		has no eigenvalue in $\mathbb{Q}$ for each $m = 1, \ldots, n - 1$. Prove that the characteristic polynomial of $T$ is an irreducible polynomial over $\mathbb{Q}$. 
 	\end{prb}
 	Let $V$ be a finite-dimensional $\mathbb{Q}$-vector space of dimension $n \geq 2$, and let $T: V \to V$ be a $\mathbb{Q}$-linear operator so that for each induced action, $T_{m}$, of $T$ on the wedge product $\bigwedge^{m}V$ ($m = 1, \ldots, n - 1$), $T_{m}$ has no eigenvalue in $\mathbb{Q}$. Let $p_A(t)$ be the characteristic polynomial. Assume to the contrary that $p_{A}(t)$ is reducible over $\mathbb{Q}$, so that $p_{A}(t) = f(t)g(t)$ for some monic polynomials $f(t), g(t) \in \mathbb{Q}[t]$, such that $0 < \deg{f} \leq n - 1$. Since the roots of $p_A(t)$ are precisely the eigenvalues, $\lambda_{1}, \ldots, \lambda_{n}$ of $T$ and $f(t)$ is a polynomial that divides $p_{A}(t)$, $f(t)$ has as its roots, some finite subset $\{\lambda_{j_1}, \ldots, \lambda_{j_{\deg{f}}}\}$. Since $f(t)$ is a monic polynomial of degree at least one, its constant term must be the product $(-1)^{\deg{f}}\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$. Since $f \in \mathbb{Q}[t]$, it follows that $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}} \in \mathbb{Q}$. But $\lambda_{j_{1}}\dotsm \lambda_{j_{\deg{f}}}$ is an eigenvalue of $T_{\deg{f}}$, and thus cannot be rational, which is a contradiction! Therefore, $p_{A}(t)$ must be irreducible over $\mathbb{Q}$. 
+	
+	\begin{prb}{2014-J-II-6}
+		Let $A$ denote a complex $n \times n$ matrix, and let $A^{\ast}$ denote the conjugate transpose of $A$. If $A^{\ast} = A^{7}$, then prove that $A^{8} = I_{n}$, where $I_{n}$ denotes the $n\times n$ identity matrix. [Rev: $A$ should be assumed to be invertible.]
+	\end{prb}
+	Let $A$ denote a complex $n \times n$ matrix, and $A^{\ast}$ its adjoint so that $A^{\ast} = A^{7}$. First we note that since $A^{\ast}A = A^{8} = AA^{\ast}$, $A$ is a normal operator. Thus $A$ is unitary diagonalizable; i.e., there exists an unitary operator $P$ and a diagonal operator $D$ such that $A = PDP^{\dagger}$; in particular, the diagonal entries of $D$ are the eigenvalues of $A$. Since $A$ is invertible, $\det{A} \neq 0$ so that none of the eigenvalues of $A$ are zero. Let $v$ be an eigenvector of $A$, with corresponding eigenvector $\lambda$. Then since $A$ is normal, $A^{\ast}$ and $A$ share the same eigenvectors, and the eigenvalues of $A^{\ast}$ are merely the complex conjugates of the eigenvalues of $A$. Thus one has that 
+	\begin{equation*}
+		AA^{\ast}v = |\lambda|^2 v, \qquad \text{and} \qquad AA^{\ast}v = A^{8}v = \lambda^{8}v. 
+	\end{equation*}
+	In particular, this implies that $|\lambda|^2 = |\lambda|^{8} \implies |\lambda|^{6} = 1$. Since $\lambda \neq 0$, one has that $|\lambda| = 1$ so that $\lambda^{8} = 1$. Therefore, each eigenvalue of $A$ is an 8th root of unity. This implies that $D^{8} = I_{n}$. Since $A^{8} = PD^{8}P^{\dagger}$, we conclude that $A^{8} = PI_{n}P^{\dagger} = PP^{\dagger} = I_{n}$. 
 	
 	\begin{prb}{2010-J-I-6}
 		Let $m$ and $n$ be positive integers. Let $A$ and $B$ be real $n \times n$ matrices. Assume that $B$ is symmetric and positive definite. If $A$ commutes with $B^{m}$, prove that $A$ commutes with $B$. 
@@ -2409,6 +2494,7 @@ f2		\begin{equation*}
 	Let $p(x) = x^{3} - 3x + 1 \in \mathbb{Q}[x]$. The possible candidates for rational roots of $p(x)$ are $x = \pm 1$. But since $p(1) = -1 \neq 0$ and $p(-1) = -3 \neq 0$, we conclude that $p(x)$ has no rational roots. Thus since $p(x)$ has degree 3, it must be irreducible over $\mathbb{Q}$. Let $D$ denote the discriminant of $p(x)$. Since $p(x)$ is a depressed cubic, $D= -4p^{3} - 27q^{2} = 81$, which is a square in $\mathbb{Q}$. Therefore, by the classification of Galois groups of cubics over $\mathbb{Q}$, we conclude that the Galois group of $p(x)$ over $\mathbb{Q}$ is the alternating group $A_{3}$. 
 	
 	\subsection{Sylow's Theorems}
+
 	
 	\begin{prb}{2022-J-I-3}
 		Show that a group of order $1,000,000$ contains a proper normal subgroup (i.e., is not simple). 
@@ -2476,6 +2562,12 @@ f2		\begin{equation*}
 		n_{5} \in \{1, 2, 4, 8, 16\} \cap \{1, 6, 11, 16, \ldots\} = \{1, 16\}. 
 	\end{equation*}
 	If $n_{5} = 1$, then we are done. So assume $n_{5} = 16$. By the prime factorization of $|G|$, each Sylow 5-subgroup of $G$ must be of order $5$, and consequently, must intersect trivially (i.e., if $P$, $Q$ are distinct Sylow 5-subgroups, then $P \cap Q = \{1\}$). Each Sylow 5-subgroup contains 4 non-identity elements. This means that $G$ contains 64 elements whose order is exactly 5. This leaves exactly 15 elements of $G$ to have an order of the form $2^{\alpha}$. Since each Sylow 2-subgroup contains exactly $15$ nonidentity elements of $G$ with order equal to some power of $2$, all of the aforementioned elements must be contained in exactly one Sylow 2-subgroup (i.e., $n_{2} = 1$). Thus, $n_{2} = 1$, and so this subgroup is normal in $G$. In any case, $G$ contains a normal subgroup, and hence is not simple. 
+	
+	\begin{prb}{2014-J-II-2}
+		$H$ denotes a normal subgroup of the finite group $G$. If $P$ denotes a Sylow $p$-subgroup of $H$, then prove that $G = N(P;G)H$ (where $N(P;G)$ denotes the normalizer of $P$ in $G$). 
+	\end{prb}
+	Assume all of the hypotheses of the problem. First we already know that since $H$ is normal, $N(P;G)H$ is a subgroup of $G$. It suffices to show the reverse inclusion. Fix an arbitrary $g \in G$, and consider the subgroup $gPg^{-1}$. Since $H$ is normal, $gHg^{-1} = H$ such that $gPg^{-1} \leq H$. Thus $gPg^{-1}$ is a conjugate Sylow $p$-subgroup to $P$ in $H$. In particular, there exists some $h \in H$ such that $gPg^{-1} = hPh^{-1} \implies P = (g^{-1}h)P(g^{-1}h)^{-1}$. This implies that there exists some $x \in N(P;G)$ such that $g^{-1}h = x \implies g = hx^{-1} \in HN(P;G) = N(P;G)H$. Thus since $g \in G$ was arbitrary, we conclude that $G \leq N(P;G)H$, which completes the proof. 
+	
 	
 	\begin{prb}{2013-J-I-2}
 		Prove that every group of order 72 is non-simple. 
@@ -3551,6 +3643,12 @@ f2		\begin{equation*}
 		K = \bigcap_{g \in G}gHg^{-1}, 
 	\end{equation*}
 	since any element in $K$ must be contained in the stabilizer of every left coset of $H$. In particular, since $\bigcap_{g \in G}gHg^{-1} \subseteq eHe^{-1} = H$, we have that $K \subseteq H$. On the other hand, by the subgroup criterion, it follows immediately that $K$ is a subgroup of $H$. We also know that since $\varphi$ is a group homomorphism, $[G:K] = |\operatorname{im}{\varphi}|$. Since $\operatorname{im}{\varphi} \subseteq S_{k}$ and $S_{k}$ is a finite group (of order $k!$), the image of $\varphi$ has finite cardinality. Therefore, the index of $K$ in $G$ is finite. Thus the proof concludes. 
+	
+	\begin{prb}{2007-J-I-1}
+		Consider the set $\mathbb{Q}$ of rational numbers as a group with respect to addition. Prove that there is no proper subgroup $G \subsetneq \mathbb{Q}$ of finite index. 
+	\end{prb}
+	Assume to the contrary that there exists a proper subgroup $G \subsetneq \mathbb{Q}$ of finite index $k > 0$. Since $G$ is proper, there exists some $h \in \mathbb{Q}\setminus G$ (in particular, $h \neq 0$ since $0 \in G$). Since $\mathbb{Q}$ is a divisible group, the element $h/k \in \mathbb{Q}$. Now since the index of $G$ in $\mathbb{Q}$ is $k$, each element in the quotient group $Q/K$ has order that divides $k$ (recall that since $\mathbb{Q}$ is abelian, every subgroup is normal so that the quotient group is well-defined). In particular, one has that for each $x \in \mathbb{Q}$, $k(x + G) = kx + G = 0 + G \iff kx \in G$. Since $h/k \neq 0$, $h/k + G$ is a representative for some nonzero equivalence class of cosets in $\mathbb{Q}/G$. Thus one has that $h = k(h/k) \in G$. But this contradicts our hypothesis on $h$. Thus by contradiction, we conclude that $\mathbb{Q}$ cannot have a proper subgroup of finite index. 
+	
 	\newpage 
 	\section{Real Analysis}
 	
