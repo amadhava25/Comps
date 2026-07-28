@@ -4341,6 +4341,38 @@ f2		\begin{equation*}
 	\end{align*}
 	Thus, taking the limsup $n \to \infty$ shows that the right side converges to 0. This means that $\int_{-\pi}^{\pi}f_{n}(x)\overline{g(x)}\;dx \to 0$ as $n \to \infty$. Since $g \in L^{2}([-\pi,\pi])$ was arbitrary, we conclude that $f_{n} \to 0$ weakly in $L^{2}([-\pi, \pi])$. 
 	
+	\begin{prb}{2011-J-II-3}
+		Consider the space $\mathscr{F}$ of bounded, continuous functions $f: (0,\infty)\to \mathbb{R}$ that tend to 0 at 0. Equip $\mathscr{F}$ with the norm $\norm{F} \coloneqq \sup\{|f(t)|: t \in (0,\infty)\}$. For a measurable function $g$, define the operator $T$ by 
+		\begin{equation*}
+			Tg(x) \coloneqq x^{-1/3}\int_{0}^{x}g(t)\;dt.
+		\end{equation*}
+		Show that $T: L^{3/2}((0,\infty)) \to \mathscr{F}$ is well-defined and continuous. 
+	\end{prb}
+	Define the operator $T$ on $L^{3/2}((0,\infty))$ as defined above. To show that $T$ is well-defined, we must show that for any $g \in L^{3/2}((0,\infty))$, $Tg \in \mathscr{F}$. First, let $\varphi \in C_{c}^{\infty}((0,\infty)) \subset L^{3/2}((0,\infty))$; assume that $[a,b] \subset (0, \infty)$ is a compact interval large enough so that $\supp{\varphi} \subset [a, b]$. Then one has that $\varphi(t)\chi_{(0, x + h)}(t) \to \varphi(t)\chi_{(0, x)}$ pointwise a.e. as $h \to 0$. Moreover, one has that $|\varphi(t)\chi_{(0, x + h)}|\leq |\varphi(t)\chi_{[a, b]}| \in L^{1}((0, \infty))$. Thus by the Dominated Convergence Theorem, 
+	\begin{equation*}
+		\lim_{h \to 0}T\varphi(x + h) = \lim_{h \to 0}(x + h)^{-1/3} \cdot \int_{0}^{\infty}\varphi(t)\chi_{(0, x + t)}(t)\;dt = x^{-1/3} \cdot \int_{0}^{x}\varphi(t)\;dt \eqqcolon T\varphi(x). 
+	\end{equation*}
+	Now fix an arbitrary $g \in L^{3/2}((0,\infty))$ and fix $\epsilon > 0$. Then by the density of smooth test functions in $L^{3/2((0,\infty))}$, there exists some $\varphi \in C_{c}^{\infty}((0,\infty))$ such that $\norm{g - \varphi}_{L^{3/2}} < \epsilon/3$. Furthermore, by our above work, there exists some $\delta > 0$ such that for all $|h|\leq \delta$, $\norm{T\varphi(x + h) - T\varphi(x)}_{L^{3/2}((0,\infty))} \leq \epsilon/3$. Moreover, by H\"older's inequality, one has that for any $y \in (0, \infty)$, 
+	\begin{equation*}
+		|T(g - \varphi)(y)| \leq y^{-1/3} \cdot \int_{0}^{\infty}|g(t) - \varphi(t)| \cdot \chi_{(0,y)}\;dt \leq \norm{g - \varphi}_{L^{3/2}((0,\infty))} \leq \epsilon/3. 
+	\end{equation*}
+	Thus this implies that for any $x \in (0, \infty)$ and any $0 \leq h < \delta$, 
+	\begin{align*}
+		\begin{split}
+			|Tg(x + h) - Tg(x)| &\leq |T(g - \varphi)(x + h)| + |T\varphi(x + h) - T\varphi(x)| + |T(\varphi - g)(x)| \leq \epsilon, 
+		\end{split} 
+	\end{align*}
+	so that $Tg$ is uniformly continuous on $(0, \infty)$. Moreover, using H\"older's inequality again, for any $x \in (0, \infty)$ and $g \in L^{3/2}((0,\infty))$, 
+	\begin{equation*}
+		|Tg(x)| \leq x^{-1/3} \cdot \int_{0}^{\infty}|g(t)|\chi_{(0,x)}\;dt \leq \norm{g}_{L^{3/2}((0,\infty))} < \infty, 
+	\end{equation*}
+	which implies that $\norm{Tg} \leq \norm{g}_{L^{3/2}((0,\infty))} < \infty$. Thus $Tg$ is a bounded uniformly continuous function on $(0, \infty)$ for every $g \in L^{3/2}((0, \infty))$. To complete the proof that $T$ is well-defined, it remains to be shown that for every $g \in L^{3/2}((0, \infty))$, $Tg(x) \to 0$ as $x \to 0$. For any $g \in L^{3/2}((0, \infty))$, one has that 
+	\begin{align*}
+		\begin{split}
+			|Tg(x)| &\leq x^{-1/3} \cdot \int_{0}^{x}|g(t)|\;dt \leq \norm{g}_{L^{3/2}((0,x))} = \left(\int_{0}^{x}|g(t)|^{3/2}\;dt\right)^{2/3} = \left(\int_{0}^{\infty}|g(t)|^{3/2}\chi_{(0,x)}(t)\;dt\right)^{2/3}. 
+		\end{split}
+	\end{align*}
+	Since $g \in L^{3/2}((0, \infty))$, $|g|^{3/2} \in L^{1}((0, \infty))$. Thus since, $|g(t)|^{3/2}\chi_{(0, x)}(t) \leq |g(t)|^{3/2}$, and $|g(t)|^{3/2}\chi_{(0,x)}(t) \to 0$ pointwise a.e. as $x \to 0^{+}$, we conclude from the Dominated Convergence theorem that $Tg(x) \to 0$. Thus, $T$ is a well-defined linear operator from $L^{3/2}((0, \infty))$ into $\mathscr{F}$. Since continuity of linear operators between topological vector spaces is equivalent to its boundedness, and we showed above that $T$ is a bounded operator, we conclude that $T$ is continuous. 
 	\begin{prb}{2009-A-I-2}
 		Let $(X,\mu)$ be a measure space, and let $f$ be a measurable function on $X$. If there is a real constant $C > 0$ such that 
 		\begin{equation*}
@@ -7109,7 +7141,7 @@ f2		\begin{equation*}
 	\subsection{Random Quick Facts To Recall}
 	\subsubsection{Algebra}
 	
-	\subsection{Linear Algebra and Module Theory}
+	\subsubsection{Linear Algebra and Module Theory}
 	\begin{enumerate}[series = algebra]
 		\item If $A \in \operatorname{GL}(n, V)$ and $m_{A}(t)$ denotes the minimal polynomial of $A$, then $\deg{m_A} \leq n$. Note that $m_{A}$ is not necessarily an irreducible polynomial. However, it is nonconstant and monic. 
 		\item If $p(t)$ annihilates a linear operator, $A \in \operatorname{GL}(n, V)$, then $m_{A}(t) \mid p(t)$, where $m_{A}(t)$ is the minimal polynomial of $A$ over $V$. \newline \expl{Let $p(t)$ be a polynomial that annihilates $A$, and assume to the contrary that $m_{A}(t)$ does not divide $p(t)$. Applying the division algorithm, there exists some nonzero polynomial $r(t)$ with $\deg{r(t)} < \deg{m_{A}(t)}$ and a nonzero polynomial $q(t)$ such that $p(t) = q(t)m_{A}(t) + r(t)$. This implies that $q(t)m_{A}(t) = p(t) - r(t)$. In particular, one must have $0 = q(A)m_{A}(A) = p(A) - r(A) = -r(A)$. This implies that $r(t)$ also annihilates $A$. But since $\deg{r(t)} < \deg{m_{A}(t)}$, $m_A(t)$ cannot be the minimal polynomial of $A$, which is a contradiction. Thus, $m_{A}(t)$ must divide $p(t)$.}
@@ -7212,7 +7244,7 @@ f2		\begin{equation*}
 	
 	\newpage 
 	\section{Geometry and Topology}
-	\subsection{De Rham Cohomology}
+	\subsubsection{De Rham Cohomology}
 	\begin{enumerate}
 		\item Diffeomorphic smooth manifolds (with or without boundary) have isomorphic de Rham cohomology groups. 
 		\item Let $\{M_{j}\}$ be a countable collection of smooth $n$-manifolds with or without boundary, and let $M = \bigsqcup_{j}M_{j}$. For each integer $p$, $H^{p}_{\text{dR}}(M) \cong \prod_{j}H^{p}_{\text{dR}}(M_j)$. \newline 
@@ -7255,7 +7287,7 @@ f2		\begin{equation*}
 			H^{p}_{\text{dR}}(M \times N) \cong \bigoplus_{i + j= p}H^{i}_{\text{dR}}(M) \otimes H^{j}_{\text{dR}}(N). 
 		\end{equation*}
 	\end{enumerate}
-	\subsection{Fundamental Groups}
+	\subsubsection{Fundamental Groups}
 	\begin{enumerate}[start=18]
 		\item Let $M$ be a smooth $n$-manifold. Then the orientation double cover, $\hat{p}: \hat{M} \to M$ is a 2-sheeted covering space of $M$, such that $\hat{M}$ is always orientable. $M$ is orientable \textit{if and only if} the orientation double cover $\hat{M}$ is disconnected. $\hat{M}$ is compact if and only if $M$ is compact.
 		\item If $M$ is a connected smooth $n$-manifold, and $M$ is not oriented, then $p_{\ast}(\pi_{1}(\hat{M}, \text{pt}))$ is an index-2 subgroup of $\pi_1(M, p(\text{pt}))$. Consequently, if $\pi_{1}(M)$ is trivial or has odd cardinality, then $M$ is orientable. 
@@ -7273,7 +7305,7 @@ f2		\begin{equation*}
 		\item Let $M$ be path connected, locally path-connected, and semilocally simply connected. Then by the \textit{Galois correspondence of covering spaces}, the isomorphism classes of $k$-sheeted \textit{connected} covering spaces of $M$ are in one-to-one correspondence with the conjugacy classes of subgroups of $\pi_{1}(M)$. 
 		\item Every surjective proper map is a covering map. 
 	\end{enumerate}
-	\subsection{Frobenius Theorem and Distributions}
+	\subsubsection{Frobenius Theorem and Distributions}
 	\begin{enumerate}[start = 29]
 		\item Let $D \subseteq TM$ be a smooth distribution. A nonempty immersed submanifold $N\subseteq M$ is an \textit{integral manifold of $D$} if $T_{p}N = D_{p}$ at each point $p \in N$. 
 		\item Let $D$ be a smooth distribution on $M$. $D$ is \textit{involutive} if given any pair of smooth local sections of $D$ (i.e., smooth vector fields $X, Y$ defined on an open subset of $M$ such that $X_p, Y_p \in D_p$ for each $p$, $[X,Y]$ is also local section of $D$. 
