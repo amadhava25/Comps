@@ -1172,6 +1172,28 @@
 	$$\pi_1(X) \cong \pi_1(S^2) * \underbrace{\pi_1(S^1) * \dots * \pi_1(S^1)}_{5 \text{ times}} \cong \{e\} * \underbrace{\mathbb{Z} * \dots * \mathbb{Z}}_{5 \text{ times}} \cong F_5.$$
 	
 	where $F_5$ is the free group on 5 generators.
+	
+	\begin{prb}{2003-A-I-4}
+		Let $H$ denote a cyclic group of order 7 and let $G$ denote the cyclic group of order 3. Let $M$ denote a connected manifold satisfying $\pi_1(M) \cong H$. Let $\psi: G \times M \to M$ denote a free group action. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label  = (\alph{*})]
+			\item Show that the quotient map $q: M \to M/\sim$ is a covering space projection. (Here $x \sim y$ for some $x, y \in M$ iff there is $g \in G$ such that $\psi(g, x) = g(x) = y$.)
+			\item List all the possible fundamental groups for $M/\sim$. 
+		\end{enumerate}
+	\end{prb}
+	\vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $q: M \to M/\sim$ denote the quotient map, where the equivalence relation $\sim$ is defined above. Since $\psi$ is a free action and each $g \in G$ is a homeomorphism on $M$ (by definition of a group action, each  element in the group defines a homeomorphism on the manifold), it suffices to show that $q$ is properly discontinuous; i.e., we must show that for every $x \in M$, there exists an open neighborhood $U$ of $x$ in $M$ such that for all $g \in G\setminus \{e\}$, $g(U) \cap U = \varnothing$. Fix an arbitrary group element $g \in G \setminus \{e\}$. ; since $\psi$ is free, $g(x) \neq x$. Since $M$ is a Hausdorff space, there exist disjoint neighborhoods $U_{g}$ and $V_{g}$ of $x$ and $g(x)$, respectively. Define $W_{g} = U_{g} \cap g^{-1}(V_{g})$ so that $g(W_{g}) \subseteq V_{g}$ (consequently, $W_{g} \cap g(W_{g}) = \varnothing$). Now since $G$ is finite, define 
+		\begin{equation*}
+			W = \bigcap_{g \in G}W_{g}. 
+		\end{equation*}
+		Then $W$ is an open neighborhood of $x \in M$ such that for all $g \in G$, $g(W) \cap W = \varnothing$. Since we have shown that $q$ is properly discontinuous, we conclude that $q: M \to M/\sim$ is a covering space projection. 
+		\item Since the (free) group action is done by a group of order 3, the covering space is 3-sheeted. Since $M$ is connected and we know that the induced map $q_{\ast}: \pi_{1}(M) \to \pi_{1}(M/\sim)$ is injective, the image of $\pi_{1}(M)$ is isomorphic to a subgroup of $\pi_{1}(M/\sim)$ of index 3. Thus $\pi_{1}(M/\sim)$ must be a finite group of order 21 since $\pi_{1}(M) \cong \mathbb{Z}_{7}$. Now $21 = 7 \cdot 3$. We know $\pi_{1}(M/\sim)$ must contain a normal Sylow 7-subgroup; let $N$ denote this subgroup. Let $H$ denote a Sylow 3-subgroup. Then $\pi_{1}(M/\sim)$ is of the form $\mathbb{Z}_{7} \rtimes_{\varphi} \mathbb{Z}_{3}$, where $\varphi: \mathbb{Z}_{3} \to \operatorname{Aut}(\mathbb{Z}_{7}) \cong \mathbb{Z}_{6}$ is a group homomorphism. If this group homomorphism is trivial, then the semidirect product is merely the direct product and $\pi_{1}(M/\sim) \cong \mathbb{Z}_{7} \times \mathbb{Z}_{3} \cong \mathbb{Z}_{21}$. On the other hand, we also have a nontrivial map $\varphi_{1}: \mathbb{Z}_{3} \to \mathbb{Z}_{6}$ that maps the element $1 \in \mathbb{Z}_{3}$ to $2 \in \mathbb{Z}_{6}$. Thus there is also a possibility for a nonabelian semidirect product, $\pi_{1}(M/\sim) \cong \mathbb{Z}_{7} \rtimes_{\varphi} \mathbb{Z}_{3}$. We also have the map $\varphi_{2}$ that maps$1$ to the element $4 \in \mathbb{Z}_{6}$. But we have the automorphism $\alpha: \mathbb{Z}_{6} \to \mathbb{Z}_{6}$ that maps each element to its additive inverse; since the elements $2$ and $4$ are related by this automorphism, one has $\varphi_{2} = \alpha \circ \varphi_{1}$ so that the semidirect product corresponding to $\varphi_{2}$ is isomorphic to the semidirect product identified earlier. The group presentation for the nonabelian semidirect product is therefore, 
+		\begin{equation*}
+			\mathbb{Z}_{7} \rtimes_{\varphi}\mathbb{Z}_{3} \cong \braket{a, b \mid a^{7} = b^{3} = 1, bab^{-1} = a^{2}}
+		\end{equation*}
+		Thus, there are two possibilities for $\pi_{1}(M/\sim)$. 
+	\end{enumerate}
+	
 	\begin{prb}{2003-J-II-5}
 		Is the unit sphere $\mathbb{S}^{3}$ diffeomorphic to the product of two other smooth manifolds of dimension $> 0$? 
 	\end{prb}
@@ -1854,6 +1876,15 @@ f2		\begin{equation*}
 	\end{equation*}
 	And since $a \neq 0$ and $R$ has no zero divisors, one must have $ar = 1$. Thus $r$ is a multiplicative inverse of $a$, which contradicts our hypothesis that $a$ is not a unit. Thus it follows that every nonzero element in $R$ has a multiplicative inverse so that $R$ is a division ring. If $R$ were commutative, then $R$ would be a field. 
 	
+	\begin{prb}{2006-A-I-5}
+		Let $R$ be an integral domain. Show that $R$ is a UFD iff every ascending chain of principal ideals stabilizes, and every irreducible element of $R$ is prime. [Recall: $a$ is irreducible iff $a = xy$ implies that either $x$ or $y$ is invertible; $a$ is prime iff $a \mid xy$ implies that $a \mid x$ or $a \mid y$.]
+	\end{prb}
+	Let $R$ be an integral domain. 
+	
+	($\Longleftarrow$) Assume that $R$ is an integral domain that satisfies the ascending chain condition for principal ideals and further assume that every irreducible element is prime. Assume to the contrary that $R$ is not a UFD; i.e., assume to the contrary that there exists some nonzero noninvertible element $x_0 \in R$ that does not factor into the product of finitely many irreducible elements. Define the principal ideal $I_{0} = Rx_{0}$. By hypothesis, $x_{0}$ must then split into nonzero nonunit factors (since $a$ itself is not irreducible), of which at least one (denoted $x_1$) also does not split into a finite product of irreducible elements. Let $I_{1} = Rx_{1}$. Thus repeating the argument for $x_1$, we obtain yet another such element $x_2$, and thus the ideal $I_{2} = Rx_{2}$. In this manner, we obtain the infinite sequences $\{x_{j}\}_{j = 0}^{\infty}$ and $\{I_{j}\}_{j = 0}^{\infty}$ of elements of $R$ that do not split into the factor of finitely many irreducible elements and a \textit{strictly} ascending chain of principal ideals, respectively. But by the ascending chain condition for principal ideals, there exists some $N > 0$ such that for all $n \geq N$, $I_{n} = I_{N} \iff Rx_{n} = Rx_{N}$. This means that our procedure of obtaining a further element of $R$ that does not split into a finite product of irreducible elements must terminate after finitely many iterations; i.e. this contradicts our hypothesis that the infinite sequence of principle ideals is strictly ascending. Thus by contradiction, every nonzero nonunit element of $R$ must split into a product of finitely many irreducible elements. Now we will show that such a factorization is unique. 
+	
+	
+	
 	\begin{prb}{2005-A-II-3}
 		Let $R$ be a unique factorization domain, $d \in R$, $d \neq 0$. Show that there are finitely many distinct principal ideals containing the ideal $(d)$. 
 	\end{prb}
@@ -2514,6 +2545,11 @@ f2		\begin{equation*}
 		Let $K$ denote the splitting field of $p(x)$ over $\mathbb{Q}$. Then $K$ must contain $\pm \alpha, \pm \beta$ (and thus $i$). This implies $K \supseteq \mathbb{Q}(\alpha, i)$. On the other hand, $\mathbb{Q}(\alpha, i)$ already contains all of the roots of $p(x)$, and thus must contain $K$. Therefore, we conclude that the splitting field of $p(x)$ over $\mathbb{Q}$ is $\mathbb{Q}(\alpha, i)$. Since the minimal polynomial of $\alpha$ is of order 4, $[\mathbb{Q}(\alpha): \mathbb{Q}] = 4$. Since $\alpha \in \mathbb{R}$, $\mathbb{Q}(\alpha) \embedd \mathbb{R}$, and thus, the minimal polynomial of $i$ over $\mathbb{Q}(\alpha)$ is $x^{2} + 1$ (degree 2). Therefore, $[\mathbb{Q}(i,\alpha): \mathbb{Q}] = 8$. 
 		\item Since $\mathbb{Q}(i,\alpha)$ is the splitting field of an irreducible polynomial over $\mathbb{Q}$, $\mathbb{Q}(i,\alpha)/\mathbb{Q}$ is a Galois field extension of degree 8; thus the Galois group of $p(x)$ is of order 8. The Galois group of $p(x)$ corresponds to the automorphism group on $\mathbb{Q}(i,\alpha)$ that permutes the roots of $p(x)$ while fixing the base field $\mathbb{Q}$. Thus, the Galois group must be isomorphic to a transitive subgroup of $S_{4}$, the symmetry group on four letters; the only transitive subgroup of $S_{4}$ of degree 8 is the nonabelian dihedral group $D_{8}$. 
 	\end{enumerate}
+	
+	\begin{prb}{2007-A-I-1}
+		Let $p(x)$ denote a polynomial of degree 5 over a field $k$ of characteristic $0$, and let $K$ denote the splitting field of $p$ over $k$. Suppose that $[K: k] = 120$. Prove that $p(x)$ is irreducible over $k$. 
+	\end{prb}
+	Let $p(x)$ denote a polynomial of degree 5 over a field $k$ of characteristic 0, and let $K$ denote the splitting field of $p$ over $k$. We begin by showing that $p$ must have distinct roots. Suppose $p(x)$ has $m$ distinct roots; since $\deg{p} = 5$, we have $m \leq 5$. On the other hand, if $G$ denotes the Galois group of $p(x)$ over $k$, then the faithful Galois group action on the set of roots of $p(x)$ induces a group homomorphism $\varphi: G \to S_{m}$ so that $|G| \leq m!$. But since $4! = 24 < 120$, we must have $m \geq 5$. Thus $p(x)$ has precisely 5 distinct roots. In particular, this implies that $K/k$ is a Galois field extension. As above, the Galois group action on the roots of $p(x)$ induces a homomorphism $\varphi: G\to S_{5}$. Since $|S_{5}| = 120$, it follows that $G \cong S_{5}$. Since $S_{5}$ is a transitive subgroup of itself, and the Galois group action on the set of roots of a separable polynomial is transitive if and only if the polynomial is irreducible, we conclude that $p(x)$ is irreducible over $k$. 
 	
 	\begin{prb}{2005-J-I-4}
 		Find the Galois group of the polynomial group $p(x) = x^{3} - 3x + 1$ over $\mathbb{Q}$. 
@@ -7141,7 +7177,7 @@ f2		\begin{equation*}
 	\subsection{Random Quick Facts To Recall}
 	\subsubsection{Algebra}
 	
-	\subsubsection{Linear Algebra and Module Theory}
+	\paragraph{Linear Algebra and Module Theory}
 	\begin{enumerate}[series = algebra]
 		\item If $A \in \operatorname{GL}(n, V)$ and $m_{A}(t)$ denotes the minimal polynomial of $A$, then $\deg{m_A} \leq n$. Note that $m_{A}$ is not necessarily an irreducible polynomial. However, it is nonconstant and monic. 
 		\item If $p(t)$ annihilates a linear operator, $A \in \operatorname{GL}(n, V)$, then $m_{A}(t) \mid p(t)$, where $m_{A}(t)$ is the minimal polynomial of $A$ over $V$. \newline \expl{Let $p(t)$ be a polynomial that annihilates $A$, and assume to the contrary that $m_{A}(t)$ does not divide $p(t)$. Applying the division algorithm, there exists some nonzero polynomial $r(t)$ with $\deg{r(t)} < \deg{m_{A}(t)}$ and a nonzero polynomial $q(t)$ such that $p(t) = q(t)m_{A}(t) + r(t)$. This implies that $q(t)m_{A}(t) = p(t) - r(t)$. In particular, one must have $0 = q(A)m_{A}(A) = p(A) - r(A) = -r(A)$. This implies that $r(t)$ also annihilates $A$. But since $\deg{r(t)} < \deg{m_{A}(t)}$, $m_A(t)$ cannot be the minimal polynomial of $A$, which is a contradiction. Thus, $m_{A}(t)$ must divide $p(t)$.}
@@ -7165,7 +7201,7 @@ f2		\begin{equation*}
 		\item Let $A: V \to V$ be a linear operator on a finite-dimensional vector space $V$, with $\det{A} \neq 0$. If each eigenvalue of $A$ is an $n^{\text{th}}$ root of unity for some $n \geq 1$, then $A^{n}  = I$ if and only if $A$ is diagonalizable.
 		\item Let $n$ be a positive integer, and $A, B$ be two real $n \times n$ matrices. $A$ and $B$ commute if and only if each matrix preserves each others eigenspaces.
 	\end{enumerate}
-	\subsection{Ring Theory}
+	\paragraph{Ring Theory}
 	\begin{enumerate}[resume = algebra]
 		\item If $\lambda$ is a primitive $n^{\text{th}}$ root of unity, then 
 		\begin{equation*}
@@ -7201,7 +7237,7 @@ f2		\begin{equation*}
 		\end{equation*} 
 		where $r$ is the free rank of $M$, and $(d_{1}) \supseteq (d_2) \supseteq \dotsm \supseteq (d_n)$. 
 	\end{enumerate}
-	\subsection{Galois Theory}
+	\paragraph{Galois Theory}
 	\begin{enumerate}[resume = algebra]
 		\item A field extension $K/F$ is \textit{normal} iff every irreducible polynomial over $F$ having a root in $K$ splits completely over $K$. 
 		\item A field extension $K/F$ is \textit{algebraic} iff every element $\alpha \in K$ satisfies a nonzero polynomial $p(x) \in F[x]$. 
@@ -7220,7 +7256,7 @@ f2		\begin{equation*}
 		\item (Fundamental Theorem of Galois Theory) Let $F$ be a field, and $E/F$ a Galois extension. Then there exists a one-to-one correspondence between the subgroups of $\operatorname{Gal}(E/F)$ and the intermediate fields $K$ of $E/F$. If $E/F$ is not  Galois, then $F$ is not the fixed field of any subgroup of $\operatorname{Aut}(E/F)$. In particular, the correspondence is only injective from $\{\text{subgroups of $\operatorname{Aut}(E/F)$}\}$ to $\{\text{subfields of $E/F$}\}$, and surjective in the reverse direction. 
 		\item Let $K/\mathbb{Q}$ be a Galois field extension, where $K$ is the splitting field of a polynomial $p(x)\in \mathbb{Q}[x]$, with Galois group $G = \operatorname{Gal}(K/\mathbb{Q})$. The Galois group action on the set of roots of $p(x)$ is faithful, but is transitive if and only if the polynomial is irreducible over $\mathbb{Q}$.  
 	\end{enumerate}
-	\subsection{Pure Group Theory}
+	\paragraph{Pure Group Theory}
 	\begin{enumerate}[resume = algebra]
 		\item Let $G$ be a finite group, and $Z = Z(G)$ be the center of $G$.Then $G$ is abelian if and only if $G/Z$ is cyclic. \newline \expl{Assume $G$ is an abelian group so that $Z =G$. Then $G/Z = \{1\}$ is vacuously cyclic. Now assume that $G/Z$ is cyclic. This means that there exists some element $x \in G$ so that $G/Z= \braket{xZ}$. In particular, for every $g \in G$, there exists some integer $m$ such that $gZ = (xZ)^{m} = x^{m}Z \iff (x^{-m}g)Z = Z \iff x^{-m}g = z$, where $z \in Z$. Thus, we obtain $g = x^{m}z$. This shows that every element in $G$ is of the form $x^{m}z$, where $z \in Z$. Fix arbitrary $g, h \in G$ and assume $g = x^{\alpha_1}z_{1}$ and $h = x^{\alpha_2}z_2$. Then $$gh = (x^{\alpha_1}z_{1})(x^{\alpha_2}z_2) = x^{\alpha_1 + \alpha_2}z_2z_1 = x^{\alpha_2}z_2x^{\alpha_1}z_1 = hg.$$ Since $g, h$ were arbitrary, we conclude that $G$ is abelian.}
 		\item A group $G$ is \textit{simple} if it contains no nontrivial, proper normal subgroup.
@@ -7240,11 +7276,15 @@ f2		\begin{equation*}
 		If $\ker{\varphi} = \{e\}$ is trivial, then $G$ embeds in $S_{n}$ (i.e., $G$ is isomorphic to a subgroup of $S_n$) and $|G| \mid |S_{n}|$. \newline 
 		\expl{Suppose $g \in \ker{\varphi}$. Then for every $x \in G$, $gxH = xH \implies x^{-1}gx \in H \implies g \in xHx^{-1}$. Thus, $\ker{\varphi} \subseteq \bigcap_{g \in G}gHg^{-1}$. The converse direction follows immediately.}
 		\item (Orbit-Stabilizer Theorem) Let $G$ be a finite group acting on a set $S$. Then $|G| = |\operatorname{Orb}{x}|\cdot |\operatorname{Stab}{x}|$, where $\operatorname{Orb}$ denotes the orbit of $x$ under the group action, and $\operatorname{Stab}$ denotes the stabilizer of $x$ under the group action.
+		\item Given a semidirect product $G \rtimes_{\varphi} H$, where $\varphi: H \to \operatorname{Aut}(G)$ is a group homomorphism and $G = \braket{X \mid R}$ and $H = \braket{Y \mid S}$ ($X$ and $Y$ are the generators of $G$ and $H$, respectively, while $R$ and $S$ are the respective relations), the resulting group presentation is given by, 
+		\begin{equation*}
+			G \rtimes_{\varphi} H \cong \braket{X, Y \mid R, S, yxy^{-1} = \phi(y)(x), \forall x \in X, y \in Y}. 
+		\end{equation*}
 	\end{enumerate}
 	
 	\newpage 
-	\section{Geometry and Topology}
-	\subsubsection{De Rham Cohomology}
+	\subsubsection{Geometry and Topology}
+	\paragraph{De Rham Cohomology}
 	\begin{enumerate}
 		\item Diffeomorphic smooth manifolds (with or without boundary) have isomorphic de Rham cohomology groups. 
 		\item Let $\{M_{j}\}$ be a countable collection of smooth $n$-manifolds with or without boundary, and let $M = \bigsqcup_{j}M_{j}$. For each integer $p$, $H^{p}_{\text{dR}}(M) \cong \prod_{j}H^{p}_{\text{dR}}(M_j)$. \newline 
@@ -7287,7 +7327,7 @@ f2		\begin{equation*}
 			H^{p}_{\text{dR}}(M \times N) \cong \bigoplus_{i + j= p}H^{i}_{\text{dR}}(M) \otimes H^{j}_{\text{dR}}(N). 
 		\end{equation*}
 	\end{enumerate}
-	\subsubsection{Fundamental Groups}
+	\paragraph{Fundamental Groups}
 	\begin{enumerate}[start=18]
 		\item Let $M$ be a smooth $n$-manifold. Then the orientation double cover, $\hat{p}: \hat{M} \to M$ is a 2-sheeted covering space of $M$, such that $\hat{M}$ is always orientable. $M$ is orientable \textit{if and only if} the orientation double cover $\hat{M}$ is disconnected. $\hat{M}$ is compact if and only if $M$ is compact.
 		\item If $M$ is a connected smooth $n$-manifold, and $M$ is not oriented, then $p_{\ast}(\pi_{1}(\hat{M}, \text{pt}))$ is an index-2 subgroup of $\pi_1(M, p(\text{pt}))$. Consequently, if $\pi_{1}(M)$ is trivial or has odd cardinality, then $M$ is orientable. 
@@ -7305,7 +7345,7 @@ f2		\begin{equation*}
 		\item Let $M$ be path connected, locally path-connected, and semilocally simply connected. Then by the \textit{Galois correspondence of covering spaces}, the isomorphism classes of $k$-sheeted \textit{connected} covering spaces of $M$ are in one-to-one correspondence with the conjugacy classes of subgroups of $\pi_{1}(M)$. 
 		\item Every surjective proper map is a covering map. 
 	\end{enumerate}
-	\subsubsection{Frobenius Theorem and Distributions}
+	\paragraph{Frobenius Theorem and Distributions}
 	\begin{enumerate}[start = 29]
 		\item Let $D \subseteq TM$ be a smooth distribution. A nonempty immersed submanifold $N\subseteq M$ is an \textit{integral manifold of $D$} if $T_{p}N = D_{p}$ at each point $p \in N$. 
 		\item Let $D$ be a smooth distribution on $M$. $D$ is \textit{involutive} if given any pair of smooth local sections of $D$ (i.e., smooth vector fields $X, Y$ defined on an open subset of $M$ such that $X_p, Y_p \in D_p$ for each $p$, $[X,Y]$ is also local section of $D$. 
