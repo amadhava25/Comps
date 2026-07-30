@@ -1881,9 +1881,9 @@ f2		\begin{equation*}
 	\end{prb}
 	Let $R$ be an integral domain. 
 	
-	($\Longleftarrow$) Assume that $R$ is an integral domain that satisfies the ascending chain condition for principal ideals and further assume that every irreducible element is prime. Assume to the contrary that $R$ is not a UFD; i.e., assume to the contrary that there exists some nonzero noninvertible element $x_0 \in R$ that does not factor into the product of finitely many irreducible elements. Define the principal ideal $I_{0} = Rx_{0}$. By hypothesis, $x_{0}$ must then split into nonzero nonunit factors (since $a$ itself is not irreducible), of which at least one (denoted $x_1$) also does not split into a finite product of irreducible elements. Let $I_{1} = Rx_{1}$. Thus repeating the argument for $x_1$, we obtain yet another such element $x_2$, and thus the ideal $I_{2} = Rx_{2}$. In this manner, we obtain the infinite sequences $\{x_{j}\}_{j = 0}^{\infty}$ and $\{I_{j}\}_{j = 0}^{\infty}$ of elements of $R$ that do not split into the factor of finitely many irreducible elements and a \textit{strictly} ascending chain of principal ideals, respectively. But by the ascending chain condition for principal ideals, there exists some $N > 0$ such that for all $n \geq N$, $I_{n} = I_{N} \iff Rx_{n} = Rx_{N}$. This means that our procedure of obtaining a further element of $R$ that does not split into a finite product of irreducible elements must terminate after finitely many iterations; i.e. this contradicts our hypothesis that the infinite sequence of principle ideals is strictly ascending. Thus by contradiction, every nonzero nonunit element of $R$ must split into a product of finitely many irreducible elements. Now we will show that such a factorization is unique. 
+	($\Longleftarrow$) Let $R$ be an integral domain satisfying the ascending chain condition on principal ideals (ACCP), and further assume that every irreducible element in $R$ is prime. Assume to the contrary that $R$ is not a UFD. This implies that there exists at least one nonzero noninvertible element $x_{0} \in R$ such that $x_{0}$ does not split into a product of finitely many irreducible elements (notably, $x_{0}$ itself cannot be irreducible). Thus $x_{0}$ must split into a product of nonzero nonunit factors, at least one of which (denoted by $x_1$) must also not split into a product of finitely many irreducible elements. Repeating the argument for $x_0$, we obtain yet another element $x_2$ dividing $x_1$ that does not split into a product of finitely many irreducible elements. Repeating this procedure indefinitely, we obtain an infinite sequence $\{x_{j}\}_{j = 0}^{\infty}$ of elements of $R$ that do not split into a product of finitely many irreducible elements. For each $j \geq 0$, consider the principal ideal $I_{j} = Rx_{j}$ in $R$. Since the sequence of $x_j$ extends indefinitely, the sequence of principal ideals is a strictly ascending chain. By the ACCP hypothesis on $R$, there exists some finite $N > 0$ such that for all $n \geq N$, $I_{n} = I_{N}$. But this contradicts our claim that the chain is strictly ascending. Thus by contradiction, it follows that every nonzero noninvertible element $x_{0} \in R$ must split into the product of finitely many irreducible elements. Now we will show uniqueness of this factorization. Fix a nonzero nonunit element $x \in R$, and assume that $x$ has the factorizations, $p_{1}p_{2}\dotsm p_{n} = x = \ti{p}_{1}\ti{p}_{2}\dotsm \ti{p}_{m}$, where $n, m \geq 1$, and each $p_{i}, \ti{p}_{j}$ is an irreducible element in $R$. Assume without loss of generality that $m > n$. By our hypothesis for irreducible elements in $R$, since $p_{1} \mid \ti{p}_{1}\ti{p}_{2}\dotsm \ti{p}_{m}$, $p_{1}$ must divide one of these irreducible elements. Possibly after relabeling, suppose $p_{1} \mid \ti{p}_{1}$. Since $\ti{p}_{1}$ is irreducible, there exists a unit $u_{1} \in R$ such that $\ti{p}_{1} = u_{1} p_{1}$. Thus one has that $p_{1}p_{2}\dotsm p_{n} = u_{1}p_{1}\ti{p}_{2}\dotsm \ti{p}_{m}$. Since $R$ is an integral domain, the cancellation law yields $p_{2}\dotsm p_{n} = u_{1}\ti{p}_{2}\dotsm \ti{p}_{m}$. Thus now, possibly after relabeling the indices, $p_{2}$ divides $\ti{p}_{2}$. Repeating the same argument as before and inducting on $p_{i}$ ($i = 1, \ldots, n$), one ultimately obtains $1 = u_{1}u_{2}\dotsm u_{n}\ti{p}_{n + 1}\dotsm \ti{p}_{m}$, where $u_{1}\dotsm u_{n}$ is a unit in $R$ as it is the finite product of units. But since this implies $1 = u \cdot \ti{p}_{n + 1} \dotsm \ti{p}_{m}$, we have that $\ti{p}_{n + 1}\dotsm\ti{p}_{m}$ must be a unit in $R$, which is a contradiction since the finite product of irreducible elements cannot be a unit. Thus, we obtain $m = n$. And moreover, we have shown that the two factorizations of $x$ differ by a unit. Therefore, since we have shown that every nonzero nonunit element of $R$ has a unique (up to units) factorization into a product of finitely many irreducible elements, we conclude that $R$ is a UFD. 
 	
-	
+	($\Longrightarrow$) Now assume that $R$ is a UFD. First we will show that every ascending chain of principal ideals stabilizes. Consider the ascending chain $(x_{1}) \subsetneq (x_{2}) \subsetneq (x_{3}) \subsetneq \dotsm$. Since $R$ is a UFD, there exists a unique (up to units) factorization of $x_{1}$, $x_{1} = p_{1}p_{2}\dotsm p_{m}$, into a finite product of irreducible elements $p_{1}, \ldots, p_{m}$ in $R$. Since $x_{2}$ is a proper factor of $x_{1}$ (proper in the sense that $x_{2}$ is neither a unit nor an associate of $x_{1}$), the number of irreducible factors of $x_{2}$ (counting multiplicity) must be strictly less than $m$. Likewise, since $x_{3}$ is a proper factor of $x_{2}$ (in the same sense of ``proper''), the number of irreducible factors of $x_{3}$ (counting multiplicity) must be strictly less than that of $x_{2}$. Thus since every decreasing sequence of nonnegative integers must terminate, we find that the chain of ascending ideals must terminate after at most $m$ steps (at which point, the generator is either a unit or an associate of an irreducible element). Thus since this chain was arbitrary, we have shown that every ascending chain of principal ideals stabilizes. Now we will show that every irreducible element is prime. Let $p \in R$ be an arbitrary irreducible element and assume that $p \mid xy$ for some $x, y \in R$. Then there exists some $c \in R$ such that $pc = xy$. Since $R$ is a UFD, there exist unique (up to units) factorizations of $x, y, c$ into irreducible elements. Suppose $x = p_{1}\dotsm p_{m}$, $y = q_{1}\dotsm q_{n}$, and $c = r_{1}\dotsm r_{s}$. Substituting these factorizations back into the original equation, by unique factorization in $R$, it follows that $p$ must be equal to one of the irreducible factors of $a$ or $b$ up to a unit. But this implies that $p$ is an irreducible factor of $a$ or $b$, and thus $p$ divides $a$ or $b$. Therefore, $p$ must be prime. Since $p$ was an arbitrary irreducible element, we conclude that every irreducible in $R$ is prime. 
 	
 	\begin{prb}{2005-A-II-3}
 		Let $R$ be a unique factorization domain, $d \in R$, $d \neq 0$. Show that there are finitely many distinct principal ideals containing the ideal $(d)$. 
@@ -2513,6 +2513,12 @@ f2		\begin{equation*}
 	\end{equation*}
 	Each of the nonidentity elements have order 2. Thus, the Galois group is $\sf{V}_{4}$.
 	
+	\begin{prb}{2011-J-I-5}
+		Let $f(x)$ be an irreducible, quintic polynomial over $\mathbb{Q}$. Assume that the discriminant of $f(x)$ is not a square, and that the Galois group of the splitting field contains no transposition of the roots. Prove that $f(x)$ can be solved in radicals. 
+	\end{prb}
+	Let $f(x)$ be an irreducible, quintic polynomial over $\mathbb{Q}$, whose discriminant is not a square and whose Galois group $G$ contains no transposition of the roots. Since $f(x)$ is irreducible, the Galois group action on the set of roots of $f(x)$ is transitive and faithful, so that $G$ is isomorphic to a transitive subgroup of $S_{5}$. Since $G$ does not contain any transposition, $G \not \cong S_{5}$. And since the discriminant of $f(x)$ is not a square $G$ cannot be embedded in $A_{5}$. But since every other transitive subgroup of $S_5$ has order less than 60, and every group of order strictly less than 60 is solvable, it follows that $G$ is a solvable group. Thus since $f(x)$ is solvable in radicals iff its Galois group is solvable, we conclude that $f(x)$ is solvable in radicals. 
+	
+	
 	\begin{prb}{2010-A-II-2}
 		Find a rational number $c$ such that the splitting field over $\mathbb{Q}$ of the cubic polynomial $x^{3} + cx -1$ has a nonabelian Galois group over $\mathbb{Q}$. For your value of $c$, compute the isomorphism type of the Galois group. 
 	\end{prb}
@@ -2881,7 +2887,7 @@ f2		\begin{equation*}
 	
 	\newpage 
 	\subsection{Module Theory}
-	
+	\label{subsec:modules}	
 	\begin{prb}{2025-J-I-5}
 		Let $R$ be a nonzero commutative ring with multiplicative identity. Let $m$ and $n$ be distinct positive integers. Prove that $R^{n}$ and $R^{m}$, with their natural structure of $R$-modules, are not isomorphic $R$-modules. 
 	\end{prb}
@@ -3696,6 +3702,18 @@ f2		\begin{equation*}
 		\tor_{n}^{D^{-1}R}(D^{-1}A,D^{-1}B) = H_{n}(D^{-1}P_{\bullet}\otimes_{R}D^{-1}B) \cong D^{-1}H_{n}(P_{\bullet} \otimes_{R} B) \cong D^{-1}\tor_{n}^{R}(A, B). 
 	\end{equation*}
 	This concludes the proof that localization commutes with Tor. 
+	
+	\subsection{Pure Representation Theory}
+	By ``pure'' representation theory, we distinguish these problem(s) from the representation theory problems in the preceding \hyperref[subsec:modules]{section}.
+	\begin{prb}{2018-A-II-2}
+		Let $G$ be a finite group of order $p^{3}$, where $p$ is a prime. Let $V$ be an irreducible complex representation of $G$ of dimension $d > 1$. Prove that then $V$ is faithful (i.e., if $g \in G$ acts faithfully on $V$, then $g = e$). 
+	\end{prb}
+	Let $G$ be a finite group of order $p^{3}$, where $p$ is a prime. Let $(\rho, V)$ be an \textit{irreducible} complex representation of $G$ of dimension $d > 1$. Since the dimension is greater than 1, it follows that $\rho: G \to \operatorname{GL}(V)$ cannot be the trivial map. Thus, $K \coloneqq \ker{\rho} \neq G$. Thus, $|G/K| \in \{p, p^2, p^{3}\}$. Since $V$ is a complex irreducible representation of $G$, it follows that $V$ is also a complex irreducible representation of the quotient group $G/K$. If $|G/K| = p$, then $G/K \cong \mathbb{Z}_{p}$ is abelian so that $\dim{V} = 1$, which is a contradiction. So assume $|G/K| = p^{2}$. Since every group of order $p^{2}$ is also abelian, we conclude that $G/K$ is abelian, so that $\dim{V} = 1$, which is a contradiction again. Thus, $|G/K| = p^{3}$ so that $K = \{1\}$. Therefore, since the kernel of the irreducible complex representation is trivial, we conclude that $V$ is faithful. 
+	
+	\begin{prb}{R-A-1}
+		Prove that if a finite abelian group $A$ has a faithful complex irreducible representation, then $A$ is a cyclic group. 
+	\end{prb}
+	Let $A$ be a finite abelian group, and let $(\rho, V)$ be a faithful complex irreducible representation. Since $\rho$ is faithful, $\rho$ is injective so that $A \cong \rho(A)$. Thus, $\rho(A)$ is a finite subgroup of $\operatorname{GL}(V)$. But since $A$ is abelian, Schur's lemma tells us that $\dim{V} = 1$. But if $V$ is 1-dimensional, every linear map $T: V \to V$ corresponds to scalar multiplication so that $\operatorname{GL}(V) \cong \mathbb{C}^{\times}$. Thus since every finite subgroup of a multiplicative group is cyclic, $\rho(A)$ is cyclic. By extension, $A$ is cyclic. 
 	
 	\subsection{Pure Group Theory}
 	\begin{prb}{2011-J-II-5}
@@ -7280,8 +7298,56 @@ f2		\begin{equation*}
 		\begin{equation*}
 			G \rtimes_{\varphi} H \cong \braket{X, Y \mid R, S, yxy^{-1} = \phi(y)(x), \forall x \in X, y \in Y}. 
 		\end{equation*}
+		\item (Cauchy's Theorem) If $G$ is a finite group and $p$ is a prime dividing the order of $G$, then $G$ contains an element of order $p$. 
+		\item Every $p$-group $G$ has a nontrivial center. \newline \expl{
+			One has the relation, 
+			\begin{equation*}
+				|G| = |Z(G)| + \sum_{x_{i} \notin Z(G)}[G: C(x_{i})] \implies |Z(G)| = |G| - \sum_{x_{i}\notin Z(G)}[G: C(x_i)], 
+			\end{equation*}
+			where $C(x_{i})$ is the centralizer of the element $x_i \notin Z(G)$. In particular, since $C(x_i) \leq G$, $[G: C(x_i)] \mid |G|$, and thus each term of the sum above is divisible by $p$. Consequently, the finite sum is also divisible by $p$. Since $p$ also divides $|G|$, it follows that $p$ divides $|Z(G)|$. Since $|Z(G)| geq 1$, and $p > 1$ is a divisor, we conclude that $|Z(G)| > 1$ so that the center of $G$ is nontrivial. 
+		}
+		\item In a group $G$, a sequence of subgroups 
+		\begin{equation*}
+			1 = N_{0} \leq N_{1}\leq N_{2} \leq \dotsm \leq N_{k - 1} \leq N_{k} = G,
+		\end{equation*}
+		is called a \textit{composition series} if $N_{i} \trianglelefteq N_{i + 1}$ and $N_{i + 1}/N_{i}$ is a simple group, $0 \leq i \leq k - 1$. Each $N_{i + 1}/N_{i}$ is called a \textit{composition factor} for $G$. 
+		\item (Jordan-H\"older) Let $G$ be a finite, nontrivial group. Then \vspace{-0.35cm} 
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item $G$ has a composition series, and 
+			\item The composition factors in a composition series are unique. 
+		\end{enumerate}
+		\item A group $G$ is \textit{solvable} if there is a chain of subgroups 
+		\begin{equation*}
+			1 = G_{0} \trianglelefteq G_{1} \trianglelefteq G_{2} \trianglelefteq \dotsm \trianglelefteq G_{s} = G, 
+		\end{equation*}
+		such that each $G_{i + 1}/G_{i}$ is abelian for $i = 0, 1, \ldots, s - 1$. 
+		\item Let $G$ be a group, and $N$ a normal subgroup of $G$. If $N$ and $G/N$ are solvable, then $G$ is solvable. \newline \expl{
+		Let $\overline{G} \coloneqq G/N$, and let $1 = N_{0} \trianglelefteq N_{1} \trianglelefteq \dotsm \trianglelefteq N_{n}= N$ be a composition series for $N$, and let $\overline{1}= \overline{G_{0}} \trianglelefteq \overline{G_{1}} \trianglelefteq \dotsm \trianglelefteq \overline{G_{m}} = \overline{G}$ be a composition series for $\overline{G}$. By the Lattice Isomorphism Theorem there are subgroups $G_{i}$ of $G$ with $N \leq G_{i}$ such that $G_{i}/N = \overline{G_{i}}$ and $G_{i}\trianglelefteq G_{i + 1}$, $0 \leq i < m$. By the Third Isomorphism Theorem, 
+		\begin{equation*}
+			\overline{G_{i + 1}}/\overline{G_{i}} = (G_{i + 1}/N)/(G_{i}/N) \cong G_{i + 1}/G. 
+		\end{equation*}
+		Thus, we obtain the following composition series 
+		\begin{equation*}
+			1 = N_{0} \trianglelefteq N_{0} \trianglelefteq N_{1} \trianglelefteq \dotsm \trianglelefteq N_{n} = N = G_{0} \trianglelefteq G_{1} \triangleleft \dotsm \trianglelefteq G_{m} = G. 
+		\end{equation*}
+		Therefore, $G$ is solvable. 
+		}
+		\item Every abelian group is solvable. \newline \expl{
+		It suffices to show that $G$ has a composition series. Consider the composition series $1 = G_{0} \trianglelefteq G_{1} = G$. Then $G_{0}$ is clearly normal in $G$ (since $G$ is abelian), and $G_{1}/G_{0} = G/\{e\} \cong G$ is abelian. Thus this is a valid composition series so that $G$ is solvable. 
+		}
+		\item Every finite group of order less than 60 is solvable (possibly dangerous; use only after all other methods have been exhausted). 
 	\end{enumerate}
-	
+	\paragraph{Representation Theory}
+	\begin{enumerate}[resume=algebra]
+		\item (Schur's Lemma) Let $V$ and $W$ be vector spaces; and let $(\rho_{V}, V)$, $(\rho_{W}, W)$ be irreducible representations of $G$ on $V$ and $W$, respectively. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item If $V$ and $W$ are not isomorphic, then there are no nontrivial $G$-linear maps between them. 
+			\item If $V = W$ finite-dimensional over an algebraically closed field; and if $\rho_{V} = \rho_{W}$, then the only nontrivial $G$-linear maps are the scalar multiples of the identity map on $V$ (i.e., a \textit{homothety}). 
+		\end{enumerate}
+		\item Every irreducible complex representation of an abelian group $G$ is one-dimensional. \newline \expl{
+			Let $(\rho, V)$ be an irreducible complex representation of an abelian group $G$. By Schur's lemma, for every irreducible representation $\rho: G \to  \operatorname{GL}(V)$ over an algebraically closed field, the only elements of $\operatorname{GL}(V)$ that commute with every element in $\rho(G)$ are the scalar multiples of the identity. Since $G$ is abelian and $\mathbb{C}$ is algebraically closed, each element $\rho(g)$ commutes with every element in $\rho(G)$. Therefore, each $\rho(g)$ is a scalar multiple of the identity map on $V$. Then for $v \in V \setminus \{0\}$, $\braket{v}$ is a subrepresentation of $V$. But since $V$ is irreducible, $V  = \braket{v}$. Thus, $V$ is one-dimensional. 
+		}
+	\end{enumerate}
 	\newpage 
 	\subsubsection{Geometry and Topology}
 	\paragraph{De Rham Cohomology}
