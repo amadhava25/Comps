@@ -32,7 +32,7 @@
 }
 
 
-\title{Comps Mega Review \\ \normalsize{With 16 Illustrations} \vspace{-0.5cm}}
+\title{Comps Mega Review \\ \normalsize{With 19 Illustrations} \vspace{-0.5cm}}
 \author{\me}
 \date{June 4, 2026}
 
@@ -1283,6 +1283,89 @@
 	\end{prb}
 	Let $M$ be a smooth, connected manifold whose fundamental group has finite, odd order. Let $\hat{M}$ denote the orientation cover on $M$, and let $p: \hat{M} \to M$ denote the covering map. Since $p$ is a covering map, one has that $p_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ is injective, and thus $p_\ast(\pi_1(\hat{M}, x_0)) \leq \pi_1(M, p(x_0))$. If $M$ is \textit{not} orientable (i.e., $\hat{M}$ is a connected space), then since $p$ is a 2-sheeted covering space, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M,p(x_0))$. By Lagrange's theorem, it follows that $2$ is a divisor of the order of the fundamental group of $M$, so that it has even order. This is a contradiction! Thus by contradiction, $M$ must be orientable. 
 	
+	\begin{prb}{2000-A-II-2}
+		Let $M_{1}$ and $M_{2}$ be compact $n$-dimensional manifolds with $n \geq 3$ and let $M_{1} \# M_{2}$ be the connected sum. Compute the fundamental group of $M_{1} \# M_{2}$ in terms of $\pi_{1}(M_{1})$, $\pi_{1}(M_{2})$.  Remark: connected sum of two $n$-manifolds is defined as follows: remove a small $n$ ball from each of them and then glue these manifolds along the resulting boundaries ($n-1$-spheres); up to homeomorphism, the result does not depend on the choice of the balls or gluing homeomorphism. 
+	\end{prb}
+	
+	\begin{prb}{1999-A-II-3}
+		If $X$ is any path-connected topological space, let us use the term \textit{proper double cover of $X$} to mean a covering map $\pi: Y \to X$, where $Y$ is path-connected and $\pi^{-1}(X)$ consists of exactly two points for some (and hence for every) $x \in X$. Two such coverings will be said to be isomorphic if there is a homeomorphism $\phi: Y' \to Y$ so that $\pi' = \pi \circ \phi$. \vspace{-0.25cm} 
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item For any path-connected, locally simply connected $X$, show that isomorphism classes of proper double covers of $X$ are in one-to-one correspondence with the surjective homomorphisms $\pi_{1}(X) \to \mathbb{Z}_{2}$ (the group of order 2). 
+			\item If $X$ is the 2-dimensional torus, how many proper double covers of $X$ are there, up to isomorphism? 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item Let $X$ be a path-connected, locally simply connected space. Then the Galois correspondence for covering spaces tells us that the isomorphism classes of path-connected covering spaces of $X$ are in one-to-one correspondence with the conjugacy classes of subgroups of $\pi_{1}(X)$, and moreover, the degree of the covers in each isomorphism class is equal to the index of the subgroups in $\pi_{1}(X)$ in each corresponding conjugacy class of subgroups. 
+		
+		($\longrightarrow$) Consider an arbitrary isomorphism class $[\ti{X}]$ of proper double covers of $X$. By the Galois correspondence, this isomorphism class corresponds to a conjugacy class $[H]$ of index-2 subgroups of $X$. Let $\pi_{1}(X)$ act on the group $H$ by left-multiplication; since $[\pi_{1}(X): H] = 2$, this action induces a group homomorphism $\varphi: \pi_{1}(X) \to S_{2} \cong \mathbb{Z}_{2}$. The kernel of this homomorphism is, 
+		\begin{equation*}
+			\ker{\varphi} = \bigcap_{g \in \pi_{1}(X)}gHg^{-1}. 
+		\end{equation*}
+		But since every index-2 subgroup of a group is normal, $H$ is a normal subgroup of $\pi_{1}(X)$ so that for every $g \in G$, $gHg^{-1} = H$. Thus, $\ker{\varphi} = H$. Now by the First Isomorphism Theorem, one has that 
+		\begin{equation*}
+			|\mathbb{Z}_{2}| = 2 = [\pi_{1}(X): H] = |\operatorname{im}{\varphi}|, 
+		\end{equation*}
+		so that $\varphi$ is a surjective group homomorphism. Thus we have shown that every isomorphism class of proper double covers of $X$ corresponds to a surjective homomorphism of $\pi_{1}(X)$ onto $\mathbb{Z}_{2}$. 
+		
+		($\longleftarrow$) Now consider a surjective homomorphism $\varphi: \pi_{1}(X) \to \mathbb{Z}_{2}$, and let $H = \ker{\varphi}$. By the First Isomorphism Theorem, 
+		\begin{equation*}
+			[\pi_{1}(X): H] = |\operatorname{im}{\varphi}| = 2, 
+		\end{equation*}
+		so that $H$ is an index-2 subgroup of $\pi_{1}(X)$. Thus by the Galois correspondence, the conjugacy class $[H]$ corresponds to an isomorphism class $[\ti{X}]$ of path-connected proper double covers of $X$. 
+		
+		\item Now assume that $X$ is the 2-dimensional torus, $T^{2}$, so that $\pi_{1}(T^{2}) \cong \mathbb{Z}^{2} = \braket{(1,0),(0,1)}$. Each surjective homomorphism $\varphi: \mathbb{Z}^{2} \to \mathbb{Z}_{2}$ is uniquely determined by $\varphi((1,0))$ and $\varphi((0,1))$. We explore the possibilities below: \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+			\item $\varphi: (1,0) \mapsto 0, (0,1) \mapsto 1$. Since a generator of $\mathbb{Z}^{2}$ is mapped to a generator of $\mathbb{Z}_{2}$, the homomorphism is surjective. 
+			\item $\varphi: (1,0) \mapsto 1, (1,0) \mapsto 0$.  Since a generator of $\mathbb{Z}^{2}$ is mapped to a generator of $\mathbb{Z}_{2}$, the homomorphism is surjective. 
+			\item $\varphi: (1,0) \mapsto 1, (0,1) \mapsto 1$.  Since a generator of $\mathbb{Z}^{2}$ is mapped to a generator of $\mathbb{Z}_{2}$, the homomorphism is surjective. 
+			\item $\varphi: (1,0) \mapsto 0, (0,1) \mapsto 0$. In this case, $\varphi(\mathbb{Z}^{2}) = \{0\}$, which means that the homomorphism is not surjective. 
+		\end{enumerate}
+		Using (1), we conclude that there are precisley 3 proper double covers of $X$ up to isomorphism. 
+	\end{enumerate}
+	
+	\begin{prb}{1999-J-II-1}
+		Compute the fundamental group for the complement of two linked circles in $\mathbb{R}^3$, i.e., $M=\mathbb{R}^3\backslash(C_0\cup C_1)$ where
+		\begin{equation*}
+			C_{0} = \{(x,y,0): x^{2} + y^{2} = 1\}
+		\end{equation*}
+		and 
+		\begin{equation*}
+			C_{1}= \{(0, y, z): (y - 1)^{2} + z^{2} = 1\}. 
+		\end{equation*}
+	\end{prb}
+	Let $M = \mathbb{R}^{3}\setminus (C_{0} \cup C_{1})$, where $C_{0}$ and $C_1$ are the aforementioned circles in $\mathbb{R}^{3}$. Then following the construction outlined in Figure \ref{fig:1999JII1}, we see that $M$ deformation retracts onto the 2-torus $T^{2}$ so that $\pi_{1}(M) \cong \pi_{1}(\mathbb{T}^{2}) \cong \mathbb{Z} \times \mathbb{Z}$. 
+	\begin{figure}[h!]
+		\centering 
+		\includegraphics[width = 0.55\textwidth]{../Graphics/1999JII1.jpg}
+		\caption{Problem 1999-J-II-1.}
+		\label{fig:1999JII1}
+	\end{figure}
+	
+	\begin{prb}{1998-A-I-4}
+		Let $A$ denote the subset of 3-space $\mathbb{R}^{3}$ consisting of the union of the $z$-axis, the unit circle centered at the origin in the $xy$-plane, and the point $(3,3,0)$. Set $B = \mathbb{R}^{3}\setminus A$. Show that $\pi_1(B)$ has a subgroup which is isomorphic to $\mathbb{Z}$.
+	\end{prb}
+	Consider the contruction in Figure \ref{fig:1998AI4}. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width = 0.73\textwidth]{../Graphics/1998AI4.jpg}
+		\caption{Problem 1998-A-I-4.}
+		\label{fig:1998AI4}
+	\end{figure}
+	
+	Thus we see that the space $B$ is homotopy equivalent to the wedge sum $T^{2} \vee S^2$. Therefore, $\pi_{1}(B) \cong \pi_{1}(T^{2}) \ast \pi_{1}(S^{2}) \cong \pi_{1}(T^{2}) \cong \mathbb{Z}^{2}$. Then one has that the subgroup generated by the element $(1,0) \in \mathbb{Z}^{2}$ is precisely the subgroup $\mathbb{Z} \times \{0\}$. Let $\varphi: \mathbb{Z} \times \{0\} \to \mathbb{Z}$ be the standard projection map. Then it is straightforward to show that $\varphi$ is an isomorphism, which concludes the proof. 
+	
+	\begin{prb}{1997-J-I-2}
+		Let $C \subset \mathbb{R}^{3}$ be the unit circle in the $xy$-plane, and let $L \subset \mathbb{R}^{3}$ be the $z$-axis. Let $Y = \mathbb{R}^{3} \setminus (C \cup L)$ be the complement of these two curves. Compute the fundamental group of $Y$. 
+	\end{prb}
+	Let $Y$ be the space described above. We will demonstrate an explicit construction to show that $Y$ is homotopy equivalent to the 2-torus, $T^{2}$, in Figure \ref{fig:1997JI2}.
+	 
+	\begin{figure}[h!]
+		\centering 
+		\includegraphics[width = 0.73\textwidth]{../Graphics/1997JI2.jpg}
+		\caption{Problem 1997-J-I-2.}
+		\label{fig:1997JI2}
+	\end{figure}	
+	Since $\pi_{1}(T^{2}) \cong \mathbb{Z}^{2}$, we conclude that $\pi_{1}(Y) \cong \mathbb{Z}^{2}$. 
 	\begin{prb}{R-DGT-1}
 		Compute the fundamental group of the 2-torus $T$ using the Seifert-van Kampen Theorem. 
 	\end{prb} 
@@ -1567,6 +1650,11 @@
 		\end{quote}
 	Now we can use these results to prove that $X$ is orientable. By the first lemma, one has that $X \cong S^{2m + 1}/\Gamma$. In particular, $X$ is orientable iff every deck transformation on $S^{2m + 1}$ preserves orientation. Since the identity deck transformation is always orientation preserving, it suffices to check that every \textit{nontrivial} deck transformation preserves orientation. By the second lemma, such nontrivial transformations are necessarily fixed-point free. By the third lemma, such transformations are homotopic to the antipodal map. The degree of the antipodal map, $\alpha: S^{2m + 1} \to S^{2m + 1}$ is $(-1)^{(2m + 1) + 1} = (-1)^{2(m + 1)} = 1$. Since every map of degree 1 preserves orientation, we conclude that every deck transformation on $S^{2m + 1}$ preserves orientation. Thus, $X$ is orientable. However, this result does not generally hold in the even-dimensional sphere case. In particular, one has that the antipodal map in the even-dimensional sphere case is necessarily orientation-reversing. If the group of deck transformations, $\Gamma$, is nontrivial, then necessarily $\Gamma \cong \mathbb{Z}/2\mathbb{Z}$ so that $X \cong S^{2m}/(\mathbb{Z}/2\mathbb{Z}) \cong \mathbb{RP}^{2m}$, which is nonorientable.  
 	
+	\begin{prb}{2013-A-I-1}
+		Use the path lifting property to show the circle is not contractible. Contractible means there is a map of the unit 2-disk into its boundary the unit circle, which is the identity on the boundary. 
+	\end{prb}
+	Assume to the contrary that there exists a continuous map $f: D^{2} \to S^{1}$ such that $f(x) = x$ for all $x \in S^1$. Since $D^{2}$ is simply connected (and contractible), $\pi_{1}(D^{2}) = 0$ so that the induced map $f_{\ast}: \pi_{1}(D^{2}) \to \pi_{1}(S^{1})$ is trivial. Thus there exists a continuous lift $\ti{f}: D^{2} \to \mathbb{R}$, the universal cover of $S^{1}$, such that $f = p \circ \ti{f}$. Let $\gamma: [0,1] \to S^{1} \subset D^{2}$ be the standard generator loop on the unit circle given by $\gamma(t) = e^{2\pi i t}$. Consider the loop $\ti{\gamma}: [0,1] \to \mathbb{R}$ given by $\ti{\gamma}(t) = \ti{f}(\gamma(t))$. By the path-lifting property, it follows that $\ti{\gamma}(t)$ is the unique lift of $\gamma(t)$ (i.e., $\ti{\gamma}(t) = p(\gamma(t))$). Since the degree of $\gamma$ is 1, it follows that $\ti{\gamma}(1) - \ti{\gamma}(0) = 1 \neq 0$. On the other hand, one has that $\ti{\gamma}(1) = \ti{f}(\gamma(1)) = \ti{f}(\gamma(0)) = \ti{\gamma}(0)$ so that $\ti{\gamma}(1) -\ti{\gamma}(0) = 0$. But this is a contradiction! Thus, no such continuous map $f: D^{2} \to S^{1}$ can exist, which means that the circle is not contractible.  
+	
 	\begin{prb}{2013-J-II-5}
 		If $M$ and $N$ are compact 2-manifolds, their connected sum $M\#N$ is obtained by removing an open disk from each, and then identifying the resulting circle boundaries. It is a theorem that any smooth compact non-orientable surface without boundary is homeomorphic to an iterated connected sum
 		\begin{equation*}
@@ -1651,7 +1739,7 @@
 	\begin{prb}{2020-J-I-2}
 		Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary. Suppose that $\pi_1(M)$ is finite, but that $\pi_1(N)$ is infinite. Prove that every smooth map $\Psi: M \to N$ has degree 0. 
 	\end{prb}
-	Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary, and assume that $\pi_1(M)$ is finite, but $\pi_{1}(N)$ is infinite. Let $\Psi: M \to N$ be a smooth map, and assume to the contrary that $\Psi$ has nonzero degree. Then $\Psi_{\ast}(\pi_1(M))$ is a finite-index subgroup of $\pi_1(N)$, and by Lagrange's theorem, this index must divide $\deg{\Psi}$. But since $\pi_{1}(M)$ is finite, $|\Psi_{\ast}(\pi_1(M))|$ is finite, and thus has infinite index in $\pi_1(N)$ (since $|\psi_1(N)|$ is infinite). But this contradicts our hypothesis that $\deg{\Psi} \neq 0$. Thus by contradiction, the proof concludes. 
+	Let $M$ and $N$ be smooth compact connected oriented $n$-manifolds without boundary, and assume that $\pi_1(M)$ is finite, but $\pi_{1}(N)$ is infinite. Let $\Psi: M \to N$ be a smooth map, and assume to the contrary that $\Psi$ has nonzero degree. Then $\Psi_{\ast}(\pi_1(M))$ is a finite-index subgroup of $\pi_1(N)$, and by Lagrange's theorem, this index must divide $\deg{\Psi}$. But since $\pi_{1}(M)$ is finite, $|\Psi_{\ast}(\pi_1(M))|$ is finite, and thus has infinite index in $\pi_1(N)$ (since $|\pi_1(N)|$ is infinite). But this contradicts our hypothesis that $\deg{\Psi} \neq 0$. Thus by contradiction, the proof concludes. 
 	
 	\begin{prb}{2019-J-I-6}
 		Let $T^2$ be a two-dimensional torus and let $f: T^2 \to T^2$ be a continuous map such that the induced map of fundamental groups $f_\ast: \pi_{1}(T^2,x_0) \to \pi_1(T^2, f(x_0))$ is trivial (i.e., the image of $f_\ast$ consists of the identity element). Prove that $f$ has a fixed point. 
@@ -1669,6 +1757,15 @@
 		\Lambda_{f} = \sum_{x \in \operatorname{Fix}{f}}\operatorname{ind}(f,x) = 0, 
 	\end{equation*}
 	where $\operatorname{Fix}{f}$ denotes the fixed points of $f$, and $\operatorname{ind}(f, x)$ is the fixed-point index. But this is a contradiction! Thus by contradiction, $f$ must have a fixed point. 
+	
+	\begin{prb}{2018-J-I-5}
+		Let $\mathbb{RP}^{n}$ denote the $n$-dimensional real projective space where $n$ is an odd integer. Suppose that a continuous map $f: \mathbb{RP}^{n} \to \mathbb{RP}^{n}$ induces the trivial homomorphism
+		\begin{equation*}
+			f_{\ast}: \pi_{1}(\mathbb{RP}^{n}, x_{0}) \to \pi_{1}(\mathbb{RP}^{n}, x_{0}). 
+		\end{equation*}
+		Show that $f$ has a fixed point; i.e., there is $x \in \mathbb{RP}^{n}$ such that $f(x) = x$. 
+	\end{prb}
+	Let $n$ be an odd integer, and let $f: \mathbb{RP}^{n} \to \mathbb{RP}^{n}$ be a continuous map such that it induces a trivial homomorphism $f_{\ast}$ on fundamental groups. Assume to the contrary that $f$ has no fixed points, and let $p: S^{n} \to \mathbb{RP}^{n}$ denote the universal covering map. Since $f_{\ast}(\pi_{1}(\mathbb{RP}^{n})) \leq p_{\ast}(\pi_{1}(S^{n}))$, there exists a continuous lift $\ti{f}: \mathbb{RP}^{n} \to S^{n}$ of $f$ such that $f = p \circ \ti{f}$. Consider the map $g \coloneqq \ti{f} \circ p: S^{n} \to S^{n}$. Since $f$ is assumed to have no fixed points and $p$ is surjective (by definition of a covering map), for every $x \in S^n$, $f(p(x)) \neq p(x)$. In particular, one has that $p(\ti{f}(p(x))) \neq p(x) \iff p(g(x)) \neq p(x)$ for any $x \in S^{n}$. Since $p(x) = p(-x)$, this implies that $g$ has neither fixed points (i.e., for any $x \in S^{n}$, $g(x) \neq x$) nor antipodal points (i.e., for any $x \in S^{n}$, $g(x) \neq -x$). Since $g(x)$ is a continuous map on $S^{n}$ without fixed points, it is homotopic to the antipodal map, $\alpha: S^{n} \to S^{n}$ which has degree $(-1)^{n + 1} = 1$ since $n$ is odd. However, we also know that $\deg{g} = \deg{\ti{f}} \circ \deg{p} = 2 \cdot \deg{\ti{f}}$ since $p$ is a 2-sheeted covering map. This means that $\deg{g}$ must be even, which is a contradiction! Therefore, by contradiction, we conclude that $f$ must have a fixed point. 
 	
 	\begin{prb}{2017-A-II-4}
 		Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $\Phi: M\to M$ be a smooth map that is smoothly homotopic to the identity. (In other words, suppose there is a smooth map $F: M \times [0,1] \to M$ such that $F(x,0) = \Phi(x)$ and $F(x,1) = x$ for every $x \in M$.) Show that $\Phi$ must be surjective. 
@@ -1800,6 +1897,10 @@
 		In this case, we see that $X/A$ is homeomorphic to a cone; $X/A$ is homeomorphic to the disk by means of the projection map from $X/A$ to $\mathbb{R}^{2}$ (e.g., the map $f: (x, y, z) \in C \mapsto (x, y)$, where $C$ denotes the 2-dimensional cone embedded in $\mathbb{R}^{3}$). Since the disk is a topological 2-manifold, we conclude that $X/A$ is homeomorphic to a topological manifold when $X$ is the M\"obius band, and $A$ is the center circle. 
 	\end{enumerate}
 	
+	\begin{prb}{2009-J-I-1}
+		Let $M^{k}$ be a smooth compact $k$-manifold, and let $F: M \to S^{n}$ be a smooth map, where $n > k$. Prove that $F$ is homotopic to a constant map. 
+	\end{prb}
+	Let $M^{k}$ be a smooth compact $k$-manifold, and let $F: M \to S^{n}$ be a smooth map, where $n > k$. In particular, this implies that for any $x \in M$, $dF_{x}: T_{x}M \to T_{F(x)}S^{n}$ is not surjective so that every point in $F(M)$ is a critical value. By Sard's Theorem, this implies that $F(M)$ is a measure zero subset of $S^{n}$. Therefore, there exists at least one $q \in S^{n}$ such that $F(M) \subseteq S^{n}\setminus \{q\}$. Thus one can view $F$ as a map from $M$ to $S^{n}\setminus \{q\}$, which is contractible as it is homeomorphic to $\mathbb{R}^{n}$. Since any smooth map into a contractible space is nulhomotopic, we conclude that $F$ is nulhomotopic (i.e., homotopic to a constant map). 	
 	\newpage
 	\section{Algebra}
 	
