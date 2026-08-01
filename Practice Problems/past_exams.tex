@@ -32,7 +32,7 @@
 }
 
 
-\title{Comps Mega Review \\ \normalsize{With 19 Illustrations} \vspace{-0.5cm}}
+\title{Comps Mega Review \\ \normalsize{With 21 Illustrations} \vspace{-0.5cm}}
 \author{\me}
 \date{June 4, 2026}
 
@@ -1425,6 +1425,27 @@
 		\pi_1(T) \cong \braket{a,b \mid aba^{-1}b^{-1} = 1} \cong \mathbb{Z} \times \mathbb{Z}, 
 	\end{equation*}
 	exactly as we found above. 
+	
+	\begin{prb}{H-1.3-9}
+		Show that if a path-connected, locally path connected space $X$ has $\pi_{1}(X)$ finite, then every map $X \to S^{1}$ is nullhomotopic. [Use the covering space $\mathbb{R} \to S^{1}$.]
+	\end{prb}
+	Let $X$ be a path-connected, locally path connected space with finite fundamental group $\pi_{1}(X)$, and let $f: X \to S^{1}$ be a fixed map. Consider the induced map $f_{\ast}: \pi_{1}(X) \to \pi_{1}(S^{1}) \cong \mathbb{Z}$. Since $\mathbb{Z}$ is an infinite group, it follows that $f_{\ast}$ has to be the trivial homomorphism: for any $[\gamma]\in \pi_{1}(X)$, one has that $|f_{\ast}([\gamma])| \mid |\gamma|$; every nonzero element in $\mathbb{Z}$ has infinite order, while $|\gamma| < \infty$, so that $f_{\ast}([\gamma]) = 0$. Thus since $f_{\ast}(\pi_{1}(X, x_{0})) \leq p_{\ast}(\pi_{1}(\mathbb{R}, p^{-1}(x_{0})))$, there exists a lift $\ti{f}: X \to \mathbb{R}$ such that $f = p \circ \ti{f}$. Since $\mathbb{R}$ is contractible, $\ti{f}$ must be nullhomotopic. Projecting down the homotopy via the covering map $p$, it follows that $f$ must be nullhomotopic as well. 
+	
+	\begin{prb}{H-1.3-10}
+		Find all the connected 2-sheeted and 3-sheeted covering spaces of $S^{1} \vee S^{1}$, up to isomorphism of covering spaces without basepoints. 
+	\end{prb}
+	Let $X$ denote the space $S^{1} \vee S^{1}$, where $\pi_{1}(X) \cong \pi_{1}(S^{1}) \ast \pi_{1}(S^{1}) \cong \mathbb{Z} \ast \mathbb{Z}$. By the Galois correspondence for covering spaces, the isomorphism classes of 2-sheeted and 3-sheeted covering spaces of $S^{1} \vee S^{1}$ correspond to the conjugacy classes of index-2 and index-3 subgroups, respectively, of $\mathbb{Z}\ast \mathbb{Z}$. We consider each case separately. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt, label = (\roman{*})]
+		\item (2-Sheeted Spaces) The conjugacy classes of index-2 subgroups of $\mathbb{Z} \ast \mathbb{Z}$ are in one-to-one correspondence with surjective group homomorphisms $\varphi: \mathbb{Z} \ast \mathbb{Z} \cong \braket{a, b} \to \mathbb{Z}_{2}$. To obtain a surjective group homomorphism, at least one of the generators must map to the element $1 \in \mathbb{Z}_{2}$. Thus we obtain three distinct homomorphisms: (1) $a \mapsto 1, b \mapsto 0$, (2) $a \mapsto 0, b \mapsto 1$, and (3) $a \mapsto 1, b \mapsto 1$. Since $\operatorname{Aut}(\mathbb{Z}_{2})$ is trivial, it follows that each homomorphism corresponds to a distinct isomorphism class\footnote{Case 1 ($\phi_1$): $a$ traverses across the two sheets (a double loop), while $b$ lifts to two separate loops (one on each sheet).Case 2 ($\phi_2$): Symmetric to Case 1, with the roles of $a$ and $b$ flipped.Case 3 ($\phi_3$): Both $a$ and $b$ traverse across the two sheets, forming a 2-vertex graph where two $a$-edges and two $b$-edges alternate between the vertices.} Thus, visually the three 2-sheeted covering spaces of $S^{1} \vee S^{1}$ are given in Figure \ref{fig:H1310}. 
+		\begin{figure}[h!]
+			\centering 
+			\includegraphics[width = \textwidth]{../Graphics/H1310.jpg}
+			\caption{Problem H-1.3-10.}
+			\label{fig:H1310}
+		\end{figure}
+		
+		\item (3-Sheeted Spaces) Now we start by looking for surjective homomorphisms $\varphi: \mathbb{Z} \ast \mathbb{Z} \to \mathbb{Z}_{3}$. Here, we have more options. However, since $\operatorname{Aut}(\mathbb{Z}_{3}) \cong \mathbb{Z}_{2}$, some distinct surjective homomorphisms may produce isomorphic covering spaces. Any homomorphism from $\mathbb{Z} \ast \mathbb{Z} \cong \braket{a,b} \to \mathbb{Z}_{3}$ is surjective as long as it is nonzero. 
+	\end{enumerate}
 	
 	\newpage 
 	\subsection{Vector Fields}
