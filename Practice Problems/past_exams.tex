@@ -400,6 +400,7 @@
 			\int_{X}f^{\ast}\omega = 0. 
 		\end{equation*}
 	\end{prb}
+	\complete 
 	
 	\begin{prb}{2002-J-I-6}
 		Define forms $\theta_{1}$ and $\theta_{2}$ on the torus $T^{2} = S^{1} \times S^{1}$ by pulling back area forms from the two projections onto circles. Let $M$ be a compact oriented 3-manifold with boundary $T^{2}$. Show that $\int_{T^{2}}\theta_{1} \wedge \theta_{2}$ is non-zero, and as a result that $\theta_{1}$ and $\theta_{2}$ cannot both extend to closed forms on $M$. 
@@ -1093,6 +1094,22 @@
 		\end{equation*}
 	\end{enumerate}
 	
+	\begin{prb}{2021-A-II-3}
+		Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to a great circle in $S^{2}$. Compute the fundamental group of $X$. 
+	\end{prb}
+	Let $X$ be the space obtained by gluing the boundary circle of the M\"obius band to a great circle (e.g., the equator) in $S^{2}$. We can compute the fundamental group of $X$ using CW structures. We assign to $S^{2}$ the CW structure comprised one 0-cell $v$, one 1-cell $e_{C}^{1}$ corresponding to the equator of $S^{2}$, and two 2-cells $e_{N}^{2}$ and $e_{S}^{2}$ corresponding to the northern and southern hemispheres. These 2-cells are both attached along the loop $e^{1}_{C}$. Now let $a$ be a 1-cell corresponding to the core circle of the M\"obius band, and attach $a$ to the vertex $v$. Let $e_{M}^{2}$ denote the 2-cell corresponding to the body of the M\"obius band. Since the boundary circle of the M\"obius band is attached to $e_{C}^{1}$, $\partial e_{M}^{2}$ is attached along $e_{C}^{1}$. But since the boundary circle of the M\"obius band wraps around the core circle $a$ twice, one has that $e_{C}^{1} = a^{2}$. Therefore, by van Kampen's theorem, we conclude that 
+	\begin{equation*}
+		\pi_{1}(X) \cong \braket{e_{C}^{1}, a \mid e_{C}^{1} = 1, e_{C}^{1} = 1, e_{C}^{1} = a^{2}} \cong \braket{a \mid a^{2} = 1} \cong \mathbb{Z}/2\mathbb{Z}. 
+	\end{equation*}
+	
+	\begin{prb}{2021-A-II-3 (Modified)}
+		Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to the equator of the 2-torus. Compute the fundamental group of $X$. 
+	\end{prb}
+	Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to the equator of the 2-torus. We can compute the fundamental group of $X$ using CW structures. We assign to $T^{2}$ the CW structure comprised of one 0-cell $v$, two 1-cells $e^{1}_{C}$ and $e^{1}_{R}$ (where $e^{1}_{C}$ corresponds to the equator of the 2-torus), and one 2-cell $e^{2}_{T}$; $\partial e^{2}_{T}$ is attached along the boundary word $e^{1}_{R}e^{1}_{C}{e^{1}_{R}}^{-1}{e^{1}_{R}}^{-1}$. For the M\"obius band, we consider the 1-cell $a$ corresponding to the core circle that is attached to $V$. We also introduce the 2-cell $e^{2}_{M}$ corresponding to the body of $M$; $\partial e^{2}_{M}$ is attached to the equator $e^{1}_{C}$. But since the boundary of the M\"obius band wraps around the core circle twice, one has that $e^{1}_{C}= a^{2}$. Thus, by van Kampen's theorem, we obtain the following: 
+	\begin{equation*}
+		\pi_{1}(X) \cong \braket{a, e^{1}_{C}, e^{1}_{R} \mid [e^{1}_{C}, e^{1}_{R}] = 1, e^{1}_{C} = a^{2}} \cong \braket{a, e^{1}_{R} \mid [a^{2}, e^{1}_{R}] = 1}. 
+	\end{equation*}
+	
 	\begin{prb}{2021-J-I-2}
 		Define an equivalence relation $\sim$ on the 2-dimensional torus $S^{1} \times S^{1}$ as follows: $(x, y) \sim (u, v)$ iff either $(x, y)= (u, v)$ or $(x, y) = (v, u)$. Compute the fundamental group for the quotient space $(S^{1}\times S^{1})/\sim$ and describe the universal cover for this space. 
 	\end{prb}
@@ -1200,6 +1217,42 @@
 	
 	where $F_5$ is the free group on 5 generators.
 	
+	\begin{prb}{2004-A-II-6}
+		Define a subset $X \subset \mathbb{R}^{3}$ by $X = \{(x, y, z) \in \mathbb{R}^{3}: x^{2} + y^{2} + z^{1} = 1\} \cup \{(0,0,z) \in \mathbb{R}^{3}: -1 \leq z \leq 1\}$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Use van Kampen's theorem to calculate $\pi_{1}(X)$. 
+			\item Describe the universal cover $\ti{X}$ of $X$ and the covering map, and hence give a second calculation for $\pi_{1}(X)$. 
+		\end{enumerate}
+	\end{prb}
+	Let $X$ be the space described above. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep = -2pt,label = (\alph{*})]
+		\item $X$ is homotopy equivalent to the space $Y$ consisting of the 2-sphere $S^{2} \subset \mathbb{R}^{3}$ and an arc on $S^{2}$ connecting the north and the south poles. Since any such arc between the poles of $S^{2}$ is a contractible subcomplex, the space $Z$ obtained by collapsing such a subcomplex to a single point (i.e., by identifying the north and south poles) is homotopy equivalent to $Y$, and thus to $X$. But the space $Z$ is homotopy equivalent to the wedge sum $S^{2}\vee S^{1}$. Let $U$ be the open subset composed of $S^{2}$ and an open half of $S^{1}$, and $V$ be the open subset composed of $S^{1}$ and an open half of $S^{2}$. Then $U \cap V$ is contractible so that $\pi_{1}(U \cap V) = 0$. On the other hand $U \simeq S^{2}$ and $V \simeq S^{1}$ so that $\pi_{1}(U) \cong 0$ and $\pi_{1}(V) \cong \mathbb{Z}$. Thus by the Seifert-van Kampen theorem, since $U \cap V$ is simply connected, 
+		\begin{equation*}
+			\pi_{1}(X) \cong \pi_{1}(U) \ast_{\pi_{1}(U \cap V)} \pi_{1}(V) \cong \pi_{1}(V) \cong \mathbb{Z}. 
+		\end{equation*}
+		Alternately, since $S^{2}$ is simply connected, adding one such arc creates a loop and no relations so that by van Kampen, $\pi_{1}(X) \cong \mathbb{Z}$. 
+		\item The universal cover $\ti{X}$ of $X$ is an infinite chain of copies of $S^{2}$, where consecutive copies of $S^{2}$ are joined together at the lifts of the intersection point to a lifted copy of the interval between the corresponding poles (i.e., consider the real line, with spheres attached to the line at equal intervals by only one point). If $p: \ti{X} \to X$ is the covering map, then on the real line, $p$ corresponds to the standard universal covering map $p: \mathbb{R} \to S^{1}$ given by $p(t) = e^{2p\pi i t}$. On each copy of $S^{2}$, $p$ maps homeomorphically onto $S^{2}$. The deck transformations are the homeomorphisms $\phi: \tilde{X} \to \tilde{X}$ satisfying $p \circ \phi = p$.These correspond to integer translations along the real line:$$\phi_k(t) = t + k, \quad \text{mapping } S^2_n \to S^2_{n+k} \text{ for } k \in \mathbb{Z}.$$ The deck transformation group $\Gamma$ is therefore isomorphic to $\mathbb{Z}$. Since $\pi_{1}(\ti{X})$ is easily seen to be trivial, it follows that $\pi_{1}(X) \cong \Gamma \cong \mathbb{Z}$. 
+	\end{enumerate}
+	
+	\begin{prb}{2004-J-I-5}
+		Recall that a connected sum $M \# N$ of two $n$-dimensional manifolds $M$, $N$ is constructed as follows: cut out the interior of a closed $n$-dimensional ball from each manifold, and glue the resulting spaces together along their $(n - 1)$-sphere boundaries. \vspace{-0.25cm} 
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Let $\mathbb{RP}^{n}$ denote the $n$-dimensional real projective space. If $n > 2$, then compute the fundamental group of the connected sum $\mathbb{RP}^{n} \#\mathbb{RP}^{n}$. 
+			\item If $n > 2$, then show that the universal covering space for the connected sum $\mathbb{RP}^{n}\# \mathbb{RP}^{n}$ is homemorphic to the product $S^{n-1} \times \mathbb{R}$, and describe the action of the fundamental group for $\mathbb{RP}^{n} \times \mathbb{RP}^{n}$ on the universal cover. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Fix $n > 2$, and denote $X = \mathbb{RP}^{n} \# \mathbb{RP}^{n}$. Let $U$ be the open subset comprising of $\mathbb{RP}^{n}\setminus B_{1}^{n}$ and extending slightly into the tubular neighborhood $S^{n -1} \times (-1,1)$ glued to the boundary sphere of $B_{1}^{n}$, and let $V$ be the open subset comprising of $\mathbb{RP}^{n} \setminus B_{2}^{n}$ and extending slightly into the tubular neighborhood $S^{n -1} \times (-1,1)$ glued to the boundary sphere of $B_{2}^{n}$ such that $U \cap V$ is nontrivial (in particular, $U \cap V \simeq S^{n-1}$). By Seifert-van Kampen's theorem, 
+		\begin{equation*}
+			\pi_{1}(\mathbb{RP}^{n} \# \mathbb{RP}^{n}) \cong \pi_{1}(U) \ast_{\pi_{1}(U \cap V)} \pi_{1}(V). 
+		\end{equation*}
+		Since $n > 2$, $\pi_{1}(U \cap V) \cong \pi_{1}(S^{n-1}) = 0$, $U, V \simeq \mathbb{RP}^{n} \setminus \{\text{pt}\}$, $\pi_{1}(\mathbb{RP}^{n}) \cong \pi_{1}(\mathbb{RP}^{n}\setminus \{\text{pt}\})$, and $\pi_{1}(\mathbb{RP}^{n}) \cong \mathbb{Z}/2\mathbb{Z}$, we conclude that 
+		\begin{equation*}
+			\pi_{1}(\mathbb{RP}^{n} \# \mathbb{RP}^{n}) \cong \mathbb{Z}/2\mathbb{Z} \ast \mathbb{Z}/2\mathbb{Z}. 
+		\end{equation*}
+		\item Continue fixing $n > 2$. We recall that the universal cover of $\mathbb{RP}^{n}$ is $S^{n}$, where the corresponding covering map $p: S^{n} \to \mathbb{RP}^{n}$ is the map that identifies antipodal points. Let $A = \mathbb{RP}^{n} \setminus B_{1}^{n}$ and $B  = \mathbb{RP}^{n} \setminus B_{2}^{n}$ so that $\mathbb{RP}^{n} \# \mathbb{RP}^{n} = A \cup_{S^{n-1}} B$. Now for each $k \in \mathbb{Z}$, let $C_{k} \coloneqq S^{n - 1} \times [k, k + 1]$, which is homeomorphic to the $n$-sphere minus two antipodal disks; but each $n$-sphere minus two antipodal disks is a 2-sheeted cover of $A$ (and of $B$). We construct a covering map as follows: (1) for each $k \equiv 0 \bmod{2}$, let $p$ map $C_{k}$ to $A$ via the quotient map that identifies antipodal points, and (2) for each $k \equiv 1 \bmod{2}$, let $p$ map $C_{k}$ to $B$ via the quotient map that identifies antipodal points. Thus it follows that the universal cover of $\mathbb{RP}^{n} \# \mathbb{RP}^{n}$ is an infinite chain of these cyclinders; evidently the universal covering space is homeomorphic to the product $S^{n-1} \times \mathbb{R}$. The two order-two generators act by reflections of this chain, and their product acts by translation along the $\mathbb{R}$ direction.
+	\end{enumerate}
+	
 	\begin{prb}{2003-A-I-4}
 		Let $H$ denote a cyclic group of order 7 and let $G$ denote the cyclic group of order 3. Let $M$ denote a connected manifold satisfying $\pi_1(M) \cong H$. Let $\psi: G \times M \to M$ denote a free group action. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label  = (\alph{*})]
@@ -1284,8 +1337,12 @@
 	Let $M$ be a smooth, connected manifold whose fundamental group has finite, odd order. Let $\hat{M}$ denote the orientation cover on $M$, and let $p: \hat{M} \to M$ denote the covering map. Since $p$ is a covering map, one has that $p_{\ast}: \pi_1(\hat{M}, x_0) \to \pi_1(M, p(x_0))$ is injective, and thus $p_\ast(\pi_1(\hat{M}, x_0)) \leq \pi_1(M, p(x_0))$. If $M$ is \textit{not} orientable (i.e., $\hat{M}$ is a connected space), then since $p$ is a 2-sheeted covering space, $p_\ast(\pi_1(\hat{M}, x_0))$ must be an index-2 subgroup of $\pi_1(M,p(x_0))$. By Lagrange's theorem, it follows that $2$ is a divisor of the order of the fundamental group of $M$, so that it has even order. This is a contradiction! Thus by contradiction, $M$ must be orientable. 
 	
 	\begin{prb}{2000-A-II-2}
-		Let $M_{1}$ and $M_{2}$ be compact $n$-dimensional manifolds with $n \geq 3$ and let $M_{1} \# M_{2}$ be the connected sum. Compute the fundamental group of $M_{1} \# M_{2}$ in terms of $\pi_{1}(M_{1})$, $\pi_{1}(M_{2})$.  Remark: connected sum of two $n$-manifolds is defined as follows: remove a small $n$ ball from each of them and then glue these manifolds along the resulting boundaries ($n-1$-spheres); up to homeomorphism, the result does not depend on the choice of the balls or gluing homeomorphism. 
+		Let $M_{1}$ and $M_{2}$ be compact $n$-dimensional manifolds with $n \geq 3$ and let $M_{1} \# M_{2}$ be the connected sum. Compute the fundamental group of $M_{1} \# M_{2}$ in terms of $\pi_{1}(M_{1})$, $\pi_{1}(M_{2})$.  Remark: connected sum of two $n$-manifolds is defined as follows: remove a small $n$ ball from each of them and then glue these manifolds along the resulting boundaries (0$n-1$-spheres); up to homeomorphism, the result does not depend on the choice of the balls or gluing homeomorphism. 
 	\end{prb}
+	Let $M_{1}$ and $M_{2}$ be compact $n$-dimensional manifolds with $n \geq 3$, and let $M_{1}\# M_{2}$ be their connected sum. Let $U$ be the open subset $M_{1}\setminus B_{1}^{n}$ extending past the gluing boundary and into the connecting cylinder $S^{n - 1} \times (-1,1)$, and let $V$ be the open subset $M_{2}\setminus B_{2}^{n}$ extending past the gluing boundary and into the connecting cylinder $S^{n - 1} \times (-1,1)$ so that it has nontrivial intersection with $U$. Then $U$ is homotopy equivalent to $M_{1}\setminus \{p_{1}\}$ and $V$ is homotopy equivalent to $M_{2}\setminus \{p_{2}\}$. Since $\dim{M_{i}} = n \geq 3$, $\pi_{1}(M_{i}\setminus \{p_{i}\}) \cong \pi_{1}(M_{i})$\footnote{Let $M$ be an $n$-dimensional smooth manifold, and $p \in M$. Let $U = M \setminus \{p\}$ and $V$ be a small open neighborhood of $p$. Then $U \cap V$ is homotopy equivalent to $S^{n-1}$. Since $n - 1 \geq 2$ and $V$ is contractible, by the Seifert-van Kampen Theorem, $\pi_{1}(M) \cong \pi_{1}(U) \ast_{\pi_{1}(S^{n-1})} \pi_{1}(V) \cong \pi_{1}(U)$}. Thus, $\pi_{1}(U)\cong  \pi_{1}(M_{1})$ and $\pi_{1}(V) \cong \pi_{1}(M_{2})$. On the other hand $U \cap V$ is homotopy equivalent to $S^{n -1}$. Since $n - 1\geq 3$, $S^{n -1}$ is simply connected so that $\pi_{1}(S^{n-1}) = 0$. Therefore, by the Seifert-van Kampen Theorem, one has that 
+	\begin{equation*}
+		\pi_{1}(M_{1}\# M_{2}) \cong \pi_{1}(U) \ast_{\pi_{1}(S^{n-1})} \pi_{1}(V) \cong \pi_{1}(M_{1}) \ast \pi_{1}(M_{2}). 
+	\end{equation*} 
 	
 	\begin{prb}{1999-A-II-3}
 		If $X$ is any path-connected topological space, let us use the term \textit{proper double cover of $X$} to mean a covering map $\pi: Y \to X$, where $Y$ is path-connected and $\pi^{-1}(X)$ consists of exactly two points for some (and hence for every) $x \in X$. Two such coverings will be said to be isomorphic if there is a homeomorphism $\phi: Y' \to Y$ so that $\pi' = \pi \circ \phi$. \vspace{-0.25cm} 
@@ -1444,7 +1501,7 @@
 			\label{fig:H1310}
 		\end{figure}
 		
-		\item (3-Sheeted Spaces) Now we start by looking for surjective homomorphisms $\varphi: \mathbb{Z} \ast \mathbb{Z} \to \mathbb{Z}_{3}$. Here, we have more options. However, since $\operatorname{Aut}(\mathbb{Z}_{3}) \cong \mathbb{Z}_{2}$, some distinct surjective homomorphisms may produce isomorphic covering spaces. Any homomorphism from $\mathbb{Z} \ast \mathbb{Z} \cong \braket{a,b} \to \mathbb{Z}_{3}$ is surjective as long as it is nonzero. 
+		\item (3-Sheeted Spaces) First, we will obtain the regular 3-sheeted covering spaces of $X$, which correspond to surjective homomorphisms $\varphi: \mathbb{Z} \ast \mathbb{Z} \to \mathbb{Z}_{3}$. Here, we have more options. However, since $\operatorname{Aut}(\mathbb{Z}_{3}) \cong \mathbb{Z}_{2}$, some distinct surjective homomorphisms may produce isomorphic covering spaces. Any homomorphism from $\mathbb{Z} \ast \mathbb{Z} \cong \braket{a,b} \to \mathbb{Z}_{3}$ is surjective as long as it is nonzero. Thus we find there are exactly 4 regular 3-sheeted covering spaces: (1) $b$ traverses three sheets, while $a$ lifts to three separate loops on each sheet, (2) symmetric to case (1) with $a$ and $b$ flipped, (3) both $a$ and $b$ traverse three sheets, (4) both $a$ and $b$ traverse three sheets, but in opposite directions. Now we will look for non-regular 3-sheeted covering spaces, which correspond to transitive homomorphisms $\varphi: \mathbb{Z} \ast \mathbb{Z} \to S_{3}$, up to conjugation by elements in $S_{3}$. Since there are a total of 13 subgroups of $\mathbb{Z}\ast \mathbb{Z}$ of index 3, and 4 are normal, 9 must be nonnormal subgroups, corresponding to the non-regular 3-sheeted covering spaces of $X$. Since $3$ is prime, the normalizer of any non-normal index-3 subgroup $H$ is $H$ itself. Thus, each non-normal subgroup has exactly $3$ conjugates in $\mathbb{Z} \ast \mathbb{Z}$. This means that there exist precisely 3 conjugacy classes of nonnormal index-3 subgroups, and thus exactly 3 isomorphism classes of non-regular 3-sheeted covering spaces of $X$. Altogether, there are 7 3-sheeted covering spaces of $X$ (of which $4$ are normal.)
 	\end{enumerate}
 	
 	\newpage 
@@ -6084,6 +6141,15 @@ f2		\begin{equation*}
 	\end{equation*}
 	Since $z_{1}, z_{2}$ are distinct, $(z_{2} - z_{1}) \neq 0$. Likewise, since $\operatorname{Re}{f'(z)} > 0$ for all $z \in \Omega$, the term inside the brackets is nonzero. Since $\mathbb{C}$ is a field and has no zero divisors, we conclude that $f(z_{2}) - f(z_{1}) \neq 0$ so that $f(z_{2}) \neq f(z_{1})$. Thus, we conclude that $f$ is injective. 
 	
+	\begin{prb}{2007-A-II-1}
+		Let $\mathbb{D} = \{z: |z| < 1\}$ be the unit disk, and let $f: \mathbb{D} \to \mathbb{D}$ be a holomorphic function such that $f(0) = \alpha \neq 0$. Prove that $f$ does not have zeros in the disk $\{z: |z| < |\alpha|\}$. 
+	\end{prb}
+	Assume to the contrary that there exists some $z \in \{|z| < |\alpha|\}$ such that $f(z) = 0$. Then by the Schwarz-Pick Lemma, one must have 
+	\begin{equation*}
+		|\alpha| = \abs{\frac{0 - \alpha}{1 - 0 (\alpha)}} \leq \abs{\frac{z - 0}{1 - \overline{z}(0)}} = |z|, 
+	\end{equation*}
+	which is a contradiction. Therefore, $f$ cannot have a zero inside this open disk. 
+	
 	\subsection{Rouch\'e's Theorem}
 	
 	\begin{prb}{2023-A-II-6}
@@ -7628,5 +7694,10 @@ f2		\begin{equation*}
 		\begin{equation*}
 			|f'(a)| \leq \frac{1 - |b|^{2}}{1 - |a|^{2}}. 
 		\end{equation*}
+		Moreover, if $f(a_{1})= b_{1}$ and $f(a_{2}) = b_{2}$, then 
+		\begin{equation*}
+			\abs{\frac{b_{2} - b_{1}}{1 - \overline{b_{1}}b_{2}}} \leq \abs{\frac{a_{2}- a_{1}}{1 - \overline{a_{2}}a_{1}}}. 
+		\end{equation*}
+		\item (Maximum Modulus Principle) Let $D$ be a bounded and connected open subset of $\mathbb{C}$, and let $f: D \to \mathbb{C}$ be holomorphic. If $z_{0} \in D$ such that $|f(z_{0})| \geq |f(z)|$ for all $z$ in some neighborhood of $z_{0}$, then $f$ is constant on $D$. Applying the maximum modulus principle to the function $1/f$ gives the \textit{minimum} modulus principle. 
 	\end{itemize}
 \end{document}
