@@ -988,6 +988,15 @@
 		\item Let $f: \mathbb{RP}^{n} \to \mathbb{T}^{n}$ be a continuous map, and let $\hat{p}: \mathbb{R}^{n} \to \mathbb{T}^{n}$ be the (universal) covering map of the torus. We note that since $\mathbb{T}^{n} \cong \underbrace{S^{1} \times \dotsm \times S^{n}}_{n \text{ times}}$, $\pi_{1}(\mathbb{T}^{n}, \text{pt}) \cong \mathbb{Z}^{n}$, a torsion-free group. On the other hand, we showed in (i) that $\pi_{1}(\mathbb{RP}^{n})$ is a torsion group. Thus, the induced group homomorphism, $f_{\ast}: \pi_{1}(\mathbb{RP}^{n}) \to \pi_{1}(\mathbb{T}^{n})$ must be the zero map. Next, since $\mathbb{R}^{n}$ is simply connected (and even contractible), one has that $\pi_{1}(\mathbb{R}^{n})$ is the trivial group so that $\hat{p}_{\ast}(\pi_{1}(\mathbb{R}^n))$ is also trivial. Therefore, since $f_{\ast}(\pi_{1}(\mathbb{RP}^n)) \subset \hat{p}_{\ast}(\pi_{1}(\mathbb{T}^n))$, there exists a lift of $f$ to a map $\ti{f}: \mathbb{RP}^{n} \to \mathbb{R}^{n}$. But since $\mathbb{R}^{n}$ is contractible, we conclude that $\ti{f}$ must be nullhomotopic. Thus, the homotopy descends to $f$ so that $f$ is nulhomotopic (i.e., homotopic to a constant map). 
 	\end{enumerate}
 	
+	\begin{prb}{2023-A-I-5}
+		Let $T$ be the 2-torus $S^{1} \times S^{1}$ with an open disk removed. Show that there is no continuous retraction $r$ onto its boundary (i.e., no continuous map $r: T \to \partial T$ satisfying $r|_{\partial T} = \operatorname{id}_{T}$.)
+	\end{prb}
+	Let $T$ be the 2-torus with an open disk removed, and assume to the contrary that there exists a continuous retraction $r: T \to \partial T$. This means that if $i: \partial T \hookrightarrow T$ is the inclusion map, then $r \circ i = \operatorname{id}_{\partial T}$. In particular, $r_{\ast} \circ i_{\ast} = \operatorname{id}_{\partial T \ast}$. Since the boundary loop $\gamma = \partial T$ is homotopy equivalent to the circle $S^{1}$, $\pi_{1}(\partial T) \cong \braket{\gamma} \cong \mathbb{Z}$ is abelian. On the other hand, $\gamma$ is homotopic to the wire frame of $T$ so that $i_{\ast}([\gamma]) = aba^{-1}b^{-1}$, where $a, b$ are the generators of $\pi_{1}(T) \cong \braket{a, b} \cong \mathbb{Z}\ast \mathbb{Z}$. Since $\pi_{1}(\partial T)$ is abelian, $r_{\ast}$ maps any commutator to $0$. And thus, one has that 
+	\begin{equation*}
+		[\gamma] = \operatorname{id}_{\partial T\ast}([\gamma]) = r_{\ast} \circ i_{\ast}([\gamma]) = r_{\ast}([aba^{-1}b^{-1}]) = [0], 
+	\end{equation*}
+	which is a contradiction! Thus by contradiction, there can be continuous retraction of $T$ onto its boundary. 
+	
 	\begin{prb}{2023-J-II-4}
 		Prove that $S^{2} \times S^{2}$ is not diffeomorphic to $M_{1} \times M_{2} \times M_{3}$, where $M_{1}, M_{2}, M_{3}$ are smooth manifolds of nonzero dimension. 
 	\end{prb}
@@ -1097,17 +1106,44 @@
 	\begin{prb}{2021-A-II-3}
 		Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to a great circle in $S^{2}$. Compute the fundamental group of $X$. 
 	\end{prb}
-	Let $X$ be the space obtained by gluing the boundary circle of the M\"obius band to a great circle (e.g., the equator) in $S^{2}$. We can compute the fundamental group of $X$ using CW structures. We assign to $S^{2}$ the CW structure comprised one 0-cell $v$, one 1-cell $e_{C}^{1}$ corresponding to the equator of $S^{2}$, and two 2-cells $e_{N}^{2}$ and $e_{S}^{2}$ corresponding to the northern and southern hemispheres. These 2-cells are both attached along the loop $e^{1}_{C}$. Now let $a$ be a 1-cell corresponding to the core circle of the M\"obius band, and attach $a$ to the vertex $v$. Let $e_{M}^{2}$ denote the 2-cell corresponding to the body of the M\"obius band. Since the boundary circle of the M\"obius band is attached to $e_{C}^{1}$, $\partial e_{M}^{2}$ is attached along $e_{C}^{1}$. But since the boundary circle of the M\"obius band wraps around the core circle $a$ twice, one has that $e_{C}^{1} = a^{2}$. Therefore, by van Kampen's theorem, we conclude that 
+	Let $X$ be the space obtained by gluing the boundary circle of the M\"obius band to a great circle (e.g., the equator) in $S^{2}$. We can compute the fundamental group of $X$ using CW structures. Let $S^2$ have the CW structure consisting of one $0$-cell $v$, one $1$-cell $e_C^1$ (the equator), and two $2$-cells $e_N^2,e_S^2$ attached along $e_C^1$. Thus
 	\begin{equation*}
-		\pi_{1}(X) \cong \braket{e_{C}^{1}, a \mid e_{C}^{1} = 1, e_{C}^{1} = 1, e_{C}^{1} = a^{2}} \cong \braket{a \mid a^{2} = 1} \cong \mathbb{Z}/2\mathbb{Z}. 
+		\pi_1(S^2)\cong \langle e_C^1 \mid e_C^1 = 1 \rangle.
+	\end{equation*}
+	Let $M$ denote the Möbius band. Since $M$ deformation retracts onto its core circle,
+	\begin{equation*}
+		\pi_1(M)\cong \langle a \rangle \cong \mathbb{Z},
+	\end{equation*}
+	where $a$ is represented by the core circle. Under this deformation retraction, the boundary circle of $M$ wraps twice around the core circle, so its image in $\pi_1(M)$ is $a^2$. Gluing $\partial M$ to the equator of $S^2$ identifies the loop $e_C^1$ with $a^2$. By Seifert--van Kampen,
+	\begin{equation*}
+		\pi_1(X)
+		\cong
+		\langle e_C^1,a \mid e_C^1 = 1,\ e_C^1 = a^2 \rangle
+		\cong
+		\langle a \mid a^2 = 1 \rangle
+		\cong
+		\mathbb{Z}/2\mathbb{Z}.
 	\end{equation*}
 	
 	\begin{prb}{2021-A-II-3 (Modified)}
 		Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to the equator of the 2-torus. Compute the fundamental group of $X$. 
 	\end{prb}
-	Let $X$ be the space obtained by gluing the boundary circle of a M\"obius band to the equator of the 2-torus. We can compute the fundamental group of $X$ using CW structures. We assign to $T^{2}$ the CW structure comprised of one 0-cell $v$, two 1-cells $e^{1}_{C}$ and $e^{1}_{R}$ (where $e^{1}_{C}$ corresponds to the equator of the 2-torus), and one 2-cell $e^{2}_{T}$; $\partial e^{2}_{T}$ is attached along the boundary word $e^{1}_{R}e^{1}_{C}{e^{1}_{R}}^{-1}{e^{1}_{R}}^{-1}$. For the M\"obius band, we consider the 1-cell $a$ corresponding to the core circle that is attached to $V$. We also introduce the 2-cell $e^{2}_{M}$ corresponding to the body of $M$; $\partial e^{2}_{M}$ is attached to the equator $e^{1}_{C}$. But since the boundary of the M\"obius band wraps around the core circle twice, one has that $e^{1}_{C}= a^{2}$. Thus, by van Kampen's theorem, we obtain the following: 
+	Let $X$ be the space obtained by gluing the boundary circle of the Möbius strip to the equator of the 2-torus. We can compute the fundamental group of $X$ using CW structures. We assign to $T^{2}$ the standard CW structure comprised of one 0-cell $v$, two 1-cells $e^{1}_{C}, e^{1}_{R}$ (where $e^{1}_{C}$ corresponds to the equator of the 2-torus), and one 2-cell $e^{2}_{T}$; $\partial e^{2}_{T}$ attaches to the 1-skeleton along the boundary word $e^{1}_{R}e^{1}_{C}(e^{1}_{R})^{-1}(e^{1}_{C})^{-1}$. This means that the fundamental group of the torus is $\langle e^{1}_{C}, e^{1}_{R} \mid [e^{1}_{C}, e^{1}_{R}] = 1 \rangle$. Next, since the Möbius band deformation retracts onto its core circle $a$, $\pi_{1}(M) \cong \langle a \rangle \cong \mathbb{Z}$. Under this deformation retraction, the boundary circle of the Möbius band wraps around the core circle $a$ twice so that its image in $\pi_{1}(M)$ is $a^{2}$. By gluing the boundary circle of the band to the equator of the 2-torus, we identify $e^{1}_{C}$ with $a^{2}$. Thus by the Seifert–van Kampen theorem, we conclude that
 	\begin{equation*}
-		\pi_{1}(X) \cong \braket{a, e^{1}_{C}, e^{1}_{R} \mid [e^{1}_{C}, e^{1}_{R}] = 1, e^{1}_{C} = a^{2}} \cong \braket{a, e^{1}_{R} \mid [a^{2}, e^{1}_{R}] = 1}. 
+		\pi_{1}(X) \cong \langle e^{1}{C}, e^{1}{R}, a \mid [e^{1}{C}, e^{1}{R}] = 1, e^{1}{C} = a^{2} \rangle \cong \langle a, e^{1}{R} \mid [a^{2}, e^{1}_{R}] = 1 \rangle.
+	\end{equation*}
+	
+	\begin{prb}{2021-A-II-3 (Modified)}
+		Let $X$ be the space obtained by gluing the equator of the 2-torus to the equator of the 2-sphere. Compute the fundamental group of $X$. 
+	\end{prb}
+	Let $X$ be the space obtained by gluing the equator of the 2-torus to the equator of the 2-sphere. We can compute the fundamental group of $X$ using CW structures. Let $S^{2}$ have the CW structure comprised of one 0-cell $v$, one 1-cell $e^{1}_{S}$ (corresponding to the equator), and two 2-cells $e^{2}_{N}$ and $e^{2}_{S}$ (corresponding to the northern and southern hemispheres, respectively). These 2-cells are both attached to the 1-cell $e^{1}_{S}$. Now we give the 2-torus the CW structure comprised of one 0-cell, two 1-cells $e^{1}_{C}$ and $e^{1}_{R}$ (where $e^{1}_{C}$ denotes the equator circle), and one 2-cell $e^{2}_{T}$. $\partial e^{2}_{T}$ is attached to the 1-skeleton of the 2-torus along the boundary word $e^{1}_{R}e^{1}_{C}(e^{1}_{R})^{-1}(e^{1}_{C})^{-1}$. We identify the 0-cell in the 2-torus to the 0-cell $v$ in the CW structure of the 2-sphere. The gluing identifies the loop $e^{1}_{S}$ with the loop $e^{1}_{C}$. Thus, by the Seifert-van Kampen theorem, we conclude that 
+	\begin{equation*}
+		\pi_{1}(X) \cong \braket{e^{1}_{C}, e^{1}_{R}, e^{1}_{S} \mid [e^{1}_{C}, e^{1}_{R}] = 1, e^{1}_{S} = 1,  e^{1}_{C} = e^{1}_{S}} \cong \braket{e^{1}_{R}} \cong \mathbb{Z}. 
+	\end{equation*}
+	
+	Alternately, let $U \subseteq X$ denote the open subset comprised of the 2-torus $T$ and a small band in the 2-sphere $S^2$ around the equator. Likewise, let $V$ denote the open subset comprised of $S^2$ and a small band in $T$ around the equator. Then $U$ deformation retracts onto $T$, while $V$ deformation retracts onto $S^2$. Moreover, $U \cap V$ deformation retracts onto the equator circle $\gamma$ so that $\pi_{1}(U \cap V) \cong \braket{\gamma} \cong \mathbb{Z}$. Let $i_{1}: U \cap V \hookrightarrow U$ and $i_{2}: U \cap V \hookrightarrow V$ denote the standard inclusion maps, and let $i_{1,\ast}$ and $i_{2,\ast}$ be the respective induced maps on the fundamental groups. Since $S^{2}$ is simply connected, $\pi_{1}(V)$ is trivial so that $i_{2,\ast}$ is the trivial map. On the other hand, $\pi_{1}(T) \cong \braket{a, b \mid [a,b]= 1} \cong \mathbb{Z}^{2}$, where $a$ is the equator circle of the 2-torus. By gluing the equator of the 2-torus to the equator of the 2-sphere, we identify $\gamma$ with $a$. Therefore, by the Seifert-van Kampen Theorem, we conclude that 
+	\begin{equation*}
+		\pi_{1}(X) \cong \pi_{1}(U) \ast_{\pi_{1}(U \cap V)} \pi_{1}(V) \cong \braket{a, b \mid [a, b] = 1, i_{1, \ast}(\gamma) = i_{2,\ast}(\gamma)} = \braket{a , b \mid a = 1} \cong \braket{b} \cong \mathbb{Z}. 
 	\end{equation*}
 	
 	\begin{prb}{2021-J-I-2}
