@@ -807,7 +807,12 @@
 	\begin{equation*}
 		\int_{M}f^{\ast}(\alpha \wedge \gamma) = 0 \cdot \int_{N}(\alpha \wedge \gamma). 
 	\end{equation*}
-	By the definition of the degree of a smooth map, we conclude that $\deg{f} = 0$. 
+	By the definition of the degree of a smooth map, we conclude that $\deg{f} = 0$.
+	
+	\begin{prb}{2016-J-II-4}
+		Let $M$ be a smooth $n$-manifold which contains an open set $U$ diffeomorphic to $N \times (-1,1)$, where $N$ is a compact $(n - 1)$-manifold without boundary. Also suppose that $M \setminus N$ is connected, where $N$ is the submanifold of $U \subset M$ corresponding to $N \times \{0\} \subset N \times (-1,1)$. Show that $H^{1}_{\text{dR}}(M) \neq 0$, where $H^{\ast}_{\text{dR}}$ denotes de Rham cohomology. 
+	\end{prb} 
+	Let $N$ be a compact $(n -1)$-manifold, and assume that $U \simeq N \times (-1,1)$, which means that every point $p \in U$ can be specified by the coordinates $(x, t)$ ($x \in N$, and $t \in (-1,1)$). Fix an arbitrary $0 < \epsilon < 1$, and let $\omega$ be a 1-form on $U$ of the form $g(t)\;dt$, where $\operatorname{supp}{g(t)} \subset (-\epsilon, \epsilon)$ such that $\int_{-\epsilon}^{\epsilon}g(t)\;dt = 1$. Since $\omega$ vanishes near $\pm 1$, we can smoothly extend $\omega$ by 0 to all of $M$; it is straightforward to check that $\omega$ is a closed smooth 1-form on $M$. It suffices to show that $\omega$ is not exact: if $\omega$ were exact (i.e., if $\omega = dh$ for some smooth function $h$, then necessarily, $\int_{\gamma}\omega = 0$ for any closed loop $\gamma \subset M$). Now fix some $\epsilon < a < 1$ and $x_{0} \in N$, and let $\gamma$ be a closed loop based at $(x_{0}, -a)$ with the following components: (1) let $\gamma_{1}: (x_{0}, -a) \to (x_{0}, a)$ be the straight line segment passing through $N$, (2) let $\gamma_2$ be a path from $(x_0, a)$ to $(x_0, -a)$ contained in $M \setminus (N \times (-\epsilon, \epsilon))$. We note that such a loop $\gamma_2$ exists because $M \setminus (N \times (-\epsilon, \epsilon))$ is open and connected (as it deformation retracts from the connected manifold $M \setminus N$), hence path-connected. By construction, $\omega$ vanishes identically outside $N \times (-\epsilon, \epsilon)$, so $\omega = 0$ along $\gamma_2$. By construction, $\omega$ is zero everywhere along $\gamma_{2}$ so that $\int_{\gamma}\omega = \int_{-a}^{a}g(t)\;dt$. But since $\operatorname{supp}{g} \subset (-\epsilon, \epsilon) \subset (-a,a)$, one has that $\int_{\gamma}\omega = \int_{-\epsilon}^{\epsilon}g(t)\;dt = 1 \neq 0$. Thus $\omega$ cannot be an exact 1-form, which means $[\omega] \neq 0\in H^{1}_{\text{dR}}(M)$. Thus $H^{1}_{\text{dR}}(M) \neq 0$. 
 	
 	
 	\begin{prb}{2015-J-I-5}
@@ -1532,6 +1537,33 @@
 	\end{equation*}
 	exactly as we found above. 
 	
+	\begin{prb}{H-1.2-4}
+		Let $X \subset \mathbb{R}^{3}$ be the union of $n$ lines through the origin. Compute $\pi_{1}(\mathbb{R}^{3} \setminus X)$. 
+	\end{prb}
+	Let $X$ denote the union of $n$ distinct lines in $\mathbb{R}^{3}$ through the origin. Then $\mathbb{R}^{3}\setminus X$ is homotopy equivalent to the space $S^{2}\setminus \{q_{1}, q_{2}, \ldots, q_{2n}\}$, where the $q_{i}$ are the $2n$ intersection points of the $n$ lines with the circle $S^{n}$. But $S^{2}\setminus \{q_{1}\}$ is homotopy equivalent to $\mathbb{R}^{2}$. Thus one has that $\mathbb{R}^{3}\setminus X$ is homotopy equivalent to $\mathbb{R}^{2}\setminus \{q_{2}, \ldots, q_{2n}\}$, which itself is homotopy equivalent to the bouquet of $2n - 1$ circles. Therefore, using the Seifert-van Kampen theorem, one concludes that $\pi_{1}(\mathbb{R}^{3}\setminus X) \cong F_{2n - 1}$, the free group on $2n - 1$ generators. 
+	
+	\begin{prb}{H-1.2-7}
+		Let $X$ be the quotient space of $S^2$ obtained by identifying the north and south poles to a single point. Put a cell complex structure on $X$ and use this to compute $\pi_{1}(X)$. 
+	\end{prb}
+	Let $X$ be the quotient space of $S^2$ obtained by identifying the north and south poles to a single point. We first give $S^2$ the CW structure consisting of two 0-cells $N$ and $S$ (corresponding to the north and south poles, respectively), two 1-cells $a$ and $b$ (which map $N \mapsto S$ and $S \mapsto N$, respectively), and two 2-cells $e^{2}_{W}$ and $e^{2}_{E}$ (corresponding to the eastern and western hemispheres, respectively); $\partial e^{2}_{W}$ is attached along the boundary word $ab$, while $\partial e^{2}_{E}$ is attached along the boundary word $b^{-1}a^{-1}$. In $X$, we identify the two poles $N$ and $S$, so that our CW structure reduces to a single 0-cell $N$, the two loops $a$ and $b$ (which are now both based at $N$), and the two 2-cells $e^{2}_{W}$ and $e^{2}_{E}$. Thus by the van Kampen Theorem, one obtains, 
+	\begin{equation*}
+		\pi_{1}(X) \cong \braket{a, b \mid ab = 1, b^{-1}a^{-1} =1}. 
+	\end{equation*}
+	The relations give $b = a^{-1}$ so that the loop $b$ is redundant. Thus, $\pi_{1}(X) \cong \braket{a} \cong \mathbb{Z}$. 
+	
+	\begin{prb}{H-1.2-8}
+		Compute the fundamental group of the space obtained from two tori $S^{1} \times S^{1}$ by identifying a circle $S^{1} \times \{x_0\}$ in one torus with the corresponding circle $S^{1} \times \{x_0\}$ in the other torus. 
+	\end{prb}
+	
+	Let $X$ denote the space obtained by identifying the equator circle in one torus with the equator circle of another torus. First, we will compute the fundamental group of $X$ using CW structures. Assign the first torus $T_{1}$ the standard CW structure comprised of one 0-cell $v_{0}$, two 1-cells $e^{1}_{C_{1}}, e^{1}_{R_{1}}$ (where $e^{1}_{C_{1}}$ denotes the equator circle), and one 2-cell $e^{2}_{T_{1}}$; $\partial e^{2}_{T_{1}}$ is attached along the boundary word $e^{1}_{R_{1}}e^{1}_{C_{1}}(e^{1}_{R_{1}})^{-1}(e^{1}_{C_{1}})^{-1}$. For the second torus, we also assign the standard CW structure for the 2-torus: give this structure one 0-cell $w_{0}$, two 1-cells $e^{1}_{C_{2}}, e^{1}_{R_{2}}$ (where $e^{1}_{C_{2}}$ denotes the equator circle), and one 2-cell $e^{2}_{T_{2}}$; $\partial e^{2}_{T_{2}}$ is attached along the boundary word $e_{C_{2}}^{1}e_{R_{2}}^{1}(e_{C_{2}}^{1})^{-1}(e_{R_{2}}^{1})^{-1}$. By gluing the equators of the 2-torus, we identify $e^{1}_{C_{2}} \sim e^{1}_{C_{1}}$ and $v_{0} \sim w_{0}$. Thus, by the van Kampen Theorem, one has that 
+	\begin{multline*}
+		\pi_{1}(X) \cong \braket{e^{1}_{C_{1}}, e^{1}_{C_{2}}, e^{1}_{R_{1}}, e^{1}_{R_{2}} \mid [e^{1}_{C_{1}}, e^{1}_{R_{1}}] = 1, [e^{1}_{C_{2}}, e^{1}_{R_{2}}] = 1, e^{1}_{C_{1}} = e^{1}_{C_{2}}} \\ = \braket{e^{1}_{C_{1}}, e^{1}_{R_{1}}, e^{1}_{R_{2}} \mid [e^{1}_{C_{1}}, e^{1}_{R_{1}}] = [e^{1}_{C_{1}}, e^{1}_{R_{2}}] = 1}. 
+	\end{multline*}
+	Alternately, we can use the Seifert-van Kampen Theorem. Let $U$ be the open subset of $X$ consisting of one 2-torus and a small open band around the equator of the second torus, and let $V$ be the open subset consisting of the other 2-torus and a small open band around the equator of the first torus. Then $U \cap V$ deformation retracts onto $S^{1}$ so that $\pi_{1}(U \cap V) \cong \pi_{1}(S^{1}) \cong \mathbb{Z}$. On the other hand, $U$ and $V$ each deformation retract onto a copy of the 2-torus so that $\pi_{1}(U), \pi_{1}(V) \cong \pi_{1}(T^{2}) \cong \mathbb{Z}^{2}$. Therefore, by the Seifert-van Kampen theorem, we conclude that 
+	\begin{equation*}
+		\pi_{1}(X) \cong \pi_{1}(U) \ast_{\pi_{1}(U \cap V)} \pi_{1}(V) \cong \mathbb{Z}^{2} \ast_{\mathbb{Z}} \mathbb{Z}^{2}, 
+	\end{equation*}
+	where the amalgamation identifies the cyclic generator of $\mathbb{Z}$ with each of the equatorial generators in each torus. 
 	\begin{prb}{H-1.3-9}
 		Show that if a path-connected, locally path connected space $X$ has $\pi_{1}(X)$ finite, then every map $X \to S^{1}$ is nullhomotopic. [Use the covering space $\mathbb{R} \to S^{1}$.]
 	\end{prb}
@@ -2857,6 +2889,22 @@ f2		\begin{equation*}
 	\end{prb}
 	Let $p(x) = x^{3} - 3x + 1 \in \mathbb{Q}[x]$. The possible candidates for rational roots of $p(x)$ are $x = \pm 1$. But since $p(1) = -1 \neq 0$ and $p(-1) = -3 \neq 0$, we conclude that $p(x)$ has no rational roots. Thus since $p(x)$ has degree 3, it must be irreducible over $\mathbb{Q}$. Let $D$ denote the discriminant of $p(x)$. Since $p(x)$ is a depressed cubic, $D= -4p^{3} - 27q^{2} = 81$, which is a square in $\mathbb{Q}$. Therefore, by the classification of Galois groups of cubics over $\mathbb{Q}$, we conclude that the Galois group of $p(x)$ over $\mathbb{Q}$ is the alternating group $A_{3}$. 
 	
+	\begin{prb}{1997-J-II-4}
+		Let $F = \mathbb{Q}(e^{2\pi i/p})$, where $p$ is prime, and let $a \in F$ be a number which is not the $p$th power of any element of the field $F$. Let $K$ be a splitting field of $f(z) = z^{p} - a$ over $F$. Prove that the Galois group of $K$ over $F$ is cyclic of order $p$. 
+	\end{prb}
+	Let $F = \mathbb{Q}(e^{2\pi i/p})$, where $p$ is prime, and let $a \in F$ such that $a$ is not the $p$th power of any element of the field $F$. Let $K$ denote the splitting field of $f$ over $F$. First we note that the roots of $f(z)$ are of the form $\alpha \xi_{p}^{k}$ for $k = 0, \ldots, p -1$, where $\alpha \coloneqq \sqrt[p]{a}$ and $\xi_{p}=e^{2\pi i/p}$ denotes the $p$th primitive root of unity. By construction of $F$, $\xi_{p}^{k} \in F$ for all $k = 0, \ldots, p -1$. Thus the splitting field $K$ must contain the element $\alpha$, and hence the field extension $F(\alpha)$. On the other hand, $F(\alpha)$ already contains all of the roots of $f(z)$, and thus the splitting field $K$. This implies $K = F(\alpha)$. Since $K$ is the splitting field of a separable polynomial, $K/F$ is a Galois field extension; let $G =\operatorname{Gal}(K/F)$. We know that $|G| = [K: F] = [F(\alpha): F]$. Thus it suffices to prove that the minimal polynomial of $f(z)$ over $F$ is a degree $p$ polynomial. The polynomial $f(z) = z^{p} - a$ annihilates $\alpha$, so it remains to be seen that $f$ is irreducible over $F$. Assume to the contrary; suppose there exist polynomials $g(z), h(z) \in F[z]$ where $1 \leq  \deg{g} = d, \deg{h} = l < p$ such that $f(z) = g(z)h(z)$. Over the splitting field $K[z]$, $g$ must completely split into a product of linear factors: 
+	\begin{equation*}
+		g(z) = \prod_{j = 1}^{d}(z - r_{j}), 
+	\end{equation*}
+	where $\{r_{1}, \ldots, r_{d}\}$ are $d$ roots of $f(z)$. In particular, one has that the constant term of $g(z)$ is 
+	\begin{equation*}
+		(-1)^{d}\cdot \prod_{j = 1}^{d}r_{j} = (-1)^{d}\alpha^{d}\xi_{p}^{j_{1} + \dotsm + j_{d}}.
+	\end{equation*}
+	Since this term is contained in $F$, it follows that $\alpha^{d} \in F$ as well. Since $d < p$ and $p$ is prime, $\gcd(d, p) = 1$ so that by Bezout's identity, there exist integers $x$ and $y$ such that $dx + py = 1$. Then since $a \in F$, $a^{y} = \alpha^{py} \in F$. This implies, 
+	\begin{equation*}
+		\alpha = \alpha^{dx}\alpha^{py} = (\alpha^{d})^{x}\cdot a^{y} \in F. 
+	\end{equation*}
+	But this contradicts the hypothesis that $a$ is not the $p$th power of any element of $F$. Thus by contradiction, we conclude that $f(z)$ is irreducible over $F[z]$. This means $[F(\alpha):F] = p$ so that $|G| = p$. Since every prime order finite group is necessarily cyclic, we conclude that $G \cong \mathbb{Z}/p\mathbb{Z}$. 
 	\subsection{Sylow's Theorems}
 
 	
@@ -4731,6 +4779,30 @@ f2		\begin{equation*}
 		\norm{f}_{L^\infty} = \inf\brac*{M > 0: |f(x)| \leq M \text{ a.e.}} \leq C. 
 	\end{equation*}
 	
+	\begin{prb}{2009-J-I-4}
+		Suppose that $u$ is a harmonic function on all of $\mathbb{R}^{n}$. \vspace{-0.25cm} 
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Show that if $u \in L^{1}(\mathbb{R}^{n})$, then $u \equiv 0$. 
+			\item Say $1 < p < \infty$. Show that if $u \in L^{p}(\mathbb{R}^{n})$, then $u \equiv 0$. 
+		\end{enumerate}
+	\end{prb}
+	Let $u$ be a harmonic function on all of $\mathbb{R}^{n}$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Suppose $u \in L^{1}(\mathbb{R}^{n})$. Then for any fixed $x \in \mathbb{R}^{n}$ and $r > 0$, one has that 
+		\begin{equation*}
+			0 \leq |u(x)| \leq \frac{1}{\omega_{n}r^{n}}\int_{B(x,r)}|u(y)|\;dV(y) = \frac{1}{\omega_{n}r^{n}}\norm{u}_{L^{1}(B(x,r))} \leq \frac{1}{\omega_{n}r^{n}}\norm{u}_{L^{1}(\mathbb{R}^{n})} \xrightarrow{r \to \infty} 0, 
+		\end{equation*}
+		where $\omega_{n}$ denotes the volume of the unit $n$-ball, and since $\norm{u}_{L^{1}(\mathbb{R}^{n})} < \infty$. Therefore, $u(x) = 0$. Since this is true for any $x \in \mathbb{R}^{n}$, it follows that $u \equiv 0$. 
+		\item Now let $1 < p < \infty$, and assume $u \in L^{p}(\mathbb{R}^{n})$. Let $q$ be the conjugate exponent to $p$. Then for any fixed $x \in \mathbb{R}^{n}$ and $r > 0$, the mean-value property for harmonic functions and H\"older's inequality gives 
+		\begin{align*}
+			\begin{split}
+				0 \leq |u(x)| &\leq \frac{1}{\omega_{n}r^{n}}\int_{B(x, r)}|u(y)|\;dV(y) = \frac{1}{\omega_{n}r^{n}}\int_{\mathbb{R}^{n}}|u(y)|\cdot \chi_{B(x, r)}\;dV(y) \\
+				&\leq \frac{1}{\omega_{n}r^{n}}\norm{u}_{L^{p}(\mathbb{R}^{n})} \cdot \omega_{n}^{1/q}r^{n/q} \\
+				&= \frac{1}{\omega_{n}^{1/p}r^{n/p}}\norm{u}_{L^{p}(\mathbb{R}^{n})} \xrightarrow{r \to \infty} 0. 
+			\end{split}
+		\end{align*}
+		Since $x$ was arbitrary, we conclude that $u(x) = 0$ for all $x \in \mathbb{R}^{n}$ so that $u \equiv 0$. 
+	\end{enumerate}
 	
 	\begin{prb}{2009-J-II-1}
 		$ $\newline\vspace{-0.65cm}
@@ -7747,5 +7819,19 @@ f2		\begin{equation*}
 			\abs{\frac{b_{2} - b_{1}}{1 - \overline{b_{1}}b_{2}}} \leq \abs{\frac{a_{2}- a_{1}}{1 - \overline{a_{2}}a_{1}}}. 
 		\end{equation*}
 		\item (Maximum Modulus Principle) Let $D$ be a bounded and connected open subset of $\mathbb{C}$, and let $f: D \to \mathbb{C}$ be holomorphic. If $z_{0} \in D$ such that $|f(z_{0})| \geq |f(z)|$ for all $z$ in some neighborhood of $z_{0}$, then $f$ is constant on $D$. Applying the maximum modulus principle to the function $1/f$ gives the \textit{minimum} modulus principle. 
+		\item (Polynomial Growth Bound) Let $f: \mathbb{C} \to \mathbb{C}$ be an entire function. Assume that there exist constants $M, r > 0$, and a nonnegative integer $k$ such that $|f(z)| \leq M|z|^{k}$ for all $|z| \geq R$. Then $f$ is a polynomial. \newline 
+		\expl{
+			Fix an arbitrary $z_{0} \in \mathbb{C}$, and some $r > \max\{R, |z_{0}|\}$. By Cauchy's Formula, one has that 
+			\begin{align*}
+				\begin{split}
+					|f^{(n)}(z_{0})| &\leq \frac{n!}{2\pi}\int_{|z - z_{0}| = r}\frac{|f(z)|\;|dz|}{|z - z_{0}|^{n + 1}} = \frac{n!}{2\pi r^{n}}\int_{0}^{2\pi}|f(z)|\theta\;d\theta \leq \frac{n!}{r^{n}}\max_{|z - z_{0}| = r}|f(z)|. 
+				\end{split}
+			\end{align*}
+		By the triangle inequality, one has that $|z| \leq |z_{0}| + r$. Thus using the growth condition for $f$, 
+		\begin{equation*}
+			\abs{f^{(n)}(z_0)} \leq \frac{n! M (\abs{z_{0}} + r)^k}{r^n}. 
+		\end{equation*}
+		For any integer $n > k$, taking $r \to \infty$ yields $|f^{(n)}(z_{0})| = 0$. Thus since all of the derivatives of $f$ vanish for $n > k$, all of the Taylor series coefficients for $f$ are zero above degree $k$, making $f$ a polynomial of degree at most $k$. 
+		}
 	\end{itemize}
 \end{document}
