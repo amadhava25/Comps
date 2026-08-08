@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  5 AUG 2026 14:05
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.7.8)  7 AUG 2026 16:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3209,63 +3209,138 @@ Package mdframed Info: mdframed detected package amsthm
 [160]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 5981.
+(mdframed)              on input line 5982.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 5990.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 6000.
+(mdframed)              on input line 5997.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 6009.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6014.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 6020.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 6020.
 
 
 [161]
-
-[162]
-
-[163]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 6125.
+(mdframed)              on input line 6023.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6038.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6051.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6064.
+
+
+[162]
+Package mdframed Info: Not enough space on this page on input line 6066.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6081.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6094.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6099.
+
+
+[163]
+Package mdframed Info: Not enough space on this page on input line 6101.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6117.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6124.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6147.
+Package mdframed Info: Not enough space on this page on input line 6149.
 
 
 [164]
-
-[165]
+Package mdframed Info: Not enough space on this page on input line 6149.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 6211.
+(mdframed)              on input line 6156.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6192.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 6198.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 6198.
+
+
+[165]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 6198.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6229.
 
 
 [166]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 6235.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 6279.
-Package mdframed Info: Not enough space on this page on input line 6281.
-
 
 [167]
-Package mdframed Info: Not enough space on this page on input line 6281.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6289.
 
 
 [168]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 6333.
-
 
 [169]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6375.
+
 
 [170]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6399.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6443.
+Package mdframed Info: Not enough space on this page on input line 6445.
+
 
 [171]
+Package mdframed Info: Not enough space on this page on input line 6445.
+
 
 [172]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 6497.
+
 
 [173]
 
@@ -3315,7 +3390,15 @@ Package mdframed Info: mdframed detected package amsthm
 
 [196]
 
-[197] (./past_exams.aux)
+[197]
+
+[198]
+
+[199]
+
+[200]
+
+[201] (./past_exams.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -3324,16 +3407,22 @@ L3 programming layer <2024-05-27>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `past_exams.out' has not changed.
-(rerunfilecheck)             Checksum: 0CA5D582E12ECDFB688C819DDE9F1C04;64041.
+
+Package rerunfilecheck Warning: File `past_exams.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `past_exams.out':
+(rerunfilecheck)             Before: 0CA5D582E12ECDFB688C819DDE9F1C04;64041
+(rerunfilecheck)             After:  61C19D369AD59648AB62CCC0A064C67C;66283.
  ) 
 Here is how much of TeX's memory you used:
- 36319 strings out of 474240
- 736379 string characters out of 5745919
+ 36256 strings out of 474240
+ 734454 string characters out of 5745919
  1957560 words of memory out of 5000000
- 58280 multiletter control sequences out of 15000+600000
+ 58217 multiletter control sequences out of 15000+600000
  590798 words of font info for 182 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,26n,131p,3282b,1344s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on past_exams.pdf (197 pages).
+Output written on past_exams.pdf (201 pages).

@@ -5976,97 +5976,261 @@ f2		\begin{equation*}
 	\newpage 
 
 	\section{Complex Analysis}
-	\subsection{Rouch{\'e}'s Theorem}
 	
-	\begin{prb}{2020-A-II-1}
-		How many roots (counted with multiplicity) does the function $$g(z)= 6z^{3} + e^{z} + 1$$ have in the unit disk $|z| < 1$? 
+	\subsection{Holomorphic Functions and Convergence}
+	
+	\begin{prb}{2026-J-II-4}
+		Let $U$ be an open subset of $\mathbb{C}$. Let $\{f_{j}(z)\}_{j = 1}^{\infty}$ be a collection of holomorphic functions on $U$ that converges uniformly on every compact subset. Carefully prove that the pointwise limit is holomorphic. 
 	\end{prb}
-	Let $f(z) = e^{z} + 1$ and $h(z) = 6z^{3}$. Then on the unit circle $\partial\{|z| < 1\}$, one has that 
-	\begin{equation*}
-		|f(z)| \leq |e^{z}| + 1 = e^{\operatorname{Re}{z}} + 1\leq e + 1 < 6 = |h(z)|. 
-	\end{equation*}
-	Hence, by Rouch\'e's theorem, $h(z)$ and $h(z) + f(z) = g(z)$ must have the same number of zeros (counted with multiplicity) in the unit disk $\{|z| < 1\}$. Since $h(z)$ has precisely three roots (counted with multiplicity) in the unit disk, we conclude that $g(z)$ also has three roots in the unit disk up to multiplicity. 
+	Let $U$ be an open subset of $\mathbb{C}$, and let $\{f_{j}(z)\}_{j = 1}^{\infty}$ be a collection of holomorphic functions on $U$ that converges uniformly on every compact subset. Fix some $z_{0} \in U$, and $r > 0$ such that $B(z_{0}, r) \Subset U$. By hypothesis, each $f_{j}$ is continuous on $\overline{B(z_{0}, r)}$. Since $\overline{B(z_{0}, r)}$ is compact, $f_{j}\to f$ uniformly over $\overline{B(z_{0}, r)}$ so that $f$ is also continuous on $\overline{B(z_{0}, r)}$. Since $z_{0}, r$ were arbitrary, we conclude that the pointwise limit $f$ is continuous on $U$. 
 	
-	\begin{prb}{2018-A-I-3}
-		Show that if $c > 1$, then the function $$f(z) = ze^{c - z} - 1$$ has precisely one root in $\Delta = \{|z| < 1\}$, and this root is real and positive. 
-	\end{prb}
-	Let $c > 1$, and define the function $f(z) = ze^{c - z} - 1$ on $\mathbb{C}$. Let $g(z)$ be the constant function $-1$, and let $h(z)$ be the function $ze^{c - z}$. Since the exponential is never zero, $h(z)$ has precisely one root in $\Delta = \{|z| < 1\}$, namely $z = 0$. On $\partial \Delta$, one observes that since $c > 1$ and $|ze^{c- z}| = |z|e^{c - \operatorname{Re}{z}} = e^{c - \operatorname{Re}{z}} > 1$ since $\operatorname{Re}{z} \leq 1$,  
+	As before, we fix some $z_{0}\in U$ and $r > 0$ such that $B(z_{0}, r) \Subset U$. Since $B(z_{0}, r)$ is simply connected, the converse to Morera's theorem states that for every closed piecewise $C^{1}$ curve $\gamma \subset B(z_{0}, r)$ and for every $j \geq 1$, 
 	\begin{equation*}
-		|g(z)| = 1 < |h(z)|. 
+		\int_{\gamma}f_{j}(z)\;dz = 0. 
 	\end{equation*}
-	Thus by Rouch\'e's Theorem, one has that $h(z)$ and $h(z) + g(z) = f(z)$ have the same number of roots in $\Delta$. Therefore, $f(z)$ has precisely one root in $\Delta$. Now consider the function $f_{\mathbb{R}}(x)$, which is the restriction of $f(z)$ to the open unit interval $(-1,1)$. By elementary calculus, $xe^{c - x} - 1$ is continuous on the whole interval, and thus on the interval $(0,1)$. Moreover, $f_{\mathbb{R}}(0) = -1$ while $f_{\mathbb{R}}(1) = e^{c - 1} - 1 > 0$ since $c - 1 > 0$ implies $e^{c - 1} > 1$. Hence, by the Intermediate Value Theorem, there exists some $a \in (0,1)$ such that $f(a) = f_{\mathbb{R}}(a) = 0$. Since we showed $f$ has only one root, we conclude that this root is real and positive. 
-	
-	\subsection{Maximum Modulus Principle}
-	\begin{prb}{2021-A-I-2}
-		Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. Prove that either there is $|z| = 1$ such that $|P(z)| > 1$ or $P(z) = z^{n}$. 
-	\end{prb}
-	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. If there exists some $|z| = 1$ such that $|P(z)| > 1$ we are done. So assume that this property does not hold (i.e., assume that for every $|z| = 1$, $|P(z)| \leq 1$). We must show that each coefficient $a_{1}, \ldots, a_{n}$ is zero. Consider the polynomial $g(z) = 1 + a_{1}z + a_{2}z + \dotsm + a_{n}z^{n}$. Notice that $g(0) = 1$, and for every $|z| = 1$, one has 
+	Since $\gamma$ is compact, $f_{j}(z) \to f(z)$ uniformly for all $z \in \gamma$. Thus passing the limit inside the integral, one has that 
 	\begin{equation*}
-		|g(z)| = |z|^{n} \cdot |P(1/z)| \leq 1. 
+		\int_{\gamma}f(z)\;dz = \lim_{j \to \infty}\int_{\gamma}f_{j}(z)\;dz = 0, \qquad \forall \gamma \subset B(z_{0}, r). 
 	\end{equation*}
+	By Morera's theorem, it follows that $\gamma$ is holomorphic inside $B(z_{0}, r)$. Thus since $f$ is locally holomorphic everywhere in $U$, we conclude that $f$ is holomorphic in $U$. 
 	
-	\subsection{Residue Theorem and Complex Integration}
-	\begin{prb}{2018-J-I-2}
-		Use the method of residues to compute the improper integral 
+	\begin{prb}{2025-A-I-3}
+		Among all monic polynomials of degree $n$, show that $z^{n}$ minimizes
 		\begin{equation*}
-			\int_{-\infty}^{\infty}\frac{x + 1}{x^{4} + 2x^{2} + 5}\;dx. 
+			\sup_{|z| < 1}|p(z)|. 
 		\end{equation*}
 	\end{prb}
-	We start by defining the complex-valued function, 
+	First we will calculate $\sup_{|z| < 1}|z^{n}|$. Since $|z| < 1$, $|z|^{n} < 1$. Now consider the sequence $\{1 - 1/j\}_{j= 1}^{\infty}$. We note that $(1 - 1/j)^{n} \xrightarrow{j \to \infty} 1$. Therefore, $\sup_{|z| < 1}|p(z)| = 1$. Now suppose there exists a monic polynomial $p(z) = z^{n} + a_{n-1}z^{n-1} + \dotsm + a_{1}z + a_{0}$ such that $\sup_{|z| < 1}|p(z)| < 1$; i.e., assume that for all $|z| < 1$, $|p(z)| < 1$. By continuity of $p$, it follows that for all $|z| \leq 1$, $|p(z)| < 1$. Consider the polynomial $g(z) = z^{n}p(1/z) = 1 + a_{n - 1}z + a_{n-2}z^{2} + \dotsm + a_{1}z^{n-1} + a_{0}z^{n}$. Then $g(0) = 1$, and on $|z| = 1$, $|g(z)| = |z|^{n}|p(1/z)| < 1$. By the maximum modulus principle, since $g$ is continuous on $|z| \leq 1$, 
 	\begin{equation*}
-		f(z) = \frac{z + 1}{z^{4} + 2z^{2} + 5}. 
+		\max_{|z|\leq 1}|g(z)| = \max_{|z| = 1}|g(z)| < 1. 
 	\end{equation*}
-	We note that the denominator of $f(z)$ has zeros at the points, 
-	\begin{equation*}
-		z = \pm \sqrt{-1 - 2i}, \pm \sqrt{-1 + 2i}. 
-	\end{equation*}
-	Of these roots, we note that only $z_{1} = \sqrt{-1 + 2i}$ and $z_{2} = -\sqrt{-1 - 2i}$ are contained in the upper half plane. Thus for some $R > 0$, we consider the semicircle contour $\gamma_{R}$ whose diameter lies in the real interval $[-R, R]$, and whose radius is $R$; let $\gamma_{1, R}$ denote the curved portion of $\gamma$, and let $\gamma_{2,R}$ denote the real interval portion. Figure \ref{fig:2018JI2} depicts this contour. 
-	\begin{figure}[h!]
-		\centering
-		\begin{tikzpicture}
-			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
-			\draw[Stealth-Stealth] (0,-0.5)-- (0,3); 
-			
-			\draw[ultra thick] (-2,0) -- (2,0);
-			\draw[arrow] (-2,0) -- (2,0); 
-			\draw[ultra thick] (2,0) arc (0:180:2);
-			\draw[arrow] (2,0) arc (0:180:2);
-			
-			\draw[fill=black] (0.786,1.272) circle(1pt);
-			\draw[fill=black] (-0.786,1.272) circle(1pt);
-			
-			\draw (2,0) node[below] {$R$};
-			\draw (-2,0) node[below] {$-R$};
-		\end{tikzpicture}
-		\caption{Contour in the upper half-plane, with the two points denoting the two simple poles of $f(z)$ in the upper half-plane.}
-		\label{fig:2018JI2}
-	\end{figure}
+	But this contradicts our finding that $g(0) = 1$. Thus by contradiction, it follows that among all monic polynomials of degree $n$, $z^{n}$ must minimize $\sup_{|z| < 1}|p(z)|$. 
 	
-	First, we must show that the integral of $f(z)$ over this contour converges to the original real integral in the limit $R \to \infty$. For sufficiently large $R$ and $|z| = R$, one has that 
+	\begin{prb}{2025-J-I-4}
+		Find all entire functions $f$ and $g$ satisfying the equation $e^{f} + e^{g} = 4$. 
+	\end{prb}
+	Let $f$ and $g$ be entire functions satisfying $e^{f} + e^{g} = 4 \iff e^{g}= 4 - e^{f}$. Since $e^{z}$ is entire, and the composition of entire functions is entire, both $e^{f}$ and $e^{g}$ are entire. Since $e^{z} \neq 0$ for any $z$, $e^{f}$ and $e^{g}$ are nowhere vanishing. And thus $e^{g}$ misses the two values $0$ and $4$. By the Little Picard Theorem, it follows that $e^{g}$ (and hence $e^{f}$) must both be constant. Thus $f$ and $g$ are both constant functions such that $e^{f} + e^{g} = 4$. 
+	
+	\begin{prb}{2022-J-I-1}
+		Suppose $f: \mathbb{D} \to \mathbb{C}$ is a holomorphic function on the unit disk so that 
+		\begin{equation*}
+			f\left(\frac{1}{n}\right) = \frac{5}{n^{2}}, \qquad \forall n \in \mathbb{Z}, n \geq 2. 
+		\end{equation*}
+		Find $f''(0)$. 
+	\end{prb}
+	Let $g(z) = 5z^{2}$, and let $S = \{1/n: n \in \mathbb{Z}, z \geq 2\} \subset D$, where $D \subset \mathbb{C}$ denotes the unit disk. First we note that $S$ has an accumulation point $0 \in D$. By the given hypothesis, it follows that $f$ and $g$ agree on the set $S$. Thus by the identity theorem, $f = g$ in $D$. Since $g''(0) = 10$, we conclude that $f''(0) = 10$. 
+	
+	\begin{prb}{2022-J-II-4}
+		Let $U \subset \mathbb{C}$ be an open subset. Suppose $f_{i}: U \to \mathbb{C}$ is a sequence of holomorphic functions converging uniformly on compact subsets to a function $f: U \to \mathbb{C}$. Show that $f$ is also holomorphic. Justify each step. 
+	\end{prb}
+	Let $U$ be an open subset of $\mathbb{C}$, and let $\{f_{i}(z)\}_{j = 1}^{\infty}$ be a collection of holomorphic functions on $U$ that converges uniformly on every compact subset. Fix some $z_{0} \in U$, and $r > 0$ such that $B(z_{0}, r) \Subset U$. By hypothesis, each $f_{i}$ is continuous on $\overline{B(z_{0}, r)}$. Since $\overline{B(z_{0}, r)}$ is compact, $f_{i}\to f$ uniformly over $\overline{B(z_{0}, r)}$ so that $f$ is also continuous on $\overline{B(z_{0}, r)}$. Since $z_{0}, r$ were arbitrary, we conclude that the pointwise limit $f$ is continuous on $U$. 
+	
+	As before, we fix some $z_{0}\in U$ and $r > 0$ such that $B(z_{0}, r) \Subset U$. Since $B(z_{0}, r)$ is simply connected, the converse to Morera's theorem states that for every closed piecewise $C^{1}$ curve $\gamma \subset B(z_{0}, r)$ and for every $j \geq 1$, 
 	\begin{equation*}
-		\abs{\frac{z + 1}{z^{4} + 2z^{2} + 5}} \leq \frac{R + 1}{R^{4} - 2R^{2} - 5}. 
+		\int_{\gamma}f_{i}(z)\;dz = 0. 
 	\end{equation*}
-	This implies that 
+	Since $\gamma$ is compact, $f_{i}(z) \to f(z)$ uniformly for all $z \in \gamma$. Thus passing the limit inside the integral, one has that 
 	\begin{equation*}
-		\int_{\gamma_{1,R}}f(z)\;dz \leq \pi R \cdot \frac{R + 1}{R^{4} - 2R^{2} - 5} \xrightarrow{R \to \infty} 0. 
+		\int_{\gamma}f(z)\;dz = \lim_{j \to \infty}\int_{\gamma}f_{i}(z)\;dz = 0, \qquad \forall \gamma \subset B(z_{0}, r). 
 	\end{equation*}
-	Thus the contribution along the semicircle portion vanishes in the limit $R \to \infty$. On the other, the integral of $f(z)$ over $[-R,R]$ converges to the desired real integral in the limit $R \to \infty$. Thus, the original integral is given by the limit $\lim_{R\to \infty}\int_{\gamma_{R}}f(z)\;dz$. Fix some arbitrary $R > 0$. Since $\gamma_{R}$ encloses $z_{1}$ and $z_{2}$, we must compute the residue of $f$ at these poles. A simple calculation yields, 
+	By Morera's theorem, it follows that $\gamma$ is holomorphic inside $B(z_{0}, r)$. Thus since $f$ is locally holomorphic everywhere in $U$, we conclude that $f$ is holomorphic in $U$. 
+	
+	\begin{prb}{2020-A-II-1}
+		How many roots (counted with multiplicity) does the function 
+		\begin{equation*}
+			g(z) = 6z^{3} + e^{z} + 1
+		\end{equation*}
+		have in the unit disk $|z| < 1$?
+	\end{prb}
+	Let $g(z) = 6z^{3} + e^{z} + 1$, which is holomorphic in the open unit disk $|z| < 1$, and let $f(z) = 6z^{3}, h(z) = e^{z} + 1$. On the unit disk $|z| = 1$, one has 
 	\begin{equation*}
-		\operatorname{Res}_{f}(z_{1}) = -\frac{1}{8}\left(i +  \frac{\sqrt{1 + 2i}}{\sqrt{5}}\right) \quad \text{and}\quad \operatorname{Res}_{f}(z_{2}) = \frac{1}{8}\left(i + \frac{\sqrt{1 - 2i}}{\sqrt{5}}\right). 
+		|h(z)| \leq e^{\operatorname{Re}{z}} + 1 \leq e + 1 < 6 = |f(z)|, 
 	\end{equation*}
-	Thus this implies that 
+	so that by Rouch`e's theorem, $f(z) + h(z) = g(z)$ has the same number of zeros, counting with multiplicity, as $f(z)$ in the open unit disk. Since the latter has precisely three zeros, we conclude that $g(z)$ has three zeros in the open unit disk, counting with multiplicity. 
+	
+	\begin{prb}{2018-A-I-3}
+		Show that if $c > 1$, then the function 
+		\begin{equation*}
+			f(z)= ze^{c - z} -1
+		\end{equation*}
+		has precisely one root in $\Delta = \{|z| < 1\}$, and this root is real and positive. 
+	\end{prb}
+	Let $f(z) = ze^{c - 1} - 1$, where $c > 1$. Let $g(z) = ze^{c- z}$ and $h(z) = -1$ so that $f(z) = g(z) + h(z)$. On $\partial \Delta$, one has that 
+	\begin{equation*}
+		|h(z)| = 1 < e^{c - \operatorname{Re}(z)} = |ze^{c-z}| = |g(z)|, 
+	\end{equation*}
+	where the first inequality follows from the fact that $c - 1 > 0$ and for $|z| = 1$, $\operatorname{Re}{z} \leq 1$. Thus by Rouch`e's theorem, one has that $f(z)$ has the same number of zeros as $g(z)$, counting with multiplicity, in $\Delta$. Since $e^{c - z}$ is nowhere vanishing, $g(z)$ has precisely one zero at the origin. Thus $f(z)$ has only one root in $\Delta$. Now consider the restriction of $f$, $g(x) = xe^{c - x} - 1$ to the real line; by elementary calculus, $g(x)$ is continuous on $\mathbb{R}$ and thus on $[0,1]$. At $x = 0$, $g(0) = -1$, while at $x = 1$, $g(1) = e^{c - 1} - 1 > 0$  since $c - 1 > 0$ implies $e^{c - 1} > 1$. Thus by the intermediate value theorem, there exists some $x_{0} \in (0,1)$ so that $g(x_{0})$ (and hence $f(x_{0})$) is zero. Since we showed $f$ has precisely one root, we conclude that the only root of $f(z)$ is real and positive. 
+	
+	\begin{prb}{2018-J-II-4}
+		Let $\left\{f_n: n=1,2,3, \ldots\right\}$ and $f$ denote holomorphic functions defined on an open domain $D$ in the complex plane. If the sequence $\left\{f_n\right\}$ converges uniformly on compact subsets of $D$ to $f,$ then show that the sequence of derivatives $\left\{f_n^{\prime}\right\}$ converges uniformly on compact subsets of $D$ to the derivative $f^{\prime}.$
+	\end{prb}
+	Let $\{f_{j}\}_{j = 1}^{\infty}$ and $f$ denote holomorphic functions defined on an open domain $D$ in the complex plane. Further assume that $f_{n} \to f$ uniformly on every compact subset of $D$. Fix $z_{0} \in D$, and let $r > 0$ such that $B(z_{0}, r) \Subset D$. Cauchy's theorem tells us that for any $w \in B(z_{0}, R)$, where $0 < R < r$, 
+	\begin{equation*}
+		f'(w) = \frac{1}{2\pi i}\int_{\partial B(z_{0}, r)}\frac{f(z)}{(z - w)^{2}}\;dz , \qquad f_{j}'(w) = \frac{1}{2\pi i }\int_{\partial B(z_{0}, r)}\frac{f_{j}(z)}{(z - w)^{2}}\;dz \qquad \forall j \geq 1. 
+	\end{equation*}
+	Fix $\epsilon > 0$. Since $f_{j} \to f$ uniformly on every compact subset of $D$ and $\partial B(z_{0}, r)$ is compact, there exists a positive integer $N = N(\epsilon)$ such that for all $j \geq N$ and $z \in \partial B(z_{0}, r)$, $|f(z) - f_{j}(z)| \leq \epsilon \cdot r^{-1}(r - R)^{2}$. This implies that 
 	\begin{align*}
 		\begin{split}
-		\int_{\gamma_{R}}f(z)\;dz &= 2\pi i \cdot \left[\frac{\sqrt{5}}{40} \cdot \left(-\sqrt{1 + 2i} + \sqrt{1 - 2i}\right)\right] \\
-		&= \frac{\sqrt{5}\pi i}{20} \cdot \left[-\sqrt{\frac{1 + \sqrt{5}}{2}} - i\sqrt{\frac{2}{1 + \sqrt{5}}} + \sqrt{\frac{1 + \sqrt{5}}{2}} - i\sqrt{\frac{2}{1 + \sqrt{5}}}\right] \\
-		&= \frac{\sqrt{5}\pi}{10} \cdot \sqrt{\frac{2}{1 + \sqrt{5}}} =\pi \cdot  \sqrt{\frac{10}{100 \cdot (1 + \sqrt{5})}} = \pi \cdot \sqrt{\frac{1}{10 \cdot (1 + \sqrt{5})}} \\
-		&= \pi \cdot \sqrt{\frac{1 - \sqrt{5}}{10 \cdot (1 - 5)}} = \pi \cdot \sqrt{\frac{\sqrt{5} - 1}{40}} = \frac{\pi}{2}\cdot \sqrt{\frac{\sqrt{5} - 1}{10}}. 
+			|f'(w) - f_{j}'(w)| &\leq \frac{1}{2\pi}\int_{\partial B(z_{0}, r)}\frac{|f(z) - f_{j}(z)|}{|z - w|^{2}}\;|dz| \\
+			&\leq \frac{\epsilon}{2\pi} \int_{\partial B(z_{0}, r)}\frac{1}{r}|dz| \\
+			&= \frac{\epsilon}{2\pi} \cdot 2\pi = \epsilon. 
 		\end{split}
 	\end{align*}
+	Since the upper bound is independent of $w$, it follows that $f_{j}'\to f'$ uniformly on $B(z_{0}, R)$. Now let $K \subset D$ be a compact set, and fix $\epsilon > 0$. For each $z \in K$, let $r_{z} > 0$ be small enough such that $B(z, r_{z}) \Subset K$. For each $z \in K$, let $0 < R_{z} < r_{z}$. Then the collection $\{B(z, R_{z})\}_{z \in K}$ is an open cover of $K$; since $K$ is compact, there exists a finite open subcover $\{B(z_{k}, R_{z_{k}})\}_{k = 1}^{n}$. By the preceding work, for each $k = 1, \ldots, n$, there exists a positive integer $N_{k} = N_{k}(\epsilon)$ such that for all $j \geq N_{k}$, $\sup_{B(z_{k}, R_{z_{k}})}|f'_{j}(w) - f'(w)| < \epsilon$. Let $N = \max_{1 \leq k \leq n}N_{k}$. Then for all $j \geq N$, it follows that for every $k = 1, \ldots, n$, $\sup_{B(z_{k}, R_{z_{k}})}|f'_{j}(w) - f'(w)| < \epsilon$ so that $f'_{j} \to f'$ uniformly on $K$. Thus, we conclude that $f'_{j}\to f'$ uniformly on compact subsets of $D$. 
+	
+	\begin{prb}{2015-A-I-3}
+		Let $f$ be a holomorphic function defined on a neighborhood of the closed unit disk $\overline{\mathbb{D}} \coloneqq \{z \in \mathbb{C}: |z| \leq 1\}$, and assume that $|f(z)| < 1$ for all $|z| = 1$. Determine the number of fixed points of $f$ in $\overline{\mathbb{D}}$.  
+	\end{prb}
+	Let $f$ be a holomorphic function defined on a neighborhood of $\overline{\mathbb{D}}$, and assume that $|f(z)| < 1$ for all $|z| = 1$. Determining the number of fixed points of $f$ in $\overline{\mathbb{D}}$ is equivalent to finding the number of roots to $f(z) - z$ in $\overline{\mathbb{D}}$. We note that on $|z| = 1$, 
+	\begin{equation*}
+		|f(z)| < 1 = |-z|, 
+	\end{equation*}
+	so that by Rouch\`e's theorem, $f(z) -z$ has precisely 1 root in $\mathbb{D}$. On the other hand, for any $z \in \partial \mathbb{D}$, 
+	\begin{equation*}
+		|z - f(z)| \geq ||z| - |f(z)|| = |1 - |f(z)|| = 1 - |f(z)| > 0 
+	\end{equation*}
+	so that $f(z)$ has no fixed points on $\partial \mathbb{D}$. Therefore, we conclude that $f(z)$ has only one fixed point in $\overline{\mathbb{D}}$. 
+	
+	\begin{prb}{2015-J-I-1}
+		Suppose $f$ and $g$ are two entire holomorphic functions with the property that $|f(z)| \leq |g(z)|$ for every $z \in \mathbb{C}$. Prove that there is a constant $\lambda \in \mathbb{C}$ such that $f(z) = \lambda g(z)$. 
+	\end{prb}
+	Suppose $f$ and $g$ are two entire holomorphic functions with the property that $|f(z)| \leq |g(z)|$. First assume $g \equiv 0$. Then the claim follows immediately. So now we assume $g$ is not identically zero; let $E \subseteq \mathbb{C}$ be the set of zeros of $g$. Since the zeros of a holomorphic function are isolated, $E$ is a discrete set. Thus, the function $f(z)/g(z)$ is holomorphic on $\mathbb{C}\setminus E$, and $|f(z)/g(z)| \leq 1$ for all $z \in \mathbb{C}\setminus E$. By Riemann's theorem on removable singularities, it follows that $f(z)/g(z)$ extends to an entire function $h: \mathbb{C} \to \mathbb{C}$; on $\mathbb{C}\setminus E$, $|h(z)| \leq 1$. Since $E$ is discrete, $\mathbb{C}\setminus E$ is dense. Thus since $h$ is continuous on $\mathbb{C}\setminus E$, it follows that at each $z \in E$, $|h(z)| \leq 1$. In other words, $h(z)$ is a bounded entire function; by Liouville's theorem, $h(z) \equiv \lambda \in \mathbb{C}$. Therefore, $f(z) = \lambda g(z)$, which concludes the proof. 
+	
+	\begin{prb}{2012-A-I-4}
+		Find, with proof, the precise number of zeros of the complex polynomial $p(z) = z^{9} - 2z^{6} + z^{2} - 8z - 2$ inside the annulus $1 < |z| < 2$. 
+	\end{prb}
+	Let $f(z) = 8z$, and $g(z) = z^{9} - 2z^{6} + z^{2} - 2$ so that $f(z) + g(z) =p(z)$. Then on $|z| = 1$, one has that 
+	\begin{align*}
+		\begin{split}
+			|g(z)| &\leq |z|^{9} + 2|z|^{6} + |z|^{2} + 2 = 1 + 2 + 1 + 2 = 6 
+			< 8 = |f(z)|. 
+		\end{split}
+	\end{align*}
+	Thus by Rouch\`e's Theorem, $p(z)$ has the same number of zeros, counting multiplicity, as $8z$ inside $|z| < 1$. Since $8z$ has only one root in the open unit disk, $p(z)$ has one root inside the open unit disk. Now let $m(z) = z^{9}$ and $n(z) = p(z) - m(z)$. Then on $|z| = 2$, one has that 
+	\begin{align*}
+		\begin{split}
+			|n(z)| &\leq 2|z|^{6} + |z|^{2} + 8|z| + 2 < 2^{7} + 2^{2} + 2^{4} + 2 < 2^{9} = |m(z)|. 
+		\end{split}
+	\end{align*}
+	Therefore, $p(z)$ has the same number of zeros (nine), counting with multiplicity, as $m(z)$ in the open disk $|z| < 2$. Therefore, we conclude that $p(z)$ has precisely 8 roots inside the annulus $1 < |z| < 2$. 
+	
+	\begin{prb}{2008-A-I-1}
+		Find all entire functions $f$ such that $|f'| \leq |f|$ everywhere. 
+	\end{prb}
+	Let $f$ be an entire function satisfying $|f'| \leq |f|$ at every $z \in \mathbb{C}$. If $f \equiv 0$, then the claim follows trivially. So assume $f$ is not identically zero, and let $E$ be the set of zeros of $f$. Since $f$ is holomorphic, $E$ is a discrete set. Thus the function $f'/f$ is holomorphic on $\mathbb{C}\setminus E$ and satisfies $|f'/f| \leq 1$ for all $z \in \mathbb{C}\setminus E$. In particular, for every $z \in E$, $f'/f$ is bounded in a neighborhood of $z$. Thus by Riemann's Theorem for Removable Singularities, $f'/f$ only has removable singularities at each $z \in E$. Therefore, $f'/f$ extends to an entire function $h(z)$ on $\mathbb{C}$. For each $z \in \mathbb{C}\setminus E$, $|h(z)| \leq 1$. On the other hand, since $h$ is continuous, at each $z \in E$, $|h(z)| \leq 1$. Therefore, $h$ is a bounded entire function. By Liouville's theorem, it follows that there exists $\lambda \in \mathbb{C}$ such that $|\lambda| \leq 1$ and $h \equiv \lambda$. This implies that $f'(z) = \lambda f(z)$ for all $z \in \mathbb{C}$. Integrating, one yields $f(z) = Ce^{\lambda z} = f(0)e^{\lambda z}$. Conversely, every function of the form $f(z) = f(0)e^{\lambda z}$ satisfies the desired inequality. Thus the proof concludes.
+	
+	\subsection{Harmonic Functions}
+	
+	\begin{prb}{2017-A-I-6}
+		Let $D \subset \mathbb{C}$ denote the open unit disk, and let $f: D \to \mathbb{R}$ be a harmonic function which belongs to $L^{2}(D)$. Prove that there is a positive constant $K$ such that 
+		\begin{equation*}
+			|f(z)| < \frac{K}{1 - |z|}
+		\end{equation*}
+		for all $z \in D$. 
+	\end{prb}
+	Let $D \subset \mathbb{C}$ denote the open unit disk, and fix an arbitrary $z \in D$. Let $r > 0$ such that $B(z, r) \Subset D$. Since $f$ is harmonic, it follows from the mean-value property of harmonic functions that 
+	\begin{equation*}
+		f(z) = \frac{1}{\pi r^{2}}\int_{B(z, r)}f(w)\;dV(w) \implies |f(z)| \leq \frac{1}{\pi r^{2}}\int_{B(x, r)}|f(w)|\;|dV(w)|. 
+	\end{equation*}
+	Using H\"older's inequality, one obtains 
+	\begin{equation*}
+		|f(z)| \leq \frac{1}{\pi r^{2}} \cdot \norm{f}_{L^{2}(D)} \cdot \norm{\chi_{B(z, r)}}_{L^{2}(D)} = \frac{\norm{f}_{L^{2}(D)}}{\sqrt{\pi}r}. 
+	\end{equation*}
+	Thus taking the limit $r = (1 - |z|)/2$ on the right side yields, 
+	\begin{equation*}
+		|f(z)| \leq \frac{2\norm{f}_{L^{2}(D)}}{\sqrt{\pi}(1 - |z|)}. 
+	\end{equation*}
+	Taking $K$ to be a positive constant larger than $2\norm{f}_{L^{2}(D)}/\sqrt{\pi}$ completes the proof. 
+	
+	\subsection{The Schwarz and Schwarz-Pick Lemmas}
+	
+	\begin{prb}{2023-A-I-6}
+		Let $\mathbb{D} \subset \mathbb{C}$ be the open unit disk. Is there a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$? If so, give a formula. If not, prove that it cannot exist. 
+	\end{prb}
+	Consider a holomorphic function $f: \mathbb{D} \to \mathbb{D}$ with $f(0) = 2/3$. Then by the Schwarz-Pick lemma, one has that 
+	\begin{equation*}
+		|f'(0)| \leq \frac{1 - 4/9}{1} = \frac{5}{9} < \frac{2}{3}. 
+	\end{equation*}
+	Therefore, there cannot exist a holomorphic function $f$ with $f(\mathbb{D}) = \mathbb{D}$, $f(0) = f'(0) = 2/3$. 
+	
+	\begin{prb}{2019-J-II-3}
+		Denote by $D_{\rho}$ the disk of radius $\rho$ with center at $0$ on the complex plane $\mathbb{C}$. For each $R > 0$ and each $p\in D_{R}$, let $S_{R}(p) = \sup\{r > 0 : \exists f: D_{r} \to D_{R} \text{ holomorphic}, f(0) = p, |f'(0)| = 1\}$. Find $S_{R}(p)$. 
+	\end{prb}
+	Fix an arbitrary $R > 0$ and some $p \in D_{R}$, where $D_{R}$ denotes the disk of radius $R$ with center $0$ on the complex plane. Consider the map $\phi: D_{1} \to D_{1}$ defined by 
+	\begin{equation*}
+		\phi(w) = \frac{w + \frac{p}{R}}{1 + \frac{\bar{p}}{R}w}. 
+	\end{equation*}
+	In particular, since $\phi$ is a M\"obius transformation (on the unit disk), it is holomorphic. We note that $\phi(0) = p/R$ and 
+	\begin{equation*}
+		\phi'(w) = \frac{1}{1 + \frac{\bar{p}}{R}w} - \frac{w + \frac{p}{R}}{(1 + \frac{\bar{p}}{R}w)^{2}} \cdot \frac{\bar{p}}{R} = \frac{1}{(1 + \frac{\bar{p}}{R}w)^{2}} \cdot \left[1 + \frac{\bar{p}}{R}w - \frac{\bar{p}}{R}w - \frac{|p|^{2}}{R^{2}}\right], 
+	\end{equation*}
+	so that $\phi'(0) = 1 - |p|^{2}/R^{2}$. So now define the holomorphic function $f: D_{r} \to D_{R}$, where $r = (R^{2} - |p|^{2})/R$,
+	\begin{equation*}
+		f(z) = R \cdot \phi\left(\frac{z}{r}\right). 
+	\end{equation*}
+	We compute, 
+	\begin{align*}
+		\begin{split}
+			f(0) &= R \cdot \phi(0) = p. \\
+			f'(z) &= \frac{R}{r}\cdot \phi'(\frac{z}{r}) \implies f'(0) = \frac{R}{r} \cdot \left(1 - \frac{|p|^{2}}{R^{2}}\right)  = \frac{R}{r} \cdot \left(\frac{R^{2} - |p|^{2}}{R^{2}}\right) = 1. 
+		\end{split}
+	\end{align*}
+	Thus, $S_{R}(p)$ is at least $(R^{2} - |p|^{2})/R$. Now suppose $f: D_{r} \to D_{R}$, for some $r > 0$, is an arbitrary holomorphic function that satisfies the given conditions. Let $\phi: D_{1} \to D_{1}$ be the holomorphic map defined by 
+	\begin{equation*}
+		\phi(w) = \frac{1}{R}f(rw). 
+	\end{equation*}
+	Then one has 
+	\begin{equation*}
+		\phi(0) = \frac{p}{R} \qquad \text{ and } \qquad \phi'(w) = \frac{r}{R}f'(rw) \implies \phi'(0) = \frac{r}{R}. 
+	\end{equation*}
+	By the Schwarz-Pick Lemma, one must have that 
+	\begin{equation*}
+		\frac{r}{R} = |\phi'(0)| \leq 1 - \frac{|p|^{2}}{R^{2}} \implies r \leq \frac{R^{2} - |p|^{2}}{R^{2}}. 
+	\end{equation*}
+	This means that $S_{r}(p)$ must be at most $R^{2} - |p|^{2}{R^{2}}$. Thus, we conclude that $S_{R}(p) = (R^{2} - |p|^{2})/R^{2}$.
+	
+	\begin{prb}{2017-J-II-5}
+		Let $\mathbb{D} \subset \mathbb{C}$ be the open unit disk and $\mathbb{H}\coloneqq \{z \in \mathbb{C}: \operatorname{Im}{z} > 0\}$ be the upper half plane. Let $\Gamma$ be the set of holomorphic maps $f: \mathbb{D} \to \mathbb{H}$ satisfying $f(0) = i$. Compute 
+		\begin{equation*}
+			\sup_{f \in \Gamma}\operatorname{Im}{f(3/4)}
+		\end{equation*}
+		where $\operatorname{Im}{z}$ is the imaginary part of $z$ for all $z \in \mathbb{C}$. 
+	\end{prb}
+	Let $\mathbb{D} \subset \mathbb{C}$ be the open unit disk, $\mathbb{H}$ the upper half plane, and $\Gamma$ the set of holomorphic maps $f: \mathbb{D} \to \mathbb{H}$ satisfying $f(0) = i$. Fix an arbitrary $f \in \Gamma$, and let $u = \operatorname{Re}{f(3/4)}$, $v = \operatorname{Im}{f(3/4)}$. We define the M\"obius transformation $T: \mathbb{H} \to \mathbb{D}$ as follows: 
+	\begin{equation*}
+		T(z) = \frac{z - i}{z + i}. 
+	\end{equation*}
+	Then define $h: \mathbb{D} \to \mathbb{D}$ by $h(z) = (T \circ f)(z)$; we note that $h(0) = T(f(0)) = T(i) = 0$. Thus Schwarz's lemma implies that for all $z \in \mathbb{D}$, 
+	\begin{equation*}
+		|h(z)| \leq |z| \iff \abs{\frac{f(z) - i}{f(z) + i}} \leq \abs{z}. 
+	\end{equation*}
+	In particular, taking $z = \frac{3}{4} + i(0)$, the above inequality is satisfied iff 
+	\begin{equation*}
+		|u + i(v - 1)| \leq \frac{3}{4}|u + i(v + 1)| \iff |u + i(v-1)|^{2}\leq \frac{9}{16}|u + i(v + 1)|^{2} \iff \frac{7}{16}u^{2} \leq -\frac{7}{16}v^{2} + \frac{25}{8}v - \frac{7}{16}. 
+	\end{equation*}
+	The smallest lower bound is achieved for $u  = 0$, which then implies that $7^{-1} \leq v \leq 7$. This means that 
+	\begin{equation*}
+		\sup_{f \in \Gamma}|\operatorname{Im}{f(3/4)}| \leq 7. 
+	\end{equation*}
+	Now we will show that equality is satisfied. Recall that the inequality in the above work came from the iequality given by Schwarz's lemma. So suppose $h(z) = z$. Then inverting the M\"obius transform, one has 
+	\begin{equation*}
+		f(z) - i = (f(z) + i)z \implies f(z)(z - 1) = -i(z + 1) \implies f(z) = i\frac{1 + z}{1 - z}. 
+	\end{equation*}
+	Then one has 
+	\begin{equation*}
+		f(3/4) = i\frac{7/4}{1/4} = 7i \implies |\operatorname{Im}{f(3/4)}| = 7. 
+	\end{equation*}
 	Thus, we conclude that 
 	\begin{equation*}
-		\int_{-\infty}^{\infty}\frac{x + 1}{x{4} + 2x^{2} + 5}\;dx = \frac{\pi}{2} \cdot \sqrt{\frac{\sqrt{5} - 1}{10}}. 
+		\sup_{f \in \Gamma}|\operatorname{Im}{f(3/4)}| = 7. 
 	\end{equation*}
+	\subsection{Maximum Principles}
+	
+	\begin{prb}{2013-A-I-3}
+		Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disk into the closed unit disk. Can the image of $f$ contain both the points $0$ and $1$? 
+	\end{prb}
+	Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disk into the closed unit disk. Suppose the image of $f$ contains the point $1$ (i.e., assume $f(z_{0}) = 1$ for some $z_{0} \in D(0,1)$). Then since for any $z \in D(0,1)$, $|f(z)| \leq 1 = |f(z_{0})|$, the maximum modulus principle implies that $f \equiv 1$ on $D$. But this means that $0$ cannot be contained in the image of $f$. Thus the image of $f$ cannot contain both the points $0$ and $1$. 
+	
 	\newpage 
 	\section{Notes}
 	\subsection{Differential Geometry and Topology}
