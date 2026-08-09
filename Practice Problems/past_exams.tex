@@ -6152,6 +6152,11 @@ f2		\begin{equation*}
 	\end{prb}
 	Let $f$ be an entire function satisfying $|f'| \leq |f|$ at every $z \in \mathbb{C}$. If $f \equiv 0$, then the claim follows trivially. So assume $f$ is not identically zero, and let $E$ be the set of zeros of $f$. Since $f$ is holomorphic, $E$ is a discrete set. Thus the function $f'/f$ is holomorphic on $\mathbb{C}\setminus E$ and satisfies $|f'/f| \leq 1$ for all $z \in \mathbb{C}\setminus E$. In particular, for every $z \in E$, $f'/f$ is bounded in a neighborhood of $z$. Thus by Riemann's Theorem for Removable Singularities, $f'/f$ only has removable singularities at each $z \in E$. Therefore, $f'/f$ extends to an entire function $h(z)$ on $\mathbb{C}$. For each $z \in \mathbb{C}\setminus E$, $|h(z)| \leq 1$. On the other hand, since $h$ is continuous, at each $z \in E$, $|h(z)| \leq 1$. Therefore, $h$ is a bounded entire function. By Liouville's theorem, it follows that there exists $\lambda \in \mathbb{C}$ such that $|\lambda| \leq 1$ and $h \equiv \lambda$. This implies that $f'(z) = \lambda f(z)$ for all $z \in \mathbb{C}$. Integrating, one yields $f(z) = Ce^{\lambda z} = f(0)e^{\lambda z}$. Conversely, every function of the form $f(z) = f(0)e^{\lambda z}$ satisfies the desired inequality. Thus the proof concludes.
 	
+	\begin{prb}{2001-J-II-5}
+		Let $U$ be a domain in a complex plane such that its universal cover is the unit disk $D$ (that is, there is a map $\pi: D \to U$ which is holomorphic and is a covering map in the usual topological sense). Show that if $f$ is an entire function (i.e., a holomorphic function on $\mathbb{C}$) such that $f(z) \in U$ for all $z$, then $f$ is constant. 
+	\end{prb}
+	Let $U$ be a domain in a complex plane such that its universal cover is the unit disk. Since $f: \mathbb{C} \to U$ is continuous and $\mathbb{C}$ is simply connected, there exists a lift $\ti{f}: \mathbb{C} \to D$ such that $f = p \circ \ti{f}$; note that $\ti{f}$ must also be an entire function. Since $D$ is bounded, $\ti{f}$ is a bounded entire function. So Liouville's theorem tells us that $\ti{f}$ is constant. Thus projecting down, $f$ is constant. 
+	
 	\subsection{Harmonic Functions}
 	
 	\begin{prb}{2017-A-I-6}
@@ -6169,7 +6174,7 @@ f2		\begin{equation*}
 	\begin{equation*}
 		|f(z)| \leq \frac{1}{\pi r^{2}} \cdot \norm{f}_{L^{2}(D)} \cdot \norm{\chi_{B(z, r)}}_{L^{2}(D)} = \frac{\norm{f}_{L^{2}(D)}}{\sqrt{\pi}r}. 
 	\end{equation*}
-	Thus taking the limit $r = (1 - |z|)/2$ on the right side yields, 
+	Thus taking $r = (1 - |z|)/2$ on the right side yields, 
 	\begin{equation*}
 		|f(z)| \leq \frac{2\norm{f}_{L^{2}(D)}}{\sqrt{\pi}(1 - |z|)}. 
 	\end{equation*}
@@ -6178,6 +6183,7 @@ f2		\begin{equation*}
 	\begin{prb}{2015-A-I-5}
 		Prove that if $\{u_{n}\}$ is a sequence of harmonic functions on the unit disk with $|u_{n}(x)| \leq 1$ for all $x$ and all $n$, then there is a subsequence which converges at every point of the unit disk. 
 	\end{prb}
+	\textcolor{red}{[!! Complete Later !!]} 
 	
 	\subsection{The Schwarz and Schwarz-Pick Lemmas}
 	
@@ -6266,15 +6272,96 @@ f2		\begin{equation*}
 		Let $f: \Delta \to \mathbb{C}$ be a holomorphic function on the open unit disk. Decompose $f$ into its real and imaginary parts $f = u + iv$. Among all holomorphic functions $f$ with $v(0) = 0$ and with $|u| < 1$, what is the largest possible value of $v(1/2)$? 
 	\end{prb}
 	Let $\Delta$ denote the open unit disk, and let $\Gamma = \{f: \Delta \to \mathbb{C} \mid f \text{ holomorphic}, \operatorname{Im}{f(0)} = 0, \operatorname{Re}{f(z)} < 1\}$. 
-	\subsection{Maximum Principles}
+	\subsection{Maximum Principles and Open Mapping Theorem}
+	
+	\begin{prb}{2019-A-II-1}
+		Suppose $f: \mathbb{C} \to \mathbb{C}$ is continuous on the closed disk $\{z: |z| \leq 1\} \subset \mathbb{C}$ and holomorphic on its interior. If $f$ restricted to the boundary of this disk only takes values on the curve $xy = 1$ (where a point $z \in \mathbb{C}$ is written as $z = x + iy$, with $x, y \in \mathbb{R}$), show that $f$ is constant on the whole disk. 
+	\end{prb}
+	Suppose $f: \mathbb{C} \to \mathbb{C}$ is continuous on the closed disk $\overline{\mathbb{D}}$, and holomorphic on its interior $\mathbb{D}$. Further assume that $f$ restricted to the boundary of this disk only takes values on the curve $xy = 1$. Let $g(z) = f(z)^{2}$. Then we see that for any $z \in f(\partial \mathbb{D})$, if $z = x + iy$, then  
+	\begin{equation*}
+		g(z) = (x^{2}-  y^{2}) + 2ixy = (x^{2} -  y^{2}) + 2i \implies \operatorname{Im}{g(z)} = 2. 
+	\end{equation*}
+	Since $f$ is holomorphic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$, $f^{2}$ is also holomorphic on the open unit disk, and continuous on the closed disk. This implies that $g(z)$ is harmonic, which means $\operatorname{Im}{g(z)}$ is also harmonic. Thus by the maximum/minimum modulus principles,
+	\begin{equation*}
+		\max_{|z| \leq 1}|\operatorname{Im}{g(z)}| = \max_{|z| = 1}|\operatorname{Im}{g(z)}| = 2 \qquad \text{and} \qquad \min_{|z| \leq 1}|\operatorname{Im}{g(z)}| = \min_{|z| = 1}|\operatorname{Im}{g(z)}| = 2. 
+	\end{equation*}
+	This means that the imaginary component of $g(z)$ is constant across the whole unit disk. Since the unit disk is closed and connected, the Cauchy-Riemann equations imply that $g$ is a constant. Thus, $f^{2} = c$, for some $c \in \mathbb{C}$. This implies that for every $z \in \overline{\mathbb{D}}$, $f(z) = \sqrt{c}$ or $f(z) = -\sqrt{c}$. But since $f$ is continuous on $\overline{\mathbb{D}}$, it follows that $f(z)$ is exactly equal to one of these values, so that $f(z)$ is constant on the whole disk. 
 	
 	\begin{prb}{2013-A-I-3}
 		Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disk into the closed unit disk. Can the image of $f$ contain both the points $0$ and $1$? 
 	\end{prb}
 	Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disk into the closed unit disk. Suppose the image of $f$ contains the point $1$ (i.e., assume $f(z_{0}) = 1$ for some $z_{0} \in D(0,1)$). Then since for any $z \in D(0,1)$, $|f(z)| \leq 1 = |f(z_{0})|$, the maximum modulus principle implies that $f \equiv 1$ on $D$. But this means that $0$ cannot be contained in the image of $f$. Thus the image of $f$ cannot contain both the points $0$ and $1$. 
 	
+	\begin{prb}{2007-J-II-1}
+		Let $f(z)$ be a continuous complex-valued function on the closed unit disk $D = \{z \in \mathbb{C}: |z| \leq 1\}$. If $f$ is holomorphic in the interior $|z| < 1$ of $D$, and real-valued on the boundary circle $|z| = 1$, show that $f$ must be constant. 
+	\end{prb}
+	Let $f(z)$ be a continuous complex-valued function on the closed unit disk $D = \{z \in\mathbb{C}: |z| \leq 1\}$, and assume $f$ is holomorphic in the interior $\mathbb{D} = \{|z| < 1\}$, and real-valued on the boundary circle $\partial D$. Since $f$ is holomorphic, its imaginary part $\operatorname{Im}{f(z)}$ is harmonic over the whole disk. Thus by the maximum/minimum principles for harmonic functions, one has that 
+	\begin{equation*}
+		\max_{|z| \leq 1}|\operatorname{Im}(f)| = \max_{|z| = 1}|\operatorname{Im}(f)| = 0 \qquad \text{and} \qquad \min_{|z| \leq 1}|\operatorname{Im}(f)| = \min_{|z| = 1}|\operatorname{Im}(f)| = 0 
+	\end{equation*}
+	Thus the imaginary part of $f$ is zero throughout the whole disk. Since $D$ is connected, and the Cauchy-Riemann equations imply that the derivatives of the real part of $f$ are zero everywhere, one has that $f$ is constant on the whole disk. 
+	
 	\subsection{Contour Integration}
 	
+	\begin{prb}{2019-J-I-2}
+		Evaluate the integral 
+		\begin{equation*}
+			\int_{0}^{\infty}\frac{x^{a-1}}{x + 1}\;dx
+		\end{equation*}
+		where $0 < a < 1$. 
+	\end{prb}
+	Let $0 < a < 1$, and consider the complex-valued function 
+	\begin{equation*}
+		f(z) = \frac{z^{a-1}}{z + 1}, 
+	\end{equation*}
+	which has a simple pole at $z = -1$, and a branch point at $0$. We choose the branch cut along the positive real axis $[0, \infty)$, specified by fixing the argument $\operatorname{arg}{z} \in (0,2\pi)$. We will evaluate the integral of $f$ along the contour $\Gamma_{R, \epsilon}$ depicted in Figure \ref{fig:2019JI2}. 
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-3) -- (0,3); 
+			\draw[thick, arrow] (0.3535,0.1) -- (2,0.1); 
+			\draw[thick, arrow] (2,0.1) arc (2.86:357.14:2);
+			\draw[thick, arrow] (2,-0.1) -- (0.3535,-0.1);
+			\draw[thick, arrow] (0.3535, -0.1) arc (-15.795:-344.205:0.3535);
+			\draw (1.414,1.414) node[above right] {$S_{R}$};
+			\draw (-0.2499, 0.2499) node[above left] {$S_{\epsilon}$};
+			\draw (0.82325,0.1) node[above] {$\gamma_{1}$}; 
+			\draw (0.8235,-0.1) node[below] {$\gamma_{2}$};
+			\draw[fill=black] (-1,0) circle(1pt);
+		\end{tikzpicture}
+		\caption{The contour $\Gamma_{R, \epsilon}$ with the single pole at $z =-1$.}
+		\label{fig:2019JI2}
+	\end{figure}
+	First, we show that in the limit $R \to \infty$, the integral of $f$ over $S_{R}$ vanishes. Indeed, for $R > 1$, 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{R}}\frac{1}{z^{1 - a}(z + 1)}\;dz} \leq \int_{0}^{2\pi}\frac{R}{R^{2 - a} - R^{1 - a}}\;d\theta = \frac{2\pi R}{R^{2 - a} - R^{1 - a}} = \frac{2\pi R^{a}}{R - 1} \xrightarrow{R \to \infty} 0.
+		\end{split}
+	\end{align*}
+	Now we show that in the limit $\epsilon \to 0$, the integral of $f$ over $S_{\epsilon}$ vanishes. Indeed, for $\epsilon < 0$, 
+	\begin{equation*}
+		\abs{\int_{S_{\epsilon}}\frac{1}{z^{1 - a}(z + 1)}\;dz} \leq \int_{0}^{2\pi}\frac{\epsilon}{\epsilon^{1 - a} - \epsilon^{2 - a}}\;d\theta = \frac{2\pi \epsilon}{\epsilon^{1 - a} - \epsilon^{2 - a}} = \frac{2\pi \epsilon^{a}}{1 - \epsilon} \xrightarrow{\epsilon \to 0} 0.
+	\end{equation*}
+	In the limit $\epsilon \to 0$ and $R \to \infty$, the integral of $f$ over $\gamma_{1}$ agrees with the desired integral $I$. On $\gamma_{2}$, the argument is $2\pi$ so that in the limit $R \to \infty$ and $\epsilon \to 0$,
+	\begin{equation*}
+		\int_{\gamma_{2}}f(z)\;dz = \int_{\infty}^{0}\frac{xe^{2\pi i a}}{x + 1}\;dx = -e^{2\pi ia}I. 
+	\end{equation*}
+	Thus in the limit $R \to \infty$, and $\epsilon \to0$, 
+	\begin{equation*}
+		\oint_{\Gamma_{R,\epsilon}}\frac{z^{a-1}}{z + 1}\;dz = (1 - e^{2\pi i a}) \cdot \int_{0}^{\infty}\frac{x^{a-1}}{x + 1}\;dx.
+	\end{equation*}
+	For $0 < \epsilon < 1 < R$, the Residue Theorem tells us that 
+	\begin{equation*}
+		\oint_{\Gamma_{R, \epsilon}}\frac{z^{a - 1}}{z + 1}\;dz = \operatorname{Res}(f, -1) = e^{i\pi(a - 1)} = -e^{i\pi a}. 
+	\end{equation*}
+	Thus, 
+	\begin{align*}
+		\begin{split}
+			\int_{0}^{\infty}\frac{x^{a-1}}{x + 1}\;dx &= -\frac{2\pi i e^{i\pi a}}{1 - e^{2\pi i \alpha}} = -\frac{2\pi i}{e^{-i\pi a} - e^{i \pi a}} = \frac{\pi}{\sin(\pi a)}. 
+		\end{split}
+	\end{align*}
 	\begin{prb}{2018-J-I-2}
 		Use the method of residues to compute the improper integral
 		\begin{equation*}
@@ -6427,6 +6514,74 @@ f2		\begin{equation*}
 	\begin{equation*}
 		I = \frac{\pi \cdot (\sqrt{2} - 1)}{4}. 
 	\end{equation*}
+	
+	\begin{prb}{2001-J-II-6}
+		Calculate 
+		\begin{equation*}
+			\int_{0}^{\infty}\frac{\log(x)}{x^{2} + a^{2}}\;dx
+		\end{equation*}
+		where $a \in \mathbb{R}$, $a> 0$. 
+	\end{prb}
+	Let $I = \int_{0}^{\infty}\frac{\log(x)}{x^{2} + a^{2}}\;dx$. Consider the complex-valued function 
+	\begin{equation*}
+		f(z) = \frac{\log(z)}{z^{2} + a^{2}},
+	\end{equation*}
+	which has poles at $\pm ai$ and a branch point at $0$. We will consider the integral of $f(z)$ over the contour $\Gamma_{R, \epsilon}$ depicted in Figure \ref{fig:2001JII6}. We choose the branch cut along the negative imaginary axis, which is specified by fixing the argument $\arg(z) \in (-\pi/2, 3\pi/2)$. 
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-3) -- (0,3); 
+			\draw[thick,arrow] (-2,0.1) -- (-0.5,0.1);
+			\draw[thick,arrow] (-0.5,0.1) arc (-191.31:-348.69:0.5);
+			\draw[thick,arrow] (0.5,0.1) -- (2,0.1); 
+			\draw[thick,arrow] (2,0.1) arc (2.86:177.14:2);
+			\draw[fill=black] (0,1.5) circle (1pt);
+			\draw (0.3,0.3) node[above right] {$S_{\epsilon}$};
+			\draw (1.414,1.414) node[above right] {$S_{R}$};
+			\draw (1.25,0.1) node[above] {$\gamma_{1}$};
+			\draw (-1.25,0.1) node[above] {$\gamma_{2}$};
+		\end{tikzpicture}
+		\caption{The contour $\Gamma_{R,\epsilon}$ with a pole of $f$ at $ai$.}
+		\label{fig:2001JII6}
+	\end{figure}
+	We start by showing that the integral of $f$ over $S_{R}$ vanishes in the limit $R \to \infty$. For $R > a$, one has 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{R}}\frac{\log(z)}{z^{2} + a^{2}}\;dz} &\leq \int_{S_{R}}\frac{|\log(|z|)| + 3\pi/2}{|z|^{2} - a^{2}}\;|dz| = \int_{0}^{\pi}\frac{R|\log(R)| + 3\pi R/2}{R^{2} - a^{2}}\;d\theta = \frac{\pi R |\log(R)| + 3\pi^{2} R/2}{R^{2} - a^{2}} \xrightarrow{R \to \infty} 0. 
+		\end{split}
+	\end{align*}
+	Likewise, for $\epsilon < a$, on $S_{\epsilon}$, one has 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{\epsilon}}\frac{\log(z)}{z^{2} + a^{2}}\;dz} &\leq \int_{S_{\epsilon}}\frac{|\log(|z|)| + 3\pi/2}{a^{2} - |z|^{2}}\;|dz| = \int_{0}^{\pi}\frac{\epsilon|\log(\epsilon)| + 3\pi \epsilon/2}{a^{2} - \epsilon^{2}}\;d\theta = \frac{\pi \epsilon |\log(\epsilon)| + 3\pi^{2}\epsilon/2}{a^{2} - \epsilon^{2}} \xrightarrow{\epsilon \to 0} 0. 
+		\end{split}
+	\end{align*}
+	
+	Along $\gamma_{1}$, since the argument is $0$, in the limit $\epsilon \to 0$ and $R \to \infty$, one has that $z = x$ so that 
+	\begin{equation*}
+		\int_{\gamma_{1}}f(z)\;dz \to \int_{0}^{\infty}\frac{\log(x)}{x^{2} + a^{2}}\;dx = I. 
+	\end{equation*}
+	On the other hand, on $\gamma_{2}$, in the limit $\epsilon \to 0$ and $R \to \infty$, since $\arg(z) = \pi$, one has that $z = xe^{i\pi}$ so that 
+	\begin{equation*}
+		\int_{\gamma_{2}}f(z)\;dz \to -\int_{\infty}^{0}\frac{\log(x) + i\pi}{x^{2} + a^{2}}\;dx = \int_{0}^{\infty}\frac{\log(x)}{x^{2} + a^{2}}\;dx + i\pi \int_{0}^{\infty}\frac{1}{x^{2} + a^{2}}\;dx = I + i\pi \int_{0}^{\infty}\frac{1}{x^{2} + a^{2}}\;dx. 
+	\end{equation*}
+	A simple application of the Residue Theorem implies that 
+	\begin{equation*}
+		\int_{0}^{\infty}\frac{1}{x^{2} + a^{2}}\;dx = \pi i \cdot \left(-\frac{i}{2a}\right) = \frac{\pi}{2a}. 
+	\end{equation*}
+	Therefore, in the limit $R \to \infty$, $\epsilon \to 0$, one has that 
+	\begin{equation*}
+		\oint_{\Gamma_{R}}f(z)\;dz = 2I + \frac{i\pi^{2}}{2a}. 
+	\end{equation*}
+	The residue theorem then applies that 
+	\begin{equation*}
+		\oint_{\Gamma_{R}}f(z)\;dz = 2\pi i \cdot \left(\frac{\log(a) + i\pi/2}{2ai}\right) = \frac{1}{a}\pi\log(a) + \frac{i\pi^{2}}{2a}. 
+	\end{equation*}
+	Thus, we conclude that 
+	\begin{equation}
+		2I = \frac{\pi\log(a)}{a} \implies I = \int_{0}^{\infty}\frac{\log(x)}{x^{2} + a^{2}}\;dx = \frac{\pi\log(a)}{2a}. 
+	\end{equation}
 	
 	\newpage 
 	\section{Notes}

@@ -396,42 +396,47 @@
 \contentsline {subsubsection}{Problem 2014-A-I-5}{165}{section*.377}%
 \contentsline {subsubsection}{Problem 2012-A-I-4}{165}{section*.378}%
 \contentsline {subsubsection}{Problem 2008-A-I-1}{166}{section*.379}%
+\contentsline {subsubsection}{Problem 2001-J-II-5}{166}{section*.380}%
 \contentsline {subsection}{\numberline {5.2}Harmonic Functions}{166}{subsection.5.2}%
-\contentsline {subsubsection}{Problem 2017-A-I-6}{166}{section*.380}%
-\contentsline {subsubsection}{Problem 2015-A-I-5}{166}{section*.381}%
+\contentsline {subsubsection}{Problem 2017-A-I-6}{166}{section*.381}%
+\contentsline {subsubsection}{Problem 2015-A-I-5}{167}{section*.382}%
 \contentsline {subsection}{\numberline {5.3}The Schwarz and Schwarz-Pick Lemmas}{167}{subsection.5.3}%
-\contentsline {subsubsection}{Problem 2023-A-I-6}{167}{section*.382}%
-\contentsline {subsubsection}{Problem 2019-J-II-3}{167}{section*.383}%
-\contentsline {subsubsection}{Problem 2017-J-II-5}{168}{section*.384}%
-\contentsline {subsubsection}{Problem 2010-A-II-3}{168}{section*.385}%
-\contentsline {subsection}{\numberline {5.4}Maximum Principles}{168}{subsection.5.4}%
-\contentsline {subsubsection}{Problem 2013-A-I-3}{168}{section*.386}%
+\contentsline {subsubsection}{Problem 2023-A-I-6}{167}{section*.383}%
+\contentsline {subsubsection}{Problem 2019-J-II-3}{167}{section*.384}%
+\contentsline {subsubsection}{Problem 2017-J-II-5}{168}{section*.385}%
+\contentsline {subsubsection}{Problem 2010-A-II-3}{168}{section*.386}%
+\contentsline {subsection}{\numberline {5.4}Maximum Principles and Open Mapping Theorem}{168}{subsection.5.4}%
+\contentsline {subsubsection}{Problem 2019-A-II-1}{169}{section*.387}%
+\contentsline {subsubsection}{Problem 2013-A-I-3}{169}{section*.388}%
+\contentsline {subsubsection}{Problem 2007-J-II-1}{169}{section*.389}%
 \contentsline {subsection}{\numberline {5.5}Contour Integration}{169}{subsection.5.5}%
-\contentsline {subsubsection}{Problem 2018-J-I-2}{169}{section*.387}%
-\contentsline {subsubsection}{Problem 2017-A-I-4}{169}{section*.388}%
-\contentsline {subsubsection}{Problem 2014-J-I-4}{170}{section*.390}%
-\contentsline {section}{\numberline {6}Notes}{172}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Differential Geometry and Topology}{172}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}De Rham Cohomology}{172}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{Problem LSM-17-5}{176}{section*.392}%
-\contentsline {subsubsection}{Problem LSM-17-6}{177}{section*.393}%
-\contentsline {subsubsection}{Problem LSM-17-7}{178}{section*.394}%
-\contentsline {subsection}{\numberline {6.2}Partial Differential Equations}{180}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Introduction}{180}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Four Important Linear Partial Differential Equations}{180}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Sobolev Spaces}{194}{subsubsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.3}Semidirect Products}{196}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Seifert-van Kampen Theorem and Fundamental Groups}{197}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Random Quick Facts To Recall}{198}{subsection.6.5}%
-\contentsline {subsubsection}{\numberline {6.5.1}Algebra}{198}{subsubsection.6.5.1}%
-\contentsline {paragraph}{Linear Algebra and Module Theory}{198}{section*.397}%
-\contentsline {paragraph}{Ring Theory}{199}{section*.398}%
-\contentsline {paragraph}{Galois Theory}{200}{section*.399}%
-\contentsline {paragraph}{Pure Group Theory}{201}{section*.400}%
-\contentsline {paragraph}{Representation Theory}{202}{section*.401}%
-\contentsline {subsubsection}{\numberline {6.5.2}Geometry and Topology}{203}{subsubsection.6.5.2}%
-\contentsline {paragraph}{De Rham Cohomology}{203}{section*.402}%
-\contentsline {paragraph}{Fundamental Groups}{204}{section*.403}%
-\contentsline {paragraph}{Frobenius Theorem and Distributions}{205}{section*.404}%
-\contentsline {subsubsection}{\numberline {6.5.3}Real Analysis}{205}{subsubsection.6.5.3}%
-\contentsline {subsubsection}{\numberline {6.5.4}Complex Analysis}{206}{subsubsection.6.5.4}%
+\contentsline {subsubsection}{Problem 2019-J-I-2}{169}{section*.390}%
+\contentsline {subsubsection}{Problem 2018-J-I-2}{171}{section*.392}%
+\contentsline {subsubsection}{Problem 2017-A-I-4}{171}{section*.393}%
+\contentsline {subsubsection}{Problem 2014-J-I-4}{172}{section*.395}%
+\contentsline {subsubsection}{Problem 2001-J-II-6}{173}{section*.397}%
+\contentsline {section}{\numberline {6}Notes}{175}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Differential Geometry and Topology}{175}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}De Rham Cohomology}{175}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{Problem LSM-17-5}{179}{section*.399}%
+\contentsline {subsubsection}{Problem LSM-17-6}{180}{section*.400}%
+\contentsline {subsubsection}{Problem LSM-17-7}{181}{section*.401}%
+\contentsline {subsection}{\numberline {6.2}Partial Differential Equations}{183}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Introduction}{183}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Four Important Linear Partial Differential Equations}{183}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Sobolev Spaces}{197}{subsubsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.3}Semidirect Products}{199}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Seifert-van Kampen Theorem and Fundamental Groups}{200}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Random Quick Facts To Recall}{201}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Algebra}{201}{subsubsection.6.5.1}%
+\contentsline {paragraph}{Linear Algebra and Module Theory}{201}{section*.404}%
+\contentsline {paragraph}{Ring Theory}{202}{section*.405}%
+\contentsline {paragraph}{Galois Theory}{203}{section*.406}%
+\contentsline {paragraph}{Pure Group Theory}{204}{section*.407}%
+\contentsline {paragraph}{Representation Theory}{205}{section*.408}%
+\contentsline {subsubsection}{\numberline {6.5.2}Geometry and Topology}{206}{subsubsection.6.5.2}%
+\contentsline {paragraph}{De Rham Cohomology}{206}{section*.409}%
+\contentsline {paragraph}{Fundamental Groups}{207}{section*.410}%
+\contentsline {paragraph}{Frobenius Theorem and Distributions}{208}{section*.411}%
+\contentsline {subsubsection}{\numberline {6.5.3}Real Analysis}{208}{subsubsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.4}Complex Analysis}{209}{subsubsection.6.5.4}%
