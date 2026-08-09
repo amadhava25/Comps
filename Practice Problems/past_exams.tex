@@ -6035,6 +6035,15 @@ f2		\begin{equation*}
 	\end{equation*}
 	By Morera's theorem, it follows that $\gamma$ is holomorphic inside $B(z_{0}, r)$. Thus since $f$ is locally holomorphic everywhere in $U$, we conclude that $f$ is holomorphic in $U$. 
 	
+	\begin{prb}{2021-A-I-2}
+		Let $P(z)= z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. Prove that either there is $|z| = 1$ such that $|P(z) > 1$ or $P(z) = z^{n}$. 
+	\end{prb}
+	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. If there exists $|z| = 1$ such that $|P(z)| < 1$, then we are done. So assume to the contrary that for every $|z| = 1$, $|P(z)| \leq 1$. By the maximum modulus principle, it follows that $|P(z)| \leq 1$ for every $|z| \leq 1$. Consider the polynomial $g(z) = z^{n}P(1/z) = a_{n}z^{n} + a_{n-1}z^{n-1} + \dotsm + a_{1}z + 1$. Then $g(0) = 1$. Moreover, since for any $|z| = 1$, $|1/z| = 1$, $|g(z)| = |z|^{n}|P(1/z)| \leq 1$. By the Maximum Modulus principle, 
+	\begin{equation*}
+		\max_{|z| \leq 1}|g(z)| = \max_{|z| = 1}|g(z)| \leq 1. 
+	\end{equation*}
+	Since $|g(0)| = 1$, by the maximum modulus principle, we conclude that $g \equiv 1$ on $|z| \leq 1$ so that $a_{1}, \ldots, a_{n}$ are identically zero. But this implies that $P(z)= z^{n}$ so that the proof concludes. 
+	
 	\begin{prb}{2020-A-II-1}
 		How many roots (counted with multiplicity) does the function 
 		\begin{equation*}
@@ -6096,6 +6105,30 @@ f2		\begin{equation*}
 	\end{prb}
 	Suppose $f$ and $g$ are two entire holomorphic functions with the property that $|f(z)| \leq |g(z)|$. First assume $g \equiv 0$. Then the claim follows immediately. So now we assume $g$ is not identically zero; let $E \subseteq \mathbb{C}$ be the set of zeros of $g$. Since the zeros of a holomorphic function are isolated, $E$ is a discrete set. Thus, the function $f(z)/g(z)$ is holomorphic on $\mathbb{C}\setminus E$, and $|f(z)/g(z)| \leq 1$ for all $z \in \mathbb{C}\setminus E$. By Riemann's theorem on removable singularities, it follows that $f(z)/g(z)$ extends to an entire function $h: \mathbb{C} \to \mathbb{C}$; on $\mathbb{C}\setminus E$, $|h(z)| \leq 1$. Since $E$ is discrete, $\mathbb{C}\setminus E$ is dense. Thus since $h$ is continuous on $\mathbb{C}\setminus E$, it follows that at each $z \in E$, $|h(z)| \leq 1$. In other words, $h(z)$ is a bounded entire function; by Liouville's theorem, $h(z) \equiv \lambda \in \mathbb{C}$. Therefore, $f(z) = \lambda g(z)$, which concludes the proof. 
 	
+	\begin{prb}{2014-A-I-5}
+		Let $\mathbb{D} \subset \mathbb{C}$ be the unit disk, $f: \mathbb{D} \to \mathbb{D}$ a holomorphic function. Suppose that $f(c) = c$ for some $c \in\mathbb{D}$, and $|f'(c)| < 1$. Prove that for any point $z_{0} \in \mathbb{D}$, the sequence $\{z_{n}\}$ defined by iteration, $z_{n} = f(z_{n-1})$, converges to $c$. (Hint: first consider the case $c = 0$.)
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item First assume that $f(0) = 0$ and $|f'(0)| < 1$. By Schwarz's lemma, it follows that for all $z \in\mathbb{D}$, $|f(z)| \leq |z|$. Define the sequence $\{z_{n}\}$ by iteration, $z_{n} = f(z_{n-1})$ for all $n \geq 1$. Since the sequence is contained in the compact unit disk, there exists a convergent subsequence $z_{n_{j}} \to w \in \mathbb{D}$, which implies $|z_{n_{j}}| \to |w|$. Assume to the contrary that $w \neq 0$. Since $\{|z_{n}|\}$ is bounded and monotone decreasing in $[0, |z_{0}|]$, this sequence converges to $|w|$. On the other hand, by continuity, $z_{n_{j + 1}} = f(z_{n_{j}}) \to f(w)$. Thus this forces $|f(w)| = |w|$. Since we assumed $w \neq 0$, the Schwarz lemma tells us that $f(z) = e^{i\theta}z$, for $\theta \in [0,2\pi)$, which implies $|f'(z)| = 1$ for all $z \in \mathbb{D}$, which is a contradiction. Thus $w = 0$. Therefore, $z_{n} \to 0$. 
+		\item Now fix an arbitrary $c \in \mathbb{D}$ and assume that $f(c) = c$ and $|f'(c)| < 1$. We start with the M\"obius transformation $T: \mathbb{D} \to \mathbb{D}$ defined by 
+		\begin{equation*}
+			T(z) = \frac{z - c}{1 - \bar{c}z} \implies T^{-1}(z) = \frac{z + c}{1 + \bar{c}z};
+		\end{equation*}
+		note that $T(c) = 0$. Now define the map $g: \mathbb{D} \to \mathbb{D}$ by 
+		\begin{equation*}
+			g(z) = (T \circ f \circ T^{-1})(z); 
+		\end{equation*}
+		since $g$ is the composition of holomorphic maps, $g$ is holomorphic. Moreover, $g(0) = T(f(T^{-1}(0)) = T(f(c)) = T(c) = 0$. Additionally, one has that 
+		\begin{equation*}
+			g'(z) = \frac{(-1 + |c|)^{2}(f' \circ T^{-1})(z)}{(1 + \bar{c}z)^{2}(-1 + \bar{c}(f \circ T^{-1})(z))^{2}} \implies g'(0) = f'(c) \implies |g'(0)| = |f'(c)| < 1. 
+		\end{equation*}
+		Fix an arbitrary $z_{0} \in \mathbb{D}$ and form the sequence $\{z_{n}\} \subset \mathbb{D}$ by iteration, $z_{n} = f(z_{n-1})$. Set $w_{n} = T(z_{n})$ for all $n \geq 0$. Then one has that for $n \geq 1$,
+		\begin{equation*}
+			g(w_{n}) = (T \circ f \circ T^{-1})(w_{n}) = (T \circ f)(z_{n}) = T(z_{n + 1}) = w_{n + 1}. 
+		\end{equation*}
+		Therefore, the work in (1) implies that $T(z_{n}) = w_{n} \to 0$. Since M\"obius transformations are biholomorphic, it then follows that $z_{n} = T^{-1}(w_{n}) \to T^{-1}(0) = c$. Thus the proof concludes. 
+	\end{enumerate}
+	
 	\begin{prb}{2012-A-I-4}
 		Find, with proof, the precise number of zeros of the complex polynomial $p(z) = z^{9} - 2z^{6} + z^{2} - 8z - 2$ inside the annulus $1 < |z| < 2$. 
 	\end{prb}
@@ -6141,6 +6174,10 @@ f2		\begin{equation*}
 		|f(z)| \leq \frac{2\norm{f}_{L^{2}(D)}}{\sqrt{\pi}(1 - |z|)}. 
 	\end{equation*}
 	Taking $K$ to be a positive constant larger than $2\norm{f}_{L^{2}(D)}/\sqrt{\pi}$ completes the proof. 
+	
+	\begin{prb}{2015-A-I-5}
+		Prove that if $\{u_{n}\}$ is a sequence of harmonic functions on the unit disk with $|u_{n}(x)| \leq 1$ for all $x$ and all $n$, then there is a subsequence which converges at every point of the unit disk. 
+	\end{prb}
 	
 	\subsection{The Schwarz and Schwarz-Pick Lemmas}
 	
@@ -6224,12 +6261,172 @@ f2		\begin{equation*}
 	\begin{equation*}
 		\sup_{f \in \Gamma}|\operatorname{Im}{f(3/4)}| = 7. 
 	\end{equation*}
+	
+	\begin{prb}{2010-A-II-3}
+		Let $f: \Delta \to \mathbb{C}$ be a holomorphic function on the open unit disk. Decompose $f$ into its real and imaginary parts $f = u + iv$. Among all holomorphic functions $f$ with $v(0) = 0$ and with $|u| < 1$, what is the largest possible value of $v(1/2)$? 
+	\end{prb}
+	Let $\Delta$ denote the open unit disk, and let $\Gamma = \{f: \Delta \to \mathbb{C} \mid f \text{ holomorphic}, \operatorname{Im}{f(0)} = 0, \operatorname{Re}{f(z)} < 1\}$. 
 	\subsection{Maximum Principles}
 	
 	\begin{prb}{2013-A-I-3}
 		Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disk into the closed unit disk. Can the image of $f$ contain both the points $0$ and $1$? 
 	\end{prb}
 	Suppose $f: D(0,1) \to D(0,1)$ is a holomorphic map from the open unit disk into the closed unit disk. Suppose the image of $f$ contains the point $1$ (i.e., assume $f(z_{0}) = 1$ for some $z_{0} \in D(0,1)$). Then since for any $z \in D(0,1)$, $|f(z)| \leq 1 = |f(z_{0})|$, the maximum modulus principle implies that $f \equiv 1$ on $D$. But this means that $0$ cannot be contained in the image of $f$. Thus the image of $f$ cannot contain both the points $0$ and $1$. 
+	
+	\subsection{Contour Integration}
+	
+	\begin{prb}{2018-J-I-2}
+		Use the method of residues to compute the improper integral
+		\begin{equation*}
+			\int_{-\infty}^{\infty}\frac{x + 1}{x^{4} + 2x^{2} + 5}\;dx. 
+		\end{equation*}
+	\end{prb}
+	Consider the meromorphic function 
+	\begin{equation*}
+		f(z) = \frac{z + 1}{z^{4} + 2z^{2} + 5}, 
+	\end{equation*}
+	which has simple poles at the points 
+	\begin{equation*}
+		z_{1} = -\sqrt{-1 + 2i}, \quad z_{2} = \sqrt{-1 + 2i}, \quad z_{3} = -\sqrt{-1 - 2i}, \quad z_{4} = \sqrt{-1-2i}. 
+	\end{equation*}
+	Let $I$ denote the desired improper integral, and let $\Gamma_{R}$ be a semicircular contour in $\overline{\mathbb{H}}$ whose horizontal diameter $\gamma_{R}$ lies on the real interval $[-R, R]$ for $R > 0$, and whose curved portion $S_{R}$ is a semicircle of radius $R$ centered at the origin. In the limit $R \to \infty$, the integral of $f(z)$ over the component $\gamma_{R}$ is equal to $I$. On $S_{R}$, for large $R > 0$, one observes that 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{R}}f(z)\;dz} &\leq \int_{S_{R}}\frac{|z| + 1}{|z|^{4} - 2|z|^{2} - 5}\;|dz| = \int_{0}^{\pi}\frac{R^{2} + R}{R^{4} - 2R^{2} - 5}\;d\theta \\
+			&= \frac{\pi (R^{2} + R)}{R^{4} - 2R^{2} - 5)} \xrightarrow{R \to \infty} 0. 
+		\end{split}
+	\end{align*}
+	Therefore, in the limit $R \to \infty$, $\oint_{\Gamma_{R}}f(z)\;dz = I$. For $R > 2$, the contour $\Gamma_{R}$ contains the two poles, $\alpha + i\alpha^{-1} = \sqrt{-1 + 2i}$ and $-\alpha + i\alpha^{-1} = -\sqrt{-1 - 2i}$, where $\alpha = \sqrt{(-1 + \sqrt{5})/2}$. Thus the residue theorem tells us that for every $R > 2$, 
+	\begin{equation*}
+		\oint_{\Gamma_{R}}f(z)\;dz = 2\pi i \cdot \left[\operatorname{Res}_{f}(z_{2}) + \operatorname{Res}_{f}(z_{3})\right]. 
+	\end{equation*}
+	Computing these residues, one has for $R > 2$, 
+	\begin{align*}
+		\begin{split}
+			\oint_{\Gamma_{R}}f(z)\;dz &= 2\pi i \cdot \left(-\frac{i}{8} - \frac{\sqrt{5}}{40} \cdot \sqrt{1 + 2i} + \frac{i}{8} + \frac{\sqrt{5}}{40}\cdot \sqrt{1 - 2i}\right) \\
+			&= \frac{\pi i \sqrt{5}}{20} \cdot \left(\sqrt{1 -2i} - \sqrt{1 + 2i}\right) \\
+			&= \frac{\pi i \sqrt{5}}{10} \cdot \left(-i \cdot \sqrt{\frac{2}{1 + \sqrt{5}}}\right) \\
+			&= \frac{\pi\sqrt{5}}{10} \cdot \frac{\sqrt{2}}{\sqrt{1 + \sqrt{5}}}. 
+		\end{split}
+	\end{align*}
+	Therefore, we conclude that 
+	\begin{equation*}
+		I = \frac{\pi\sqrt{5}}{10} \cdot \frac{\sqrt{2}}{\sqrt{1 + \sqrt{5}}}. 
+	\end{equation*}
+	\begin{prb}{2017-A-I-4}
+		Use the Residue Theorem to evaluate the integral $\int_{0}^{\infty}\frac{x^{1/2}\;dx}{x^{3} + 1}$. 
+	\end{prb}
+	Let $I$ denote the desired improper integral, and consider the meromorphic function $f(z) = z^{1/2}/(z^{3} + 1)$, which has poles at 
+	\begin{equation*}
+		z_{1} = \frac{1}{2} + \frac{\sqrt{3}}{2}i, \quad z_{2} = \frac{1}{2} - \frac{\sqrt{3}}{2}i, \quad z_{3} = -1. 
+	\end{equation*}
+	Because of the $z^{3}$ in the denominator, we will integrate $f(z)$ along the contour $\Gamma_{R, \epsilon}$ depicted in Figure  \ref{fig:2017AI4}.
+	\begin{figure}[h!]
+		\centering 
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-0.5)-- (0,3); 
+			
+			\draw[thick] (0.5,0) -- (2,0);
+			\draw[arrow] (0.5,0) -- (2,0); 
+			\draw[thick] (2,0) arc (0:120:2);
+			\draw[arrow] (2,0) arc (0:120:2);
+			\draw[thick] (-1, 1.732) -- (0,0.5);
+			\draw[arrow] (-1,1.732) -- (0,0.5);
+			\draw[thick] (0,0.5) arc(90:0:0.5);
+			\draw[arrow] (0,0.5) arc(90:0:0.5); 
+			
+			\draw[fill=black] (0.5,1.732) circle(1pt);
+			\draw (2,0) node[below] {$R$};
+			\draw (0.5,0) node[below] {$\epsilon$};
+			\draw (1.25,0) node[below] {$\gamma_{1}$}; 
+			\draw (-0.5, 1.25) node[below left] {$\gamma_{2}$};
+		\end{tikzpicture}
+		\caption{The contour $\Gamma_{R, \epsilon}$ containing a single pole of $f$.}
+		\label{fig:2017AI4}
+	\end{figure}
+	We begin by showing that the contribution of $f(z)$ along the outer arc $S_{R}$ vanishes in the limit $R \to \infty$. For $R > 1$, one has 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{R}}f(z)\;dz} \leq \int_{0}^{2\pi/3}\frac{R^{3/2}}{R^{3} - 1}\;d\theta = \frac{2\pi R^{3/2}}{3(R^{3} - 1)} \xrightarrow{R \to \infty} 0. 
+		\end{split}
+	\end{align*}
+	On the other hand, for $\epsilon < 1$, one has that 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{\epsilon}}f(z)\;dz} &\leq \int_{0}^{2\pi/3}\frac{\epsilon^{3/2}}{1 - \epsilon^{3}}\;d\theta = \frac{2\pi \epsilon^{3/2}}{3(1 - \epsilon^{3})}\xrightarrow{\epsilon \to 0} 0. 
+		\end{split}
+	\end{align*}
+	In the limit $\epsilon \to 0$ and $R \to \infty$, 
+	\begin{equation*}
+		\int_{\gamma_{1}}f(z)\;dz \to I. 
+	\end{equation*}
+	Since $\gamma_{2}$ is of the form $e^{2\pi i/3}\gamma_{1}$, one has that 
+	\begin{equation*}
+		\int_{\gamma_{2}}\frac{z^{1/2}\;dz}{z^{3} + 1} = -\int_{\epsilon}^{R}\frac{e^{\pi i /3}x\;e^{2\pi i /3}dx}{x^{3} + 1} = I. 
+	\end{equation*}
+	Thus, in the limit $\epsilon \to 0$ and $R \to \infty$, 
+	\begin{equation*}
+		\oint_{\Gamma_{R, \epsilon}}f(z)\;dz = 2I. 
+	\end{equation*}
+	By the Residue theorem, for $R > 1$, the left side is equal to $2\pi/3$, whence 
+	\begin{equation*}
+		\int_{0}^{\infty}\frac{x^{1/2}}{x^{3} + 1}\;dx = \frac{\pi}{3}. 
+	\end{equation*}
+	\begin{prb}{2014-J-I-4}
+		Use the method of residues to compute the improper integral. 
+		\begin{equation*}
+			\int_{0}^{\infty}\frac{x^{2}}{x^{6} + x^{4} + x^{2} + 1}\;dx. 
+		\end{equation*}
+	\end{prb}
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); 
+			\draw[Stealth-Stealth] (0,-0.5)-- (0,3); 
+			
+			\draw[ultra thick] (-2,0) -- (2,0);
+			\draw[arrow] (-2,0) -- (2,0); 
+			\draw[ultra thick] (2,0) arc (0:180:2);
+			\draw[arrow] (2,0) arc (0:180:2);
+			
+			\draw[fill=black] (0.707,0.707) circle(1pt);
+			\draw[fill=black] (-0.707,0.707) circle(1pt);
+			\draw[fill=black] (0,1) circle(1pt);
+			
+			\draw (2,0) node[below] {$R$};
+			\draw (-2,0) node[below] {$-R$};
+		\end{tikzpicture}
+		\caption{Contour in the upper half-plane, with the two points denoting the three simple poles of $f(z)$ in the upper half-plane.}
+		\label{fig:2018JI2}
+	\end{figure}
+	Let $f(z)$ be the meromorphic function, 
+	\begin{equation*}
+		f(z) = \frac{z^{2}}{z^{6} + z^{4} + z^{2} + 1} = \frac{z^{2}}{(z^{2} + 1)(z^{4} + 1)}, 
+	\end{equation*}
+	and let $I$ denote the desired improper integral. $f(z)$ has poles at the points 
+	\begin{equation*}
+		z = \pm i, \pm \frac{1}{\sqrt{2}}\left(1 + i\right), \pm \frac{1}{\sqrt{2}}(1 - i). 
+	\end{equation*}
+	Let $\Gamma_{R}$ be a semicircular contour in $\overline{\mathbb{H}}$ whose horizontal diameter $\gamma$ lies on the real interval $[-R,R]$ for $R > 0$, and whose curved portion $S_{R}$ is a semicircle of radius $R$ centered at the origin. In the limit $R \to \infty$, the integral of $f(z)$ along the component $\gamma$ is equal to the improper integral $2I$. On the semicircular portion $S_{R}$, for large $R > 0$, one observes that 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{S_{R}}f(z)|\;dz} &\leq \int_{S_{R}}\frac{|z|^{2}}{|z^{6} + z^{4} + z^{2} + 1|}\;|dz| \\
+			&\leq \int_{0}^{\pi}\frac{R^{3}}{R^{6} - R^{4} - R^{2} - 1}\;d\theta = \frac{\pi R^{3}}{R^{6} -R^{4} - R^{2} - 1} \xrightarrow{R \to \infty} 0. 
+		\end{split}
+	\end{align*}
+	Therefore, in the limit $R \to \infty$, $\oint_{\Gamma_{R}}f(z)\;dz = 2I$. For $R > 1$, the contour $\Gamma_{R}$ contains the three poles $i, 1/\sqrt{2}(1 + i)$, and $1/\sqrt{2}(-1 + i)$. We compute, 
+	\begin{equation*}
+		\operatorname{Res}_{f}(i) = \frac{i}{4}, \quad \operatorname{Res}_{f}\left(\frac{1}{\sqrt{2}}(1 + i)\right) = -\frac{i}{4\sqrt{2}}, \quad \operatorname{Res}_{f}\left(\frac{1}{\sqrt{2}}(-1 + i)\right) = -\frac{i}{4\sqrt{2}}. 
+	\end{equation*}
+	Then the Residue Theorem implies that for all $R > 1$, 
+	\begin{equation*}
+		\oint_{\Gamma_{R}}f(z)\;dz = 2\pi \left(-\frac{1}{4} + \frac{1}{2\sqrt{2}}\right) = 2\pi \cdot \left(\frac{2 - \sqrt{2}}{4\sqrt{2}}\right) = \frac{\pi \cdot (2 - \sqrt{2})}{2\sqrt{2}} = \frac{\pi \cdot (\sqrt{2} - 1)}{2}. 
+	\end{equation*}
+	Therefore, we conclude that 
+	\begin{equation*}
+		I = \frac{\pi \cdot (\sqrt{2} - 1)}{4}. 
+	\end{equation*}
 	
 	\newpage 
 	\section{Notes}
