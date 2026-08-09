@@ -2,6 +2,7 @@
 \usepackage{../header}
 \usepackage{esint}
 
+
 \usetikzlibrary{decorations.markings}
 \def\Xint#1{\mathchoice
 	{\XXint\displaystyle\textstyle{#1}}%
@@ -32,7 +33,7 @@
 }
 
 
-\title{Comps Mega Review \\ \normalsize{With 21 Illustrations} \vspace{-0.5cm}}
+\title{Comps Mega Review \\ \normalsize{With 22 Illustrations} \vspace{-0.5cm}}
 \author{\me}
 \date{June 4, 2026}
 
@@ -1612,6 +1613,25 @@
 		\end{split}
 	\end{align*}
 	I.e., $\mathcal{D}f$ does not follow the correct transformation law for tangent vector fields, so that the proof concludes.  
+	
+	\begin{prb}{AZ-2011-M-1}
+		Suppose $M$ is a smooth manifold, $X, Y \in \Gamma(M; TM)$ are smooth vector fields on $M$, and $g \in C^{\infty}(M)$ is a smooth function on $M$. Show \textit{directly from the definition} that 
+		\begin{equation*}
+			[gX, Y] = g[X, Y] - Y(g)X. 
+		\end{equation*}
+		(You can assume that $[\cdot, \cdot]$ is whatever object it is supposed to be, but do state what you are taking it to be.)
+	\end{prb}
+	Let $M$ be a smooth manifold, and $X, Y$ be smooth vector fields on $M$. Further assume $g \in C^{\infty}(M)$ is a smooth function on $M$. We note that $[X, Y]$ denotes the Lie bracket of $X$ and $Y$, and is a smooth vector field on $M$. Let $\varphi \in C^{\infty}(M)$ be an arbitrary test function. Then one has that
+	\begin{align*}
+		\begin{split}
+			[gX,Y](\varphi) &= (gX \circ Y)(\varphi) - (Y \circ gX)(\varphi) \\
+			&= (gX \circ Y)(\varphi) - Y(g) \cdot X(\varphi) - g (Y \circ X)(\varphi) \\
+			&= \left(g(X \circ Y)(\varphi) - g(Y \circ X)(\varphi)\right) - Y(g) \cdot X(\varphi) \\
+			&= g[X,Y](\varphi) - Y(g) \cdot X(\varphi), 
+		\end{split}
+	\end{align*}
+	where in the second line, we used the fact that $Y$ is a derivation and thus satisfies the product rule; in the fourth line, we used the definition of the Lie bracket. Since $\varphi \in C^{\infty}(M)$ was arbitrary, we conclude that $[gX,Y] = g[X,Y] - Y(g)X$. 
+
 	
 	\subsection{Covering Spaces}
 	
@@ -5979,6 +5999,35 @@ f2		\begin{equation*}
 	
 	\subsection{Holomorphic Functions and Convergence}
 	
+	\begin{prb}{2026-J-I-3}
+		Prove that for every integer $n \geq 0$ and every entire function $f$ on the complex plane, $f$ is a degree-$n$ polynomial if and only if 
+		\begin{equation*}
+			\lim_{z \to \infty}\frac{zf'(z)}{f(z)} = n. 
+		\end{equation*}
+	\end{prb}
+	($\Longrightarrow$) Assume that $f$ is a degree-n polynomial, and let $f(z) = a_{n}z^{n} + a_{n-1}z^{n-1} + \dotsm + a_{1}z + a_{0}$, where each $a_{j} \in \mathbb{C}$. Then 
+	\begin{equation*}
+		zf'(z) = z\cdot \left(na_{n}z^{n-1} + (n-1)a_{n-1}z^{n-2} + \dotsm + a_{1}\right) = na_{n}z^{n} + (n-1)a_{n-1}z^{n-1} + \dotsm + a_{1}z. 
+	\end{equation*}
+	This implies that 
+	\begin{align*}
+		\begin{split}
+			\lim_{z \to \infty}\frac{zf'(z)}{f(z)} &= \lim_{z \to \infty}\frac{na_{n} + (n-1)a_{n-1}z^{-1} + \dotsm + a_{1}z^{1 - n}}{a_{n} + a_{n-1}z^{-1} + \dotsm + a_{1}z^{1-n} + a_{0}z^{-n}} = \frac{na_{n}}{a_{n}} = n. 
+		\end{split}
+	\end{align*}
+	
+	($\Longleftarrow$) Now assume that $f$ is an entire function $f$ on the complex plane, and assume that
+	\begin{equation*}
+		\lim_{z \to \infty}\frac{zf'(z)}{f(z)} = n < \infty. 
+	\end{equation*}
+	In particular, this means that the poles of $zf'(z)/f(z)$ must be contained in some sufficiently large disk so that the zeros of $f$ are contained in some sufficiently large disk. Thus since the set of zeros of $f$ are discrete and compact, $f$ has has finitely many zeros. Let $P$ be a polynomial with the same zeros as $f$, counting with multiplicity. Then $g = f/P$ is entire and nonzero so that $g = \exp(h)$ for some entire function $h$ since $\mathbb{C}$ is simply connected. This implies that $f'(z) = (\exp(h)P)' = \exp(h)P' + \exp(h)h'P$ so that 
+	\begin{align*}
+		\begin{split}
+			\frac{zf'(z)}{f(z)} &= \frac{z\exp(h)P' + zh' \exp(h)P}{\exp(h)P} = \frac{zP'(z)}{P(z)} + zh'(z). 
+		\end{split}
+	\end{align*}
+	By our hypothesis, in the limit $z \to \infty$, the left side tends to $n$. On the other hand, since $P$ is a polynomial of degree $d \leq n$, the first portion of our work shows that the first term on the right side converges to $d$. This means that $\lim_{z \to \infty}zh'(z) < \infty$ so that $\lim_{z \to \infty}h'(z) = 0$. But this implies that $h'(z)$ is a bounded entire function so that by Liouville's theorem, $h'(z) \equiv 0$. Since $\mathbb{C}$ is connected and $h(z)$ is continuous, we have $h(z)$ is a constant, and thus, $g(z)$ is also a constant. Therefore, $f(z) = g \cdot P(z)$, $g \in \mathbb{C}$. This forces $\deg{P} = n$ so that $f(z)$ is a degree-$n$ polynomial. This proof holds for any integer $n \geq 0$. 
+	
 	\begin{prb}{2026-J-II-4}
 		Let $U$ be an open subset of $\mathbb{C}$. Let $\{f_{j}(z)\}_{j = 1}^{\infty}$ be a collection of holomorphic functions on $U$ that converges uniformly on every compact subset. Carefully prove that the pointwise limit is holomorphic. 
 	\end{prb}
@@ -6271,7 +6320,16 @@ f2		\begin{equation*}
 	\begin{prb}{2010-A-II-3}
 		Let $f: \Delta \to \mathbb{C}$ be a holomorphic function on the open unit disk. Decompose $f$ into its real and imaginary parts $f = u + iv$. Among all holomorphic functions $f$ with $v(0) = 0$ and with $|u| < 1$, what is the largest possible value of $v(1/2)$? 
 	\end{prb}
-	Let $\Delta$ denote the open unit disk, and let $\Gamma = \{f: \Delta \to \mathbb{C} \mid f \text{ holomorphic}, \operatorname{Im}{f(0)} = 0, \operatorname{Re}{f(z)} < 1\}$. 
+	Let $\Delta$ denote the open unit disk, and let $\Gamma = \{f: \Delta \to \mathbb{C} \mid f \text{ holomorphic}, \operatorname{Im}{f(0)} = 0, \operatorname{Re}{f(z)} < 1\}$.  \complete 
+	
+	\begin{prb}{2007-A-II-1}
+		Let $\mathbb{D} = \{z: |z| < 1\}$ be the unit disk, and let $f: \mathbb{D} \to \mathbb{D}$ be a holomorphic function such that $f(0) = \alpha \neq 0$. Prove that $f$ does not have zeros in the disk $\{z: |z| < |\alpha|\}$. 
+	\end{prb}
+	Assume the hypotheses of the problem, and assume to the contrary that there exists some $z \in \{|z| < |\alpha|\}$ such that $f(z) = 0$. The Schwarz-Pick Lemma tells us that 
+	\begin{equation*}
+		\abs{\frac{\alpha - 0}{1 -0}} \leq \abs{\frac{0 - z}{1 - 0}} \implies |\alpha|\leq |z|, 
+	\end{equation*}
+	which is a contradiction! Thus $f$ cannot have any zeros in the disk $\{z: |z| < |\alpha|\}$. 
 	\subsection{Maximum Principles and Open Mapping Theorem}
 	
 	\begin{prb}{2019-A-II-1}
@@ -6515,6 +6573,45 @@ f2		\begin{equation*}
 		I = \frac{\pi \cdot (\sqrt{2} - 1)}{4}. 
 	\end{equation*}
 	
+	\begin{prb}{2008-J-II-3}
+		Compute the real integral $\int_{-\infty}^{\infty}\frac{1}{1 + x^{4}}\;dx$. 
+	\end{prb}
+	Let $I$ denote the real integral $\int_{-\infty}^{\infty}1/(x^{4} + 1)\;dx$, and consider the meromorphic function 
+	\begin{equation*}
+		f(z) = \frac{1}{z^{4} + 1}, 
+	\end{equation*}
+	which has the four poles, 
+	\begin{equation*}
+		z_{1} = \frac{1}{\sqrt{2}}(1 + i), \quad z_{2} = \frac{1}{\sqrt{2}}(-1 + i), \quad z_{3} =\frac{1}{\sqrt{2}}(1 -i), \quad z_{4} = \frac{1}{\sqrt{2}}(-1 -i). 
+	\end{equation*}
+	We will consider the integral of $f(z)$ over the contour $\Gamma_{R}$ depicted in Figure \ref{fig:2008JII3}. 
+	\begin{figure}[h!]
+		\centering 
+		\begin{tikzpicture}
+			\draw[Stealth-Stealth] (-3,0) -- (3,0); \draw[Stealth-Stealth] (0,-1) -- (0,3); 
+			\draw[thick,arrow] (-2,0) -- (2,0); 
+			\draw[thick,arrow] (2,0) arc (0:180:2); 
+			\draw[fill=black] (-0.707,0.707) circle(1pt) node[below right] {$z_{2}$};
+			\draw[fill=black] (0.707,0.707) circle (1pt) node[below left] {$z_{1}$}; 
+			\draw (1.414,1.414) node[above right] {$S_{R}$};
+			\draw (0,0) node[below right] {$\gamma_{R}$};
+		\end{tikzpicture}
+		\caption{The contour $\Gamma_{R}$ with the two poles $z_{1}$ and $z_{2}$.}
+		\label{fig:2008JII3}
+	\end{figure}
+	
+	First, we show that integral of $f$ over $S_{R}$ vanishes in the limit $R \to \infty$. Indeed, for $R > 1$, one has 
+	\begin{equation*}
+		\abs{\int_{S_{R}}f(z)\;dz} \leq \int_{S_{R}}\frac{1}{|z|^{4} - 1}\;|dz| = \int_{0}^{\pi}\frac{R}{R^{4} - 1}\;d\theta = \frac{\pi R}{R^{4} - 1} \xrightarrow{R \to \infty} 0. 
+	\end{equation*}
+	On the other hand, the integral of $f$ over $\gamma_{R}$ converges to $I$. Thus, 
+	\begin{equation*}
+		\oint_{\Gamma_{R}}f(z)\;dz = I. 
+	\end{equation*}
+	By the Residue Theorem, for all $R > 1$, 
+	\begin{equation*}
+		\oint_{\Gamma_{R}}f(z)\;dz = 2\pi i \cdot \left(\right)
+	\end{equation*}
 	\begin{prb}{2001-J-II-6}
 		Calculate 
 		\begin{equation*}
