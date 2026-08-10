@@ -326,6 +326,42 @@
 	\end{align*}
 	where in both lines, the first terms on the right sides are zero since $\omega$ is closed, and the second terms are zero since $V$ and $W$ are smooth sections of $D$. Thus, we conclude that $\mathcal{L}_{[V, W]}\omega = 0$. But this means that $[V, W]$ must be a smooth section of $D$. Thus, by the Frobenius Theorem, we conclude that $D$ is integrable, which means that there exist $m$-dimensional submanifolds $M \subseteq N$ so that $T_{x}M = D_{x}$ for all $x \in M$. 
 	
+	\begin{prb}{LB-2020-F-6}
+		Consider the two vector fields 
+		\begin{equation*}
+			V = \frac{\partial}{\partial x^{1}} + x^{3}\frac{\partial}{\partial x^{2}} \quad \text{and} \quad W = \frac{\partial}{\partial x^{3}} + x^{1}\frac{\partial}{\partial x^{4}}
+		\end{equation*}
+		on $\mathbb{R}^{4}$. Is there a 3-dimensional submanifold $X^{3} \subset \mathbb{R}^{4}$ that passes through the origin $(0,0,0,0)$ and is tangent to both $V$ and $W$ at every $p \in X$? If so, find it explicitly. Otherwise, prove that it cannot exist. 
+	\end{prb}
+	Let $V$ and $W$ be the two smooth vector fields on $\mathbb{R}^{4}$. If $V$ and $W$ are tangent to a 3-dimensional submanifold $X^{3} \subset \mathbb{R}^{4}$ that passes through the origin, then $[V, W]$ (the Lie bracket of $V$ and $W$) must also be tangent to $X^{3}$. Let $D$ be the rank-3 distribution in $\mathbb{R}^{4}$ defined by $D = \operatorname{span}\{V, W, [V, W]\}$. Thus the problem is equivalent to asking if there exists an integral submanifold of $D$ passing through the origin $(0,0,0,0)$. By the Frobenius theorem, this amounts to showing that the Lie bracket of each pair of spanning vector fields is a smooth section of $D$ and that $V, W, [V, W]$ are linearly independent at the origin. We begin by computing, 
+	\begin{align*}
+		\begin{split}
+			[V, W] &= \left(\partial_{1} + x^{3}\partial_{2}\right)(\partial_{3}) + (\partial_{1} + x^{3}\partial_{2})(x^{1}\partial_{4}) - (\partial_{3} + x^{1}\partial_{4})(\partial_{1})- (\partial_{3} + x^{1}\partial_{4})(x^{3}\partial_{2}) \\
+			&= 0 + \partial_{4} - 0 - \partial_{2} = -\frac{\partial}{\partial x^{2}} + \frac{\partial}{\partial x^{4}}. 
+		\end{split}
+	\end{align*}
+	First, at the origin, $V = \partial_{1}$, $W = \partial_{3}$, $[V, W] = -\partial_{2} + \partial_{4}$, which are linearly independent. Next, we compute, 
+	\begin{align*}
+		\begin{split}
+			[V, [V, W]] &= (\partial_{1}+ x^{3}\partial_{2})(-\partial_{2}) + (\partial_{1} + x^{3}\partial_{2})(\partial_{4}) - (-\partial_{2} + \partial_{4})(\partial_{1}) - (\partial_{2} + \partial_{4})(x^{3}\partial_{2}) \\
+			&= 0 + 0 - 0 + 0 =0.  \\
+			[W, [V, W]] &= (\partial_{3} + x^{1}\partial_{4})(-\partial_{2}) + (\partial_{3} + x^{1}\partial_{4})(\partial_{4}) -(-\partial_{2} + \partial_{4})(\partial_{3}) - (-\partial_{2} + \partial_{4})(x^{1}\partial_{4}) \\
+			&= 0 + 0 - 0 - 0 = 0. 
+		\end{split}
+	\end{align*}
+	Thus since $0 \in D$, we conclude that $D$ is an integrable rank-3 distribution. Therefore, by the Frobenius theorem, there exists a 3-dimensional submanifold $X^{3} \subset \mathbb{R}^{4}$ passing through the origin so that at each $p \in X$, $X$ is tangent to both $V$ and $W$. To find an expression for $X^{3}$ we seek to find a annihilating 1-form\footnote{We look for an annihilating \textit{1}-form because $D$ is a codimension 1 distribution on $\mathbb{R}^{4}$.} for the distribution $D$. Let $\omega = a_{1}dx^{1} + a_{2}dx^{2} + a_{3}dx^{3} + a_{4}dx^{4}$ be a annihilating 1-form; i.e., $\omega(V), \omega(W), \omega([V, W])= 0$. Plugging in, one has 
+	\begin{align*}
+		\begin{split}
+			0 = \omega(V) &= a_{1} + a_{2}x^{3} \implies a_{1} =-a_{2}x^{3}. \\
+			0 = \omega(W) &= a_{3} + + a_{4}x^{1} \implies a_{3} = -a_{4}x^{1}. \\
+			0 = \omega([V,W]) &= -a_{2} + a_{4} \implies a_{2} = a_{4}. 
+		\end{split}
+	\end{align*}
+	Set $a_{2} = 1 = a_{4}$ so that $a_{1} = -x^{3}$ and $a_{3} = -x^{1}$. Then 
+	\begin{equation*}
+		\omega = -x^{3}\;dx^{1} + dx^{2} -x^{1}\;dx^{3} + dx^{4} = d(x^{2} + x^{4}) - d(x^{1}x_{3}) = d(x^{2} + x^{4} - x^{1}x_{3}) = 0. 
+	\end{equation*}
+	$X$ is defined by $\omega = 0$ so that $x^{2}+ x^{4} - x^{1}x^{3} = C$, where $C$ is some constant. Since $X$ passes through the origin, one has $C = 0$. Therefore, $X$ is given in coordinates by $x^{2} + x^{4} - x^{1}x^{3}= 0$. 
 	\newpage 
 	\subsection{Stokes' Theorem}
 	\begin{prb}{2025-J-I-3}
@@ -2501,6 +2537,11 @@ f2		\begin{equation*}
 	\begin{prb}{Galois Lemma I}
 		Let $F$ be a field, and $p(x) \in F[x]$ be a separable polynomial. Then the Galois group action on the set of roots of $p(x)$ is transitive if and only if $p(x)$ is irreducible. 
 	\end{prb}
+	
+	\begin{prb}{2025-A-I-6}
+		Let $f(x)$ be an irreducible polynomial of degree $n$ over a field $F$, and let $g(x)$ be any polynomial in $F[x]$. Prove that every irreducible factor of the composition $f(g(x))$ has degree divisible by $n$. 
+	\end{prb}
+	Let $f(x)$ be an irreducible polynomial of degree $n$ over a field $F$, and let $g(x) \in F[x]$. Let $h(x)$ be an irreducible factor of $f(g(x)) \in F[x]$. Let $\alpha$ be a root of $h(x)$, which means that $f(g(\alpha)) = 0$; i.e., $\beta \coloneqq g(\alpha)$ is a root of $f$. This implies $[F(\beta):F] = n$ since $\deg{f} = n$. But since $\beta = g(\alpha)$, one has $F \subset F(\beta)\subset F(\alpha)$. Therefore, $[F(\beta):F]$ divides $[F(\alpha):F] = \deg{h}$, whence $n$ divides $\deg{h}$. 
 	
 	\begin{prb}{2025-J-II-6}
 		The quaternion group is the 8-element subset $Q = \{\pm 1, \pm i, \pm j, \pm k\}$ of the quaternions, with multiplication as the group operation. Let $E/\mathbb{Q}$ be a Galois extension whose Galois group is isomorphic to $Q$. Show that $E$ is not the splitting field of any degree-4 polynomial. 
@@ -6196,6 +6237,15 @@ f2		\begin{equation*}
 	\end{align*}
 	Therefore, $p(z)$ has the same number of zeros (nine), counting with multiplicity, as $m(z)$ in the open disk $|z| < 2$. Therefore, we conclude that $p(z)$ has precisely 8 roots inside the annulus $1 < |z| < 2$. 
 	
+	\begin{prb}{2012-J-II-2}
+		Let $f$ be a continuous, complex-valued function on the closed disk $\overline{\Delta} =\{z \in \mathbb{C}: |z| \leq 1\}$ which is holomorphic on the interior. Assume  that $f$ restricted to the boundary $\partial \overline{\Delta}$ only takes values on the curve $\{x + iy \in \mathbb{C}: x, y \in \mathbb{R}, xy = 1\}$. Show that $f$ is constant on the whole disk. 
+	\end{prb}
+	Let $f$ be a continuous, complex-valued function on the closed disk $\overline{\Delta}$, holomorphic on the interior, and such that $f(\partial \overline{\Delta})$ only takes values on the curve $\{x + iy \in \mathbb{C}: x,y \in \mathbb{R}, xy = 1\}$.Let $g(z) = f(z)^{2}$, which is a harmonic function. In particular, if for some $z \in \partial \overline{\Delta}$, $f(z)= x + iy$, then one has $g(z) = (x^{2} - y^{2}) + 2ixy = (x^{2} - y^{2}) + 2i$. Since $g$ is harmonic, so is its imaginary part $v(z)$. Thus, by the maximum/minimum principles for harmonic functions, one has that 
+	\begin{equation*}
+		\max_{|z| \leq 1}v(z) = \max_{|z| = 1}v(z) = 2 \qquad \text{and} \qquad \min_{|z| \leq 1}v(z) = \min_{|z| = 1}v(z) = 2, 
+	\end{equation*}
+	so that the imaginary part of $g$ is constant over the whole disk $\overline{\Delta}$. But since $\overline{\mathbb{D}}$ is connected, the Cauchy-Riemann equations imply that $g(z)$, and hence $f(z)^{2}$, is constant. Let $f(z)^{2}\equiv c$ on $\overline{\Delta}$. Then for every $z \in \overline{\Delta}$, $f(z) \in \{\pm \sqrt{c}\}$. But since $f$ is continuous over the whole disk, $f(z) \equiv \sqrt{c}$ (or $f(z) \equiv -\sqrt{c}$). Thus $f$ is constant on the whole disk. 
+	
 	\begin{prb}{2008-A-I-1}
 		Find all entire functions $f$ such that $|f'| \leq |f|$ everywhere. 
 	\end{prb}
@@ -6610,7 +6660,11 @@ f2		\begin{equation*}
 	\end{equation*}
 	By the Residue Theorem, for all $R > 1$, 
 	\begin{equation*}
-		\oint_{\Gamma_{R}}f(z)\;dz = 2\pi i \cdot \left(\right)
+		\oint_{\Gamma_{R}}f(z)\;dz = 2\pi i \cdot \left(-\frac{1}{4\sqrt{2}} -\frac{i}{4\sqrt{2}}+ \frac{1}{4\sqrt{2}} - \frac{i}{4\sqrt{2}}\right) = \frac{\pi}{\sqrt{2}}. 
+	\end{equation*}
+	Therefore, we conclude that 
+	\begin{equation*}
+		\int_{-\infty}^{\infty}\frac{1}{x^{4} + 1}\;dx = \frac{\pi}{\sqrt{2}}. 
 	\end{equation*}
 	\begin{prb}{2001-J-II-6}
 		Calculate 
