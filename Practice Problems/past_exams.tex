@@ -5260,12 +5260,98 @@ f2		\begin{equation*}
 	\end{prb}
 	\complete 
 	
+	\begin{prb}{F-2-33}
+		If $f_{n} \geq 0$ and $f_{n} \to f$ in measure, then $\int f \leq \liminf\int f_{n}$. 
+	\end{prb}
+	Let $f_{n} \geq 0$ and $f_{n} \to f$ in measure. Let $\{f_{n_{j}}\}_{j = 1}^{\infty}$ be an arbitrary subsequence. Then since $f_{n_{j}} \to f$ in measure, there exists a subsubsequence $\{f_{n_{j_{k}}}\}$ that converges to $f$ pointwise a.e. Then Fatou's lemma implies that 
+	\begin{equation*}
+		\int f \leq \liminf \int f_{n_{j_{k}}}. 
+	\end{equation*}
+	Thus since for any arbitrary subsequence of $\{f_{n}\}$, there exists a subsubsequence $\{f_{n_{j_{k}}}\}$ satisfying $\int f \leq \liminf \int f_{n_{j_{k}}}$, we conclude that $\int f \leq \liminf \int f_{n}$. 
+	
+	\begin{prb}{F-2-34}
+		Suppose $|f_{n}| \leq g \in L^{1}$  and $f_{n} \to f$ in measure. \vspace{-0.25cm} 
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item $\int f = \lim \int f_{n}$. 
+			\item $f_{n} \to f$ in $L^{1}$. 
+		\end{enumerate}
+	\end{prb}
+	Suppose that for all $n \geq 1$, $|f_{n}| \leq g \in L^{1}$ and that $f_{n} \to f$ in measure. 
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Consider the sequence $\{\int f_{n}\}_{n = 1}^{\infty}$, and let $\{\int f_{n_{j}}\}_{j = 1}^{\infty}$ be a subsequence. Since $f_{n} \to f$ in measure, $f_{n_{j}} \to f$ in measure, and thus there exists a subsubsequence $\{f_{n_{j_{k}}}\}_{k = 1}^{\infty}$ that converges to $f$ pointwise a.e. But for every $k \geq 1$, $|f_{n_{j_{k}}}| \leq g \in L^{1}$. Thus by the Dominated Convergence Theorem, one has that $\int f_{n_{j_{k}}} \xrightarrow{k \to \infty} \int f$. Since we showed that any arbitrary subsequence of $\{\int f_{n}\}$ has a subsubsequence that converges to $\int f$, we conclude that $\int f_{n}$ converges to $\int f$; i.e., $\int f = \lim \int f_{n}$. 
+		\item Now consider the sequence $\{\norm{f_{n} - f}_{L^{1}}\}_{n = 1}^{\infty}$, and consider an arbitrary subsequence $\{\norm{f_{n_{j}} - f}_{L^{1}}\}_{j = 1}^{\infty}$. Then since $f_{n} \to f$ in measure, $f_{n_{j}} \to f$ in measure so that there exists a subsubsequence $\{f_{n_{j_{k}}}\}$ that converges to $f$ pointwise a.e.; this implies $|f_{n_{j_{k}}} - f|$ converges to 0 pointwise a.e. Since $|f_{n_{j_{k}}} - f| \leq 2(|g| + |f|) \in L^{1}$, we have by the dominated convergence theorem that 
+		\begin{equation*}
+			\norm{f_{n_{j_{k}}} - f}_{L^{1}} = \int |f_{n_{j_{k}}} - f| \xrightarrow{k \to \infty} \int 0 = 0. 
+		\end{equation*}
+		Thus since we have shown that every subsequence of $\{\norm{f_{n} - f}_{L^{1}}\}$ has a convergent subsequence that converges to $0$, we conclude that $f_{n} \to f$ in $L^{1}$. 
+	\end{enumerate}
+	
+	\begin{prb}{F-2-36}
+		If $\mu(E_{n}) < \infty$ for all $n \in \mathbb{N}$ and $\chi_{E_{n}} \to f$ in $L^{1}$, then $f$ is (a.e. equal to) the characteristic function of a measurable set. 
+	\end{prb}
+	Let $\mu(E_{n}) < \infty$ for all $n \in \mathbb{N}$ and assume that $\chi_{E_{n}} \to f$ in $L^{1}$. This implies there exists a subsequence $\{\chi_{E_{n_{j}}}\}$ that converges to $f$ pointwise a.e. I.e., there exists a set $N$ of measure $0$ such that for all $x \in X\setminus N$, $\chi_{E_{n_{j}}} \to f$. Since $\chi_{E_{n_{j}}}(x)$ is either 0 or 1, it follows that any pointwise limit of these functions must also either be $0$ or $1$ a.e. That is, $f(x) \in \{0,1\}$ for a.e. $x \in X$. Let $E = \{x \in X: f(x) = 1\}$. Since $f$ is the pointwise a.e. limit of measurable functions, $f$ is measurable so that $E$ is also measurable. Thus $f = \chi_{E}$. 
+	
+	\begin{prb}{F-2-38}
+		Suppose $f_{n} \to f$ in measure and $g_{n} \to g$ in measure. \vspace{-0.25cm} 
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item $f_{n} + g_{n} \to f + g$ in measure. 
+			\item $f_{n}g_{n} \to fg$ in measure if $\mu(X) < \infty$, but not necessarily if $\mu(X) = \infty$. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt, label = (\alph{*})]
+		\item Since $f_{n} \to f$ in measure and $g_{n} \to g$ in measure, for every $\epsilon > 0$, 
+		\begin{align}
+			\begin{split}
+				&\mu\left(\left\{x: |f_{n}(x) - f(x)|\geq \frac{\epsilon}{2}\right\}\right) \to 0 \text{ as } n \to \infty;  \\
+				&\mu\left(\left\{x: |g_{n}(x) - g(x)|\geq \frac{\epsilon}{2}\right\}\right) \to 0 \text{ as } n \to \infty. 
+			\end{split}
+		\end{align}
+		Therefore, since 
+		\begin{equation}
+			\left\{x: |f_{n}(x) + g_{n}(x) - f(x) - g(x)| \geq \epsilon \right\} \subseteq \left\{x: |f_{n}(x) - f(x)|\geq \frac{\epsilon}{2}\right\} \cup \left\{x: |g_{n}(x) - g(x)|\geq \frac{\epsilon}{2}\right\}
+		\end{equation}
+		it follows from monotonicity and subadditivity of the measure that 
+		\begin{multline}
+			0 \leq \mu\left(\left\{x: |f_{n}(x) + g_{n}(x) - f(x) - g(x)| \geq \epsilon \right\}\right)  \\ \leq \mu\left(\left\{x: |f_{n}(x) - f(x)|\geq \frac{\epsilon}{2}\right\}\right) + \mu\left(\left\{x: |g_{n}(x) - g(x)|\geq \frac{\epsilon}{2}\right\}\right). 
+		\end{multline}
+		Since the terms on the right side of the inequality chain vanish as $n \to \infty$, it follows that $f_{n} + g_{n} \to f + g$ in measure. 
+		\item Now suppose $\mu(X) < \infty$, and $f_{n} \to f$, $g_{n} \to g$ in measure. Let $\epsilon > 0$. Then we note that by the triangle inequality
+		\begin{align}
+			\begin{split}
+				\abs{fg - f_{n}g_{n}} &\leq \abs{f - f_{n}}|g| + \abs{f_{n}}\abs{g - g_{n}} \\
+				&\leq \abs{f - f_{n}}|g| + \abs{f - f_{n}}\abs{g -g_{n}} + \abs{f}\abs{g - g_{n}}. 
+			\end{split}
+		\end{align}
+		Hence, it follows that 
+		\begin{multline}
+			0 \leq \mu\left(\PDset{\abs{fg - f_{n}g_{n}}\geq \epsilon}\right) \leq\mu\left(\PDset{\abs{f- f_{n}}\abs{g} \geq \epsilon/3}\right) + \mu\left(\PDset{\abs{g-g_{n}}\abs{g} \geq \epsilon/3}\right)  \\
+			+ \mu\left(\PDset{\abs{f - f_{n}}\abs{g - g_{n}} \geq \epsilon/3}\right). 
+		\end{multline}
+		Consider the last term first: 
+		\begin{align}
+			\begin{split}
+				\mu\left(\PDset{\abs{f - f_{n}}\abs{g - g_{n}}\geq \epsilon/3}\right) \leq \mu\left(\PDset{\abs{f - f_{n}} \geq \sqrt{\epsilon/3}}\right) + \mu\left(\PDset{\abs{g - g_{n}}\geq \sqrt{\epsilon/3}}\right)
+			\end{split}
+		\end{align}
+		Since $f_{n} \to f$ and $g_{n} \to g$ in measure, both terms on the right side of the inequality vanish as $n \to \infty$. Hence, the term on the left also vanishes as $n \to \infty$. Now consider the term $\mu(\{\abs{f - f_{n}}\abs{g} \geq \epsilon/3\})$. For each positive integer $j$, let $E_{j}$ be the set $\{|g|\geq j\}$. Then it is clear that $E_{j}$ is a decreasing sequence of sets. Hence, since $\mu(X) < \infty$, by continuity of the measure, $\lim{\mu(E_{j})} \to 0$, which means that for every $\epsilon > 0$, there exists some positive integer $N$ such that for all $n \geq N$, $\mu(E_{n}) < \delta$. In particular, $\mu(\{\abs{g} \geq N\}) = \mu(E_{n}) < \delta$. Therefore, for the $\epsilon$ used in the above steps, let us pick a choice of $N$ such that $\mu(\{\abs{g}\geq N\})\leq \epsilon$. Then 
+		\begin{equation}
+			\mu\left(\{\abs{f - f_{n}}\abs{g} \geq \epsilon/3\}\right) \leq \mu\left(\{\abs{f - f_{n}} \geq \epsilon/N\}\right) + \mu(\{\abs{g}\geq N\}). 
+		\end{equation}
+		And as $N \to \infty$, both terms on the right side of the inequality vanish. Hence, the term on the left side must also vanish. Likewise, $\mu(\{\abs{g - g_{n}}\abs{f}\geq \epsilon/3\})$ must also vanish. Hence, putting all of these components together, we find that $\mu(\{\abs{fg - f_{n}g_{n}}\geq \epsilon\})$ must vanish proving the desired statement. 
+		
+		If $\mu(X) = \infty$, then $f_{n}g_{n}$ do not necessarily converge to $fg$ in measure. Consider $X = \mathbb{R}$, and $f_{n} = g_{n} = x + 1/n$. It is clear to see that $f_{n}$ and $g_{n}$ both converge to $x$ in measure. Next, $f_{n}g_{n} = x^{2} + (2/n)x + (1/n^{2})$. For some arbitrary but fixed $\epsilon > 0$, we see that 
+		\begin{equation}
+			\mu\left(\left\{x: \abs{f_{n}g_{n} - fg}\geq \epsilon\right\}\right) = \mu\left(\left\{x: \frac{2x}{n} + \frac{1}{n^{2}} \geq \epsilon\right\}\right) = \mu\left(\left[\frac{n^{2}\epsilon - 1}{2n}, \infty\right)\right) = \infty, \forall n \in \mathbb{N}. 
+		\end{equation}
+		Hence, $f_{n}g_{n}$ does not converge to $fg$ in measure. 
+	\end{enumerate}
+	
 	\begin{prb}{F-6-9}
 		Suppose $1 \leq p < \infty$. If $\norm{f_{n}-f}_{L^p} \to 0$, then $f_{n} \to f$ in measure, and hence some subsequence converges to $f$ a.e. On the other hand, if $f_{n} \to f$ in measure and $|f_{n}| \leq g \in L^{p}$ for all $n$, then $\norm{f_{n}-f}_{L^{p}} \to 0$.
 	\end{prb}
 	Suppose $1 \leq p < \infty$ and assume that $\norm{f_{n} - f}_{L^{p}} \to 0$. Fix an arbitrary $\epsilon > 0$, and let $E_{n,\epsilon} \coloneqq \{x \in X: |f_{n}(x) - f(x)| \geq \epsilon\}$. Then one observes that 
 	\begin{equation*}
-		\norm{f_{n} - f}_{L^{p}} = \left(\int_{X}|f_{n}(x) - f(X)|^{p}\;dx\right)^{1/p} \geq \left(\int_{E_{n,\epsilon}}|f_{n}(x) - f(x)|^{p}\;dx\right)^{1/p} \geq \epsilon \cdot \mu(E_{n,\epsilon})^{1/p}. 
+		\norm{f_{n} - f}_{L^{p}} = \left(\int_{X}|f_{n}(x) - f(x)|^{p}\;dx\right)^{1/p} \geq \left(\int_{E_{n,\epsilon}}|f_{n}(x) - f(x)|^{p}\;dx\right)^{1/p} \geq \epsilon \cdot \mu(E_{n,\epsilon})^{1/p}. 
 	\end{equation*}
 	Since the left side tends to 0 in the limit $n \to \infty$, so must the right side. Therefore, $\mu(E_{n, \epsilon})^{1/p} \xrightarrow{n \to \infty} 0$, which implies $\mu(E_{n, \epsilon}) \xrightarrow{n \to \infty} 0$. Thus by definition, $f_{n} \to f$ in measure. Since convergence in measure implies converges of a subsequence pointwise a.e., the first part of the proof is complete. Now assume that $f_{n} \to f$ in measure and $|f_{n}| \leq g \in L^{p}$ for all $n$. We consider the sequence $\{\norm{f_{n} - f}_{L^{p}(X)}\}_{n = 1}^{\infty}$. Let $\{\norm{f_{n_{j}} - f}_{L^{p}(X)}\}_{j = 1}^{\infty}$ be an arbitrary subsequence. Since $f_{n} \to f$ in measure, $f_{n_{j}} \to f$ in measure. Thus there exists a further subsequence $\{f_{n_{j_{k}}}\}_{k = 1}^{\infty}$ that converges to $f$ pointwise a.e. Since 
 	\begin{equation*}
@@ -5274,8 +5360,66 @@ f2		\begin{equation*}
 	because $f, g \in L^{p}(X)$, and $|f_{n_{j_{k}}}(x) - f(x)|^{p} \xrightarrow{k \to \infty} 0$ pointwise a.e., the Lebesgue dominated convergence theorem tells us that $f_{n_{j_{k}}} \to f$ in $L^{p}(X)$; i.e., $\norm{f_{n_{j_{k}}} - f}_{L^{p}} \xrightarrow{k \to \infty} 0$. Thus since every subsequence has a convergent subsequence, we conclude that $\norm{f_{n} - f}_{L^{p}} \to 0$. 
 	
 	\begin{prb}{F-6-10}
-		Suppose $1 \leq p < \infty$. If $f_{n}, f \in L^{p}$ and $f_{n} \to f$ a.e., then $\norm{f_{n} - f}_{L^{p}} \to 0$ iff $\norm{f_{n}}_{L^{p}} \to \norm{f}_{p}$. (Use Exercise 20 in \S 2.3). 
+		Suppose $1 \leq p < \infty$. If $f_{n}, f \in L^{p}$ and $f_{n} \to f$ a.e., then $\norm{f_{n} - f}_{L^{p}} \to 0$ iff $\norm{f_{n}}_{L^{p}} \to \norm{f}_{p}$. (Use Exercise 20 in \S 2.3.) 
 	\end{prb}
+	Let $1 \leq p < \infty$, $f_{n}, f \in L^{p}$ and $f_{n} \to f$ a.e. 
+	
+	($\Longrightarrow$) Suppose $\norm{f_{n} - f}_{L^{p}} \to 0$; fix an arbitrary $\epsilon > 0$. Then there exists a positive integer $N$ such that that for all $n \geq N$, $\norm{f_{n} - f}_{L^{p}} < \epsilon$. This implies by the Reverse Triangle Identity that for all $n \geq N$,
+	\begin{equation*}
+		\abs{\norm{f_{n}}_{L^{p}} - \norm{f}_{L^{p}}} \leq \norm{f_{n} - f}_{L^{p}} < \epsilon. 
+	\end{equation*}
+	Thus $\norm{f_{n}}_{L^{p}} \to \norm{f}_{L^{p}}$. 
+	
+	($\Longrightarrow$) Now assume that $\norm{f_{n}}_{L^{p}} \to \norm{f}_{L^{p}}$. Note that $2^{p}(|f_{n}|^{p} + |f|^{p}), 2^{p + 1}|f|^{p} \in L^{1}$ and $2^{p}(|f_{n}|^{p} + |f|^{p}) \to 2^{p + 1}|f|^{p}$ a.e. Likewise, since $|f_{n} - f|^{p} \leq 2^{p}(|f_{n}|^{p} + |f|^{p})$, $|f_{n} - f|^{p} \in L^{1}$ for all $n$, as is the zero function. We also have $|f_{n} -f|^{p} \to 0$ a.e. By the given hypothesis, one has that 
+	\begin{equation*}
+		\int 2^{p}(|f_{n}|^{p} + |f|^{p}) = 2^{p}\norm{f_{n}}_{L^{p}}^{p} + 2^{p}\norm{f}_{L^{p}}^{p} \xrightarrow{n \to \infty}2^{p}\norm{f}_{L^{p}}^{p} + 2^{p}\norm{f}_{L^{p}}^{p} = 2^{p + 1}\norm{f}_{L^{p}}^{p} = \int 2^{p + 1}|f|^{p}. 
+	\end{equation*}
+	Therefore, by Exercise 20 in \S 2.3, we conclude that 
+	\begin{equation*}
+		\norm{f_{n} - f}_{L^{p}}^{p} = \int |f_{n} - f|^{p} \xrightarrow{n \to \infty} \int 0 = 0 \implies \norm{f_{n} - f}_{L^{p}} \xrightarrow{n \to \infty} 0. 
+	\end{equation*}
+	This concludes the proof. 
+	
+	\begin{prb}{F-6-14}
+		If $g \in L^{\infty}$, the operator $T$ defined by $Tf = fg$ is bounded on $L^{p}$ for $1 \leq p \leq \infty$. Its operator norm is at most $\norm{g}_{\infty}$, with equality if $\mu$ is semifinite. 
+	\end{prb}
+	Fix $g \in L^{\infty}$, and define the operator $T$ on $L^{p}(X)$ by $Tf = fg$ for all $f \in L^{p}(X)$; we first assume $1 \leq p < \infty$. It follows that for all $f \in L^{p}(X)$, $Tf \in L^{p}(X)$ because 
+	\begin{equation*}
+		\norm{Tf}_{L^{p}}^{p} = \int |Tf|^{p} = \int |f|^{p}|g|^{p}\leq \int |f|^{p}\norm{g}_{L^{\infty}}^{p} = \norm{g}_{L^{\infty}}^{p} \cdot \norm{f}_{L^{p}}^{p} < \infty. 
+	\end{equation*}
+	In particular, this also shows that $T$ is bounded with operator norm at most $\norm{g}_{L^{\infty}}$ since for any $f \in L^{p}(X)$, $\norm{Tf}_{L^{p}} \leq \norm{g}_{\infty} \cdot \norm{f}_{L^{p}}$. Now assume $p = \infty$. Then the claim follows immediately since for a.e. $x \in X$ and every $f \in L^{\infty}(X)$, 
+	\begin{equation*}
+		|Tf(x)| = |f(x)||g(x)| \leq \norm{f}_{L^{\infty}} \cdot \norm{g}_{L^{\infty}} \implies \norm{Tf}_{L^{\infty}} =\operatorname{ess sup}_{x \in X}|Tf(x)| \leq \norm{f}_{L^{\infty}} \cdot \norm{g}_{L^{\infty}}. 
+	\end{equation*}
+	Therefore, $T$ is still bounded with operator norm at most $\norm{g}_{L^{\infty}}$. Now assume that $\mu$ is semifinite. We start by assuming $1 \leq p < \infty$. Fix $\epsilon > 0$, and define 
+	\begin{equation*}
+		E_{\epsilon} \coloneqq \{x \in X: |g(x)| \geq \norm{g}_{L^{\infty}} - \epsilon\}; 
+	\end{equation*}
+	since $\mu$ is semifinite, there exists a subset $E \subseteq E_{\epsilon}$ with $0 < \mu(E) < \infty$. Take $f = \chi_{E} \in L^{p}(X)$. Then one has 
+	\begin{equation*}
+		\norm{Tf}_{L^{p}} = \left(\int_{X}|f(x)|^{p}|g(x)|^{p}\right)^{1/p} \geq \left(\int_{E}|f|^{p}(\norm{g}_{L^{\infty}} - \epsilon)^{p}\right)^{1/p} = \norm{f}_{L^{p}} \cdot (\norm{g}_{L^{\infty}} - \epsilon). 
+	\end{equation*}
+	In particular, this implies that 
+	\begin{equation*}
+		\frac{\norm{Tf}_{L^{p}}}{\norm{f}_{L^{p}}} \geq \norm{g}_{\infty} - \epsilon. 
+	\end{equation*}
+	But by definition of the operator norm, one has that 
+	\begin{equation*}
+		\norm{T} \geq \frac{\norm{Tf}_{L^{p}}}{\norm{f}_{L^{p}}} \implies \norm{T} \geq \norm{g}_{\infty} - \epsilon. 
+	\end{equation*}
+	Thus taking the limit $\epsilon \to 0$ shows that $\norm{T} \geq \norm{g}_{\infty}$. Coupled with our observation above, $\norm{T} = \norm{g}_{\infty}$. Now suppose $p = \infty$. Define $\epsilon, E_{\epsilon}$, $E$, and $f$ as in the $1 \leq p < \infty$ case. Then one has that for any $x \in X \setminus E$, $|Tf(x)| = 0$, while for any $x \in E$, 
+	\begin{equation*}
+		|Tf(x)| \geq \norm{g}_{L^\infty} - \epsilon = \norm{f}_{L^{\infty}} \cdot (\norm{g}_{L^{\infty}} - \epsilon), 
+	\end{equation*}
+	since $\norm{f}_{L^{\infty}} = 1$. Therefore, 
+	\begin{equation*}
+		\norm{Tf}_{L^{\infty}} = \operatorname{ess sup}_{x \in X}|Tf(x)| \geq \operatorname{ess sup}_{x \in E}|Tf(x)| \geq \norm{f}_{L^{\infty}} \cdot (\norm{g}_{L^\infty} - \epsilon). 
+	\end{equation*}
+	This implies 
+	\begin{equation*}
+		\norm{T} \geq \frac{\norm{Tf}_{L^{\infty}}}{\norm{f}_{L^{\infty}}} \geq \norm{g}_{L^{\infty}} - \epsilon \xrightarrow{\epsilon \to 0} \norm{T} \geq \norm{g}_{\infty}. 
+	\end{equation*}
+	Thus we conclude that $\norm{T} = \norm{g}_{L^{\infty}}$ when $\mu$ is semifinite. 
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
 		Suppose $\mu$ is a finite positive measure of compact support and 

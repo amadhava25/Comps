@@ -344,116 +344,121 @@
 \contentsline {subsubsection}{Problem B-16-3}{146}{section*.333}%
 \contentsline {subsubsection}{Problem B-16-4}{146}{section*.334}%
 \contentsline {subsubsection}{Problem B-16-7}{147}{section*.335}%
-\contentsline {subsubsection}{Problem F-6-9}{147}{section*.336}%
-\contentsline {subsubsection}{Problem F-6-10}{147}{section*.337}%
-\contentsline {subsection}{\numberline {4.4}Weierstrass Approximation}{147}{subsection.4.4}%
-\contentsline {subsubsection}{Problem 2021-A-II-6}{147}{section*.338}%
-\contentsline {subsubsection}{Problem 2018-A-I-5}{148}{section*.339}%
-\contentsline {subsubsection}{Problem 2017-A-I-2}{149}{section*.340}%
-\contentsline {subsubsection}{Problem 2017-A-II-1}{149}{section*.341}%
-\contentsline {subsubsection}{Problem 2016-J-II-3}{150}{section*.342}%
-\contentsline {subsubsection}{Problem 2014-A-II-5}{150}{section*.343}%
-\contentsline {subsubsection}{Problem 1998-J-II-1}{150}{section*.344}%
-\contentsline {subsection}{\numberline {4.5}Baire Category Theorem}{151}{subsection.4.5}%
-\contentsline {subsubsection}{Problem 2025-J-II-5}{151}{section*.345}%
-\contentsline {subsubsection}{Problem 2024-A-II-3}{151}{section*.346}%
-\contentsline {subsubsection}{Problem 2024-J-II-5}{152}{section*.347}%
-\contentsline {subsubsection}{Problem Fat Cantor Set}{152}{section*.348}%
-\contentsline {subsubsection}{Problem 2022-J-II-3}{153}{section*.349}%
-\contentsline {subsubsection}{Problem 2016-J-II-6}{153}{section*.350}%
-\contentsline {subsubsection}{Problem 2014-J-I-6}{154}{section*.351}%
-\contentsline {subsubsection}{Problem 2008-A-I-5}{154}{section*.352}%
-\contentsline {subsubsection}{Problem 1997-A-II-6}{155}{section*.353}%
-\contentsline {subsection}{\numberline {4.6}Partial Differential Equations}{155}{subsection.4.6}%
-\contentsline {subsubsection}{Problem 2004-J-II-6}{155}{section*.354}%
-\contentsline {subsubsection}{Problem E-1-1}{155}{section*.355}%
-\contentsline {subsubsection}{Problem E-1-2}{157}{section*.356}%
-\contentsline {subsubsection}{Problem E-1-3}{157}{section*.357}%
-\contentsline {subsubsection}{Problem E-1-4}{159}{section*.358}%
-\contentsline {subsubsection}{Problem E-1-5}{159}{section*.359}%
-\contentsline {subsection}{\numberline {4.7}Distribution Theory}{161}{subsection.4.7}%
-\contentsline {subsubsection}{Problem F-9-1-1}{161}{section*.360}%
-\contentsline {subsubsection}{Problem F-9-1-2}{161}{section*.361}%
-\contentsline {subsubsection}{Problem F-9-1-3}{162}{section*.362}%
-\contentsline {subsubsection}{Problem F-9-1-5}{162}{section*.363}%
-\contentsline {subsubsection}{Problem F-9-1-6}{163}{section*.364}%
-\contentsline {subsection}{\numberline {4.8}Compactness}{163}{subsection.4.8}%
-\contentsline {subsubsection}{Problem 2013-A-I-5}{163}{section*.365}%
-\contentsline {subsection}{\numberline {4.9}Random}{164}{subsection.4.9}%
-\contentsline {subsubsection}{Problem 2024-A-I-4}{164}{section*.366}%
-\contentsline {subsubsection}{Problem 2023-A-II-4}{164}{section*.367}%
-\contentsline {subsubsection}{Problem 2023-J-II-1}{165}{section*.368}%
-\contentsline {subsubsection}{Problem 2023-J-II-2}{165}{section*.369}%
-\contentsline {subsubsection}{Problem 2022-A-II-5}{165}{section*.370}%
-\contentsline {subsubsection}{Problem 2021-A-II-2}{166}{section*.371}%
-\contentsline {subsubsection}{Problem 2020-A-II-6}{167}{section*.372}%
-\contentsline {subsubsection}{Problem 2021-J-I-3}{167}{section*.373}%
-\contentsline {subsubsection}{Problem 2005-J-I-1}{167}{section*.374}%
-\contentsline {subsubsection}{Problem 2020-A-I-3}{168}{section*.375}%
-\contentsline {subsubsection}{Problem 2019-A-I-2}{169}{section*.376}%
-\contentsline {subsubsection}{Problem 2013-J-I-4}{169}{section*.377}%
-\contentsline {subsubsection}{Problem 1997-J-II-6}{170}{section*.378}%
-\contentsline {section}{\numberline {5}Complex Analysis}{171}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Holomorphic Functions and Convergence}{171}{subsection.5.1}%
-\contentsline {subsubsection}{Problem 2026-J-I-3}{171}{section*.379}%
-\contentsline {subsubsection}{Problem 2026-J-II-4}{171}{section*.380}%
-\contentsline {subsubsection}{Problem 2025-A-I-3}{172}{section*.381}%
-\contentsline {subsubsection}{Problem 2025-J-I-4}{172}{section*.382}%
-\contentsline {subsubsection}{Problem 2022-J-I-1}{172}{section*.383}%
-\contentsline {subsubsection}{Problem 2022-J-II-4}{172}{section*.384}%
-\contentsline {subsubsection}{Problem 2021-A-I-2}{173}{section*.385}%
-\contentsline {subsubsection}{Problem 2020-A-II-1}{173}{section*.386}%
-\contentsline {subsubsection}{Problem 2018-A-I-3}{173}{section*.387}%
-\contentsline {subsubsection}{Problem 2018-J-II-4}{173}{section*.388}%
-\contentsline {subsubsection}{Problem 2015-A-I-3}{174}{section*.389}%
-\contentsline {subsubsection}{Problem 2015-J-I-1}{174}{section*.390}%
-\contentsline {subsubsection}{Problem 2014-A-I-5}{175}{section*.391}%
-\contentsline {subsubsection}{Problem 2012-A-I-4}{175}{section*.392}%
-\contentsline {subsubsection}{Problem 2012-J-II-2}{175}{section*.393}%
-\contentsline {subsubsection}{Problem 2008-A-I-1}{176}{section*.394}%
-\contentsline {subsubsection}{Problem 2001-J-II-5}{176}{section*.395}%
-\contentsline {subsection}{\numberline {5.2}Harmonic Functions}{176}{subsection.5.2}%
-\contentsline {subsubsection}{Problem 2017-A-I-6}{176}{section*.396}%
-\contentsline {subsubsection}{Problem 2015-A-I-5}{177}{section*.397}%
-\contentsline {subsection}{\numberline {5.3}The Schwarz and Schwarz-Pick Lemmas}{177}{subsection.5.3}%
-\contentsline {subsubsection}{Problem 2023-A-I-6}{177}{section*.398}%
-\contentsline {subsubsection}{Problem 2019-J-II-3}{177}{section*.399}%
-\contentsline {subsubsection}{Problem 2017-J-II-5}{178}{section*.400}%
-\contentsline {subsubsection}{Problem 2010-A-II-3}{178}{section*.401}%
-\contentsline {subsubsection}{Problem 2007-A-II-1}{179}{section*.402}%
-\contentsline {subsection}{\numberline {5.4}Maximum Principles and Open Mapping Theorem}{179}{subsection.5.4}%
-\contentsline {subsubsection}{Problem 2019-A-II-1}{179}{section*.403}%
-\contentsline {subsubsection}{Problem 2013-A-I-3}{179}{section*.404}%
-\contentsline {subsubsection}{Problem 2007-J-II-1}{179}{section*.405}%
-\contentsline {subsection}{\numberline {5.5}Contour Integration}{180}{subsection.5.5}%
-\contentsline {subsubsection}{Problem 2019-J-I-2}{180}{section*.406}%
-\contentsline {subsubsection}{Problem 2018-J-I-2}{181}{section*.408}%
-\contentsline {subsubsection}{Problem 2017-A-I-4}{181}{section*.409}%
-\contentsline {subsubsection}{Problem 2014-J-I-4}{182}{section*.411}%
-\contentsline {subsubsection}{Problem 2008-J-II-3}{183}{section*.413}%
-\contentsline {subsubsection}{Problem 2001-J-II-6}{184}{section*.415}%
-\contentsline {section}{\numberline {6}Notes}{186}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Differential Geometry and Topology}{186}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}De Rham Cohomology}{186}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{Problem LSM-17-5}{190}{section*.417}%
-\contentsline {subsubsection}{Problem LSM-17-6}{191}{section*.418}%
-\contentsline {subsubsection}{Problem LSM-17-7}{192}{section*.419}%
-\contentsline {subsection}{\numberline {6.2}Partial Differential Equations}{194}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Introduction}{194}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Four Important Linear Partial Differential Equations}{194}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Sobolev Spaces}{208}{subsubsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.3}Semidirect Products}{210}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Seifert-van Kampen Theorem and Fundamental Groups}{211}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Random Quick Facts To Recall}{212}{subsection.6.5}%
-\contentsline {subsubsection}{\numberline {6.5.1}Algebra}{212}{subsubsection.6.5.1}%
-\contentsline {paragraph}{Linear Algebra and Module Theory}{212}{section*.422}%
-\contentsline {paragraph}{Ring Theory}{213}{section*.423}%
-\contentsline {paragraph}{Galois Theory}{214}{section*.424}%
-\contentsline {paragraph}{Pure Group Theory}{215}{section*.425}%
-\contentsline {paragraph}{Representation Theory}{216}{section*.426}%
-\contentsline {subsubsection}{\numberline {6.5.2}Geometry and Topology}{217}{subsubsection.6.5.2}%
-\contentsline {paragraph}{De Rham Cohomology}{217}{section*.427}%
-\contentsline {paragraph}{Fundamental Groups}{219}{section*.428}%
-\contentsline {paragraph}{Frobenius Theorem and Distributions}{219}{section*.429}%
-\contentsline {subsubsection}{\numberline {6.5.3}Real Analysis}{220}{subsubsection.6.5.3}%
-\contentsline {subsubsection}{\numberline {6.5.4}Complex Analysis}{220}{subsubsection.6.5.4}%
+\contentsline {subsubsection}{Problem F-2-33}{147}{section*.336}%
+\contentsline {subsubsection}{Problem F-2-34}{147}{section*.337}%
+\contentsline {subsubsection}{Problem F-2-36}{147}{section*.338}%
+\contentsline {subsubsection}{Problem F-2-38}{147}{section*.339}%
+\contentsline {subsubsection}{Problem F-6-9}{149}{section*.340}%
+\contentsline {subsubsection}{Problem F-6-10}{149}{section*.341}%
+\contentsline {subsubsection}{Problem F-6-14}{149}{section*.342}%
+\contentsline {subsection}{\numberline {4.4}Weierstrass Approximation}{150}{subsection.4.4}%
+\contentsline {subsubsection}{Problem 2021-A-II-6}{150}{section*.343}%
+\contentsline {subsubsection}{Problem 2018-A-I-5}{151}{section*.344}%
+\contentsline {subsubsection}{Problem 2017-A-I-2}{152}{section*.345}%
+\contentsline {subsubsection}{Problem 2017-A-II-1}{152}{section*.346}%
+\contentsline {subsubsection}{Problem 2016-J-II-3}{153}{section*.347}%
+\contentsline {subsubsection}{Problem 2014-A-II-5}{153}{section*.348}%
+\contentsline {subsubsection}{Problem 1998-J-II-1}{153}{section*.349}%
+\contentsline {subsection}{\numberline {4.5}Baire Category Theorem}{154}{subsection.4.5}%
+\contentsline {subsubsection}{Problem 2025-J-II-5}{154}{section*.350}%
+\contentsline {subsubsection}{Problem 2024-A-II-3}{154}{section*.351}%
+\contentsline {subsubsection}{Problem 2024-J-II-5}{155}{section*.352}%
+\contentsline {subsubsection}{Problem Fat Cantor Set}{155}{section*.353}%
+\contentsline {subsubsection}{Problem 2022-J-II-3}{156}{section*.354}%
+\contentsline {subsubsection}{Problem 2016-J-II-6}{156}{section*.355}%
+\contentsline {subsubsection}{Problem 2014-J-I-6}{157}{section*.356}%
+\contentsline {subsubsection}{Problem 2008-A-I-5}{157}{section*.357}%
+\contentsline {subsubsection}{Problem 1997-A-II-6}{158}{section*.358}%
+\contentsline {subsection}{\numberline {4.6}Partial Differential Equations}{158}{subsection.4.6}%
+\contentsline {subsubsection}{Problem 2004-J-II-6}{158}{section*.359}%
+\contentsline {subsubsection}{Problem E-1-1}{158}{section*.360}%
+\contentsline {subsubsection}{Problem E-1-2}{160}{section*.361}%
+\contentsline {subsubsection}{Problem E-1-3}{160}{section*.362}%
+\contentsline {subsubsection}{Problem E-1-4}{162}{section*.363}%
+\contentsline {subsubsection}{Problem E-1-5}{162}{section*.364}%
+\contentsline {subsection}{\numberline {4.7}Distribution Theory}{164}{subsection.4.7}%
+\contentsline {subsubsection}{Problem F-9-1-1}{164}{section*.365}%
+\contentsline {subsubsection}{Problem F-9-1-2}{164}{section*.366}%
+\contentsline {subsubsection}{Problem F-9-1-3}{165}{section*.367}%
+\contentsline {subsubsection}{Problem F-9-1-5}{165}{section*.368}%
+\contentsline {subsubsection}{Problem F-9-1-6}{166}{section*.369}%
+\contentsline {subsection}{\numberline {4.8}Compactness}{166}{subsection.4.8}%
+\contentsline {subsubsection}{Problem 2013-A-I-5}{166}{section*.370}%
+\contentsline {subsection}{\numberline {4.9}Random}{167}{subsection.4.9}%
+\contentsline {subsubsection}{Problem 2024-A-I-4}{167}{section*.371}%
+\contentsline {subsubsection}{Problem 2023-A-II-4}{167}{section*.372}%
+\contentsline {subsubsection}{Problem 2023-J-II-1}{168}{section*.373}%
+\contentsline {subsubsection}{Problem 2023-J-II-2}{168}{section*.374}%
+\contentsline {subsubsection}{Problem 2022-A-II-5}{168}{section*.375}%
+\contentsline {subsubsection}{Problem 2021-A-II-2}{169}{section*.376}%
+\contentsline {subsubsection}{Problem 2020-A-II-6}{170}{section*.377}%
+\contentsline {subsubsection}{Problem 2021-J-I-3}{170}{section*.378}%
+\contentsline {subsubsection}{Problem 2005-J-I-1}{170}{section*.379}%
+\contentsline {subsubsection}{Problem 2020-A-I-3}{171}{section*.380}%
+\contentsline {subsubsection}{Problem 2019-A-I-2}{172}{section*.381}%
+\contentsline {subsubsection}{Problem 2013-J-I-4}{172}{section*.382}%
+\contentsline {subsubsection}{Problem 1997-J-II-6}{173}{section*.383}%
+\contentsline {section}{\numberline {5}Complex Analysis}{174}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Holomorphic Functions and Convergence}{174}{subsection.5.1}%
+\contentsline {subsubsection}{Problem 2026-J-I-3}{174}{section*.384}%
+\contentsline {subsubsection}{Problem 2026-J-II-4}{174}{section*.385}%
+\contentsline {subsubsection}{Problem 2025-A-I-3}{175}{section*.386}%
+\contentsline {subsubsection}{Problem 2025-J-I-4}{175}{section*.387}%
+\contentsline {subsubsection}{Problem 2022-J-I-1}{175}{section*.388}%
+\contentsline {subsubsection}{Problem 2022-J-II-4}{175}{section*.389}%
+\contentsline {subsubsection}{Problem 2021-A-I-2}{176}{section*.390}%
+\contentsline {subsubsection}{Problem 2020-A-II-1}{176}{section*.391}%
+\contentsline {subsubsection}{Problem 2018-A-I-3}{176}{section*.392}%
+\contentsline {subsubsection}{Problem 2018-J-II-4}{176}{section*.393}%
+\contentsline {subsubsection}{Problem 2015-A-I-3}{177}{section*.394}%
+\contentsline {subsubsection}{Problem 2015-J-I-1}{177}{section*.395}%
+\contentsline {subsubsection}{Problem 2014-A-I-5}{178}{section*.396}%
+\contentsline {subsubsection}{Problem 2012-A-I-4}{178}{section*.397}%
+\contentsline {subsubsection}{Problem 2012-J-II-2}{178}{section*.398}%
+\contentsline {subsubsection}{Problem 2008-A-I-1}{179}{section*.399}%
+\contentsline {subsubsection}{Problem 2001-J-II-5}{179}{section*.400}%
+\contentsline {subsection}{\numberline {5.2}Harmonic Functions}{179}{subsection.5.2}%
+\contentsline {subsubsection}{Problem 2017-A-I-6}{179}{section*.401}%
+\contentsline {subsubsection}{Problem 2015-A-I-5}{180}{section*.402}%
+\contentsline {subsection}{\numberline {5.3}The Schwarz and Schwarz-Pick Lemmas}{180}{subsection.5.3}%
+\contentsline {subsubsection}{Problem 2023-A-I-6}{180}{section*.403}%
+\contentsline {subsubsection}{Problem 2019-J-II-3}{180}{section*.404}%
+\contentsline {subsubsection}{Problem 2017-J-II-5}{181}{section*.405}%
+\contentsline {subsubsection}{Problem 2010-A-II-3}{181}{section*.406}%
+\contentsline {subsubsection}{Problem 2007-A-II-1}{182}{section*.407}%
+\contentsline {subsection}{\numberline {5.4}Maximum Principles and Open Mapping Theorem}{182}{subsection.5.4}%
+\contentsline {subsubsection}{Problem 2019-A-II-1}{182}{section*.408}%
+\contentsline {subsubsection}{Problem 2013-A-I-3}{182}{section*.409}%
+\contentsline {subsubsection}{Problem 2007-J-II-1}{182}{section*.410}%
+\contentsline {subsection}{\numberline {5.5}Contour Integration}{183}{subsection.5.5}%
+\contentsline {subsubsection}{Problem 2019-J-I-2}{183}{section*.411}%
+\contentsline {subsubsection}{Problem 2018-J-I-2}{184}{section*.413}%
+\contentsline {subsubsection}{Problem 2017-A-I-4}{184}{section*.414}%
+\contentsline {subsubsection}{Problem 2014-J-I-4}{185}{section*.416}%
+\contentsline {subsubsection}{Problem 2008-J-II-3}{186}{section*.418}%
+\contentsline {subsubsection}{Problem 2001-J-II-6}{187}{section*.420}%
+\contentsline {section}{\numberline {6}Notes}{189}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Differential Geometry and Topology}{189}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}De Rham Cohomology}{189}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{Problem LSM-17-5}{193}{section*.422}%
+\contentsline {subsubsection}{Problem LSM-17-6}{194}{section*.423}%
+\contentsline {subsubsection}{Problem LSM-17-7}{195}{section*.424}%
+\contentsline {subsection}{\numberline {6.2}Partial Differential Equations}{197}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Introduction}{197}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Four Important Linear Partial Differential Equations}{197}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Sobolev Spaces}{211}{subsubsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.3}Semidirect Products}{213}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Seifert-van Kampen Theorem and Fundamental Groups}{214}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Random Quick Facts To Recall}{215}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Algebra}{215}{subsubsection.6.5.1}%
+\contentsline {paragraph}{Linear Algebra and Module Theory}{215}{section*.427}%
+\contentsline {paragraph}{Ring Theory}{216}{section*.428}%
+\contentsline {paragraph}{Galois Theory}{217}{section*.429}%
+\contentsline {paragraph}{Pure Group Theory}{218}{section*.430}%
+\contentsline {paragraph}{Representation Theory}{219}{section*.431}%
+\contentsline {subsubsection}{\numberline {6.5.2}Geometry and Topology}{220}{subsubsection.6.5.2}%
+\contentsline {paragraph}{De Rham Cohomology}{220}{section*.432}%
+\contentsline {paragraph}{Fundamental Groups}{222}{section*.433}%
+\contentsline {paragraph}{Frobenius Theorem and Distributions}{222}{section*.434}%
+\contentsline {subsubsection}{\numberline {6.5.3}Real Analysis}{223}{subsubsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.4}Complex Analysis}{223}{subsubsection.6.5.4}%
