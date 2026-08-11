@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{../header}
 \usepackage{esint}
-
+\allowdisplaybreaks[0]
 
 \usetikzlibrary{decorations.markings}
 \def\Xint#1{\mathchoice
@@ -376,7 +376,18 @@
 			\end{equation*} 
 		\end{enumerate}
 	\end{prb}
-	\complete 
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item We compute, 
+		\begin{align*}
+			\begin{split}
+				[X, Y] &= (\partial_{x} + x\partial_{y} + y\partial_{z})(y\partial_{x}) + (\partial_{x} + x\partial_{y} + y\partial_{z})(z\partial_{y}) + (\partial_{x} + x\partial_{y} + y\partial_{z})(\partial_{z}) \\
+				&\textcolor{white}{=} \hspace{2pt} - (y\partial_{x} + z\partial_{y} + \partial_{z})(\partial_{x}) - (y\partial_{x} + z\partial_{y} + \partial_{z})(x\partial_{y}) - (y\partial_{x} + z\partial_{y} + \partial_{z})(y\partial_{z}) \\
+				&= x\partial_{x} + y\partial_{y} + 0 - 0 -y\partial_{y} - z\partial_{z} \\
+				&= x\frac{\partial}{\partial x} - z\frac{\partial}{\partial z}. 
+			\end{split} 
+		\end{align*}
+		\item From (a), we see that $[X, Y]$ does not vanish in any neighborhood $U$ of the origin in $\mathbb{R}^{3}$ since any such neighborhood contains points $(x, y, z)$ where neither $x$ nor $z$ are both zero. If there was a coordinate chart $\varphi = (x_{1}, x_{2}, x_{3}): U \to \mathbb{R}^{3}$ on a neighborhood $U$ of the origin in $\mathbb{R}^{3}$ such that $X|_{U} = \partial_{x_{1}}$ and $Y|_{U} = \partial_{x_{2}}$, then $[X, Y]|_{U} = 0$, which we've shown is not possible. Therefore, it is not possible to find such a coordinate chart. 
+	\end{enumerate}
 	
 	\newpage 
 	\subsection{Stokes' Theorem}
@@ -526,6 +537,22 @@
 	\end{equation*}
 	which is a contradiction. Thus, by contradiction, we conclude that $\omega$ cannot be exact. 
 	
+	\begin{prb}{AZ-2011-F-4}
+		Show that there exist a closed 1-form $\alpha$ on $\mathbb{RP}^{n}$ and a smooth function $f: [0,1] \to \mathbb{RP}^{n}$ so that 
+		\begin{equation*}
+			f(0) = f(1) \qquad \text{and} \qquad \int_{[0,1]}f^{\ast}\alpha \neq 0
+		\end{equation*}
+		if and only if $n = 1$. 
+	\end{prb}
+	First assume $n = 1$. Since $\mathbb{RP}^{1} \simeq S^{1}$, the 1-form $\alpha = d\theta$ and the function $f(t) = e^{2\pi i \theta}$ give a nonzero integral (i.e., $2\pi$). 
+	
+	If $n < 0$, then $\mathbb{RP}^{n} = \varnothing$ so that the result holds trivially. If $n = 0$, then $\mathbb{RP}^{n} = \{\text{pt}\}$ so that there exist no nonzero 1-forms. 
+	
+	Now assume $n \geq 2$. Since $\pi_{1}(\mathbb{RP}^{n}) \cong \mathbb{Z}/2\mathbb{Z}$ and $H^{1}_{\text{dR}}(\mathbb{RP}^{n}) \cong \operatorname{Hom}(\pi_{1}(\mathbb{RP}^{n}), \mathbb{R})$, it follows that $H^{1}_{\text{dR}}(\mathbb{RP}^{n}) = 0$. Thus every closed 1-form $\alpha$ on $\mathbb{RP}^{n}$ is exact. Fix an arbitrary closed 1-form $\alpha = dh$, where $h: \mathbb{RP}^{n} \to \mathbb{R}$ is a smooth function. Let $f: [0,1] \to \mathbb{RP}^{n}$ be any smooth function such that $f(0) = f(1)$. Then 
+	\begin{equation*}
+		\int_{[0,1]}f^{\ast}\alpha = \int_{[0,1]}f^{\ast}dh = \int_{[0,1]}d(f^{\ast}h) = \int_{[0,1]}d(h \circ f) = \int_{\partial[0,1]}h \circ f = h(f(1)) - h(f(0)) = 0. 
+	\end{equation*}
+	Therefore, the proof concludes. 
 	
 	\newpage 
 	\subsection{Submersions and Immersions}
@@ -2285,6 +2312,26 @@
 		\label{prb:2000JI5}
 	\end{prb}
 	Let $M$ be a smooth, connected, compact oriented $n$-manifold, and let $B \subset M$ be a coordinate ball whose orientation agrees with the standard orientation of the unit ball in $\mathbb{R}^n$. Let $\phi: U \to \mathbb{R}^n$ be the corresponding orientation-preserving coordinate chart containing $\overline{B}$ such that $\phi(B) = B_1(0)$, the open unit ball. Let $q: M \to M / (M \setminus B) \cong S^n$ be the natural continuous quotient map that collapses the closed complement $M \setminus B$ to a single basepoint $\infty \in S^n$. This quotient map restricts to a homeomorphism from $B$ onto $S^n \setminus \{\infty\}$. Let $\psi: B_1(0) \to S^n \setminus \{\infty\}$ be a smooth, orientation-preserving diffeomorphism from the unit ball to the punctured sphere. We define an initial continuous map $f_0: M \to S^n$ by setting $f_0(x) = \psi(\phi(x))$ for $x \in B$ and $f_0(x) = \infty$ for $x \in M \setminus B$. To smooth this map, let $\rho: [0, 1] \to [0, 1]$ be a smooth, non-decreasing cut-off function such that $\rho(r) = r$ for $0 \leq r \leq 1/2$ and $\rho(r) = 1$ for $3/4 \leq r \leq 1$. In terms of the radial coordinate $r = \|\phi(x)\|$ on $B$, we define the modified smooth map $f: M \to S^n$ by $f(x) = \infty$ for $x \in M \setminus B$ or for $x \in B$ with $\|\phi(x)\| \geq 3/4$, and $f(x) = \psi\left(\rho(\|\phi(x)\|) \frac{\phi(x)}{\|\phi(x)\|}\right)$ for $x \in B$ with $\|\phi(x)\| < 3/4$. This map $f$ is smooth globally because it is locally constant and equal to $\infty$ on a neighborhood of $M \setminus B$. Now choose a point $y \in S^n \setminus \{\infty\}$ corresponding to a regular value in the image of the inner region where $\|\phi(x)\| < 1/2$. By construction, the preimage $f^{-1}(y)$ consists of exactly one point $x_0 \in B$. Since both $\phi$ and $\psi$ are orientation-preserving and $\rho(r)=r$ on this neighborhood, the differential $df_{x_0}: T_{x_0}M \to T_y S^n$ is a linear isomorphism that preserves orientation. Thus, the local degree at $x_0$ is $+1$. Computing the degree of $f$ by summing the local degrees over the fiber of this regular value yields $\deg(f) = \sum_{x \in f^{-1}(y)} \text{sgn}(\det df_x) = \text{sgn}(\det df_{x_0}) = 1$, completing the proof.
+	
+	
+	\begin{prb}{AZ-2011-F-1}
+		Let $M$ and $N$ be compact oriented connected $n$-manifolds and $f: M \to N$ a smooth map. Show that there exists a unique number $(\deg{f}) \in \mathbb{R}$ such that 
+		\begin{equation*}
+			\int_{M}f^{\ast}\omega = (\deg{f}) \cdot \int_{N}\omega \qquad \forall \omega \in \Omega^{n}(N). 
+		\end{equation*}
+	\textit{Note}: there are two parts to this problem. 
+	\end{prb}
+	Let $M$ and $N$ be compact oriented connected $n$-manifolds and $f: M \to N$ be a smooth map. The two parts to this problem are to show (1) that such a number exists, and (2) to show this number is unique. We begin with a proof of uniqueness. 
+	
+	Suppose $k_1, k_2 \in \mathbb{R}$ both satisfy $\int_M f^*\omega = k \int_N \omega$ for all $\omega \in \Omega^n(N)$. Choose any $n$-form $\omega_0 \in \Omega^n(N)$ with $\int_N \omega_0 \neq 0$ (which exists because $H^n_{\text{dR}}(N) \cong \mathbb{R}$). Then:$$k_1 \int_N \omega_0 = \int_M f^*\omega_0 = k_2 \int_N \omega_0 \implies (k_1 - k_2) \int_N \omega_0 = 0.$$ Since $\int_N \omega_0 \neq 0$, it follows that $k_1 = k_2$. Now we will show existence. Since $N$ is compact connected and oriented, $H^{n}_{\text{dR}}(N)$ is one-dimensional, and hence is generated by the cohomology class of a nowhere vanishing $n$-form, $[\omega_{N}]$ whose integral over $N$ is nowhere vanishing. Thus for any $\omega \in \Omega^{n}(N)$, $[\omega] = c \cdot [\omega_{N}] = [c\omega_{N}]$. This means that $\omega$ and $c\omega_{N}$ are cohomologous; i.e., there exists an $n-1$ form $\eta$ on $N$ such that $\omega - c\omega_{N} = d\eta$. Since $N$ is a compact manifold without boundary $\int_{N}d\eta = 0$ so that $\int_{N}\omega = c\int_{N}\omega_{N}$. Likewise, it follows that $[f^{\ast}\omega]$ and $[cf^{\ast}\omega_{N}]$ are cohomologous $n$-forms on $M$ such that $\int_{M}f^{\ast}\omega = c\cdot \int_{M}f^{\ast}\omega_{N}$. Define 
+	\begin{equation*}
+		\deg{f} \coloneqq \frac{\int_{M}f^{\ast}\omega_{N}}{\int_{N}\omega_{N}}. 
+	\end{equation*}
+	From this, one concludes that 
+	\begin{equation*}
+		\int_{M}f^{\ast}\omega = c\int_{M}f^{\ast}\omega_{N} = c \cdot \deg{f} \cdot \int_{N}\omega_{N} = \deg{f} \cdot \int_{N}\omega. 
+	\end{equation*}
+	Since $\omega \in \Omega^{n}(N)$ was arbitrary, the proof concludes. 
 	
 	\subsection{Random Manifold Theory}
 	\begin{prb}{2020-A-I-6}
@@ -5212,6 +5259,23 @@ f2		\begin{equation*}
 		\end{equation*}
 	\end{prb}
 	\complete 
+	
+	\begin{prb}{F-6-9}
+		Suppose $1 \leq p < \infty$. If $\norm{f_{n}-f}_{L^p} \to 0$, then $f_{n} \to f$ in measure, and hence some subsequence converges to $f$ a.e. On the other hand, if $f_{n} \to f$ in measure and $|f_{n}| \leq g \in L^{p}$ for all $n$, then $\norm{f_{n}-f}_{L^{p}} \to 0$.
+	\end{prb}
+	Suppose $1 \leq p < \infty$ and assume that $\norm{f_{n} - f}_{L^{p}} \to 0$. Fix an arbitrary $\epsilon > 0$, and let $E_{n,\epsilon} \coloneqq \{x \in X: |f_{n}(x) - f(x)| \geq \epsilon\}$. Then one observes that 
+	\begin{equation*}
+		\norm{f_{n} - f}_{L^{p}} = \left(\int_{X}|f_{n}(x) - f(X)|^{p}\;dx\right)^{1/p} \geq \left(\int_{E_{n,\epsilon}}|f_{n}(x) - f(x)|^{p}\;dx\right)^{1/p} \geq \epsilon \cdot \mu(E_{n,\epsilon})^{1/p}. 
+	\end{equation*}
+	Since the left side tends to 0 in the limit $n \to \infty$, so must the right side. Therefore, $\mu(E_{n, \epsilon})^{1/p} \xrightarrow{n \to \infty} 0$, which implies $\mu(E_{n, \epsilon}) \xrightarrow{n \to \infty} 0$. Thus by definition, $f_{n} \to f$ in measure. Since convergence in measure implies converges of a subsequence pointwise a.e., the first part of the proof is complete. Now assume that $f_{n} \to f$ in measure and $|f_{n}| \leq g \in L^{p}$ for all $n$. We consider the sequence $\{\norm{f_{n} - f}_{L^{p}(X)}\}_{n = 1}^{\infty}$. Let $\{\norm{f_{n_{j}} - f}_{L^{p}(X)}\}_{j = 1}^{\infty}$ be an arbitrary subsequence. Since $f_{n} \to f$ in measure, $f_{n_{j}} \to f$ in measure. Thus there exists a further subsequence $\{f_{n_{j_{k}}}\}_{k = 1}^{\infty}$ that converges to $f$ pointwise a.e. Since 
+	\begin{equation*}
+		|f_{n_{j_{k}}} - f|^{p} \leq 2^{p}(|f_{n_{j_{k}}}|^{p} + |f|^{p}) \leq 2^{p}(|g|^{p} + |f|^{p}) \in L^{1}(X)
+	\end{equation*}
+	because $f, g \in L^{p}(X)$, and $|f_{n_{j_{k}}}(x) - f(x)|^{p} \xrightarrow{k \to \infty} 0$ pointwise a.e., the Lebesgue dominated convergence theorem tells us that $f_{n_{j_{k}}} \to f$ in $L^{p}(X)$; i.e., $\norm{f_{n_{j_{k}}} - f}_{L^{p}} \xrightarrow{k \to \infty} 0$. Thus since every subsequence has a convergent subsequence, we conclude that $\norm{f_{n} - f}_{L^{p}} \to 0$. 
+	
+	\begin{prb}{F-6-10}
+		Suppose $1 \leq p < \infty$. If $f_{n}, f \in L^{p}$ and $f_{n} \to f$ a.e., then $\norm{f_{n} - f}_{L^{p}} \to 0$ iff $\norm{f_{n}}_{L^{p}} \to \norm{f}_{p}$. (Use Exercise 20 in \S 2.3). 
+	\end{prb}
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
 		Suppose $\mu$ is a finite positive measure of compact support and 
