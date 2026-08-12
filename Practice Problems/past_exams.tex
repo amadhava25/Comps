@@ -4638,6 +4638,26 @@ f2		\begin{equation*}
 	\end{align*}
 	Thus since $\{f_{n}\}$ is uniformly bounded and uniformly equicontinuous, by the Arzel\`a-Ascoli theorem, there exists a subsequence $\{f_{n_{j}}\}_{j= 1}^{\infty}$ that converges uniformly on $[0,1]$. 
 	
+	\begin{prb}{F-7-22}
+		A sequence $\{f_{n}\}$ in $C_{0}(X)$ converges weakly to $f \in C_{0}(X)$ iff $\sup\norm{f_{n}}_{u} < \infty$ and $f_{n} \to f$ pointwise.  
+	\end{prb}
+	Let $\{f_{n}\}$ be a sequence in $C_{0}(X)$. 
+	
+	($\Longleftarrow$) Assume that $\sup\norm{f_{n}}_{u} < \infty$ and $f_{n} \to f$ pointwise. Fix some arbitrary $\mu \in M(X)$, the space of complex Radon measures on $X$ with finite total variation. One notices that for every $n \geq 1$ and every $x \in X$, 
+	\begin{equation*}
+		|f_{n}(x)| \leq \sup\norm{f_{n}}_{u} \cdot \chi_{X} \in L^{1}(X), 
+	\end{equation*}
+	where the statement on the right side of the inequality follows from the fact that since $\mu$ is a finite measure, 
+	\begin{equation*}
+		\int \sup\norm{f_{n}}_{u}\;d\mu = \mu(X) \cdot \sup\norm{f_{n}}_{u} < \infty. 
+	\end{equation*}
+	Therefore, by the Dominated Convergence Theorem, one has that $\int f_{n}\;d\mu \to \int f\;d\mu$. Since $\mu \in M(X)$ was arbitrary, we conclude that $f_{n} \to f$ weakly in $C_{0}(X)$. 
+	
+	($\Longrightarrow$) Now assume that $f_{n} \to f \in C_{0}(X)$ weakly. This means that for every $\mu \in M(X)$, $\int f_{n}\;d\mu\to \int f\;d\mu$. Since the Dirac measure $\delta_{x}$ is an element of $M(X)$, we have $\int f_{n}\;d\delta_{x} \to \int f\;d\delta_{x} \iff f_{n}(x) \to f(x)$ for every $x \in X$. Thus $f_{n} \to f$ pointwise. To prove uniform boundedness, we view each $f_{n}$ as a linear functional $\hat{f}: M(x) \to \mathbb{C}$ defined by 
+	\begin{equation*}
+		\hat{f}_{n}(\mu) = \int_{X}f_{n}\;d\mu. 
+	\end{equation*}
+	Since $f_{n} \to f$ weakly, it follows that for each $\mu \in M(X)$, $\{\hat{f}_{n}(\mu)\}_{n = 1}^{\infty}$ is convergent in $\mathbb{C}$, and hence bounded; i.e., one has that $\sup |\hat{f}_{n}(\mu)|< \infty$ for every $\mu \in C_{0}(X)$. The Uniform Boundedness Principle then implies that $\sup \norm{\hat{f}_{n}}_{\text{op}}< \infty$, where $\norm{\empspace}_{\text{op}}$ denotes the operator norm. Now recall that $C_{0}(X) \hookrightarrow C_{0}(X)^{\ast\ast} \cong M(X)^{\ast}$ isometrically so that $\norm{\empspace}_{\text{op}} = \norm{\empspace}_{u}$. Therefore, $\norm{\hat{f}_{n}}_{\text{op}} = \norm{f_{n}}_{u}$ for every $n$ so that $\sup\norm{f_{n}}_{u} < \infty$. 
 	\subsection{\texorpdfstring{$L^p$}{Lp} Spaces}
 	
 	\begin{prb}{2025-A-II-4}
@@ -5346,6 +5366,19 @@ f2		\begin{equation*}
 		Hence, $f_{n}g_{n}$ does not converge to $fg$ in measure. 
 	\end{enumerate}
 	
+	\begin{prb}{F-2-42}
+		Let $\mu$ be the counting measure on $\mathbb{N}$. Then $f_{n} \to f$ in measure iff $f_{n} \to f$ uniformly. 
+	\end{prb}
+	Let $\mu$ be the counting measure on $\mathbb{N}$. 
+	
+	($\Longrightarrow$) Assume $f_{n} \to f$ uniformly. Fix $\epsilon > 0$. Then uniform convergence implies that there exists some positive integer $N$ such that for all $n \geq N$ and $x \in \mathbb{N}$, $|f_{n}(x) - f(x)| < \epsilon$. In particular, for all $n \geq N$, $\mu(\{x \in \mathbb{N}: |f_{n}(x) - f(x)| \geq \epsilon\}) = 0$. Thus it follows that $\mu(\{x \in \mathbb{N}: |f_{n}(x) - f(x)| \geq \epsilon\}) \xrightarrow{n \to \infty} 0$ so that $f_{n} \to f$ in measure. 
+	
+	($\Longrightarrow$) Now assume that $f_{n} \to f$ in measure, which means that for each fixed $\epsilon, \epsilon' > 0$, there exists a positive integer $N$ such that for all $n \geq N$, $\mu(\{x \in \mathbb{N}: |f_{n}(x) - f(x)| \geq \epsilon\}) \leq \epsilon'$. Fix $\epsilon' = \frac{1}{2}$, and let $N$ be the positive integer threshold. Since $\mu$ is the counting measure and for all $n \geq N$, 
+	\begin{equation*}
+		0 \leq \mu(\{x \in \mathbb{N}: |f_{n}(x) - f(x)| \geq \epsilon\}) \leq \frac{1}{2}, 
+	\end{equation*}
+	we conclude that for all $n \geq N$, $\mu(\{x \in \mathbb{N}: |f_{n}(x) - f(x)| \geq \epsilon\}) = 0$, which means that $\{x \in \mathbb{N}: |f_{n}(x) - f(x)| < \epsilon\} = \mathbb{N}$ since $\mu$ is the counting measure. Therefore, $f_{n} \to f$ uniformly. 
+	
 	\begin{prb}{F-6-9}
 		Suppose $1 \leq p < \infty$. If $\norm{f_{n}-f}_{L^p} \to 0$, then $f_{n} \to f$ in measure, and hence some subsequence converges to $f$ a.e. On the other hand, if $f_{n} \to f$ in measure and $|f_{n}| \leq g \in L^{p}$ for all $n$, then $\norm{f_{n}-f}_{L^{p}} \to 0$.
 	\end{prb}
@@ -5420,6 +5453,49 @@ f2		\begin{equation*}
 		\norm{T} \geq \frac{\norm{Tf}_{L^{\infty}}}{\norm{f}_{L^{\infty}}} \geq \norm{g}_{L^{\infty}} - \epsilon \xrightarrow{\epsilon \to 0} \norm{T} \geq \norm{g}_{\infty}. 
 	\end{equation*}
 	Thus we conclude that $\norm{T} = \norm{g}_{L^{\infty}}$ when $\mu$ is semifinite. 
+	
+	\begin{prb}{F-6-33}
+		Given $1 < p < \infty$, let $Tf(x) = x^{-1/p}\int_{0}^{x}f(t)\;dt$. If $p^{-1} + q^{-1} = 1$, then $T$ is a bounded linear map from $L^{q}((0,\infty))$ to $C_{0}((0, \infty))$. 
+	\end{prb}
+	Fix $1 < p < \infty$, and let $q$ be the conjugate exponent to $p$. First, we will show that $T$ is linear operator on $L^{q}((0,\infty))$. For any $f, g \in L^{q}((0,\infty))$ and $\alpha, \beta \in \mathbb{R}$, one has that 
+	\begin{align*}
+		\begin{split}
+			T(\alpha f(x) + \beta g(x)) &= x^{-1/p}\int_{0}^{x}\alpha f(t) + \beta g(t)\;dt = x^{-1/p}\int_{0}^{x}\alpha f(t)\;dt + x^{-1/p}\int_{0}^{x}\beta g(t)\;dt \\
+			&= \alpha x^{-1/p}\int_{0}^{x}f(t)\;dt + \beta x^{-1/p}\int_{0}^{x}g(t)\;dt \\
+			&= \alpha Tf(x) + \beta Tg(x). 
+		\end{split}
+	\end{align*}
+	Thus $T$ is linear. Now we will show that for any $f \in L^{q}((0,\infty))$, $Tf(x)$ is continuous on $(0,\infty)$. Since $C_{c}^{\infty}((0,\infty))$ is dense in $L^{q}((0,\infty))$, let $\varphi \in C_{c}^{\infty}((0,\infty))$. Then for any $x \in (0, \infty)$, 
+	\begin{align*}
+		\begin{split}
+			T\varphi(x + h) &= (x + h)^{-1/p} \cdot \int_{0}^{x + h}\varphi(t)\;dt = (x + h)^{-1/p} \cdot \int_{0}^{\infty}\varphi(t)\chi_{(0, x + h)}(t)\;dt.
+		\end{split}
+	\end{align*}
+	Pointwise, $\varphi(t) \chi_{(0, x + h)}(t) \xrightarrow{h \to 0} \varphi(t)\chi_{(0,x)}(t)$ a.e. Moreover, $|\varphi(t)\chi_{(0, x + h)}(t)| \leq |\varphi(t)| \in L^{1}((0,\infty))$. Therefore, by the Lebesgue Dominated Convergence Theorem, 
+	\begin{equation*}
+		\lim_{h \to 0}T\varphi(x + h) = \lim_{h \to 0}(x + h)^{-1/p} \cdot \lim_{h \to 0}\int_{0}^{\infty}\varphi(t)\chi_{(0, x +  h)}(t)\;dt = x^{-1/p} \cdot \int_{0}^{\infty}\varphi(t)\chi_{(0,x)}(t)\;dt = T\varphi(x). 
+	\end{equation*}
+	Now let $f \in L^{q}((0, \infty))$ be arbitrary, fix $\epsilon > 0$, and choose $\varphi \in C_{c}^{\infty}((0,\infty))$ such that $\norm{f - \varphi}_{L^{q}(0, \infty)} < \epsilon/3$. By our work above, there exists some $\delta > 0$ so that $|h| < \delta$ implies $|T\varphi(x + h) - T\varphi(x)|< \epsilon/3$. Then one has that for any $x \in (0, \infty)$ and $|h| < \delta$,  
+	\begin{align*}
+		\begin{split}
+			|Tf(x + h) - Tf(x)| &= |Tf(x + h) - T\varphi(x + h) + T\varphi(x + h) - T\varphi(x) + T\varphi(x) - Tf(x)| \\
+			&\leq (x + h)^{-1/p} \cdot \int_{0}^{\infty}|f(t) - \varphi(t)|\chi_{(0, x + h)}\;dt + |T\varphi(x + h) - T\varphi(x)| + x^{-1/p}\cdot \int_{0}^{\infty}|f(t) - \varphi(t)|\chi_{(0,x)}\;dt \\
+			&\leq \norm{f - \varphi}_{L^{q}(0, \infty)} + |T\varphi(x + h) - T\varphi(x)| + \norm{f - \varphi}_{L^{q}(0, \infty)} \\
+			&\leq \frac{2\epsilon}{3} + |T\varphi(x + h) - T\varphi(x)| < \epsilon. 
+		\end{split}
+	\end{align*}
+	Therefore, $Tf$ is continuous for any $f \in L^{q}((0, \infty))$. Now we must show that for any $f \in L^{q}((0, \infty))$, $\lim_{x \to \infty}Tf(x) = 0$. Fix $f \in L^{q}((0,\infty))$, $\epsilon > 0$, and let $\varphi \in C_{c}^{\infty}((0, \infty))$ such that $\norm{f - \varphi}_{L^{q}} < \epsilon$. Then since $\lim_{x \to \infty}\int_{0}^{x}\varphi(t)\;dt \leq \norm{\varphi}_{L^{1}(0,\infty)} < \infty$, $\lim_{x \to \infty}|T\varphi(x)| = 0$. Next, since  
+	\begin{equation*}
+		|Tf(x)| \leq |T(f - \varphi)(x)| + |T\varphi(x)| \leq \epsilon + |T\varphi(x)|, 
+	\end{equation*} 
+	\begin{equation*}
+		\limsup_{x \to \infty}|Tf(x)| \leq \epsilon. 
+	\end{equation*}
+	Taking $\epsilon \to 0$, we conclude that $Tf(x) \to0$ as $x \to \infty$. The final result left to be shown is that $T$ is bounded. But this follows immediately: for any $f \in L^{q}((0,\infty))$, 
+	\begin{equation*}
+		|Tf(x)| \leq x^{-1/p} \cdot \int_{0}^{\infty}|f(t)|\chi_{(0,x)}\;dt \leq \norm{f}_{L^{q}(0,\infty)}, 
+	\end{equation*}
+	so that the operator norm of $T$ is at most 1. 
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
 		Suppose $\mu$ is a finite positive measure of compact support and 
@@ -5723,6 +5799,70 @@ f2		\begin{equation*}
 		Let $A, B$, and $C$ be Banach spaces, and let $j: B \to C$ be an injective, bounded linear operator. Suppose that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Prove that $f$ is bounded. 
 	\end{prb}
 	Let $A, B, C$ be Banach spaces, and let $j: B \to C$ be an injective bounded linear operator. Further assume that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Let $\{a_{j}\} \subset A$ so that $a_{j} \to a \in A$. Also assume that $f(a_{j}) \to b \in B$. Since $j$ is bounded (hence continuous), one has that $(j \circ f)(a_j) = j(f(a_j)) \to j(b)$. On the other hand, since $j \circ f$ is bounded (hence continuous), $(j \circ f)(a_{j}) \to(j \circ f)(a) = j(f(a))$. By injectivity of $j$, one has $f(a) = b$. Thus, it follows that the graph of $f$ is closed. By the Closed Graph Theorem, we conclude that $f$ is bounded. 
+	
+	\begin{prb}{F-5-32}
+		Let $\norm{\empspace}_{1}$ and $\norm{\empspace}_{2}$ be norms on the vector space $\mathscr{X}$ such that $\norm{\empspace}_{1} \leq \norm{\empspace}_{2}$. If $\mathscr{X}$ is complete with respect to both norms, then the norms are equivalent. 
+	\end{prb}
+	Let $(X, \norm{\empspace}_{1})$ and $(X, \norm{\empspace}_{2})$ be complete normed vector spaces such that for any $x \in X$, $\norm{x}_{1} \leq \norm{x}_{2}$. To show that the two norms are equivalent, it suffices to show that there exists some $C > 0$ such that $\norm{\empspace}_{2} \leq C \norm{\empspace}_{1}$. Consider the linear operator $\iota: (X, \norm{\empspace}_{1}) \to (X, \norm{\empspace}_{2})$ defined by $\iota(x) = x$ for every $x \in X$. Since $\iota$ is bijective (as the identity map on $X$), let $\jmath: (X, \norm{\empspace}_{2}) \to (X, \norm{\empspace}_{1})$ be its inverse. Then $\jmath$ is also bijective and linear. Moreover, $\jmath$ is continuous on $(X, \norm{\empspace}_{2})$: for any $\epsilon > 0$, $\norm{x - y}_{2} < \epsilon$ implies 
+	\begin{equation*}
+		\norm{\jmath(x) - \jmath(y)}_{1} = \norm{x - y}_{1} \leq \norm{x - y}_{2} < \epsilon. 
+	\end{equation*}
+	Thus $\jmath \in L(\mathscr{X}, \mathscr{X})$. By the Bounded Inverse Theorem, it follows that $\iota$ is bounded; i.e., there exists some $C > 0$ such that for all $x \in X$, $\norm{\iota(x)}_{2} \leq C\norm{x}_{1} \iff \norm{x}_{2} \leq C\norm{x}_{1}$. Therefore, since we have shown that $\norm{\empspace}_{1} \leq \norm{\empspace}_{2} \leq C\norm{\empspace}_{1}$, we conclude that the two norms are equivalent. 
+	
+	\begin{prb}{F-5-37}
+		Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces. If $T: \mathscr{X} \to \mathscr{Y}$ is a linear map such that $f \circ T \in \mathscr{X}^{\ast}$ for every $f \in \mathscr{Y}^{\ast}$, then $T$ is bounded. 
+	\end{prb}
+	Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces, $T: \mathscr{X} \to \mathscr{Y}$ be a linear map such that for every $f \in \mathscr{Y}^{\ast}$, $f \circ T \in \mathscr{X}^{\ast}$. Let $\{x_{n}\}_{n = 1}^{\infty} \subset \mathscr{X}$ such that $x_{n} \to x \in \mathscr{X}$ and assume that $Tx_{n} \to y \in \mathscr{Y}$. Since $f \circ T$ is continuous linear functional, one has that $(f \circ T)(x_{n}) \to (f \circ T)(x) = f(Tx)$. On the other hand, since $f$ is continuous, $(f \circ T)(x_{n}) = f(Tx_{n}) \to f(y)$. Thus $f(y) = f(Tx)$, which implies that for every $f \in \mathscr{Y}^{\ast}$, $f(y - Tx) =0$. Assume to the contrary that $y - Tx \neq 0$. Then define the subspace $\braket{y - Tx}$. Define the continuous linear functional $g: \braket{y - Tx} \to \mathbb{C}$ by $g(\alpha(y - Tx)) = \alpha$. Since $\braket{y - Tx}$ is a finite-dimensional normed vector space, $g$ must be continuous; thus $g$ is a continuous linear functional on the subspace $\braket{y - Tx}$. By the Hahn-Banach theorem, $g$ extends to a continuous linear functional $\hat{g}$ on $\mathscr{Y}^{\ast}$ such that $\hat{g}(y - Tx) = g(y - Tx) = 1$, which is a contradiction! Therefore, we must have $y - Tx = 0 \implies y = Tx$. Hence, by the Closed Graph Theorem, we conclude that $T$ is a bounded linear map. 
+	
+	\begin{prb}{F-5-38}
+		Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces, and let $\{T_{n}\}$ be a sequence in $L(\mathscr{X}, \mathscr{Y})$ such that $\lim T_{n}x$ exists for every $x \in \mathscr{X}$. Let $Tx = \lim T_{n}x$; then $T \in L(\mathscr{X}, \mathscr{Y})$. 
+	\end{prb}
+	Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces, $\{T_{n}\}$ a sequence in $L(\mathscr{X}, \mathscr{Y})$ such that $\lim T_{n}x$ exists for every $x \in \mathscr{X}$, and define the operator $T: \mathscr{X} \to \mathscr{Y}$ pointwise by $Tx = \lim T_{n}x$ for every $x \in \mathscr{X}$. First, we will show that $T$ is linear. Let $\alpha, \beta \in K$ (the base field of $\mathscr{X}, \mathscr{Y}$), and $x, \ti{x} \in \mathscr{X}$. Then 
+	\begin{align*}
+		\begin{split}
+			T(\alpha x + \beta \ti{x}) = \lim_{n \to \infty}T_{n}(\alpha x + \beta \ti{x}) = \lim_{n \to \infty}[\alpha T_{n}x + \beta T_{n}\ti{x}] = \alpha Tx + \beta T\ti{x}, 
+		\end{split} 
+	\end{align*}
+	where the second equality follows from the fact that each $T_{n}$ is linear. Now, we must show that $T$ is bounded. Since for each $x \in \mathscr{X}$, $T_{n}x$ converges, it follows that $\{T_{n}x\}$ is bounded; i.e., $\sup_{n}\norm{T_{n}x}_{\mathscr Y} < \infty$; let $M = \sup_{n}\norm{T_{n}x}_{\mathscr Y}$. Then for any $x \in \mathscr{X}$ with $\norm{x}_{\mathscr{X}} = 1$, it follows that $\norm{T_{n}x}_{\mathscr{Y}} \leq M\norm{x}_{\mathscr{X}} = M$. Therefore, for any $x \in \mathscr{X}$ with norm one, $\norm{Tx}_{Y} \leq M$. Since 
+	\begin{equation*}
+		\norm{T} = \sup\{\norm{Tx}_{\mathscr{Y}}: x \in \mathscr{X}, \norm{x}_{\mathscr{X}} = 1\}, 
+	\end{equation*}
+	we conclude that $\norm{T} \leq M < \infty$ so that $T$ is bounded (continuous). Therefore, $T \in L(\mathscr{X}, \mathscr{Y})$. 
+	
+	
+	\begin{prb}{F-5-39}
+		Let $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ be Banach spaces and let $B: \mathscr{X} \times \mathscr{Y} \to \mathscr{Z}$ be a separately continuous bilinear map; that is, $B(x, \cdot) \in L(\mathscr{Y}, \mathscr{Z})$ for each $x \in \mathscr{X}$ and $B(\cdot, y) \in L(\mathscr{X}, \mathscr{Z})$ for each $y \in \mathscr{Y}$. Then $B$ is jointly continuous, that is, continuous from $\mathscr{X} \times \mathscr{Y}$ to $\mathscr{Z}$. (Reduce the problem to proving that $\norm{B(x, y)} \leq C\norm{x}\norm{y}$ for some $C > 0$.)
+	\end{prb}
+	Let $\mathscr{X}, \mathscr{Y}, \mathscr{Z}$ be Banach spaces, and let $B: \mathscr{X} \times \mathscr{Y} \to\mathscr{Z}$ be a separately continuous bilinear map. First we start by proving the hint: $B$ is jointly continuous iff for every $(x, y) \in \mathscr{X} \times \mathscr{Y}$, there exists some $C > 0$ such that $\norm{B(x, y)} \leq C\norm{x}\norm{y}$. 
+	
+	($\Longrightarrow$) Assume $B$ is jointly continuous so that it is continuous at $(0,0)$. This means there exists a $\delta > 0$ so that $\norm{x} \leq \delta$ and $\norm{y} \leq \delta$ implies $\norm{B(x,y)} \leq 1$. Now let $x \in \mathscr{X}$ and $y\in \mathscr{Y}$ be arbitrary points, and define 
+	\begin{equation*}
+		\hat{x} = \delta \frac{x}{\norm{x}}, \qquad \hat{y} = \delta \frac{y}{\norm{y}} \implies \norm{\hat{x}}, \norm{\hat{y}} = \delta.  
+	\end{equation*}
+	This implies 
+	\begin{align*}
+		\begin{split}
+			\norm{B(x, y)} &= \norm{B(\hat{x}\delta^{-1}\norm{x}, \hat{y}\delta^{1}\norm{y})} \\
+			&= \delta^{-2}\norm{x}\norm{y}\norm{B(\hat{x}, \hat{y})} \leq \delta^{-2}\norm{x}\norm{y}. 
+		\end{split}
+	\end{align*}
+	Taking $C = \delta^{-2} >0$ completes the proof that joint continuity implies boundedness. 
+	
+	($\Longleftarrow$) Now assume that for every $(x, y) \in \mathscr{X} \times \mathscr{Y}$, there exists some $C > 0$ such that $\norm{B(x, y)} \leq C\norm{x}\norm{y}$. Fix some point $(x_{0}, y_{0}) \in \mathscr{X} \times \mathscr{Y}$. Then 
+	\begin{align*}
+		\begin{split}
+			\norm{B(x, y) - B(x_{0}, y_{0})} &\leq \norm{B(x - x_{0}, y)} + \norm{B(x_{0}, y- y_{0})} \\
+			&\leq C\left(\norm{x - x_{0}}\norm{y} + \norm{x_{0}}\norm{y- y_{0}}\right)
+		\end{split}
+	\end{align*}
+	Thus in the limit $(x, y) \to (x_{0}, y_{0})$, we conclude that $\norm{B(x, y) - B(x_{0}, y_{0})} \to 0$ so that $B$ is jointly continuous. 
+	
+	Now we will show that separate continuity implies joint continuity. First define $S = \{x \in X: \norm{x} \leq 1\}$ to be the closed unit ball in $X$. Continuity in $\mathscr{X}$ implies that for any fixed $y \in \mathscr{Y}$, $\norm{B(x, y)} \leq C_{y} \norm{x} \leq C_{y}$, where $C_{y} > 0$ is some fixed constant that depends only on $y$. Therefore, the set of linear operators, $\{T_{x} \coloneqq B(x, y): \mathscr{Y} \to \mathscr{Z} \mid x \in S\}$ is pointwise bounded for every $y\in \mathscr{Y}$. The Uniform Boundedness Principle then implies that this bound is uniform; i.e., there exists some $0 < C < \infty$ such that for every $y \in \mathscr{Y}$, $\norm{B(x, y)} \leq C\norm{y}$ when $\norm{x} \leq 1$. Let $x \in \mathscr{X}$ be an arbitrary nonzero element, and define $\hat{x} = x/\norm{x}$. Then by bilinearity, one has that 
+	\begin{equation*}
+		\norm{B(x,y)} = \norm{x}\norm{B(\hat{x}, y)} \leq C\norm{x}\norm{y}. 
+	\end{equation*}
+	The inequality follows trivially for $x = 0$. Thus, we conclude that $B$ is jointly continuous. 
+	
 	
 	\subsection{Partial Differential Equations}
 	\begin{prb}{2004-J-II-6}
@@ -8586,20 +8726,115 @@ f2		\begin{equation*}
 	\end{enumerate}
 	
 	\subsubsection{Real Analysis}
+	\paragraph{Lebesgue Measure Theory}
+\begin{enumerate}[series=real_analysis]
+	\item If $E \subset \mathbb{R}$ is a Lebesgue measurable subset, then there exists a $F_{\sigma}$ (i.e., a countable union of closed sets) set $F$ such that $F \subset E$ and $E\setminus F$ is a null set. 
+	\item (Carath\'eodory's Criterion) Let $\mu^{\ast}$ be an outer measure. Then $M$ is said to be \textit{measurable} if and only if for every subset $S$ of the space, $\mu^{\ast}(S) = \mu^{\ast}(S \cap M) + \mu^{\ast}(S \cap M^{c})$. 
+	\item Let $(X, \tau)$ denote a topological space, $\mathcal{M}$ a $\sigma$-algebra on $X$, and $\mu$ a measure on $(X, \mathcal{M})$. A measurable subset $A \subseteq X$ is \textit{inner regular} if 
+	\begin{equation*}
+		\mu(A) = \sup\{\mu(F): F \subseteq A, F \text{ compact and measurable}\}.
+	\end{equation*}
+	\item Let $(X, \tau)$ denote a topological space, $\mathcal{M}$ a $\sigma$-algebra on $X$, and $\mu$ a measure on $(X, \mathcal{M})$. A measurable subset $A \subseteq X$ is \textit{outer regular} if 
+	\begin{equation*}
+		\mu(A) = \inf\{\mu(U): U \supseteq A, F \text{ open and measurable}\}.
+	\end{equation*}
+	\item The Lebesgue measure, $\mu$, on $\mathbb{R}^{n}$ is a regular measure (i.e., inner and outer regular).
 	
-	\begin{itemize}
-		\item If $E \subset \mathbb{R}$ is a Lebesgue measurable subset, then there exists a $F_{\sigma}$ (i.e., a countable union of closed sets) set $F$ such that $F \subset E$ and $E\setminus F$ is a null set. 
-		\item (Carath\'eodory's Criterion) Let $\mu^{\ast}$ be an outer measure. Then $M$ is said to be \textit{measurable} if and only if for every subset $S$ of the space, $\mu^{\ast}(S) = \mu^{\ast}(S \cap M) + \mu^{\ast}(S \cap M^{c})$. 
-		\item Let $(X, \tau)$ denote a topological space, $\mathcal{M}$ a $\sigma$-algebra on $X$, and $\mu$ a measure on $(X, \mathcal{M})$. A measurable subset $A \subseteq X$ is \textit{inner regular} if 
+\end{enumerate}
+\paragraph{Generic Convergence Results}
+\begin{enumerate}[resume=real_analysis]
+	\item Let $\{a_{n}\}_{n = 1}^{\infty} \subset \mathbb{R}$ be a sequence of real numbers. Then $a_{n}$ converges to $L \in \mathbb{R}$ if and only if for each subsequence, there exists a subsubsequence $\{a_{n_{j_{k}}}\}_{k = 1}^{\infty}$ that converges to $L$. 
+	\item Let $\{f_{n}\}_{n = 1}^{\infty}$ and $f$ be measurable functions on a measure space $(X, \mu)$. $f_{n} \to f$ in measure if for each $\epsilon > 0$, 
+	\begin{equation*}
+		\mu(\{x \in X \mid |f_{n}(x) - f(x)| \geq \epsilon\}) \xrightarrow{n \to \infty} 0. 
+	\end{equation*}
+	\item Let $1 \leq p \leq \infty$, $(X, \mu)$ a measure space, and let $\{f_{n}\}_{n = 1}^{\infty}, f \in L^{p}(X,\mu)$. Then $f_{n} \to f$ in $L^{p}$ if $\norm{f_{n} - f}_{L^{p}} \to 0$. 
+	\item Let $(X, \mu)$ be a measure space, and let $\{f_{n}\}_{n = 1}^{\infty}, f$ be measurable functions. If $f_{n} \to f$ in $L^{p}$ ($1 \leq p \leq \infty$), then $f_{n} \to f$ in measure. \newline 
+	\begin{solutions}
+		First assume $1 \leq p < \infty$, and let $f_{n} \to f$ in $L^{p}$, and fix $\epsilon > 0$. Let $E_{\epsilon} = \{x \in X\mid |f_{n}(x) - f(x)|\geq \epsilon\}$. Then 
 		\begin{equation*}
-			\mu(A) = \sup\{\mu(F): F \subseteq A, F \text{ compact and measurable}\}.
+			\left(\int_{X}|f_{n}(x) - f(x)|^{p}\;d\mu\right)^{1/p} \geq \left(\int_{E_{\epsilon}}|f_{n}(x) - f(x)|^{p}\;d\mu\right)^{1/p} \geq \left(\int_{E_{\epsilon}}\epsilon^{p}\;d\mu\right)^{1/p} = \epsilon \cdot \mu(E_{\epsilon})^{1/p}. 
 		\end{equation*}
-		\item Let $(X, \tau)$ denote a topological space, $\mathcal{M}$ a $\sigma$-algebra on $X$, and $\mu$ a measure on $(X, \mathcal{M})$. A measurable subset $A \subseteq X$ is \textit{outer regular} if 
+		In particular, this implies 
 		\begin{equation*}
-			\mu(A) = \inf\{\mu(U): U \supseteq A, F \text{ open and measurable}\}.
+			\mu(E_{\epsilon})^{1/p} = \frac{1}{\epsilon} \cdot\norm{f_{n} - f}_{L^{p}} \implies \limsup_{n \to \infty}\mu(E_{\epsilon})^{1/p} = \frac{1}{\epsilon} \cdot \limsup_{n \to \infty}\norm{f_{n} - f}_{L^{p}} = 0, 
 		\end{equation*}
-		\item The Lebesgue measure, $\mu$, on $\mathbb{R}^{n}$ is a regular measure (i.e., inner and outer regular). 
-	\end{itemize}
+		so that $\lim_{n \to \infty}\mu(E_{\epsilon}) = 0$. Since $\epsilon > 0$ was arbitrary, we conclude that $f_{n} \to f$ in measure. Now assume $p = \infty$. Fix $\epsilon > 0$. Then there exists a positive integer $N$ such that for all $n \geq N$, $\norm{f_{n} - f}_{L^{\infty}} < \epsilon$. By definition of the $L^{\infty}$ norm, for a.e. $x \in X$, $|f_{n}(x) - f(x)| \leq \norm{f_{n} - f}_{L^{\infty}} < \epsilon$. This means that $\mu(\{x \in X\mid |f_{n}(x) -f (x)| \geq \epsilon) = 0$ for all $n \geq N$ so that $f_{n} \to f$ in measure. 
+	\end{solutions}
+	\item If $f_{n} \to f$ in measure, there exists a subsequence $\{f_{n_{j}}\}$ that converges to $f$ pointwise a.e. 
+	\item If $f_{n} \to f$ in $L^{1}$, there exists a subsequence $\{f_{n_{j}}\}$ that converges to $f$ pointwise a.e. 
+	\item (Egoroff's Theorem) Suppose that $\mu(X) < \infty$, and $f_{1}, f_{2}, \ldots,$ and $f$ are measurable complex-valued functions on $X$ such that $f_{n} \to f$ a.e. Then for every $\epsilon > 0$ there exists $E \subset X$ such that $\mu(E) < \epsilon$ and $f_{n} \to f$ uniformly on $E^{c}$. \newline 
+	\begin{solutions}
+		Without loss of generality, we may assume that $f_{n} \to f$ everywhere on $X$. For $k, n\in \mathbb{N}$, let 
+		\begin{equation*}
+			E_{n}(k) = \bigcup_{m = n}^{\infty}\{x \mid |f_{m}(x) - f(x)| \geq k^{-1}\}. 
+		\end{equation*}
+		Then for fixed $k$, $E_{n}(k)$ decreases as $n$ increases, and $\bigcap_{n =1 }^{\infty}E_{n}(k) = \varnothing$. Thus since $\mu(X) < \infty$, continuity of limits concludes that $\mu(E_{n}(k)) \to 0$ as $n \to \infty$. Given $\epsilon > 0$ and $k \in \mathbb{N}$, choose $n_{k}$ so large that $\mu(E_{n_{k}}(k)) < \epsilon 2^{-k}$ and let $E = \bigcup_{k =1}^{\infty}E_{n_{k}}(k)$. Then $\mu(E_{k}) < \epsilon$ and $|f_{n}(x) - f(x)| < k^{-1}$ for $n > n_{k}$ and $x \notin E$. Thus $f_{n} \to f$ uniformly on $E^{c}$.
+	\end{solutions}
+	\item (Lusin's Theorem) If $f: [a, b] \to \mathbb{C}$ is Lebesgue measurable and $\epsilon > 0$, there is a compact set $E \subset [a, b]$ such that $\mu(E^{c}) < \epsilon$ and $f|E$ is continuous. 
+	\item (Fubini-Tonelli) Suppose that $(X, \mathscr{M}, \mu)$ and $(Y, \mathscr{N},\nu)$ are $\sigma$-finite measure spaces. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item (Tonelli) If $f \in L^{+}(X \times Y)$, then the functions $g(x) = \int f_{x}\;d\nu$ and $h(y) = \int f^{y}\;d\mu$ are in $L^{+}(X)$ and $L^{+}(Y)$, respectively, and 
+		\begin{equation*}
+			\int f\;d(\mu \times \nu) = \int \left[\int f(x,y)\;d\nu(y)\right]\;d\mu(x) = \int \left[\int f(x,y)\;d\mu(x)\right]\;d\nu(y). 
+		\end{equation*}
+		\item (Fubini) If $f \in L^{1}(\mu \times \nu)$, then $f_{x} \in L^{1}(\nu)$ for a.e. $x$ and $f^{y} \in L^{1}(\mu)$ for a.e. $y$, and the above equation holds. 
+	\end{enumerate}
+	\item (Arzel\`a-Ascoli) The following results are both instances of the \textit{Arzel\`a-Ascoli Theorem}. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item If a sequence $\{f_{n}\}_{n = 1}^{\infty} \subset C(X)$ is bounded and equicontinuous, then it has a uniformly convergent subsequence. 
+		\item A subset $\mathscr{F} \subset C(X)$ is compact if and only if it is closed, bounded, and equicontinuous. 
+	\end{enumerate}
+\end{enumerate}
+\paragraph{Dual Spaces}
+\begin{enumerate}[resume = real_analysis]
+	\item (Dual $L^{p}$ Spaces) Let $1 < p < \infty$, and let $p, q$ be conjugate exponents. For each $\phi \in (L^{p})^{\ast}$, there exists $g \in L^{q}$ such that $\phi(f) = \int fg$ for all $f \in L^{p}$, and hence $L^q$ is isometrically isomorphic to $(L^{p})^{\ast}$. The same conclusion holds for $p = 1$ provided $\mu$ is $\sigma$-finite. Thus for $1 < p < \infty$, $L^{p}$ is reflexive. 
+	\item (Chebyshev's Inequality) If $f \in L^{p}$ ($0 < p < \infty$), then for any $\alpha > 0$, 
+	\begin{equation*}
+		\mu(\{x: |f(x)| > \alpha\}) \leq \left[\frac{\norm{f}_{p}}{\alpha}\right]^{p}. 
+	\end{equation*}
+	\begin{solutions}
+		Let $E_{\alpha} = \{x: |f(x)| > \alpha\}$. Then 
+		\begin{equation*}
+			\norm{f}_{p}^{p} = \int |f|^{p} \geq \int_{E_{\alpha}}|f|^{p} \geq \alpha^{p}\mu(E_{\alpha}). 
+		\end{equation*}
+	\end{solutions}
+	\item (Dual Space of $C_{0}(X)$) Let $X$ be a LCH (locally compact Hausdorff) space, and let $M(X)$ denote the space of all signed Radon measures\footnote{Borel measures that are finite on all compact sets, outer regular on all Borel sets, and inner regular on all open sets.}. Then the dual space of $C_{0}(X)$ is isometrically isomorphic to $M(X)$ in the sense that for every bounded linear operator $I: C_{0}(X) \to \mathbb{R}$, there exists a signed Radon measure $\mu \in M(X)$ such that $I(f) = \int f\;d\mu$ for all $f \in C_{0}(X)$. 
+	\item (Dual Space of $C(X)$) Let $X$ be a compact Hausdorff space. Then $C(X)^{\ast}$ is isometrically isomorphic to $M(X)$. 
+	\item (Weak$^{\ast}$/Vague Convergence) $\mu_{\alpha}\to \mu$ in $M(X)$ iff $\int f\;d\mu_{\alpha} \to \int f\;d\mu$ for all $f \in C_{0}(X)$. 
+	\item (Riesz Representation Theorem; Hilbert Spaces) Let $\mathscr{H}$ be a Hilbert space. If $f \in \mathscr{H}^{\ast}$, there exists a unique $y \in \mathscr{H}$ such that $f(x) = \braket{x,y}$ for all $x \in \mathscr{X}$. 
+\end{enumerate}
+	
+	\paragraph{Hahn-Banach Theorem, Baire Category Theorem, and Consequences}
+	\begin{enumerate}[resume = real_analysis]
+		\item (Open Mapping Theorem) Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces. If $T \in L(\mathscr{X}, \mathscr{Y})$ is surjective, then $T$ is open. 
+		\item (Bounded Inverse Theorem) Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces. If $T \in L(\mathscr{X}, \mathscr{Y})$ is bijective, then $T^{-1} \in L(\mathscr{X}, \mathscr{Y})$. 
+		\item (Closed Graph Theorem) If $\mathscr{X}$ and $\mathscr{Y}$ are Banach spaces and $T: \mathscr{X} \to\mathscr{Y}$ is a closed linear map, then $T$ is bounded. 
+		\item (Uniform Boundedness Principle) Suppose that $\mathscr{X}$ and $\mathscr{Y}$ are normed vector spaces and $\mathscr{A}$ is a subset of $L(\mathscr{X}, \mathscr{Y})$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item $\sup_{T \in \mathscr{A}}\norm{Tx} < \infty$ for all $x$ in a nonmeager subset of $\mathscr{X}$ implies that $\sup_{T\in \mathscr{A}}\norm{T} < \infty$. 
+			\item If $\mathscr{X}$ is a \textit{Banach} space, $\sup_{T \in \mathscr{A}}\norm{Tx} < \infty$ for all $x$ in a nonmeager subset of $\mathscr{X}$ implies that $\sup_{T\in \mathscr{A}}\norm{T} < \infty$. 
+		\end{enumerate}
+	\end{enumerate}
+	
+	
+	\paragraph{Fourier Analysis and Sobolev Theory} 
+	\begin{enumerate}[resume=real_analysis]
+		\item The \textit{Schwartz space} $\mathscr{S} \subset C^{\infty}$ is the space defined by 
+		\begin{equation*}
+			\mathscr{S} = \{f \in C^{\infty}: \sup_{x}(1 + |x|)^{N}|\partial^{\alpha}f(x)| < \infty, \hspace{2pt} \forall N \in \mathbb{N}_{0}, \forall \alpha\}, 
+		\end{equation*}
+		where $\alpha$ is a multiindex. 
+		\item If $f \in \mathscr{S}$, then $\partial^{\alpha}f \in L^{p}$ for all $\alpha$ and all $p \in [1, \infty]$.  \newline 
+		\begin{solutions}
+			Assume $f \in \mathscr{S}$ and fix a multiindex $\alpha$ and $p \in [1,\infty]$. Let $n$ denote the dimension of the space. Then $(1 + |x|)^{-N} \in L^{p}$ for $N > n/p$. Since $f \in \mathscr{S}$, for each $N$ and every $x$, $|\partial^{\alpha}f(x)| \leq C_{N}(1 + |x|)^{-N}$, where $C_{N} > 0$ is some finite constant.  Thus, one has that $|\partial^{\alpha}f|$ is bounded above by a $p$-integrable function so that $\partial^{\alpha}f$ is itself $p$-integrable. 
+		\end{solutions} 
+		
+		\item The Schwartz space $\mathscr{S}$ is complete under the topology induced by the norm $\norm{\empspace}_{(N, \alpha)} \coloneqq \sup_{x \in \mathbb{R}^{n}}(1 + |x|)^{N}|\partial^{\alpha}\empspace|$. \newline 
+		\begin{solutions}
+			\complete 
+		\end{solutions}
+	\end{enumerate}
 	
 	\subsubsection{Complex Analysis}
 	\begin{itemize}
