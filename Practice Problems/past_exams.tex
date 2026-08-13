@@ -4658,6 +4658,47 @@ f2		\begin{equation*}
 		\hat{f}_{n}(\mu) = \int_{X}f_{n}\;d\mu. 
 	\end{equation*}
 	Since $f_{n} \to f$ weakly, it follows that for each $\mu \in M(X)$, $\{\hat{f}_{n}(\mu)\}_{n = 1}^{\infty}$ is convergent in $\mathbb{C}$, and hence bounded; i.e., one has that $\sup |\hat{f}_{n}(\mu)|< \infty$ for every $\mu \in C_{0}(X)$. The Uniform Boundedness Principle then implies that $\sup \norm{\hat{f}_{n}}_{\text{op}}< \infty$, where $\norm{\empspace}_{\text{op}}$ denotes the operator norm. Now recall that $C_{0}(X) \hookrightarrow C_{0}(X)^{\ast\ast} \cong M(X)^{\ast}$ isometrically so that $\norm{\empspace}_{\text{op}} = \norm{\empspace}_{u}$. Therefore, $\norm{\hat{f}_{n}}_{\text{op}} = \norm{f_{n}}_{u}$ for every $n$ so that $\sup\norm{f_{n}}_{u} < \infty$. 
+	
+	\begin{prb}{F-8-4}
+		If $f \in L^{\infty}$ and $\norm{\tau_{y}f- f}_{L^{\infty}} \to 0$ as $y \to 0$, then $f$ agrees with a uniformly continuous function. (Let $A_{r}f$ be as in Theorem 3.18. Then $A_{r}f$ is uniformly continuous for $r > 0$ and uniformly Cauchy as $r \to 0$.)
+	\end{prb}
+	Let $f \in L^{\infty}$ such that $\norm{\tau_{y}f - f}_{L^{\infty}} \to 0$ as $y\to 0$. Quickly note that the condition $\norm{\tau_{y}f - f}_{L^{\infty}} \to 0$ as $y \to 0$ does \textit{not} imply $f$ is uniformly continuous as the definition for uniform continuity requires the uniform norm $\norm{\empspace}_{u} \coloneqq \sup_{x}|f(x)|$, and not the $L^{\infty}$ norm. Since $L^{\infty}$ functions are $L^{1}_{\text{loc}}$, for $x \in \mathbb{R}^{n}$ and $r > 0$, we define $A_{r}f(x)$ to be the average value of $f$ in $B(r, x)$: 
+	\begin{equation*}
+		A_{r}f(x) = \frac{1}{m(B(r,x))} \int_{B(r,x)}f(y)\;dy. 
+	\end{equation*}
+	By Theorem 3.18, it follows that $\lim_{r \to 0}A_{r}f(x) = f(x)$ for a.e. $x \in \mathbb{R}^{n}$. Thus it suffices to show that (1) $A_{r}f$ is uniformly continuous in $x$ and (2) uniformly Cauchy as $r \to 0$ because (2) implies that $A_{r}f(x)$ is uniformly convergent as $r \to 0$ and since the uniform limit of uniformly continuous functions is uniformly continuous, coupled with (1), we must have that $\lim_{r \to 0}A_{r}f(x)$ is uniformly continuous. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item To show $A_{r}f(x)$ is uniformly continuous in $x$ for $r > 0$, we must show that as $y \to 0$, $\norm{\tau_{y}A_{r}f - A_{r}f}_{u} \to 0$. For any fixed $x \in \mathbb{R}^{n}$, one has that 
+		\begin{align*}
+			\begin{split}
+				|\tau_{y}A_{r}f(x) - A_{r}f(x)| &= \abs{\frac{1}{m(B(r,x - y))}\int_{B(r,x - y)}f(u)\;du - \frac{1}{m(B(r,x))}\int_{B(r,x)}f(u)\;du} \\
+				&= \frac{1}{m(B(r, x))}\abs{\int_{B(r, x)}\left[\tau_{y}f(u) - f(u)\right]\;du} \leq \frac{1}{m(B(r,x))}\int_{B(r,x)}|\tau_{y}f(u)- f(u)|\;du\\
+				&\leq \frac{1}{m(B(r,x))}\int_{B(r, x)}\norm{\tau_{y}f - f}_{L^{\infty}}\;du = \norm{\tau_{y}f - f}_{L^{\infty}} \xrightarrow{y \to 0} 0. 
+			\end{split}
+		\end{align*}
+		Thus, this shows that $A_{r}f$ is uniformly continuous in $x$. 
+		\item Now we will show that $A_{r}f$ is uniformly Cauchy as $r \to 0$; doing so requires us to show that $\norm{A_{r}f(x) - A_{r'}f(x)}_{u} \to 0$ as $r, r' \to 0$. We will first show that as $r \to 0$, $\norm{A_{r}f - f}_{u} \to 0$ as $r \to 0$. For any fixed $x \in \mathbb{R}^{n}$, one can write 
+		\begin{align*}
+			\begin{split}
+				A_{r}f(x) &= \frac{1}{m(B(r,x))}\int_{B(r,x)}f(u)\;du = \frac{1}{m(B(r,0))}\int_{B(r,0)}f(x + y)\;dy = \frac{1}{m(B(r,0))}\int_{B(r,0)}\tau_{-y}f(x)\;dy,\\
+				f(x) &= \frac{1}{m(B(r,0))}\int_{B(r,0)}f(x)\;dy.
+			\end{split}
+		\end{align*}
+		This implies that 
+		\begin{align*}
+			\begin{split}
+				|A_{r}f(x) - f(x)| &\leq \frac{1}{m(B(r,0))}\int_{B(r,0)}|\tau_{-y}f(x) - f(x)|\;dy \\
+				&\leq \frac{1}{m(B(r,0))}\int_{B(r,0)}\norm{\tau_{-y}f - f}_{L^{\infty}}\;dy \leq \sup_{|y|\leq r}\norm{\tau_{y}f - f}_{L^{\infty}} \xrightarrow{r \to 0} 0, 
+			\end{split}
+		\end{align*}
+		by our hypothesis on $f$. Thus, for any $0 < r' < r$, one has that 
+		\begin{equation*}
+			|A_{r}f(x)- A_{r'}f(x)| \leq |A_{r}f(x) - f(x)| + |A_{r'}f(x) - f(x)| \xrightarrow{r, r' \to 0} 0
+		\end{equation*}
+		for all $x \in \mathbb{R}^{n}$ so that $A_{r}f$ is uniformly Cauchy (hence uniformly convergent) as $r \to 0$. 
+	\end{enumerate}
+	Therefore, $\lim_{r \to 0}A_{r}f(x)$ is the uniform limit of uniformly continuous functions, and thus is uniformly continuous itself. Since $f(x)$ agrees with this limit a.e., we conclude that $f(x)$ agrees with a uniformly continuous function a.e. 
+	
 	\subsection{\texorpdfstring{$L^p$}{Lp} Spaces}
 	
 	\begin{prb}{2025-A-II-4}
@@ -5496,6 +5537,69 @@ f2		\begin{equation*}
 		|Tf(x)| \leq x^{-1/p} \cdot \int_{0}^{\infty}|f(t)|\chi_{(0,x)}\;dt \leq \norm{f}_{L^{q}(0,\infty)}, 
 	\end{equation*}
 	so that the operator norm of $T$ is at most 1. 
+	
+		\begin{prb}{F-8-7}
+		If $f$ is locally integrable on $\mathbb{R}^{n}$ and $g \in C^{k}$ has compact support, then $f \ast g \in C^{k}$. 
+	\end{prb}
+	Let $f$ be a locally integrable function on $\mathbb{R}$, and $g \in C_{c}^{k}$. Consider an exhaustion of $\mathbb{R}$ by compact sets $\{K_{j}\}_{j = 1}^{\infty}$. Further, let $S^{\text{cpt}} \subset \mathbb{R}$ be a compact set containing the support of $g$. We will show $f \ast g \in C^{k}(K_{j})$ for each $j$. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\roman{*})]
+		\item Since for each multiindex $|\alpha|\leq k$, $\partial^{\alpha}g: S \to \mathbb{R}$, by the extreme value theorem, we conclude that $\partial^{\alpha}g$ is bounded for each $|\alpha|\leq k$. 
+		\item For each $j$, let $\psi_{j} \in C_{c}^{\infty}$ be a smooth function so that $\psi_{j} \equiv 1$ on $K_{j} - S = \{x - y: x\in K_{j}, y \in S\}$. Then $\psi_{j}f \in L^{1}(\mathbb{R})$. 
+		\item By Proposition 8.10, we must have $(\psi_{j}f) \ast g \in C^{k}$ for each $j$. But we note that for each $x \in K_{j}$, 
+		\begin{equation}
+			(\psi_{j}f)\ast g(x) = \int_{S}(\psi_{j}f)(x-y)g(y)\;dy = \int_{S}f(x-y)g(y)\;dy \eqqcolon (f \ast g)(x), 
+		\end{equation}
+		where we used the fact that $\psi_{j}(x-y) = 1$ for all $x \in K_{j}$, $y \in S$. Since this property holds for each $K_{j}$, we conclude that $f \ast g \in C^{k}$. 
+	\end{enumerate}
+	
+	\begin{prb}{F-8-19}
+		(A variation on the theme of Exercise 18) If $f \in L^{2}(\mathbb{R}^{n})$ and the set $S = \{x: f(x) \neq 0\}$ has finite measure, then for any measurable $E \subset \mathbb{R}^{n}$, $\int_{E}|\hat{f}|^{2} \leq \norm{f}_{L^{2}}^{2}m(S)m(E)$. 
+	\end{prb}
+	Let $f \in L^{2}(\mathbb{R}^{n})$ and assume that the set $S = \{x: f(x) \neq 0\}$ has finite measure. By Plancherel's Theorem, $\hat{f} \in L^{2}(\mathbb{R}^{n})$ so that for any measurable set $E \subset \mathbb{R}^{n}$, 
+	\begin{equation*}
+		\int_{E}|\hat{f}|^{2}\;d\xi \leq \int_{X}|\hat{f}|^{2}\;d\xi = \norm{\hat{f}}_{L^{2}}^{2} < \infty. 
+	\end{equation*}
+	Therefore, if $m(E) = \infty$, then the inequality is satisfied trivially. So assume $m(E) < \infty$. Then we can write, 
+	\begin{align*}
+		\begin{split}
+			\int_{E}|\hat{f}|^{2}\;d\xi &\leq \int_{E}\left(\abs{\int_{S}f(x)e^{-2\pi i (x\cdot \xi)}\;dx}\right)^{2}\;d\xi \\
+			&\leq \int_{E}\left(\int_{S}|f(x)|\;dx\right)^{2}\;d\xi = m(E) \cdot \left(\int_{s}|f(x)|\;dx\right)^{2} \\
+			&\leq m(E) \cdot \left(\int_{S}|f(x)|^{2}\;dx\right)\left(\int_{S}1\;dx\right) \\
+			&= \norm{f}_{L^{2}}^{2}m(S)m(E), 
+		\end{split}
+	\end{align*}
+	where the third line follows from the Cauchy-Schwarz inequality. 
+
+	\begin{prb}{F-8-20}
+		If $f \in L^{1}(\mathbb{R}^{n + m})$, define $Pf(x) = \int f(x,y)\;dy$. (Here $x \in \mathbb{R}^{n}$ and $y \in \mathbb{R}^{m}$.) Then $Pf \in L^{1}(\mathbb{R}^{n})$, $\norm{Pf}_{L^{1}} \leq \norm{f}_{L^{1}}$, and $(Pf)^{\wh{}}(\xi) = \wh{f}(\xi,0)$. 
+	\end{prb}
+	Let $f \in L^{1}(\mathbb{R}^{n + m})$, and define $Pf(x) = \int f(x,y)\;dy$, where $x \in \mathbb{R}^{n}$ and $y \in \mathbb{R}^{m}$. 
+	\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+		\item To show that $Pf \in L^{1}(\mathbb{R}^{n})$, we must show that $\int |Pf(x)|\;dx < \infty$. Using the definition of $Pf(x)$, one has, 
+		\begin{equation*}
+			\int_{\mathbb{R}^{n}} |Pf(x)|\;dx = \int_{\mathbb{R}^{n}}\abs{\int_{\mathbb{R}^{m}}f(x,y)\;dy}dx \leq \int_{\mathbb{R}^{n}}\int_{\mathbb{R}^{m}}|f(x,y)|\;dydx. 
+		\end{equation*} 
+		But Tonelli's theorem tells us that since $|f(x,y)| \in L^{+}(\mathbb{R}^{n + m})$, 
+		\begin{equation*}
+			\int_{\mathbb{R}^{n}}\int_{\mathbb{R}^{m}}|f(x,y)|\;dydx = \int_{\mathbb{R}^{n + m}}|f(x,y)|\;d(x,y) \eqqcolon \norm{f}_{L^{1}(\mathbb{R}^{n + m})} < \infty. 
+		\end{equation*}
+		Thus, one has that 
+		\begin{equation*}
+			\norm{Pf}_{L^{1}(\mathbb{R}^{n})} = \int_{\mathbb{R}^{n}}|Pf(x)|\;dx \leq \norm{f}_{L^{1}(\mathbb{R}^{n + m})} < \infty 
+		\end{equation*}
+		so that $Pf \in L^{1}(\mathbb{R}^{n})$. 
+		\item Now we recall the definition of the Fourier transform, and write 
+		\begin{equation*}
+			(Pf)^{\wh{}}(\xi) = \int_{\mathbb{R}^{n}}Pf(x)e^{-2\pi i (x \cdot \xi)}\;dx = \int_{\mathbb{R}^{n}}\int_{\mathbb{R}^{m}}f(x,y)e^{-2\pi i (x \cdot \xi)}\;dydx. 
+		\end{equation*}
+		Since $f \in L^{1}(\mathbb{R}^{n + m})$, it follows by Fubini's theorem that 
+		\begin{equation*}
+			\int_{\mathbb{R}^{n}}\int_{\mathbb{R}^{m}}f(x,y)e^{-2\pi i (x \cdot \xi)}\;dydx = \int_{\mathbb{R}^{n + m}}f(x,y)e^{-2\pi ((x,y) \cdot (\xi,0))}d(x,y) \eqqcolon \hat{f}(\xi,0). 
+		\end{equation*}
+		Therefore, we conclude that $(Pf)^{\wh{}}(\xi) = \wh{f}(\xi,0)$. 
+	\end{enumerate}
+	
+	
 	\subsection{Weierstrass Approximation}
 	\begin{prb}{2021-A-II-6}
 		Suppose $\mu$ is a finite positive measure of compact support and 
@@ -6578,6 +6682,25 @@ f2		\begin{equation*}
 		\end{split}
 	\end{align*}
 	Completeness of the basis follows from similar computations. Thus, the proof concludes; $\{\varphi_j(x)\varphi_{k}(y)\}$ is indeed an orthonormal basis for $L^{2}(X \times X)$. 
+	
+	
+	\begin{prb}{F-8-5}
+		If $s: \mathbb{R}^{n} \times \mathbb{R}^{n}$ is defined by $s(x, y) = x - y$, then $s^{-1}(E)$ is Lebesgue measurable whenever $E$ is Lebesgue measurable. (For $n = 1$, draw a picture of $s^{-1}(E) \subset \mathbb{R}^{2}$. It should be clear that after rotation through an angle $\pi/4$, $s^{-1}(E)$ becomes $F \times \mathbb{R}$ where $F = \{x: \sqrt{2}x \in E\}$, and Theorem 2.44 can be applied. The same idea works in higher dimensions.)
+	\end{prb}
+	Let $s: \mathbb{R}^{n}\times \mathbb{R}^{n}$ be defined by $s(x, y) = x - y$. We begin by showing that $s(x,y)$ is continuous everywhere in $\mathbb{R}^{n} \times \mathbb{R}^{n}$. Let $\epsilon > 0$, and pick $\delta = \epsilon/2$. Then for any $(x_{0}, y_{0}) \in \mathbb{R}^{n} \times \mathbb{R}^{n}$, $|(x,y) - (x_{0}, y_{0})| < \delta$ implies 
+	\begin{equation*}
+		|s(x,y) - s(x_{0},y_{0})| = |x - y - x_{0} + y_{0}| \leq |x - x_{0}| + |y - y_{0}| \leq 2\delta = \epsilon. 
+	\end{equation*}
+	Now let $E \subset \mathbb{R}^{n}$ be a Lebesgue measurable set; then there exists a Borel set $B$ and a null set $N$ such that $E \Delta B \subset N$, where $\Delta$ denotes the symmetric difference. One notes that $s^{-1}(E) \Delta s^{-1}(B) \subset s^{-1}(N)$; since $B$ is Borel measurable and the preimage of any Borel measurable set under a continuous map is Borel measurable, $s^{-1}(B)$ is Borel measurable. Thus it suffices to show that $s^{-1}(N)$ is a null set. Let $N_{0} \subset \mathbb{R}^{n}$ be a Borel set such that $N \subset N_{0}$ and $m_{n}(N_{0}) = 0$, where $m_{n}$ denotes the $n$-dimensional Lebesgue measure on $\mathbb{R}^{n}$. Then since $s$ is continuous and $N_{0}$ is Borel, $s^{-1}(N_{0})$ is a Borel subset of $\mathbb{R}^{2n}$. Thus since $\mathscr{B}(\mathbb{R}^{2n}) = \mathscr{B}(\mathbb{R}^{n})\otimes \mathscr{B}(\mathbb{R}^{n})$, where $\mathscr{B}$ denotes the Borel $\sigma$-algebra (see e.g., Chapter 1 of Folland), $\chi_{S^{-1}(N_{0})}(x,y) \coloneqq \chi_{N_{0}}(x - y)$ is product-measurable. Thus applying Tonelli's theorem to $\chi_{N_{0}}(x - y)$, one obtains 
+	\begin{align*}
+		\begin{split} 
+		m_{2n}(s^{-1}(N_{0})) &= \int_{\mathbb{R}^{n}}\int_{\mathbb{R}^{n}}\chi_{N_{0}}(x - y)\;dxdy = \int_{\mathbb{R}^{n}}\left(\int_{\mathbb{R}^{n}}\tau_{y}\chi_{N_{0}}(x)\;dx\right)\;dy \\
+		&= \int_{\mathbb{R}^{n}}m_{n}(N_{0} - y)\;dy \\
+		&= \int_{\mathbb{R}^{n}}m_{n}(N_{0})\;dy = 0, 
+		\end{split} 
+	\end{align*}
+	where in going to the final line, we used the translation invariance of the Lebesgue measure. Therefore, $s^{-1}(N_{0})$ is a null set. Since the Lebesgue measure is complete and $s^{-1}(N) \subset s^{-1}(N_{0})$, we conclude that $m_{2n}(s^{-1}(N)) = 0$ so that $s^{-1}(N)$ is also a null set. Since $s^{-1}(E)$ differs from a Borel set by a null set, we conclude that $s^{-1}(E)$ is Lebesgue measurable. 
+	
 	\newpage 
 
 	\section{Complex Analysis}
@@ -8813,7 +8936,7 @@ f2		\begin{equation*}
 		\item (Uniform Boundedness Principle) Suppose that $\mathscr{X}$ and $\mathscr{Y}$ are normed vector spaces and $\mathscr{A}$ is a subset of $L(\mathscr{X}, \mathscr{Y})$. \vspace{-0.25cm}
 		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
 			\item $\sup_{T \in \mathscr{A}}\norm{Tx} < \infty$ for all $x$ in a nonmeager subset of $\mathscr{X}$ implies that $\sup_{T\in \mathscr{A}}\norm{T} < \infty$. 
-			\item If $\mathscr{X}$ is a \textit{Banach} space, $\sup_{T \in \mathscr{A}}\norm{Tx} < \infty$ for all $x$ in a nonmeager subset of $\mathscr{X}$ implies that $\sup_{T\in \mathscr{A}}\norm{T} < \infty$. 
+			\item If $\mathscr{X}$ is a \textit{Banach} space, $\sup_{T \in \mathscr{A}}\norm{Tx} < \infty$ for all $x\in\mathscr{X}$ implies that $\sup_{T\in \mathscr{A}}\norm{T} < \infty$. 
 		\end{enumerate}
 	\end{enumerate}
 	
@@ -8832,9 +8955,22 @@ f2		\begin{equation*}
 		
 		\item The Schwartz space $\mathscr{S}$ is complete under the topology induced by the norm $\norm{\empspace}_{(N, \alpha)} \coloneqq \sup_{x \in \mathbb{R}^{n}}(1 + |x|)^{N}|\partial^{\alpha}\empspace|$. \newline 
 		\begin{solutions}
-			\complete 
+			Let $\{f_{k}\}$ be a Cauchy sequence in $\mathscr{S}$. Then $\norm{f_{j} - f_{k}}_{(N,\alpha)} \to 0$ for all $N, \alpha$. In particular, fixing $N = 0$, one has that for each $\alpha$, the sequence $\{\partial^{\alpha}f_{k}\}$ converges uniformly to a function $g_{\alpha}$. Let $e_{j}$ be the basis vector with a 1 in the $j$th position and zero elsewhere. By the Fundamental Theorem of Calculus, one has that 
+			\begin{equation*}
+				f_{k}(x + te_{j}) - f_{k}(x) = \int_{0}^{t}\partial_{j}f_{k}(x + se_{j})\;ds. 
+			\end{equation*}
+			Taking $k \to \infty$ and using uniform convergence to justify passing the limit inside the integral, one has that 
+			\begin{equation*}
+				g_{0}(x + te_{j}) - g_{0}(x) = \int_{0}^{t}g_{e_{j}}(x + se_{j})\;ds. 
+			\end{equation*}
+			Using the Fundamental Theorem of Calculus, it follows that $g_{e_{j}} = \partial_{j}g_{0}$. Thus applying induction on $\alpha$, one concludes that $g_{\alpha} = \partial^{\alpha}g_{0}$. Therefore, $\norm{f_{k} - g_{0}}_{(N,\alpha)} \to 0$ for all $\alpha$. 
 		\end{solutions}
-	\end{enumerate}
+		\item Let $f \in C^{\infty}$. Then $f \in \mathscr{S}$ iff $x^{\alpha}\partial^{\beta}f$ is bounded for all multiindices $\alpha,\beta$ iff $\partial^{\alpha}(x^{\beta}f)$ is bounded for all multiindices $\alpha,\beta$. 
+		\item (Young's Inequality) Suppose $1 \leq p, q, r \leq \infty$ and $p^{-1} + q^{-1} = r^{-1} + 1$. If $f \in L^{p}$, $g \in L^{q}$, then $f \ast g \in L^{r}$ and $\norm{f \ast g}_{L^{r}} \leq \norm{f}_{L^{p}}\norm{g}_{L^{q}}$. 
+		\item If $f, g \in \mathscr{S}$, then $f\ast g \in \mathscr{S}$.
+		\item $C_{c}^{\infty}$ (and hence $\mathscr{S}$) is dense in $L^{p}$ ($1 \leq p < \infty$) and in $C_{0}$. 
+		\item ($C^{\infty}$ Urysohn Lemma) If $K \subset \mathbb{R}^{n}$ is compact and $U$ is an open set containing $K$, there exists $f \in C_{c}^{\infty}$ such that $0 \leq f \leq 1$, $f = 1$ on $K$, and $\operatorname{supp}(f) \subset U$. 
+		\end{enumerate}
 	
 	\subsubsection{Complex Analysis}
 	\begin{itemize}
