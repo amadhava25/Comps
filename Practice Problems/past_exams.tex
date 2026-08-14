@@ -31,6 +31,7 @@
 	plain/.style={line width=0.8pt},
 	arrow/.style={plain,postaction=decorate}
 }
+\setcounter{tocdepth}{4}
 
 
 \title{Comps Mega Review \\ \normalsize{With 22 Illustrations} \vspace{-0.5cm}}
@@ -223,7 +224,24 @@
 		Prove that $D$ is Frobenius integrable if and only if $\theta \wedge d\theta = 0$ everywhere. 
 	\end{prb}
 	
-	\complete
+	Let $M$ be a smooth $n$-manifold, and let $\theta$ be a smooth 1-form on $M$ such that $\theta \neq 0$ everywhere. This means that $D$ is a codimension $1$ distribution on $M$. By the Frobenius theorem, $D$ is Frobenius integrable if and only if it is involutive, which is to say that if $X, Y \in \Gamma(D)$ are smooth sections of $D$, then their Lie bracket $[X, Y]$ is a smooth section of $D$. We begin by recalling the following formulas: 
+	\begin{align*}
+		\begin{split}
+			d\theta(X, Y) &= X(\theta(Y)) - Y(\theta(X)) - \theta([X, Y]). \\
+			(\theta \wedge d\theta)(X, Y, Z) &= \theta(X)d\theta(Y,Z) + \theta(Y)d\theta(Z, X) + \theta(Z)d\theta(X, Y). 
+		\end{split} 
+	\end{align*}
+	Fix an arbitrary point $p \in M$. Since $\operatorname{codim}{D_{p}} = 1$, we can form a basis for $T_{p}M$ by choosing a basis $\{e_{1}, \ldots, e_{n-1}\}$ as a smooth local frame for $D$ on a neighborhood $U$ of $p$, extending a single vector $e_{n,p} \in T_{p}M\setminus D_{p}$ to a local vector field $e_{n}$ with $\theta(e_{n}) \neq 0$, and extending the collection $\{e_{1}, \ldots, e_{n-1}\}$ by $e_{n}$. We note that $\theta \wedge d\theta = 0$ if and only if it vanishes on all basis triples $(e_{i}, e_{j}, e_{k})$. If $i, j, k \in \{1, \ldots, n - 1\}$, then $(\theta \wedge d\theta)(e_{i}, e_{j}, e_{k}) = 0$ trivially since $\theta(e_{i}), \theta(e_{j}), \theta(e_{k}) = 0$. Now assume $i \in \{1, \ldots, n - 1\}$, and $j, k = n$. Then 
+	\begin{align*}
+		\begin{split}
+			(\theta \wedge d\theta)(e_{i}, e_{n}, e_{n}) &= \theta(e_{n})d\theta(e_{n}, e_{i}) + \theta(e_{n})d\theta(e_{i},e_{n}) = 0, 
+		\end{split}
+	\end{align*}
+	by skew-symmetry and multilinearity. Thus we have the final case: assume $i, j \in \{1, \ldots, n -1\}$ and $k = n$. Then 
+	\begin{equation*}
+		(\theta \wedge d\theta)(e_{i}, e_{j}, e_{n}) = \theta(e_{n})d\theta(e_{i}, e_{j}). 
+	\end{equation*}
+	Since $e_{n}\notin D_{p}$, $\theta(e_{n}) \neq 0$. Thus $(\theta \wedge d\theta)(e_{i}, e_{j}, e_{k}) = 0$ iff $d\theta(e_{i}, e_{j}) = 0$ iff $\theta([e_{i}, e_{j}]) = 0$ iff $[e_{i}, e_{j}] \in D_{p}$. if and only if for all smooth local sections $X, Y \in \Gamma(D\vert{}_U)$, $[X, Y]_p \in D_p$. Since $p \in M$ is arbitrary, it follows that $\theta \wedge d\theta = 0$ if and only if $D$ is involutive if and only if $D$ is Frobenius integrable.
 	
 	
 	\begin{prb}{2012-J-I-4}
@@ -862,6 +880,20 @@
 	\end{equation*}
 	since $\partial M = \varnothing$. By contradiction, we conclude that $H^{8}_{\text{dR}}(M) \neq 0$. 
 	
+	
+	\begin{prb}{2021-J-II-3}
+		Let $M$ denote a connected and closed smooth manifold which is not orientable; let $\rho: \hat{M} \to M$ denote the two-fold covering map from the orientable covering manifold $\hat{M}$ for $M$. Show that the mapping $\rho^{\ast}: H^{\ast}_{\text{dR}}(M) \to H^{\ast}_{\text{dR}}(\hat{M})$ induced by $\rho$ on the de Rham cohomology is injective. 
+	\end{prb}
+	Let $M$ be a connected and closed smooth nonorientable manifold, and let $\rho: \hat{M} \to M$ denote the two-fold covering map from $\hat{M}$ for $M$. Since $\rho$ is a 2-fold covering map, there exists a nontrivial deck transformation $\tau: \hat{M} \to M$ satisfying $\tau^{2} = \operatorname{id}_{\hat{M}}$. Let $\alpha$ be a closed $k$-form on $M$, and assume that $\rho^{\ast}\alpha = d\beta$ on $\hat{M}$, where $\beta \in \Omega^{k -1}(\hat{M})$. In words, we are assuming that $[\alpha]$ belongs to the kernel of $\rho^{\ast}$. Since $\rho^{\ast}$ is injective iff its kernel is trivial, our goal reduces to showing that $\alpha$ is an exact $k$-form so that $[\alpha] = 0$. We define the average, 
+	\begin{equation*}
+		\beta_{0} = \frac{1}{2}(\beta + \tau^{\ast}\beta) \implies \tau^{\ast}\beta_{0} = \frac{1}{2}(\tau^{\ast}\beta + {\tau^{\ast}}^{2}\beta) = \frac{1}{2}(\tau^{\ast}\beta + \beta). 
+	\end{equation*}
+	Thus since $\beta_{0}$ is invariant under the deck transformations, it descends to a $k - 1$ form $\gamma$ on $M$ with $\rho^{\ast}\gamma = \beta_{0}$. We compute, 
+	\begin{equation*}
+		d\beta_{0} = \frac{1}{2}(\tau^{\ast}\rho^{\ast}\alpha + \rho^{\ast}\alpha) = \frac{1}{2}((\rho \circ\tau)^{\ast}\alpha + \rho^{\ast}\alpha) = \rho^{\ast}\alpha, 
+	\end{equation*}
+	where we used the property of deck transformations to write $\rho \circ \tau = \rho$. Thus, $\rho^{\ast}\gamma = \beta_{0} \implies \rho^{\ast}(d\gamma) = d\beta_{0} = \rho^{\ast}\alpha$. Since $\rho$ is a local diffeomorphism, pullback on forms is injective so that $d\gamma = \alpha$. Since we've shown $\alpha$ to be an exact $k$-form on $M$, $[\alpha] = 0$ so that $\rho^{\ast}: H^{\ast}_{\text{dR}}(M) \to H^{\ast}_{\text{dR}}(\hat{M})$ is injective. 
+	
 	\begin{prb}{2019-A-II-4}
 		Let $M^{n}$ be a compact, connected, oriented $n$-manifold, and assume that $n$ is odd. Compute the Euler characteristic $\chi(M^{n}\setminus \{\text{pt}\})$. 
 	\end{prb}
@@ -967,45 +999,106 @@
 		\end{cases}
 	\end{equation*} 
 	
-	\begin{prb}{2002-J-II-5}
-		Let $\theta$ be a closed 1-form on a compact manifold $M$ without boundary. Further suppose that $\theta \neq 0$ at each point of $M$. Prove that $H^{1}_{\text{dR}}(M) \neq 0$. 
+	\begin{prb}{2011-A-II-6}
+		The $n$-torus $\mathbb{T}^{n} = \mathbb{R}^{n}/\mathbb{Z}^{n}$ is both a smooth $n$-manifold and an abelian group, by virtue of structures inherited from the real vector space $\mathbb{R}^{n}$. In particular, $\mathbb{T}^{n}$ acts on itself by smooth maps corresponding to translations of $\mathbb{R}^{n}$. By averaging, prove that each de Rham cohomology class on $\mathbb{T}^{n}$ contains a unique differential form which is translation-invariant. Then use this observation to calculate the dimensions of the de Rham cohomology vector spaces $H^{p}_{\text{dR}}(\mathbb{T}^{n})$ for all $p$. 
 	\end{prb}
-	Let $\theta$ be a closed 1-form on a compact manifold $M$ without boundary, and suppose that $\theta \neq 0$ at each point of $M$. Assume to the contrary that $H^{1}_{\text{dR}}(M) = 0$. This means that $\theta$ is an exact 1-form, so that there exists some smooth 0-form $f$ satisfying $\theta = df$ (i.e., $f: M \to \mathbb{R}$ is a smooth function). But since $M$ is compact, $f$ has an extrema at some point $p \in M$. This means that $df_{p} = 0$, and thus by extension, $\theta_{p} = 0$. But this contradicts our hypothesis on $\theta$. Thus, by contradiction, $\theta$ cannot be an exact 1-form. Since we have shown the existence of a closed 1-form that is not exact, $H^{1}_{\text{dR}}(M) \neq 0$. 
+	Let $\mathbb{T}^n = \mathbb{R}^n / \mathbb{Z}^n$ equipped with the normalized Haar volume form $dg = dx_1 \wedge \dots \wedge dx_n$, such that:
 	
-	\begin{prb}{1997-A-I-5}
-		For which values of $p$ is the de Rham cohomology $H^{p}_{\text{dR}}(S^{1} \times S^{2})$ non-trivial? Explain. 
-	\end{prb}
-	First since $S^{1} \times S^{2}$ is a smooth 3-manifold, $H^{p}_{\text{dR}}(S^{1} \times S^{2}) = 0$ for all $p \geq 4$. Moreover, since $S^{1} \times S^{2}$ is connected, $H^{0}_{\text{dR}}(S^{1} \times S^{2}) \cong \mathbb{R}$ is non-trivial. Thus, it suffices to examine the case for $p = 1, 2, 3$. We recall K\"unneth's Formula, which states that for smooth manifolds $M$ and $N$, 
 	\begin{equation*}
-		H^{k}_{\text{dR}}(M \times N) \cong \bigoplus_{i + j = k}H^{i}_{\text{dR}}(M) \otimes H^{j}_{\text{dR}}(N). 
+		\int_{\mathbb{T}^n} dg = 1
 	\end{equation*}
-	Thus, we have 
-	\begin{equation*}
-		H^{1}_{\text{dR}}(S^{1} \times S^{2}) \cong \left(H^{0}_{\text{dR}}(S^{1}) \otimes H^{1}_{\text{dR}}(S^{2})\right) \oplus \left(H^{1}_{\text{dR}}(S^{1}) \otimes H^{0}_{\text{dR}}(S^{2})\right) \cong \mathbb{R} \otimes 0 \oplus \mathbb{R} \otimes \mathbb{R} \cong 0 \oplus \mathbb{R} \cong \mathbb{R}. 
-	\end{equation*}
-	Next, we have 
-	\begin{align*}
-		\begin{split}
-			H^{2}_{\text{dR}}(S^{1} \times S^{2}) &\cong (H^{2}_{\text{dR}}(S^{1}) \otimes H^{0}_{\text{dR}}(S^{2})) \oplus (H^{1}_{\text{dR}}(S^{1}) \otimes H^{1}_{\text{dR}}(S^{2})) \oplus (H^{0}_{\text{dR}}(S^{1}) \otimes H^{2}_{\text{dR}}(S^{2})) \\
-			&\cong (0 \otimes \mathbb{R}) \oplus (\mathbb{R} \otimes 0) \oplus (\mathbb{R} \otimes \mathbb{R}) \cong \mathbb{R}. 
-		\end{split}
-	\end{align*}
-	Finally, 
-	\begin{align*}
-		\begin{split}
-			H^{3}_{\text{dR}}(S^{1} \times S^{2}) &\cong (H^{1}_{\text{dR}}(S^{1}) \otimes H^{2}_{\text{dR}}(S^{2})) \cong \mathbb{R}. 
-		\end{split}
-	\end{align*}
-	Thus, $H^{p}_{\text{dR}}(S^{1} \times S^{2})$ is non-trivial for $p = 0, 1, 2, 3$. 
 	
-	\begin{prb}{2001-A-II-3}
-		We say that a map $f: M \to N$ between two $n$-dimensional orientable manifolds is of ``degree 1'' if it induces an isomorphism $f_{\ast}: H^{n}_{\text{dR}}(N) \to H^{n}_{\text{dR}}(M)$. Prove that there is no map of degree 1 from the 2-sphere $S^{2}$ to the 2-dimensional torus $T^{2}$.
-	\end{prb}
-	Assume to the contrary that there exists a map $f: S^{2} \to T^{2}$ of degree 1, such that $f_{\ast}: H^{2}_{\text{dR}}(T^{2}) \to H^{2}_{\text{dR}}(S^{2})$ is an isomorphism. We recall that $H^{2}_{\text{dR}}(T^{2}) \cong \mathbb{R}$ and is generated by the class of the volume form $[d\theta_{1} \wedge d\theta_{2}]$. Thus, one has that 
+	For each $g \in \mathbb{T}^n$, let $L_g : \mathbb{T}^n \to \mathbb{T}^n$ be the translation map $L_g(x) = x + g$. Given any differential $p$-form $\alpha \in \Omega^p(\mathbb{T}^n)$, we define its \textbf{average} $\bar{\alpha}$ as:
+	
 	\begin{equation*}
-		f_{\ast}([d\theta_{1} \wedge d\theta_{2}]) = f_{\ast}([d\theta_{1}] \wedge [d\theta_{2}]) = f_{\ast}([d\theta_{1}]) \wedge f_{\ast}([d\theta_{2}]). 
+		\bar{\alpha} = \int_{\mathbb{T}^n} (L_g^* \alpha) \, dg
 	\end{equation*}
-	But since $H^{1}_{\text{dR}}(S^{2}) = 0$, $f_{\ast}([d\theta_{i}]) = 0$ for $i = 1, 2$. This means that $f_{\ast}([d\theta_{1}\wedge d\theta_{2}]) = 0$, so that $f_{\ast}$ is the trivial homomorphism. But this contradicts our claim that $f_{\ast}$ is an isomorphism. Thus by contradiction, there cannot be a degree 1 map from $S^{2}$ to $T^{2}$. 
+	
+	To show that $\bar{\alpha}$ is translation-invariant, pick any $h \in \mathbb{T}^n$. Pulling back $\bar{\alpha}$ along $L_h$ gives:
+	
+	\begin{equation*}
+		L_h^* \bar{\alpha} = L_h^* \left( \int_{\mathbb{T}^n} L_g^* \alpha \, dg \right) = \int_{\mathbb{T}^n} (L_g \circ L_h)^* \alpha \, dg = \int_{\mathbb{T}^n} L_{g+h}^* \alpha \, dg
+	\end{equation*}
+	
+	By the translation invariance of the Haar measure $dg$ (performing the change of variables $g' = g + h$), we obtain:
+	
+	\begin{equation*}
+		L_h^* \bar{\alpha} = \int_{\mathbb{T}^n} L_{g'}^* \alpha \, dg' = \bar{\alpha}
+	\end{equation*}
+	
+	Thus, $\bar{\alpha}$ is translation-invariant.
+	
+	Since $\mathbb{T}^n$ is connected, each translation $L_g$ is smoothly homotopic to the identity map $\text{id}_{\mathbb{T}^n} = L_0$. 
+	
+	By the homotopy formula for differential forms, there exists a smooth homotopy operator $K_g : \Omega^p(\mathbb{T}^n) \to \Omega^{p-1}(\mathbb{T}^n)$ (varying smoothly with $g$) such that:
+	
+	\begin{equation*}
+		L_g^* \alpha - \alpha = d(K_g \alpha) + K_g(d\alpha)
+	\end{equation*}
+	
+	Since $\alpha$ represents a cohomology class, it is closed ($d\alpha = 0$). This simplifies the formula to:
+	
+	\begin{equation*}
+		L_g^* \alpha - \alpha = d(K_g \alpha)
+	\end{equation*}
+	
+	Integrating both sides over $g \in \mathbb{T}^n$:
+	
+	\begin{equation*}
+		\bar{\alpha} - \alpha = \int_{\mathbb{T}^n} (L_g^* \alpha - \alpha) \, dg = \int_{\mathbb{T}^n} d(K_g \alpha) \, dg = d \left( \int_{\mathbb{T}^n} K_g \alpha \, dg \right)
+	\end{equation*}
+	
+	Defining $\beta = \int_{\mathbb{T}^n} K_g \alpha \, dg \in \Omega^{p-1}(\mathbb{T}^n)$, we have $\bar{\alpha} - \alpha = d\beta$. Therefore, $\bar{\alpha}$ and $\alpha$ differ by an exact form, proving that:
+	
+	\begin{equation*}
+		[\bar{\alpha}] = [\alpha] \in H^p_{\text{dR}}(\mathbb{T}^n)
+	\end{equation*}
+	
+	Suppose $\omega_1$ and $\omega_2$ are two translation-invariant $p$-forms in the same cohomology class $[\alpha]$. Then their difference $\omega = \omega_1 - \omega_2$ is translation-invariant and exact:
+	
+	\begin{equation*}
+		\omega = d\eta \quad \text{for some } \eta \in \Omega^{p-1}(\mathbb{T}^n)
+	\end{equation*}
+	
+	Averaging both sides gives:
+	
+	\begin{equation*}
+		\bar{\omega} = \overline{d\eta} = d\bar{\eta}
+	\end{equation*}
+	
+	Since $\omega$ is already translation-invariant, $\bar{\omega} = \omega$. Furthermore, $\bar{\eta}$ is a translation-invariant $(p-1)$-form.
+	
+	In the standard coordinate system $(x_1, \dots, x_n)$ on $\mathbb{T}^n$, a differential form is translation-invariant if and only if its coefficient functions are \textbf{constant}. Thus, $\bar{\eta}$ can be written as:
+	
+	\begin{equation*}
+		\bar{\eta} = \sum_{I} c_I \, dx_I, \quad c_I \in \mathbb{R}
+	\end{equation*}
+	
+	Taking the exterior derivative of constant-coefficient forms yields zero:
+	
+	\begin{equation*}
+		d\bar{\eta} = 0 \implies \omega = 0 \implies \omega_1 = \omega_2
+	\end{equation*}
+	
+	This proves that each cohomology class contains a \textbf{unique} translation-invariant representative.
+	
+	From the results above, the inclusion of translation-invariant forms $\Omega^p_{\text{inv}}(\mathbb{T}^n)$ into the space of closed forms induces a canonical vector space isomorphism:
+	
+	\begin{equation*}
+		H^p_{\text{dR}}(\mathbb{T}^n) \cong \Omega^p_{\text{inv}}(\mathbb{T}^n)
+	\end{equation*}
+	
+	The space $\Omega^p_{\text{inv}}(\mathbb{T}^n)$ is spanned by all basic $p$-forms with constant real coefficients:
+	
+	\begin{equation*}
+		\left\{ dx_{i_1} \wedge dx_{i_2} \wedge \dots \wedge dx_{i_p} \;\middle|\; 1 \le i_1 < i_2 < \dots < i_p \le n \right\}
+	\end{equation*}
+	
+	These forms are linearly independent, so the dimension of $\Omega^p_{\text{inv}}(\mathbb{T}^n)$ is precisely the number of ways to choose $p$ distinct indices from $n$:
+	
+	\begin{equation*}
+		\dim H^p_{\text{dR}}(\mathbb{T}^n) = \binom{n}{p}
+	\end{equation*}
 	
 	
 	\begin{prb}{2007-A-II-3}
@@ -1049,6 +1142,46 @@
 		2 - 2g = \chi(M) = \sum_{n = 0}^{2}(-1)^{k}\dim H^{i}_{\text{dR}}(M) = (-1)^0(1) + (-1)^1(0) + (-1)^2(1) = 2 \implies g =0. 
 	\end{equation*}
 	Thus by the classification of compact connected oriented manifolds of genus $0$, it follows that $M$ must be homeomorphic to $S^2$. 
+	
+	\begin{prb}{2002-J-II-5}
+		Let $\theta$ be a closed 1-form on a compact manifold $M$ without boundary. Further suppose that $\theta \neq 0$ at each point of $M$. Prove that $H^{1}_{\text{dR}}(M) \neq 0$. 
+	\end{prb}
+	Let $\theta$ be a closed 1-form on a compact manifold $M$ without boundary, and suppose that $\theta \neq 0$ at each point of $M$. Assume to the contrary that $H^{1}_{\text{dR}}(M) = 0$. This means that $\theta$ is an exact 1-form, so that there exists some smooth 0-form $f$ satisfying $\theta = df$ (i.e., $f: M \to \mathbb{R}$ is a smooth function). But since $M$ is compact, $f$ has an extrema at some point $p \in M$. This means that $df_{p} = 0$, and thus by extension, $\theta_{p} = 0$. But this contradicts our hypothesis on $\theta$. Thus, by contradiction, $\theta$ cannot be an exact 1-form. Since we have shown the existence of a closed 1-form that is not exact, $H^{1}_{\text{dR}}(M) \neq 0$. 
+	
+	\begin{prb}{2001-A-II-3}
+		We say that a map $f: M \to N$ between two $n$-dimensional orientable manifolds is of ``degree 1'' if it induces an isomorphism $f_{\ast}: H^{n}_{\text{dR}}(N) \to H^{n}_{\text{dR}}(M)$. Prove that there is no map of degree 1 from the 2-sphere $S^{2}$ to the 2-dimensional torus $T^{2}$.
+	\end{prb}
+	Assume to the contrary that there exists a map $f: S^{2} \to T^{2}$ of degree 1, such that $f_{\ast}: H^{2}_{\text{dR}}(T^{2}) \to H^{2}_{\text{dR}}(S^{2})$ is an isomorphism. We recall that $H^{2}_{\text{dR}}(T^{2}) \cong \mathbb{R}$ and is generated by the class of the volume form $[d\theta_{1} \wedge d\theta_{2}]$. Thus, one has that 
+	\begin{equation*}
+		f_{\ast}([d\theta_{1} \wedge d\theta_{2}]) = f_{\ast}([d\theta_{1}] \wedge [d\theta_{2}]) = f_{\ast}([d\theta_{1}]) \wedge f_{\ast}([d\theta_{2}]). 
+	\end{equation*}
+	But since $H^{1}_{\text{dR}}(S^{2}) = 0$, $f_{\ast}([d\theta_{i}]) = 0$ for $i = 1, 2$. This means that $f_{\ast}([d\theta_{1}\wedge d\theta_{2}]) = 0$, so that $f_{\ast}$ is the trivial homomorphism. But this contradicts our claim that $f_{\ast}$ is an isomorphism. Thus by contradiction, there cannot be a degree 1 map from $S^{2}$ to $T^{2}$. 
+	
+	\begin{prb}{1997-A-I-5}
+		For which values of $p$ is the de Rham cohomology $H^{p}_{\text{dR}}(S^{1} \times S^{2})$ non-trivial? Explain. 
+	\end{prb}
+	First since $S^{1} \times S^{2}$ is a smooth 3-manifold, $H^{p}_{\text{dR}}(S^{1} \times S^{2}) = 0$ for all $p \geq 4$. Moreover, since $S^{1} \times S^{2}$ is connected, $H^{0}_{\text{dR}}(S^{1} \times S^{2}) \cong \mathbb{R}$ is non-trivial. Thus, it suffices to examine the case for $p = 1, 2, 3$. We recall K\"unneth's Formula, which states that for smooth manifolds $M$ and $N$, 
+	\begin{equation*}
+		H^{k}_{\text{dR}}(M \times N) \cong \bigoplus_{i + j = k}H^{i}_{\text{dR}}(M) \otimes H^{j}_{\text{dR}}(N). 
+	\end{equation*}
+	Thus, we have 
+	\begin{equation*}
+		H^{1}_{\text{dR}}(S^{1} \times S^{2}) \cong \left(H^{0}_{\text{dR}}(S^{1}) \otimes H^{1}_{\text{dR}}(S^{2})\right) \oplus \left(H^{1}_{\text{dR}}(S^{1}) \otimes H^{0}_{\text{dR}}(S^{2})\right) \cong \mathbb{R} \otimes 0 \oplus \mathbb{R} \otimes \mathbb{R} \cong 0 \oplus \mathbb{R} \cong \mathbb{R}. 
+	\end{equation*}
+	Next, we have 
+	\begin{align*}
+		\begin{split}
+			H^{2}_{\text{dR}}(S^{1} \times S^{2}) &\cong (H^{2}_{\text{dR}}(S^{1}) \otimes H^{0}_{\text{dR}}(S^{2})) \oplus (H^{1}_{\text{dR}}(S^{1}) \otimes H^{1}_{\text{dR}}(S^{2})) \oplus (H^{0}_{\text{dR}}(S^{1}) \otimes H^{2}_{\text{dR}}(S^{2})) \\
+			&\cong (0 \otimes \mathbb{R}) \oplus (\mathbb{R} \otimes 0) \oplus (\mathbb{R} \otimes \mathbb{R}) \cong \mathbb{R}. 
+		\end{split}
+	\end{align*}
+	Finally, 
+	\begin{align*}
+		\begin{split}
+			H^{3}_{\text{dR}}(S^{1} \times S^{2}) &\cong (H^{1}_{\text{dR}}(S^{1}) \otimes H^{2}_{\text{dR}}(S^{2})) \cong \mathbb{R}. 
+		\end{split}
+	\end{align*}
+	Thus, $H^{p}_{\text{dR}}(S^{1} \times S^{2})$ is non-trivial for $p = 0, 1, 2, 3$. 
 	
 	\begin{prb}{1997-A-II-2}
 		Let $M$ be a connected, simply connected smooth manifold. \vspace{-0.25cm}
@@ -2240,6 +2373,25 @@
 		Setting $x = \hat{p}(\hat{x}) \in M$, we conclude that there exists some $x \in M$ so that $\Phi(x) = y$. Thus $\Phi$ is surjective. 
 	\end{enumerate}
 	
+	\begin{prb}{2015-A-II-2}
+		Let $M$ be a connected oriented smooth compact $n$-dimensional manifold with boundary, and suppose that $\partial M \neq \varnothing$. Let $\Phi: M \to M$ be a smooth map whose restriction to $\partial M$ is the identity. If $\omega$ is any smooth $n$-form on $M$, prove that 
+		\begin{equation*}
+			\int_{M}\Phi^{\ast}\omega = \int_{M}\omega. 
+		\end{equation*}
+		Then use this to prove that $\Phi$ must be surjective. 
+	\end{prb}
+	Let $M$ be a connected oriented smooth compact $n$-dimensional manifold with boundary $\partial M$, and let $\Phi: M \to M$ be a smooth map whose restriction to $\partial M$ is the identity. First, one has that $H^{n}_{\text{dR}}(M)= 0$. Let $\omega$ be a smooth $n$-form on $M$ so that $\omega$ is exact; let $\beta \in \Omega^{n - 1}(M)$ such that $\omega = d\beta$. Then Stokes' Theorem implies 
+	\begin{align*}
+		\begin{split}
+			\int_{M}\Phi^{\ast}\omega &= \int_{M}\Phi^{\ast}d\beta = \int_{M}d\Phi^{\ast}\beta = \int_{\partial M}\Phi^{\ast}\beta \\
+			&= \int_{\partial M}\beta = \int_{M}d\beta = \int_{M}\omega. 
+		\end{split}
+	\end{align*}
+	Since $\omega$ was arbitrary, the proof of the first part of the problem concludes. Now assume to the contrary that $\Phi$ is not surjective. Since $M$ is compact, $\Phi$ is proper so that $\Phi(M)$ is closed in $M$. Therefore, $M\setminus \Phi(M)$ is open. Let $q \in M\setminus \Phi(M)$, and let $\ti{U}$ be an open neighborhood of $q$ in $M \setminus \Phi(M)$. Let $\omega$ be an $n$-form supported in $U$ so that $\int_{M} \omega = 1$. Since $\Phi^{\ast}\omega = 0$, one has that 
+	\begin{equation*}
+		0 = \int_{M}\Phi^{\ast}\omega = \int_{M}\omega = 1, 
+	\end{equation*}
+	which is a contradiction. Therefore, we conclude that $\Phi(M) = M$ so that $\Phi$ is surjective. 
 	\begin{prb}{2013-A-I-4}
 		Two smooth self-maps $f_{0}, f_{1}: S^{n} \to S^{n}$ of the $n$-sphere are said to be smoothly homotopic if there is a smooth map $F: S^{n} \times [0,1] \to S^{n}$ such that $f_{j} = F|_{S^{n}\times \{j\}}$, $j =0, 1$. For which values of $n$ is the antipodal map $\vec{x} \mapsto - \vec{x}$ smoothly homotopic to the identity map of $S^{n}$. Justify your answer with appropriate proofs. 
 	\end{prb}
@@ -2254,7 +2406,7 @@
 			R(\pi t) & 0 & 0 & \dotsm & 0 & 0\\
 			0 & R(\pi t) & 0 & \dotsm & 0  & \vdots \\
 			0 & 0 & R(\pi t) & 0 & \dotsm & \vdots \\
-			0 & 0 & 0 &  \ddots & 0 & \vdots 
+			0 & 0 & 0 &  \d.dots & 0 & \vdots 
 		\end{pmatrix}
 		\cdot \begin{pmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n + 1} \end{pmatrix}.
 	\end{equation*}
@@ -2262,7 +2414,21 @@
 	\begin{equation*}
 		R(\pi t) \coloneqq \begin{pmatrix} \cos(\pi t) & -\sin(\pi t) \\ \sin(\pi t) & \cos(\pi t) \end{pmatrix}. 
 	\end{equation*}
-	Since each of the entries of $R(\pi t)$ is smooth, $H$ is a smooth homotopy between the identity map and the antipodal map. Thus the proof concludes. Alternatively, we could have used the Hopf theorem. 
+	Since each of the entries of $R(\pi t)$ is smooth, $H$ is a smooth homotopy between the identity map and the antipodal map. Thus the proof concludes. Alternatively, we could .have used the Hopf theorem. 
+	
+	\begin{prb}{2012-J-II-3}
+		Let $M$ and $N$ be compact connected orientable smooth manifolds and let $f: M \to N$ be a smooth mapping. Recall the degree of $f$ is the integral 
+		\begin{equation*}
+			\deg(f) = \int_{M}f^{\ast}\omega
+		\end{equation*}
+		over $M$ of the pullback $f^{\ast}\omega$ of any top-degree smooth form $\omega$ on $N$ whose integral over $N$ is one. Recall the degree is an integer; denote it by $\deg(f)$. Now consider the map 
+		\begin{equation*}
+			f_{\#}: \pi_{1}(M) \to \pi_{1}(N)
+		\end{equation*}
+		on fundamental groups induced by $f$. Suppose that the image of $f_{\#}$ has finite index, call it $\operatorname{ind}(f)$. Prove that $\operatorname{ind}(f)$ divides $\deg(f)$. 
+	\end{prb}
+	Let $M$ and $N$ be compact connected orientable smooth manifolds, and let $f: M \to N$ be a smooth mapping so that the image of the induced map $f_{\#}: \pi_{1}(M) \to\pi_{1}(N)$ has finite index, $\operatorname{ind}(f)$. Let $H \coloneqq f_{\#}(\pi_{1}(M))$. By the Galois correspondence of covering spaces, $H$ corresponds to a connected covering space $p: N_{H} \to N$ of degree $\operatorname{ind}(f)$. Since $H \subseteq p_{\ast}(N_{H})$, $f$ lifts to a smooth map $\ti{f}: M \to N_{H}$ so that $f = p \circ \ti{f}$. In particular, using the definition of the degree of a smooth map, one has that $\deg(f) = \deg(p) \cdot \deg(\ti{f})$. Thus it follows that $\operatorname{ind}(f) = \deg(p)$ divides $\deg(f)$ so that the proof concludes. 
+	
 	\begin{prb}{2001-J-II-1}
 		Let $f: M \to N$ be a smooth map between connected smooth compact oriented $n$-manifolds. The degree of $f$ is the number $\deg{f}$ defined by 
 		\begin{equation*}
@@ -5750,7 +5916,7 @@ f2		\begin{equation*}
 	\end{equation*}
 	Since $f^2 \geq 0$, we must have $f(x)^2 = 0$ a.e., which implies $f(x) =0$ a.e. Suppose there exists some $x_0 \in [a,b]$ such that $f(x_0) \neq 0$. Since $f$ is continuous on $[a,b]$, there exists a nonempty open interval $U$ of $x_0$ in $[a,b]$ so that $f(x) \neq 0$ for any $x \in U$. But then $U$ has nonzero measure, contradicting our result that $f(x) =0 $ a.e. Thus by contradiction, $f(x) = 0$ everywhere on $[a,b]$. 
 	
-	\subsection{Baire Category Theorem}
+	\subsection{The Hahn-Banach and Baire Category Theorems}
 	
 	\begin{prb}{2025-J-II-5}
 		Let $V$ be a topological vector space whose topology is Hausdorff. Let $X_1$ and $X_2$ be two Banach spaces, and assume that there exist continuous linear bijections $F_1: X_1 \to V$ and $F_2: X_2 \to V$. Show that there is a continuous linear bijection $G: X_1 \to X_2$. 
@@ -5904,6 +6070,87 @@ f2		\begin{equation*}
 	\end{prb}
 	Let $A, B, C$ be Banach spaces, and let $j: B \to C$ be an injective bounded linear operator. Further assume that $f: A \to B$ is a linear operator such that $j \circ f$ is bounded. Let $\{a_{j}\} \subset A$ so that $a_{j} \to a \in A$. Also assume that $f(a_{j}) \to b \in B$. Since $j$ is bounded (hence continuous), one has that $(j \circ f)(a_j) = j(f(a_j)) \to j(b)$. On the other hand, since $j \circ f$ is bounded (hence continuous), $(j \circ f)(a_{j}) \to(j \circ f)(a) = j(f(a))$. By injectivity of $j$, one has $f(a) = b$. Thus, it follows that the graph of $f$ is closed. By the Closed Graph Theorem, we conclude that $f$ is bounded. 
 	
+	\begin{prb}{R-RA-1}
+		Let $\mathscr{X} = L^{2}([0,1])$ with the standard real $L^{2}$ norm, 
+		\begin{equation*}
+			\norm{f}_{L^{2}} \coloneqq \left(\int_{0}^{1}|f(x)|^{2}\;dx\right)^{1/2}. 
+		\end{equation*}
+		Let $\mathscr{S} = \{\chi_{(0,a]}: a \in (0,1]\}$, and $\mathscr{M} = \operatorname{span}{\mathscr{S}}$. Show that $\mathscr{M}$ is dense in $L^{2}([0,1])$. 
+	\end{prb}
+	Let $\mathscr{X} = L^{2}([0,1])$ equipped with the real $L^{2}$-norm; let $\mathscr{S}$ and $\mathscr{M}$ be the subspaces defined above. By the Hahn-Banach theorem, it suffices to show that every continuous linear functional $F \in \mathscr{X}^{\ast}$ satisfying $F|_{\mathscr{M}} = 0$ is the zero functional on $\mathscr{X}$. Therefore, let $F \in \mathscr{X}^{\ast}$ be a continuous linear functional on $\mathscr{X}$ such that $F|_{\mathscr{M}} = 0$. Since $\mathscr{X}$ is a Hilbert space, by the Riesz Representation Theorem for Hilbert spaces, there exists a unique $f \in \mathscr{X}$ such that for every $g \in \mathscr{X}$, $F(g) = \int_{0}^{1}f(t)g(t)\;dt$. By our hypothesis on $F$, it follows that for every $a \in (0,1]$, 
+	\begin{equation*}
+		0 = F(\chi_{(0,a]}) = \int_{0}^{a}f(t)\;dt. 
+	\end{equation*}
+	Thus if $0 < a < b \leq 1$, then it follows that $\int_{a}^{b}f(t)\;dt = 0$. This means that the integral of $f$ over every possible subinterval of $(0,1]$ is zero. Let $U \subset (0,1]$ be an arbitrary open set. Since $U$ can be written as the countable disjoint union $\bigcup_{j = 1}^{\infty}I_{j}$ of disjoint intervals, one has that 
+	\begin{equation*}
+		\int_{U}f(t)\;dt = \sum_{j = 1}^{\infty}\int_{I_{j}}f(t)\;dt = 0. 
+	\end{equation*}
+	Thus the integral of $f$ over any open subset of $((0,1])$ is zero. Now let $E = \{x: f(x) > 0\}$. By outer regularity, let $U$ be an open subset of $(0,1]$ containing $E$ such that $m(U\setminus E) < \epsilon^{2}$ for some $\epsilon > 0$. Then, 
+	\begin{align*}
+		\begin{split}
+			\abs{\int_{E}f(t)\;dt} &= \abs{\int_{U}f(t)\;dt - \int_{U\setminus E}f(t)\;dt} = \abs{\int_{U\setminus E}f(t)\;dt} \\
+			&\leq \int_{U \setminus E}|f(t)|\;dt \leq \norm{f}_{L^{2}}m(U \setminus E)^{1/2} < \norm{f}_{L^{2}} \cdot \epsilon.
+		\end{split} 
+	\end{align*}
+	Since the left side is independent of $\epsilon$, taking $\epsilon \to 0$ shows that $\int_{E}f(t)\;dt = 0$. Since $f(t) > 0$ on $E$, we conclude that $m(E) = 0$. Likewise, if $F = \{x : f(x) < 0\}$, we can show that $m(F) = 0$. Therefore, $f \equiv 0$ a.e. on $(0,1]$. But this implies that for \textit{any} $g \in L^{2}([0,1])$, $F(g) = \int_{0}^{1}f(t)g(t)\;dt = 0$ so that $F$ is the zero functional. Therefore, we conclude by the Hahn-Banach theorem that $\mathscr{M}$ is dense in $L^{2}([0,1])$. 
+	
+	
+	\begin{prb}{F-5-19}
+		Let $\mathscr{X}$ be an infinite-dimensional normed vector space. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item There is a sequence $\{x_{j}\}$ in $\mathscr{X}$ such that $\norm{x_{j}} = 1$ for all $j$ and $\norm{x_{j} - x_{k}} \geq \frac{1}{2}$ for $j \neq k$. (Construct $x_{j}$ inductively, using Exercises 12b and 18.)
+			\item $\mathscr{X}$ is not locally compact. 
+		\end{enumerate}
+	\end{prb}
+	Let $\mathscr{X}$ be an infinite-dimensional normed vector space. \vspace{-0.25cm}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Let $B_{1}$ denote a unit ball in $\mathscr{X}$, and let $x_{1} \in B_{1}$ be an arbitrary element with norm one. Let $\mathscr{M}_{1} = \operatorname{span}\{x_{1}\}$. Since $\mathscr{M}_{1}$ is finite-dimensional, it follows that it is closed in $\mathscr{X}$. Then by Exercise 12b, there exists some $x_{2} \in \mathscr{X}\setminus \mathscr{M}_{1}$ such that $\norm{x_{2}} = 1$ and $\norm{x_{2} - x_{1}} \geq \frac{1}{2}$. Now let $\mathscr{M}_{2} = \mathscr{M}_{1} + \mathbb{C}x_{2}$. Then by Exercise 18, $\mathscr{M}_{2}$ is closed. Thus applying Exercise 12b again, there exists some $x_{3} \in \mathscr{X}\setminus \mathscr{M}_{2}$ such that $\norm{x_{3} - x_{2}}, \norm{x_{3} - x_{1}} \geq \frac{1}{2}$. Now let $\mathscr{M}_{3} = \mathscr{M}_{2} + \mathbb{C}x_{3}$, which is closed by Exercise 18. Thus by induction, we construct an infinite sequence $\{x_{j}\}_{j = 1}^{\infty}$ of points in $\mathscr{X}$ such that the norm of each element is one, and $\norm{x_{j} - x_{k}} \geq \frac{1}{2}$ for all $j \neq k$. 
+		\item By construction, the sequence $\{x_{j}\}_{j = 1}^{\infty}$ is bounded, but it has no convergent subsequence since the distance between \textit{any two} distinct points is at least $1/2$. Therefore, it follows that $\mathscr{X}$ cannot be locally compact. 
+	\end{enumerate}
+		
+	\begin{prb}{F-5-22}
+		Suppose that $\mathscr{X}$ and $\mathscr{Y}$ are normed vector spaces and $T \in L(\mathscr{X}, \mathscr{Y})$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Define $T^{\dagger}: \mathscr{Y}^{\ast} \to \mathscr{X}^{\ast}$ by $T^{\dagger}f = f \circ T$. Then $T^{\dagger} \in L(\mathscr{Y}^{\ast}, \mathscr{X}^{\ast})$ and $\norm{T^{\dagger}}  = \norm{T}$. $T^{\dagger}$ is called the \textbf{adjoint} or \textbf{transpose} of $T$. 
+			\item Applying the construction in (a) twice, one obtains $T^{\dagger\dagger} \in L(\mathscr{X}^{\ast\ast}, Y^{\ast\ast})$. If $\mathscr{X}$ and $\mathscr{Y}$ are identified with their natural images $\wh{\mathscr{X}}$ and $\wh{\mathscr{Y}}$ in $\mathscr{X}^{\ast\ast}$ and $\mathscr{Y}^{\ast\ast}$, then $T^{\dagger\dagger}|\mathscr{X} = T$. 
+			\item $T^{\dagger}$ is injective iff the range of $T$ is dense in $\mathscr{Y}$. 
+			\item If the range of $T^{\dagger}$ is dense in $\mathscr{X}^{\ast}$, then $T$ is injective; the converse is true if $\mathscr{X}$ is reflexive. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Given $T \in L(\mathscr{Y}, \mathscr{X})$, define $T^{\dagger}: \mathscr{Y}^{\ast} \to \mathscr{X}^{\ast}$ as given above. That $T$ is linear follows immediately: for any $\alpha, \beta \in \mathbb{C}$, $f, g \in \mathscr{Y}^{\ast}$, and $x \in \mathscr{X}$, one has that 
+		\begin{multline*}
+			T^{\dagger}(\alpha f + \beta g)(x) = (\alpha f + \beta g) \circ T(x) = \alpha (f \circ T)(x) + \beta (g \circ T)(x) = \alpha T^{\dagger}f(x) + \beta T^{\dagger}g(x) \\ \implies T^{\dagger}(\alpha f + \beta g) = \alpha T^{\dagger}f + \beta T^{\dagger}g. 
+		\end{multline*}
+		Now, we will how that $T^{\dagger}$ is bounded. For any $f \in \mathscr{Y}^{\ast}$, 
+		\begin{equation*}
+			\norm{T^{\dagger}f}_{\mathscr{X}^{\ast}} = \norm{f \circ T}_{\mathscr{X}^{\ast}} = \sup_{\norm{x}_{\mathscr{X}}\leq 1}|(f \circ T)(x)| \leq \sup_{\norm{x}_{\mathscr{X}} \leq 1}\norm{f}_{\mathscr{Y}^{\ast}}\norm{T}_{L(\mathscr{X}, \mathscr{Y})}\norm{x}_{\mathscr{X}} = \norm{f}_{\mathscr{Y}^{\ast}}\norm{T}_{L(\mathscr{X}, \mathscr{Y})}. 
+		\end{equation*}
+		Thus, since $f \in \mathscr{Y}^{\ast}$ was arbitrary, we conclude that $T^{\ast}$ is bounded with operator norm at most $\norm{T}$. On the other hand, for every nonzero $x \in \mathscr{X}$ (so that $Tx \neq 0$), the Hahn-Banach theorem guarantees the existence of some linear functional $f \in\mathscr{Y}^{\ast}$ with $\norm{f}_{\mathscr{Y}^{\ast}} = 1$ and
+		\begin{equation*}
+			(T^{\dagger}f)(x) = (f \circ T)(x) = \norm{Tx}_{\mathscr{Y}^{\ast}}. 
+		\end{equation*}
+		In particular, one has that
+		\begin{equation*}
+			\norm{Tx}_{\mathscr{Y}} \leq \norm{f}_{\mathscr{Y}^{\ast}}\norm{T^{\dagger}}\norm{x}_{\mathscr{X}} = \norm{T^{\dagger}}\norm{x}_{\mathscr{X}}. 
+		\end{equation*}
+		Since this inequality holds for all $x \in \mathscr{X}$, $\norm{T} \leq \norm{T^{\dagger}}$. Therefore, $\norm{T} = \norm{T^{\dagger}}$. 
+		\item Applying the construction in (a) twice, let $T^{\dagger\dagger} \in L(\mathscr{X}^{\ast\ast}, \mathscr{Y}^{\ast\ast})$; identify $\mathscr{X}$ and $\mathscr{Y}$ with their natural images $\wh{\mathscr{X}}$ and $\wh{\mathscr{Y}}$ in $\mathscr{X}^{\ast\ast}$ and $\mathscr{Y}^{\ast\ast}$, respectively, whereupon for each $\hat{x} \in \wh{\mathscr{X}}$, $\hat{y} \in \wh{\mathscr{Y}}$ and $f \in \mathscr{X}^{\ast}, g \in \mathscr{Y}^{\ast}$, $\hat{x}(f) \coloneqq f(x)$ and $\hat{y}(g) \coloneqq g(y)$. Fix an arbitrary $x \in \mathscr{X}$ (and its corresponding element $\wh{x} \in \wh{\mathscr{X}}$). For any $f \in \mathscr{Y}^{\ast}$, 
+		\begin{align*}
+			\begin{split}
+				(T^{\dagger\dagger}\wh{x})(f) &= \wh{x} \circ T^{\dagger}f = \wh{x}(f \circ T) = f(Tx). 
+			\end{split}
+		\end{align*}
+		On the other hand, since $Tx \in \mathscr{Y}$, $\wh{Tx} \in \wh{\mathscr{Y}}$ so that $\wh{Tx}(f) \coloneqq f(Tx)$. This means that 
+		\begin{equation*}
+			T^{\dagger\dagger}\wh{x} = \wh{Tx}. 
+		\end{equation*}
+		Since we identify $\wh{Tx}$ with $Tx$, $\wh{x}$ with $x$, and $x \in \mathscr{X}$ was arbitrary, we conclude that $T^{\dagger\dagger}|_{\mathscr{X}} = T$. 
+		\item Let $\mathscr{M} \subset \mathscr{Y}$ denote the range of $T$ in $\mathscr{Y}$, and let $\overline{\mathscr{M}}$ denote its closure in $\mathscr{Y}$. First assume that $\mathscr{M}$ is dense in $\mathscr{Y}$. Then by the Hahn-Banach theorem, every continuous linear functional $f \in \mathscr{Y}^{\ast}$ satisfying $f|_{\mathscr{M}} = 0$ is the zero functional. Let $f, g \in \mathscr{Y}^{\ast}$ and assume that $T^{\dagger}f = T^{\dagger}g$, which is to say that for every $x \in \mathscr{X}$, $T^{\dagger}f(x) = T^{\dagger}g(x) \iff (f \circ T)(x) = (g \circ T)(x) \iff (f - g)(Tx) = 0$. Since $f - g \in \mathscr{Y}^{\ast}$ and the preceding relation holds for all $x \in \mathscr{X}$ (hence for all $y \in \mathscr{M}$), our hypothesis tells us that $f - g \equiv 0 \implies f =g$. Therefore, $T^{\dagger}$ is injective. Now assume $T^{\dagger}$ is injective. This means that for every $x \in \mathscr{X}$ (hence for every $y \in \mathscr{M}$), $f(Tx) = (T^{\dagger}f)(x) = 0$ iff $f = 0$. In other words, $f \in \mathscr{Y}^{\ast}$ satisfying $f|_{\mathscr{M}} = 0$ implies $f$ is the zero functional. Thus by the Hahn-Banach Theorem, this implies that $\mathscr{M}$ is dense in $\mathscr{Y}$. 
+		\item Now let $\mathscr{M} \subset \mathscr{X}^{\ast}$ denote the range of $T^{\dagger}$. Assume that $\mathscr{M}$ is dense in $\mathscr{X}^{\ast}$. By the Hahn-Banach theorem, every continuous linear functional $\chi \in \mathscr{X}^{\ast\ast}$ satisfying $\chi|_{\mathscr{M}} = 0$ must be the zero functional. By (b), it suffices to show that $T^{\dagger\dagger}|_{\wh{\mathscr{X}}}$ is injective, where $\wh{\mathscr{X}}$ is the natural image of $\mathscr{X}$ in $\mathscr{X}^{\ast\ast}$. Let $\hat{x}_{1}, \hat{x}_{2} \in \wh{\mathscr{X}}$ and assume that $T^{\dagger\dagger}\hat{x}_{1} = T^{\dagger\dagger}\hat{x}_{2}$. This means that for any $f \in \mathscr{Y}^{\ast}$, $T^{\dagger\dagger}(\hat{x}_{1} - \hat{x}_{2})(f) = 0 \iff (\hat{x}_{1} - \hat{x}_{2})(T^{\dagger}f) = 0$. Since this is true for all $f \in \mathscr{Y}^{\ast}$ (hence for all $\ti{f} \in \mathscr{M}$), our hypothesis tells us that $\hat{x}_{1} - \hat{x}_{2} \equiv 0 \iff \hat{x}_{1} = \hat{x}_{2}$. Therefore, $T^{\dagger\dagger}|_{\wh{\mathscr{X}}}$ is injective, whereupon $T$ is injective.  Now we will show that if $\mathscr{X}$ is reflexive (i.e., $\mathscr{X} = \mathscr{X}^{\ast\ast}$), then the converse result is true. Assume $T$ is injective. By the Hahn-Banach theorem, it suffices to show that every continuous linear functional $\chi \in \mathscr{X}^{\ast\ast}$ satisfying $\chi|_{\mathscr{M}} = 0$ is the zero functional. Let $\chi \in \mathscr{X}^{\ast\ast}$ be such a functional: $\chi(T^{\dagger}f) = 0$ for all $f \in \mathscr{Y}^{\ast}$. Since $\mathscr{X}$ is reflexive, $\chi$ corresponds to an element $x \in \mathscr{X}$ under the standard identification of $\mathscr{X}$ and $\mathscr{X}^{\ast\ast}$ so that $0 = \chi(T^{\dagger}f) = T^{\dagger}f(x) = f(Tx)$. Since this is true for all continuous linear functionals $f \in \mathscr{Y}^{\ast}$, we conclude that $Tx =0$. But since $T$ is injective, $x = 0$ so that $\chi = 0$. Therefore, by the Hahn-Banach theorem, we conclude that $\mathscr{M}$ is dense in $\mathscr{X}^{\ast}$. 
+	\end{enumerate}
+	
+	
 	\begin{prb}{F-5-32}
 		Let $\norm{\empspace}_{1}$ and $\norm{\empspace}_{2}$ be norms on the vector space $\mathscr{X}$ such that $\norm{\empspace}_{1} \leq \norm{\empspace}_{2}$. If $\mathscr{X}$ is complete with respect to both norms, then the norms are equivalent. 
 	\end{prb}
@@ -5966,7 +6213,7 @@ f2		\begin{equation*}
 		\norm{B(x,y)} = \norm{x}\norm{B(\hat{x}, y)} \leq C\norm{x}\norm{y}. 
 	\end{equation*}
 	The inequality follows trivially for $x = 0$. Thus, we conclude that $B$ is jointly continuous. 
-	
+
 	
 	\subsection{Partial Differential Equations}
 	\begin{prb}{2004-J-II-6}
@@ -8930,6 +9177,20 @@ f2		\begin{equation*}
 	
 	\paragraph{Hahn-Banach Theorem, Baire Category Theorem, and Consequences}
 	\begin{enumerate}[resume = real_analysis]
+		\item (Hahn-Banach Theorem) Let $\mathscr{X}$ be a real vector space, $p$ a sublinear functional on $\mathscr{X}$, $\mathscr{M}$ a subspace of $\mathscr{X}$, and $f$ a linear functional on $\mathscr{M}$ such that $f(x) \leq p(x)$ for all $x \in \mathscr{M}$. Then there exists a linear functional $F$ on $\mathscr{X}$ such that $F(x) \leq p(x)$ for all $x \in \mathscr{X}$ and $F|\mathscr{M} = f$. In other words, every bounded linear functional on a subspace can be extended to a bounded linear functional on the whole space. 
+		\item (Few Immediate Consequences of the Hahn-Banach Theorem) Let $\mathscr{X}$ be a normed vector space. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item If $\mathscr{M}$ is a closed subspace of $\mathscr{X}$ and $x \in \mathscr{X}\setminus \mathscr{M}$, there exists a continuous linear functional, $f \in \mathscr{X}^{\ast}$ such that $f(x) \neq 0$ and $f|\mathscr{M} = 0$. In particular, if $\delta = \inf_{y \in \mathscr{M}}\norm{x - y}$, then one can choose $\norm{f}= 1$ and $f(x) = \delta$. 
+			\item If $x \in \mathscr{X}\setminus \{0\}$, there exists $f \in \mathscr{X}^{\ast}$ such that $\norm{f}= 1$ and $f(x) = \norm{x}$. 
+			\item The bounded linear functionals on $\mathscr{X}$ separate points, which is to say that if $x \neq y$, then $f(x) \neq f(y)$. 
+			\item If $x \in \mathscr{X}$, define $\wh{x}: \mathscr{X}^{\ast} \to \mathbb{C}$ by $\wh{x}(f)= f(x)$. Then the map $x \mapsto \wh{x}$ is a linear isometry from $\mathscr{X}$ into $\mathscr{X}^{\ast\ast}$. 
+		\end{enumerate} 
+		\item Let $\mathscr{X}$ be a normed vector space and $\mathscr{M} \subseteq \mathscr{X}$ a subspace. $\mathscr{M}$ is dense in $\mathscr{X}$ if and only if every $f \in \mathscr{X}^{\ast}$ satisfying $f|_{\mathscr{M}} = 0$ is the zero functional ($f \equiv 0$). \newline 
+		\begin{solutions}
+			($\Longleftarrow$)  Let $\mathscr{X}$ be a normed vector space and $\mathscr{M} \subseteq \mathscr{X}$ a subspace. One notes that the closure $\overline{\mathscr{M}}$ is a closed subspace of $\mathscr{X}$. So assume $\overline{\mathscr{M}} \neq \mathscr{X}$; i.e., assume there exists some $x_{0} \in \mathscr{X}\setminus \overline{\mathscr{M}}$. Then by the Hahn-Banach Theorem, there exists a continuous linear functional $f \in \mathscr{X}^{\ast}$ such that $f(x_{0}) \neq 0$ and $f|_{\mathscr{M}} = 0$. Therefore, by the contrapositive, it follows that if every $f \in \mathscr{X}^{\ast}$ satisfying $f|_{\mathscr{M}} = 0$ is the zero functional, then $\mathscr{M}$ is dense in $\mathscr{X}$.
+			
+			($\Longrightarrow$) Now assume $\overline{\mathscr{M}} = \mathscr{X}$, and let $f \in \mathscr{X}^{\ast}$ be a \textit{continuous} linear functional satisfying $f|_{\mathscr{M}} =0$. Let $x \in \overline{\mathscr{M}}$. since $\mathscr{M}$ is a normed linear subspace (hence a metrizable space), there exists a sequence $\{x_{n}\} \subset \mathscr{M}$ such that $x_{n} \to x$. By continuity of $f$, $0 = f(x_{n}) \to f(x)$ so that $f(x) = 0$. Thus $f \equiv 0$ on $\overline{\mathscr{M}} = \mathscr{X}$.
+		\end{solutions}
 		\item (Open Mapping Theorem) Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces. If $T \in L(\mathscr{X}, \mathscr{Y})$ is surjective, then $T$ is open. 
 		\item (Bounded Inverse Theorem) Let $\mathscr{X}$ and $\mathscr{Y}$ be Banach spaces. If $T \in L(\mathscr{X}, \mathscr{Y})$ is bijective, then $T^{-1} \in L(\mathscr{X}, \mathscr{Y})$. 
 		\item (Closed Graph Theorem) If $\mathscr{X}$ and $\mathscr{Y}$ are Banach spaces and $T: \mathscr{X} \to\mathscr{Y}$ is a closed linear map, then $T$ is bounded. 
@@ -8970,6 +9231,20 @@ f2		\begin{equation*}
 		\item If $f, g \in \mathscr{S}$, then $f\ast g \in \mathscr{S}$.
 		\item $C_{c}^{\infty}$ (and hence $\mathscr{S}$) is dense in $L^{p}$ ($1 \leq p < \infty$) and in $C_{0}$. 
 		\item ($C^{\infty}$ Urysohn Lemma) If $K \subset \mathbb{R}^{n}$ is compact and $U$ is an open set containing $K$, there exists $f \in C_{c}^{\infty}$ such that $0 \leq f \leq 1$, $f = 1$ on $K$, and $\operatorname{supp}(f) \subset U$. 
+		\item (Few Important Properties of the Fourier Transform) Suppose $f, g \in L^{1}(\mathbb{R}^{n})$. Then \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\arabic{*})]
+			\item If $T$ is an invertible linear transformation of $\mathbb{R}^{n}$ and $S = (T^\ast)^{-1}$ is its inverse transpose, then $(f \circ T)^{\wh{}} = |\det{T}|^{-1} \hat{f} \circ S$. 
+			\item $(f \ast g)^{\wh{}} = \hat{f}\hat{g}$. 
+			\item If $x^{\alpha}f \in L^{1}$ for $|\alpha|\leq k$, then $\hat{f} \in C^{k}$ and $\partial^{\alpha}\hat{f} = [(-2\pi i x)^{\alpha}f]^{\wh{}}$. 
+			\item If $f \in C^{k}$, $\partial^{\alpha}f \in L^{1}$ for $|\alpha| \leq k$, and $\partial^{\alpha}f \in C_{0}$ for $|\alpha| \leq k- 1$, then $(\partial^{\alpha}f)^{\wh{}}(\xi) = (2\pi i \xi)^{\alpha}\hat{f}(\xi)$. 
+			\item (Riemann-Lebesgue Lemma) $\mathscr{F}(L^{1}(\mathbb{R}^{n})) \subset C_{0}(\mathbb{R}^{n})$. 
+			\item (Plancherel's Theorem) $\mathscr{F}(L^{2}(\mathbb{R}^{n})) = L^{2}(\mathbb{R}^{n})$. 
+			\item The Fourier transform maps the Schwartz class $\mathscr{S}$ continuously onto itself. 
+			\item If $f(x)= e^{-\pi a |x|^{2}}$ where $a > 0$, then $\hat{f}(\xi) = a^{-n/2}e^{-\pi |\xi|^{2}/a}$. 
+			\item $\int \hat{f}g = \int f \hat{g}$. 
+			\item (Fourier Inversion Theorem) If $f, \hat{f} \in L^{1}$, then $f$ agrees almost everywhere with a continuous function $f_{0}$, and $(\hat{f})^{\check{}} = (\check{f})^{\wh{}} = f_{0}$. 
+			\item (Hausdorff-Young Inequality) Suppose that $1 \leq p \leq 2$ and $q$ is the conjugate exponent to $p$. If $f \in L^{p}(\mathbb{R}^{n})$, then $\hat{f} \in L^{q}(\mathbb{R}^{n})$ and $\norm{\hat{f}}_{L^q} \leq \norm{f}_{L^{p}}$. 
+		\end{enumerate}
 		\end{enumerate}
 	
 	\subsubsection{Complex Analysis}
