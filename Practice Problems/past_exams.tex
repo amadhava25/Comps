@@ -183,6 +183,42 @@
 	\end{align*}
 	Since $[V, W]$ is not identically zero in any neighborhood about the origin in $\mathbb{R}^{3}$, we conclude that there does not exist a coordinate chart $\varphi: (x_{1}, x_{2}, x_{3}): U \to \mathbb{R}^{3}$ of a neighborhood of the origin $0 \in \mathbb{R}^{3}$ that satisfies the condition above. 
 	
+	
+	\begin{prb}{2018-J-I-6}
+		Consider the distribution in $\mathbb{R}^{3}$ spanned by the two vector fields 
+		\begin{equation*}
+			V = \partial_{x} + 2xy\partial_{z}, \qquad W = x\partial_{x} + \partial_{y} + (2x^{2}y + x^{2} - 2y)\;\partial_{z}. 
+		\end{equation*}
+		Show that this distribution is integrable and find an explicit formula for the integral submanifold passing through the point $(0,0,z_{0})$. 
+	\end{prb}
+	Let $D$ be the rank-2 distribution in $\mathbb{R}^{3}$ spanned by the two vector fields $V$ and $W$ defined above. By the Frobenius Theorem, $D$ is integrable iff $D$ is involutive iff $[V, W]$ is a smooth section of $D$. We begin by computing, 
+	\begin{align*}
+		\begin{split}
+			[V, W] &= (\partial_{x} + 2xy\partial_{z})(x\partial_{x}) + (\partial_{x} + 2xy\partial_{z})(\partial_{y}) + (\partial_{x}+ 2xy \partial_{z})((2x^{2}y + x^{2} - 2y)\partial_{z}) \\
+			&\textcolor{white}{=} \hspace{5pt}- x\partial_{x}(\partial_{x} + 2xy\partial_{z}) - \partial_{y}(\partial_{x} + 2xy\partial_{z}) - (2x^{2}y + x^{2}-2y)\partial_{z}(\partial_{x}+ 2xy\partial_{z}) \\
+			&= \partial_{x} + 0 + (4xy + 2x)\partial_{z} - 2xy\partial_{z} - 2x\partial_{z} - 0 = \partial_{x} + 2xy\partial_{z} = V. 
+		\end{split} 
+	\end{align*}
+	Since $V$ is a smooth section of $D$, we conclude that $D$ is involutive, and thus integrable. To find an explicit formula for the integral submanifold passing through the point $(0,0,z_{0})$, we start by finding an annihilating 1-form that defines $D$. Let $\omega = a\;dx + b\;dy + c\;dz$. Then one has: 
+	\begin{align*}
+		\begin{split}
+			0 = \omega(V) &= a + 2xyc.  \\
+			0 = \omega(W) &= ax + b + (2x^{2}y + x^{2} -2y)c. 
+		\end{split}
+	\end{align*}
+	Using the first equation in the second equation, one has that 
+	\begin{equation*}
+		(-2x^{2}y + 2x^{2}y + x^{2} - 2y)c + b = 0 \implies (x^{2}-2y)c + b= 0. 
+	\end{equation*}
+	Choose $c = 1$ so that $b = 2y - x^{2}$. Then $a = -2xy$. So an expression for $\omega$ is $\omega = -2xy\;dx + (2y - x^{2})\;dy + dz$. Note that we can write, 
+	\begin{equation*}
+		\omega = d(-x^{2}y + y^{2} + z), 
+	\end{equation*}
+	so that the integral submanifolds of $D$ are given by the level sets $-x^{2}y + y^{2} + z = c$. Since we are looking for the integral submanifold passing through $(0,0,z_{0})$, one has $c = z_{0}$ so that the explicit formula is simply, 
+	\begin{equation*}
+		z = z_{0} + x^{2}y - y^{2}. 
+	\end{equation*}
+	
 	\begin{prb}{2015-J-II-3}
 		Let $\omega$ be a closed differential $k$-form on a smooth manifold $M$. At each point $p\in M$, notice that $\omega$ defines a linear mapping 
 		\begin{equation*}
@@ -641,6 +677,15 @@
 	\end{prb}
 	Let $f: \mathbb{RP}^{3} \to \mathbb{T}^{3}$ be a smooth map. Assume to the contrary that $f$ is an immersion. Since $\mathbb{RP}^{3}$ is compact and nonempty, aand then by the Comps Lemma, $f$ is a covering map. Therefore, the induced map $f_{\ast}: \pi_{1}(\mathbb{RP}^{3}) \to \pi_{1}(S^{1} \times \dotsm \times S^{1})$ is injective. Therefore, $\pi_{1}(\mathbb{RP}^{3})$ is isomorphic to a subgroup of $\pi_{1}(S^{1} \times S^{1} \times S^{1})$. But this is a contradiction: $\pi_{1}(\mathbb{RP}^{3}) \cong \mathbb{Z}/2\mathbb{Z}$, while $\pi_{1}(S^{1} \times S^{1}) \cong \mathbb{Z}^{3}$ is torsion-free. Thus, $f$ cannot be an immersion. 
 	
+	\begin{prb}{2018-A-II-6}
+		Let $M$ be a smooth, compact $m$-manifold without boundary, and suppose that $\Phi: M \to T^{k}$ is a smooth submersion. Here 
+		\begin{equation*}
+			T^{k} = \underbrace{S^{1} \times \dotsm \times S^{1}}_{k} = \mathbb{R}^{k}/\mathbb{Z}^{k}
+		\end{equation*}
+		is the $k$-dimensional torus; and saying that the smooth map $\Phi$ is a submersion just means that its derivative is surjective at every point. Prove that the de Rham cohomology $H^{1}_{\text{dR}}(M)$ is at least $k$-dimensional. 
+	\end{prb}
+	Let $M$ be a smooth compact $m$-manifold without boundary, and assume that $\Phi: M \to T^{k}$ is a smooth submersion. \complete 
+	
 	\begin{prb}{2017-A-I-1}
 		Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Does $F$ necessarily have a critical point? 
 	\end{prb}
@@ -704,6 +749,17 @@
 	\end{prb}
 	Let $f: S^{1} \times S^{1} \to \mathbb{RP}^{2}$ be a smooth map from the 2-torus to the projective plane. Assume to the contrary that $f$ is an immersion. Then from the Comps Lemma, $f$ must be a covering map, so that the induced map $f_{\ast}: \pi_{1}(S^{1} \times S^{1}) \to \pi_{1}(\mathbb{RP}^{2})$ is injective, which means that the first fundamental group of the two torus would have to be isomorphic to a subgroup of the first fundamental group of the projective plane. But $\pi_{1}(S^{1} \times S^{1}) \cong \mathbb{Z} \times \mathbb{Z}$ (which is an infinite group), while $\pi_{1}(\mathbb{RP}^{2}) \cong \mathbb{Z}/2\mathbb{Z}$ (a finite group). Thus, the proof concludes by contradiction. 
 	
+	\begin{prb}{2009-A-II-2}
+		Consider the following 2-manifolds: the plane $\mathbb{R}^{2}$, the torus $T^{2}$, and the complement $T^{2}\setminus \{p\}$ of some point $p$ in $T^{2}$. \vspace{-0.25cm}
+		\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+			\item Prove that there does not exist a smooth immersion $F: T^{2} \to \mathbb{R}^{2}$.
+			\item Draw a picture of a smooth immersion $F: T^{2}\setminus \{p\} \to \mathbb{R}^{2}$. 
+		\end{enumerate}
+	\end{prb}
+	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
+		\item Assume to the contrary that there exists a smooth immersion $F: T^{2} \to \mathbb{R}^{2}$; i.e., assume that $dF_{p}: T_{p}T^{2} \to T_{F(p)}\mathbb{R}^{2}$ is injective at every $p \in T^{2}$. Since $\dim{T_{p}T^{2}} = 2 = \dim{T_{p}\mathbb{R}^{2}} < \infty$, it also follows that $df_{p}$ is surjective at every $p \in T^{2}$. Thus $df_{p}$ is bijective at every $p$, which means that $f$ is a local diffeomorphism. Consider the image $f(T^{2}) \subseteq \mathbb{R}^{2}$. Since $T^{2}$ is compact and $f$ is continuous, $f(T^{2})$ is compact (hence closed) in $\mathbb{R}^{2}$. Since local diffeomorphisms are open maps, $f(T^{2})$ is open in $\mathbb{R}^{2}$. Since $T^{2}$ is nonempty, $f(T^{2})$ is nonempty. Therefore, since $\mathbb{R}^{2}$ is connected, $f(T^{2}) = \mathbb{R}^{2}$, which is a contradiction since $\mathbb{R}^{2}$ is not compact. Therefore, by contradiction, there cannot exist a smooth immersion $f: T^{2} \to \mathbb{R}^{2}$. 
+		\item \complete 
+	\end{enumerate}
 	\begin{prb}{2002-A-I-1}
 		Let $f: S^{3} \to \mathbb{R}^{3}$ be a $\mathcal{C}^{\infty}$-map. Show that there must exist at least one point where $f$ does not locally have a $\mathcal{C}^{\infty}$ inverse. 
 	\end{prb}
@@ -1532,6 +1588,11 @@
 		[\gamma] = \operatorname{id}_{\partial B\ast}([\gamma]) = r_{\ast} \circ \iota_{\ast}([\gamma]) = 2n[\gamma]. 
 	\end{equation*}
 	Since $[\gamma] \neq [0]$, one must have $2n = 0 \iff n = 0$, which then implies $r_{\ast}$ is the trivial homomorphism (and therefore, is not surjective since $\pi_{1}(\partial B)$ is nontrivial). This is a contradiction! Thus by contradiction, there cannot be a retraction mapping $r: B \to \partial B$. 
+	
+	\begin{prb}{2014-A-II-6}
+		Let $X$ be a compact connected manifold and $M \subset X$ a compact connected embedded hypersurface (i.e., $\dim{M}= \dim{X} - 1$). Suppose that the normal bundle of $M$ in $X$ is not orientable. Prove that $\pi_{1}(X) \neq 0$. 
+	\end{prb}
+	Let $X$ be a compact connected manifold and $M \subset X$ a compact connected embedded hypersurface (i.e., $\dim{M} = \dim{X} - 1$). Assume that $\pi_{1}(X) =0$. This means that $X$ is orientable as it has no index 2 subgroup. Since $X$ is orientable, any open subset of $X$ must also be orientable. Since $\dim{M} = \dim{X} - 1$, the normal bundle of $M$ in $X$ is a line bundle. By the Tubular Neighborhood Theorem, it follows that the normal line bundle $N$ is diffeomorphic to a tubular neighborhood of $M$ in $X$, which must therefore be orientable. But this contradicts our hypothesis that $N$ is nonorientable. Thus by contradiction, $\pi_{1}(X) \neq 0$. 
 	
 	\begin{prb}{2012-A-II-3}
 		Prove that every smooth, connected manifold whose fundamental group has finite, odd order is an orientable manifold. 
