@@ -734,7 +734,7 @@
 		Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Does $F$ necessarily have a critical point? 
 	\end{prb}
 	
-	Let $M$ be a smooth compact connected $n$-manifold (without boundary), and let $F: M \to \mathbb{R}^{n}$ be a smooth map. Then $F$ necessarily has a critical point. Recall that a point $p \in M$ is said to be a \textbf{\textit{regular point}} of $F$ if and only if $dF_{p}: T_{p}M \to T_{F(p)}N$ is surjective, and \textbf{\textit{critical}} otherwise. Let $F = (f_{1}, \ldots, f_{n})$, where for each $1 \leq j \leq n$, $f_{j}: M \to \mathbb{R}^{n}$ is a smooth function. Since $M$ is compact, by the extreme value theorem, each $f_{j}$ has an extrema at some point $p_{j} \in M$, which means that $df_{j}|_{p_{j}} = 0$. But this means that $dF_{p_{j}}$ (which can be represented by a square $n \times n$ matrix) does not always have full rank $n$, and therefore, is not surjective. Thus, each $p_{j}$ is a critical point of $F$. 
+	Assume the hypotheses, and also assume that $F$ has no critical points; i.e., assume that $dF_{p}: T_{p}M to T_{F(p)}\mathbb{R}^{n}$ is surjective at every $p \in M$. By the rank-nullity theorem, it follows that $F$ is also a smooth immersion, so that by the inverse function theorem, $F$ is a local homeomorphism. Since local homeomorphisms are open maps, $F(M)$ is open and nonempty in $\mathbb{R}^{n}$. Since $f$ is continuous, and $M$ is compact, $F(M)$ is compact in $\mathbb{R}^{n}$; $F(M)$ is closed in $\mathbb{R}^{n}$ by the fact that $\mathbb{R}^{n}$ is Hausdorff. Thus since $F(M)$ is a nonempty open and closed subset of $\mathbb{R}^{n}$, and $\mathbb{R}^{n}$ is connected, $F(M) = \mathbb{R}^{n}$. But this is impossible since $\mathbb{R}^{n}$ itself is not compact (take e.g., the open cover consisting of a unit open ball centered at each point in $\mathbb{R}^{n}$). Therefore, $F$ must have a critical point 
 	
 	\begin{prb}{2017-A-I-5}
 		On $\mathbb{R}^{4}$ with standard coordinates $(x,y,z,t)$, consider the 1-form 
@@ -3583,17 +3583,12 @@ f2		\begin{equation*}
 	\begin{prb}{2001-J-I-3}
 		Let $G$ be a finite group and $P \subset G$ a normal Sylow $p$-subgroup. Show that for any group homomorphism $\varphi: G \to G$, $\varphi(P) \subset P$. 
 	\end{prb}
-	Let $G$ be a finite group, and $P \subset G$ a normal Sylow $p$-subgroup. This necessarily implies that $P$ is the unique Sylow $p$-subgroup of $G$. Therefore, every element of $G$ with order equal to some power of $p$ must be contained in $P$. Now let $\varphi: G \to G$ be a group \textit{homo}morphism. Then for any $x \in P$, $|\varphi(x)| \mid |x| = p^{\alpha_{x}}$ for some positive integer $\alpha_{x}$. So since $\varphi(x)$ has an order equal to some power of $p$, $\varphi(x) \in P$. Therefore, since $x \in P$ was arbitrary, we must have $\varphi(P) \subset P$. 
+	Let $G$ be a finite group, and $P \subset G$ a normal Sylow $p$-subgroup. This necessarily implies that $P$ is the unique Sylow $p$-subgroup of $G$. Since $\varphi$ is a group homomorphism, the first isomorphism theorem implies that $|\varphi(P)|$ divides $|P|$ so that $\varphi(P)$ must be a $p$-subgroup of $G$. By maximality of Sylow $p$-subgroups, $\varphi(P)$ must be contained in a Sylow $p$-subgroup of $G$. But since $P$ is the only Sylow $p$-subgroup of $G$, $\varphi(P) \subset P$. Thus the proof concludes. 
 	
 	\begin{prb}{1999-A-I-1}
 		Let $P$ be a Sylow $p$-subgroup of $G$, and let $H$ be a $p$-subgroup of $G$ contained in $N(P)$. Here, $N(P)$ is the normalizer of $P$ in $G$. Prove $H$ is contained in $P$. 
 	\end{prb}
-	Let $P$ be a Sylow $p$-subgroup of $G$, and let $H$ be a $p$-subgroup of $G$ contained in $N(P)$, the normalizer of $P$ in $G$. First, this implies that $PH$ is a subgroup of $G$ of order 
-	\begin{equation*}
-		|PH| = \frac{|P||H|}{|P \cap H|}. 
-	\end{equation*}
-	In particular, it follows that $PH$ is also a $p$-subgroup of $G$. Assume to the contrary that $H$ is not entirely contained in $P$. This means that $|H|/|P \cap H| > 1$. But then $|PH| > |P|$. But this contradicts the fact that $P$ is a \textit{Sylow} $p$-subgroup of $G$, and therefore has maximal order amongst $p$-subgroups of $G$. Thus, by contradiction, $H$ is entirely contained in $P$. 
-	
+	Let $P$ be a Sylow $p$-subgroup of $G$, and let $H$ be a $p$-subgroup of $G$ contained in $N(P)$. Since $N(P)$ is the normalizer of $P$, $P$ is a normal Sylow $p$-subgroup of $N(P)$, and thus is the unique Sylow $p$-subgroup of $N(P)$. Since $H$ is a $p$-subgroup of $G$ and thus a $p$-subgroup of $N(P)$, maximality of Sylow $p$-subgroups implies that $H$ is contained in a Sylow $p$-subgroup of $N(P)$, and thus in $P$.
 	
 	\begin{prb}{D\&F-4.5-13}
 		Prove that a group of order 56 has a normal Sylow $p$-subgroup for some prime $p$ dividing its order. 
@@ -9178,6 +9173,7 @@ f2		\begin{equation*}
 		\end{equation*}
 		Thus the proof concludes. 
 	}
+	\item (Poincar\'e Duality) Let $M$ be a compact orientable smooth $n$-manifold. Then for all $0 \leq p \leq n$, $H^{p}_{\text{dR}}(M) = H^{n -p}_{\text{dR}}(M)$. In particular, if $n$ is odd, then $\chi(M) = 0$, where $\chi$ denotes the Euler characteristic. 
 	\end{enumerate}
 	\paragraph{Fundamental Groups}
 	\begin{enumerate}[start=18]
