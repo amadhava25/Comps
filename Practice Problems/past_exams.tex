@@ -2297,6 +2297,8 @@
 		\end{equation*}
 		so that $\chi(Y) = -1$. Since $X$ is assumed to be a compact covering space, the covering must be finitely sheeted. Thus, there exists a finite positive integer $d$ so  that $0 = d \cdot (-1) = -d$, which is a contradiction. Thus by contradiction, there cannot exist such a covering map. 
 		
+		More simply, if $p: X \to Y$ is a covering map, then by definition, $p$ is continuous and surjective. Therefore, $Y$ must be compact. But since $Y$ is an open and nonclosed subset of $T^2$, and compact subsets of Hausdorff spaces must necessarily be closed, we have arrived at a contradiction. 
+		
 		\item Now assume to the contrary that there is a covering map $p: Y \to X$. Then the induced map $p_{\ast}: \pi_{1}(Y) \to \pi_{1}(X)$ is an injective group homomorphism so that $\pi_{1}(Y)$ is isomorphic to some subgroup of $\pi_{1}(X)$. But since $\pi_{1}(X)$ is abelian, every one of its subgroups is abelian, while $\pi_{1}(Y)$ (the free group on two generators) is nonabelian. Thus by contradiction, $Y$ cannot be a covering space of $X$. 
 	\end{enumerate}
 	
@@ -2317,7 +2319,8 @@
 	\end{prb}
 	Let $X$ be a smooth compact manifold whose universal cover is diffeomorphic to an odd-dimensional sphere $S^{2m + 1}$.  We will use a series of results (as indicated by the hint) to build up our proof. 
 		\begin{quote}
-			\textbf{Lemma.} (Orientability, Deck Transformations, and Universal Covers) Let $X$ be a smooth compact manifold admitting a universal cover $\hat{p}: \ti{X} \to X$. Let $\Gamma$ denote the group of deck transformations on $\ti{X}$. Then $X \cong \ti{X}/\Gamma$. In particular, $X$ is orientable iff every deck transformation preserves orientation.			
+			\textbf{Lemma.} (Orientability, Deck Transformations, and Universal Covers) Let $X$ be a smooth compact manifold admitting a universal cover $\hat{p}: \ti{X} \to X$. Let $\Gamma$ denote the group of deck transformations on $\ti{X}$. Then $X \cong \ti{X}/\Gamma$. In particular, $X$ is orientable iff every deck transformation preserves orientation.	
+					
 			\textbf{Lemma.} (Uniqueness Property of Deck Transformations) If two deck transformations are equal  at any point $x \in \ti{X}$, then the two transformations are equivalent. In particular, the only deck transformation with a fixed point is the identity transformation. 
 			
 			\textbf{Lemma.} (Fixed-Point Free Maps on Spheres) Any fixed-point free map $f: S^n \to S^n$ is homotopic to the antipodal map. \vspace{-0.25cm}
@@ -2393,6 +2396,8 @@
 	\end{prb}
 	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
 		\item Let $M$ denote a surface of genus 1. We claim that there is no covering space of $M$ that is homeomorphic to a surface of genus 2. Assume to the contrary that there exists a space $\ti{M}$ homeomorphic to a surface of genus 2 that is a $k$-sheeted covering space of $M$ for some finite $k$. Then we must have $\chi_{\ti{M}} = k \cdot \chi_{M}$, where $\chi_{\cdot}$ denotes the Euler characteristic. Since $\chi_{M} = 2- 2(1) = 0$, $\chi_{\ti{M}} = 2 - 2(2) = -2$, and there exists no finite positive integer $k$ so that $-2 = k \cdot 0$, we conclude that $M$ has no finitely-sheeted covering spaces homeomorphic to a surface 2 genus surface. On the other hand, any infinitely-sheeted covering space of $M$ has to be noncompact, and thus cannot be homeomorphic to a (compact) surface of genus 2. 
+		
+		Alternatively, assume to the contrary that $p: X \to \Sigma_{1}$ is a covering space such that $X \simeq \Sigma_{2}$. In particular, since homeomorphisms induce isomorphisms on the level of fundamental groups, $\pi_{1}(X) \cong \pi_{1}(\Sigma_{2}) \cong \braket{a_{1}, b_{1}, a_{2}, b_{2} \mid [a_{1}, b_{1}][a_{2}, b_{2}] = 1}$, which is nonabelian. On the other hand, we know that covering maps induce injective maps on the level of fundamental groups so that $\pi_{1}(X)$ is isomorphic to a subgroup of $\pi_{1}(\Sigma_{1}) \cong \mathbb{Z} \times \mathbb{Z}$. This is a contradiction since the latter group is abelian, while the former is nonabelian. Thus there cannot be such a covering space. 
 		\item Now let $M$ denote a surface of genus 2. As above, it suffices to check if there exists a finitely-sheeted covering space of $M$ with genus 3. By looking at the Euler characteristics, \textit{if} $M$ has a finitely-sheeted covering space of genus 3, then it must be a 2-sheeted covering space. But by replicating the work from Problem \ref{prb:2021-A-I-6}, we see that by Galois correspondence of covering spaces, $M$ must have a $2$-sheeted covering space. Thus, we conclude that $M$ has a covering space which is homeomorphic to a surface of genus 2. 
 	\end{enumerate}
 	
@@ -2516,7 +2521,7 @@
 			R(\pi t) & 0 & 0 & \dotsm & 0 & 0\\
 			0 & R(\pi t) & 0 & \dotsm & 0  & \vdots \\
 			0 & 0 & R(\pi t) & 0 & \dotsm & \vdots \\
-			0 & 0 & 0 &  \d.dots & 0 & \vdots 
+			0 & 0 & 0 &  \ddots & 0 & \vdots 
 		\end{pmatrix}
 		\cdot \begin{pmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n + 1} \end{pmatrix}.
 	\end{equation*}
@@ -2524,7 +2529,7 @@
 	\begin{equation*}
 		R(\pi t) \coloneqq \begin{pmatrix} \cos(\pi t) & -\sin(\pi t) \\ \sin(\pi t) & \cos(\pi t) \end{pmatrix}. 
 	\end{equation*}
-	Since each of the entries of $R(\pi t)$ is smooth, $H$ is a smooth homotopy between the identity map and the antipodal map. Thus the proof concludes. Alternatively, we could .have used the Hopf theorem. 
+	Since each of the entries of $R(\pi t)$ is smooth, $H$ is a smooth homotopy between the identity map and the antipodal map. Thus the proof concludes. Alternatively, we could have used the Hopf theorem. 
 	
 	\begin{prb}{2012-J-II-3}
 		Let $M$ and $N$ be compact connected orientable smooth manifolds and let $f: M \to N$ be a smooth mapping. Recall the degree of $f$ is the integral 
@@ -2670,7 +2675,7 @@
 	\begin{prb}{2024-J-I-4}
 		For each field $K$, prove that the polynomial ring $K[x,y]$ in two variables is not a principal ideal domain. 
 	\end{prb}
-	Let $K$ be an arbitrary field, and consider the polynomial ring $K[x,y]$ in two variables. It suffices to show that there exists an ideal of $K[x,y]$ that is not principal. Consider the ideal $(x, y)$. First, we claim that $(x,y)$ is not proper. Every polynomial in $(x,y)$ is of the form $a(x,y)\cdot x + b(x,y) \cdot y$. In particular, at the origin $(x,y) = (0,0)$, one has that every polynomial in the ideal vanishes. But this means that the constant polynomial $1$ cannot be a part of $(x,y)$. Now assume to the contrary that $(x, y)$ is principal: $(c) = (x, y)$. Since $c$ must be a divisor of both $x$ and $y$, and $x, y$ are coprime, $c$ must be a unit. But this implies that $(c) = K[x,y]$ so that $(x,y)$ is the whole polynomial ring; we explicitly showed that this was not the case. Thus by contradiction, it follows that $(x,y)$ is not principle, and so $K[x,y]$ is not a principal ideal domain. 
+	Let $K$ be an arbitrary field, and consider the polynomial ring $K[x,y]$ in two variables. It suffices to show that there exists an ideal of $K[x,y]$ that is not principal. Consider the ideal $(x, y)$. First, we claim that $(x,y)$ is proper. Every polynomial in $(x,y)$ is of the form $a(x,y)\cdot x + b(x,y) \cdot y$. In particular, at the origin $(x,y) = (0,0)$, one has that every polynomial in the ideal vanishes. But this means that the constant polynomial $1$ cannot be a part of $(x,y)$. Now assume to the contrary that $(x, y)$ is principal: $(c) = (x, y)$. Since $c$ must be a divisor of both $x$ and $y$, and $x, y$ are coprime, $c$ must be a unit. But this implies that $(c) = K[x,y]$ so that $(x,y)$ is the whole polynomial ring; we explicitly showed that this was not the case. Thus by contradiction, it follows that $(x,y)$ is not principle, and so $K[x,y]$ is not a principal ideal domain. 
 	
 	\begin{prb}{2021-J-II-1}
 		Let $R$ denote the product of countably many copies of the field $\mathbb{F}_{2}$ with two elements. $R$ is a commutative ring in which addition and multiplication are defined coordinatewise. If $P \subset R$ is a prime ideal, then verify that the quotient ring $R/P$ is a field, and find the cardinality of this field. 
@@ -2684,7 +2689,7 @@
 	\begin{prb}{2020-J-I-5}
 		Let $\mathbb{K}$ be a field, and let $\mathbb{K}[x]$ be the ring of polynomials in $\mathbb{K}$. Let $\mathscr{I} \subsetneq \mathbb{K}[x]$ be a maximal ideal. Show there is some irreducible polynomial $p(x) \in \mathbb{K}[x]$ such that $\mathscr{I} = \{q(x)p(x): q(x) \in \mathbb{K}[x]\}$. 
 	\end{prb}
-	Let $\mathbb{K}[x]$ be a field, and let $\mathbb{K}[x]$ be the ring of polynomials in $\mathbb{K}$. Since $\mathbb{K}$ is a field, it follows that the polynomial ring is a principal ideal domain (PID), so that there exists some $p(x) \in \mathbb{K}[x]$ such that $\mathscr{I} = (p(x)) = \{q(x)p(x): q(x) \in \mathbb{K}[x]\}$. Assume to the contrary that $p(x)$ is reducible over $\mathbb{K}$, and let $p_{1}(x) \dotsm p_{n}(x)$ be a factorization of $p(x)$ into irreducible factors. Up to relabeling of the indices, assume that $p_{1}(x)$ is the lowest-degree nonconstant irreducible divisor of $p(x)$. Since $p_{1}(x)$ is a nonconstant polynomial, $(p_{1}(x))$ is a proper ideal of $\mathbb{K}[x]$. By definition, this means $(p_{1}(x)) \supset \mathscr{I}$. On the other hand, since $p(x) \nmid p_{1}(x)$ (because $\deg{p_{1}(x)} < \deg{p(x)}$) $(p_{1}(x)) \not \subset \mathscr{I}$. This contradicts maximality of $\mathscr{I}$. Thus by contradiction, $p(x)$ must be irreducible. The proof concludes. 
+	Let $\mathbb{K}$ be a field, and let $\mathbb{K}[x]$ be the ring of polynomials in $\mathbb{K}$. Since $\mathbb{K}$ is a field, it follows that the polynomial ring is a principal ideal domain (PID), so that there exists some $p(x) \in \mathbb{K}[x]$ such that $\mathscr{I} = (p(x)) = \{q(x)p(x): q(x) \in \mathbb{K}[x]\}$. Assume to the contrary that $p(x)$ is reducible over $\mathbb{K}$, and let $p_{1}(x) \dotsm p_{n}(x)$ be a factorization of $p(x)$ into irreducible factors. Up to relabeling of the indices, assume that $p_{1}(x)$ is the lowest-degree nonconstant irreducible divisor of $p(x)$. Since $p_{1}(x)$ is a nonconstant polynomial, $(p_{1}(x))$ is a proper ideal of $\mathbb{K}[x]$. By definition, this means $(p_{1}(x)) \supset \mathscr{I}$. On the other hand, since $p(x) \nmid p_{1}(x)$ (because $\deg{p_{1}(x)} < \deg{p(x)}$) $(p_{1}(x)) \not \subset \mathscr{I}$. This contradicts maximality of $\mathscr{I}$. Thus by contradiction, $p(x)$ must be irreducible. The proof concludes. 
 	
 	\begin{prb}{2019-A-II-6}
 		Let $R$ be a commutative ring with identity. \vspace{-0.25cm}
@@ -2696,7 +2701,7 @@
 	Let $R$ be a commutative ring with identity, $P$ a prime ideal of $R$, and $I_{1,2}$ any two other ideals of $R$. \vspace{-0.25cm}
 	\begin{enumerate}[itemsep =-2pt,label = (\alph{*})]
 		\item Assume to the contrary that neither $I_{1} \subset P$ nor $I_{2} \subset P$. Then we can find elements $g \in I_{1} \setminus P$ and $h \in I_2 \setminus P$. Since ideals are closed under multiplication by elements in $R$, $gh \in I_{1} \cap I_{2} \subset P$. But since $P$ is a prime ideal, one must have that $g \in P$ or $h \in P$, which is a contradiction! Thus by contradiction, at least one of $I_{1}, I_{2}$ must be entirely contained in $P$. 
-		\item Suppose now that $R$ satisfies the descending chain condition for ideals; i.e., assume that for any decreasing sequence $I_{1} \supset I_{2} \supset I_{3} \supset \dotsm$ of ideals in $R$, there exists an $N$ such that $I_{n}= I_{N}$ for all $n \geq N$. Assume to the contrary that $R$ contains infinitely many distinct maximal ideals $\{M_{j}\}_{j = 1}^{\infty}$. For each $n \in \mathbb{N}$, define the ideal 
+		\item Suppose now that $R$ satisfies the descending chain condition for ideals; i.e., assume that for any decreasing sequence $I_{1} \supset I_{2} \supset I_{3} \supset \dotsm$ of ideals in $R$, there exists an $N$ such that $I_{n}= I_{N}$ for all $n \geq N$. Assume to the contrary that $R$ contains infinitely many distinct maximal ideals $\{M_{j}\}_{j = 1}^{\infty}$. For each $n \in \mathbb{N}$, define the ideal
 f2		\begin{equation*}
 			I_{n} = \bigcap_{j = 1}^{n}M_{j} \subset R. 
 		\end{equation*}
@@ -3047,7 +3052,7 @@ f2		\begin{equation*}
 	\begin{equation*}
 		|Z(G)| \in \{1, 3, 5, 7, 9,15, 21, 35, 45, 63, 105, 315\} \cap \{0 \bmod{9}\}, 
 	\end{equation*}
-	where the second set follows from the fact that $Z(G)$ contains a subgroup of order 9. Thus we have narrowed down our choices to $|Z(G)| \in \{9, 45, 63 315\}$. If $|Z(G)| = 315$, we are done since $G = Z(G)$. If $|Z(G)| = 63$, then $|G/Z(G)| = |G|/|Z(G)| = 5$ so that $G/Z(G) \cong \mathbb{Z}/5\mathbb{Z}$ is cyclic. But this implies that $G$ is abelian, contradicting the fact that $|Z(G)| \lneq 315$. Likewise, $|Z(G)| \neq 45$, since if not, then $|G/Z(G)| = 7$ so that $G/Z(G) \cong \mathbb{Z}/7\mathbb{Z}$ is cyclic and $G$ is abelian. Suppose now that $|Z(G)| = 9$ so that $|G/Z(G)| = 35$. By Sylow's Theorems, $G/Z(G)$ must contain a normal Sylow 7-subgroup $K$ and a normal Sylow 5-subgroup $N$, and these subgroups intersect trivially (by Lagrange's Theorem). Thus since $K$ contains precisely 6 nonidentity elements of order 7 and $N$ contains precisely $4$ nonidentity elements of order 5, there are $35 - (1 + 6 + 4) = 24$ elements whose order is not $1, 5$, or $7$. By Lagrange's Theorem, this elements must have order 35. Thus since $G/Z(G)$ contains an element of order $|G/Z(G)|$, $G$ must be abelian (so that $|Z(G)| = 315$), which is a contradiction. Thus, we conclude that $G = Z(G)$ so that $G$ is abelian. 
+	where the second set follows from the fact that $Z(G)$ contains a subgroup of order 9. Thus we have narrowed down our choices to $|Z(G)| \in \{9, 45, 63, 315\}$. If $|Z(G)| = 315$, we are done since $G = Z(G)$. If $|Z(G)| = 63$, then $|G/Z(G)| = |G|/|Z(G)| = 5$ so that $G/Z(G) \cong \mathbb{Z}/5\mathbb{Z}$ is cyclic. But this implies that $G$ is abelian, contradicting the fact that $|Z(G)| < 315$. Likewise, $|Z(G)| \neq 45$, since if not, then $|G/Z(G)| = 7$ so that $G/Z(G) \cong \mathbb{Z}/7\mathbb{Z}$ is cyclic and $G$ is abelian. Suppose now that $|Z(G)| = 9$ so that $|G/Z(G)| = 35$. By Sylow's Theorems, $G/Z(G)$ must contain a normal Sylow 7-subgroup $K$ and a normal Sylow 5-subgroup $N$, and these subgroups intersect trivially (by Lagrange's Theorem). Thus since $K$ contains precisely 6 nonidentity elements of order 7 and $N$ contains precisely $4$ nonidentity elements of order 5, there are $35 - (1 + 6 + 4) = 24$ elements whose order is not $1, 5$, or $7$. By Lagrange's Theorem, this elements must have order 35. Thus since $G/Z(G)$ contains an element of order $|G/Z(G)|$, $G$ must be abelian (so that $|Z(G)| = 315$), which is a contradiction. Thus, we conclude that $G = Z(G)$ so that $G$ is abelian. 
 	
 	
 	
@@ -4692,7 +4697,7 @@ f2		\begin{equation*}
 			m(K_{2}) &\geq 2m(K_{1}) - m(U) \geq (1 - \beta)m(K_{1}) > 0, 
 		\end{split} 
 	\end{align*}
-	so that $K_{2}$ is nonempty. Now set $K_{3} \coloneqq K_{2} \cap (K_{2} + rv_{2})$. Generalizing the same argument from above, one has that $m(K_{3})> 0$ so that it is nonempty. Thus, we have a nested sequence of nonempty sets $K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $c \in K_{3}$. By definition, the point $b \coloneqq c - rv_{2} \in K_{2}$, and the point $a \coloneqq b - rv_{1} \in K_{1}$. We compute, $a - b = -rv_{1}$ and $v - b = rv_{2}$. Since $v_{1}, v_{2}$ were chosen to be perpendicular, one computes, 
+	so that $K_{2}$ is nonempty. Now set $K_{3} \coloneqq K_{2} \cap (K_{2} + rv_{2})$. Generalizing the same argument from above, one has that $m(K_{3})> 0$ so that it is nonempty. Thus, we have a nested sequence of nonempty sets $K_{3} \subset K_{2} \subset K_{1} \subset E$. Let $c \in K_{3}$. By definition, the point $b \coloneqq c - rv_{2} \in K_{2}$, and the point $a \coloneqq b - rv_{1} \in K_{1}$. We compute, $a - b = -rv_{1}$ and $c - b = rv_{2}$. Since $v_{1}, v_{2}$ were chosen to be perpendicular, one computes, 
 	\begin{equation*}
 		(a - b) \cdot (c - b) = -r^{2} v_{1} \cdot v_{2} =0. 
 	\end{equation*}
@@ -4771,7 +4776,7 @@ f2		\begin{equation*}
 			\end{align*}
 			By continuity of $c$, this means that there exists some nonempty open set $U \subseteq \mathbb{R}$ such that for all $x \in U$, $c(x) > 0$. And in particular, $U$ contains a nonempty open interval $I$. Now note that $c(x) > 0$ if and only if 
 			\begin{equation*}
-				\int_{F}\chi_{E}(x - t)\;dt = \int_{\mathbb{R}}\chi_{E}(x - t)\chi_{E}(t)\;dt > 0, 
+				\int_{F}\chi_{E}(x - t)\;dt = \int_{\mathbb{R}}\chi_{E}(x - t)\chi_{F}(t)\;dt > 0, 
 			\end{equation*}
 			which is true iff there exists at least one $t \in F$ such that $x - t \in E$, which implies $x \in E + t \subset E + F$. Therefore, one has that $I \subset E + F$, and the proof concludes. If either of $E$ or $F$ (or both) has infinite measure, then we can write $E = \bigcup_{n = 1}^{\infty}E_{n}$ and $F = \bigcup_{n = 1}^{\infty}F_{n}$, where for each $n$, $E_{n} = E \cap [-n,n]$ and $F_{n} = F \cap [-n,n]$. There exists at least one pair, $(n_{0}, n_{1}) \in \mathbb{N}^2$ such that $0 < m(E_{n_{0}}) < \infty$ and $0 < m(F_{n_{1}}) < \infty$. Then we apply the above result to $E_{n_{0}} + F_{n_{1}} \subset E + F$.  
 		
@@ -4848,7 +4853,7 @@ f2		\begin{equation*}
 	\begin{align*}
 		\begin{split}
 			\int_{0}^{1}|f(x)|^2\;dx &\leq \int_{0}^{1}\left(\int_{0}^{x}|f'(t)|\;dt\right)^{2}\;dx \\
-			&\leq \int_{0}^{1}\left(\int_{0}^{x}\;dt\right)\left(\int_{0}^{x}|f'(t)|^2\;dt\right)\;dx \\
+			&\leq \int_{0}^{1}\left(\int_{0}^{x}\;dt\right)\left(\int_{0}^{x}|f'(t)|^2\;dt\right)\;dx \qquad \text{(by Cauchy-Schwarz)} \\
 			&= \int_{0}^{1}x\cdot \left(\int_{0}^{x}|f'(t)|^2\;dt\right)\;dx.
 		\end{split}
 	\end{align*}
@@ -4887,7 +4892,7 @@ f2		\begin{equation*}
 	\begin{align*}
 		\begin{split}
 			|f(y)| &\leq \int_{0}^{1}|f(x)|\;dx + \int_{0}^{1}|f'(x)|\;dx \\
-			&\leq \left[\int_{0}^{1}|f(x)|^2\;dx\right]^{1/2} + \left[\int_{0}^{1}|f'(x)|^2\;dx\right] \qquad (\text{by the Cauchy-Schwarz Inequality}), 
+			&\leq \left[\int_{0}^{1}|f(x)|^2\;dx\right]^{1/2} + \left[\int_{0}^{1}|f'(x)|^2\;dx\right]^{1/2} \qquad (\text{by the Cauchy-Schwarz Inequality}), 
 		\end{split}
 	\end{align*}
 	so that the proof concludes. 
@@ -5035,14 +5040,14 @@ f2		\begin{equation*}
 	where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
 	\begin{align*}
 		\begin{split}
-			|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
-			&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
+			|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}\left[f(x + h - y) - f(x - y)\right]g(y)\;dy} \\
+			&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|^{p}\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
 		\end{split}
 	\end{align*}
 	Now we compute, 
 	\begin{align*}
 		\begin{split}
-			\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
+			\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|^{p}\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
 			&= \norm{\tau_hf - f}_{L^p}. 
 		\end{split}
 	\end{align*}
@@ -5061,7 +5066,7 @@ f2		\begin{equation*}
 	\begin{prb}{2022-J-I-6}
 		Let $f \in L^{1}(\mathbb{R}) \cap L^2(\mathbb{R})$. Let $\hat{f}$ be the Fourier transform of $f$. Suppose $\hat{f} > 0$ almost everywhere. Show that the span of the collection $\{x \mapsto f(x - y)\}_{y \in \mathbb{R}}$ is dense in $L^2(\mathbb{R})$. 
 	\end{prb} 
-	Let $f \in L^1(\mathbb{R}) \cap L^{2}(\mathbb{R})$, and assume that $\hat{f} > 0$ a.e. on $\mathbb{R}$. Let $S = \{x \mapsto f(x - y)\}$. We recall that $L^{2}(\mathbb{R})$, and in a Hilbert space, a nonempty subspace $M$ is dense in the space iff its orthocomplement, $M^{\perp}$ consists of only the zero vector. Thus we wish to show that $S^{\perp}$ is $\{0\}$. Suppose $g \in S^{\perp}$. This means that 
+	Let $f \in L^1(\mathbb{R}) \cap L^{2}(\mathbb{R})$, and assume that $\hat{f} > 0$ a.e. on $\mathbb{R}$. Let $S = \{x \mapsto f(x - y)\}$. We recall that in a Hilbert space, a nonempty subspace $M$ is dense in the space iff its orthocomplement, $M^{\perp}$ consists of only the zero vector. Thus we wish to show that $S^{\perp}$ is $\{0\}$. Suppose $g \in S^{\perp}$. This means that 
 	\begin{equation*}
 		\int_{\mathbb{R}}g(x)\overline{f(x -y)}\;dx = 0. 
 	\end{equation*}
@@ -5181,7 +5186,7 @@ f2		\begin{equation*}
 		\end{equation*}
 		for all $z \in D$. 
 	\end{prb}
-	Let $D \subset \mathbb{C}$ denote the open unit disk, and let $f: D \to \mathbb{R}$ be a harmonic function which belongs to $L^{2}(D)$.  If $f$ is identically zero, then the inequality follows trivially. So assume $f \not\equiv 0$. Fix an arbitrary $z \in D$, and let $r = 1 - |z|$. Then by the mean-value property for harmonic functions, one has 
+	Let $D \subset \mathbb{C}$ denote the open unit disk, and let $f: D \to \mathbb{R}$ be a harmonic function which belongs to $L^{2}(D)$.  If $f$ is identically zero, then the inequality follows trivially. So assume $f \not\equiv 0$. Fix an arbitrary $z \in D$, and let $r = (1 - |z|)/2$. Then by the mean-value property for harmonic functions, one has 
 	\begin{equation*}
 		f(z) = \frac{1}{\pi r^{2}}\iint_{B_{r}(z)}f(y)\;dA(y). 
 	\end{equation*}
@@ -5190,10 +5195,10 @@ f2		\begin{equation*}
 		\begin{split}
 			|f(z)| &\leq \frac{1}{\pi r^{2}}\iint_{B_{r}(z)}|f(y)|\;dA(y) \\
 			&\leq \frac{1}{\pi r^{2}}\left[\iint_{B_{r}(z)}|f(y)|^{2}\;dA(y)\right]^{1/2}\cdot \left[\iint_{B_{r}(z)}\;dA(y)\right]^{1/2} \qquad (\text{by Cauchy-Schwarz}) \\
-			&= \frac{1}{\pi^{1/2}r} \cdot \norm{f}_{L^{2}(D)} \eqqcolon \frac{K}{1 - |z|},  
+			&= \frac{1}{\pi^{1/2}r} \cdot \norm{f}_{L^{2}(D)} < \frac{K}{1 - |z|},  
 		\end{split}
 	\end{align*}
-	where we define $K = \pi^{-1/2} \cdot \norm{f}_{L^{2}(D)} > 0$. 
+	where we define $K > 2\pi^{-1/2} \cdot \norm{f}_{L^{2}(D)} > 0$. 
 	
 	\begin{prb}{2017-A-II-6}
 		Suppose that $f \in L^{2}(\mathbb{R}) \cap C^{2}(\mathbb{R})$ has second derivative $f'' \in L^{1}(\mathbb{R})$. Show that the Fourier transform $\hat{f}$ of $f$ belongs to $L^{1}(\mathbb{R})$. 
@@ -5239,7 +5244,7 @@ f2		\begin{equation*}
 	\begin{prb}{2017-J-II-2}
 		Suppose $f: [0,1] \to \mathbb{R}$ is measurable. Suppose further that for all $g \in L^2([0,1])$ we have that $fg \in L^2([0,1])$. Show $f$ is in $L^\infty([0,1])$. 
 	\end{prb}
-	Suppose $f: [0,1] \to \mathbb{R}$ is a measurable function, and further assume that for all $g \in L^2([0,1])$, $fg \in L^2([0,1])$. Define the map $T: L^2([0,1]) \to \mathbb{R}$ by $Tg\coloneqq fg$;  it follows immediately that $T$ is a linear map. Now let $\{g_n\}_{n =1}^{\infty} \subset L^2([0,1])$ such that $g_n \to 0$ under the $L^2$-norm. Further assume that $\{Tg_n\}_{n = 1}^{\infty}$ converges to some $y \in L^2([0,1])$. First, we know that there exists some subsequence $\{g_{n_{j}}\}_{j = 1}^\infty$ so that $g_{n_{j}} \to 0$ pointwise a.e. But then $Tg_{n_{j}} \to y$ under the $L^2$-norm. This implies that there exists a further subsequence $g_{n_{j_{k}}}$ $Tg_{n_{j_{k}}}$ that converges to $y$ pointwise a.e. By construction, $g_{n_{j_{k}}} \to 0$ pointwise a.e., so that $Tg_{n_{j_{k}}} = f(x)g_{n_{j_{k}}}(x) \to 0$ pointwise a.e. Thus one has that $y = 0$ a.e. This implies that the graph of $T$ is closed. Thus by the Closed Graph theorem, $T$ is a bounded linear map. I.e., there exists some $C > 0$ so that forr every $g \in L^2([0,1])$, $\norm{fg}_{L^2([0,1])} \leq C\norm{g}_{L^2([0,1])}$. In particular, one has that $\norm{f}_{L^2([0,1])} \leq C$. Now for each $n \geq 1$, let $E_{n} = \{x \in [0,1]: |f(x)|\geq C + n^{-1}\}$. If $m(E_{n}) > 0$, then we have 
+	Suppose $f: [0,1] \to \mathbb{R}$ is a measurable function, and further assume that for all $g \in L^2([0,1])$, $fg \in L^2([0,1])$. Define the map $T: L^2([0,1]) \to \mathbb{R}$ by $Tg\coloneqq fg$;  it follows immediately that $T$ is a linear map. Now let $\{g_n\}_{n =1}^{\infty} \subset L^2([0,1])$ such that $g_n \to 0$ under the $L^2$-norm. Further assume that $\{Tg_n\}_{n = 1}^{\infty}$ converges to some $y \in L^2([0,1])$. First, we know that there exists some subsequence $\{g_{n_{j}}\}_{j = 1}^\infty$ so that $g_{n_{j}} \to 0$ pointwise a.e. But then $Tg_{n_{j}} \to y$ under the $L^2$-norm. This implies that there exists a further subsequence $g_{n_{j_{k}}}$ such that $Tg_{n_{j_{k}}}$ that converges to $y$ pointwise a.e. By construction, $g_{n_{j_{k}}} \to 0$ pointwise a.e., so that $Tg_{n_{j_{k}}} = f(x)g_{n_{j_{k}}}(x) \to 0$ pointwise a.e. Thus one has that $y = 0$ a.e. This implies that the graph of $T$ is closed. Thus by the Closed Graph theorem, $T$ is a bounded linear map. I.e., there exists some $C > 0$ so that forr every $g \in L^2([0,1])$, $\norm{fg}_{L^2([0,1])} \leq C\norm{g}_{L^2([0,1])}$. In particular, one has that $\norm{f}_{L^2([0,1])} \leq C$. Now for each $n \geq 1$, let $E_{n} = \{x \in [0,1]: |f(x)|\geq C + n^{-1}\}$. If $m(E_{n}) > 0$, then we have 
 	\begin{equation*}
 		\left(C + \frac{1}{n}\right)m(E_n)^{1/2} \leq \norm{f\chi_{E_{n}}}_{L^{2}([0,1])} \leq Cm(E_n)^{1/2}, 
 	\end{equation*}
@@ -5270,6 +5275,20 @@ f2		\begin{equation*}
 	\end{equation*}
 	This completes the proof. 
 	
+	Alternatively, one could also use the Hahn-Banach theorem. Indeed, by the Hahn-Banach Theorem, $S \cap L^{4}(\mathbb{R})$ is dense in $L^{4}(\mathbb{R})$ if and only if for every continuous linear functional $\chi \in (L^{4}(\mathbb{R}))^{\ast} \cong L^{4/3}(\mathbb{R})$ such that $\int_{\mathbb{R}}f(x)\chi(x)\;dx$ for every $f \in S \cap L^{4}(\mathbb{R})$, $\chi(x) \equiv 0$. So let $\chi$ be such a continuous linear functional. Let $\phi \in C_{c}^{\infty}(\mathbb{R}) \subset L^{1}(\mathbb{R}) \cap L^{4}(\mathbb{R})$, and $g \in C_{c}^{\infty}(\mathbb{R})$ such that $\int_{\mathbb{R}}g(x)\;dx = 1$. Then define 
+	\begin{equation*}
+		f(x) = \phi(x) - \left(\int_{\mathbb{R}}\phi(y)\;dy\right)g(x). 
+	\end{equation*}
+	One notices that $\int_{\mathbb{R}}f(x)\;dx = 0$, $f$ is continuous, and $f \in L^{1}(\mathbb{R}) \cap L^{4}(\mathbb{R})$. Thus $f \in S$. Now one computes, 
+	\begin{equation*}
+		\int_{\mathbb{R}}f(x)\chi(x)\;dx = 0 \iff \int_{\mathbb{R}}\phi(x)\chi(x)\;dx = c \cdot \int_{\mathbb{R}}\phi(y)\;dy \equiv c \cdot \int_{\mathbb{R}}\phi(x)\;dx, 
+	\end{equation*}
+	where 
+	\begin{equation*}
+		c \coloneqq \int_{\mathbb{R}}\chi(x)g(x)\;dx < \infty 
+	\end{equation*}
+	by H\"older's inequality. Thus, one has that $\int_{\mathbb{R}}\phi(x)(\chi(x) - c)\;dx = 0$. Since $\phi(x) \neq 0$ and the integrand is continuous, it follows that $\chi(x) \equiv c$ a.e. But since $\chi \in L^{4/3}(\mathbb{R})$, one must have $c = 0$. Thus since $\chi \equiv 0$ a.e., and $\chi$ was chosen arbitrarily, it follows by the Hahn-Banach Theorem that $S \cap L^{4}(\mathbb{R})$ is dense in $L^{4}(\mathbb{R})$. 
+	
 	\begin{prb}{2015-A-II-6}
 		Let $1 < p < \infty$ and let $q$ be its conjugate exponent, that is, let $q$ be defined by $\frac{1}{p} + \frac{1}{q} = 1$. Let $f \in L^p(\mathbb{R}^n)$ and $g \in L^q(\mathbb{R}^n)$, with respect to the Lebesgue measure. Show that the convolution $f \ast g$ is uniformly continuous on $\mathbb{R}^n$ and that $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$. 
 	\end{prb}
@@ -5280,14 +5299,14 @@ f2		\begin{equation*}
 	where we used translation and reflection invariance of the $L^p$-norm. Thus since the integral is absolutely bounded, it follows that the integral exists for all $x$. Moreover, $\norm{f \ast g}_{L^\infty} \leq \norm{f}_{L^p}\norm{g}_{L^q}$, so that the convolution is bounded. Now we will show that the convolution is continuous. We compute, 
 	\begin{align*}
 		\begin{split}
-			|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|}|g(y)|\;dy \\
-			&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
+			|(f \ast g)(x + h) - (f \ast g)(x)| &= \abs{\int_{\mathbb{R}}\left[f(x + h - y) - f(x - y)\right]|g(y)|\;dy} \\
+			&\leq \left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|^{p}\;dy\right)^{1/p} \cdot \norm{g}_{L^q}. 
 		\end{split}
 	\end{align*}
 	Now we compute, 
 	\begin{align*}
 		\begin{split}
-			\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
+			\left(\int_{\mathbb{R}}|f(x + h - y) - f(x - y)|^{p}\;dy\right)^{1/p} &= \left(\int_{\mathbb{R}}|f(t + h) - f(t)|^p\;dt\right)^{1/p} \\
 			&= \norm{\tau_hf - f}_{L^p}. 
 		\end{split}
 	\end{align*}
@@ -5329,6 +5348,20 @@ f2		\begin{equation*}
 			\mathbb{R} = \bigcup_{k \in \mathbb{Z}}[k, k + 1), 
 		\end{equation*}
 		where each interval has measure $1$, the average of $g$ over each interval is the same. In particular, this implies that for every measurable set $E \subset \mathbb{R}$ with measure $\mu(E) = r > 0$, one has that the average of $g$ over $E$ is some constant $C$. Thus by the Lebesgue differentiation theorem, one concludes that $g(x) = C$ a.e. Since $g \in L^2(\mathbb{R})$, this constant has to be zero. So since $g = 0$ a.e. on $\mathbb{R}$, we conclude that $M^{\perp} = \{0\}$ so that $M$ is dense in $L^2(\mathbb{R})$. 
+		
+		Alternatively, one could also use the Hahn-Banach theorem. By the Hahn-Banach Theorem, $S \cap L^{2}(\mathbb{R})$ is dense in $L^{2}(\mathbb{R})$ if and only if for every continuous linear functional $\chi \in (L^{2}(\mathbb{R}))^{\ast} \cong L^{2}(\mathbb{R})$ such that $\int_{\mathbb{R}}f(x)\chi(x)\;dx$ for every $f \in S \cap L^{2}(\mathbb{R})$, $\chi(x) \equiv 0$. So let $\chi$ be such a continuous linear functional. Let $\phi \in C_{c}^{\infty}(\mathbb{R}) \subset L^{1}(\mathbb{R}) \cap L^{2}(\mathbb{R})$, and $g \in C_{c}^{\infty}(\mathbb{R})$ such that $\int_{\mathbb{R}}g(x)\;dx = 1$. Then define 
+		\begin{equation*}
+			f(x) = \phi(x) - \left(\int_{\mathbb{R}}\phi(y)\;dy\right)g(x). 
+		\end{equation*}
+		One notices that $\int_{\mathbb{R}}f(x)\;dx = 0$, $f$ is continuous, and $f \in L^{1}(\mathbb{R}) \cap L^{2}(\mathbb{R})$. Thus $f \in S$. Now one computes, 
+		\begin{equation*}
+			\int_{\mathbb{R}}f(x)\chi(x)\;dx = 0 \iff \int_{\mathbb{R}}\phi(x)\chi(x)\;dx = c \cdot \int_{\mathbb{R}}\phi(y)\;dy \equiv c \cdot \int_{\mathbb{R}}\phi(x)\;dx, 
+		\end{equation*}
+		where 
+		\begin{equation*}
+			c = \int_{\mathbb{R}}\chi(x)g(x)\;dx < \infty 
+		\end{equation*}
+		by Hoelder's inequality. Thus, one has that $\int_{\mathbb{R}}\phi(x)(\chi(x) - c)\;dx = 0$. Since $\phi(x) \neq 0$ and the integrand is continuous, it follows that $\chi(x) \equiv c$ a.e. But since $\chi \in L^{2}(\mathbb{R})$, one must have $c = 0$. Thus since $\chi \equiv 0$ a.e., and $\chi$ was chosen arbitrarily, it follows by the Hahn-Banach Theorem that $S \cap L^{2}(\mathbb{R})$ is dense in $L^{2}(\mathbb{R})$. 
 	\end{enumerate}
 	
 	\begin{prb}{2011-A-I-4}
@@ -5555,7 +5588,7 @@ f2		\begin{equation*}
 			&\leq \int_{\mathbb{R}^{n}}|f(x)|\;dx = \norm{f}_{L^{1}(\mathbb{R}^{n})} = \hat{f}(0). 
 		\end{split}
 	\end{align*}
-	This only gives us a weak inequality; we want a stronger bound. Assume to the contrary that there exists some $y \in \mathbb{R}^{n}\setminus \{0\}$ for which we have equality For a complex-valued integrand, equality holds in the integral triangle inequality if and only if the integrand shares a constant directional phase almost everywhere. Since $\hat{f}(0) > 0$, there must exist a constant $\theta \in \mathbb{R}$ such that:
+	This only gives us a weak inequality; we want a stronger bound. Assume to the contrary that there exists some $y \in \mathbb{R}^{n}\setminus \{0\}$ for which we have equality. For a complex-valued integrand, equality holds in the integral triangle inequality if and only if the integrand shares a constant directional phase almost everywhere. Since $\hat{f}(0) > 0$, there must exist a constant $\theta \in \mathbb{R}$ such that:
 	\begin{equation*}
 		f(x)e^{-2\pi i x y} = e^{i\theta} |f(x)e^{-2\pi i x y}| = e^{i\theta} f(x) \quad \text{a.e. on } \mathbb{R}^n.
 	\end{equation*}
@@ -5615,7 +5648,7 @@ f2		\begin{equation*}
 		\begin{equation*}
 			\norm{f_{n_{j_{k}}} - f}_{L^{1}} = \int |f_{n_{j_{k}}} - f| \xrightarrow{k \to \infty} \int 0 = 0. 
 		\end{equation*}
-		Thus since we have shown that every subsequence of $\{\norm{f_{n} - f}_{L^{1}}\}$ has a convergent subsequence that converges to $0$, we conclude that $f_{n} \to f$ in $L^{1}$. 
+		Thus since we have shown that every subsequence of $\{\norm{f_{n} - f}_{L^{1}}\}$ has a convergent subsubsequence that converges to $0$, we conclude that $f_{n} \to f$ in $L^{1}$. 
 	\end{enumerate}
 	
 	\begin{prb}{F-2-36}
@@ -5702,7 +5735,7 @@ f2		\begin{equation*}
 	\begin{equation*}
 		|f_{n_{j_{k}}} - f|^{p} \leq 2^{p}(|f_{n_{j_{k}}}|^{p} + |f|^{p}) \leq 2^{p}(|g|^{p} + |f|^{p}) \in L^{1}(X)
 	\end{equation*}
-	because $f, g \in L^{p}(X)$, and $|f_{n_{j_{k}}}(x) - f(x)|^{p} \xrightarrow{k \to \infty} 0$ pointwise a.e., the Lebesgue dominated convergence theorem tells us that $f_{n_{j_{k}}} \to f$ in $L^{p}(X)$; i.e., $\norm{f_{n_{j_{k}}} - f}_{L^{p}} \xrightarrow{k \to \infty} 0$. Thus since every subsequence has a convergent subsequence, we conclude that $\norm{f_{n} - f}_{L^{p}} \to 0$. 
+	because $f, g \in L^{p}(X)$, and $|f_{n_{j_{k}}}(x) - f(x)|^{p} \xrightarrow{k \to \infty} 0$ pointwise a.e., the Lebesgue dominated convergence theorem tells us that $f_{n_{j_{k}}} \to f$ in $L^{p}(X)$; i.e., $\norm{f_{n_{j_{k}}} - f}_{L^{p}} \xrightarrow{k \to \infty} 0$. Thus since every subsequence of $\{\norm{f_{n} - f}_{L^{p}(X)}\}_{n=1}^{\infty}$ has a convergent subsubsequence, we conclude that $\norm{f_{n} - f}_{L^{p}} \to 0$. 
 	
 	\begin{prb}{F-6-10}
 		Suppose $1 \leq p < \infty$. If $f_{n}, f \in L^{p}$ and $f_{n} \to f$ a.e., then $\norm{f_{n} - f}_{L^{p}} \to 0$ iff $\norm{f_{n}}_{L^{p}} \to \norm{f}_{p}$. (Use Exercise 20 in \S 2.3.) 
@@ -5977,7 +6010,7 @@ f2		\begin{equation*}
 	\begin{prb}{2016-J-II-3}
 		Suppose $f$ is a continuous function on $[0,1]$ and $\int_{0}^{1}f(x)x^{k}\;dx =0$ for $k = 0,\ldots, n$. Prove that either $f$ is identically zero or $f$ must change signs at least $n + 1$ times. (We say $f$ changes sign $n$ times if there are points $0 < x_1 < \dotsm < x_{n + 1} < 1$ so that $f(x_j)f(x_{j + 1}) < 0$ for $j = 1, \ldots, n$.)
 	\end{prb}
-	Suppose $f$ is a continuous function on $[0,1]$ and $\int_{0}^{1}f(x)x^{k}\;dx = 0$ for $k = 0, \ldots, n$. If $f$ is identically done, then we are done, so assume $f$ is not identically zero. And assume to the contrary that $f$ changes sign $0 < j \leq n$ times (note that we know $j > 0$ since if $f$ never changed signs, since $x^{k}$ also has constant sign on $[0,1]$, the integral of $f(x)x^k$ over $[0,1]$ cannot be zero for $k =0, \ldots, n$). By definition, there exists $j + 1$ points $0 < x_1 < \dotsm < x_{j + 1} < 1$ (chosen maximally) so that for each $j = 1, \ldots, n$, $f(x_j)f(x_{j + 1}) < 0$. By the Intermediate Value Theorem, for each such $j$, there exists some $c_{j} \in [x_{j}, x_{j + 1}]$ so that $f(c_{j}) = 0$. So let 
+	Suppose $f$ is a continuous function on $[0,1]$ and $\int_{0}^{1}f(x)x^{k}\;dx = 0$ for $k = 0, \ldots, n$. If $f$ is identically zero, then we are done, so assume $f$ is not identically zero. And assume to the contrary that $f$ changes sign $0 < j \leq n$ times (note that we know $j > 0$ since if $f$ never changed signs, since $x^{k}$ also has constant sign on $[0,1]$, the integral of $f(x)x^k$ over $[0,1]$ cannot be zero for $k =0, \ldots, n$). By definition, there exists $j + 1$ points $0 < x_1 < \dotsm < x_{j + 1} < 1$ (chosen maximally) so that for each $j = 1, \ldots, n$, $f(x_j)f(x_{j + 1}) < 0$. By the Intermediate Value Theorem, for each such $j$, there exists some $c_{j} \in [x_{j}, x_{j + 1}]$ so that $f(c_{j}) = 0$. So let 
 	\begin{equation*}
 		P(x) = \operatorname{sgn}\limits_{[0,x_1]}(f(x)) \cdot \prod_{k = 1}^{j}(x - c_{k}). 
 	\end{equation*}
@@ -7147,7 +7180,7 @@ f2		\begin{equation*}
 	\begin{prb}{2021-A-I-2}
 		Let $P(z)= z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. Prove that either there is $|z| = 1$ such that $|P(z) > 1$ or $P(z) = z^{n}$. 
 	\end{prb}
-	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. If there exists $|z| = 1$ such that $|P(z)| < 1$, then we are done. So assume to the contrary that for every $|z| = 1$, $|P(z)| \leq 1$. By the maximum modulus principle, it follows that $|P(z)| \leq 1$ for every $|z| \leq 1$. Consider the polynomial $g(z) = z^{n}P(1/z) = a_{n}z^{n} + a_{n-1}z^{n-1} + \dotsm + a_{1}z + 1$. Then $g(0) = 1$. Moreover, since for any $|z| = 1$, $|1/z| = 1$, $|g(z)| = |z|^{n}|P(1/z)| \leq 1$. By the Maximum Modulus principle, 
+	Let $P(z) = z^{n} + a_{1}z^{n-1} + \dotsm + a_{n}$. If there exists $|z| = 1$ such that $|P(z)| > 1$, then we are done. So assume to the contrary that for every $|z| = 1$, $|P(z)| \leq 1$. By the maximum modulus principle, it follows that $|P(z)| \leq 1$ for every $|z| \leq 1$. Consider the polynomial $g(z) = z^{n}P(1/z) = a_{n}z^{n} + a_{n-1}z^{n-1} + \dotsm + a_{1}z + 1$. Then $g(0) = 1$. Moreover, since for any $|z| = 1$, $|1/z| = 1$, $|g(z)| = |z|^{n}|P(1/z)| \leq 1$. By the Maximum Modulus principle, 
 	\begin{equation*}
 		\max_{|z| \leq 1}|g(z)| = \max_{|z| = 1}|g(z)| \leq 1. 
 	\end{equation*}
@@ -9051,6 +9084,7 @@ f2		\begin{equation*}
 		If $\ker{\varphi} = \{e\}$ is trivial, then $G$ embeds in $S_{n}$ (i.e., $G$ is isomorphic to a subgroup of $S_n$) and $|G| \mid |S_{n}|$. \newline 
 		\expl{Suppose $g \in \ker{\varphi}$. Then for every $x \in G$, $gxH = xH \implies x^{-1}gx \in H \implies g \in xHx^{-1}$. Thus, $\ker{\varphi} \subseteq \bigcap_{g \in G}gHg^{-1}$. The converse direction follows immediately.}
 		\item (Orbit-Stabilizer Theorem) Let $G$ be a finite group acting on a set $S$. Then $|G| = |\operatorname{Orb}{x}|\cdot |\operatorname{Stab}{x}|$, where $\operatorname{Orb}$ denotes the orbit of $x$ under the group action, and $\operatorname{Stab}$ denotes the stabilizer of $x$ under the group action.
+		\item The transitive subgroups of $S_{4}$ are $\mathbb{Z}_{4}$, $\sf{V}_{4}$ (normal), $D_{8}$, $A_{4}$ (normal), and $S_{4}$.  The transitive subgroups of $S_{3}$ are $A_{3}$ (normal) and $S_{3}$. 
 		\item Given a semidirect product $G \rtimes_{\varphi} H$, where $\varphi: H \to \operatorname{Aut}(G)$ is a group homomorphism and $G = \braket{X \mid R}$ and $H = \braket{Y \mid S}$ ($X$ and $Y$ are the generators of $G$ and $H$, respectively, while $R$ and $S$ are the respective relations), the resulting group presentation is given by, 
 		\begin{equation*}
 			G \rtimes_{\varphi} H \cong \braket{X, Y \mid R, S, yxy^{-1} = \phi(y)(x), \forall x \in X, y \in Y}. 
@@ -9211,7 +9245,8 @@ f2		\begin{equation*}
 			\item If $X$, $Y$ are vector fields,  then $\mathscr{L}_{X}Y = [X, Y]$. 
 			\item $[\mathscr{L}_{X}, \mathscr{L}_{Y}] = \mathscr{L}_{[X,Y]}$. 
 		\end{enumerate}
-	\item If $\omega$ is a 1-form, then $d\theta(X,Y)= X(\theta(Y)) - Y(\theta(X))- \theta([X,Y])$. 
+	\item If $\omega$ is a 1-form, then $d\theta(X,Y)= X(\theta(Y)) - Y(\theta(X))- \theta([X,Y])$.
+	\item The interior derivative of a $k$-form $\theta$, denoted by $i_{V}\theta$, a $(k - 1)$-form. 
 	\end{enumerate}
 	
 	\subsubsection{Real Analysis}
